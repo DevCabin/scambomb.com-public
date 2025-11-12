@@ -113,6 +113,11 @@ scambomb.com-public/
 
 ## 📋 Changelog
 
+### v0.1.6 (2025-11-12)
+- **Configuration Cleanup**: Removed deprecated `experimental.appDir` from next.config.js
+- **Warning Elimination**: Cleaned up Next.js console warnings for cleaner development
+- **Modern Standards**: Updated configuration to match Next.js 14 stable app router
+
 ### v0.1.5 (2025-11-12)
 - **Routing Stability**: Fixed home page routing by converting to server component
 - **Performance**: Removed unnecessary client-side state from homepage for better SSR
