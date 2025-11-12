@@ -1,0 +1,364 @@
+import { useEffect, useState } from "react";
+
+export default function ScamBombLanding() {
+  const [fontScale, setFontScale] = useState(1);
+  const [highContrast, setHighContrast] = useState(false);
+  const [reducedMotion, setReducedMotion] = useState(false);
+
+  useEffect(() => {
+    const media = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setReducedMotion(media.matches);
+    const handler = () => setReducedMotion(media.matches);
+    media.addEventListener("change", handler);
+    return () => media.removeEventListener("change", handler);
+  }, []);
+
+  const base = highContrast ? "bg-black text-white" : "bg-[#0B1324] text-white"; // Navy default
+  const brandYellow = highContrast ? "#FFD500" : "#F5C84C";
+  const brandBorder = highContrast ? "border-white/80" : "border-white/20";
+
+  const scaleClass = {
+    0.9: "text-[0.9rem]", 1: "text-base", 1.1: "text-[1.1rem]", 1.2: "text-[1.2rem]", 1.3: "text-[1.3rem]",
+  }[Number(fontScale.toFixed(1))] || "text-base";
+
+  return (
+    <div className={`${base} min-h-screen ${scaleClass} antialiased selection:bg-yellow-300/30`}> 
+      {/* Skip link */}
+      <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:bg-yellow-300 focus:text-black focus:px-3 focus:py-2 focus:rounded-lg">Skip to content</a>
+
+      {/* Top Announcement Bar */}
+      <div className="w-full border-b border-white/10" role="region" aria-label="announcement">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-2 text-center text-sm text-white/80">
+          Launch special: <strong style={{ color: brandYellow }}>Founding members $4.99/mo</strong> — lock in for life.
+        </div>
+      </div>
+
+      {/* Header */}
+      <header className="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-black/30 border-b border-white/10">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between py-3">
+            <div className="flex items-center gap-3" aria-label="ScamBomb home">
+              <Logo markColor={brandYellow} />
+              <span className="sr-only">ScamBomb</span>
+            </div>
+            <nav className="hidden md:flex items-center gap-6" aria-label="Primary">
+              <a className="opacity-90 hover:opacity-100" href="#how">How it works</a>
+              <a className="opacity-90 hover:opacity-100" href="#features">Features</a>
+              <a className="opacity-90 hover:opacity-100" href="#pricing">Pricing</a>
+              <a className="opacity-90 hover:opacity-100" href="#faq">FAQ</a>
+              <a className="opacity-90 hover:opacity-100" href="#blog">Blog</a>
+            </nav>
+            <div className="flex items-center gap-2">
+              {/* Accessibility Toolbar */}
+              <div className="hidden sm:flex items-center gap-1" aria-label="Accessibility toolbar">
+                <button onClick={() => setFontScale((s) => Math.max(0.9, +(s - 0.1).toFixed(1)))} className="px-2 py-1 rounded-lg border text-sm hover:bg-white/10" aria-label="Decrease text size">A-</button>
+                <button onClick={() => setFontScale((s) => Math.min(1.3, +(s + 0.1).toFixed(1)))} className="px-2 py-1 rounded-lg border text-sm hover:bg-white/10" aria-label="Increase text size">A+</button>
+                <button onClick={() => setHighContrast((v) => !v)} className="px-2 py-1 rounded-lg border text-sm hover:bg-white/10" aria-pressed={highContrast} aria-label="Toggle high contrast">HC</button>
+              </div>
+              <a href="#cta" className="ml-2 rounded-2xl px-4 py-2 font-semibold" style={{ backgroundColor: brandYellow, color: "#0B1324" }}>
+                Try it free
+              </a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      {/* Hero */}
+      <section id="hero" className="relative overflow-hidden">
+        <div aria-hidden className="pointer-events-none absolute -top-24 right-[-10%] h-72 w-72 rounded-full blur-3xl" style={{ background: `${brandYellow}33` }} />
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+          <div className="grid lg:grid-cols-2 gap-10 items-center">
+            <div>
+              <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight">
+                Stop scams in <span style={{ color: brandYellow }}>one click</span>.
+              </h1>
+              <p className="mt-4 max-w-xl text-white/80">
+                Paste any text, email, or SMS. ScamBomb checks red flags, explains the risk in plain English, and tells you exactly what to do next.
+              </p>
+              <div className="mt-6 flex flex-wrap gap-3">
+                <a id="cta" href="#pricing" className="rounded-2xl px-5 py-3 font-semibold" style={{ backgroundColor: brandYellow, color: "#0B1324" }}>
+                  Get Founding Price — $4.99/mo
+                </a>
+                <a href="#demo" className="rounded-2xl px-5 py-3 border border-white/20 hover:bg-white/10">
+                  Try a live demo
+                </a>
+              </div>
+              <ul className="mt-6 grid grid-cols-2 gap-3 text-sm text-white/75">
+                <li className="flex items-center gap-2"><Check /> No ads, no data selling</li>
+                <li className="flex items-center gap-2"><Check /> Works on phone or desktop</li>
+                <li className="flex items-center gap-2"><Check /> Clear, step-by-step guidance</li>
+                <li className="flex items-center gap-2"><Check /> Cancel anytime</li>
+              </ul>
+            </div>
+            <div>
+              <div className={`rounded-2xl border ${brandBorder} bg-white/5 p-4 sm:p-6`}>
+                <div className="text-sm text-white/80 mb-2">Example message</div>
+                <div className="rounded-xl bg-white text-black p-4 sm:p-5 shadow-lg">
+                  <p className="text-sm sm:text-base">"Your bank account has been locked. Click this link in 15 minutes to avoid permanent closure."</p>
+                </div>
+                <div className="mt-4 text-sm text-white/80">ScamBomb analysis</div>
+                <div className="mt-1 rounded-xl border border-black/10 bg-black/20 p-4">
+                  <ul className="list-disc ml-5 space-y-2 text-white/90">
+                    <li>Urgency tactic detected (“15 minutes”).</li>
+                    <li>Suspicious link (domain doesn’t match your bank).</li>
+                    <li>Requests action outside official app/website.</li>
+                  </ul>
+                  <div className="mt-3 rounded-lg bg-[#0B1324] p-3" style={{ border: `1px dashed ${brandYellow}` }}>
+                    <p>
+                      <strong style={{ color: brandYellow }}>Do this:</strong> Ignore the link and open your bank’s official app. If worried, call the number on the back of your card.
+                    </p>
+                  </div>
+                </div>
+                <div className="mt-4 flex items-center justify-between">
+                  <span className="text-sm text-white/70">Plain-English results in seconds</span>
+                  <button className="rounded-xl px-4 py-2 font-semibold" style={{ backgroundColor: brandYellow, color: "#0B1324" }}>
+                    Check a message →
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Trust bar */}
+      <section aria-label="Trust signals" className="border-y border-white/10">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 grid sm:grid-cols-3 gap-4 text-center">
+          <TrustItem title="Privacy-first" text="Your checks aren’t sold to advertisers." />
+          <TrustItem title="Human-friendly" text="No jargon. Clear next steps." />
+          <TrustItem title="Always improving" text="New scam patterns added weekly." />
+        </div>
+      </section>
+
+      {/* How it works */}
+      <section id="how" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+        <HeaderEyebrow>How it works</HeaderEyebrow>
+        <h2 className="text-3xl sm:text-4xl font-bold">From confusion to confident in 3 steps</h2>
+        <div className="mt-8 grid md:grid-cols-3 gap-6">
+          <Step n={1} title="Paste a message" text="Copy any email, text, or social DM into ScamBomb." />
+          <Step n={2} title="We flag risks" text="We detect urgency, spoofed links, fake invoices, and more." />
+          <Step n={3} title="Get next steps" text="We tell you exactly what to do—simply and safely." />
+        </div>
+      </section>
+
+      {/* Features */}
+      <section id="features" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+        <HeaderEyebrow>Features</HeaderEyebrow>
+        <h2 className="text-3xl sm:text-4xl font-bold">Built for seniors, caregivers, and helpers</h2>
+        <div className="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <Card title="Plain-English explanations" icon={<Check />}>No tech-speak. We explain what’s risky and why, in friendly language.</Card>
+          <Card title="Link & sender checks" icon={<Check />}>Spot spoofed addresses, mismatched domains, and impersonation cues.</Card>
+          <Card title="Copy-paste simple" icon={<Check />}>Works on any device—no install required. Just paste and check.</Card>
+          <Card title="Privacy-first" icon={<Check />}>We don’t sell data. Ever. Turn on anonymous mode in one click.</Card>
+          <Card title="Guided next steps" icon={<Check />}>Unsure what to do? We give you a safe path with scripts you can use.</Card>
+          <Card title="Learning hub" icon={<Check />}>Weekly blog + short videos to stay ahead of new scams.</Card>
+        </div>
+      </section>
+
+      {/* Demo CTA */}
+      <section id="demo" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+        <div className={`rounded-2xl border ${brandBorder} bg-white/5 p-6 lg:p-10 grid lg:grid-cols-2 gap-8 items-center`}>
+          <div>
+            <h3 className="text-2xl font-bold">Try the demo — no signup</h3>
+            <p className="mt-2 text-white/80">Paste a suspicious message and see how ScamBomb explains it in seconds.</p>
+            <div className="mt-6 flex gap-3">
+              <a href="#pricing" className="rounded-2xl px-5 py-3 font-semibold" style={{ backgroundColor: brandYellow, color: "#0B1324" }}>Unlock full protection</a>
+              <a href="#" className="rounded-2xl px-5 py-3 border border-white/20 hover:bg-white/10">Open quick demo</a>
+            </div>
+          </div>
+          <ul className="space-y-3 text-white/80">
+            <li className="flex items-start gap-3"><Check /> No email needed for demo</li>
+            <li className="flex items-start gap-3"><Check /> Works with screenshots (coming soon)</li>
+            <li className="flex items-start gap-3"><Check /> Share results with family in one click</li>
+          </ul>
+        </div>
+      </section>
+
+      {/* Pricing */}
+      <section id="pricing" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+        <HeaderEyebrow>Pricing</HeaderEyebrow>
+        <h2 className="text-3xl sm:text-4xl font-bold">Simple, affordable protection</h2>
+        <div className="mt-8 grid lg:grid-cols-3 gap-6">
+          <PriceCard highlight title="Founding Member" price="$4.99/mo" note="Lock in for life" cta="Start now" color={brandYellow} />
+          <PriceCard title="Family Plan" price="$9.99/mo" note="Covers up to 4 people" cta="Get family plan" color={brandYellow} />
+          <PriceCard title="Community" price="$29/mo" note="Libraries & senior centers" cta="Talk to us" color={brandYellow} />
+        </div>
+        <p className="mt-4 text-sm text-white/70">14-day money-back guarantee. Cancel anytime.</p>
+      </section>
+
+      {/* Testimonials */}
+      <section aria-label="Testimonials" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+        <HeaderEyebrow>What people say</HeaderEyebrow>
+        <div className="grid md:grid-cols-2 gap-6">
+          <Quote text="ScamBomb helped my mom avoid a fake Medicare call. The instructions were crystal clear." author="— Dana, caregiver" />
+          <Quote text="I finally feel confident checking messages by myself. It’s like having a tech-savvy friend on call." author="— Michael, 72" />
+        </div>
+      </section>
+
+      {/* Blog preview */}
+      <section id="blog" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+        <HeaderEyebrow>From the blog</HeaderEyebrow>
+        <div className="grid md:grid-cols-3 gap-6">
+          <PostCard tag="GUIDE" title="How to spot fake bank texts in 30 seconds" />
+          <PostCard tag="ALERT" title="New USPS delivery scam: what to do" />
+          <PostCard tag="HOW-TO" title="Three questions to ask before you click" />
+        </div>
+        <div className="mt-6">
+          <a href="#" className="underline decoration-white/40 underline-offset-4 hover:decoration-white">Read all posts</a>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section id="faq" className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16">
+        <HeaderEyebrow>FAQ</HeaderEyebrow>
+        <dl className="divide-y divide-white/10 rounded-2xl border border-white/10 bg-white/5">
+          {[
+            { q: "Do you sell my data?", a: "No. We never sell or share your data with advertisers. You can also turn on anonymous mode." },
+            { q: "Does it work on my phone?", a: "Yes. Use your mobile browser to paste messages or open the quick demo." },
+            { q: "Can I cancel anytime?", a: "Absolutely. Subscriptions are month-to-month with a 14-day money-back guarantee." },
+          ].map((item, i) => (
+            <div key={i} className="p-5">
+              <dt className="font-semibold">{item.q}</dt>
+              <dd className="mt-2 text-white/80">{item.a}</dd>
+            </div>
+          ))}
+        </dl>
+      </section>
+
+      {/* Footer */}
+      <footer className="border-t border-white/10">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 grid md:grid-cols-4 gap-6 text-sm">
+          <div>
+            <Logo markColor={brandYellow} size="sm" />
+            <p className="mt-3 text-white/70">Simple, plain-English scam checks for everyone.</p>
+          </div>
+          <div>
+            <h4 className="font-semibold">Product</h4>
+            <ul className="mt-2 space-y-2 text-white/80">
+              <li><a href="#how">How it works</a></li>
+              <li><a href="#features">Features</a></li>
+              <li><a href="#pricing">Pricing</a></li>
+              <li><a href="#blog">Blog</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="font-semibold">Company</h4>
+            <ul className="mt-2 space-y-2 text-white/80">
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">Press</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="font-semibold">Newsletter</h4>
+            <form className="mt-2 flex gap-2" aria-label="Subscribe to newsletter">
+              <label htmlFor="email" className="sr-only">Email</label>
+              <input id="email" name="email" type="email" required className="min-w-0 flex-1 rounded-xl border border-white/20 bg-white/10 px-3 py-2 placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-yellow-300" placeholder="you@example.com" />
+              <button className="rounded-xl px-4 py-2 font-semibold" style={{ backgroundColor: brandYellow, color: "#0B1324" }}>Subscribe</button>
+            </form>
+            <p className="mt-2 text-white/60">We send 1–2 emails/month. No spam.</p>
+          </div>
+        </div>
+        <div className="border-t border-white/10 py-6 text-center text-xs text-white/60">© {new Date().getFullYear()} ScamBomb.com — All rights reserved.</div>
+      </footer>
+    </div>
+  );
+}
+
+// ---- UI Helpers ----
+function HeaderEyebrow({ children }: { children: React.ReactNode }) {
+  return (
+    <p className="text-sm font-semibold tracking-wider uppercase text-white/60 mb-2">{children}</p>
+  );
+}
+
+function Step({ n, title, text }: { n: number; title: string; text: string }) {
+  return (
+    <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+      <div className="flex items-center gap-3">
+        <div className="h-9 w-9 rounded-full flex items-center justify-center bg-white/10 border border-white/10">{n}</div>
+        <h3 className="font-semibold text-lg">{title}</h3>
+      </div>
+      <p className="mt-3 text-white/80">{text}</p>
+    </div>
+  );
+}
+
+function Card({ title, icon, children }: { title: string; icon?: React.ReactNode; children: React.ReactNode }) {
+  return (
+    <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+      <div className="flex items-center gap-2">
+        <span aria-hidden>{icon}</span>
+        <h3 className="font-semibold">{title}</h3>
+      </div>
+      <p className="mt-2 text-white/80">{children}</p>
+    </div>
+  );
+}
+
+function PriceCard({ title, price, note, cta, color, highlight = false }: { title: string; price: string; note: string; cta: string; color: string; highlight?: boolean }) {
+  return (
+    <div className={`rounded-2xl p-6 border ${highlight ? "border-yellow-300 bg-white/10" : "border-white/10 bg-white/5"}`}>
+      <h3 className="text-lg font-semibold">{title}</h3>
+      <div className="mt-3 text-3xl font-extrabold">{price}</div>
+      <p className="mt-1 text-white/70">{note}</p>
+      <button className="mt-5 w-full rounded-xl py-3 font-semibold" style={{ backgroundColor: color, color: "#0B1324" }}>{cta}</button>
+      <ul className="mt-4 space-y-2 text-sm text-white/80">
+        <li className="flex items-start gap-2"><Check /> Unlimited message checks</li>
+        <li className="flex items-start gap-2"><Check /> Plain-English results</li>
+        <li className="flex items-start gap-2"><Check /> Priority updates on new scams</li>
+      </ul>
+    </div>
+  );
+}
+
+function PostCard({ tag, title }: { tag: string; title: string }) {
+  return (
+    <article className="rounded-2xl border border-white/10 bg-white/5 p-5">
+      <div className="text-xs font-semibold tracking-widest text-white/60">{tag}</div>
+      <h3 className="mt-2 font-semibold">{title}</h3>
+      <p className="mt-2 text-white/80">Short, friendly explanations you can share with family or seniors you support.</p>
+      <a href="#" className="mt-3 inline-block rounded-lg border border-white/20 px-3 py-2 hover:bg-white/10">Read</a>
+    </article>
+  );
+}
+
+function Quote({ text, author }: { text: string; author: string }) {
+  return (
+    <blockquote className="rounded-2xl border border-white/10 bg-white/5 p-6">
+      <p className="text-white/90">“{text}”</p>
+      <footer className="mt-3 text-white/70">{author}</footer>
+    </blockquote>
+  );
+}
+
+function TrustItem({ title, text }: { title: string; text: string }) {
+  return (
+    <div>
+      <div className="text-lg font-semibold">{title}</div>
+      <div className="text-white/80">{text}</div>
+    </div>
+  );
+}
+
+function Check() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+      <path d="M20 6L9 17l-5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function Logo({ markColor = "#F5C84C", size = "md" }: { markColor?: string; size?: "sm" | "md" }) {
+  const textClass = size === "sm" ? "text-xl" : "text-2xl";
+  return (
+    <div className="flex items-center gap-2" role="img" aria-label="ScamBomb logo">
+      <div className={`${textClass} font-extrabold`}>Scam<span style={{ color: markColor }}>B</span>omb</div>
+      <svg width={size === "sm" ? 18 : 22} height={size === "sm" ? 18 : 22} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+        <circle cx="12" cy="12" r="7" stroke={markColor} strokeWidth="2" />
+        <path d="M17 7l2-2" stroke={markColor} strokeWidth="2" strokeLinecap="round" />
+        <path d="M6 5h6" stroke={markColor} strokeWidth="2" strokeLinecap="round" />
+      </svg>
+    </div>
+  );
+}
