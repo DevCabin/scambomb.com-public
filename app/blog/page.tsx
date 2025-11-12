@@ -2,6 +2,19 @@ import Link from 'next/link'
 import { allPosts } from 'contentlayer/generated'
 import { compareDesc } from 'date-fns'
 
+function Logo({ size = "md" }: { size?: "sm" | "md" }) {
+  const imgSize = size === "sm" ? "h-10 w-32" : "h-12 w-40";
+  return (
+    <div className="flex items-center gap-2" role="img" aria-label="ScamBomb logo">
+      <img
+        src="/logo.png"
+        alt="ScamBomb Logo"
+        className={`${imgSize} object-contain`}
+      />
+    </div>
+  );
+}
+
 export default function BlogPage() {
   const posts = allPosts.sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
 
@@ -9,7 +22,8 @@ export default function BlogPage() {
     <div className="min-h-screen bg-[#0B1324] text-white py-16">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <header className="text-center mb-16">
-          <h1 className="text-4xl font-bold mb-4">ScamBomb Blog</h1>
+          <Logo />
+          <h1 className="text-4xl font-bold mb-4">Blog</h1>
           <p className="text-white/80 text-lg">Stay ahead of scams with our latest guides and alerts</p>
         </header>
 
