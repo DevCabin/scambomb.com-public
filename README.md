@@ -206,6 +206,8 @@ scambomb.com-public/
 - [ ] **Frontend-Backend Integration**: Connect with scam analysis API
 - [ ] **Content Review**: Audit all verbiage for clarity and accuracy
 - [ ] **Blog Functionality Testing**: Ensure all blog features work correctly
+- [ ] **Review Footer Links**: Audit and update all footer navigation links
+- [ ] **Setup Monthly Newsletter**: Implement newsletter signup functionality
 
 ### Medium Priority
 - [ ] **Performance Optimization**: Implement image optimization and caching
