@@ -113,6 +113,11 @@ scambomb.com-public/
 
 ## 📋 Changelog
 
+### v0.1.5 (2025-11-12)
+- **Routing Stability**: Fixed home page routing by converting to server component
+- **Performance**: Removed unnecessary client-side state from homepage for better SSR
+- **Build Reliability**: Eliminated 404 routing issues that were causing crashes
+
 ### v0.1.4 (2025-11-12)
 - **Favicon Added**: Custom favicon.ico for improved brand recognition in browser tabs
 - **Browser Identity**: Users now see ScamBomb branding when bookmarking or switching tabs
