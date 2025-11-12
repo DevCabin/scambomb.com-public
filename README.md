@@ -113,6 +113,11 @@ scambomb.com-public/
 
 ## 📋 Changelog
 
+### v0.1.3 (2025-11-12)
+- **Error Handling**: Added error.tsx component to fix "missing required error components" issue
+- **Next.js App Router**: Proper error boundary implementation for production stability
+- **User Experience**: Graceful error handling with retry functionality
+
 ### v0.1.2 (2025-11-12)
 - **Messaging Update**: Changed "Built for seniors, caregivers, and helpers" to "Built for everyone (55+ included!)"
 - **Inclusive Branding**: More welcoming messaging that appeals to broader audience while highlighting 55+ demographic
