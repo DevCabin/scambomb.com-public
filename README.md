@@ -111,6 +111,74 @@ scambomb.com-public/
 - Some TypeScript type definitions incomplete
 - Contentlayer configuration may need optimization
 
+## 📋 Changelog
+
+### v0.1.2 (2025-11-12)
+- **Messaging Update**: Changed "Built for seniors, caregivers, and helpers" to "Built for everyone (55+ included!)"
+- **Inclusive Branding**: More welcoming messaging that appeals to broader audience while highlighting 55+ demographic
+
+### v0.1.1 (2025-11-12)
+- **Critical Bug Fix**: Resolved Next.js layout.tsx "use client" directive conflict preventing metadata export
+- **Server Component Fix**: Removed client-side state from layout to allow proper metadata handling
+- **Accessibility Toolbar**: Temporarily removed accessibility controls to fix server/client component issues
+
+### v0.1.0 (2025-11-12)
+- **MAJOR ARCHITECTURAL CHANGE**: Universal header and footer across all pages
+- **Layout Refactor**: Moved header/footer from individual pages to root layout.tsx
+- **Consistent Branding**: All pages (home, blog, blog posts) now share identical navigation and footer
+- **Navigation Updates**: Links work correctly from any page with proper anchor navigation
+- **Code Cleanup**: Removed duplicate header/footer code from page components
+
+### v0.0.9 (2025-11-12)
+- **Blog Page Redesign**: Added ScamBomb logo above "Blog" heading for better branding
+- **Visual Hierarchy**: Improved blog page header with logo prominence
+- **Component Integration**: Logo component properly integrated into blog page layout
+
+### v0.0.8 (2025-11-12)
+- **Blog Content Rendering**: Fixed MDX content display in blog posts
+- **Markdown Parser**: Replaced dangerouslySetInnerHTML with custom markdown renderer
+- **Content Support**: Added support for headings (H1/H2), lists (ordered/unordered), and bold text
+- **Blog Functionality**: All blog posts now display properly formatted content
+
+### v0.0.7 (2025-11-12)
+- **Blog Routing Fix**: Fixed Next.js dynamic routing for blog post URLs
+- **Static Params**: Updated generateStaticParams to strip 'blog/' prefix from slugs
+- **Post Lookup**: Fixed component logic to match full flattenedPath with 'blog/' prefix
+- **URL Resolution**: Blog posts now correctly accessible at /blog/post-slug URLs
+
+### v0.0.6 (2025-11-12)
+- **Contentlayer URL Fix**: Corrected blog post URL generation to prevent double '/blog/blog/' paths
+- **URL Computation**: Updated Contentlayer config to strip 'blog/' prefix from generated URLs
+- **Blog Navigation**: Individual blog post pages now work correctly with proper URLs
+
+### v0.0.5 (2025-11-12)
+- **Guarantee Text Update**: Changed from "14-day money-back guarantee" to "No strings attached, 'cancel any time for any reason' guarantee"
+- **Trust Messaging**: Stronger, more confident language for customer assurance
+
+### v0.0.4 (2025-11-12)
+- **Pricing Update**: Replaced "Family Plan" with "Annual Plan" ($49.99/year)
+- **Target Audience**: Annual plan appeals to seniors preferring yearly payments
+- **Pricing Structure**: Updated to Free → Pro → Annual tiers
+
+### v0.0.3 (2025-11-12)
+- **App URL Integration**: All CTA buttons now link to https://app.scambomb.com
+- **Complete Integration**: Header, pricing cards, and demo buttons all link to app
+- **ProductHunt Special**: Added "Founding members $4.99/mo" messaging
+
+### v0.0.2 (2025-11-12)
+- **Blog System**: Complete Contentlayer setup with MDX blog posts
+- **Sample Content**: Three blog posts with scam prevention guides
+- **Blog Pages**: Index page and individual post pages with proper routing
+- **Content Management**: MDX support for rich blog content
+
+### v0.0.1 (2025-11-12)
+- **Next.js Migration**: Converted React component to Next.js 14 App Router
+- **TypeScript**: Full TypeScript implementation
+- **Tailwind CSS**: Complete styling system with custom design tokens
+- **Accessibility**: WCAG 2.1 AA compliance with font scaling and high contrast
+- **Google Analytics**: Modular GA4 integration
+- **Responsive Design**: Mobile-first approach with proper breakpoints
+
 ## 📝 To Do List
 
 ### High Priority

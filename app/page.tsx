@@ -107,7 +107,7 @@ export default function ScamBombLanding() {
       {/* Features */}
       <section id="features" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
         <HeaderEyebrow>Features</HeaderEyebrow>
-        <h2 className="text-3xl sm:text-4xl font-bold">Built for seniors, caregivers, and helpers</h2>
+        <h2 className="text-3xl sm:text-4xl font-bold">Built for everyone (55+ included!)</h2>
         <div className="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           <Card title="Plain-English explanations" icon={<Check />}>No tech-speak. We explain what's risky and why, in friendly language.</Card>
           <Card title="Link & sender checks" icon={<Check />}>Spot spoofed addresses, mismatched domains, and impersonation cues.</Card>
