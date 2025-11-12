@@ -81,7 +81,7 @@ export default function ScamBombLanding() {
                 <a id="cta" href="#pricing" className="rounded-2xl px-5 py-3 font-semibold" style={{ backgroundColor: brandYellow, color: "#0B1324" }}>
                   Get ProductHunt Launch Special — $4.99/mo
                 </a>
-                <a href="#demo" className="rounded-2xl px-5 py-3 border border-white/20 hover:bg-white/10">
+                <a href="https://app.scambomb.com" className="rounded-2xl px-5 py-3 border border-white/20 hover:bg-white/10">
                   Try a live demo
                 </a>
               </div>
@@ -165,7 +165,7 @@ export default function ScamBombLanding() {
             <p className="mt-2 text-white/80">Paste a suspicious message and see how ScamBomb explains it in seconds.</p>
             <div className="mt-6 flex gap-3">
               <a href="#pricing" className="rounded-2xl px-5 py-3 font-semibold" style={{ backgroundColor: brandYellow, color: "#0B1324" }}>Unlock full protection</a>
-              <a href="#" className="rounded-2xl px-5 py-3 border border-white/20 hover:bg-white/10">Open quick demo</a>
+              <a href="https://app.scambomb.com" className="rounded-2xl px-5 py-3 border border-white/20 hover:bg-white/10">Open quick demo</a>
             </div>
           </div>
           <ul className="space-y-3 text-white/80">
