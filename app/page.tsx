@@ -57,7 +57,7 @@ export default function ScamBombLanding() {
                 <button onClick={() => setFontScale((s) => Math.min(1.3, +(s + 0.1).toFixed(1)))} className="px-2 py-1 rounded-lg border text-sm hover:bg-white/10" aria-label="Increase text size">A+</button>
                 <button onClick={() => setHighContrast((v) => !v)} className="px-2 py-1 rounded-lg border text-sm hover:bg-white/10" aria-pressed={highContrast} aria-label="Toggle high contrast">HC</button>
               </div>
-              <a href="#cta" className="ml-2 rounded-2xl px-4 py-2 font-semibold" style={{ backgroundColor: brandYellow, color: "#0B1324" }}>
+              <a href="https://app.scambomb.com" className="ml-2 rounded-2xl px-4 py-2 font-semibold" style={{ backgroundColor: brandYellow, color: "#0B1324" }}>
                 Try it free
               </a>
             </div>
@@ -113,9 +113,9 @@ export default function ScamBombLanding() {
                 </div>
                 <div className="mt-4 flex items-center justify-between">
                   <span className="text-sm text-white/70">Plain-English results in seconds</span>
-                  <button className="rounded-xl px-4 py-2 font-semibold" style={{ backgroundColor: brandYellow, color: "#0B1324" }}>
+                  <a href="https://app.scambomb.com" className="inline-block rounded-xl px-4 py-2 font-semibold" style={{ backgroundColor: brandYellow, color: "#0B1324" }}>
                     Check a message →
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
@@ -181,9 +181,9 @@ export default function ScamBombLanding() {
         <HeaderEyebrow>Pricing</HeaderEyebrow>
         <h2 className="text-3xl sm:text-4xl font-bold">Simple, affordable protection</h2>
         <div className="mt-8 grid lg:grid-cols-3 gap-6">
-          <PriceCard highlight title="Founding Member" price="$4.99/mo" note="Lock in for life" cta="Start now" color={brandYellow} />
+          <PriceCard highlight title="Free Plan" price="Free" note="5 scans per month" cta="Get started" color={brandYellow} />
+          <PriceCard title="Pro Plan" price="$4.99/mo" note="Unlimited scans" cta="Upgrade now" color={brandYellow} />
           <PriceCard title="Family Plan" price="$9.99/mo" note="Covers up to 4 people" cta="Get family plan" color={brandYellow} />
-          <PriceCard title="Community" price="$29/mo" note="Libraries & senior centers" cta="Talk to us" color={brandYellow} />
         </div>
         <p className="mt-4 text-sm text-white/70">14-day money-back guarantee. Cancel anytime.</p>
       </section>
@@ -299,16 +299,27 @@ function Card({ title, icon, children }: { title: string; icon?: React.ReactNode
 }
 
 function PriceCard({ title, price, note, cta, color, highlight = false }: { title: string; price: string; note: string; cta: string; color: string; highlight?: boolean }) {
+  const isFree = price === "Free";
   return (
     <div className={`rounded-2xl p-6 border ${highlight ? "border-yellow-300 bg-white/10" : "border-white/10 bg-white/5"}`}>
       <h3 className="text-lg font-semibold">{title}</h3>
       <div className="mt-3 text-3xl font-extrabold">{price}</div>
       <p className="mt-1 text-white/70">{note}</p>
-      <button className="mt-5 w-full rounded-xl py-3 font-semibold" style={{ backgroundColor: color, color: "#0B1324" }}>{cta}</button>
+      <a href="https://app.scambomb.com" className="mt-5 w-full rounded-xl py-3 font-semibold inline-block text-center" style={{ backgroundColor: color, color: "#0B1324" }}>{cta}</a>
       <ul className="mt-4 space-y-2 text-sm text-white/80">
-        <li className="flex items-start gap-2"><Check /> Unlimited message checks</li>
-        <li className="flex items-start gap-2"><Check /> Plain-English results</li>
-        <li className="flex items-start gap-2"><Check /> Priority updates on new scams</li>
+        {isFree ? (
+          <>
+            <li className="flex items-start gap-2"><Check /> 5 scans per month</li>
+            <li className="flex items-start gap-2"><Check /> Plain-English results</li>
+            <li className="flex items-start gap-2"><Check /> Upgrade anytime</li>
+          </>
+        ) : (
+          <>
+            <li className="flex items-start gap-2"><Check /> Unlimited message checks</li>
+            <li className="flex items-start gap-2"><Check /> Plain-English results</li>
+            <li className="flex items-start gap-2"><Check /> Priority updates on new scams</li>
+          </>
+        )}
       </ul>
     </div>
   );
