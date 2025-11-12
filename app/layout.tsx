@@ -11,6 +11,9 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   title: 'ScamBomb - Stop scams in one click',
   description: 'Paste any text, email, or SMS. ScamBomb checks red flags, explains the risk in plain English, and tells you exactly what to do next.',
+  icons: {
+    icon: '/favicon.ico',
+  },
 }
 
 function UniversalHeader() {
