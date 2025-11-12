@@ -1,8 +1,5 @@
-"use client";
-
 import type { Metadata } from 'next'
 import { Montserrat } from 'next/font/google'
-import { useEffect, useState } from "react";
 import './globals.css'
 import GoogleAnalytics from '../components/GoogleAnalytics'
 
@@ -17,11 +14,7 @@ export const metadata: Metadata = {
 }
 
 function UniversalHeader() {
-  const [fontScale, setFontScale] = useState(1);
-  const [highContrast, setHighContrast] = useState(false);
-
-  const base = highContrast ? "bg-black text-white" : "bg-[#0B1324] text-white";
-  const brandYellow = highContrast ? "#FFD500" : "#F5C84C";
+  const brandYellow = "#F5C84C";
 
   return (
     <>
@@ -52,12 +45,6 @@ function UniversalHeader() {
               <a className="opacity-90 hover:opacity-100" href="/blog">Blog</a>
             </nav>
             <div className="flex items-center gap-2">
-              {/* Accessibility Toolbar */}
-              <div className="hidden sm:flex items-center gap-1" aria-label="Accessibility toolbar">
-                <button onClick={() => setFontScale((s) => Math.max(0.9, +(s - 0.1).toFixed(1)))} className="px-2 py-1 rounded-lg border text-sm hover:bg-white/10" aria-label="Decrease text size">A-</button>
-                <button onClick={() => setFontScale((s) => Math.min(1.3, +(s + 0.1).toFixed(1)))} className="px-2 py-1 rounded-lg border text-sm hover:bg-white/10" aria-label="Increase text size">A+</button>
-                <button onClick={() => setHighContrast((v) => !v)} className="px-2 py-1 rounded-lg border text-sm hover:bg-white/10" aria-pressed={highContrast} aria-label="Toggle high contrast">HC</button>
-              </div>
               <a href="https://app.scambomb.com" className="ml-2 rounded-2xl px-4 py-2 font-semibold" style={{ backgroundColor: brandYellow, color: "#0B1324" }}>
                 Try it free
               </a>
