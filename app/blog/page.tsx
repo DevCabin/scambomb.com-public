@@ -19,10 +19,9 @@ export default function BlogPage() {
   const posts = allPosts.sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
 
   return (
-    <div className="min-h-screen bg-[#0B1324] text-white py-16">
+    <div className="py-16">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <header className="text-center mb-16">
-          <Logo />
           <h1 className="text-4xl font-bold mb-4">Blog</h1>
           <p className="text-white/80 text-lg">Stay ahead of scams with our latest guides and alerts</p>
         </header>

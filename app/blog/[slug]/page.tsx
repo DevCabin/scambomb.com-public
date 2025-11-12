@@ -35,7 +35,7 @@ export default function PostPage({ params }: PageProps) {
   }
 
   return (
-    <div className="min-h-screen bg-[#0B1324] text-white py-16">
+    <div className="py-16">
       <article className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <header className="mb-8">
           <div className="text-xs font-semibold tracking-widest text-white/60 mb-2">
