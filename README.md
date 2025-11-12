@@ -113,6 +113,11 @@ scambomb.com-public/
 
 ## 📋 Changelog
 
+### v0.1.4 (2025-11-12)
+- **Favicon Added**: Custom favicon.ico for improved brand recognition in browser tabs
+- **Browser Identity**: Users now see ScamBomb branding when bookmarking or switching tabs
+- **Professional Polish**: Complete visual identity including favicon
+
 ### v0.1.3 (2025-11-12)
 - **Error Handling**: Added error.tsx component to fix "missing required error components" issue
 - **Next.js App Router**: Proper error boundary implementation for production stability
