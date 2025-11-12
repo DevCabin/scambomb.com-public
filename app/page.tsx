@@ -1,30 +1,10 @@
-"use client";
-
-import { useEffect, useState } from "react";
-
 export default function ScamBombLanding() {
-  const [fontScale, setFontScale] = useState(1);
-  const [highContrast, setHighContrast] = useState(false);
-  const [reducedMotion, setReducedMotion] = useState(false);
-
-  useEffect(() => {
-    const media = window.matchMedia("(prefers-reduced-motion: reduce)");
-    setReducedMotion(media.matches);
-    const handler = () => setReducedMotion(media.matches);
-    media.addEventListener("change", handler);
-    return () => media.removeEventListener("change", handler);
-  }, []);
-
-  const base = highContrast ? "bg-black text-white" : "bg-[#0B1324] text-white"; // Navy default
-  const brandYellow = highContrast ? "#FFD500" : "#F5C84C";
-  const brandBorder = highContrast ? "border-white/80" : "border-white/20";
-
-  const scaleClass = {
-    0.9: "text-[0.9rem]", 1: "text-base", 1.1: "text-[1.1rem]", 1.2: "text-[1.2rem]", 1.3: "text-[1.3rem]",
-  }[Number(fontScale.toFixed(1))] || "text-base";
+  const base = "bg-[#0B1324] text-white"; // Navy default
+  const brandYellow = "#F5C84C";
+  const brandBorder = "border-white/20";
 
   return (
-    <div className={`${base} ${scaleClass} antialiased`}>
+    <div className={`${base} antialiased`}>
 
       {/* Hero */}
       <section id="hero" className="relative overflow-hidden">
