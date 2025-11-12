@@ -10,12 +10,12 @@ interface PageProps {
 
 export async function generateStaticParams() {
   return allPosts.map((post) => ({
-    slug: post._raw.flattenedPath,
+    slug: post._raw.flattenedPath.replace('blog/', ''),
   }))
 }
 
 export async function generateMetadata({ params }: PageProps) {
-  const post = allPosts.find((post) => post._raw.flattenedPath === params.slug)
+  const post = allPosts.find((post) => post._raw.flattenedPath === `blog/${params.slug}`)
 
   if (!post) {
     return {}
@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: PageProps) {
 }
 
 export default function PostPage({ params }: PageProps) {
-  const post = allPosts.find((post) => post._raw.flattenedPath === params.slug)
+  const post = allPosts.find((post) => post._raw.flattenedPath === `blog/${params.slug}`)
 
   if (!post) {
     notFound()
