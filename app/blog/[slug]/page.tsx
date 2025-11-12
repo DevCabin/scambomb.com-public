@@ -53,7 +53,24 @@ export default function PostPage({ params }: PageProps) {
         </header>
 
         <div className="prose prose-invert prose-lg max-w-none">
-          <div dangerouslySetInnerHTML={{ __html: post.body.code }} />
+          {post.body.raw.split('\n').map((line, i) => {
+            if (line.startsWith('# ')) {
+              return <h1 key={i} className="text-3xl font-bold mb-4">{line.slice(2)}</h1>
+            } else if (line.startsWith('## ')) {
+              return <h2 key={i} className="text-2xl font-semibold mb-3 mt-6">{line.slice(3)}</h2>
+            } else if (line.startsWith('1. ')) {
+              return <li key={i} className="mb-1 list-decimal list-inside">{line.slice(3)}</li>
+            } else if (line.startsWith('- ')) {
+              return <li key={i} className="mb-1 list-disc list-inside">{line.slice(2)}</li>
+            } else if (line.trim() === '') {
+              return <br key={i} />
+            } else if (line.trim()) {
+              // Handle bold text with **text**
+              const processedLine = line.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+              return <p key={i} className="mb-4" dangerouslySetInnerHTML={{ __html: processedLine }} />
+            }
+            return null
+          })}
         </div>
 
         <footer className="mt-12 pt-8 border-t border-white/10">
