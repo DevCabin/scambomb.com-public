@@ -185,7 +185,7 @@ export default function ScamBombLanding() {
           <PriceCard title="Pro Plan" price="$4.99/mo" note="Unlimited scans" cta="Upgrade now" color={brandYellow} />
           <PriceCard title="Annual Plan" price="$49.99" note="One full year of protection" cta="Save with annual" color={brandYellow} />
         </div>
-        <p className="mt-4 text-sm text-white/70">14-day money-back guarantee. Cancel anytime.</p>
+        <p className="mt-4 text-sm text-white/70">No strings attached, "cancel any time for any reason" guarantee.</p>
       </section>
 
       {/* Testimonials */}
