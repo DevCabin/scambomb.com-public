@@ -183,7 +183,7 @@ export default function ScamBombLanding() {
         <div className="mt-8 grid lg:grid-cols-3 gap-6">
           <PriceCard highlight title="Free Plan" price="Free" note="5 scans per month" cta="Get started" color={brandYellow} />
           <PriceCard title="Pro Plan" price="$4.99/mo" note="Unlimited scans" cta="Upgrade now" color={brandYellow} />
-          <PriceCard title="Family Plan" price="$9.99/mo" note="Covers up to 4 people" cta="Get family plan" color={brandYellow} />
+          <PriceCard title="Annual Plan" price="$49.99" note="One full year of protection" cta="Save with annual" color={brandYellow} />
         </div>
         <p className="mt-4 text-sm text-white/70">14-day money-back guarantee. Cancel anytime.</p>
       </section>
