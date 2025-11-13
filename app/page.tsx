@@ -123,8 +123,8 @@ export default function ScamBombLanding() {
         <h2 className="text-3xl sm:text-4xl font-bold">Simple, affordable protection</h2>
         <div className="mt-8 grid lg:grid-cols-3 gap-6">
           <PriceCard highlight title="Free Plan" price="Free" note="5 scans per month" cta="Get started" color={brandYellow} />
-          <PriceCard title="Pro Plan" price="$4.99/mo" note="Unlimited scans" cta="Upgrade now" color={brandYellow} />
-          <PriceCard title="Annual Plan" price="$49.99" note="One full year of protection" cta="Save with annual" color={brandYellow} />
+          <PriceCard title="Pro Plan" price="$4.99/mo" note="Unlimited scans" cta="Upgrade now" color={brandYellow} href="https://buy.stripe.com/9B6dR8adkavl1BsdneejK00" />
+          <PriceCard title="Annual Plan" price="$49.99" note="One full year of protection" cta="Save with annual" color={brandYellow} href="https://buy.stripe.com/dRmcN41GOfPFdka82UejK01" />
         </div>
         <p className="mt-4 text-sm text-white/70">No strings attached, "cancel any time for any reason" guarantee.</p>
       </section>
@@ -204,14 +204,14 @@ function Card({ title, icon, children }: { title: string; icon?: React.ReactNode
   );
 }
 
-function PriceCard({ title, price, note, cta, color, highlight = false }: { title: string; price: string; note: string; cta: string; color: string; highlight?: boolean }) {
+function PriceCard({ title, price, note, cta, color, highlight = false, href }: { title: string; price: string; note: string; cta: string; color: string; highlight?: boolean; href?: string }) {
   const isFree = price === "Free";
   return (
     <div className={`rounded-2xl p-6 border ${highlight ? "border-yellow-300 bg-white/10" : "border-white/10 bg-white/5"}`}>
       <h3 className="text-lg font-semibold">{title}</h3>
       <div className="mt-3 text-3xl font-extrabold">{price}</div>
       <p className="mt-1 text-white/70">{note}</p>
-      <a href="https://app.scambomb.com" className="mt-5 w-full rounded-xl py-3 font-semibold inline-block text-center" style={{ backgroundColor: color, color: "#0B1324" }}>{cta}</a>
+      <a href={href || "https://app.scambomb.com"} className="mt-5 w-full rounded-xl py-3 font-semibold inline-block text-center" style={{ backgroundColor: color, color: "#0B1324" }}>{cta}</a>
       <ul className="mt-4 space-y-2 text-sm text-white/80">
         {isFree ? (
           <>

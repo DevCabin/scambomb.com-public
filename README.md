@@ -113,6 +113,11 @@ scambomb.com-public/
 
 ## 📋 Changelog
 
+### v0.1.7 (2025-11-13)
+- **Stripe Integration**: Linked buy buttons to Stripe payment links for Pro Plan and Annual Plan
+- **Payment Processing**: Direct integration with Stripe checkout for subscription purchases
+- **User Experience**: Seamless payment flow from pricing cards to Stripe checkout
+
 ### v0.1.6 (2025-11-12)
 - **Configuration Cleanup**: Removed deprecated `experimental.appDir` from next.config.js
 - **Warning Elimination**: Cleaned up Next.js console warnings for cleaner development
