@@ -1,5 +1,6 @@
 'use client';
 
+import { signIn } from 'next-auth/react';
 import AppAccessLink from './AppAccessLink';
 
 function UniversalHeader() {
@@ -41,6 +42,12 @@ function UniversalHeader() {
               >
                 Try it free
               </AppAccessLink>
+              <button
+                onClick={() => signIn('google')}
+                className="rounded-2xl px-4 py-2 font-semibold border border-white/20 hover:bg-white/10 transition-colors"
+              >
+                Sign In
+              </button>
             </div>
           </div>
         </div>
