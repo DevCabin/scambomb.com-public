@@ -44,10 +44,10 @@ function UniversalFooter() {
         </div>
         <div>
           <h4 className="font-semibold">Newsletter</h4>
-          <form className="mt-2 flex gap-2" aria-label="Subscribe to newsletter">
+          <form className="mt-2 flex gap-2" action="https://formspree.io/f/YOUR-NEWSLETTER-FORM-ID" method="POST" aria-label="Subscribe to newsletter">
             <label htmlFor="email" className="sr-only">Email</label>
-            <input id="email" name="email" type="email" required className="min-w-0 flex-1 rounded-xl border border-white/20 bg-white/10 px-3 py-2 placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-yellow-300" placeholder="you@example.com" />
-            <button className="rounded-xl px-4 py-2 font-semibold bg-[#F5C84C] text-[#0B1324] hover:bg-[#F5C84C]/90">Subscribe</button>
+            <input id="newsletter-email" name="email" type="email" required className="min-w-0 flex-1 rounded-xl border border-white/20 bg-white/10 px-3 py-2 placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-yellow-300" placeholder="you@example.com" />
+            <button type="submit" className="rounded-xl px-4 py-2 font-semibold bg-[#F5C84C] text-[#0B1324] hover:bg-[#F5C84C]/90">Subscribe</button>
           </form>
           <p className="mt-2 text-white/60">We send 1–2 emails/month. No spam.</p>
         </div>
