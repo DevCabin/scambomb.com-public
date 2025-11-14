@@ -2,7 +2,6 @@
 
 import { getProviders, signIn } from 'next-auth/react';
 import { useEffect, useState } from 'react';
-import AppAccessLink from '../../components/AppAccessLink';
 
 export default function SignIn() {
   const [providers, setProviders] = useState<any>(null);
@@ -52,12 +51,7 @@ export default function SignIn() {
 
           <div className="mt-6 pt-4 border-t border-white/10">
             <p className="text-sm text-white/60 text-center">
-              Don't have an account? <AppAccessLink
-                className="text-yellow-400 hover:underline"
-                fallbackText="Try a demo first"
-              >
-                Try a demo first
-              </AppAccessLink>
+              Don't have an account? <a href="/" className="text-yellow-400 hover:underline">Try a demo first</a>
             </p>
           </div>
         </div>
