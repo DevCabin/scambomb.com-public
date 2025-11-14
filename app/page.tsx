@@ -159,7 +159,7 @@ export default function ScamBombLanding() {
           {[
             { q: "Do you sell my data?", a: "No. We never sell or share your data with advertisers. You can also turn on anonymous mode." },
             { q: "Does it work on my phone?", a: "Yes. Use your mobile browser to paste messages or open the quick demo." },
-            { q: "Can I cancel anytime?", a: "Absolutely. Subscriptions are month-to-month with a 14-day money-back guarantee." },
+            { q: "Can I cancel anytime?", a: "Absolutely. Subscriptions are month-to-month with a \"No strings attached, 'cancel any time for any reason'\" guarantee." },
           ].map((item, i) => (
             <div key={i} className="p-5">
               <dt className="font-semibold">{item.q}</dt>
