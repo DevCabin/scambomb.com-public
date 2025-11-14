@@ -105,9 +105,9 @@ scambomb.com-public/
 - [x] Custom logo implementation
 - [x] ProductHunt launch messaging
 - [x] Vercel deployment ready
-- [x] **Fingerprinting System**: SBID generation for user tracking to App
-- [x] **App Access Logic**: Direct links to app.scambomb.com with user fingerprinting
-- [x] **Seamless Auth Handoff**: Authenticated users get seamless access to main app with NextAuth token passing
+- [x] **Simple App Access**: Direct links to app.scambomb.com with SBID fingerprinting
+- [x] **Clean Architecture**: Marketing site without authentication complexity
+- [x] **5 Free Searches**: Anonymous app access via fingerprinting
 
 ### 🚧 Known Issues
 - Blog post rendering needs refinement
@@ -115,6 +115,13 @@ scambomb.com-public/
 - Contentlayer configuration may need optimization
 
 ## 📋 Changelog
+
+### v0.1.10 (2025-11-14)
+- **Architectural Simplification**: Complete removal of authentication from marketing website
+- **Clean Separation**: Marketing site (no auth) → App (full auth & billing)
+- **SBID Fingerprinting**: Anonymous app access with unique identifiers for 5 free searches
+- **Dependency Cleanup**: Removed NextAuth.js complexity, simplified to pure marketing site
+- **Streamlined UX**: Direct app access without competing authentication systems
 
 ### v0.1.9 (2025-11-13)
 - **Seamless Authentication Handoff**: Authenticated users now get seamless access to main app without re-authentication
@@ -283,14 +290,6 @@ npm start
 ```env
 # Google Analytics (optional)
 NEXT_PUBLIC_GA_MEASUREMENT_ID=G-T61B4NX3J8
-
-# NextAuth.js Configuration (required for authentication)
-NEXTAUTH_SECRET=your-random-secret-key-here-32-chars-minimum
-NEXTAUTH_URL=https://www.scambomb.com
-
-# Google OAuth (required for authentication)
-GOOGLE_CLIENT_ID=your-google-oauth-client-id
-GOOGLE_CLIENT_SECRET=your-google-oauth-client-secret
 ```
 
 **✅ Status**: Environment variables configured in Vercel deployment.
