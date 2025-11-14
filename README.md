@@ -105,10 +105,8 @@ scambomb.com-public/
 - [x] Custom logo implementation
 - [x] ProductHunt launch messaging
 - [x] Vercel deployment ready
-- [x] **User Authentication**: Google OAuth integration with NextAuth.js
-- [x] **Fingerprinting System**: SBID generation for user tracking across site and app
-- [x] **Profile Management**: User dashboard with usage statistics and account management
-- [x] **API Endpoints**: Authentication and user stats APIs
+- [x] **Fingerprinting System**: SBID generation for user tracking to App
+- [x] **App Access Logic**: Direct links to app.scambomb.com with user fingerprinting
 - [x] **Seamless Auth Handoff**: Authenticated users get seamless access to main app with NextAuth token passing
 
 ### 🚧 Known Issues

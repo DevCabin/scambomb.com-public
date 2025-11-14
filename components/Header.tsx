@@ -1,8 +1,5 @@
 'use client';
 
-import { signIn } from 'next-auth/react';
-import AppAccessLink from './AppAccessLink';
-
 function UniversalHeader() {
   const brandYellow = "#F5C84C";
 
@@ -35,19 +32,13 @@ function UniversalHeader() {
               <a className="opacity-90 hover:opacity-100" href="/blog">Blog</a>
             </nav>
             <div className="flex items-center gap-2">
-              <AppAccessLink
+              <a
+                href={`https://app.scambomb.com/?safe_source=true&SBID=${crypto.randomUUID()}`}
                 className="ml-2 rounded-2xl px-4 py-2 font-semibold"
                 style={{ backgroundColor: brandYellow, color: "#0B1324" }}
-                fallbackText="Try it free"
               >
                 Try it free
-              </AppAccessLink>
-              <button
-                onClick={() => signIn('google')}
-                className="rounded-2xl px-4 py-2 font-semibold border border-white/20 hover:bg-white/10 transition-colors"
-              >
-                Sign In
-              </button>
+              </a>
             </div>
           </div>
         </div>

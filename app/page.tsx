@@ -1,10 +1,8 @@
-import { useAppAccessUrl } from '../utils/access';
-
 export default function ScamBombLanding() {
   const base = "bg-[#0B1324] text-white"; // Navy default
   const brandYellow = "#F5C84C";
   const brandBorder = "border-white/20";
-  const appUrl = useAppAccessUrl();
+  const appUrl = `https://app.scambomb.com/?safe_source=true&SBID=${crypto.randomUUID()}`;
 
   return (
     <div className={`${base} antialiased`}>

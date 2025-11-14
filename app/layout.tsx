@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import { Montserrat } from 'next/font/google'
 import './globals.css'
 import GoogleAnalytics from '../components/GoogleAnalytics'
-import { SessionProvider } from '../components/SessionProvider'
 import Header from '../components/Header'
 
 const montserrat = Montserrat({
@@ -80,13 +79,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${montserrat.variable} font-montserrat bg-[#0B1324] text-white min-h-screen antialiased selection:bg-yellow-300/30`}>
         <GoogleAnalytics measurementId="G-T61B4NX3J8" />
-        <SessionProvider>
-          <Header />
-          <main id="main">
-            {children}
-          </main>
-          <UniversalFooter />
-        </SessionProvider>
+        <Header />
+        <main id="main">
+          {children}
+        </main>
+        <UniversalFooter />
       </body>
     </html>
   )
