@@ -14,7 +14,7 @@ export default function ScamBombLanding() {
           <div className="grid lg:grid-cols-2 gap-10 items-center">
             <div>
               <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight">
-                Stop scams in <span style={{ color: brandYellow }}>one click</span>.
+                Defuse Scams...<br/>Before they <span style={{ color: brandYellow }}>blow up in your face.</span>
               </h1>
               <p className="mt-4 max-w-xl text-white/80">
                 Paste any text, email, or SMS. ScamBomb checks red flags, explains the risk in plain English, and tells you exactly what to do next.
@@ -66,11 +66,11 @@ export default function ScamBombLanding() {
       </section>
 
       {/* Trust bar */}
-      <section aria-label="Trust signals" className="border-y border-white/10">
+      <section aria-label="Trust signals" className="border-y border-black/20" style={{ backgroundColor: brandYellow, color: "#0B1324" }}>
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 grid sm:grid-cols-3 gap-4 text-center">
-          <TrustItem title="Privacy-first" text="Your checks aren't sold to advertisers." />
+          <TrustItem title="Privacy-first" text="We don't sell info to third parties. Ever." />
           <TrustItem title="Human-friendly" text="No jargon. Clear next steps." />
-          <TrustItem title="Always improving" text="New scam patterns added weekly." />
+          <TrustItem title="Always improving" text="New scam patterns added monthly." />
         </div>
       </section>
 
@@ -103,7 +103,7 @@ export default function ScamBombLanding() {
       <section id="demo" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
         <div className={`rounded-2xl border ${brandBorder} bg-white/5 p-6 lg:p-10 grid lg:grid-cols-2 gap-8 items-center`}>
           <div>
-            <h3 className="text-2xl font-bold">Try the demo — no signup</h3>
+            <h3 className="text-2xl font-bold">Try the demo — no signup required!</h3>
             <p className="mt-2 text-white/80">Paste a suspicious message and see how ScamBomb explains it in seconds.</p>
             <div className="mt-6 flex gap-3">
               <a href="#pricing" className="rounded-2xl px-5 py-3 font-semibold" style={{ backgroundColor: brandYellow, color: "#0B1324" }}>Unlock full protection</a>
@@ -112,7 +112,7 @@ export default function ScamBombLanding() {
           </div>
           <ul className="space-y-3 text-white/80">
             <li className="flex items-start gap-3"><Check /> No email needed for demo</li>
-            <li className="flex items-start gap-3"><Check /> Works with screenshots (coming soon)</li>
+            <li className="flex items-start gap-3"><Check /> Works with screenshots</li>
             <li className="flex items-start gap-3"><Check /> Share results with family in one click</li>
           </ul>
         </div>
@@ -130,22 +130,22 @@ export default function ScamBombLanding() {
         <p className="mt-4 text-sm text-white/70">No strings attached, "cancel any time for any reason" guarantee.</p>
       </section>
 
-      {/* Testimonials */}
-      <section aria-label="Testimonials" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+      {/* Testimonials (hidden) */}
+      {/* <section aria-label="Testimonials" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
         <HeaderEyebrow>What people say</HeaderEyebrow>
         <div className="grid md:grid-cols-2 gap-6">
           <Quote text="ScamBomb helped my mom avoid a fake Medicare call. The instructions were crystal clear." author="— Dana, caregiver" />
           <Quote text="I finally feel confident checking messages by myself. It's like having a tech-savvy friend on call." author="— Michael, 72" />
         </div>
-      </section>
+      </section> */}
 
       {/* Blog preview */}
       <section id="blog" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
         <HeaderEyebrow>From the blog</HeaderEyebrow>
         <div className="grid md:grid-cols-3 gap-6">
-          <PostCard tag="GUIDE" title="How to spot fake bank texts in 30 seconds" slug="how-to-spot-fake-bank-texts-in-30-seconds" />
-          <PostCard tag="ALERT" title="New USPS delivery scam: what to do" slug="new-usps-delivery-scam-what-to-do" />
-          <PostCard tag="HOW-TO" title="Three questions to ask before you click" slug="three-questions-to-ask-before-you-click" />
+          <PostCard tag="GUIDE" title="How to spot fake bank texts in 30 seconds" slug="how-to-spot-fake-bank-texts-in-30-seconds" excerpt="Spot common red flags in banking texts to protect your money." />
+          <PostCard tag="ALERT" title="New USPS delivery scam: what to do" slug="new-usps-delivery-scam-what-to-do" excerpt="Stay informed on the latest USPS scams and how to respond safely." />
+          <PostCard tag="HOW-TO" title="Three questions to ask before you click" slug="three-questions-to-ask-before-you-click" excerpt="Learn practical questions to evaluate suspicious links before clicking." />
         </div>
         <div className="mt-6">
           <a href="/blog" className="underline decoration-white/40 underline-offset-4 hover:decoration-white">Read all posts</a>
@@ -157,13 +157,13 @@ export default function ScamBombLanding() {
         <HeaderEyebrow>FAQ</HeaderEyebrow>
         <dl className="divide-y divide-white/10 rounded-2xl border border-white/10 bg-white/5">
           {[
-            { q: "Do you sell my data?", a: "No. We never sell or share your data with advertisers. You can also turn on anonymous mode." },
-            { q: "Does it work on my phone?", a: "Yes. Use your mobile browser to paste messages or open the quick demo." },
+            { q: "Do you sell my data?", a: "Short answer: Never.\n\nLong answer: We collect only the bare minimum amount of information to allow this service to function. Any potential scam message that is uploaded for testing, text or image, is NOT stored or logged. It is not used for training purposes. It is certainly not sold. You can rest assured anything you share with us ... is kept between us." },
+            { q: "Does it work on my phone?", a: "Yes, you may use your mobile device to paste messages or even upload a screenshot of a message." },
             { q: "Can I cancel anytime?", a: "Absolutely. Subscriptions are month-to-month with a \"No strings attached, 'cancel any time for any reason'\" guarantee." },
           ].map((item, i) => (
             <div key={i} className="p-5">
               <dt className="font-semibold">{item.q}</dt>
-              <dd className="mt-2 text-white/80">{item.a}</dd>
+              <dd className="mt-2 text-white/80" dangerouslySetInnerHTML={{ __html: item.a.split('\n\n').join('<br/><br/>') }}></dd>
             </div>
           ))}
         </dl>
@@ -232,12 +232,12 @@ function PriceCard({ title, price, note, cta, color, highlight = false, href }: 
   );
 }
 
-function PostCard({ tag, title, slug }: { tag: string; title: string; slug: string }) {
+function PostCard({ tag, title, slug, excerpt }: { tag: string; title: string; slug: string; excerpt?: string }) {
   return (
     <article className="rounded-2xl border border-white/10 bg-white/5 p-5">
       <div className="text-xs font-semibold tracking-widest text-white/60">{tag}</div>
       <h3 className="mt-2 font-semibold">{title}</h3>
-      <p className="mt-2 text-white/80">Short, friendly explanations you can share with family or seniors you support.</p>
+      <p className="mt-2 text-white/80">{excerpt || "Short, friendly explanations you can share with family or seniors you support."}</p>
       <a href={`/blog/${slug}`} className="mt-3 inline-block rounded-lg border border-white/20 px-3 py-2 hover:bg-white/10">Read</a>
     </article>
   );
@@ -255,8 +255,8 @@ function Quote({ text, author }: { text: string; author: string }) {
 function TrustItem({ title, text }: { title: string; text: string }) {
   return (
     <div>
-      <div className="text-lg font-semibold">{title}</div>
-      <div className="text-white/80">{text}</div>
+      <div style={{ textTransform: "uppercase", fontWeight: "bold", fontSize: "1.75rem", lineHeight: "2rem" }}>{title}</div>
+      <div className="text-black/80">{text}</div>
     </div>
   );
 }

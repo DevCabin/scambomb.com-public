@@ -1,4 +1,4 @@
-# ScamBomb.com - Stop Scams in One Click
+# ScamBomb.com - Defuse Scams. Before they blow up in your face.
 
 ## 🎯 Mission & Goals
 
@@ -115,6 +115,15 @@ scambomb.com-public/
 - Contentlayer configuration may need optimization
 
 ## 📋 Changelog
+
+### v1.0.0 (2025-11-14)
+- **Launch Version**: Bumped to 1.0.0 for official product launch
+- **Headline Update**: Changed from "Stop scams in one click" to "Defuse Scams. Before they blow up in your face."
+- **Trust Bar Redesign**: Yellow background with navy text, larger uppercase titles
+- **FAQ Enhancements**: Updated privacy answer with detailed data handling explanation
+- **Blog Improvements**: Unique excerpts for all three blog posts instead of generic text
+- **Content Polish**: Screenshots feature activated, testimonials temporarily hidden
+- **Design Refinements**: Custom CSS for trust bar typography and layout improvements
 
 ### v0.1.10 (2025-11-14)
 - **Architectural Simplification**: Complete removal of authentication from marketing website
