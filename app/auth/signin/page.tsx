@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 
 export default function SignIn() {
   const [providers, setProviders] = useState<any>(null);
+  const [appUrl, setAppUrl] = useState('https://app.scambomb.com');
 
   useEffect(() => {
     const getProvidersData = async () => {
@@ -12,7 +13,13 @@ export default function SignIn() {
       setProviders(providers);
     };
     getProvidersData();
+
+    // Generate simple app URL with fingerprint (works without imports)
+    const sbid = crypto.randomUUID();
+    setAppUrl(`https://app.scambomb.com/?safe_source=true&SBID=${sbid}`);
   }, []);
+
+  // Already handled above
 
   const brandYellow = "#F5C84C";
 
@@ -51,7 +58,7 @@ export default function SignIn() {
 
           <div className="mt-6 pt-4 border-t border-white/10">
             <p className="text-sm text-white/60 text-center">
-              Don't have an account? <a href="/" className="text-yellow-400 hover:underline">Try a demo first</a>
+              Don't have an account? <a href={appUrl} className="text-yellow-400 hover:underline">Try a demo first</a>
             </p>
           </div>
         </div>
