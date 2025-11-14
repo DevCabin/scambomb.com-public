@@ -140,13 +140,6 @@ export default function AboutPage() {
             </div>
           </div>
 
-          {/* CTA */}
-          <div className="text-center mb-12">
-            <a href="/" className="inline-block rounded-2xl px-8 py-4 bg-[#F5C84C] font-bold text-[#0B1324] hover:bg-[#F5C84C]/90 transition-colors">
-              Try SafeMessage AI Today →
-            </a>
-          </div>
-
           {/* Closing */}
           <div className="text-center">
             <h2 className="text-2xl font-bold mb-6 text-[#F5C84C]">Thank You for Being Here</h2>
