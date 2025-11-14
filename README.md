@@ -278,6 +278,14 @@ npm start
 ```env
 # Google Analytics (optional)
 NEXT_PUBLIC_GA_MEASUREMENT_ID=G-T61B4NX3J8
+
+# NextAuth.js Configuration (required for authentication)
+NEXTAUTH_SECRET=your-secret-key-here
+NEXTAUTH_URL=https://www.scambomb.com
+
+# Google OAuth (required for authentication)
+GOOGLE_CLIENT_ID=your-google-client-id
+GOOGLE_CLIENT_SECRET=your-google-client-secret
 ```
 
 ## 🤝 Contributing
