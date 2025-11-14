@@ -1,11 +1,12 @@
 'use client';
 
-import { getProviders, signIn } from 'next-auth/react';
+import { getProviders, signIn, useSession } from 'next-auth/react';
 import { useEffect, useState } from 'react';
 
 export default function SignIn() {
   const [providers, setProviders] = useState<any>(null);
   const [appUrl, setAppUrl] = useState('https://app.scambomb.com');
+  const { data: session, status } = useSession();
 
   useEffect(() => {
     const getProvidersData = async () => {
@@ -16,10 +17,18 @@ export default function SignIn() {
 
     // Generate simple app URL with fingerprint (works without imports)
     const sbid = crypto.randomUUID();
-    setAppUrl(`https://app.scambomb.com/?safe_source=true&SBID=${sbid}`);
-  }, []);
+    setAppUrl(`https://app.scambomb.com/?safe_source=true&SBID=${sbid}&access_token=${session?.accessToken || ''}`);
+  }, [session?.accessToken]);
 
-  // Already handled above
+  // Auto-redirect to app if user is authenticated
+  useEffect(() => {
+    if (status === 'authenticated' && session) {
+      // Generate authenticated app URL and redirect
+      const sbid = crypto.randomUUID();
+      const authenticatedUrl = `https://app.scambomb.com/?safe_source=true&SBID=${sbid}&access_token=${session.accessToken}`;
+      window.location.href = authenticatedUrl;
+    }
+  }, [status, session]);
 
   const brandYellow = "#F5C84C";
 
