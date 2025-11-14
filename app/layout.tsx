@@ -49,7 +49,7 @@ function UniversalFooter() {
             <input id="newsletter-email" name="email" type="email" required className="min-w-0 flex-1 rounded-xl border border-white/20 bg-white/10 px-3 py-2 placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-yellow-300" placeholder="you@example.com" />
             <button type="submit" className="rounded-xl px-4 py-2 font-semibold bg-[#F5C84C] text-[#0B1324] hover:bg-[#F5C84C]/90">Subscribe</button>
           </form>
-          <p className="mt-2 text-white/60">We send 1–2 emails/month. No spam.</p>
+          <p className="mt-2 text-white/60">Cutting edge safety tips, once or twice a month. No spam. No scams!</p>
         </div>
       </div>
       <div className="border-t border-white/10 py-6 text-center text-xs text-white/60">© {new Date().getFullYear()} ScamBomb.com — All rights reserved.</div>
