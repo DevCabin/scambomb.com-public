@@ -19,13 +19,19 @@ export default function ScamBombLanding() {
               <p className="mt-4 max-w-xl text-white/80">
                 Paste any text, email, or SMS. ScamBomb checks red flags, explains the risk in plain English, and tells you exactly what to do next.
               </p>
-              <div className="mt-6 flex flex-wrap gap-3">
-                <a id="cta" href="#pricing" className="rounded-2xl px-5 py-3 font-semibold" style={{ backgroundColor: brandYellow, color: "#0B1324" }}>
-                  Get ProductHunt Launch Special — $4.99/mo
+              <div className="mt-6 text-left">
+                <a id="cta" href="#pricing" className="rounded-2xl px-5 py-3 font-semibold inline-block" style={{ backgroundColor: brandYellow, color: "#0B1324" }}>
+                  Get Unlimited access for only $4.99 a month!
                 </a>
-                <a href={appUrl} className="rounded-2xl px-5 py-3 border border-white/20 hover:bg-white/10">
-                  Try a live demo
-                </a>
+                <div className="my-6">
+                  <span className="text-2xl font-bold" style={{ color: brandYellow }}>OR</span>
+                </div>
+                <div>
+                  <a href={appUrl} className="rounded-2xl px-5 py-3 border border-white/20 hover:bg-white/10 inline-block animate-pulse" style={{ border: "1px dashed #F5C84C", boxShadow: "0 0 20px rgba(245, 196, 76, 0.9)" }}>
+                    Try Now Free
+                  </a>
+                  <p className="mt-2 text-sm text-white/80">No sign up required, instant access!</p>
+                </div>
               </div>
               <ul className="mt-6 grid grid-cols-2 gap-3 text-sm text-white/75">
                 <li className="flex items-center gap-2"><Check /> No ads, no data selling</li>
@@ -38,13 +44,13 @@ export default function ScamBombLanding() {
               <div className={`rounded-2xl border ${brandBorder} bg-white/5 p-4 sm:p-6`}>
                 <div className="text-sm text-white/80 mb-2">Example message</div>
                 <div className="rounded-xl bg-white text-black p-4 sm:p-5 shadow-lg">
-                  <p className="text-sm sm:text-base">"Your bank account has been locked. Click this link in 15 minutes to avoid permanent closure."</p>
+                  <p className="text-sm sm:text-base">"URGENT! Your bank account has been locked. Click this link immediately to avoid permanent closure."</p>
                 </div>
                 <div className="mt-4 text-sm text-white/80">ScamBomb analysis</div>
                 <div className="mt-1 rounded-xl border border-black/10 bg-black/20 p-4">
                   <ul className="list-disc ml-5 space-y-2 text-white/90">
-                    <li>Urgency tactic detected ("15 minutes").</li>
-                    <li>Suspicious link (domain doesn't match your bank).</li>
+                    <li>Urgency tactic detected ("immediately").</li>
+                    <li>Suspicious link (domain doesn't match official site).</li>
                     <li>Requests action outside official app/website.</li>
                   </ul>
                   <div className="mt-3 rounded-lg bg-[#0B1324] p-3" style={{ border: `1px dashed ${brandYellow}` }}>
@@ -86,17 +92,21 @@ export default function ScamBombLanding() {
       </section>
 
       {/* Features */}
-      <section id="features" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
-        <HeaderEyebrow>Features</HeaderEyebrow>
-        <h2 className="text-3xl sm:text-4xl font-bold">Built for everyone (55+ included!)</h2>
-        <div className="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <Card title="Plain-English explanations" icon={<Check />}>No tech-speak. We explain what's risky and why, in friendly language.</Card>
-          <Card title="Link & sender checks" icon={<Check />}>Spot spoofed addresses, mismatched domains, and impersonation cues.</Card>
-          <Card title="Copy-paste simple" icon={<Check />}>Works on any device—no install required. Just paste and check.</Card>
-          <Card title="Privacy-first" icon={<Check />}>We don't sell data. Ever. Turn on anonymous mode in one click.</Card>
-          <Card title="Guided next steps" icon={<Check />}>Unsure what to do? We give you a safe path with scripts you can use.</Card>
-          <Card title="Learning hub" icon={<Check />}>Weekly blog + short videos to stay ahead of new scams.</Card>
+      <section id="features" className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16" style={{ backgroundImage: "url('/wide_bomb_banner_2_min.png')", backgroundSize: "cover", backgroundAttachment: "fixed" }}>
+        <div className="relative z-10">
+          <HeaderEyebrow>Features</HeaderEyebrow>
+          <h2 className="text-3xl sm:text-4xl font-bold">Built for everyone (55+ included!)</h2>
+          <div className="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <Card title="Plain-English explanations" icon={<Check />}>No tech-speak. We explain what's risky and why, in friendly language.</Card>
+            <Card title="Link & sender checks" icon={<Check />}>Spot spoofed addresses, mismatched domains, and impersonation cues.</Card>
+            <Card title="Copy-paste simple" icon={<Check />}>Works on any device—no install required. Just paste and check.</Card>
+            <Card title="Privacy-first" icon={<Check />}>We don't sell data. Ever. Turn on anonymous mode in one click.</Card>
+            <Card title="Guided next steps" icon={<Check />}>Unsure what to do? We give you a safe path with scripts you can use.</Card>
+            <Card title="Learning hub" icon={<Check />}>Weekly blog + short videos to stay ahead of new scams.</Card>
+          </div>
         </div>
+        {/* Heavy Overlay */}
+        <div className="absolute inset-0 bg-[#0B1324] opacity-70 pointer-events-none z-0"></div>
       </section>
 
       {/* Demo CTA */}
@@ -153,20 +163,24 @@ export default function ScamBombLanding() {
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16">
-        <HeaderEyebrow>FAQ</HeaderEyebrow>
-        <dl className="divide-y divide-white/10 rounded-2xl border border-white/10 bg-white/5">
-          {[
-            { q: "Do you sell my data?", a: "Short answer: Never.\n\nLong answer: We collect only the bare minimum amount of information to allow this service to function. Any potential scam message that is uploaded for testing, text or image, is NOT stored or logged. It is not used for training purposes. It is certainly not sold. You can rest assured anything you share with us ... is kept between us." },
-            { q: "Does it work on my phone?", a: "Yes, you may use your mobile device to paste messages or even upload a screenshot of a message." },
-            { q: "Can I cancel anytime?", a: "Absolutely. Subscriptions are month-to-month with a \"No strings attached, 'cancel any time for any reason'\" guarantee." },
-          ].map((item, i) => (
-            <div key={i} className="p-5">
-              <dt className="font-semibold">{item.q}</dt>
-              <dd className="mt-2 text-white/80" dangerouslySetInnerHTML={{ __html: item.a.split('\n\n').join('<br/><br/>') }}></dd>
-            </div>
-          ))}
-        </dl>
+      <section id="faq" className="relative px-4 sm:px-6 lg:px-8 py-16" style={{ backgroundImage: "url('/large_bomb_bg_min_2.png')", backgroundSize: "cover", backgroundAttachment: "fixed" }}>
+        <div className="relative z-10">
+          <h2 className="text-3xl sm:text-4xl font-bold">Frequently Asked Questions</h2>
+          <dl className="divide-y divide-white/10 rounded-2xl border border-white/10 bg-[#0B1324] mt-8">
+            {[
+              { q: "Do you sell my data?", a: "Short answer: Never.\n\nLong answer: We collect only the bare minimum amount of information to allow this service to function. Any potential scam message that is uploaded for testing, text or image, is NOT stored or logged. It is not used for training purposes. It is certainly not sold. You can rest assured anything you share with us ... is kept between us." },
+              { q: "Does it work on my phone?", a: "Yes, you may use your mobile device to paste messages or even upload a screenshot of a message." },
+              { q: "Can I cancel anytime?", a: "Absolutely. Subscriptions are month-to-month with a \"No strings attached, 'cancel any time for any reason'\" guarantee." },
+            ].map((item, i) => (
+              <div key={i} className="p-5">
+                <dt className="font-semibold">{item.q}</dt>
+                <dd className="mt-2 text-white/80" dangerouslySetInnerHTML={{ __html: item.a.split('\n\n').join('<br/><br/>') }}></dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-[#0B1324] opacity-50 pointer-events-none z-0"></div>
       </section>
 
 
@@ -195,12 +209,12 @@ function Step({ n, title, text }: { n: number; title: string; text: string }) {
 
 function Card({ title, icon, children }: { title: string; icon?: React.ReactNode; children: React.ReactNode }) {
   return (
-    <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+    <div className="rounded-2xl border border-white/10 bg-[#F5C84C] p-5 text-[#0B1324]">
       <div className="flex items-center gap-2">
         <span aria-hidden>{icon}</span>
-        <h3 className="font-semibold">{title}</h3>
+        <h3 className="font-bold uppercase text-lg">{title}</h3>
       </div>
-      <p className="mt-2 text-white/80">{children}</p>
+      <p className="mt-2 opacity-80">{children}</p>
     </div>
   );
 }

@@ -124,6 +124,10 @@ scambomb.com-public/
 - **Blog Improvements**: Unique excerpts for all three blog posts instead of generic text
 - **Content Polish**: Screenshots feature activated, testimonials temporarily hidden
 - **Design Refinements**: Custom CSS for trust bar typography and layout improvements
+- **Hero Button Enhancements**: Added prominent "OR" separator, animated glowing border on free demo button
+- **Features Section**: Full-width background image with heavy overlay and parallax effect
+- **Card Styling**: Black feature cards with yellow text on image backgrounds
+- **Background Images**: Applied dramatic bomb-themed backgrounds to features and FAQ sections for visual impact
 
 ### v0.1.10 (2025-11-14)
 - **Architectural Simplification**: Complete removal of authentication from marketing website
