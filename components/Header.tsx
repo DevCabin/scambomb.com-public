@@ -1,10 +1,9 @@
 'use client';
 
-import { useAppAccessUrl } from '../utils/access';
+import AppAccessLink from './AppAccessLink';
 
 function UniversalHeader() {
   const brandYellow = "#F5C84C";
-  const appUrl = useAppAccessUrl();
 
   return (
     <>
@@ -35,9 +34,13 @@ function UniversalHeader() {
               <a className="opacity-90 hover:opacity-100" href="/blog">Blog</a>
             </nav>
             <div className="flex items-center gap-2">
-              <a href={appUrl} className="ml-2 rounded-2xl px-4 py-2 font-semibold" style={{ backgroundColor: brandYellow, color: "#0B1324" }}>
+              <AppAccessLink
+                className="ml-2 rounded-2xl px-4 py-2 font-semibold"
+                style={{ backgroundColor: brandYellow, color: "#0B1324" }}
+                fallbackText="Try it free"
+              >
                 Try it free
-              </a>
+              </AppAccessLink>
             </div>
           </div>
         </div>

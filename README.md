@@ -109,6 +109,7 @@ scambomb.com-public/
 - [x] **Fingerprinting System**: SBID generation for user tracking across site and app
 - [x] **Profile Management**: User dashboard with usage statistics and account management
 - [x] **API Endpoints**: Authentication and user stats APIs
+- [x] **Seamless Auth Handoff**: Authenticated users get seamless access to main app with NextAuth token passing
 
 ### 🚧 Known Issues
 - Blog post rendering needs refinement
@@ -116,6 +117,12 @@ scambomb.com-public/
 - Contentlayer configuration may need optimization
 
 ## 📋 Changelog
+
+### v0.1.9 (2025-11-13)
+- **Seamless Authentication Handoff**: Authenticated users now get seamless access to main app without re-authentication
+- **NextAuth Token Passing**: Landing page passes Google OAuth tokens to app for shared sessions
+- **AppAccessLink Component**: Centralized component for consistent authenticated URL generation
+- **Environment Variable Sync**: Authentication now works across landing page and main app with shared secrets
 
 ### v0.1.8 (2025-11-13)
 - **Fingerprinting Implementation**: Added SBID generation for user tracking across site and app
