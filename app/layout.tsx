@@ -37,7 +37,7 @@ function UniversalFooter() {
         <div>
           <h4 className="font-semibold">Company</h4>
           <ul className="mt-2 space-y-2 text-white/80">
-            <li><a href="#">About</a></li>
+            <li><a href="/about">About</a></li>
             <li><a href="#">Contact</a></li>
             <li><a href="#">Press</a></li>
           </ul>
