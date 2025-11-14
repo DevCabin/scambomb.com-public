@@ -105,6 +105,10 @@ scambomb.com-public/
 - [x] Custom logo implementation
 - [x] ProductHunt launch messaging
 - [x] Vercel deployment ready
+- [x] **User Authentication**: Google OAuth integration with NextAuth.js
+- [x] **Fingerprinting System**: SBID generation for user tracking across site and app
+- [x] **Profile Management**: User dashboard with usage statistics and account management
+- [x] **API Endpoints**: Authentication and user stats APIs
 
 ### 🚧 Known Issues
 - Blog post rendering needs refinement
@@ -112,6 +116,14 @@ scambomb.com-public/
 - Contentlayer configuration may need optimization
 
 ## 📋 Changelog
+
+### v0.1.8 (2025-11-13)
+- **Fingerprinting Implementation**: Added SBID generation for user tracking across site and app
+- **Google OAuth Integration**: Complete NextAuth.js setup with Google authentication
+- **User Profile System**: Dashboard with usage statistics and account management
+- **API Endpoints**: Authentication routes and user stats API
+- **Session Management**: Client-side session provider for authentication state
+- **URL Parameter Enhancement**: All app access buttons now include `safe_source=true&SBID=<uuid>`
 
 ### v0.1.7 (2025-11-13)
 - **Stripe Integration**: Linked buy buttons to Stripe payment links for Pro Plan and Annual Plan

@@ -1,7 +1,10 @@
+import { useAppAccessUrl } from '../utils/access';
+
 export default function ScamBombLanding() {
   const base = "bg-[#0B1324] text-white"; // Navy default
   const brandYellow = "#F5C84C";
   const brandBorder = "border-white/20";
+  const appUrl = useAppAccessUrl();
 
   return (
     <div className={`${base} antialiased`}>
@@ -22,7 +25,7 @@ export default function ScamBombLanding() {
                 <a id="cta" href="#pricing" className="rounded-2xl px-5 py-3 font-semibold" style={{ backgroundColor: brandYellow, color: "#0B1324" }}>
                   Get ProductHunt Launch Special — $4.99/mo
                 </a>
-                <a href="https://app.scambomb.com" className="rounded-2xl px-5 py-3 border border-white/20 hover:bg-white/10">
+                <a href={appUrl} className="rounded-2xl px-5 py-3 border border-white/20 hover:bg-white/10">
                   Try a live demo
                 </a>
               </div>
@@ -54,7 +57,7 @@ export default function ScamBombLanding() {
                 </div>
                 <div className="mt-4 flex items-center justify-between">
                   <span className="text-sm text-white/70">Plain-English results in seconds</span>
-                  <a href="https://app.scambomb.com" className="inline-block rounded-xl px-4 py-2 font-semibold" style={{ backgroundColor: brandYellow, color: "#0B1324" }}>
+                  <a href={appUrl} className="inline-block rounded-xl px-4 py-2 font-semibold" style={{ backgroundColor: brandYellow, color: "#0B1324" }}>
                     Check a message →
                   </a>
                 </div>
@@ -106,7 +109,7 @@ export default function ScamBombLanding() {
             <p className="mt-2 text-white/80">Paste a suspicious message and see how ScamBomb explains it in seconds.</p>
             <div className="mt-6 flex gap-3">
               <a href="#pricing" className="rounded-2xl px-5 py-3 font-semibold" style={{ backgroundColor: brandYellow, color: "#0B1324" }}>Unlock full protection</a>
-              <a href="https://app.scambomb.com" className="rounded-2xl px-5 py-3 border border-white/20 hover:bg-white/10">Open quick demo</a>
+              <a href={appUrl} className="rounded-2xl px-5 py-3 border border-white/20 hover:bg-white/10">Open quick demo</a>
             </div>
           </div>
           <ul className="space-y-3 text-white/80">
@@ -122,7 +125,7 @@ export default function ScamBombLanding() {
         <HeaderEyebrow>Pricing</HeaderEyebrow>
         <h2 className="text-3xl sm:text-4xl font-bold">Simple, affordable protection</h2>
         <div className="mt-8 grid lg:grid-cols-3 gap-6">
-          <PriceCard highlight title="Free Plan" price="Free" note="5 scans per month" cta="Get started" color={brandYellow} />
+          <PriceCard highlight title="Free Plan" price="Free" note="5 scans per month" cta="Get started" color={brandYellow} href={appUrl} />
           <PriceCard title="Pro Plan" price="$4.99/mo" note="Unlimited scans" cta="Upgrade now" color={brandYellow} href="https://buy.stripe.com/9B6dR8adkavl1BsdneejK00" />
           <PriceCard title="Annual Plan" price="$49.99" note="One full year of protection" cta="Save with annual" color={brandYellow} href="https://buy.stripe.com/dRmcN41GOfPFdka82UejK01" />
         </div>
