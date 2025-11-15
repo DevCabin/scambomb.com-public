@@ -77,7 +77,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${montserrat.variable} font-montserrat bg-[#0B1324] text-white min-h-screen antialiased selection:bg-yellow-300/30`}>
+      <body className={`${montserrat.variable} font-montserrat bg-[#0B1324] text-white min-h-screen antialiased selection:bg-yellow-300/30 text-sm sm:text-base`}>
         <GoogleAnalytics measurementId="G-T61B4NX3J8" />
         <Header />
         <main id="main">

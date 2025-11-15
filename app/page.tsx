@@ -163,7 +163,7 @@ export default function ScamBombLanding() {
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="relative px-4 sm:px-6 lg:px-8 py-16" style={{ backgroundImage: "url('/large_bomb_bg_min_2.png')", backgroundSize: "cover", backgroundAttachment: "fixed" }}>
+      <section id="faq" className="relative px-4 sm:px-6 lg:px-8 py-16" style={{ backgroundImage: "url('/large_bomb_bg_min_2.png')", backgroundSize: "contain", backgroundPosition: "center", backgroundAttachment: "scroll" }}>
         <div className="relative z-10">
           <h2 className="text-3xl sm:text-4xl font-bold">Frequently Asked Questions</h2>
           <dl className="divide-y divide-white/10 rounded-2xl border border-white/10 bg-[#0B1324] mt-8">
