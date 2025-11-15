@@ -29,8 +29,8 @@ export default function TermsPage() {
               <ul className="list-disc list-inside space-y-2 ml-4">
                 <li><strong>No storage of submissions:</strong> Any scam messages (text or images) you submit for analysis are not stored on our servers and are not logged in any persistent way.</li>
                 <li><strong>No data selling:</strong> We will never sell, trade, or share your personal information or any data from your submissions with third parties for marketing or advertising purposes.</li>
-                <li><strong>Anonymous usage:</strong> We use anonymous identifiers (like session-based fingerprints) to prevent abuse and maintain service quality, but we do not track or profile individual users.</li>
-                <li><strong>Newsletter opt-in:</strong> When you subscribe to our newsletter, we only collect your email address for the purpose of sending relevant safety tips, once or twice per month.</li>
+                <li><strong>Anonymous usage:</strong> We use anonymous identifiers (like session-based fingerprints) to prevent abuse and maintain service quality, but we do not track or profile individual users beyond the basic technical level required for this service to function.</li>
+                <li><strong>Newsletter opt-in:</strong> When you subscribe to our newsletter, we only collect your email address for the purpose of sending relevant safety tips, and information related to your account.</li>
               </ul>
             </div>
           </section>
@@ -109,7 +109,7 @@ export default function TermsPage() {
               </p>
               <ul className="list-disc list-inside space-y-2 ml-4">
                 <li>Email: Contact form on our website</li>
-                <li>Mailing Address: As listed in our Privacy Policy (when available)</li>
+                <li>Mailing Address: As listed in our Privacy Policy (may be requested via the contact form)</li>
               </ul>
             </div>
           </section>
