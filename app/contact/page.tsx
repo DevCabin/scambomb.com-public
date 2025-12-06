@@ -12,9 +12,8 @@ export default function ContactPage() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
-
-          <div>
+        <div className="max-w-2xl mx-auto">
+          <div className="mb-12">
             <h2 className="text-2xl font-bold mb-6">Get in Touch</h2>
             <div className="space-y-6">
               <div>
@@ -100,7 +99,6 @@ export default function ContactPage() {
               </p>
             </form>
           </div>
-
         </div>
 
       </div>

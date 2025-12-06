@@ -9,11 +9,11 @@ function UniversalHeader() {
       <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:bg-yellow-300 focus:text-black focus:px-3 focus:py-2 focus:rounded-lg">Skip to content</a>
 
       {/* Top Announcement Bar */}
-      <div className="w-full border-b border-white/10" role="region" aria-label="announcement">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-2 text-center text-sm text-white/80">
-          ProductHunt Launch Special: <strong style={{ color: brandYellow }}>Founding members $4.99/mo</strong> — lock in for life.
+      <a href="#pricing" className="block w-full border-b border-white/10 hover:border-white/20 transition-colors" role="region" aria-label="announcement">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-2 text-center text-sm text-white/80 hover:text-white">
+          Annual Plan: <strong style={{ color: brandYellow }}>Save 17% over Pro Plan!</strong> — Stop Scams Now!
         </div>
-      </div>
+      </a>
 
       {/* Header */}
       <header className="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-black/30 border-b border-white/10">
@@ -34,10 +34,10 @@ function UniversalHeader() {
             <div className="flex items-center gap-2">
               <a
                 href={`https://app.scambomb.com/?safe_source=true&SBID=${crypto.randomUUID()}`}
-                className="ml-2 rounded-2xl px-4 py-2 font-semibold"
-                style={{ backgroundColor: brandYellow, color: "#0B1324" }}
+                className="ml-2 rounded-2xl px-6 py-3 border-2 font-semibold hover:bg-white/10"
+                style={{ borderColor: brandYellow, color: brandYellow }}
               >
-                Try it free
+                Try Free!
               </a>
             </div>
           </div>

@@ -1,8 +1,42 @@
+'use client';
+
+import { useEffect } from 'react';
+
 export default function ScamBombLanding() {
   const base = "bg-[#0B1324] text-white"; // Navy default
   const brandYellow = "#F5C84C";
   const brandBorder = "border-white/20";
   const appUrl = `https://app.scambomb.com/?safe_source=true&SBID=${crypto.randomUUID()}`;
+
+  useEffect(() => {
+    const inputWords = ['emails', 'texts', 'spam'];
+
+    let inputIndex = 0;
+
+    const inputElement = document.getElementById('changing-inputs');
+
+    if (inputElement) {
+      // Set initial content
+      inputElement.textContent = inputWords[0];
+
+      // Cycle through inputs every 3 seconds (slower)
+      const inputInterval = setInterval(() => {
+        // First fade out current word
+        inputElement.style.transition = 'opacity 0.5s ease-out';
+        inputElement.style.opacity = '0';
+
+        setTimeout(() => {
+          inputIndex = (inputIndex + 1) % inputWords.length;
+          inputElement.textContent = inputWords[inputIndex];
+          inputElement.style.opacity = '1';
+        }, 500);
+      }, 2500);
+
+      return () => {
+        clearInterval(inputInterval);
+      };
+    }
+  }, []);
 
   return (
     <div className={`${base} antialiased`}>
@@ -13,32 +47,39 @@ export default function ScamBombLanding() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
           <div className="grid lg:grid-cols-2 gap-10 items-center">
             <div>
-              <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight">
-                Defuse Scams...<br/>Before they <span style={{ color: brandYellow }}>blow up in your face.</span>
+              <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight" style={{ lineHeight: '1.2' }}>
+                Give us your<br/>
+                <span style={{ color: brandYellow }}>Suspicious:</span> <span id="changing-inputs" style={{ color: 'white' }}></span><br/>
+                <span style={{ marginTop: '1.5rem', display: 'block' }}>and we'll tell<br/>
+                you if they're<br/>
+                <span style={{ color: brandYellow, fontWeight: 'bold' }}>safe</span> <span style={{ color: 'white' }}>or</span> <span style={{ color: brandYellow, fontWeight: 'bold' }}>dangerous</span></span>
               </h1>
               <p className="mt-4 max-w-xl text-white/80">
-                Paste any text, email, or SMS. ScamBomb checks red flags, explains the risk in plain English, and tells you exactly what to do next.
+                Paste any suspicious text, email, or SMS. Get instant AI analysis, plain-English explanations, and step-by-step next actions. Start protecting yourself now.
               </p>
-              <div className="mt-6 text-left">
-                <a id="cta" href="#pricing" className="rounded-2xl px-5 py-3 font-semibold inline-block" style={{ backgroundColor: brandYellow, color: "#0B1324" }}>
-                  Get Unlimited access for only $4.99 a month!
-                </a>
-                <div className="my-6">
-                  <span className="text-2xl font-bold" style={{ color: brandYellow }}>OR</span>
-                </div>
-                <div>
-                  <a href={appUrl} className="rounded-2xl px-5 py-3 border border-white/20 hover:bg-white/10 inline-block animate-pulse" style={{ border: "1px dashed #F5C84C", boxShadow: "0 0 20px rgba(245, 196, 76, 0.9)" }}>
-                    Try Now Free
-                  </a>
-                  <p className="mt-2 text-sm text-white/80">No sign up required, instant access!</p>
+              <div className="mt-6 text-center">
+                <div className="grid grid-cols-2 gap-6 max-w-lg mx-auto">
+                  <div>
+                    <a id="cta" href="#pricing" className="rounded-2xl px-6 py-3 font-semibold inline-block text-center w-full" style={{ backgroundColor: brandYellow, color: "#0B1324" }}>
+                      Unlimited Access
+                    </a>
+                    <p className="text-sm text-white/80 mt-2">Only $4.99!</p>
+                  </div>
+
+                  <div>
+                    <a href={appUrl} className="rounded-2xl px-6 py-3 border-2 font-semibold inline-block text-center w-full hover:bg-white/10" style={{ borderColor: brandYellow, color: brandYellow }}>
+                      Try Free!
+                    </a>
+                    <p className="text-sm text-white/80 mt-2">Instant access, no sign up</p>
+                  </div>
                 </div>
               </div>
-              <ul className="mt-6 grid grid-cols-2 gap-3 text-sm text-white/75">
-                <li className="flex items-center gap-2"><Check /> No ads, no data selling</li>
-                <li className="flex items-center gap-2"><Check /> Works on phone or desktop</li>
-                <li className="flex items-center gap-2"><Check /> Clear, step-by-step guidance</li>
-                <li className="flex items-center gap-2"><Check /> Cancel anytime</li>
-              </ul>
+              {/* <ul className="mt-6 space-y-2 text-sm text-white/75 max-w-xs mx-auto">
+                <li className="flex items-start gap-3"><span className="mt-0.5 flex-shrink-0 w-4 h-4"><Check /></span> No ads, no data selling</li>
+                <li className="flex items-start gap-3"><span className="mt-0.5 flex-shrink-0 w-4 h-4"><Check /></span> Works on phone or desktop</li>
+                <li className="flex items-start gap-3"><span className="mt-0.5 flex-shrink-0 w-4 h-4"><Check /></span> Clear, step-by-step guidance</li>
+                <li className="flex items-start gap-3"><span className="mt-0.5 flex-shrink-0 w-4 h-4"><Check /></span> Cancel anytime</li>
+              </ul> */}
             </div>
             <div>
               <div className={`rounded-2xl border ${brandBorder} bg-white/5 p-4 sm:p-6`}>
@@ -92,8 +133,10 @@ export default function ScamBombLanding() {
       </section>
 
       {/* Features */}
-      <section id="features" className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16" style={{ backgroundImage: "url('/wide_bomb_banner_2_min.png')", backgroundSize: "cover", backgroundAttachment: "fixed" }}>
-        <div className="relative z-10">
+      <section id="features" className="relative py-16" style={{ backgroundImage: "url('/wide_bomb_banner_3_min.png')", backgroundSize: "cover", backgroundAttachment: "fixed" }}>
+        {/* Heavy Overlay */}
+        <div className="absolute inset-0 bg-[#0B1324] opacity-70 pointer-events-none z-0"></div>
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <HeaderEyebrow>Features</HeaderEyebrow>
           <h2 className="text-3xl sm:text-4xl font-bold">Built for everyone (55+ included!)</h2>
           <div className="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -105,8 +148,6 @@ export default function ScamBombLanding() {
             <Card title="Learning hub" icon={<Check />}>Weekly blog + short videos to stay ahead of new scams.</Card>
           </div>
         </div>
-        {/* Heavy Overlay */}
-        <div className="absolute inset-0 bg-[#0B1324] opacity-70 pointer-events-none z-0"></div>
       </section>
 
       {/* Demo CTA */}
@@ -117,7 +158,9 @@ export default function ScamBombLanding() {
             <p className="mt-2 text-white/80">Paste a suspicious message and see how ScamBomb explains it in seconds.</p>
             <div className="mt-6 flex gap-3">
               <a href="#pricing" className="rounded-2xl px-5 py-3 font-semibold" style={{ backgroundColor: brandYellow, color: "#0B1324" }}>Unlock full protection</a>
-              <a href={appUrl} className="rounded-2xl px-5 py-3 border border-white/20 hover:bg-white/10">Open quick demo</a>
+              <a href={appUrl} className="rounded-2xl px-6 py-3 border-2 font-semibold hover:bg-white/10" style={{ borderColor: brandYellow, color: brandYellow }}>
+                Try Free!
+              </a>
             </div>
           </div>
           <ul className="space-y-3 text-white/80">
@@ -135,7 +178,7 @@ export default function ScamBombLanding() {
         <div className="mt-8 grid lg:grid-cols-3 gap-6">
           <PriceCard highlight title="Free Plan" price="Free" note="5 scans per month" cta="Get started" color={brandYellow} href={appUrl} />
           <PriceCard title="Pro Plan" price="$4.99/mo" note="Unlimited scans" cta="Upgrade now" color={brandYellow} href="https://buy.stripe.com/9B6dR8adkavl1BsdneejK00" />
-          <PriceCard title="Annual Plan" price="$49.99" note="One full year of protection" cta="Save with annual" color={brandYellow} href="https://buy.stripe.com/dRmcN41GOfPFdka82UejK01" />
+          <PriceCard title="Annual Plan" price="$49.99/year" note="Save 17% over Pro Plan!" cta="Save with annual" color={brandYellow} href="https://buy.stripe.com/dRmcN41GOfPFdka82UejK01" />
         </div>
         <p className="mt-4 text-sm text-white/70">No strings attached, "cancel any time for any reason" guarantee.</p>
       </section>
@@ -163,8 +206,10 @@ export default function ScamBombLanding() {
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="relative px-4 sm:px-6 lg:px-8 py-16">
-        <div className="relative z-10">
+      <section id="faq" className="relative py-16" style={{ backgroundImage: "url('/wide_bomb_banner_3_min.png')", backgroundSize: "cover", backgroundAttachment: "fixed" }}>
+        {/* Heavy Overlay */}
+        <div className="absolute inset-0 bg-[#0B1324] opacity-70 pointer-events-none z-0"></div>
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl sm:text-4xl font-bold">Frequently Asked Questions</h2>
           <dl className="divide-y divide-white/10 rounded-2xl border border-white/10 bg-[#0B1324] mt-8">
             {[

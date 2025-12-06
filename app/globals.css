@@ -6,3 +6,25 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* Hero Headline Animations */
+.changing-word {
+  opacity: 0;
+  animation: fadeInWord 0.8s ease-out forwards;
+}
+
+#changing-inputs { animation-delay: 1s; }
+#changing-results { animation-delay: 3.5s; }
+
+@keyframes fadeInWord {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* JavaScript will handle changing the content and re-triggering the animations */

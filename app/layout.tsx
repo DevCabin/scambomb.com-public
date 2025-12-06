@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 function UniversalFooter() {
   return (
     <footer className="border-t border-white/10">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 grid md:grid-cols-4 gap-6 text-sm">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 grid grid-cols-1 md:grid-cols-[auto_0.7fr_0.7fr_1.5fr] gap-6 text-sm">
         <div>
           <Logo size="sm" />
           <p className="mt-3 text-white/70">Simple, plain-English scam checks for everyone.</p>
@@ -44,12 +44,14 @@ function UniversalFooter() {
         </div>
         <div>
           <h4 className="font-semibold">Newsletter</h4>
-          <form className="mt-2 flex gap-2" action="https://formspree.io/f/xzzyeoak" method="POST" aria-label="Subscribe to newsletter">
+          <form className="mt-2 flex flex-col gap-3" action="https://formspree.io/f/xzzyeoak" method="POST" aria-label="Subscribe to newsletter">
             <label htmlFor="email" className="sr-only">Email</label>
-            <input id="newsletter-email" name="email" type="email" required className="min-w-0 flex-1 rounded-xl border border-white/20 bg-white/10 px-3 py-2 placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-yellow-300" placeholder="you@example.com" />
-            <button type="submit" className="rounded-xl px-4 py-2 font-semibold bg-[#F5C84C] text-[#0B1324] hover:bg-[#F5C84C]/90">Subscribe</button>
+            <div className="flex gap-2">
+              <input id="newsletter-email" name="email" type="email" required className="flex-1 rounded-xl border border-white/20 bg-white/10 px-3 py-2 text-sm placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-yellow-300" placeholder="you@example.com" />
+              <button type="submit" className="rounded-xl px-3 py-2 font-semibold bg-[#F5C84C] text-[#0B1324] hover:bg-[#F5C84C]/90">Subscribe</button>
+            </div>
           </form>
-          <p className="mt-2 text-white/60">Cutting edge safety tips, once or twice a month. No spam. No scams!</p>
+          <p className="mt-2 text-white/60 text-xs">Cutting edge safety tips, once or twice a month. No spam. No scams!</p>
         </div>
       </div>
       <div className="border-t border-white/10 py-6 text-center text-xs text-white/60">© {new Date().getFullYear()} ScamBomb.com — All rights reserved.</div>

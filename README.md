@@ -116,6 +116,17 @@ scambomb.com-public/
 
 ## 📋 Changelog
 
+### v1.1.0 (2025-12-05)
+- **Major UI/UX Improvements**: Complete homepage redesign with enhanced user experience
+- **Full-Width Backgrounds**: Features and FAQ sections now use full-width bomb-themed background images with optimized overlays
+- **Dynamic Hero Animation**: Added engaging word-cycling animation showing different input types (emails → texts → spam) with smooth transitions
+- **Improved Messaging**: Updated hero copy to be more explicit about AI functionality and immediate use ("give us your spam and scams. Our AI tells you if they're safe or dangerous")
+- **Enhanced CTA Buttons**: Redesigned call-to-action buttons with side-by-side layout, consistent styling, and "Save 17%" messaging for annual plans
+- **Top Banner Revival**: Reintroduced ProductHunt-style banner with annual plan savings messaging and click-to-pricing functionality
+- **Contact Page Redesign**: Changed from 2-column to single centered column layout with text above form for better flow
+- **Footer Optimization**: Adjusted column widths to give newsletter form proper space while keeping product/company links compact
+- **Responsive Improvements**: Ensured all new elements work perfectly across mobile and desktop devices
+
 ### v1.0.0 (2025-11-14)
 - **Launch Version**: Bumped to 1.0.0 for official product launch
 - **Headline Update**: Changed from "Stop scams in one click" to "Defuse Scams. Before they blow up in your face."
