@@ -30,7 +30,7 @@ ScamBomb analyzes suspicious messages (emails, texts, social media) and provides
 ## 🛠️ Technical Stack
 
 ### Frontend
-- **Framework**: Next.js 14 (App Router)
+- **Framework**: Next.js 16 (App Router)
 - **Styling**: Tailwind CSS
 - **Typography**: Montserrat font family
 - **Language**: TypeScript
@@ -96,7 +96,7 @@ scambomb.com-public/
 ## 📋 Current Status: Pre-Alpha v0
 
 ### ✅ Completed Features
-- [x] Next.js 14 setup with App Router
+- [x] Next.js 16 setup with App Router (security upgrades)
 - [x] Tailwind CSS styling with custom design system
 - [x] Montserrat font integration
 - [x] Responsive homepage with accessibility features
@@ -115,6 +115,11 @@ scambomb.com-public/
 - Contentlayer configuration may need optimization
 
 ## 📋 Changelog
+
+### v1.1.1 (2025-12-12)
+- **Security Upgrade**: Updated Next.js from v14.2.35 to v16.0.10 for critical security patches
+- **Dependency Security**: Addressed vulnerabilities in development dependencies via Next.js upgrade
+- **Framework Modernization**: Improved performance and security with latest Next.js features
 
 ### v1.1.0 (2025-12-05)
 - **Major UI/UX Improvements**: Complete homepage redesign with enhanced user experience
