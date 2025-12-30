@@ -110,11 +110,17 @@ scambomb.com-public/
 - [x] **5 Free Searches**: Anonymous app access via fingerprinting
 
 ### 🚧 Known Issues
-- Blog post rendering needs refinement
 - Some TypeScript type definitions incomplete
 - Contentlayer configuration may need optimization
 
 ## 📋 Changelog
+
+### v1.1.2 (2025-12-30)
+- **Critical Bug Fix**: Fixed 404 errors on individual blog posts
+- **Blog Routing**: Resolved Next.js dynamic routing mismatch in blog post URL resolution
+- **Post Lookup Logic**: Updated generateMetadata and PostPage functions with consistent slug matching
+- **Contentlayer Integration**: Ensured proper matching between flattenedPath and URL parameters
+- **Code Consistency**: Unified slug extraction logic across static params generation and post lookup
 
 ### v1.1.1 (2025-12-12)
 - **Security Upgrade**: Updated Next.js from v14.2.35 to v16.0.10 for critical security patches

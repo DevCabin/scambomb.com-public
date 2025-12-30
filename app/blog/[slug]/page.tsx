@@ -15,7 +15,11 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PageProps) {
-  const post = allPosts.find((post) => post._raw.flattenedPath === `blog/${params.slug}`)
+  // Try to find the post by matching the slug with the flattenedPath
+  const post = allPosts.find((post) => {
+    const postSlug = post._raw.flattenedPath.replace('blog/', '');
+    return postSlug === params.slug;
+  });
 
   if (!post) {
     return {}
@@ -28,7 +32,11 @@ export async function generateMetadata({ params }: PageProps) {
 }
 
 export default function PostPage({ params }: PageProps) {
-  const post = allPosts.find((post) => post._raw.flattenedPath === `blog/${params.slug}`)
+  // Try to find the post by matching the slug with the flattenedPath
+  const post = allPosts.find((post) => {
+    const postSlug = post._raw.flattenedPath.replace('blog/', '');
+    return postSlug === params.slug;
+  });
 
   if (!post) {
     notFound()
