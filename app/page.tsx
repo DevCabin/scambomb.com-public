@@ -135,7 +135,7 @@ export default function ScamBombLanding() {
       {/* Features */}
       <section id="features" className="relative py-16" style={{ backgroundImage: "url('/SB-BG.png')", backgroundSize: "cover", backgroundAttachment: "fixed" }}>
         {/* Heavy Overlay */}
-        <div className="absolute inset-0 bg-[#0B1324] opacity-70 pointer-events-none z-0"></div>
+        <div className="absolute inset-0 bg-[#0B1324] opacity-80 pointer-events-none z-0"></div>
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <HeaderEyebrow>Features</HeaderEyebrow>
           <h2 className="text-3xl sm:text-4xl font-bold">Built for everyone (55+ included!)</h2>
