@@ -133,7 +133,7 @@ export default function ScamBombLanding() {
       </section>
 
       {/* Features */}
-      <section id="features" className="relative py-16" style={{ backgroundImage: "url('/wide_bomb_banner_3_min.png')", backgroundSize: "cover", backgroundAttachment: "fixed" }}>
+      <section id="features" className="relative py-16" style={{ backgroundImage: "url('/SB-BG.png')", backgroundSize: "cover", backgroundAttachment: "fixed" }}>
         {/* Heavy Overlay */}
         <div className="absolute inset-0 bg-[#0B1324] opacity-70 pointer-events-none z-0"></div>
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -143,7 +143,7 @@ export default function ScamBombLanding() {
             <Card title="Plain-English explanations" icon={<Check />}>No tech-speak. We explain what's risky and why, in friendly language.</Card>
             <Card title="Link & sender checks" icon={<Check />}>Spot spoofed addresses, mismatched domains, and impersonation cues.</Card>
             <Card title="Copy-paste simple" icon={<Check />}>Works on any device—no install required. Just paste and check.</Card>
-            <Card title="Privacy-first" icon={<Check />}>We don't sell data. Ever. Turn on anonymous mode in one click.</Card>
+            <Card title="Privacy-first" icon={<Check />}>We don't sell data. Ever. Anonymous by design, messages are not saved.</Card>
             <Card title="Guided next steps" icon={<Check />}>Unsure what to do? We give you a safe path with scripts you can use.</Card>
             <Card title="Learning hub" icon={<Check />}>Weekly blog + short videos to stay ahead of new scams.</Card>
           </div>
@@ -206,7 +206,7 @@ export default function ScamBombLanding() {
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="relative py-16" style={{ backgroundImage: "url('/wide_bomb_banner_3_min.png')", backgroundSize: "cover", backgroundAttachment: "fixed" }}>
+      <section id="faq" className="relative py-16" style={{ backgroundImage: "url('/SB-BG-2.png')", backgroundSize: "cover", backgroundAttachment: "fixed" }}>
         {/* Heavy Overlay */}
         <div className="absolute inset-0 bg-[#0B1324] opacity-70 pointer-events-none z-0"></div>
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
