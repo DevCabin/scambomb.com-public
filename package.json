@@ -3,11 +3,10 @@
   "version": "1.1.2",
   "private": true,
   "scripts": {
-    "dev": "contentlayer dev",
-    "build": "contentlayer build && next build",
+    "dev": "next dev",
+    "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "contentlayer": "contentlayer build"
+    "lint": "next lint"
   },
   "dependencies": {
     "autoprefixer": "^10.4.0",
