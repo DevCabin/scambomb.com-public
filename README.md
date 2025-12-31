@@ -119,16 +119,15 @@ scambomb.com-public/
 - **Hero Banner Styling Update**: Changed "Suspicious:" text to white color and dynamic text ("Emails", "Texts", "Spam") to brand yellow with capital case formatting
 
 ### v1.1.2 (2025-12-30)
-- **Critical Bug Fix**: Fixed 404 errors on individual blog posts
-- **Contentlayer Build Integration**: Updated npm scripts to run contentlayer before Next.js build/dev
-- **Build Process Fix**: Changed `dev` script to `contentlayer dev` and `build` to `contentlayer build && next build`
-- **Git Tracking Fix**: Removed contentlayer generated files from git and added .contentlayer to .gitignore
-- **Vercel Configuration**: Added vercel.json with explicit build commands and Node.js runtime specification
-- **Engine Requirements**: Specified Node.js >=18.0.0 in package.json to ensure compatibility
-- **Next.js Configuration**: Added contentlayer to serverComponentsExternalPackages for proper build integration
-- **Vercel Build Fix**: Removed invalid functions runtime specification that was causing build errors
-- **Clean Build Process**: Ensures blog posts are regenerated fresh during each build, preventing cache conflicts
-- **Routing Resolution**: Fixed dynamic routing by ensuring contentlayer data is available during Next.js compilation
+- **Complete Blog System Rebuild**: Gutted and rebuilt blog system from scratch to fix persistent 404 errors
+- **Removed Contentlayer Dependency**: Disabled contentlayer and replaced with simple static page routing
+- **Static Blog Routes**: Created individual page files for each blog post:
+  - `/blog/how-to-spot-fake-bank-texts-in-30-seconds/`
+  - `/blog/new-usps-delivery-scam-what-to-do/`
+  - `/blog/three-questions-to-ask-before-you-click/`
+- **Simplified Blog Index**: Replaced dynamic contentlayer queries with hardcoded post data
+- **Build Process Simplification**: Removed contentlayer from npm scripts and build process
+- **Guaranteed Route Availability**: Static routes ensure blog posts are always accessible without build-time generation
 
 ### v1.1.1 (2025-12-12)
 - **Security Upgrade**: Updated Next.js from v14.2.35 to v16.0.10 for critical security patches
