@@ -115,6 +115,9 @@ scambomb.com-public/
 
 ## 📋 Changelog
 
+### v1.1.3 (2025-12-31)
+- **Hero Banner Styling Update**: Changed "Suspicious:" text to white color and dynamic text ("Emails", "Texts", "Spam") to brand yellow with capital case formatting
+
 ### v1.1.2 (2025-12-30)
 - **Critical Bug Fix**: Fixed 404 errors on individual blog posts
 - **Blog Routing**: Resolved Next.js dynamic routing mismatch in blog post URL resolution

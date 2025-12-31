@@ -9,7 +9,7 @@ export default function ScamBombLanding() {
   const appUrl = `https://app.scambomb.com/?safe_source=true&SBID=${crypto.randomUUID()}`;
 
   useEffect(() => {
-    const inputWords = ['emails', 'texts', 'spam'];
+    const inputWords = ['Emails', 'Texts', 'Spam'];
 
     let inputIndex = 0;
 
@@ -49,7 +49,7 @@ export default function ScamBombLanding() {
             <div>
               <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight" style={{ lineHeight: '1.2' }}>
                 Give us your<br/>
-                <span style={{ color: brandYellow }}>Suspicious:</span> <span id="changing-inputs" style={{ color: 'white' }}></span><br/>
+                <span style={{ color: 'white' }}>Suspicious:</span> <span id="changing-inputs" style={{ color: brandYellow }}></span><br/>
                 <span style={{ marginTop: '1.5rem', display: 'block' }}>and we'll tell<br/>
                 you if they're<br/>
                 <span style={{ color: brandYellow, fontWeight: 'bold' }}>safe</span> <span style={{ color: 'white' }}>or</span> <span style={{ color: brandYellow, fontWeight: 'bold' }}>dangerous</span></span>
