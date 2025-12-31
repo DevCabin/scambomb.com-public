@@ -122,7 +122,8 @@ scambomb.com-public/
 - **Critical Bug Fix**: Fixed 404 errors on individual blog posts
 - **Contentlayer Build Integration**: Updated npm scripts to run contentlayer before Next.js build/dev
 - **Build Process Fix**: Changed `dev` script to `contentlayer dev` and `build` to `contentlayer build && next build`
-- **Blog Generation**: Ensured blog posts are properly generated during build process
+- **Git Tracking Fix**: Removed contentlayer generated files from git and added .contentlayer to .gitignore
+- **Clean Build Process**: Ensures blog posts are regenerated fresh during each build, preventing cache conflicts
 - **Routing Resolution**: Fixed dynamic routing by ensuring contentlayer data is available during Next.js compilation
 
 ### v1.1.1 (2025-12-12)
