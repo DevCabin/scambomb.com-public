@@ -123,6 +123,9 @@ scambomb.com-public/
 - **Contentlayer Build Integration**: Updated npm scripts to run contentlayer before Next.js build/dev
 - **Build Process Fix**: Changed `dev` script to `contentlayer dev` and `build` to `contentlayer build && next build`
 - **Git Tracking Fix**: Removed contentlayer generated files from git and added .contentlayer to .gitignore
+- **Vercel Configuration**: Added vercel.json with explicit build commands and Node.js runtime specification
+- **Engine Requirements**: Specified Node.js >=18.0.0 in package.json to ensure compatibility
+- **Next.js Configuration**: Added contentlayer to serverComponentsExternalPackages for proper build integration
 - **Clean Build Process**: Ensures blog posts are regenerated fresh during each build, preventing cache conflicts
 - **Routing Resolution**: Fixed dynamic routing by ensuring contentlayer data is available during Next.js compilation
 
