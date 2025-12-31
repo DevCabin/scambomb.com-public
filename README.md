@@ -120,10 +120,10 @@ scambomb.com-public/
 
 ### v1.1.2 (2025-12-30)
 - **Critical Bug Fix**: Fixed 404 errors on individual blog posts
-- **Blog Routing**: Resolved Next.js dynamic routing mismatch in blog post URL resolution
-- **Post Lookup Logic**: Updated generateMetadata and PostPage functions with consistent slug matching
-- **Contentlayer Integration**: Ensured proper matching between flattenedPath and URL parameters
-- **Code Consistency**: Unified slug extraction logic across static params generation and post lookup
+- **Contentlayer Build Integration**: Updated npm scripts to run contentlayer before Next.js build/dev
+- **Build Process Fix**: Changed `dev` script to `contentlayer dev` and `build` to `contentlayer build && next build`
+- **Blog Generation**: Ensured blog posts are properly generated during build process
+- **Routing Resolution**: Fixed dynamic routing by ensuring contentlayer data is available during Next.js compilation
 
 ### v1.1.1 (2025-12-12)
 - **Security Upgrade**: Updated Next.js from v14.2.35 to v16.0.10 for critical security patches
