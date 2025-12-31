@@ -126,6 +126,7 @@ scambomb.com-public/
 - **Vercel Configuration**: Added vercel.json with explicit build commands and Node.js runtime specification
 - **Engine Requirements**: Specified Node.js >=18.0.0 in package.json to ensure compatibility
 - **Next.js Configuration**: Added contentlayer to serverComponentsExternalPackages for proper build integration
+- **Vercel Build Fix**: Removed invalid functions runtime specification that was causing build errors
 - **Clean Build Process**: Ensures blog posts are regenerated fresh during each build, preventing cache conflicts
 - **Routing Resolution**: Fixed dynamic routing by ensuring contentlayer data is available during Next.js compilation
 
