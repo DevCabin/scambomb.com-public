@@ -56,7 +56,13 @@ function Logo({ size = "md" }: { size?: "sm" | "md" }) {
       <img
         src="/ScamBomb-just-the-bomb.png"
         alt="ScamBomb Bomb"
-        className={`${bombSize} object-contain`}
+        className={`${bombSize} object-contain hidden md:block`}
+        style={{
+          width: '200px',
+          height: '200px',
+          position: 'relative',
+          left: '65px'
+        }}
       />
       <img
         src="/ScamBomb.com_NEW_V2.1.png"
