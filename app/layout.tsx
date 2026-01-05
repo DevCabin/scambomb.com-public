@@ -60,7 +60,7 @@ function UniversalFooter() {
 }
 
 function Logo({ size = "md" }: { size?: "sm" | "md" }) {
-  const imgSize = size === "sm" ? "h-10 w-32" : "h-12 w-40";
+  const imgSize = size === "sm" ? "h-20 w-64" : "h-12 w-40";
   return (
     <div className="flex items-center gap-2" role="img" aria-label="ScamBomb logo">
       <img
