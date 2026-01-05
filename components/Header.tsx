@@ -52,6 +52,11 @@ function Logo({ size = "md" }: { size?: "sm" | "md" }) {
   return (
     <div className="flex items-center gap-2" role="img" aria-label="ScamBomb logo">
       <img
+        src="/large_bomb_bg_min_2.png"
+        alt="Bomb"
+        style={{ width: '150px', height: '200px', position: 'relative', left: '45px', marginTop: '-35px' }}
+      />
+      <img
         src="/logo.png"
         alt="ScamBomb Logo"
         className={`${imgSize} object-contain`}
