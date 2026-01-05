@@ -30,6 +30,210 @@ This guide provides a deep dive into the ScamBomb web application architecture, 
 5. **Database (Vercel KV)**: Redis-based storage for usage tracking and premium status
 6. **Payment Processor (Stripe)**: Subscription management and billing
 
+## 📝 Blog System Architecture (v2.2.0)
+
+### Overview
+The blog system was completely rebuilt to eliminate persistent 404 errors caused by Contentlayer's build-time generation issues. The new system uses static file-based routing for guaranteed availability.
+
+### Architecture (Post-Rebuild)
+
+```
+app/blog/
+├── page.tsx                                      # Blog index page
+├── how-to-spot-fake-bank-texts-in-30-seconds/     # Individual post routes
+│   └── page.tsx
+├── new-usps-delivery-scam-what-to-do/
+│   └── page.tsx
+└── three-questions-to-ask-before-you-click/
+    └── page.tsx
+```
+
+### Key Changes
+
+**Before (Contentlayer-based):**
+- Complex MDX processing during build
+- Dynamic route generation with `generateStaticParams`
+- Dependency on `.contentlayer` generated files
+- Potential build-time failures and caching issues
+
+**After (Static file-based):**
+- Direct Next.js App Router file-based routing
+- No build-time content generation
+- Guaranteed route availability
+- Simple hardcoded post data
+
+### Blog Index Implementation
+
+**File:** `app/blog/page.tsx`
+
+```typescript
+const posts = [
+  {
+    slug: 'how-to-spot-fake-bank-texts-in-30-seconds',
+    title: 'How to spot fake bank texts in 30 seconds',
+    description: 'Learn the quick red flags...',
+    date: '2023-11-12',
+    tag: 'GUIDE'
+  },
+  // ... more posts
+]
+
+export default function BlogPage() {
+  return (
+    <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      {posts.map((post) => (
+        <article key={post.slug}>
+          <Link href={`/blog/${post.slug}`}>
+            <h2>{post.title}</h2>
+            {/* ... post display */}
+          </Link>
+        </article>
+      ))}
+    </div>
+  )
+}
+```
+
+### Individual Blog Post Implementation
+
+**File:** `app/blog/{slug}/page.tsx`
+
+```typescript
+import Link from 'next/link'
+
+export const metadata = {
+  title: 'Post Title',
+  description: 'Post description for SEO',
+}
+
+export default function BlogPost() {
+  return (
+    <div className="py-16">
+      <article className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+        <header className="mb-8">
+          <div className="text-xs font-semibold tracking-widest text-white/60 mb-2">
+            GUIDE
+          </div>
+          <h1 className="text-3xl sm:text-4xl font-bold mb-4">Post Title</h1>
+          <p className="text-white/80 text-lg mb-4">Description</p>
+          <time className="text-sm text-white/60" dateTime="2023-11-12">
+            November 12, 2023
+          </time>
+        </header>
+
+        <div className="prose prose-invert prose-lg max-w-none">
+          {/* Full post content with proper HTML structure */}
+          <h1>Post Title</h1>
+          <p>Content...</p>
+          <h2>Subheading</h2>
+          {/* etc. */}
+        </div>
+
+        <footer className="mt-12 pt-8 border-t border-white/10">
+          <Link href="/blog">← Back to all posts</Link>
+        </footer>
+      </article>
+    </div>
+  )
+}
+```
+
+### Adding New Blog Posts
+
+**Step 1: Create Directory Structure**
+```bash
+mkdir app/blog/your-new-post-slug
+touch app/blog/your-new-post-slug/page.tsx
+```
+
+**Step 2: Implement Page Component**
+- Copy template from existing posts
+- Update metadata (title, description)
+- Add post content with proper HTML structure
+- Update category/tag and date
+
+**Step 3: Update Blog Index**
+Add new post object to the `posts` array in `app/blog/page.tsx`:
+```typescript
+{
+  slug: 'your-new-post-slug',
+  title: 'Your Post Title',
+  description: 'Brief description for index',
+  date: '2023-12-01',
+  tag: 'CATEGORY'
+}
+```
+
+**Step 4: Update Homepage Preview**
+Add to the blog preview section in `app/page.tsx` if desired.
+
+### Content Guidelines
+
+**HTML Structure:**
+- Use semantic HTML (`<h1>`, `<h2>`, `<p>`, `<ul>`, `<ol>`, `<li>`)
+- Apply Tailwind prose classes for consistent styling
+- Include proper heading hierarchy
+- Add emphasis with `<strong>` tags
+
+**Metadata:**
+- Unique, descriptive titles
+- SEO-friendly descriptions (150-160 characters)
+- Accurate publication dates
+- Appropriate category tags
+
+### SEO and Performance
+
+**Metadata Export:**
+```typescript
+export const metadata = {
+  title: 'Specific Post Title | ScamBomb',
+  description: 'Detailed description for search engines...',
+  keywords: ['scam prevention', 'cybersecurity', 'safety'],
+  openGraph: {
+    title: 'Post Title',
+    description: 'Description...',
+    type: 'article',
+  }
+}
+```
+
+**Performance Considerations:**
+- Static routes load instantly
+- No dynamic content generation
+- Minimal bundle size impact
+- SEO-friendly URLs
+
+### Migration from Contentlayer
+
+**What Was Removed:**
+- `contentlayer.config.js` configuration
+- MDX processing pipeline
+- Build-time content generation
+- Complex type definitions
+
+**What Was Preserved:**
+- All existing blog content
+- SEO metadata and structure
+- Visual design and layout
+- User experience
+
+### Benefits of New Approach
+
+1. **Reliability**: No build-time failures or caching issues
+2. **Performance**: Instant loading with no generation overhead
+3. **Maintainability**: Simple file-based structure
+4. **SEO**: Direct control over metadata and content structure
+5. **Developer Experience**: Easy to add/edit posts without complex tooling
+
+### Future Enhancements
+
+**Potential Improvements:**
+- **CMS Integration**: Connect to headless CMS for easier content management
+- **Dynamic Imports**: Lazy load post content for better performance
+- **Search Functionality**: Add blog search and filtering
+- **Social Sharing**: Add share buttons and meta tags
+- **Related Posts**: Show related content recommendations
+
 ## 🔄 Main Application Logic Flow
 
 ### 1. User Session Management

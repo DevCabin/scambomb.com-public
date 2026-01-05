@@ -30,7 +30,7 @@ ScamBomb analyzes suspicious messages (emails, texts, social media) and provides
 ## 🛠️ Technical Stack
 
 ### Frontend
-- **Framework**: Next.js 14 (App Router)
+- **Framework**: Next.js 16 (App Router)
 - **Styling**: Tailwind CSS
 - **Typography**: Montserrat font family
 - **Language**: TypeScript
@@ -96,7 +96,7 @@ scambomb.com-public/
 ## 📋 Current Status: Pre-Alpha v0
 
 ### ✅ Completed Features
-- [x] Next.js 14 setup with App Router
+- [x] Next.js 16 setup with App Router (security upgrades)
 - [x] Tailwind CSS styling with custom design system
 - [x] Montserrat font integration
 - [x] Responsive homepage with accessibility features
@@ -110,11 +110,29 @@ scambomb.com-public/
 - [x] **5 Free Searches**: Anonymous app access via fingerprinting
 
 ### 🚧 Known Issues
-- Blog post rendering needs refinement
 - Some TypeScript type definitions incomplete
 - Contentlayer configuration may need optimization
 
 ## 📋 Changelog
+
+### v1.1.3 (2025-12-31)
+- **Hero Banner Styling Update**: Changed "Suspicious:" text to white color and dynamic text ("Emails", "Texts", "Spam") to brand yellow with capital case formatting
+
+### v1.1.2 (2025-12-30)
+- **Complete Blog System Rebuild**: Gutted and rebuilt blog system from scratch to fix persistent 404 errors
+- **Removed Contentlayer Dependency**: Disabled contentlayer and replaced with simple static page routing
+- **Static Blog Routes**: Created individual page files for each blog post:
+  - `/blog/how-to-spot-fake-bank-texts-in-30-seconds/`
+  - `/blog/new-usps-delivery-scam-what-to-do/`
+  - `/blog/three-questions-to-ask-before-you-click/`
+- **Simplified Blog Index**: Replaced dynamic contentlayer queries with hardcoded post data
+- **Build Process Simplification**: Removed contentlayer from npm scripts and build process
+- **Guaranteed Route Availability**: Static routes ensure blog posts are always accessible without build-time generation
+
+### v1.1.1 (2025-12-12)
+- **Security Upgrade**: Updated Next.js from v14.2.35 to v16.0.10 for critical security patches
+- **Dependency Security**: Addressed vulnerabilities in development dependencies via Next.js upgrade
+- **Framework Modernization**: Improved performance and security with latest Next.js features
 
 ### v1.1.0 (2025-12-05)
 - **Major UI/UX Improvements**: Complete homepage redesign with enhanced user experience

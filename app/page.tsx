@@ -9,7 +9,7 @@ export default function ScamBombLanding() {
   const appUrl = `https://app.scambomb.com/?safe_source=true&SBID=${crypto.randomUUID()}`;
 
   useEffect(() => {
-    const inputWords = ['emails', 'texts', 'spam'];
+    const inputWords = ['Emails', 'Texts', 'Spam'];
 
     let inputIndex = 0;
 
@@ -49,7 +49,7 @@ export default function ScamBombLanding() {
             <div>
               <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight" style={{ lineHeight: '1.2' }}>
                 Give us your<br/>
-                <span style={{ color: brandYellow }}>Suspicious:</span> <span id="changing-inputs" style={{ color: 'white' }}></span><br/>
+                <span style={{ color: 'white' }}>Suspicious:</span> <span id="changing-inputs" style={{ color: brandYellow }}></span><br/>
                 <span style={{ marginTop: '1.5rem', display: 'block' }}>and we'll tell<br/>
                 you if they're<br/>
                 <span style={{ color: brandYellow, fontWeight: 'bold' }}>safe</span> <span style={{ color: 'white' }}>or</span> <span style={{ color: brandYellow, fontWeight: 'bold' }}>dangerous</span></span>
@@ -133,9 +133,9 @@ export default function ScamBombLanding() {
       </section>
 
       {/* Features */}
-      <section id="features" className="relative py-16" style={{ backgroundImage: "url('/wide_bomb_banner_3_min.png')", backgroundSize: "cover", backgroundAttachment: "fixed" }}>
+      <section id="features" className="relative py-16" style={{ backgroundImage: "url('/SB-BG.png')", backgroundSize: "cover", backgroundAttachment: "fixed" }}>
         {/* Heavy Overlay */}
-        <div className="absolute inset-0 bg-[#0B1324] opacity-70 pointer-events-none z-0"></div>
+        <div className="absolute inset-0 bg-[#0B1324] opacity-80 pointer-events-none z-0"></div>
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <HeaderEyebrow>Features</HeaderEyebrow>
           <h2 className="text-3xl sm:text-4xl font-bold">Built for everyone (55+ included!)</h2>
@@ -143,7 +143,7 @@ export default function ScamBombLanding() {
             <Card title="Plain-English explanations" icon={<Check />}>No tech-speak. We explain what's risky and why, in friendly language.</Card>
             <Card title="Link & sender checks" icon={<Check />}>Spot spoofed addresses, mismatched domains, and impersonation cues.</Card>
             <Card title="Copy-paste simple" icon={<Check />}>Works on any device—no install required. Just paste and check.</Card>
-            <Card title="Privacy-first" icon={<Check />}>We don't sell data. Ever. Turn on anonymous mode in one click.</Card>
+            <Card title="Privacy-first" icon={<Check />}>We don't sell data. Ever. Anonymous by design, messages are not saved.</Card>
             <Card title="Guided next steps" icon={<Check />}>Unsure what to do? We give you a safe path with scripts you can use.</Card>
             <Card title="Learning hub" icon={<Check />}>Weekly blog + short videos to stay ahead of new scams.</Card>
           </div>
@@ -206,7 +206,7 @@ export default function ScamBombLanding() {
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="relative py-16" style={{ backgroundImage: "url('/wide_bomb_banner_3_min.png')", backgroundSize: "cover", backgroundAttachment: "fixed" }}>
+      <section id="faq" className="relative py-16" style={{ backgroundImage: "url('/SB-BG-2.png')", backgroundSize: "cover", backgroundAttachment: "fixed" }}>
         {/* Heavy Overlay */}
         <div className="absolute inset-0 bg-[#0B1324] opacity-70 pointer-events-none z-0"></div>
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

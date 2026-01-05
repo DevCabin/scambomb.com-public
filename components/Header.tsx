@@ -48,18 +48,27 @@ function UniversalHeader() {
 }
 
 function Logo({ size = "md" }: { size?: "sm" | "md" }) {
-  const imgSize = size === "sm" ? "h-10 w-32" : "h-12 w-40";
+  const bombSize = size === "sm" ? "h-10 w-10" : "h-12 w-12";
+  const textSize = size === "sm" ? "h-8" : "h-10";
+
   return (
     <div className="flex items-center gap-2" role="img" aria-label="ScamBomb logo">
       <img
-        src="/large_bomb_bg_min_2.png"
-        alt="Bomb"
-        style={{ width: '150px', height: '200px', position: 'relative', left: '45px', marginTop: '-35px' }}
+        src="/ScamBomb-just-the-bomb.png"
+        alt="ScamBomb Bomb"
+        className={`${bombSize} object-contain hidden md:block`}
+        style={{
+          width: '150px',
+          height: '200px',
+          position: 'relative',
+          left: '45px',
+          marginTop: '-35px'
+        }}
       />
       <img
-        src="/logo.png"
-        alt="ScamBomb Logo"
-        className={`${imgSize} object-contain`}
+        src="/ScamBomb.com_NEW_V2.1.png"
+        alt="ScamBomb.com"
+        className={`${textSize} object-contain`}
       />
     </div>
   );

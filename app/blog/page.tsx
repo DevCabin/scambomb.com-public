@@ -1,23 +1,31 @@
+// Simple blog system - rebuilt from scratch without contentlayer
 import Link from 'next/link'
-import { allPosts } from 'contentlayer/generated'
-import { compareDesc } from 'date-fns'
 
-function Logo({ size = "md" }: { size?: "sm" | "md" }) {
-  const imgSize = size === "sm" ? "h-10 w-32" : "h-12 w-40";
-  return (
-    <div className="flex items-center gap-2" role="img" aria-label="ScamBomb logo">
-      <img
-        src="/logo.png"
-        alt="ScamBomb Logo"
-        className={`${imgSize} object-contain`}
-      />
-    </div>
-  );
-}
+const posts = [
+  {
+    slug: 'how-to-spot-fake-bank-texts-in-30-seconds',
+    title: 'How to spot fake bank texts in 30 seconds',
+    description: 'Learn the quick red flags that separate real bank alerts from scam texts trying to steal your money.',
+    date: '2023-11-12',
+    tag: 'GUIDE'
+  },
+  {
+    slug: 'new-usps-delivery-scam-what-to-do',
+    title: 'New USPS delivery scam: what to do',
+    description: 'A new scam impersonates USPS delivery notifications. Here\'s how to spot it and protect yourself.',
+    date: '2023-11-10',
+    tag: 'ALERT'
+  },
+  {
+    slug: 'three-questions-to-ask-before-you-click',
+    title: 'Three questions to ask before you click',
+    description: 'A simple checklist to run through before clicking any link in an email or text message.',
+    date: '2023-11-08',
+    tag: 'HOW-TO'
+  }
+]
 
 export default function BlogPage() {
-  const posts = allPosts.sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
-
   return (
     <div className="py-16">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
@@ -28,12 +36,12 @@ export default function BlogPage() {
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {posts.map((post) => (
-            <article key={post._id} className="rounded-2xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition-colors">
+            <article key={post.slug} className="rounded-2xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition-colors">
               <div className="text-xs font-semibold tracking-widest text-white/60 mb-2">
-                {post.tags?.[0] || 'GUIDE'}
+                {post.tag}
               </div>
               <h2 className="text-xl font-semibold mb-3">
-                <Link href={post.url} className="hover:text-yellow-300 transition-colors">
+                <Link href={`/blog/${post.slug}`} className="hover:text-yellow-300 transition-colors">
                   {post.title}
                 </Link>
               </h2>
