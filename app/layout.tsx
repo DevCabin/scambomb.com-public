@@ -30,6 +30,7 @@ function UniversalFooter() {
           <ul className="mt-2 space-y-2 text-white/80">
             <li><a href="/#how">How it works</a></li>
             <li><a href="/#features">Features</a></li>
+            <li><a href="/extension">Chrome Extension</a></li>
             <li><a href="/#pricing">Pricing</a></li>
             <li><a href="/blog">Blog</a></li>
           </ul>
