@@ -131,7 +131,7 @@ export default function ExtensionPrivacyPage() {
             <div className="bg-white/5 rounded-2xl p-8">
               <h2 className="text-2xl font-bold mb-6 text-[#F5C84C]">5. Your Rights and Choices</h2>
               <p className="text-white/90 leading-relaxed">
-                <strong>Data Deletion:</strong> You can uninstall the extension to remove all local data (this is your only choice).
+                <strong>Data Deletion:</strong> You can uninstall the extension to remove all local data.
               </p>
             </div>
 
