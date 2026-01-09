@@ -174,6 +174,9 @@ export default function ExtensionPrivacyPage() {
                 <p className="text-white mb-2">
                   <strong className="text-[#F5C84C]">Website:</strong> <a href="https://scambomb.com" className="text-[#F5C84C] hover:text-white transition-colors">scambomb.com</a>
                 </p>
+                <p className="text-white mb-2">
+                  <strong className="text-[#F5C84C]">Chrome Extension:</strong> <a href="/extension" className="text-[#F5C84C] hover:text-white transition-colors">Get ScamBomb Extension</a>
+                </p>
                 <p className="text-white">
                   <strong className="text-[#F5C84C]">Address:</strong> ScamBomb Privacy Team
                 </p>
