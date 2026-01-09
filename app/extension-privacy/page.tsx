@@ -133,7 +133,7 @@ export default function ExtensionPrivacyPage() {
               <ul className="space-y-3 text-white/90">
                 <li className="flex items-start gap-3">
                   <span className="text-[#F5C84C] text-xl">✓</span>
-                  <span><strong>Data Deletion:</strong> You can uninstall the extension to remove all local data</span>
+                  <span><strong>Data Deletion:</strong> You can uninstall the extension to remove all local data (this is your only right and choice)</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-[#F5C84C] text-xl">✓</span>
@@ -184,7 +184,7 @@ export default function ExtensionPrivacyPage() {
 
               <div className="bg-white/10 rounded-xl p-6">
                 <p className="text-white mb-2">
-                  <strong className="text-[#F5C84C]">Email:</strong> privacy@scambomb.com
+                  <strong className="text-[#F5C84C]">Email:</strong> info@scambomb.com
                 </p>
                 <p className="text-white mb-2">
                   <strong className="text-[#F5C84C]">Website:</strong> <a href="https://scambomb.com" className="text-[#F5C84C] hover:text-white transition-colors">scambomb.com</a>
@@ -196,7 +196,7 @@ export default function ExtensionPrivacyPage() {
 
               <div className="mt-6 p-4 bg-[#F5C84C]/10 border-l-4 border-[#F5C84C]">
                 <p className="text-white/90">
-                  <strong className="text-[#F5C84C]">Extension-Specific Note:</strong> This privacy policy covers only the ScamBomb Chrome extension. For information about our web application, please see our main privacy policy at <a href="/privacy" className="text-[#F5C84C] hover:text-white transition-colors">scambomb.com/privacy</a>.
+                  <strong className="text-[#F5C84C]">Extension-Specific Note:</strong> This privacy policy covers only the ScamBomb Chrome extension. For information about our web application, please see our main privacy policy at <a href="/term" className="text-[#F5C84C] hover:text-white transition-colors">scambomb.com/term</a>.
                 </p>
               </div>
             </div>
