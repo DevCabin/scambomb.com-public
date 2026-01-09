@@ -133,7 +133,7 @@ export default function ExtensionPrivacyPage() {
               <ul className="space-y-3 text-white/90">
                 <li className="flex items-start gap-3">
                   <span className="text-[#F5C84C] text-xl">✓</span>
-                  <span><strong>Data Deletion:</strong> You can uninstall the extension to remove all local data (this is your only right and choice)</span>
+                  <span><strong>Data Deletion:</strong> You can uninstall the extension to remove all local data (this is your only choice)</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-[#F5C84C] text-xl">✓</span>
