@@ -95,7 +95,7 @@ scambomb.com-public/
 - **Interactive Elements**: Hover states and focus indicators
 - **Loading States**: Smooth transitions and feedback
 
-## 📋 Current Status: Pre-Alpha v0
+## 📋 Current Status: v1.1.5
 
 ### ✅ Completed Features
 - [x] Next.js 16 setup with App Router (security upgrades)
@@ -116,6 +116,9 @@ scambomb.com-public/
 - Contentlayer configuration may need optimization
 
 ## 📋 Changelog
+
+### v1.1.5 (2026-01-09)
+- **Chrome Extension Page**: Updated opening copy to specify Gmail instead of generic 'browser' reference
 
 ### v1.1.4 (2026-01-08)
 - **Chrome Extension Page**: Added comprehensive /extension page with installation instructions, features, and Chrome Web Store link
