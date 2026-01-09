@@ -9,7 +9,7 @@ export default function ExtensionPage() {
             ScamBomb Chrome Extension
           </h1>
           <p className="text-xl text-white/80 max-w-2xl mx-auto">
-            Free scam detection right in your browser — analyze suspicious messages instantly.
+            Free scam detection right in your Gmail inbox — analyze suspicious messages instantly.
           </p>
         </section>
 
@@ -19,7 +19,7 @@ export default function ExtensionPage() {
           {/* Intro */}
           <div className="mb-12 text-center">
             <p className="text-lg text-white/90 leading-relaxed">
-              The ScamBomb Chrome Extension brings our powerful AI scam detection directly to your browser. No need to visit our website — check any suspicious email, text, or message with just a click.
+              The ScamBomb Chrome Extension brings our powerful AI scam detection directly to Gmail. No need to visit our website — check any suspicious email, text, or message with just a click.
             </p>
             <div className="mt-8">
               <a
