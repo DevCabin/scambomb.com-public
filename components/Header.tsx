@@ -26,7 +26,7 @@ function UniversalHeader() {
             <nav className="hidden md:flex items-center gap-6" aria-label="Primary">
               <a className="opacity-90 hover:opacity-100" href="/">Home</a>
               <a className="opacity-90 hover:opacity-100" href="/#how">How it works</a>
-              <a className="opacity-90 hover:opacity-100" href="/#features">Features</a>
+              <a className="opacity-90 hover:opacity-100" href="/extension">Extension</a>
               <a className="opacity-90 hover:opacity-100" href="/#pricing">Pricing</a>
               <a className="opacity-90 hover:opacity-100" href="/#faq">FAQ</a>
               <a className="opacity-90 hover:opacity-100" href="/blog">Blog</a>
