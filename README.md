@@ -59,6 +59,8 @@ scambomb.com-public/
 │   ├── blog/                     # Blog pages
 │   │   ├── page.tsx             # Blog index
 │   │   └── [slug]/              # Individual blog posts
+│   ├── extension/                # Chrome extension page
+│   │   └── page.tsx             # Extension info and download
 │   ├── globals.css              # Global styles
 │   ├── layout.tsx               # Root layout
 │   └── page.tsx                 # Homepage
@@ -114,6 +116,10 @@ scambomb.com-public/
 - Contentlayer configuration may need optimization
 
 ## 📋 Changelog
+
+### v1.1.4 (2026-01-08)
+- **Chrome Extension Page**: Added comprehensive /extension page with installation instructions, features, and Chrome Web Store link
+- **Navigation Update**: Replaced "Features" link in header navigation with "Extension" link for better user flow
 
 ### v1.1.3 (2025-12-31)
 - **Hero Banner Styling Update**: Changed "Suspicious:" text to white color and dynamic text ("Emails", "Texts", "Spam") to brand yellow with capital case formatting
