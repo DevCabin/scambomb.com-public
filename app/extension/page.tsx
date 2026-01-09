@@ -44,19 +44,13 @@ export default function ExtensionPage() {
               <li className="flex items-start gap-3">
                 <span className="flex-shrink-0 w-8 h-8 rounded-full bg-[#F5C84C] text-[#0B1324] flex items-center justify-center font-bold">2</span>
                 <div>
-                  <strong>Find Suspicious Content:</strong> When you encounter a suspicious email, text, or message, highlight the text you want to check.
+                  <strong>Scan Your Email:</strong> In Gmail, simply click the "Scan" button that appears at the top of suspicious message windows. For other platforms, highlight the text and use the extension icon.
                 </div>
               </li>
               <li className="flex items-start gap-3">
                 <span className="flex-shrink-0 w-8 h-8 rounded-full bg-[#F5C84C] text-[#0B1324] flex items-center justify-center font-bold">3</span>
                 <div>
-                  <strong>Click the Extension Icon:</strong> Click the ScamBomb icon in your browser toolbar.
-                </div>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="flex-shrink-0 w-8 h-8 rounded-full bg-[#F5C84C] text-[#0B1324] flex items-center justify-center font-bold">4</span>
-                <div>
-                  <strong>Get Instant Analysis:</strong> Our AI will analyze the text and provide a clear assessment: safe, suspicious, or dangerous, with next steps.
+                  <strong>Get Instant Analysis:</strong> Our AI will analyze the content and provide a clear assessment: safe, suspicious, or dangerous, with next steps.
                 </div>
               </li>
             </ol>
