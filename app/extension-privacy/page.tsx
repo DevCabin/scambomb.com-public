@@ -7,138 +7,204 @@ export const metadata = {
 
 export default function ExtensionPrivacyPage() {
   return (
-    <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto">
-        <div className="bg-white shadow-lg rounded-lg overflow-hidden">
-          <div className="bg-gradient-to-r from-blue-600 to-blue-800 px-6 py-8">
-            <h1 className="text-3xl font-bold text-white text-center">
-              ScamBomb Extension Privacy Policy
-            </h1>
-            <p className="text-blue-100 text-center mt-2">
-              Last updated: January 8, 2026
+    <div className="bg-[#0B1324] text-white antialiased font-montserrat">
+      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-16">
+
+        {/* Hero */}
+        <section className="text-center mb-16">
+          <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight mb-6">
+            Extension Privacy Policy
+          </h1>
+          <p className="text-xl text-white/80 max-w-2xl mx-auto">
+            How we protect your data while keeping you safe from scams.
+          </p>
+        </section>
+
+        {/* Main Content */}
+        <section className="prose prose-lg prose-invert max-w-none">
+
+          {/* Intro */}
+          <div className="mb-12 text-center">
+            <p className="text-lg text-white/90 leading-relaxed">
+              This privacy policy describes how the ScamBomb Chrome extension collects, uses, and protects your information. This policy is separate from our main website privacy policy and applies only to the Extension.
             </p>
           </div>
 
-          <div className="px-6 py-8">
-            <div className="prose prose-lg max-w-none">
+          {/* Privacy Sections */}
+          <div className="space-y-8">
 
-              <p className="text-gray-600 mb-8">
-                This privacy policy describes how the ScamBomb Chrome extension ("Extension") collects, uses, and protects your information. This policy is separate from our main website privacy policy and applies only to the Extension.
-              </p>
+            <div className="bg-white/5 rounded-2xl p-8">
+              <h2 className="text-2xl font-bold mb-6 text-[#F5C84C]">1. Information We Collect</h2>
 
-              <h2 className="text-2xl font-semibold text-gray-800 mb-4">1. Information We Collect</h2>
-
-              <h3 className="text-xl font-medium text-gray-700 mb-3">Local Data (Stored on Your Device)</h3>
-              <ul className="list-disc pl-6 mb-6 text-gray-600">
-                <li>Scan usage statistics (number of emails scanned)</li>
-                <li>User preferences and settings</li>
-                <li>Extension state and configuration</li>
+              <h3 className="text-xl font-semibold text-white mb-4">Local Data (Stored on Your Device)</h3>
+              <ul className="space-y-2 text-white/90 mb-6">
+                <li className="flex items-start gap-3">
+                  <span className="text-[#F5C84C] mt-1">•</span>
+                  <span>Scan usage statistics (number of emails scanned)</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#F5C84C] mt-1">•</span>
+                  <span>User preferences and settings</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#F5C84C] mt-1">•</span>
+                  <span>Extension state and configuration</span>
+                </li>
               </ul>
 
-              <h3 className="text-xl font-medium text-gray-700 mb-3">Data Sent to Our Servers</h3>
-              <ul className="list-disc pl-6 mb-6 text-gray-600">
-                <li>Email content you choose to scan (temporarily processed, not stored)</li>
-                <li>Anonymous usage analytics (optional, can be disabled)</li>
-                <li>Error reports (anonymous crash data to improve stability)</li>
+              <h3 className="text-xl font-semibold text-white mb-4">Data Sent to Our Servers</h3>
+              <ul className="space-y-2 text-white/90">
+                <li className="flex items-start gap-3">
+                  <span className="text-[#F5C84C] mt-1">•</span>
+                  <span>Email content you choose to scan (temporarily processed, not stored)</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#F5C84C] mt-1">•</span>
+                  <span>Anonymous usage analytics (optional, can be disabled)</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#F5C84C] mt-1">•</span>
+                  <span>Error reports (anonymous crash data to improve stability)</span>
+                </li>
               </ul>
+            </div>
 
-              <h2 className="text-2xl font-semibold text-gray-800 mb-4">2. How We Use Your Information</h2>
-
-              <ul className="list-disc pl-6 mb-6 text-gray-600">
-                <li><strong>Email Analysis:</strong> To provide AI-powered scam detection when you scan emails</li>
-                <li><strong>Service Improvement:</strong> Anonymous analytics to improve extension performance and features</li>
-                <li><strong>Security:</strong> Error reporting to identify and fix technical issues</li>
-                <li><strong>Legal Compliance:</strong> To comply with applicable laws and regulations</li>
+            <div className="bg-white/5 rounded-2xl p-8">
+              <h2 className="text-2xl font-bold mb-6 text-[#F5C84C]">2. How We Use Your Information</h2>
+              <ul className="space-y-3 text-white/90">
+                <li className="flex items-start gap-3">
+                  <span className="text-[#F5C84C] text-xl">✓</span>
+                  <span><strong>Email Analysis:</strong> To provide AI-powered scam detection when you scan emails</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#F5C84C] text-xl">✓</span>
+                  <span><strong>Service Improvement:</strong> Anonymous analytics to improve extension performance and features</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#F5C84C] text-xl">✓</span>
+                  <span><strong>Security:</strong> Error reporting to identify and fix technical issues</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#F5C84C] text-xl">✓</span>
+                  <span><strong>Legal Compliance:</strong> To comply with applicable laws and regulations</span>
+                </li>
               </ul>
+            </div>
 
-              <h2 className="text-2xl font-semibold text-gray-800 mb-4">3. Data Storage and Retention</h2>
+            <div className="bg-white/5 rounded-2xl p-8">
+              <h2 className="text-2xl font-bold mb-6 text-[#F5C84C]">3. Data Storage and Retention</h2>
 
-              <h3 className="text-xl font-medium text-gray-700 mb-3">Local Storage</h3>
-              <p className="text-gray-600 mb-4">
+              <h3 className="text-xl font-semibold text-white mb-4">Local Storage</h3>
+              <p className="text-white/90 leading-relaxed mb-6">
                 Usage statistics and preferences are stored locally on your device using Chrome's storage API. This data remains on your device and is not transmitted to our servers unless you enable optional analytics.
               </p>
 
-              <h3 className="text-xl font-medium text-gray-700 mb-3">Server Storage</h3>
-              <p className="text-gray-600 mb-4">
+              <h3 className="text-xl font-semibold text-white mb-4">Server Storage</h3>
+              <p className="text-white/90 leading-relaxed">
                 Email content sent for analysis is temporarily processed and immediately discarded. We do not store the content of emails you scan. Anonymous analytics data is retained for up to 2 years to improve our services.
               </p>
+            </div>
 
-              <h2 className="text-2xl font-semibold text-gray-800 mb-4">4. Data Sharing and Third Parties</h2>
+            <div className="bg-white/5 rounded-2xl p-8">
+              <h2 className="text-2xl font-bold mb-6 text-[#F5C84C]">4. Data Sharing and Third Parties</h2>
 
-              <p className="text-gray-600 mb-4">
+              <p className="text-white/90 leading-relaxed mb-4">
                 We do not sell, trade, or rent your personal information to third parties. We may share anonymized, aggregated data for analytical purposes, but this data cannot be used to identify individual users.
               </p>
 
-              <p className="text-gray-600 mb-6">
+              <p className="text-white/90 leading-relaxed mb-4">
                 The Extension uses the following third-party services:
               </p>
 
-              <ul className="list-disc pl-6 mb-6 text-gray-600">
-                <li><strong>OpenAI:</strong> For AI-powered email analysis (data is processed securely and not stored)</li>
-                <li><strong>Stripe:</strong> For premium subscription processing (if you upgrade)</li>
+              <ul className="space-y-2 text-white/90">
+                <li className="flex items-start gap-3">
+                  <span className="text-[#F5C84C] mt-1">•</span>
+                  <span><strong>OpenAI:</strong> For AI-powered email analysis (data is processed securely and not stored)</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#F5C84C] mt-1">•</span>
+                  <span><strong>Stripe:</strong> For premium subscription processing (if you upgrade)</span>
+                </li>
               </ul>
+            </div>
 
-              <h2 className="text-2xl font-semibold text-gray-800 mb-4">5. Your Rights and Choices</h2>
-
-              <ul className="list-disc pl-6 mb-6 text-gray-600">
-                <li><strong>Data Deletion:</strong> You can uninstall the extension to remove all local data</li>
-                <li><strong>Analytics Opt-out:</strong> Disable optional analytics in extension settings</li>
-                <li><strong>Account Data:</strong> Contact us to request deletion of any account-associated data</li>
-                <li><strong>Access Rights:</strong> Request information about what data we have associated with your account</li>
+            <div className="bg-white/5 rounded-2xl p-8">
+              <h2 className="text-2xl font-bold mb-6 text-[#F5C84C]">5. Your Rights and Choices</h2>
+              <ul className="space-y-3 text-white/90">
+                <li className="flex items-start gap-3">
+                  <span className="text-[#F5C84C] text-xl">✓</span>
+                  <span><strong>Data Deletion:</strong> You can uninstall the extension to remove all local data</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#F5C84C] text-xl">✓</span>
+                  <span><strong>Analytics Opt-out:</strong> Disable optional analytics in extension settings</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#F5C84C] text-xl">✓</span>
+                  <span><strong>Account Data:</strong> Contact us to request deletion of any account-associated data</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#F5C84C] text-xl">✓</span>
+                  <span><strong>Access Rights:</strong> Request information about what data we have associated with your account</span>
+                </li>
               </ul>
+            </div>
 
-              <h2 className="text-2xl font-semibold text-gray-800 mb-4">6. Data Security</h2>
-
-              <p className="text-gray-600 mb-6">
+            <div className="bg-white/5 rounded-2xl p-8">
+              <h2 className="text-2xl font-bold mb-6 text-[#F5C84C]">6. Data Security</h2>
+              <p className="text-white/90 leading-relaxed mb-4">
                 We implement appropriate technical and organizational measures to protect your data:
               </p>
-
-              <ul className="list-disc pl-6 mb-6 text-gray-600">
-                <li>All data transmission is encrypted using HTTPS</li>
-                <li>Email content is processed in memory and immediately discarded</li>
-                <li>Access to our systems is restricted and monitored</li>
-                <li>Regular security audits and updates</li>
+              <ul className="space-y-2 text-white/90">
+                <li className="flex items-start gap-3">
+                  <span className="text-[#F5C84C] mt-1">•</span>
+                  <span>All data transmission is encrypted using HTTPS</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#F5C84C] mt-1">•</span>
+                  <span>Email content is processed in memory and immediately discarded</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#F5C84C] mt-1">•</span>
+                  <span>Access to our systems is restricted and monitored</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#F5C84C] mt-1">•</span>
+                  <span>Regular security audits and updates</span>
+                </li>
               </ul>
+            </div>
 
-              <h2 className="text-2xl font-semibold text-gray-800 mb-4">7. Children's Privacy</h2>
+            <div className="bg-white/5 rounded-2xl p-8">
+              <h2 className="text-2xl font-bold mb-6 text-[#F5C84C]">7. Contact Us</h2>
 
-              <p className="text-gray-600 mb-6">
-                The Extension is not intended for children under 13 years of age. We do not knowingly collect personal information from children under 13.
-              </p>
-
-              <h2 className="text-2xl font-semibold text-gray-800 mb-4">8. Changes to This Policy</h2>
-
-              <p className="text-gray-600 mb-6">
-                We may update this privacy policy from time to time. We will notify you of any material changes by posting the new policy on this page and updating the "Last updated" date.
-              </p>
-
-              <h2 className="text-2xl font-semibold text-gray-800 mb-4">9. Contact Us</h2>
-
-              <p className="text-gray-600 mb-4">
+              <p className="text-white/90 leading-relaxed mb-6">
                 If you have any questions about this privacy policy or our data practices, please contact us:
               </p>
 
-              <div className="bg-gray-50 p-4 rounded-lg">
-                <p className="text-gray-700 mb-2">
-                  <strong>Email:</strong> privacy@scambomb.com
+              <div className="bg-white/10 rounded-xl p-6">
+                <p className="text-white mb-2">
+                  <strong className="text-[#F5C84C]">Email:</strong> privacy@scambomb.com
                 </p>
-                <p className="text-gray-700 mb-2">
-                  <strong>Website:</strong> <a href="https://scambomb.com" className="text-blue-600 hover:text-blue-800">scambomb.com</a>
+                <p className="text-white mb-2">
+                  <strong className="text-[#F5C84C]">Website:</strong> <a href="https://scambomb.com" className="text-[#F5C84C] hover:text-white transition-colors">scambomb.com</a>
                 </p>
-                <p className="text-gray-700">
-                  <strong>Address:</strong> ScamBomb Privacy Team
-                </p>
-              </div>
-
-              <div className="mt-8 p-4 bg-blue-50 border-l-4 border-blue-400">
-                <p className="text-blue-700">
-                  <strong>Extension-Specific Note:</strong> This privacy policy covers only the ScamBomb Chrome extension. For information about our web application, please see our main privacy policy at <a href="/privacy" className="text-blue-600 hover:text-blue-800">scambomb.com/privacy</a>.
+                <p className="text-white">
+                  <strong className="text-[#F5C84C]">Address:</strong> ScamBomb Privacy Team
                 </p>
               </div>
 
+              <div className="mt-6 p-4 bg-[#F5C84C]/10 border-l-4 border-[#F5C84C]">
+                <p className="text-white/90">
+                  <strong className="text-[#F5C84C]">Extension-Specific Note:</strong> This privacy policy covers only the ScamBomb Chrome extension. For information about our web application, please see our main privacy policy at <a href="/privacy" className="text-[#F5C84C] hover:text-white transition-colors">scambomb.com/privacy</a>.
+                </p>
+              </div>
             </div>
+
           </div>
-        </div>
+
+        </section>
+
       </div>
     </div>
   );
