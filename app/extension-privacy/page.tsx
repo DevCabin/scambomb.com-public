@@ -130,24 +130,9 @@ export default function ExtensionPrivacyPage() {
 
             <div className="bg-white/5 rounded-2xl p-8">
               <h2 className="text-2xl font-bold mb-6 text-[#F5C84C]">5. Your Rights and Choices</h2>
-              <ul className="space-y-3 text-white/90">
-                <li className="flex items-start gap-3">
-                  <span className="text-[#F5C84C] text-xl">✓</span>
-                  <span><strong>Data Deletion:</strong> You can uninstall the extension to remove all local data (this is your only choice)</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-[#F5C84C] text-xl">✓</span>
-                  <span><strong>Analytics Opt-out:</strong> Disable optional analytics in extension settings</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-[#F5C84C] text-xl">✓</span>
-                  <span><strong>Account Data:</strong> Contact us to request deletion of any account-associated data</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-[#F5C84C] text-xl">✓</span>
-                  <span><strong>Access Rights:</strong> Request information about what data we have associated with your account</span>
-                </li>
-              </ul>
+              <p className="text-white/90 leading-relaxed">
+                <strong>Data Deletion:</strong> You can uninstall the extension to remove all local data (this is your only choice).
+              </p>
             </div>
 
             <div className="bg-white/5 rounded-2xl p-8">
