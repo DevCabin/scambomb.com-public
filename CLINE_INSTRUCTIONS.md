@@ -280,5 +280,22 @@ const handleAppAccess = () => {
 - Multi-language support
 - API access for integrations
 
+
+## 📋 **Workflow Directive**
+
+**IMPORTANT: This directive must persist across all future sessions.**
+
+After any requested code updates or changes, please follow this workflow:
+
+1. **Commit with MINIMAL message** (e.g., "Fix CSP for OCR WebAssembly", "Add user auth", etc.)
+2. **Update project documents**:
+   - README.md (version and changelog if applicable)
+   - CHANGELOG.md (add new entry with date)
+   - DEVELOPER_GUIDE.md (technical details if needed)
+3. **Push to GitHub** immediately after updates
+
+**Rationale**: Maintains clean git history, keeps documentation current, and ensures changes are deployed promptly.
+
+
 ---
 *This document reflects the current production state of ScamBomb. All major features are implemented and tested.*

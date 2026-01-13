@@ -59,6 +59,8 @@ scambomb.com-public/
 │   ├── blog/                     # Blog pages
 │   │   ├── page.tsx             # Blog index
 │   │   └── [slug]/              # Individual blog posts
+│   ├── email-to-scan/           # Email-to-scan feature page
+│   │   └── page.tsx             # Email forwarding instructions
 │   ├── extension/                # Chrome extension page
 │   │   └── page.tsx             # Extension info and download
 │   ├── globals.css              # Global styles
@@ -116,6 +118,10 @@ scambomb.com-public/
 - Contentlayer configuration may need optimization
 
 ## 📋 Changelog
+
+### v1.1.6 (2026-01-13)
+- **Email-to-Scan Page**: Added comprehensive /email-to-scan page with detailed instructions for email forwarding feature
+- **Navigation Update**: Replaced "How it works" link in header with "Email-to-Scan" link for better feature visibility
 
 ### v1.1.5 (2026-01-09)
 - **Chrome Extension Page**: Updated opening copy to specify Gmail instead of generic 'browser' reference
