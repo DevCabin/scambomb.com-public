@@ -1,111 +1,136 @@
 export default function ExtensionPage() {
+  const brandYellow = "#F5C84C";
+
   return (
     <div className="bg-[#0B1324] text-white antialiased font-montserrat">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-16">
 
-        {/* Hero */}
+        {/* Hero - Coming Soon */}
         <section className="text-center mb-16">
           <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight mb-6">
             ScamBomb Chrome Extension
           </h1>
+          <div className="text-6xl font-bold mb-4" style={{ color: brandYellow }}>
+            🚀 COMING SOON! 🚀
+          </div>
           <p className="text-xl text-white/80 max-w-2xl mx-auto">
-            Free scam detection right in your Gmail inbox — analyze suspicious messages instantly.
+            Our Chrome extension is currently under review by the Chrome Web Store. Stay tuned for the easiest way to detect scams right in your browser!
           </p>
         </section>
 
         {/* Main Content */}
         <section className="prose prose-lg prose-invert max-w-none">
 
-          {/* Intro */}
-          <div className="mb-12 text-center">
-            <p className="text-lg text-white/90 leading-relaxed">
-              The ScamBomb Chrome Extension brings our powerful AI scam detection directly to Gmail. No need to visit our website — check any suspicious email, text, or message with just a click.
+          {/* Status Update */}
+          <div className="bg-white/5 rounded-2xl p-8 mb-12 text-center">
+            <h2 className="text-3xl font-bold mb-6" style={{ color: brandYellow }}>⏳ Extension Status: Under Review</h2>
+            <p className="text-lg text-white/90 leading-relaxed mb-6">
+              We're excited to bring you the ScamBomb Chrome Extension! Our team has submitted it to the Chrome Web Store for approval. This process typically takes 1-3 days, but can sometimes take longer depending on review queue volume.
             </p>
-            <div className="mt-8">
+            <div className="text-4xl font-bold mb-4" style={{ color: brandYellow }}>
+              COMING SOON!
+            </div>
+          </div>
+
+          {/* What to Expect */}
+          <div className="bg-white/5 rounded-2xl p-8 mb-12">
+            <h2 className="text-2xl font-bold mb-6" style={{ color: brandYellow }}>What to Expect When It's Live</h2>
+            <div className="space-y-6">
+              <div className="flex items-start gap-4">
+                <div className="text-3xl">⚡</div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-2">Instant Analysis</h3>
+                  <p className="text-white/90">Get results in seconds, right in your browser.</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="text-3xl">🔒</div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-2">Privacy-First</h3>
+                  <p className="text-white/90">Your messages are analyzed locally and never stored.</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="text-3xl">📧</div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-2">Works Everywhere</h3>
+                  <p className="text-white/90">Check emails, social media, texts — any text you encounter online.</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="text-3xl">🆓</div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-2">Free Forever</h3>
+                  <p className="text-white/90">No ads, no subscriptions, no limitations.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Coming Soon Cards */}
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            <div className="bg-white/5 rounded-2xl p-8 text-center">
+              <div className="text-5xl mb-4">🚀</div>
+              <h3 className="text-xl font-bold mb-4" style={{ color: brandYellow }}>COMING SOON!</h3>
+              <p className="text-white/90">Chrome Extension Launch</p>
+            </div>
+            <div className="bg-white/5 rounded-2xl p-8 text-center">
+              <div className="text-5xl mb-4">⚡</div>
+              <h3 className="text-xl font-bold mb-4" style={{ color: brandYellow }}>COMING SOON!</h3>
+              <p className="text-white/90">Instant Scam Detection</p>
+            </div>
+            <div className="bg-white/5 rounded-2xl p-8 text-center">
+              <div className="text-5xl mb-4">🔒</div>
+              <h3 className="text-xl font-bold mb-4" style={{ color: brandYellow }}>COMING SOON!</h3>
+              <p className="text-white/90">Privacy-First Protection</p>
+            </div>
+            <div className="bg-white/5 rounded-2xl p-8 text-center">
+              <div className="text-5xl mb-4">📧</div>
+              <h3 className="text-xl font-bold mb-4" style={{ color: brandYellow }}>COMING SOON!</h3>
+              <p className="text-white/90">Browser-Based Security</p>
+            </div>
+          </div>
+
+          {/* Notification Signup */}
+          <div className="bg-white/5 rounded-2xl p-8 mb-12 text-center">
+            <h2 className="text-2xl font-bold mb-6" style={{ color: brandYellow }}>Get Notified When It's Ready!</h2>
+            <p className="text-white/90 mb-8">
+              Be the first to know when our Chrome extension is approved and available for download.
+            </p>
+            <div className="text-4xl font-bold mb-4" style={{ color: brandYellow }}>
+              COMING SOON!
+            </div>
+            <p className="text-sm text-white/70">
+              We'll send you an email as soon as the extension is live in the Chrome Web Store.
+            </p>
+          </div>
+
+          {/* Alternative Solution */}
+          <div className="bg-white/5 rounded-2xl p-8 mb-12">
+            <h2 className="text-2xl font-bold mb-6 text-center" style={{ color: brandYellow }}>While You Wait...</h2>
+            <p className="text-white/90 leading-relaxed mb-6 text-center">
+              Don't let scammers wait! Use our web app for instant scam detection right now.
+            </p>
+            <div className="text-center">
               <a
-                href="https://chrome.google.com/webstore/detail/scambomb/..."
+                href={`https://app.scambomb.com/?safe_source=true&SBID=${crypto.randomUUID()}`}
                 className="inline-block rounded-2xl px-8 py-4 font-semibold text-lg bg-[#F5C84C] text-[#0B1324] hover:bg-[#F5C84C]/90 transition-colors"
               >
-                Get ScamBomb Extension
+                Try ScamBomb Web App Now
               </a>
             </div>
           </div>
 
-          {/* How to Use */}
-          <div className="bg-white/5 rounded-2xl p-8 mb-12">
-            <h2 className="text-2xl font-bold mb-6 text-[#F5C84C]">How to Use</h2>
-            <ol className="space-y-4 text-white/90">
-              <li className="flex items-start gap-3">
-                <span className="flex-shrink-0 w-8 h-8 rounded-full bg-[#F5C84C] text-[#0B1324] flex items-center justify-center font-bold">1</span>
-                <div>
-                  <strong>Install the Extension:</strong> Click the "Get ScamBomb Extension" button above to install from the Chrome Web Store.
-                </div>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="flex-shrink-0 w-8 h-8 rounded-full bg-[#F5C84C] text-[#0B1324] flex items-center justify-center font-bold">2</span>
-                <div>
-                  <strong>Scan Your Email:</strong> In Gmail, simply click the "Scan" button that appears at the top of suspicious message windows. For other platforms, highlight the text and use the extension icon.
-                </div>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="flex-shrink-0 w-8 h-8 rounded-full bg-[#F5C84C] text-[#0B1324] flex items-center justify-center font-bold">3</span>
-                <div>
-                  <strong>Get Instant Analysis:</strong> Our AI will analyze the content and provide a clear assessment: safe, suspicious, or dangerous, with next steps.
-                </div>
-              </li>
-            </ol>
-          </div>
-
-          {/* Features */}
-          <div className="bg-white/5 rounded-2xl p-8 mb-12">
-            <h2 className="text-2xl font-bold mb-6 text-[#F5C84C]">Extension Features</h2>
-            <ul className="space-y-3 text-white/90">
-              <li className="flex items-start gap-3">
-                <span className="text-[#F5C84C] text-xl">✓</span>
-                <span><strong>Instant Analysis:</strong> Get results in seconds, right in your browser.</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-[#F5C84C] text-xl">✓</span>
-                <span><strong>Plain-English Explanations:</strong> No tech jargon — just clear, actionable advice.</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-[#F5C84C] text-xl">✓</span>
-                <span><strong>Privacy-First:</strong> Your messages are analyzed locally and never stored.</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-[#F5C84C] text-xl">✓</span>
-                <span><strong>Works Everywhere:</strong> Check emails, social media, texts — any text you encounter online.</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-[#F5C84C] text-xl">✓</span>
-                <span><strong>Free Forever:</strong> No ads, no subscriptions, no limitations.</span>
-              </li>
-            </ul>
-          </div>
-
-          {/* Why Extension */}
-          <div className="mb-12">
-            <h2 className="text-2xl font-bold mb-6 text-[#F5C84C]">Why a Browser Extension?</h2>
-            <p className="text-white/90 leading-relaxed mb-4">
-              Scams happen everywhere online. Whether you're checking email, browsing social media, or reading news, suspicious messages can appear anywhere. The ScamBomb extension puts protection right where you need it — without leaving the page or opening a new tab.
-            </p>
-            <p className="text-white/90 leading-relaxed">
-              It's like having a scam-detecting expert looking over your shoulder, ready to help whenever you need it.
-            </p>
-          </div>
-
-          {/* CTA */}
+          {/* Final CTA */}
           <div className="text-center">
-            <h2 className="text-2xl font-bold mb-6 text-[#F5C84C]">Protect Yourself Today</h2>
+            <div className="text-5xl mb-6">🚀</div>
+            <h2 className="text-3xl font-bold mb-6" style={{ color: brandYellow }}>COMING SOON!</h2>
             <p className="text-white/90 mb-8">
-              Install the ScamBomb Chrome Extension and start checking suspicious messages instantly. It's free, fast, and effective.
+              The ScamBomb Chrome Extension is on its way. Get ready for the easiest way to detect scams online!
             </p>
-            <a
-              href="https://chrome.google.com/webstore/detail/scambomb/..."
-              className="inline-block rounded-2xl px-8 py-4 font-semibold text-lg bg-[#F5C84C] text-[#0B1324] hover:bg-[#F5C84C]/90 transition-colors"
-            >
-              Get ScamBomb Extension Now
-            </a>
+            <div className="text-2xl font-bold" style={{ color: brandYellow }}>
+              STAY TUNED! 🎯
+            </div>
           </div>
 
         </section>
