@@ -23,7 +23,11 @@ export default function EmailToScanPage() {
           <div className="mb-12 text-center">
             <div className="text-white/80 mb-2">Forward suspicious messages to:</div>
             <h2 className="text-3xl font-bold mb-6" style={{ color: brandYellow }}>scam@scambomb.com</h2>
-            <p className="text-lg text-white/90 leading-relaxed">
+          </div>
+
+          {/* Feature Overview */}
+          <div className="bg-white/5 rounded-2xl p-8 mb-12">
+            <p className="text-lg text-white/90 leading-relaxed text-center">
               ScamBomb's email-to-scan feature lets you forward suspicious emails directly from your inbox and receive professional AI-powered scam analysis delivered right back to you. No app needed, no website visits required - just forward and forget!
             </p>
           </div>
