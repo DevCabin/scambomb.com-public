@@ -97,7 +97,7 @@ scambomb.com-public/
 - **Interactive Elements**: Hover states and focus indicators
 - **Loading States**: Smooth transitions and feedback
 
-## 📋 Current Status: v1.1.5
+## 📋 Current Status: v1.2.0
 
 ### ✅ Completed Features
 - [x] Next.js 16 setup with App Router (security upgrades)
@@ -118,6 +118,10 @@ scambomb.com-public/
 - Contentlayer configuration may need optimization
 
 ## 📋 Changelog
+
+### v1.2.0 (2026-01-13)
+- **Extension Page Redesign**: Complete overhaul with extensive "Coming Soon!" messaging for pending Chrome Web Store approval
+- **Email-to-Scan Page Updates**: Restructured intro section with larger email address display and moved feature description to dedicated card
 
 ### v1.1.6 (2026-01-13)
 - **Email-to-Scan Page**: Added comprehensive /email-to-scan page with detailed instructions for email forwarding feature
