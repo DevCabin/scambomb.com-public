@@ -292,6 +292,7 @@ scambomb.com-public/
 ## 📝 To Do List
 
 ### High Priority
+- [ ] **Email-to-Scan Privacy Policy**: Create dedicated privacy policy for email forwarding feature (different from regular app - some logging due to routing, but emails not saved or sold)
 - [ ] **Domain Integration**: Set up custom domain and SSL certificates
 - [ ] **Frontend-Backend Integration**: Connect with scam analysis API
 - [ ] **Content Review**: Audit all verbiage for clarity and accuracy
