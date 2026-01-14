@@ -124,11 +124,11 @@ export default function ScamBombLanding() {
       {/* How it works */}
       <section id="how" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
         <HeaderEyebrow>How it works</HeaderEyebrow>
-        <h2 className="text-3xl sm:text-4xl font-bold">From confusion to confident in 3 steps</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold">From confusion to confident in 3 steps</h2>
         <div className="mt-8 grid md:grid-cols-3 gap-6">
-          <Step n={1} title="Paste a message" text="Copy any email, text, or social DM into ScamBomb." />
-          <Step n={2} title="We flag risks" text="We detect urgency, spoofed links, fake invoices, and more." />
-          <Step n={3} title="Get next steps" text="We tell you exactly what to do—simply and safely." />
+          <div className="hover-lift"><Step n={1} title="Paste a message" text="Copy any email, text, or social DM into ScamBomb." /></div>
+          <div className="hover-lift"><Step n={2} title="We flag risks" text="We detect urgency, spoofed links, fake invoices, and more." /></div>
+          <div className="hover-lift"><Step n={3} title="Get next steps" text="We tell you exactly what to do—simply and safely." /></div>
         </div>
       </section>
 
@@ -140,12 +140,12 @@ export default function ScamBombLanding() {
           <HeaderEyebrow>Features</HeaderEyebrow>
           <h2 className="text-3xl sm:text-4xl font-bold">Built for everyone (55+ included!)</h2>
           <div className="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <Card title="Plain-English explanations" icon={<Check />}>No tech-speak. We explain what's risky and why, in friendly language.</Card>
-            <Card title="Link & sender checks" icon={<Check />}>Spot spoofed addresses, mismatched domains, and impersonation cues.</Card>
-            <Card title="Copy-paste simple" icon={<Check />}>Works on any device—no install required. Just paste and check.</Card>
-            <Card title="Privacy-first" icon={<Check />}>We don't sell data. Ever. Anonymous by design, messages are not saved.</Card>
-            <Card title="Guided next steps" icon={<Check />}>Unsure what to do? We give you a safe path with scripts you can use.</Card>
-            <Card title="Learning hub" icon={<Check />}>Weekly blog + short videos to stay ahead of new scams.</Card>
+            <div className="hover-lift"><Card title="Plain-English explanations" icon={<Check />}>No tech-speak. We explain what's risky and why, in friendly language.</Card></div>
+            <div className="hover-lift"><Card title="Link & sender checks" icon={<Check />}>Spot spoofed addresses, mismatched domains, and impersonation cues.</Card></div>
+            <div className="hover-lift"><Card title="Copy-paste simple" icon={<Check />}>Works on any device—no install required. Just paste and check.</Card></div>
+            <div className="hover-lift"><Card title="Privacy-first" icon={<Check />}>We don't sell data. Ever. Anonymous by design, messages are not saved.</Card></div>
+            <div className="hover-lift"><Card title="Guided next steps" icon={<Check />}>Unsure what to do? We give you a safe path with scripts you can use.</Card></div>
+            <div className="hover-lift"><Card title="Learning hub" icon={<Check />}>Weekly blog + short videos to stay ahead of new scams.</Card></div>
           </div>
         </div>
       </section>
@@ -176,9 +176,9 @@ export default function ScamBombLanding() {
         <HeaderEyebrow>Pricing</HeaderEyebrow>
         <h2 className="text-3xl sm:text-4xl font-bold">Simple, affordable protection</h2>
         <div className="mt-8 grid lg:grid-cols-3 gap-6">
-          <PriceCard highlight title="Free Plan" price="Free" note="5 scans per month" cta="Get started" color={brandYellow} href={appUrl} />
-          <PriceCard title="Pro Plan" price="$4.99/mo" note="Unlimited scans" cta="Upgrade now" color={brandYellow} href="https://buy.stripe.com/9B6dR8adkavl1BsdneejK00" />
-          <PriceCard title="Annual Plan" price="$49.99/year" note="Save 17% over Pro Plan!" cta="Save with annual" color={brandYellow} href="https://buy.stripe.com/dRmcN41GOfPFdka82UejK01" />
+          <div className="hover-lift"><PriceCard highlight title="Free Plan" price="Free" note="5 scans per month" cta="Get started" color={brandYellow} href={appUrl} /></div>
+          <div className="hover-lift"><PriceCard title="Pro Plan" price="$4.99/mo" note="Unlimited scans" cta="Upgrade now" color={brandYellow} href="https://buy.stripe.com/9B6dR8adkavl1BsdneejK00" /></div>
+          <div className="hover-lift"><PriceCard title="Annual Plan" price="$49.99/year" note="Save 17% over Pro Plan!" cta="Save with annual" color={brandYellow} href="https://buy.stripe.com/dRmcN41GOfPFdka82UejK01" /></div>
         </div>
         <p className="mt-4 text-sm text-white/70">No strings attached, "cancel any time for any reason" guarantee.</p>
       </section>
@@ -196,9 +196,9 @@ export default function ScamBombLanding() {
       <section id="blog" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
         <HeaderEyebrow>From the blog</HeaderEyebrow>
         <div className="grid md:grid-cols-3 gap-6">
-          <PostCard tag="GUIDE" title="How to spot fake bank texts in 30 seconds" slug="how-to-spot-fake-bank-texts-in-30-seconds" excerpt="Spot common red flags in banking texts to protect your money." />
-          <PostCard tag="ALERT" title="New USPS delivery scam: what to do" slug="new-usps-delivery-scam-what-to-do" excerpt="Stay informed on the latest USPS scams and how to respond safely." />
-          <PostCard tag="HOW-TO" title="Three questions to ask before you click" slug="three-questions-to-ask-before-you-click" excerpt="Learn practical questions to evaluate suspicious links before clicking." />
+          <div className="hover-lift"><PostCard tag="GUIDE" title="How to spot fake bank texts in 30 seconds" slug="how-to-spot-fake-bank-texts-in-30-seconds" excerpt="Spot common red flags in banking texts to protect your money." /></div>
+          <div className="hover-lift"><PostCard tag="ALERT" title="New USPS delivery scam: what to do" slug="new-usps-delivery-scam-what-to-do" excerpt="Stay informed on the latest USPS scams and how to respond safely." /></div>
+          <div className="hover-lift"><PostCard tag="HOW-TO" title="Three questions to ask before you click" slug="three-questions-to-ask-before-you-click" excerpt="Learn practical questions to evaluate suspicious links before clicking." /></div>
         </div>
         <div className="mt-6">
           <a href="/blog" className="underline decoration-white/40 underline-offset-4 hover:decoration-white">Read all posts</a>
