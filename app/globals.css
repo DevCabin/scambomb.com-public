@@ -52,12 +52,11 @@ html {
 
 /* Subtle Hover Effects */
 .hover-lift {
-  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+  transition: transform 0.2s ease-out;
 }
 
 .hover-lift:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(245, 196, 76, 0.15);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -66,7 +65,6 @@ html {
   }
   .hover-lift:hover {
     transform: none;
-    box-shadow: none;
   }
 }
 
