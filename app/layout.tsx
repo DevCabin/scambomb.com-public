@@ -26,10 +26,9 @@ function UniversalFooter() {
           <p className="mt-3 text-white/70">Simple, plain-English scam checks for everyone.</p>
         </div>
         <div>
-          <h4 className="font-semibold">Product</h4>
+          <h4 className="font-semibold">Products</h4>
           <ul className="mt-2 space-y-2 text-white/80">
             <li><a href="/#how">How it works</a></li>
-            <li><a href="/#features">Features</a></li>
             <li><a href="/extension">Chrome Extension</a></li>
             <li><a href="/#pricing">Pricing</a></li>
             <li><a href="/blog">Blog</a></li>
@@ -40,6 +39,7 @@ function UniversalFooter() {
           <ul className="mt-2 space-y-2 text-white/80">
             <li><a href="/about">About</a></li>
             <li><a href="/contact">Contact</a></li>
+            <li><a href="/extension-privacy">Extension Policy</a></li>
             <li><a href="/terms">Terms of Use</a></li>
           </ul>
         </div>
