@@ -60,14 +60,14 @@ export default function ScamBombLanding() {
               <div className="mt-6 text-center">
                 <div className="grid grid-cols-2 gap-6 max-w-lg mx-auto">
                   <div>
-                    <a id="cta" href="#pricing" className="rounded-2xl px-6 py-3 font-semibold inline-block text-center w-full" style={{ backgroundColor: brandYellow, color: "#0B1324" }}>
+                    <a id="cta" href="#pricing" className="rounded-2xl px-6 py-3 font-semibold inline-block text-center w-full hover-lift btn-press" style={{ backgroundColor: brandYellow, color: "#0B1324" }}>
                       Unlimited Access
                     </a>
                     <p className="text-sm text-white/80 mt-2">Only $4.99!</p>
                   </div>
 
                   <div>
-                    <a href={appUrl} className="rounded-2xl px-6 py-3 border-2 font-semibold inline-block text-center w-full hover:bg-white/10" style={{ borderColor: brandYellow, color: brandYellow }}>
+                    <a href={appUrl} className="rounded-2xl px-6 py-3 border-2 font-semibold inline-block text-center w-full hover:bg-white/10 hover-lift btn-press" style={{ borderColor: brandYellow, color: brandYellow }}>
                       Try Free!
                     </a>
                     <p className="text-sm text-white/80 mt-2">Instant access, no sign up</p>
@@ -157,8 +157,8 @@ export default function ScamBombLanding() {
             <h3 className="text-2xl font-bold">Try the demo — no signup required!</h3>
             <p className="mt-2 text-white/80">Paste a suspicious message and see how ScamBomb explains it in seconds.</p>
             <div className="mt-6 flex gap-3">
-              <a href="#pricing" className="rounded-2xl px-5 py-3 font-semibold" style={{ backgroundColor: brandYellow, color: "#0B1324" }}>Unlock full protection</a>
-              <a href={appUrl} className="rounded-2xl px-6 py-3 border-2 font-semibold hover:bg-white/10" style={{ borderColor: brandYellow, color: brandYellow }}>
+              <a href="#pricing" className="rounded-2xl px-5 py-3 font-semibold hover-lift btn-press" style={{ backgroundColor: brandYellow, color: "#0B1324" }}>Unlock full protection</a>
+              <a href={appUrl} className="rounded-2xl px-6 py-3 border-2 font-semibold hover:bg-white/10 hover-lift btn-press" style={{ borderColor: brandYellow, color: brandYellow }}>
                 Try Free!
               </a>
             </div>

@@ -34,7 +34,7 @@ function UniversalHeader() {
             <div className="flex items-center gap-2">
               <a
                 href={`https://app.scambomb.com/?safe_source=true&SBID=${crypto.randomUUID()}`}
-                className="ml-2 rounded-2xl px-6 py-3 border-2 font-semibold hover:bg-white/10"
+                className="ml-2 rounded-2xl px-6 py-3 border-2 font-semibold hover:bg-white/10 shimmer"
                 style={{ borderColor: brandYellow, color: brandYellow }}
               >
                 Try Free!
