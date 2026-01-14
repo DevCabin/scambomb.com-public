@@ -39,8 +39,8 @@ function UniversalFooter() {
           <ul className="mt-2 space-y-2 text-white/80">
             <li><a href="/about">About</a></li>
             <li><a href="/contact">Contact</a></li>
-            <li><a href="/extension-privacy">Extension Policy</a></li>
             <li><a href="/terms">Terms of Use</a></li>
+            <li><a href="/extension-privacy">Extension Policy</a></li>
           </ul>
         </div>
         <div>
