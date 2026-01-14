@@ -29,9 +29,9 @@ function UniversalFooter() {
           <h4 className="font-semibold">Products</h4>
           <ul className="mt-2 space-y-2 text-white/80">
             <li><a href="/#how">How it works</a></li>
-            <li><a href="/extension">Chrome Extension</a></li>
             <li><a href="/#pricing">Pricing</a></li>
             <li><a href="/blog">Blog</a></li>
+            <li><a href="/extension">Chrome Extension</a></li>
           </ul>
         </div>
         <div>
