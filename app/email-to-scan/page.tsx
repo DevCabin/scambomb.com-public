@@ -34,9 +34,8 @@ export default function EmailToScanPage() {
 
           {/* Important Note */}
           <div className="bg-[#F5C84C] rounded-2xl p-6 mb-12 text-center">
-            <h3 className="text-lg font-bold text-[#0B1324] mb-3">NOTE:</h3>
             <p className="text-sm text-[#0B1324] leading-relaxed">
-              Due to differences in email systems and spam filters, some forwarded messages may not reach us or analysis results may not deliver back to you. If you don't receive a result within 5 minutes, please visit <a href="/" className="underline font-semibold">scambomb.com</a> and paste in the message directly.
+              <strong className="font-bold">NOTE:</strong> Due to differences in email systems and spam filters, some forwarded messages may not reach us or analysis results may not deliver back to you. If you don't receive a result within 5 minutes, please visit <a href="/" className="underline font-semibold">scambomb.com</a> and paste in the message directly.
             </p>
           </div>
 
