@@ -266,13 +266,13 @@ export default function ScamBombLanding() {
 }
 
 // ---- UI Helpers ----
-function HeaderEyebrow({ children }: { children: React.ReactNode }) {
+function HeaderEyebrow({ children }) {
   return (
     <p className="text-sm font-semibold tracking-wider uppercase text-white/60 mb-2">{children}</p>
   );
 }
 
-function Step({ n, title, text }: { n: number; title: string; text: string }) {
+function Step({ n, title, text }) {
   return (
     <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
       <div className="flex items-center gap-3">
@@ -284,7 +284,7 @@ function Step({ n, title, text }: { n: number; title: string; text: string }) {
   );
 }
 
-function Card({ title, icon, children }: { title: string; icon?: React.ReactNode; children: React.ReactNode }) {
+function Card({ title, icon, children }) {
   return (
     <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
       <div className="flex items-center gap-2">
@@ -296,7 +296,7 @@ function Card({ title, icon, children }: { title: string; icon?: React.ReactNode
   );
 }
 
-function PriceCard({ title, price, note, cta, color, highlight = false }: { title: string; price: string; note: string; cta: string; color: string; highlight?: boolean }) {
+function PriceCard({ title, price, note, cta, color, highlight = false }) {
   return (
     <div className={`rounded-2xl p-6 border ${highlight ? "border-yellow-300 bg-white/10" : "border-white/10 bg-white/5"}`}>
       <h3 className="text-lg font-semibold">{title}</h3>
@@ -312,7 +312,7 @@ function PriceCard({ title, price, note, cta, color, highlight = false }: { titl
   );
 }
 
-function PostCard({ tag, title }: { tag: string; title: string }) {
+function PostCard({ tag, title }) {
   return (
     <article className="rounded-2xl border border-white/10 bg-white/5 p-5">
       <div className="text-xs font-semibold tracking-widest text-white/60">{tag}</div>
@@ -323,7 +323,7 @@ function PostCard({ tag, title }: { tag: string; title: string }) {
   );
 }
 
-function Quote({ text, author }: { text: string; author: string }) {
+function Quote({ text, author }) {
   return (
     <blockquote className="rounded-2xl border border-white/10 bg-white/5 p-6">
       <p className="text-white/90">“{text}”</p>
@@ -332,7 +332,7 @@ function Quote({ text, author }: { text: string; author: string }) {
   );
 }
 
-function TrustItem({ title, text }: { title: string; text: string }) {
+function TrustItem({ title, text }) {
   return (
     <div>
       <div className="text-lg font-semibold">{title}</div>
@@ -349,7 +349,7 @@ function Check() {
   );
 }
 
-function Logo({ markColor = "#F5C84C", size = "md" }: { markColor?: string; size?: "sm" | "md" }) {
+function Logo({ markColor = "#F5C84C", size = "md" }) {
   const textClass = size === "sm" ? "text-xl" : "text-2xl";
   return (
     <div className="flex items-center gap-2" role="img" aria-label="ScamBomb logo">

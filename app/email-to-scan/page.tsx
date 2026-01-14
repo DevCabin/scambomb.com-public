@@ -32,6 +32,15 @@ export default function EmailToScanPage() {
             </p>
           </div>
 
+          {/* Important Note */}
+          <div className="bg-[#F5C84C] rounded-2xl p-6 mb-12 text-center">
+            <div className="text-2xl mb-2">📧</div>
+            <h3 className="text-lg font-bold text-[#0B1324] mb-3">NOTE:</h3>
+            <p className="text-sm text-[#0B1324] leading-relaxed">
+              Due to differences in email systems and spam filters, some forwarded messages may not reach us or analysis results may not deliver back to you. If you don't receive a result within 5 minutes, please visit <a href="/" className="underline font-semibold">scambomb.com</a> and paste in the message directly.
+            </p>
+          </div>
+
           {/* How It Works */}
           <div className="bg-white/5 rounded-2xl p-8 mb-12">
             <h2 className="text-2xl font-bold mb-6" style={{ color: brandYellow }}>How It Works (Super Simple)</h2>
