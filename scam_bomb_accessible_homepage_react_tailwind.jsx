@@ -168,7 +168,7 @@ export default function ScamBombLanding() {
           </div>
           <ul className="space-y-3 text-white/80">
             <li className="flex items-start gap-3"><Check /> No email needed for demo</li>
-            <li className="flex items-start gap-3"><Check /> Works with screenshots (coming soon)</li>
+            <li className="flex items-start gap-3"><Check /> Works with screenshots</li>
             <li className="flex items-start gap-3"><Check /> Share results with family in one click</li>
           </ul>
         </div>

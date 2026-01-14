@@ -30,6 +30,38 @@ export default function ExtensionPrivacyPage() {
             </p>
           </div>
 
+          {/* Privacy Assurance Callout */}
+          <div className="mb-12">
+            <div className="bg-[#F5C84C]/10 border-2 border-[#F5C84C] rounded-2xl p-8 text-center">
+              <div className="text-4xl mb-4">🛡️</div>
+              <h3 className="text-2xl font-bold text-white mb-4">Your Privacy is Protected</h3>
+              <p className="text-lg text-white/90 leading-relaxed mb-4">
+                While our extension temporarily processes the messages you choose to scan, we want to be absolutely clear:
+              </p>
+              <ul className="text-left max-w-2xl mx-auto space-y-3 text-white/90">
+                <li className="flex items-start gap-3">
+                  <span className="text-[#F5C84C] text-xl mt-1">✓</span>
+                  <span><strong>Not monitored:</strong> Your messages are never read by humans</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#F5C84C] text-xl mt-1">✓</span>
+                  <span><strong>Not stored:</strong> Content is processed in memory and immediately discarded</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#F5C84C] text-xl mt-1">✓</span>
+                  <span><strong>Not sold:</strong> We never sell, share, or monetize your data</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#F5C84C] text-xl mt-1">✓</span>
+                  <span><strong>Minimal data:</strong> Only what's absolutely necessary for scam detection</span>
+                </li>
+              </ul>
+              <p className="text-sm text-white/80 mt-6 italic">
+                We collect the bare minimum data required to provide you with accurate scam detection results.
+              </p>
+            </div>
+          </div>
+
           {/* Privacy Sections */}
           <div className="space-y-8">
 
@@ -181,7 +213,7 @@ export default function ExtensionPrivacyPage() {
 
               <div className="mt-6 p-4 bg-[#F5C84C]/10 border-l-4 border-[#F5C84C]">
                 <p className="text-white/90">
-                  <strong className="text-[#F5C84C]">Extension-Specific Note:</strong> This privacy policy covers only the ScamBomb Chrome extension. For information about our web application, please see our main privacy policy at <a href="/term" className="text-[#F5C84C] hover:text-white transition-colors">scambomb.com/term</a>.
+                  <strong className="text-[#F5C84C]">Extension-Specific Note:</strong> This privacy policy covers only the ScamBomb Chrome extension. For information about our web application, please see our main privacy policy at <a href="/terms" className="text-[#F5C84C] hover:text-white transition-colors">scambomb.com/terms</a>.
                 </p>
               </div>
             </div>
