@@ -16,7 +16,7 @@ export default function TermsPage() {
 
           <section className="mb-12">
             <p className="text-white/90 leading-relaxed mb-8">
-              Welcome to SafeMessage AI ("SafeMessage AI," "we," "us," or "our"). By accessing or using our website (scambomb.com) and our service (app.scambomb.com), you agree to be bound by these Terms of Use ("Terms").
+              Welcome to ScamBomb.com ("ScamBomb.com," "we," "us," or "our"). By accessing or using our website (scambomb.com) and our service (app.scambomb.com), you agree to be bound by these Terms of Use ("Terms").
             </p>
           </section>
 
@@ -39,7 +39,7 @@ export default function TermsPage() {
             <h2 className="text-2xl font-bold mb-6 text-[#F5C84C]">AI and Machine Learning Disclaimers</h2>
             <div className="space-y-4 text-white/90">
               <p className="font-semibold text-red-300">
-                IMPORTANT: SafeMessage AI is powered by artificial intelligence and machine learning models that CAN AND DO MAKE MISTAKES.
+                IMPORTANT: ScamBomb.com is powered by artificial intelligence and machine learning models that CAN AND DO MAKE MISTAKES.
               </p>
               <p>
                 Our service is designed as a <strong>first line of defense</strong> against online scams and fraudulent messages. It is not infallible, comprehensive, or the final authority on online safety. Our AI system's recommendations are suggestions based on patterns and heuristics, not absolute determinations.
@@ -68,10 +68,10 @@ export default function TermsPage() {
             <h2 className="text-2xl font-bold mb-6 text-[#F5C84C]">Limitations of Liability</h2>
             <div className="space-y-4 text-white/90">
               <p className="font-semibold text-red-300">
-                SafeMessage AI cannot be held liable for any decisions you make based on our service's recommendations.
+                ScamBomb.com cannot be held liable for any decisions you make based on our service's recommendations.
               </p>
               <p>
-                This website and service provide suggestions and educational information only. You are ultimately responsible for your own online safety and financial decisions. SafeMessage AI is not a substitute for professional judgment, due diligence, or official verification from legitimate sources.
+                This website and service provide suggestions and educational information only. You are ultimately responsible for your own online safety and financial decisions. ScamBomb.com is not a substitute for professional judgment, due diligence, or official verification from legitimate sources.
               </p>
               <p>
                 We strive to provide helpful, accurate scam detection, but:
@@ -84,7 +84,7 @@ export default function TermsPage() {
                 <li>&bull; We are not liable for any direct, indirect, incidental, consequential, or punitive damages</li>
               </ul>
               <p className="mt-6">
-                We provide SafeMessage AI in good faith to help protect people from online scams. Our service represents our best effort to make the internet safer for everyone, but we cannot accept responsibility for the limitations of artificial intelligence technology.
+                We provide ScamBomb.com in good faith to help protect people from online scams. Our service represents our best effort to make the internet safer for everyone, but we cannot accept responsibility for the limitations of artificial intelligence technology.
               </p>
             </div>
           </section>
@@ -93,7 +93,7 @@ export default function TermsPage() {
             <h2 className="text-2xl font-bold mb-6 text-[#F5C84C]">Acceptance of These Terms</h2>
             <div className="space-y-4 text-white/90">
               <p>
-                By accessing this website (scambomb.com) or using the SafeMessage AI service at app.scambomb.com, you acknowledge that you have read, understood, and agree to be bound by these Terms of Use.
+                By accessing this website (scambomb.com) or using the ScamBomb.com service at app.scambomb.com, you acknowledge that you have read, understood, and agree to be bound by these Terms of Use.
               </p>
               <p>
                 If you do not agree to these terms, please discontinue use of our website and service immediately.
@@ -125,7 +125,7 @@ export default function TermsPage() {
 
           <section className="border-t border-white/20 pt-8 mt-16">
             <p className="text-center text-white/60">
-              Thank you for using SafeMessage AI. We hope our service helps keep you safer online.
+              Thank you for using ScamBomb.com. We hope our service helps keep you safer online.
             </p>
           </section>
 
