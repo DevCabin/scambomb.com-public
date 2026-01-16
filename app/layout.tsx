@@ -15,6 +15,9 @@ export const metadata: Metadata = {
   icons: {
     icon: '/favicon.ico',
   },
+  other: {
+    'facebook-domain-verification': 'tmq14fiwi4rwno7tljlobhqospl9ni',
+  },
 }
 
 function UniversalFooter() {
