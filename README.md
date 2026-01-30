@@ -63,6 +63,7 @@ scambomb.com-public/
 │   │   └── page.tsx             # Email forwarding instructions
 │   ├── extension/                # Chrome extension page
 │   │   └── page.tsx             # Extension info and download
+│   ├── testing/                  # User testing form (static assets)
 │   ├── globals.css              # Global styles
 │   ├── layout.tsx               # Root layout
 │   └── page.tsx                 # Homepage
@@ -72,6 +73,7 @@ scambomb.com-public/
 │   └── blog/                     # Blog posts (MDX)
 ├── public/                       # Static assets
 │   └── logo.png                  # Site logo
+│   └── testing/                  # Static user testing form assets
 ├── contentlayer.config.js        # Contentlayer configuration
 ├── next.config.js               # Next.js configuration
 ├── tailwind.config.js           # Tailwind CSS config
@@ -112,6 +114,7 @@ scambomb.com-public/
 - [x] **Simple App Access**: Direct links to app.scambomb.com with SBID fingerprinting
 - [x] **Clean Architecture**: Marketing site without authentication complexity
 - [x] **5 Free Searches**: Anonymous app access via fingerprinting
+- [x] **User Testing Form**: Hosted at /testing with auto-save and Formspree backend
 
 ### 🚧 Known Issues
 - Some TypeScript type definitions incomplete
@@ -122,6 +125,10 @@ scambomb.com-public/
 ### v1.2.0 (2026-01-13)
 - **Extension Page Redesign**: Complete overhaul with extensive "Coming Soon!" messaging for pending Chrome Web Store approval
 - **Email-to-Scan Page Updates**: Restructured intro section with larger email address display and moved feature description to dedicated card
+
+### v1.2.1 (2026-01-30)
+- **User Testing Form**: Added /testing page with static form assets and Formspree integration
+- **Navigation Update**: Added Testing link and removed Email-to-Scan from header
 
 ### v1.1.6 (2026-01-13)
 - **Email-to-Scan Page**: Added comprehensive /email-to-scan page with detailed instructions for email forwarding feature

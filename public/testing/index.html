@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScamB💣mb User Testing - Help Us Out!</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Favicon (bomb emoji) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💣</text></svg>">
+</head>
+<body>
+    
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">SCAMB<span class="bomb">💣</span>MB</div>
+            <div class="tagline">User Testing - Help Us Out! 💛</div>
+        </div>
+    </header>
+
+    <!-- Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+        <div class="progress-text" id="progressText">0% Complete</div>
+    </div>
+
+    <!-- Main Form Container -->
+    <div class="container main-content">
+        
+        <!-- Welcome Message -->
+        <div class="welcome-box">
+            <h1>Hey there! 👋</h1>
+            <p class="lead">Thanks a million for helping test ScamB💣mb. This takes about <strong>15-20 minutes</strong>.</p>
+            
+            <div class="important-note">
+                <strong>Remember:</strong>
+                <ul>
+                    <li>No wrong answers - we want YOUR honest thoughts</li>
+                    <li>We're testing the app, not you!</li>
+                    <li>Fill this out WHILE using ScamB💣mb (keep <strong>app.scambomb.com</strong> open)</li>
+                </ul>
+            </div>
+            
+            <p class="lead">Let's do this! ✨</p>
+        </div>
+
+        <!-- ==================== FORM START ==================== -->
+        <!-- UPDATE THIS LINE WITH YOUR FORMSPREE ID -->
+        <form id="testingForm" action="https://formspree.io/f/xojwpwvj" method="POST">
+            
+            <!-- Hidden fields for metadata -->
+            <input type="hidden" name="_subject" value="New ScamBomb Testing Response">
+            <input type="hidden" name="_template" value="table">
+            
+            <!-- ==================== SECTION 1: ABOUT YOU ==================== -->
+            <section class="form-section" data-section="1">
+                <h2 class="section-header">About You</h2>
+                
+                <div class="question">
+                    <label for="age">What's your age range? <span class="required">*</span></label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="age" value="55-64" required>
+                            <span>55-64</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="age" value="65-74">
+                            <span>65-74</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="age" value="75-84">
+                            <span>75-84</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="age" value="85+">
+                            <span>85+</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <label for="scam-frequency">How often do you get suspicious texts/emails? <span class="required">*</span></label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="scam_frequency" value="Daily" required>
+                            <span>Daily</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="scam_frequency" value="Weekly">
+                            <span>Weekly</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="scam_frequency" value="Monthly">
+                            <span>Monthly</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="scam_frequency" value="Rarely">
+                            <span>Rarely</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <label for="device">What device are you using RIGHT NOW? <span class="required">*</span></label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="device" value="Smartphone" required>
+                            <span>Smartphone</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="device" value="Tablet">
+                            <span>Tablet</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="device" value="Laptop/Desktop">
+                            <span>Laptop or Desktop</span>
+                        </label>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==================== SECTION 2: WEBSITE CHECK ==================== -->
+            <section class="form-section" data-section="2">
+                <h2 class="section-header">Website First Impressions</h2>
+                
+                <div class="instruction-box">
+                    <p><strong>Go to <a href="https://scambomb.com" target="_blank">scambomb.com</a> and look around for 2 minutes</strong> (don't sign up yet)</p>
+                </div>
+
+                <div class="question">
+                    <label for="what-does-it-do">In your own words, what does ScamB💣mb do? <span class="required">*</span></label>
+                    <textarea name="what_does_it_do" id="what-does-it-do" rows="4" required placeholder="No right answer - just tell us what you think..."></textarea>
+                </div>
+
+                <div class="question">
+                    <label for="useful">Would you find ScamB💣mb useful? Why or why not? <span class="required">*</span></label>
+                    <textarea name="useful_why" id="useful" rows="4" required placeholder="Be honest! We need to know..."></textarea>
+                </div>
+
+                <div class="question">
+                    <label for="website-confusing">Anything confusing on the website?</label>
+                    <textarea name="website_confusing" id="website-confusing" rows="3" placeholder="Even small things help us improve!"></textarea>
+                </div>
+            </section>
+
+            <!-- ==================== SECTION 3: TESTING SCENARIO 1 ==================== -->
+            <section class="form-section" data-section="3">
+                <h2 class="section-header">Let's Test It! 🎯 Suspicious Bank Text</h2>
+                
+                <div class="instruction-box">
+                    <p><strong>Now go to <a href="https://app.scambomb.com" target="_blank">app.scambomb.com</a></strong></p>
+                </div>
+
+                <div class="scam-example">
+                    <p><strong>Imagine you got this text:</strong></p>
+                    <p class="scam-text">🚨 URGENT! Your bank account has been locked due to suspicious activity. Click here immediately to avoid permanent closure: secure-bankverify.com/unlock</p>
+                    <p><strong>YOUR TASK:</strong> Copy that message, paste it into ScamB💣mb, and see what happens!</p>
+                </div>
+
+                <div class="question">
+                    <label for="task1-able">Were you able to paste the message and get results? <span class="required">*</span></label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="task1_able" value="Yes, worked perfectly" required>
+                            <span>Yes, worked perfectly!</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="task1_able" value="Yes, but confusing">
+                            <span>Yes, but something felt confusing</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="task1_able" value="No, got stuck">
+                            <span>No, I got stuck</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="task1_able" value="Skipped">
+                            <span>I skipped this task</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <label for="task1-result">What happened after you pasted it? Tell us what ScamB💣mb said. <span class="required">*</span></label>
+                    <textarea name="task1_result" id="task1-result" rows="4" required placeholder="Describe what you saw..."></textarea>
+                </div>
+
+                <div class="question">
+                    <label for="task1-clear">Did ScamB💣mb's explanation make sense? <span class="required">*</span></label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="task1_clear" value="Crystal clear" required>
+                            <span>Crystal clear!</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="task1_clear" value="Mostly clear">
+                            <span>Mostly clear, a few confusing bits</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="task1_clear" value="Somewhat confusing">
+                            <span>Somewhat confusing</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="task1_clear" value="Very confusing">
+                            <span>Very confusing</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <label for="task1-confusing">What parts were confusing (if any)?</label>
+                    <input type="text" name="task1_confusing" id="task1-confusing" placeholder="Optional - only if something was unclear">
+                </div>
+
+                <div class="question">
+                    <label for="task1-action">Based on ScamB💣mb's advice, what would YOU do about that text? <span class="required">*</span></label>
+                    <textarea name="task1_action" id="task1-action" rows="3" required placeholder="What's your next move?"></textarea>
+                </div>
+
+                <div class="question">
+                    <label for="task1-helpful">How helpful was ScamB💣mb's advice? <span class="required">*</span></label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="task1_helpful" value="Super helpful" required>
+                            <span>Super helpful - I know exactly what to do</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="task1_helpful" value="Pretty helpful">
+                            <span>Pretty helpful</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="task1_helpful" value="Somewhat helpful">
+                            <span>Somewhat helpful</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="task1_helpful" value="Not helpful">
+                            <span>Not very helpful</span>
+                        </label>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==================== SECTION 4: TESTING SCENARIO 2 ==================== -->
+            <section class="form-section" data-section="4">
+                <h2 class="section-header">Upload Challenge 📸</h2>
+                
+                <div class="scam-example">
+                    <p><strong>Time to test the screenshot feature!</strong></p>
+                    <p class="scam-text">Dear Customer,<br>
+                    Your PayPal account requires immediate verification. Your account will be suspended in 24 hours.<br>
+                    Update your billing: paypal-secure-login.verify-now.com<br>
+                    - PayPal Security Team</p>
+                    <p><strong>YOUR TASK:</strong> Take a screenshot of this email, then upload it to ScamB💣mb!</p>
+                    <p class="helper-text">📱 On phone/tablet: Screenshot this box<br>
+                    💻 On computer: Screenshot or save as image</p>
+                </div>
+
+                <div class="question">
+                    <label for="task2-able">Were you able to upload the screenshot? <span class="required">*</span></label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="task2_able" value="Yes, super easy" required>
+                            <span>Yes, super easy!</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="task2_able" value="Yes, took tries">
+                            <span>Yes, but took a few tries</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="task2_able" value="No, couldn't">
+                            <span>No, I couldn't figure it out</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="task2_able" value="Skipped">
+                            <span>I skipped this part</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <label for="task2-trouble">If you had trouble, what was tricky about it?</label>
+                    <input type="text" name="task2_trouble" id="task2-trouble" placeholder="Optional - only if you ran into issues">
+                </div>
+
+                <div class="question">
+                    <label for="task2-result">If you got results, was the analysis helpful?</label>
+                    <textarea name="task2_result" id="task2-result" rows="3" placeholder="Optional - tell us what you thought"></textarea>
+                </div>
+            </section>
+
+            <!-- ==================== SECTION 5: OVERALL EXPERIENCE ==================== -->
+            <section class="form-section" data-section="5">
+                <h2 class="section-header">Your Honest Thoughts 💛</h2>
+                
+                <p class="section-intro">No sugar-coating needed - tell us what you really think!</p>
+
+                <div class="question">
+                    <label for="liked">What did you LIKE about ScamB💣mb? <span class="required">*</span></label>
+                    <textarea name="liked" id="liked" rows="4" required placeholder="Even small things count!"></textarea>
+                </div>
+
+                <div class="question">
+                    <label for="frustrated">What FRUSTRATED you or seemed hard to use? <span class="required">*</span></label>
+                    <textarea name="frustrated" id="frustrated" rows="4" required placeholder="Be brutally honest - it helps us improve!"></textarea>
+                </div>
+
+                <div class="question">
+                    <label for="stuck">Did you get stuck anywhere? Where?</label>
+                    <textarea name="stuck" id="stuck" rows="3" placeholder="Optional - only if you hit roadblocks"></textarea>
+                </div>
+
+                <div class="question">
+                    <label for="use-free">Would you use ScamB💣mb if it was FREE? <span class="required">*</span></label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="use_free" value="Definitely yes" required>
+                            <span>Absolutely!</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="use_free" value="Probably yes">
+                            <span>Probably yes</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="use_free" value="Unsure">
+                            <span>Not sure</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="use_free" value="Probably not">
+                            <span>Probably not</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="use_free" value="Definitely not">
+                            <span>Nope</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <label for="pay-monthly">Would you pay $4.99/month for it? <span class="required">*</span></label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="pay_monthly" value="Yes, worth it" required>
+                            <span>Yes, totally worth it</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="pay_monthly" value="Maybe">
+                            <span>Maybe - want to try it more first</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="pay_monthly" value="No, too expensive">
+                            <span>No, too pricey for me</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="pay_monthly" value="No, wouldn't use">
+                            <span>No, wouldn't use it even if free</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <label for="recommend">Who would you recommend ScamB💣mb to?</label>
+                    <input type="text" name="recommend" id="recommend" placeholder="Your kids? Friends? Neighbors?">
+                </div>
+
+                <div class="question">
+                    <label for="one-change">If you could change ONE thing to make ScamB💣mb easier, what would it be? <span class="required">*</span></label>
+                    <textarea name="one_change" id="one-change" rows="4" required placeholder="Your magic wand moment!"></textarea>
+                </div>
+            </section>
+
+            <!-- ==================== SECTION 6: FINAL THOUGHTS ==================== -->
+            <section class="form-section" data-section="6">
+                <h2 class="section-header">Almost Done! 🎉</h2>
+
+                <div class="question">
+                    <label for="other-feedback">Anything else you want to tell us? Wild ideas, random thoughts, whatever!</label>
+                    <textarea name="other_feedback" id="other-feedback" rows="4" placeholder="Optional - but we'd love to hear it!"></textarea>
+                </div>
+
+                <div class="question">
+                    <label for="followup">Can we email you if we have follow-up questions? <span class="required">*</span></label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="followup" value="Yes" required>
+                            <span>Sure! (add your email below)</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="followup" value="No">
+                            <span>No thanks</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <label for="email">Your email (only if you said yes above)</label>
+                    <input type="email" name="email" id="email" placeholder="your.email@example.com">
+                </div>
+            </section>
+
+            <!-- ==================== SUBMIT BUTTON ==================== -->
+            <div class="submit-section">
+                <button type="submit" class="submit-btn">
+                    <span class="btn-text">Submit Your Feedback 💛</span>
+                    <span class="btn-loading" style="display: none;">Sending... ⏳</span>
+                </button>
+                <p class="helper-text">Your responses are anonymous unless you provide your email above</p>
+            </div>
+
+        </form>
+        <!-- ==================== FORM END ==================== -->
+
+        <!-- Success Message (hidden by default) -->
+        <div id="successMessage" class="success-message" style="display: none;">
+            <div class="success-content">
+                <h2>🎉 You're Amazing!</h2>
+                <p class="lead">Thank you SO much for your feedback. We read every response, and yours is going to help make ScamB💣mb better for everyone.</p>
+                <p>Questions? Email us at <strong>hello@scambomb.com</strong></p>
+                <p class="signature">— The ScamB💣mb Team 💛</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 ScamB💣mb. All rights reserved.</p>
+            <p class="helper-text">Thank you for helping make the internet safer! 💛</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/script.js"></script>
+
+</body>
+</html>

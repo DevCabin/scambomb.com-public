@@ -234,6 +234,16 @@ export const metadata = {
 - **Social Sharing**: Add share buttons and meta tags
 - **Related Posts**: Show related content recommendations
 
+## 🧪 User Testing Form (2026-01-30)
+
+The public site now hosts a standalone user testing form at `/testing`.
+
+### Implementation Notes
+- Static assets live in `public/testing/` (HTML/CSS/JS).
+- `/testing` routes directly to `/testing/index.html` via `next.config.js` redirect.
+- Form submissions are handled by Formspree (update the form action when rotating IDs).
+- Progress tracking logic counts required radio groups once per group.
+
 ## 🔄 Main Application Logic Flow
 
 ### 1. User Session Management

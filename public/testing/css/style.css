@@ -1,0 +1,579 @@
+/* ========================================
+   ScamB💣mb User Testing Form Styles
+   Brand Colors: Navy #0B1324, Yellow #F5C84C
+   Font: Montserrat
+   ======================================== */
+
+/* ==================== CSS VARIABLES ==================== */
+:root {
+    --navy: #0B1324;
+    --yellow: #F5C84C;
+    --white: #FFFFFF;
+    --gray: #9CA3AF;
+    --light-gray: #F9FAFB;
+    --border-gray: #E5E7EB;
+    --success-green: #10B981;
+    --error-red: #EF4444;
+    
+    --font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    
+    --transition: all 0.3s ease;
+}
+
+/* ==================== GLOBAL RESET ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--navy);
+    background-color: var(--white);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ==================== HEADER ==================== */
+.header {
+    background-color: var(--navy);
+    color: var(--white);
+    padding: 1.5rem 0;
+    box-shadow: 0 2px 10px rgba(11, 19, 36, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--yellow);
+    letter-spacing: -0.5px;
+}
+
+.logo .bomb {
+    font-size: 36px;
+    display: inline-block;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.tagline {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--white);
+    opacity: 0.9;
+}
+
+/* ==================== PROGRESS BAR ==================== */
+.progress-container {
+    position: sticky;
+    top: 72px;
+    background-color: var(--white);
+    border-bottom: 2px solid var(--border-gray);
+    z-index: 99;
+    padding: 0.75rem 0;
+}
+
+.progress-bar {
+    height: 6px;
+    background-color: var(--yellow);
+    width: 0%;
+    transition: width 0.5s ease;
+    border-radius: 3px;
+}
+
+.progress-text {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-top: 0.5rem;
+}
+
+/* ==================== CONTAINER ==================== */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.main-content {
+    padding: 3rem 20px;
+}
+
+/* ==================== WELCOME BOX ==================== */
+.welcome-box {
+    background: linear-gradient(135deg, var(--light-gray) 0%, var(--white) 100%);
+    border-left: 4px solid var(--yellow);
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 3rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.welcome-box h1 {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 1rem;
+}
+
+.lead {
+    font-size: 20px;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.important-note {
+    background-color: #FEF3C7;
+    border: 2px solid var(--yellow);
+    border-radius: 6px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.important-note strong {
+    display: block;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 0.75rem;
+}
+
+.important-note ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.important-note li {
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    position: relative;
+}
+
+.important-note li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--yellow);
+    font-weight: 700;
+}
+
+/* ==================== FORM SECTIONS ==================== */
+.form-section {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background-color: var(--white);
+    border: 1px solid var(--border-gray);
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.form-section:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.section-header {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 3px solid var(--yellow);
+}
+
+.section-intro {
+    font-size: 18px;
+    color: var(--gray);
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+/* ==================== INSTRUCTION BOX ==================== */
+.instruction-box {
+    background-color: var(--light-gray);
+    border-left: 4px solid var(--navy);
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+    border-radius: 4px;
+}
+
+.instruction-box p {
+    margin: 0;
+    font-weight: 600;
+}
+
+.instruction-box a {
+    color: var(--yellow);
+    text-decoration: underline;
+}
+
+/* ==================== SCAM EXAMPLE BOX ==================== */
+.scam-example {
+    background-color: #FEF3C7;
+    border: 2px solid var(--yellow);
+    border-radius: 6px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.scam-text {
+    background-color: var(--white);
+    padding: 1rem;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 16px;
+    margin: 1rem 0;
+    border-left: 3px solid var(--error-red);
+}
+
+/* ==================== QUESTIONS ==================== */
+.question {
+    margin-bottom: 2rem;
+}
+
+label {
+    display: block;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 0.75rem;
+}
+
+.required {
+    color: var(--error-red);
+    font-weight: 700;
+}
+
+/* ==================== INPUT FIELDS ==================== */
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 1rem;
+    font-size: 16px;
+    font-family: var(--font-family);
+    border: 2px solid var(--border-gray);
+    border-radius: 6px;
+    transition: var(--transition);
+    background-color: var(--white);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--yellow);
+    box-shadow: 0 0 0 3px rgba(245, 200, 76, 0.1);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--gray);
+    opacity: 0.7;
+}
+
+/* ==================== RADIO BUTTONS ==================== */
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border: 2px solid var(--border-gray);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: var(--transition);
+    background-color: var(--white);
+}
+
+.radio-option:hover {
+    border-color: var(--yellow);
+    background-color: var(--light-gray);
+}
+
+.radio-option input[type="radio"] {
+    margin-right: 0.75rem;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: var(--yellow);
+}
+
+.radio-option span {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.radio-option:has(input:checked) {
+    border-color: var(--yellow);
+    background-color: #FEF3C7;
+    font-weight: 600;
+}
+
+/* ==================== HELPER TEXT ==================== */
+.helper-text {
+    font-size: 14px;
+    color: var(--gray);
+    margin-top: 0.5rem;
+    font-style: italic;
+}
+
+/* ==================== SUBMIT SECTION ==================== */
+.submit-section {
+    text-align: center;
+    margin-top: 3rem;
+    padding: 2rem;
+    background-color: var(--light-gray);
+    border-radius: 8px;
+}
+
+.submit-btn {
+    background-color: var(--navy);
+    color: var(--white);
+    font-size: 20px;
+    font-weight: 600;
+    font-family: var(--font-family);
+    padding: 1.25rem 3rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 4px 12px rgba(11, 19, 36, 0.2);
+}
+
+.submit-btn:hover {
+    background-color: var(--yellow);
+    color: var(--navy);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(11, 19, 36, 0.3);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+.submit-btn:disabled {
+    background-color: var(--gray);
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* ==================== SUCCESS MESSAGE ==================== */
+.success-message {
+    background: linear-gradient(135deg, var(--navy) 0%, #1a2841 100%);
+    color: var(--white);
+    padding: 3rem;
+    border-radius: 12px;
+    text-align: center;
+    margin: 3rem 0;
+    border: 3px solid var(--yellow);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.success-content h2 {
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--yellow);
+    margin-bottom: 1rem;
+}
+
+.success-content .lead {
+    font-size: 20px;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.success-content strong {
+    color: var(--yellow);
+}
+
+.signature {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 2rem;
+    color: var(--yellow);
+}
+
+/* ==================== FOOTER ==================== */
+.footer {
+    background-color: var(--navy);
+    color: var(--white);
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 4rem;
+}
+
+.footer p {
+    margin: 0.5rem 0;
+}
+
+.footer .helper-text {
+    color: var(--gray);
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+    
+    .header .container {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+    
+    .logo {
+        font-size: 28px;
+    }
+    
+    .tagline {
+        font-size: 14px;
+    }
+    
+    .welcome-box h1 {
+        font-size: 26px;
+    }
+    
+    .lead {
+        font-size: 18px;
+    }
+    
+    .form-section {
+        padding: 1.5rem;
+    }
+    
+    .section-header {
+        font-size: 22px;
+    }
+    
+    label {
+        font-size: 16px;
+    }
+    
+    .submit-btn {
+        font-size: 18px;
+        padding: 1rem 2rem;
+        width: 100%;
+    }
+    
+    .success-content h2 {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-content {
+        padding: 2rem 15px;
+    }
+    
+    .form-section {
+        padding: 1rem;
+    }
+    
+    .logo {
+        font-size: 24px;
+    }
+    
+    .welcome-box {
+        padding: 1.5rem;
+    }
+    
+    .radio-option {
+        padding: 0.75rem;
+    }
+}
+
+/* ==================== PRINT STYLES ==================== */
+@media print {
+    .header,
+    .progress-container,
+    .footer,
+    .submit-section {
+        display: none;
+    }
+    
+    .form-section {
+        page-break-inside: avoid;
+        border: 1px solid var(--border-gray);
+    }
+    
+    body {
+        font-size: 12pt;
+    }
+}
+
+/* ==================== ACCESSIBILITY ==================== */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Focus styles for keyboard navigation */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+.radio-option:focus-within {
+    outline: 3px solid var(--yellow);
+    outline-offset: 2px;
+}
+
+/* ==================== LOADING STATE ==================== */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.btn-loading {
+    display: inline-block;
+}
+
+/* ==================== VALIDATION STATES ==================== */
+input:invalid:not(:placeholder-shown),
+textarea:invalid:not(:placeholder-shown) {
+    border-color: var(--error-red);
+}
+
+input:valid:not(:placeholder-shown),
+textarea:valid:not(:placeholder-shown) {
+    border-color: var(--success-green);
+}
