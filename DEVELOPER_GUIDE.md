@@ -244,6 +244,7 @@ The public site now hosts a standalone user testing form at `/testing`.
 - Form submissions are handled by Formspree (update the form action when rotating IDs).
 - Progress tracking logic counts required radio groups once per group.
 - Screenshot task shows only for mobile/tablet selections and includes help links.
+- Testing header logo links back to https://scambomb.com.
 
 ## 🔄 Main Application Logic Flow
 
