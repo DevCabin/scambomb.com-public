@@ -57,6 +57,11 @@ function setupEventListeners() {
         input.addEventListener('input', debounce(autoSave, CONFIG.autoSaveInterval));
         input.addEventListener('change', updateProgress);
     });
+
+    const deviceRadios = form.querySelectorAll('input[name="device"]');
+    deviceRadios.forEach(radio => {
+        radio.addEventListener('change', updateScreenshotSection);
+    });
     
     // Keyboard shortcut for manual save (Ctrl/Cmd + S)
     document.addEventListener('keydown', function(e) {
@@ -76,6 +81,30 @@ function setupEventListeners() {
             firstInvalid.focus();
         }
     }, true);
+}
+
+// ==================== SCREENSHOT SECTION TOGGLE ====================
+function updateScreenshotSection() {
+    const form = document.getElementById('testingForm');
+    const screenshotSection = document.getElementById('screenshotSection');
+
+    if (!form || !screenshotSection) return;
+
+    const selectedDevice = form.querySelector('input[name="device"]:checked');
+    const isMobile = selectedDevice && (selectedDevice.value === 'Smartphone' || selectedDevice.value === 'Tablet');
+
+    screenshotSection.style.display = isMobile ? 'block' : 'none';
+
+    if (!isMobile) {
+        const fields = screenshotSection.querySelectorAll('input, textarea');
+        fields.forEach(field => {
+            if (field.type === 'radio') {
+                field.checked = false;
+            } else {
+                field.value = '';
+            }
+        });
+    }
 }
 
 // ==================== PROGRESS TRACKING ====================
@@ -168,6 +197,7 @@ function loadSavedData() {
         console.log('📂 Restored saved form data');
         showNotification('📂 Your previous progress has been restored!', 'info');
         updateProgress();
+        updateScreenshotSection();
         
     } catch (error) {
         console.warn('⚠️ Could not load saved data:', error);

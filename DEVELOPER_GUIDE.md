@@ -243,6 +243,7 @@ The public site now hosts a standalone user testing form at `/testing`.
 - `/testing` routes directly to `/testing/index.html` via `next.config.js` redirect.
 - Form submissions are handled by Formspree (update the form action when rotating IDs).
 - Progress tracking logic counts required radio groups once per group.
+- Screenshot task shows only for mobile/tablet selections and includes help links.
 
 ## 🔄 Main Application Logic Flow
 

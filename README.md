@@ -129,6 +129,7 @@ scambomb.com-public/
 ### v1.2.1 (2026-01-30)
 - **User Testing Form**: Added /testing page with static form assets and Formspree integration
 - **Navigation Update**: Added Testing link and removed Email-to-Scan from header
+- **Testing Instructions**: Expanded age ranges, clarified app access, and made screenshot task mobile-only
 
 ### v1.1.6 (2026-01-13)
 - **Email-to-Scan Page**: Added comprehensive /email-to-scan page with detailed instructions for email forwarding feature
