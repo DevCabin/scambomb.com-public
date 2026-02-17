@@ -1,7 +1,17 @@
 'use client';
 
+import { useEffect, useState } from 'react';
+
 function UniversalHeader() {
   const brandYellow = "#F5C84C";
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [sbid, setSbid] = useState('');
+
+  useEffect(() => {
+    setSbid(crypto.randomUUID());
+  }, []);
+
+  const trialHref = `https://app.scambomb.com/?safe_source=true${sbid ? `&SBID=${sbid}` : ''}`;
 
   return (
     <>
@@ -31,16 +41,46 @@ function UniversalHeader() {
               <a className="opacity-90 hover:opacity-100" href="/blog">Blog</a>
               <a className="opacity-90 hover:opacity-100" href="/testing">Testing?</a>
             </nav>
-            <div className="flex items-center gap-2">
+            <div className="hidden md:flex items-center gap-2">
               <a
-                href={`https://app.scambomb.com/?safe_source=true&SBID=${crypto.randomUUID()}`}
+                href={trialHref}
                 className="ml-2 rounded-2xl px-6 py-3 border-2 font-semibold hover:bg-white/10 glow"
                 style={{ borderColor: brandYellow, color: brandYellow }}
               >
                 Try Free!
               </a>
             </div>
+            <button
+              type="button"
+              className="md:hidden inline-flex items-center justify-center rounded-lg border border-white/30 px-3 py-2 text-white hover:bg-white/10"
+              aria-label="Toggle mobile menu"
+              aria-expanded={isMobileMenuOpen}
+              onClick={() => setIsMobileMenuOpen((prev) => !prev)}
+            >
+              {isMobileMenuOpen ? 'Close' : 'Menu'}
+            </button>
           </div>
+
+          {isMobileMenuOpen && (
+            <nav className="md:hidden pb-4" aria-label="Mobile Primary">
+              <div className="flex flex-col gap-3 rounded-xl border border-white/15 bg-black/40 p-4">
+                <a className="opacity-90 hover:opacity-100" href="/" onClick={() => setIsMobileMenuOpen(false)}>Home</a>
+                <a className="opacity-90 hover:opacity-100" href="/extension" onClick={() => setIsMobileMenuOpen(false)}>Extension</a>
+                <a className="opacity-90 hover:opacity-100" href="/#pricing" onClick={() => setIsMobileMenuOpen(false)}>Pricing</a>
+                <a className="opacity-90 hover:opacity-100" href="/#faq" onClick={() => setIsMobileMenuOpen(false)}>FAQ</a>
+                <a className="opacity-90 hover:opacity-100" href="/blog" onClick={() => setIsMobileMenuOpen(false)}>Blog</a>
+                <a className="opacity-90 hover:opacity-100" href="/testing" onClick={() => setIsMobileMenuOpen(false)}>Testing?</a>
+                <a
+                  href={trialHref}
+                  className="mt-1 rounded-2xl px-6 py-3 border-2 font-semibold hover:bg-white/10 glow text-center"
+                  style={{ borderColor: brandYellow, color: brandYellow }}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Try Free!
+                </a>
+              </div>
+            </nav>
+          )}
         </div>
       </header>
     </>
