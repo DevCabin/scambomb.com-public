@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScamB💣mb - Share Your Story</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Favicon (bomb emoji) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💣</text></svg>">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a class="logo" href="https://scambomb.com" aria-label="Back to ScamB💣mb home">SCAMB<span class="bomb">💣</span>MB</a>
+            <div class="tagline">Share Your Story 💛</div>
+        </div>
+    </header>
+
+    <!-- Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+        <div class="progress-text" id="progressText">0% Complete</div>
+    </div>
+
+    <!-- Main Form Container -->
+    <div class="container main-content">
+
+        <!-- Welcome Message -->
+        <div class="welcome-box">
+            <h1>Your story could protect someone else. 💛</h1>
+            <p class="lead">Scammers are professionals. They do this every single day, and their scripts are designed to fool smart, careful people. There is absolutely no shame in being targeted — or even fooled.</p>
+
+            <div class="important-note">
+                <strong>Why we're asking:</strong>
+                <ul>
+                    <li>Real stories help us teach ScamB💣mb to spot new scams faster</li>
+                    <li>Your experience could be the warning that saves someone else</li>
+                    <li>Everything is anonymous unless you choose otherwise</li>
+                </ul>
+            </div>
+
+            <p class="lead">Takes about <strong>5 minutes</strong>. Thank you for trusting us with this. ✨</p>
+        </div>
+
+        <!-- ==================== FORM START ==================== -->
+        <!-- UPDATE THIS LINE WITH YOUR FORMSPREE ID -->
+        <form id="scamStoriesForm" action="https://formspree.io/f/mzdaobek" method="POST">
+
+            <!-- Hidden fields for metadata -->
+            <input type="hidden" name="_subject" value="New ScamBomb Story Submission">
+            <input type="hidden" name="_template" value="table">
+
+            <!-- ==================== SECTION 1: ABOUT YOU ==================== -->
+            <section class="form-section" data-section="1">
+                <h2 class="section-header">About You</h2>
+
+                <div class="question">
+                    <label>What's your age range? <span class="required">*</span></label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="age" value="Under 35" required>
+                            <span>Under 35</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="age" value="35-44">
+                            <span>35–44</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="age" value="45-54">
+                            <span>45–54</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="age" value="55-64">
+                            <span>55–64</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="age" value="65-74">
+                            <span>65–74</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="age" value="75-84">
+                            <span>75–84</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="age" value="85+">
+                            <span>85+</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <label>Whose story is this? <span class="required">*</span></label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="story_owner" value="My own story" required>
+                            <span>It happened to me</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="story_owner" value="Someone I know">
+                            <span>Someone I know was scammed</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="story_owner" value="Almost fell for it">
+                            <span>I almost fell for it — caught it in time</span>
+                        </label>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==================== SECTION 2: HOW IT HAPPENED ==================== -->
+            <section class="form-section" data-section="2">
+                <h2 class="section-header">How It Happened</h2>
+
+                <div class="question">
+                    <label>How did the scammer make contact? <span class="required">*</span></label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="contact_method" value="Email" required>
+                            <span>Email</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="contact_method" value="Text/SMS">
+                            <span>Text / SMS</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="contact_method" value="Social Media">
+                            <span>Social Media <span class="option-note">(posts, ads, DMs — Facebook, Instagram, WhatsApp, etc.)</span></span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="contact_method" value="Other">
+                            <span>Other</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <label>What were they after? <span class="required">*</span></label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="scam_goal" value="Money" required>
+                            <span>Money — cash, bank transfer, gift cards, or crypto</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="scam_goal" value="Credentials">
+                            <span>Usernames or passwords — account access</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="scam_goal" value="Personal Information">
+                            <span>Personal information — ID, Social Security, date of birth, etc.</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="scam_goal" value="Not sure / Other">
+                            <span>Not sure / Something else</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <label>When did this happen? <span class="required">*</span></label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="when_happened" value="This year" required>
+                            <span>This year</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="when_happened" value="1-2 years ago">
+                            <span>1–2 years ago</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="when_happened" value="3-5 years ago">
+                            <span>3–5 years ago</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="when_happened" value="5+ years ago">
+                            <span>More than 5 years ago</span>
+                        </label>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==================== SECTION 3: YOUR STORY ==================== -->
+            <section class="form-section" data-section="3">
+                <h2 class="section-header">Your Story</h2>
+
+                <div class="question">
+                    <label for="story">Tell us what happened. <span class="required">*</span></label>
+                    <div class="coaching-box">
+                        <p><strong>The best stories include three things:</strong></p>
+                        <ol>
+                            <li>What first caught your attention or made it seem real</li>
+                            <li>What the scammer said or did to earn your trust</li>
+                            <li>The moment you realised something was wrong</li>
+                        </ol>
+                        <p class="helper-text">A few sentences is plenty — your own words are what matter most.</p>
+                    </div>
+                    <textarea name="story" id="story" rows="7" required placeholder="e.g. I got an email that looked exactly like it was from my bank. It said my account was locked and I needed to verify my details. The logo looked right and the sender address seemed normal. I clicked the link and entered my password before I noticed the web address was slightly wrong..."></textarea>
+                </div>
+
+                <div class="question">
+                    <label for="scam_message">Do you still have the original scam message? If so, paste it here.</label>
+                    <p class="helper-text">Optional, but incredibly valuable — even a partial message helps us train ScamB💣mb to recognise this type of scam in future.</p>
+                    <textarea name="scam_message" id="scam_message" rows="5" placeholder="Paste the email, text, or DM here (optional)..."></textarea>
+                </div>
+            </section>
+
+            <!-- ==================== SECTION 4: THE IMPACT ==================== -->
+            <section class="form-section" data-section="4">
+                <h2 class="section-header">The Impact</h2>
+
+                <div class="question">
+                    <label>What was the outcome? <span class="required">*</span></label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="outcome" value="Lost money" required>
+                            <span>Lost money</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="outcome" value="Gave personal info">
+                            <span>Gave personal information</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="outcome" value="Lost money and gave personal info">
+                            <span>Both — lost money and gave personal info</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="outcome" value="Almost - caught in time">
+                            <span>Almost fell for it — caught it in time</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="outcome" value="Spotted it straight away">
+                            <span>Spotted it straight away and ignored it</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question" id="moneyLostQuestion" style="display:none;">
+                    <label>Roughly how much was lost? <span class="helper-text">(Optional — only if you're comfortable sharing)</span></label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="money_lost" value="Under $500">
+                            <span>Under $500</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="money_lost" value="$500 - $2,000">
+                            <span>$500 – $2,000</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="money_lost" value="$2,000 - $10,000">
+                            <span>$2,000 – $10,000</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="money_lost" value="Over $10,000">
+                            <span>Over $10,000</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="money_lost" value="Prefer not to say">
+                            <span>Prefer not to say</span>
+                        </label>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==================== SECTION 5: HELP OTHERS ==================== -->
+            <section class="form-section" data-section="5">
+                <h2 class="section-header">Help Others 💛</h2>
+
+                <div class="question">
+                    <label for="time_travel">What do you wish you could go back in time and tell yourself, right before it happened? <span class="required">*</span></label>
+                    <textarea name="time_travel" id="time_travel" rows="4" required placeholder="e.g. &quot;Stop. Your bank will never ask for your full password by email. Pick up the phone and call the number on the back of your card first.&quot;"></textarea>
+                </div>
+
+                <div class="question">
+                    <label>Can we share your story (anonymously) to help educate others? <span class="required">*</span></label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="share_consent" value="Yes - share it" required>
+                            <span>Yes — share it as-is (anonymously)</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="share_consent" value="Yes - change the details">
+                            <span>Yes — but please change any identifying details</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="share_consent" value="No - keep it private">
+                            <span>No — keep it private, just use it for research</span>
+                        </label>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==================== SECTION 6: STAY CONNECTED ==================== -->
+            <section class="form-section" data-section="6">
+                <h2 class="section-header">Stay in the Loop</h2>
+
+                <p class="section-intro">We're building a community of people who've been there — and want to make sure fewer people end up there.</p>
+
+                <div class="question">
+                    <label>Would you like us to let you know when we publish content about this type of scam? <span class="required">*</span></label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="wants_updates" value="Yes" required>
+                            <span>Yes please — add my email below</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="wants_updates" value="No">
+                            <span>No thanks</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <label for="email">Your email <span class="helper-text">(optional — only if you want updates or are happy for us to follow up)</span></label>
+                    <input type="email" name="email" id="email" placeholder="your.email@example.com">
+                </div>
+
+                <div class="question">
+                    <label for="first_name">First name <span class="helper-text">(optional)</span></label>
+                    <input type="text" name="first_name" id="first_name" placeholder="Just your first name is fine">
+                </div>
+
+                <div class="question">
+                    <label for="other_thoughts">Anything else you want to add?</label>
+                    <textarea name="other_thoughts" id="other_thoughts" rows="3" placeholder="Optional — wild ideas, other scams you've seen, anything at all..."></textarea>
+                </div>
+            </section>
+
+            <!-- ==================== SUBMIT BUTTON ==================== -->
+            <div class="submit-section">
+                <button type="submit" class="submit-btn">
+                    <span class="btn-text">Submit My Story 💛</span>
+                    <span class="btn-loading" style="display: none;">Sending... ⏳</span>
+                </button>
+                <p class="helper-text">Your story is anonymous unless you provide your name or email above.</p>
+            </div>
+
+        </form>
+        <!-- ==================== FORM END ==================== -->
+
+        <!-- Success Message (hidden by default) -->
+        <div id="successMessage" class="success-message" style="display: none;">
+            <div class="success-content">
+                <h2>🎉 Thank You.</h2>
+                <p class="lead">Seriously — sharing this takes courage, and it matters. Every story makes ScamB💣mb smarter and helps protect real people.</p>
+                <p>If you have more to share or questions, reach us at <strong>hello@scambomb.com</strong></p>
+                <p class="signature">— The ScamB💣mb Team 💛</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 ScamB💣mb. All rights reserved.</p>
+            <p class="helper-text">Together we can make scams harder to pull off. 💛</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/script.js"></script>
+
+</body>
+</html>

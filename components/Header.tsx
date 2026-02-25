@@ -40,6 +40,7 @@ function UniversalHeader() {
               <a className="opacity-90 hover:opacity-100" href="/#faq">FAQ</a>
               <a className="opacity-90 hover:opacity-100" href="/blog">Blog</a>
               <a className="opacity-90 hover:opacity-100" href="/testing">Testing?</a>
+              <a className="opacity-90 hover:opacity-100" href="/scam-stories">Story?</a>
             </nav>
             <div className="hidden md:flex items-center gap-2">
               <a
@@ -70,6 +71,7 @@ function UniversalHeader() {
                 <a className="opacity-90 hover:opacity-100" href="/#faq" onClick={() => setIsMobileMenuOpen(false)}>FAQ</a>
                 <a className="opacity-90 hover:opacity-100" href="/blog" onClick={() => setIsMobileMenuOpen(false)}>Blog</a>
                 <a className="opacity-90 hover:opacity-100" href="/testing" onClick={() => setIsMobileMenuOpen(false)}>Testing?</a>
+                <a className="opacity-90 hover:opacity-100" href="/scam-stories" onClick={() => setIsMobileMenuOpen(false)}>Story?</a>
                 <a
                   href={trialHref}
                   className="mt-1 rounded-2xl px-6 py-3 border-2 font-semibold hover:bg-white/10 glow text-center"

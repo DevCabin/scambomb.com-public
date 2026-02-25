@@ -14,6 +14,11 @@ const nextConfig = {
         destination: '/testing/index.html',
         permanent: false,
       },
+      {
+        source: '/scam-stories',
+        destination: '/scam-stories/index.html',
+        permanent: false,
+      },
     ]
   },
 }
