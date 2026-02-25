@@ -14,6 +14,7 @@ const CONFIG = {
 document.addEventListener('DOMContentLoaded', function() {
     initializeForm();
     setupEventListeners();
+    setupOptinToggle();
     loadSavedData();
     updateProgress();
 });
@@ -85,6 +86,21 @@ function setupEventListeners() {
             firstInvalid.focus();
         }
     }, true);
+}
+
+// ==================== OPT-IN TOGGLE ====================
+function setupOptinToggle() {
+    const checkbox = document.getElementById('wantsUpdates');
+    const section = document.getElementById('optinSection');
+    if (!checkbox || !section) return;
+
+    checkbox.addEventListener('change', function() {
+        if (this.checked) {
+            section.classList.remove('opted-out');
+        } else {
+            section.classList.add('opted-out');
+        }
+    });
 }
 
 // ==================== CONDITIONAL: MONEY QUESTION ====================

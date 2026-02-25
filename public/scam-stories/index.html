@@ -299,38 +299,32 @@
             </section>
 
             <!-- ==================== SECTION 6: STAY CONNECTED ==================== -->
-            <section class="form-section" data-section="6">
+            <section class="form-section optin-section" id="optinSection" data-section="6">
                 <h2 class="section-header">Stay in the Loop</h2>
 
-                <p class="section-intro">We're building a community of people who've been there — and want to make sure fewer people end up there.</p>
+                <label class="optin-label">
+                    <input type="checkbox" name="wants_updates" id="wantsUpdates" value="Yes" checked>
+                    <span class="optin-text">
+                        <strong>Yes! Please keep me informed about the latest scams</strong> so my family and I will stay safe.
+                        <span class="optin-promise">We promise — no spam ever, and we never sell or share your information.</span>
+                    </span>
+                </label>
 
-                <div class="question">
-                    <label>Would you like us to let you know when we publish content about this type of scam? <span class="required">*</span></label>
-                    <div class="radio-group">
-                        <label class="radio-option">
-                            <input type="radio" name="wants_updates" value="Yes" required>
-                            <span>Yes please — add my email below</span>
-                        </label>
-                        <label class="radio-option">
-                            <input type="radio" name="wants_updates" value="No">
-                            <span>No thanks</span>
-                        </label>
+                <div class="optin-fields" id="optinFields">
+                    <div class="question">
+                        <label for="email">Email address</label>
+                        <input type="email" name="email" id="email" placeholder="your.email@example.com">
                     </div>
-                </div>
 
-                <div class="question">
-                    <label for="email">Your email <span class="helper-text">(optional — only if you want updates or are happy for us to follow up)</span></label>
-                    <input type="email" name="email" id="email" placeholder="your.email@example.com">
-                </div>
+                    <div class="question">
+                        <label for="first_name">First name <span class="helper-text">(optional)</span></label>
+                        <input type="text" name="first_name" id="first_name" placeholder="Just your first name is fine">
+                    </div>
 
-                <div class="question">
-                    <label for="first_name">First name <span class="helper-text">(optional)</span></label>
-                    <input type="text" name="first_name" id="first_name" placeholder="Just your first name is fine">
-                </div>
-
-                <div class="question">
-                    <label for="other_thoughts">Anything else you want to add?</label>
-                    <textarea name="other_thoughts" id="other_thoughts" rows="3" placeholder="Optional — wild ideas, other scams you've seen, anything at all..."></textarea>
+                    <div class="question">
+                        <label for="other_thoughts">Anything else you want to add?</label>
+                        <textarea name="other_thoughts" id="other_thoughts" rows="3" placeholder="Optional — wild ideas, other scams you've seen, anything at all..."></textarea>
+                    </div>
                 </div>
             </section>
 
