@@ -7,29 +7,17 @@ const nextConfig = {
     // This helps with static generation
     serverComponentsExternalPackages: ['contentlayer'],
   },
-  async rewrites() {
+  async redirects() {
     return [
       {
         source: '/testing',
         destination: '/testing/index.html',
+        permanent: false,
       },
       {
         source: '/scam-stories',
         destination: '/scam-stories/index.html',
-      },
-    ]
-  },
-  async redirects() {
-    return [
-      {
-        source: '/testing/index.html',
-        destination: '/testing',
-        permanent: true,
-      },
-      {
-        source: '/scam-stories/index.html',
-        destination: '/scam-stories',
-        permanent: true,
+        permanent: false,
       },
     ]
   },
