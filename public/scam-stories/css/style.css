@@ -234,38 +234,37 @@ body {
 
 /* ==================== ANONYMOUS SUBMIT ==================== */
 .anon-submit-section {
-    text-align: center;
-    padding: 1.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
     margin-bottom: 1.5rem;
-    border: 2px dashed var(--border-gray);
-    border-radius: 8px;
-    background-color: var(--light-gray);
+    gap: 0.4rem;
 }
 
 .anon-btn {
     background-color: transparent;
-    color: var(--navy);
-    font-size: 17px;
-    font-weight: 600;
+    color: var(--gray);
+    font-size: 13px;
+    font-weight: 500;
     font-family: var(--font-family);
-    padding: 0.9rem 2rem;
-    border: 2px solid var(--navy);
-    border-radius: 8px;
+    padding: 0.4rem 0.85rem;
+    border: 1px solid var(--border-gray);
+    border-radius: 6px;
     cursor: pointer;
     transition: var(--transition);
 }
 
 .anon-btn:hover {
-    background-color: var(--navy);
-    color: var(--white);
-    transform: translateY(-1px);
+    color: var(--navy);
+    border-color: var(--navy);
+    background-color: var(--light-gray);
 }
 
 .anon-note {
-    font-size: 14px;
+    font-size: 12px;
     color: var(--gray);
-    margin-top: 0.85rem;
     font-style: italic;
+    text-align: right;
 }
 
 /* ==================== OPT-IN SECTION ==================== */
