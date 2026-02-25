@@ -60,12 +60,32 @@ body {
     flex-wrap: wrap;
 }
 
+.logo-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
 .logo {
     font-size: 32px;
     font-weight: 800;
     color: var(--yellow);
     letter-spacing: -0.5px;
     text-decoration: none;
+}
+
+.back-link {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--white);
+    opacity: 0.55;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: opacity 0.2s ease;
+}
+
+.back-link:hover {
+    opacity: 1;
 }
 
 .logo .bomb {
@@ -209,6 +229,42 @@ body {
     font-size: 18px;
     color: var(--gray);
     margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+/* ==================== ANONYMOUS SUBMIT ==================== */
+.anon-submit-section {
+    text-align: center;
+    padding: 1.5rem 2rem;
+    margin-bottom: 1.5rem;
+    border: 2px dashed var(--border-gray);
+    border-radius: 8px;
+    background-color: var(--light-gray);
+}
+
+.anon-btn {
+    background-color: transparent;
+    color: var(--navy);
+    font-size: 17px;
+    font-weight: 600;
+    font-family: var(--font-family);
+    padding: 0.9rem 2rem;
+    border: 2px solid var(--navy);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.anon-btn:hover {
+    background-color: var(--navy);
+    color: var(--white);
+    transform: translateY(-1px);
+}
+
+.anon-note {
+    font-size: 14px;
+    color: var(--gray);
+    margin-top: 0.85rem;
     font-style: italic;
 }
 

@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeForm();
     setupEventListeners();
     setupOptinToggle();
+    setupAnonSubmit();
     loadSavedData();
     updateProgress();
 });
@@ -86,6 +87,23 @@ function setupEventListeners() {
             firstInvalid.focus();
         }
     }, true);
+}
+
+// ==================== ANONYMOUS SUBMIT ====================
+function setupAnonSubmit() {
+    const anonBtn = document.getElementById('anonSubmitBtn');
+    if (!anonBtn) return;
+
+    anonBtn.addEventListener('click', function() {
+        // Uncheck the opt-in so it's clear in the data
+        const checkbox = document.getElementById('wantsUpdates');
+        if (checkbox && checkbox.checked) {
+            checkbox.checked = false;
+            checkbox.dispatchEvent(new Event('change'));
+        }
+        // Submit the form
+        document.getElementById('scamStoriesForm').requestSubmit();
+    });
 }
 
 // ==================== OPT-IN TOGGLE ====================

@@ -60,11 +60,31 @@ body {
     flex-wrap: wrap;
 }
 
+.logo-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
 .logo {
     font-size: 32px;
     font-weight: 800;
     color: var(--yellow);
     letter-spacing: -0.5px;
+}
+
+.back-link {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--white);
+    opacity: 0.55;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: opacity 0.2s ease;
+}
+
+.back-link:hover {
+    opacity: 1;
 }
 
 .logo .bomb {
