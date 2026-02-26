@@ -1,0 +1,1367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Older Adult Fraud Report 2024–2025</title>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --red:        #C0392B;
+      --red-dark:   #922B21;
+      --red-light:  #E74C3C;
+      --amber:      #E67E22;
+      --amber-light:#F39C12;
+      --gold:       #D4AC0D;
+      --teal:       #148f8f;
+      --teal-light: #1abc9c;
+      --ink:        #0D0D0D;
+      --ink-2:      #1A1A2E;
+      --slate:      #1e2a3a;
+      --slate-mid:  #243447;
+      --slate-light:#2e4060;
+      --white:      #FFFFFF;
+      --off-white:  #F4F6F9;
+      --muted:      #8899AA;
+      --border:     rgba(255,255,255,0.08);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--ink-2);
+      color: var(--white);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── HERO ──────────────────────────────────────────────── */
+    .hero {
+      position: relative;
+      background: linear-gradient(135deg, #0D0D0D 0%, #1A1A2E 40%, #16213E 100%);
+      padding: 0;
+      overflow: hidden;
+      min-height: 420px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 70% 40%, rgba(192,57,43,0.18) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 80% at 10% 80%, rgba(20,143,143,0.12) 0%, transparent 60%);
+    }
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+    .hero-badge {
+      position: absolute;
+      top: 36px; right: 48px;
+      font-family: 'League Spartan', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--amber-light);
+      background: rgba(230,126,34,0.12);
+      border: 1px solid rgba(230,126,34,0.35);
+      padding: 6px 16px;
+      border-radius: 20px;
+    }
+    .hero-year {
+      position: absolute;
+      top: 36px; left: 48px;
+      font-family: 'League Spartan', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 0 48px 56px;
+      max-width: 900px;
+    }
+    .hero-eyebrow {
+      font-family: 'League Spartan', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--red-light);
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 28px; height: 2px;
+      background: var(--red-light);
+    }
+    .hero h1 {
+      font-family: 'League Spartan', sans-serif;
+      font-size: clamp(28px, 4vw, 52px);
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      color: var(--white);
+      margin-bottom: 22px;
+    }
+    .hero h1 em {
+      color: var(--red-light);
+      font-style: normal;
+    }
+    .hero-desc {
+      font-size: 15px;
+      color: rgba(255,255,255,0.6);
+      max-width: 640px;
+      line-height: 1.65;
+    }
+    .hero-desc a {
+      color: var(--teal-light);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(26,188,156,0.3);
+    }
+    .hero-stats-bar {
+      position: relative;
+      z-index: 2;
+      background: rgba(0,0,0,0.4);
+      backdrop-filter: blur(12px);
+      border-top: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      padding: 0 48px;
+    }
+    .stat-item {
+      padding: 22px 0;
+      border-right: 1px solid var(--border);
+      padding-right: 32px;
+      padding-left: 8px;
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-item:first-child { padding-left: 0; }
+    .stat-number {
+      font-family: 'League Spartan', sans-serif;
+      font-size: 26px;
+      font-weight: 900;
+      color: var(--white);
+      display: block;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .stat-number.danger { color: var(--red-light); }
+    .stat-number.warning { color: var(--amber-light); }
+    .stat-number.teal { color: var(--teal-light); }
+    .stat-label {
+      font-family: 'League Spartan', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* ── LAYOUT ────────────────────────────────────────────── */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 48px;
+    }
+    .page-body {
+      padding: 64px 0 96px;
+    }
+
+    /* ── SECTION WRAPPER ───────────────────────────────────── */
+    .section {
+      margin-bottom: 72px;
+    }
+    .section-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      margin-bottom: 32px;
+    }
+    .section-number {
+      font-family: 'League Spartan', sans-serif;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      color: var(--red-light);
+      background: rgba(192,57,43,0.12);
+      border: 1px solid rgba(192,57,43,0.25);
+      padding: 5px 12px;
+      border-radius: 4px;
+      white-space: nowrap;
+      margin-top: 4px;
+    }
+    .section-title {
+      font-family: 'League Spartan', sans-serif;
+      font-size: clamp(20px, 2.5vw, 30px);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      color: var(--white);
+      line-height: 1.1;
+    }
+    .section-title span { color: var(--red-light); }
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, var(--red-dark), var(--slate-light) 60%, transparent);
+      margin-bottom: 36px;
+    }
+
+    /* ── EXECUTIVE SUMMARY CARDS ───────────────────────────── */
+    .exec-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    .exec-card {
+      background: var(--slate);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px 28px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .exec-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+    }
+    .exec-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+    }
+    .exec-card.red::before    { background: linear-gradient(90deg, var(--red), var(--red-light)); }
+    .exec-card.amber::before  { background: linear-gradient(90deg, var(--amber), var(--amber-light)); }
+    .exec-card.teal::before   { background: linear-gradient(90deg, var(--teal), var(--teal-light)); }
+    .exec-card.gold::before   { background: linear-gradient(90deg, #a07800, var(--gold)); }
+    .exec-card-icon {
+      font-size: 28px;
+      margin-bottom: 14px;
+      display: block;
+    }
+    .exec-card-stat {
+      font-family: 'League Spartan', sans-serif;
+      font-size: 32px;
+      font-weight: 900;
+      display: block;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .exec-card.red    .exec-card-stat { color: var(--red-light); }
+    .exec-card.amber  .exec-card-stat { color: var(--amber-light); }
+    .exec-card.teal   .exec-card-stat { color: var(--teal-light); }
+    .exec-card.gold   .exec-card-stat { color: var(--gold); }
+    .exec-card-text {
+      font-size: 13.5px;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.55;
+    }
+    .exec-card-text a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+      transition: border-color 0.2s;
+    }
+    .exec-card-text a:hover { border-color: rgba(255,255,255,0.5); }
+
+    /* ── DATA TABLE ────────────────────────────────────────── */
+    .table-wrapper {
+      overflow-x: auto;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13.5px;
+    }
+    thead tr {
+      background: linear-gradient(90deg, var(--red-dark), var(--slate-mid));
+    }
+    thead th {
+      font-family: 'League Spartan', sans-serif;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--white);
+      padding: 16px 20px;
+      text-align: left;
+      white-space: nowrap;
+      border-bottom: 2px solid rgba(255,255,255,0.1);
+    }
+    tbody tr {
+      border-bottom: 1px solid var(--border);
+      transition: background 0.15s;
+    }
+    tbody tr:last-child { border-bottom: none; }
+    tbody tr:nth-child(even) { background: rgba(255,255,255,0.025); }
+    tbody tr:hover { background: rgba(192,57,43,0.08); }
+    tbody td {
+      padding: 18px 20px;
+      vertical-align: top;
+      line-height: 1.55;
+      color: rgba(255,255,255,0.82);
+    }
+    .td-scam {
+      font-family: 'League Spartan', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      color: var(--white);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      min-width: 200px;
+    }
+    .td-amount {
+      font-family: 'League Spartan', sans-serif;
+      font-weight: 800;
+      font-size: 15px;
+      color: var(--amber-light);
+      white-space: nowrap;
+      min-width: 180px;
+    }
+    .td-notes {
+      font-size: 13px;
+      color: rgba(255,255,255,0.65);
+      min-width: 260px;
+    }
+    .td-notes a {
+      color: var(--teal-light);
+      text-decoration: none;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      padding: 2px 6px;
+      background: rgba(26,188,156,0.1);
+      border-radius: 3px;
+      border: 1px solid rgba(26,188,156,0.2);
+      transition: background 0.2s;
+    }
+    .td-notes a:hover { background: rgba(26,188,156,0.2); }
+    .scam-tag {
+      display: inline-block;
+      font-family: 'League Spartan', sans-serif;
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 2px 8px;
+      border-radius: 3px;
+      margin-bottom: 6px;
+    }
+    .tag-red    { background: rgba(192,57,43,0.2);  color: #E74C3C; border: 1px solid rgba(192,57,43,0.3); }
+    .tag-amber  { background: rgba(230,126,34,0.2); color: #F39C12; border: 1px solid rgba(230,126,34,0.3); }
+    .tag-teal   { background: rgba(20,143,143,0.2); color: #1abc9c; border: 1px solid rgba(20,143,143,0.3); }
+    .tag-gold   { background: rgba(212,172,13,0.15);color: #F1C40F; border: 1px solid rgba(212,172,13,0.3); }
+
+    /* ── CALLOUT BOX ────────────────────────────────────────── */
+    .callout {
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+    .callout.red {
+      background: rgba(192,57,43,0.1);
+      border-left: 4px solid var(--red-light);
+      border-top: 1px solid rgba(192,57,43,0.2);
+      border-right: 1px solid rgba(192,57,43,0.2);
+      border-bottom: 1px solid rgba(192,57,43,0.2);
+    }
+    .callout.amber {
+      background: rgba(230,126,34,0.1);
+      border-left: 4px solid var(--amber-light);
+      border-top: 1px solid rgba(230,126,34,0.2);
+      border-right: 1px solid rgba(230,126,34,0.2);
+      border-bottom: 1px solid rgba(230,126,34,0.2);
+    }
+    .callout.teal {
+      background: rgba(20,143,143,0.1);
+      border-left: 4px solid var(--teal-light);
+      border-top: 1px solid rgba(20,143,143,0.2);
+      border-right: 1px solid rgba(20,143,143,0.2);
+      border-bottom: 1px solid rgba(20,143,143,0.2);
+    }
+    .callout-label {
+      font-family: 'League Spartan', sans-serif;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .callout.red    .callout-label { color: var(--red-light); }
+    .callout.amber  .callout-label { color: var(--amber-light); }
+    .callout.teal   .callout-label { color: var(--teal-light); }
+    .callout p {
+      font-size: 14.5px;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.65;
+      margin: 0;
+    }
+    .callout p strong {
+      color: var(--white);
+      font-weight: 700;
+    }
+    .callout p a {
+      color: var(--teal-light);
+      text-decoration: none;
+      font-size: 12px;
+      padding: 1px 6px;
+      background: rgba(26,188,156,0.1);
+      border-radius: 3px;
+      border: 1px solid rgba(26,188,156,0.2);
+    }
+
+    /* ── STAT ROWS ─────────────────────────────────────────── */
+    .stat-row-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+    .stat-row-card {
+      background: var(--slate);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px 22px;
+      position: relative;
+      overflow: hidden;
+    }
+    .stat-row-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 2px;
+    }
+    .stat-row-card.danger::after  { background: var(--red-light); }
+    .stat-row-card.warning::after { background: var(--amber-light); }
+    .stat-row-card.info::after    { background: var(--teal-light); }
+    .stat-row-big {
+      font-family: 'League Spartan', sans-serif;
+      font-size: 36px;
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 6px;
+      display: block;
+    }
+    .stat-row-card.danger  .stat-row-big { color: var(--red-light); }
+    .stat-row-card.warning .stat-row-big { color: var(--amber-light); }
+    .stat-row-card.info    .stat-row-big { color: var(--teal-light); }
+    .stat-row-label {
+      font-family: 'League Spartan', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* ── AI SECTION ────────────────────────────────────────── */
+    .ai-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-bottom: 28px;
+    }
+    .ai-card {
+      background: linear-gradient(135deg, rgba(46,64,96,0.7), rgba(26,42,62,0.9));
+      border: 1px solid rgba(26,188,156,0.15);
+      border-radius: 12px;
+      padding: 26px;
+      position: relative;
+    }
+    .ai-card::before {
+      content: '';
+      position: absolute;
+      top: -1px; left: 24px;
+      width: 48px; height: 2px;
+      background: var(--teal-light);
+    }
+    .ai-card-title {
+      font-family: 'League Spartan', sans-serif;
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--teal-light);
+      margin-bottom: 16px;
+    }
+    .ai-card ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .ai-card ul li {
+      font-size: 13.5px;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.55;
+      padding-left: 18px;
+      position: relative;
+    }
+    .ai-card ul li::before {
+      content: '›';
+      position: absolute;
+      left: 0;
+      color: var(--teal-light);
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 1.3;
+    }
+    .ai-card ul li strong { color: var(--white); }
+    .ai-card ul li a {
+      color: var(--teal-light);
+      text-decoration: none;
+      font-size: 11px;
+      padding: 1px 5px;
+      background: rgba(26,188,156,0.1);
+      border-radius: 3px;
+    }
+
+    /* ── BLOCKQUOTE / LIMITATION ─────────────────────────── */
+    .limitation-box {
+      background: rgba(13,13,13,0.5);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      padding: 24px 28px;
+      margin-top: 28px;
+    }
+    .limitation-box .lim-label {
+      font-family: 'League Spartan', sans-serif;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--amber-light);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .limitation-box p {
+      font-size: 13.5px;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.65;
+    }
+    .limitation-box p strong { color: rgba(255,255,255,0.9); }
+    .limitation-box p a {
+      color: var(--teal-light);
+      text-decoration: none;
+      font-size: 11px;
+      padding: 1px 5px;
+      background: rgba(26,188,156,0.1);
+      border-radius: 3px;
+    }
+
+    /* ── BURDEN SECTION ─────────────────────────────────────── */
+    .burden-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .burden-item {
+      background: var(--slate);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px 26px;
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+    }
+    .burden-num {
+      font-family: 'League Spartan', sans-serif;
+      font-size: 28px;
+      font-weight: 900;
+      color: var(--red-light);
+      line-height: 1;
+      min-width: 44px;
+      text-align: center;
+    }
+    .burden-text {
+      font-size: 14px;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.6;
+    }
+    .burden-text strong { color: var(--white); }
+    .burden-text a {
+      color: var(--teal-light);
+      text-decoration: none;
+      font-size: 11px;
+      padding: 1px 5px;
+      background: rgba(26,188,156,0.1);
+      border-radius: 3px;
+      border: 1px solid rgba(26,188,156,0.2);
+    }
+
+    /* ── GRANDKID SECTION ───────────────────────────────────── */
+    .grandkid-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .grandkid-card {
+      background: linear-gradient(135deg, rgba(30,42,58,0.9), rgba(20,30,46,0.9));
+      border: 1px solid rgba(230,126,34,0.2);
+      border-radius: 10px;
+      padding: 22px;
+    }
+    .grandkid-icon {
+      font-size: 28px;
+      margin-bottom: 12px;
+      display: block;
+    }
+    .grandkid-flag {
+      font-family: 'League Spartan', sans-serif;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--amber-light);
+      margin-bottom: 8px;
+    }
+    .grandkid-desc {
+      font-size: 13px;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.55;
+    }
+
+    /* ── FOOTER ─────────────────────────────────────────────── */
+    .footer {
+      background: var(--ink);
+      border-top: 1px solid var(--border);
+      padding: 40px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .footer-brand {
+      font-family: 'League Spartan', sans-serif;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+    }
+    .footer-note {
+      font-size: 12px;
+      color: rgba(255,255,255,0.3);
+      max-width: 500px;
+      text-align: right;
+    }
+    .footer-note a {
+      color: var(--teal-light);
+      text-decoration: none;
+    }
+
+    /* ── PROGRESS BARS ────────────────────────────────────────── */
+    .progress-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-bottom: 32px;
+    }
+    .progress-item { }
+    .progress-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 6px;
+    }
+    .progress-label {
+      font-family: 'League Spartan', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+    }
+    .progress-value {
+      font-family: 'League Spartan', sans-serif;
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--amber-light);
+    }
+    .progress-bar-bg {
+      height: 6px;
+      background: rgba(255,255,255,0.07);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    .progress-bar-fill {
+      height: 100%;
+      border-radius: 3px;
+      background: linear-gradient(90deg, var(--red-dark), var(--amber-light));
+    }
+
+    /* ── RESPONSIVE ─────────────────────────────────────────── */
+    @media (max-width: 860px) {
+      .container { padding: 0 20px; }
+      .hero-content { padding: 0 20px 40px; }
+      .hero-stats-bar { grid-template-columns: repeat(2, 1fr); padding: 0 20px; }
+      .hero-badge, .hero-year { right: 20px; left: auto; top: 16px; }
+      .hero-year { left: 20px; right: auto; }
+      .exec-grid { grid-template-columns: 1fr; }
+      .stat-row-grid { grid-template-columns: repeat(2, 1fr); }
+      .ai-grid { grid-template-columns: 1fr; }
+      .grandkid-grid { grid-template-columns: 1fr; }
+      .footer { flex-direction: column; text-align: center; }
+      .footer-note { text-align: center; }
+    }
+    @media (max-width: 540px) {
+      .hero-stats-bar { grid-template-columns: 1fr 1fr; }
+      .stat-row-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════  BACK BAR  ═══════════════════ -->
+<div class="back-bar">
+  <a href="/blog/older-adult-fraud-report-2024-2025">← Back to article</a>
+  &nbsp;&nbsp;·&nbsp;&nbsp;
+  <a href="/blog">All posts</a>
+  &nbsp;&nbsp;·&nbsp;&nbsp;
+  <a href="/">ScamB💣mb</a>
+</div>
+
+<!-- ═══════════════════════  HERO  ════════════════════════ -->
+<header class="hero">
+  <div class="hero-grid"></div>
+  <span class="hero-year">REPORT  ·  2024 – 2025</span>
+  <span class="hero-badge">CRITICAL THREAT LEVEL</span>
+  <div class="hero-content">
+    <div class="hero-eyebrow">ELDER FRAUD INTELLIGENCE BRIEF</div>
+    <h1>OLDER ADULT FRAUD IS NOW A<br><em>MULTI‑BILLION‑DOLLAR CRISIS</em></h1>
+    <p class="hero-desc">
+      Investment, tech support, and government / imposter scams drive the largest reported losses,
+      while AI‑enabled voice and deepfake scams rapidly expand the threat landscape.
+      <a href="https://www.ftc.gov/news-events/news/press-releases/2025/12/ftc-issues-annual-report-congress-agencys-actions-protect-older-adults" target="_blank">FTC Annual Report →</a>
+    </p>
+  </div>
+  <div class="hero-stats-bar">
+    <div class="stat-item">
+      <span class="stat-number danger">$2.4B</span>
+      <span class="stat-label">FTC LOSSES 2024 (60+)</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number warning">$4.9B</span>
+      <span class="stat-label">FBI CYBERCRIME 2024 (60+)</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">+43%</span>
+      <span class="stat-label">YOY CYBERCRIME JUMP</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number teal">$81.5B</span>
+      <span class="stat-label">ESTIMATED TOTAL RANGE TOP</span>
+    </div>
+  </div>
+</header>
+
+<!-- ═══════════════════════  BODY  ════════════════════════ -->
+<div class="page-body">
+<div class="container">
+
+  <!-- ─── 01  EXECUTIVE SUMMARY ─────────────────────────── -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-number">01</span>
+      <h2 class="section-title">EXECUTIVE <span>SUMMARY</span></h2>
+    </div>
+    <div class="divider"></div>
+
+    <div class="exec-grid">
+      <div class="exec-card red">
+        <span class="exec-card-icon">📈</span>
+        <span class="exec-card-stat">$2.4 BILLION</span>
+        <p class="exec-card-text">
+          Older adults (60+) reported approximately <strong>$2.4 billion</strong> in fraud losses in 2024 to the FTC —
+          up from about $600 million in 2020, a 4× increase in four years.
+          <a href="https://www.foxbusiness.com/money/older-americans-lost-up-81-5b-past-year-financial-fraud-ftc-report-says" target="_blank">Fox Business</a>
+        </p>
+      </div>
+      <div class="exec-card amber">
+        <span class="exec-card-icon">🚨</span>
+        <span class="exec-card-stat">$4.9 BILLION</span>
+        <p class="exec-card-text">
+          FBI‑linked data indicate <strong>$4.9 billion</strong> in cybercrime losses for people 60+ in 2024 —
+          a <strong>43 percent year‑over‑year jump</strong>, the largest single surge on record.
+          <a href="https://www.aarp.org/money/scams-fraud/fbi-report-fraud-2024/" target="_blank">AARP</a>
+        </p>
+      </div>
+      <div class="exec-card teal">
+        <span class="exec-card-icon">🎯</span>
+        <span class="exec-card-stat">TOP 4 SCAM TYPES</span>
+        <p class="exec-card-text">
+          Investment, tech support, romance / confidence, and government impersonation scams
+          produced the <strong>largest dollar losses</strong> for older adults across all measured periods.
+          <a href="https://www.ic3.gov/annualreport/reports/2023_ic3elderfraudreport.pdf" target="_blank">IC3</a>
+        </p>
+      </div>
+      <div class="exec-card gold">
+        <span class="exec-card-icon">🤖</span>
+        <span class="exec-card-stat">AI VOICE RISING</span>
+        <p class="exec-card-text">
+          AI‑powered voice cloning and deepfake "grandkid" / authority impersonation scams are
+          <strong>rapidly growing</strong> but are not yet broken out as a separate line item in official 2024–2025 stats.
+          <a href="https://deepstrike.io/blog/vishing-statistics-2025" target="_blank">DeepStrike</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 02  CORE LOSSES TABLE ─────────────────────────── -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-number">02</span>
+      <h2 class="section-title">CORE DOLLAR LOSSES BY <span>MAJOR SCAM TYPE</span></h2>
+    </div>
+    <div class="divider"></div>
+
+    <!-- Loss bars for quick visual -->
+    <div class="progress-list">
+      <div class="progress-item">
+        <div class="progress-meta">
+          <span class="progress-label">Investment Scams</span>
+          <span class="progress-value">$1.8B (2024)</span>
+        </div>
+        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:100%"></div></div>
+      </div>
+      <div class="progress-item">
+        <div class="progress-meta">
+          <span class="progress-label">Tech Support Scams</span>
+          <span class="progress-value">$982M (2024)</span>
+        </div>
+        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:55%"></div></div>
+      </div>
+      <div class="progress-item">
+        <div class="progress-meta">
+          <span class="progress-label">Business Email Compromise</span>
+          <span class="progress-value">$385M (2024)</span>
+        </div>
+        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:22%"></div></div>
+      </div>
+      <div class="progress-item">
+        <div class="progress-meta">
+          <span class="progress-label">Call‑Center Schemes</span>
+          <span class="progress-value">$770M (2023)</span>
+        </div>
+        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:43%"></div></div>
+      </div>
+      <div class="progress-item">
+        <div class="progress-meta">
+          <span class="progress-label">Gov't Impersonation (subset)</span>
+          <span class="progress-value">$159M (2024)</span>
+        </div>
+        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:9%"></div></div>
+      </div>
+    </div>
+
+    <!-- TABLE 1 -->
+    <p style="font-family:'League Spartan',sans-serif;font-size:10px;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;">
+      TABLE 1 — KEY SCAM TYPES & REPORTED LOSSES &nbsp;·&nbsp; MOSTLY 2023–2024 DATA &nbsp;·&nbsp; 60+ WHERE SPECIFIED
+    </p>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>SCAM TYPE &nbsp;(PRIMARY TARGET: 60+)</th>
+            <th>REPORTED LOSSES (APPROX.)</th>
+            <th>SOURCE &amp; KEY INSIGHT</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="td-scam"><div class="scam-tag tag-red">HIGHEST LOSS</div><br/>INVESTMENT SCAMS</td>
+            <td class="td-amount">$1.8B (2024)<br/><span style="font-size:12px;color:rgba(255,255,255,0.5)">$1.24B (60+, 2023)</span></td>
+            <td class="td-notes">Costliest category for older adults. Investment scams were the #1 dollar‑loss driver; IC3 2023 report shows $1.243B in losses for complainants over 60. <a href="https://www.aarp.org/money/scams-fraud/fbi-report-fraud-2024/" target="_blank">AARP →</a></td>
+          </tr>
+          <tr>
+            <td class="td-scam"><div class="scam-tag tag-amber">HIGH VOLUME</div><br/>TECH SUPPORT SCAMS</td>
+            <td class="td-amount">$982M (2024)<br/><span style="font-size:12px;color:rgba(255,255,255,0.5)">$589.8M (60+, 2023)</span></td>
+            <td class="td-notes">#1 crime type by volume for 60+ complainants; losses neared $1B in 2024. Most victims are targeted via pop‑up alerts and unsolicited calls. <a href="https://www.aarp.org/money/scams-fraud/fbi-report-fraud-2024/" target="_blank">AARP →</a></td>
+          </tr>
+          <tr>
+            <td class="td-scam"><div class="scam-tag tag-gold">HIGH DOLLAR PER VICTIM</div><br/>ROMANCE / CONFIDENCE SCAMS</td>
+            <td class="td-amount">HUNDREDS OF MILLIONS<br/><span style="font-size:12px;color:rgba(255,255,255,0.5)">(Top driver of $100K+ losses)</span></td>
+            <td class="td-notes">FTC 2024–2025 report highlights romance scams as major driver of high‑dollar (over $100,000) losses among older adults. <a href="https://www.youtube.com/watch?v=-cb2Cxhzjdw" target="_blank">YouTube →</a></td>
+          </tr>
+          <tr>
+            <td class="td-scam"><div class="scam-tag tag-red">IMPERSONATION</div><br/>GOVERNMENT IMPERSONATION &amp; IMPOSTER SCAMS</td>
+            <td class="td-amount">$159M (subset, 2024)<br/><span style="font-size:12px;color:rgba(255,255,255,0.5)">+ $75K individual wire cases</span></td>
+            <td class="td-notes">Older adults especially likely to lose money here. Examples include $75,000 wires to fake "FTC" contacts. Includes fake SSA, law‑enforcement impersonation. <a href="https://www.ftc.gov/news-events/news/press-releases/2025/12/ftc-issues-annual-report-congress-agencys-actions-protect-older-adults" target="_blank">FTC →</a></td>
+          </tr>
+          <tr>
+            <td class="td-scam"><div class="scam-tag tag-gold">DISPROPORTIONATE HARM</div><br/>PRIZE / SWEEPSTAKES / LOTTERY SCAMS</td>
+            <td class="td-amount">NO GLOBAL FIGURE<br/><span style="font-size:12px;color:rgba(255,255,255,0.5)">(Flagged high‑risk for 60+)</span></td>
+            <td class="td-notes">Older adults are much more likely than younger adults to report a financial loss here. Disproportionate impact confirmed by FTC. <a href="https://www.ftc.gov/news-events/news/press-releases/2025/12/ftc-issues-annual-report-congress-agencys-actions-protect-older-adults" target="_blank">FTC →</a></td>
+          </tr>
+          <tr>
+            <td class="td-scam"><div class="scam-tag tag-teal">WIRE FRAUD</div><br/>BUSINESS EMAIL COMPROMISE (BEC)</td>
+            <td class="td-amount">$385M (60+, 2024)</td>
+            <td class="td-notes">BEC scams cost victims 60+ about $385M in 2024. Fraudsters impersonate organizational leaders to trigger high‑value wire transfers. <a href="https://www.aarp.org/money/scams-fraud/fbi-report-fraud-2024/" target="_blank">AARP →</a></td>
+          </tr>
+          <tr>
+            <td class="td-scam"><div class="scam-tag tag-amber">CALL‑CENTER</div><br/>CALL‑CENTER–DRIVEN SCHEMES</td>
+            <td class="td-amount">$770M (60+, 2023)</td>
+            <td class="td-notes">60+ victims accounted for <strong>58% of all call‑center fraud losses</strong> (~$770M). IC3 confirms call centers overwhelmingly target older adults. <a href="https://www.ic3.gov/annualreport/reports/2023_ic3elderfraudreport.pdf" target="_blank">IC3 PDF →</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ─── 03  OVERALL BURDEN ─────────────────────────────── -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-number">03</span>
+      <h2 class="section-title">OVERALL FRAUD <span>BURDEN</span> ON OLDER ADULTS</h2>
+    </div>
+    <div class="divider"></div>
+
+    <div class="burden-list">
+      <div class="burden-item">
+        <div class="burden-num">01</div>
+        <div class="burden-text">
+          The FTC's <em>Protecting Older Consumers 2024–2025</em> report states older adults (60+) reported
+          approximately <strong>$2.4 billion in fraud losses in 2024</strong>, up from about $600 million in 2020 —
+          a 300 percent increase in just four years.
+          <a href="https://www.youtube.com/watch?v=-cb2Cxhzjdw" target="_blank">YouTube →</a>
+        </div>
+      </div>
+      <div class="burden-item">
+        <div class="burden-num">02</div>
+        <div class="burden-text">
+          Using survey‑based and model‑based extrapolations, analysts estimate that
+          <strong>total financial fraud against older adults could range from $10.1 billion to $81.5 billion</strong>
+          for the 2024–2025 period, highlighting severe and systemic underreporting.
+          <a href="https://www.freep.com/story/money/personal-finance/susan-tompor/2025/12/18/adult-senior-investment-scams/87790712007/" target="_blank">Detroit Free Press →</a>
+        </div>
+      </div>
+      <div class="burden-item">
+        <div class="burden-num">03</div>
+        <div class="burden-text">
+          Older adults report losing money at a <em>lower rate</em> than younger adults, but when they do lose money
+          the <strong>median loss is significantly higher</strong> — especially for phone‑initiated scams
+          (<strong>$2,210 median</strong> vs. $650 for social‑media‑initiated incidents).
+          <a href="https://www.foxbusiness.com/money/older-americans-lost-up-81-5b-past-year-financial-fraud-ftc-report-says" target="_blank">Fox Business →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Key comparison callout -->
+    <div class="stat-row-grid" style="margin-top:28px;">
+      <div class="stat-row-card danger">
+        <span class="stat-row-big">$2,210</span>
+        <span class="stat-row-label">MEDIAN PHONE SCAM LOSS (60+)</span>
+      </div>
+      <div class="stat-row-card warning">
+        <span class="stat-row-big">$650</span>
+        <span class="stat-row-label">MEDIAN SOCIAL MEDIA SCAM LOSS</span>
+      </div>
+      <div class="stat-row-card info">
+        <span class="stat-row-big">3.4×</span>
+        <span class="stat-row-label">PHONE VS SOCIAL MEDIA LOSS RATIO</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 04  AI & VOICE SCAMS ───────────────────────────── -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-number">04</span>
+      <h2 class="section-title">EMERGING AI &amp; <span>VOICE‑BASED</span> SCAMS</h2>
+    </div>
+    <div class="divider"></div>
+
+    <!-- Vishing stat callout -->
+    <div class="callout red" style="margin-bottom:28px;">
+      <div class="callout-label">🔴 ALERT — AI VISHING SURGE</div>
+      <p>Voice phishing (vishing) surged by approximately <strong>442 percent</strong> around 2024–2025,
+      with AI voice cloning identified as a key driver. Researchers project voice‑phishing‑related fraud
+      could reach <strong>$40 billion in losses by 2027</strong> — particularly as AI deepfake voices are used
+      to authorize wire transfers and account changes.
+      <a href="https://deepstrike.io/blog/vishing-statistics-2025" target="_blank">DeepStrike →</a></p>
+    </div>
+
+    <div class="ai-grid">
+      <div class="ai-card">
+        <div class="ai-card-title">🎙️ AI‑POWERED VISHING &amp; VOICE CLONING</div>
+        <ul>
+          <li>Vishing surged <strong>442%</strong> around 2024–2025 with AI voice cloning as the core driver. <a href="https://deepstrike.io/blog/vishing-statistics-2025" target="_blank">DeepStrike</a></li>
+          <li>Projected losses from voice‑phishing fraud could reach <strong>$40B by 2027</strong> as deepfake voices authorize high‑value transfers. <a href="https://deepstrike.io/blog/vishing-statistics-2025" target="_blank">DeepStrike</a></li>
+          <li>Over <strong>10% of banks</strong> surveyed reported losing more than $1M each to deepfake voice calls. <a href="https://deepstrike.io/blog/vishing-statistics-2025" target="_blank">DeepStrike</a></li>
+        </ul>
+      </div>
+      <div class="ai-card">
+        <div class="ai-card-title">🎭 DEEPFAKE FRAUD LOSS ESTIMATES</div>
+        <ul>
+          <li>Cumulative deepfake fraud losses estimated at <strong>$897 million</strong>, with <strong>$410M in just H1 2025</strong> alone. <a href="https://www.scamwatchhq.com/the-voice-clone-crisis-how-ai-scammers-can-steal-your-voice-in-15-seconds/" target="_blank">ScamWatchHQ</a></li>
+          <li>Voice deepfakes increased by approximately <strong>680% year‑over‑year</strong> — with Asia‑Pacific seeing a 194% jump in 2024. <a href="https://www.scamwatchhq.com/the-voice-clone-crisis-how-ai-scammers-can-steal-your-voice-in-15-seconds/" target="_blank">ScamWatchHQ</a></li>
+          <li>Older adults are <strong>disproportionately targeted</strong> in "grandkid in trouble," family impersonation, and authority impersonation variants. <a href="https://www.yahoo.com/news/articles/ai-grandkid-voice-clone-scam-171510668.html" target="_blank">Yahoo</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Grandkid scam section -->
+    <div class="callout amber" style="margin-bottom:24px;">
+      <div class="callout-label">⚠️ SPOTLIGHT — "GRANDKID" FAMILY IMPERSONATION VOICE SCAMS</div>
+      <p>Criminals use short audio samples (social media clips, voicemail greetings) to clone a grandchild's voice,
+      then call grandparents claiming urgent need for bail money or emergency funds.
+      Individual losses often range from several thousand to <strong>~$9,000+ per incident</strong>,
+      with some victims sending multiple transfers before detecting the fraud.
+      <a href="https://www.yahoo.com/news/articles/ai-grandkid-voice-clone-scam-171510668.html" target="_blank">Yahoo News →</a></p>
+    </div>
+
+    <div class="grandkid-grid">
+      <div class="grandkid-card">
+        <span class="grandkid-icon">📞</span>
+        <div class="grandkid-flag">RED FLAG 1 — UNEXPECTED CONTACT</div>
+        <div class="grandkid-desc">Scammers initiate contact without prior arrangement — typically via an unfamiliar number posing as a family member or attorney.</div>
+      </div>
+      <div class="grandkid-card">
+        <span class="grandkid-icon">😰</span>
+        <div class="grandkid-flag">RED FLAG 2 — INTENSE EMOTION</div>
+        <div class="grandkid-desc">Calls are designed to trigger immediate emotional response — panic, fear, or love — overriding rational thinking before critical questions can be asked.</div>
+      </div>
+      <div class="grandkid-card">
+        <span class="grandkid-icon">⏱️</span>
+        <div class="grandkid-flag">RED FLAG 3 — MANUFACTURED URGENCY</div>
+        <div class="grandkid-desc">Victims are told they <em>must</em> act immediately, often with a threat that delay will cause serious consequences — preventing them from verifying the story.</div>
+      </div>
+    </div>
+
+    <div class="limitation-box">
+      <div class="lim-label">⚠️ IMPORTANT DATA LIMITATION</div>
+      <p>Official 2024–2025 FTC and FBI data <strong>do not yet break out AI voice or deepfake scams as a distinct dollar category</strong>,
+      so any dollar estimate for "AI voice scams against seniors" is necessarily a subset of the broader phone, tech support,
+      investment, and impersonation categories above. As these categories mature in official reporting, standalone figures are expected.
+      <a href="https://www.ftc.gov/reports/protecting-older-consumers-2024-2025-report-federal-trade-commission" target="_blank">FTC Report →</a></p>
+    </div>
+  </section>
+
+  <!-- ─── 05  TOTAL PICTURE ──────────────────────────────── -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-number">05</span>
+      <h2 class="section-title">THE TOTAL <span>PICTURE</span> — LOSS SCALE COMPARISON</h2>
+    </div>
+    <div class="divider"></div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+      <div class="callout teal">
+        <div class="callout-label">📊 OFFICIAL REPORTED FIGURES</div>
+        <p><strong>$2.4B</strong> — FTC‑reported losses (60+, 2024)<br/>
+        <strong>$4.9B</strong> — FBI cybercrime losses (60+, 2024)<br/>
+        <strong>+43%</strong> — YOY jump in cybercrime losses<br/>
+        <strong>+300%</strong> — FTC loss growth since 2020</p>
+      </div>
+      <div class="callout amber">
+        <div class="callout-label">🔬 MODEL‑BASED FULL ESTIMATES</div>
+        <p><strong>$10.1B – $81.5B</strong> — Total estimated fraud range (2024–2025) accounting for severe underreporting<br/>
+        <strong>$40B by 2027</strong> — Projected AI vishing losses globally<br/>
+        <strong>$897M</strong> — Cumulative deepfake fraud to date</p>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /container -->
+</div><!-- /page-body -->
+
+<!-- ═══════════════════════  FOOTER  ════════════════════════ -->
+<footer class="footer">
+  <div class="footer-brand">ELDER FRAUD INTELLIGENCE BRIEF &nbsp;·&nbsp; 2024–2025</div>
+  <div class="footer-note">
+    Sources: <a href="https://www.ftc.gov" target="_blank">FTC.gov</a>,
+    <a href="https://www.ic3.gov" target="_blank">IC3.gov</a>,
+    <a href="https://www.aarp.org" target="_blank">AARP</a>,
+    <a href="https://deepstrike.io" target="_blank">DeepStrike</a>,
+    <a href="https://www.scamwatchhq.com" target="_blank">ScamWatchHQ</a>,
+    <a href="https://kathierobertslaw.com" target="_blank">KathieRobertsLaw</a>.
+    Data reflects primarily 2023–2024 reporting periods. Figures for AI/deepfake categories are cross‑industry estimates.
+  </div>
+</footer>
+
+
+<style>
+  /* ── ENHANCED HOVER EFFECTS ──────────────────────────────── */
+
+  /* Exec cards — glow on hover */
+  .exec-card {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .exec-card.red:hover    { box-shadow: 0 0 0 1px rgba(231,76,60,0.5), 0 16px 48px rgba(192,57,43,0.35); }
+  .exec-card.amber:hover  { box-shadow: 0 0 0 1px rgba(243,156,18,0.5), 0 16px 48px rgba(230,126,34,0.35); }
+  .exec-card.teal:hover   { box-shadow: 0 0 0 1px rgba(26,188,156,0.5), 0 16px 48px rgba(20,143,143,0.35); }
+  .exec-card.gold:hover   { box-shadow: 0 0 0 1px rgba(212,172,13,0.5), 0 16px 48px rgba(212,172,13,0.25); }
+
+  /* Stat row cards */
+  .stat-row-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: default;
+  }
+  .stat-row-card:hover { transform: translateY(-4px); }
+  .stat-row-card.danger:hover  { box-shadow: 0 12px 32px rgba(231,76,60,0.3); }
+  .stat-row-card.warning:hover { box-shadow: 0 12px 32px rgba(243,156,18,0.3); }
+  .stat-row-card.info:hover    { box-shadow: 0 12px 32px rgba(26,188,156,0.3); }
+
+  /* Stat number pop on card hover */
+  .stat-row-card:hover .stat-row-big { transform: scale(1.06); }
+  .stat-row-big { display: block; transition: transform 0.2s ease; }
+
+  /* Hero stat bar items */
+  .stat-item {
+    transition: background 0.2s ease;
+    cursor: default;
+  }
+  .stat-item:hover { background: rgba(255,255,255,0.04); }
+  .stat-item:hover .stat-number { transform: scale(1.08); }
+  .stat-number { transition: transform 0.2s ease; display: block; }
+
+  /* AI cards — teal glow */
+  .ai-card {
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  }
+  .ai-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(26,188,156,0.45);
+    box-shadow: 0 0 0 1px rgba(26,188,156,0.2), 0 16px 40px rgba(20,143,143,0.25);
+  }
+  .ai-card:hover .ai-card-title { color: #2eedd4; }
+
+  /* Grandkid cards */
+  .grandkid-card {
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  }
+  .grandkid-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(230,126,34,0.5);
+    box-shadow: 0 12px 36px rgba(230,126,34,0.18);
+  }
+  .grandkid-card:hover .grandkid-flag { color: #f5a623; }
+
+  /* Callout boxes */
+  .callout {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .callout.red:hover   { transform: translateX(4px); box-shadow: -4px 0 20px rgba(192,57,43,0.2); }
+  .callout.amber:hover { transform: translateX(4px); box-shadow: -4px 0 20px rgba(230,126,34,0.2); }
+  .callout.teal:hover  { transform: translateX(4px); box-shadow: -4px 0 20px rgba(20,143,143,0.2); }
+
+  /* Burden items */
+  .burden-item {
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+  .burden-item:hover {
+    transform: translateX(6px);
+    border-color: rgba(192,57,43,0.35);
+    box-shadow: -2px 0 0 var(--red-light), 0 8px 24px rgba(0,0,0,0.2);
+  }
+  .burden-item:hover .burden-num { transform: scale(1.1); }
+  .burden-num { transition: transform 0.2s ease; }
+
+  /* Table rows */
+  tbody tr { transition: background 0.15s ease, transform 0.15s ease; }
+  tbody tr:hover { background: rgba(192,57,43,0.1) !important; transform: translateX(3px); }
+  tbody tr:hover .td-amount { color: #fbbf24; }
+  .td-amount { transition: color 0.15s ease; }
+
+  /* Progress bar fills — animated via JS, pulse on hover */
+  .progress-item:hover .progress-bar-fill {
+    filter: brightness(1.2);
+    box-shadow: 0 0 12px rgba(243,156,18,0.4);
+  }
+  .progress-bar-fill { transition: filter 0.2s ease, box-shadow 0.2s ease; }
+
+  /* Progress item label on hover */
+  .progress-item { cursor: default; }
+  .progress-item:hover .progress-label { color: rgba(255,255,255,0.95); }
+  .progress-label { transition: color 0.2s ease; }
+  .progress-item:hover .progress-value { color: #fbbf24; }
+  .progress-value { transition: color 0.2s ease; }
+
+  /* Section headers — underline sweep */
+  .section-title { position: relative; display: inline-block; }
+  .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -4px; left: 0;
+    width: 0; height: 2px;
+    background: var(--red-light);
+    transition: width 0.4s ease;
+  }
+  .section:hover .section-title::after { width: 100%; }
+
+  /* Scroll-reveal fade-in */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Counter number animation */
+  .count-up { display: inline; }
+
+  /* Back to blog bar */
+  .back-bar {
+    background: rgba(0,0,0,0.3);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    padding: 10px 48px;
+    font-family: 'League Spartan', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .back-bar a {
+    color: var(--teal-light);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .back-bar a:hover { color: var(--white); }
+  @media (max-width: 860px) { .back-bar { padding: 10px 20px; } }
+</style>
+
+<script>
+  // ── SCROLL-REVEAL ─────────────────────────────────────────
+  const revealEls = document.querySelectorAll(
+    '.exec-card, .stat-row-card, .ai-card, .grandkid-card, .burden-item, .callout, .progress-item, .section'
+  );
+  revealEls.forEach(el => el.classList.add('reveal'));
+
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 60);
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+  revealEls.forEach(el => revealObserver.observe(el));
+
+  // ── PROGRESS BARS — animate width from 0 on scroll into view ──
+  const progressFills = document.querySelectorAll('.progress-bar-fill');
+  const progressObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const target = el.style.width;
+        el.style.width = '0%';
+        el.style.transition = 'width 1.2s cubic-bezier(0.4, 0, 0.2, 1)';
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => { el.style.width = target; });
+        });
+        progressObserver.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  progressFills.forEach(el => {
+    const target = el.style.width;
+    el.dataset.target = target;
+    el.style.width = '0%';
+    progressObserver.observe(el);
+  });
+
+  // ── COUNTER ANIMATION ──────────────────────────────────────
+  function animateCount(el, target, prefix, suffix, duration) {
+    const start = performance.now();
+    const isFloat = target.toString().includes('.');
+    const update = (now) => {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = isFloat
+        ? (eased * target).toFixed(1)
+        : Math.round(eased * target);
+      el.textContent = prefix + current + suffix;
+      if (progress < 1) requestAnimationFrame(update);
+    };
+    requestAnimationFrame(update);
+  }
+
+  // Stat bar numbers
+  const statNumbers = [
+    { selector: '.stat-item:nth-child(1) .stat-number', val: 2.4, prefix: '$', suffix: 'B', dur: 1800 },
+    { selector: '.stat-item:nth-child(2) .stat-number', val: 4.9, prefix: '$', suffix: 'B', dur: 2000 },
+    { selector: '.stat-item:nth-child(3) .stat-number', val: 43, prefix: '+', suffix: '%', dur: 1400 },
+    { selector: '.stat-item:nth-child(4) .stat-number', val: 81.5, prefix: '$', suffix: 'B', dur: 2200 },
+  ];
+
+  const heroObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        statNumbers.forEach(s => {
+          const el = document.querySelector(s.selector);
+          if (el) animateCount(el, s.val, s.prefix, s.suffix, s.dur);
+        });
+        heroObserver.disconnect();
+      }
+    });
+  }, { threshold: 0.5 });
+
+  const statsBar = document.querySelector('.hero-stats-bar');
+  if (statsBar) heroObserver.observe(statsBar);
+
+  // Stat row cards counter animation
+  const statRowObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const bigEls = entry.target.querySelectorAll('.stat-row-big');
+      bigEls.forEach(el => {
+        const text = el.textContent.trim();
+        if (text === '$2,210') animateCount(el, 2210, '$', '', 1600);
+        if (text === '$650')   animateCount(el, 650,  '$', '', 1200);
+        if (text === '3.4×')  { /* leave as-is, not numeric */ }
+      });
+      statRowObserver.unobserve(entry.target);
+    });
+  }, { threshold: 0.5 });
+
+  document.querySelectorAll('.stat-row-grid').forEach(g => statRowObserver.observe(g));
+
+  // ── STAGGER CHILD CARDS ────────────────────────────────────
+  document.querySelectorAll('.exec-grid, .ai-grid, .grandkid-grid').forEach(grid => {
+    grid.querySelectorAll('.exec-card, .ai-card, .grandkid-card').forEach((card, i) => {
+      card.style.transitionDelay = (i * 80) + 'ms';
+    });
+  });
+</script>
+
+</body>
+</html>

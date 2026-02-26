@@ -19,6 +19,11 @@ const nextConfig = {
         destination: '/scam-stories/index.html',
         permanent: false,
       },
+      {
+        source: '/reports/older-adult-fraud-2024-2025',
+        destination: '/reports/older-adult-fraud-2024-2025/index.html',
+        permanent: false,
+      },
     ]
   },
 }

@@ -3,6 +3,13 @@ import Link from 'next/link'
 
 const posts = [
   {
+    slug: 'older-adult-fraud-report-2024-2025',
+    title: 'Older Adult Fraud Is Now a Multi-Billion-Dollar Crisis — Our 2024–2025 Report',
+    description: '$4.9B in losses, a 43% year-over-year surge, and AI voice cloning responsible for $897M in cumulative deepfake fraud. We commissioned the research. Here\'s what we found.',
+    date: '2026-02-25',
+    tag: 'SPECIAL REPORT'
+  },
+  {
     slug: 'how-to-spot-fake-bank-texts-in-30-seconds',
     title: 'How to spot fake bank texts in 30 seconds',
     description: 'Learn the quick red flags that separate real bank alerts from scam texts trying to steal your money.',

@@ -301,12 +301,6 @@
                 </div>
             </section>
 
-            <!-- ==================== ANONYMOUS SUBMIT ==================== -->
-            <div class="anon-submit-section">
-                <button type="button" class="anon-btn" id="anonSubmitBtn">Share anonymously — no email needed →</button>
-                <p class="anon-note">Or scroll down to stay in the loop with scam alerts 👇</p>
-            </div>
-
             <!-- ==================== SECTION 6: STAY CONNECTED ==================== -->
             <section class="form-section optin-section" id="optinSection" data-section="6">
                 <h2 class="section-header">Stay in the Loop</h2>
@@ -321,8 +315,8 @@
 
                 <div class="optin-fields" id="optinFields">
                     <div class="question">
-                        <label for="email">Email address</label>
-                        <input type="email" name="email" id="email" placeholder="your.email@example.com">
+                        <label for="email">Email address <span class="required">*</span></label>
+                        <input type="email" name="email" id="email" placeholder="your.email@example.com" required>
                     </div>
 
                     <div class="question">
@@ -343,7 +337,7 @@
                     <span class="btn-text">Share My Story 💙</span>
                     <span class="btn-loading" style="display: none;">Sending... ⏳</span>
                 </button>
-                <p class="helper-text">Your story is anonymous unless you provide your name or email above.</p>
+                <p class="helper-text">Your name is kept private — only your email is used to send you scam alerts.</p>
             </div>
 
         </form>

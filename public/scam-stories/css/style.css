@@ -232,41 +232,6 @@ body {
     font-style: italic;
 }
 
-/* ==================== ANONYMOUS SUBMIT ==================== */
-.anon-submit-section {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    margin-bottom: 1.5rem;
-    gap: 0.4rem;
-}
-
-.anon-btn {
-    background-color: transparent;
-    color: var(--gray);
-    font-size: 13px;
-    font-weight: 500;
-    font-family: var(--font-family);
-    padding: 0.4rem 0.85rem;
-    border: 1px solid var(--border-gray);
-    border-radius: 6px;
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.anon-btn:hover {
-    color: var(--navy);
-    border-color: var(--navy);
-    background-color: var(--light-gray);
-}
-
-.anon-note {
-    font-size: 12px;
-    color: var(--gray);
-    font-style: italic;
-    text-align: right;
-}
-
 /* ==================== OPT-IN SECTION ==================== */
 .optin-section {
     background-color: #FEF3C7;
