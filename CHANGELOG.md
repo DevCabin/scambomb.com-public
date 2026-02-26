@@ -1,12 +1,26 @@
 # Changelog
 
-## 2026-02-17
-- Added a mobile menu toggle and mobile nav links in the public header.
-- Fixed Try Free link UUID generation to avoid render-time/hydration issues.
+## 2026-02-25 — Scam stories form, fraud report, blog post
 
-## 2026-01-30
-- Added /testing user testing page with Formspree-backed form.
-- Added Testing? link to header nav and removed Email-to-Scan link.
-- Fixed progress bar radio-group counting in testing form.
-- Expanded age ranges, clarified app access, and made screenshot task mobile-only with help links.
-- Linked testing page logo back to the main site.
+### Scam stories intake form (`/scam-stories`)
+- New standalone HTML/CSS/JS form in `scam-stories/` mirrored to `public/scam-stories/`
+- 6-section form: About You, How It Happened, Your Story, The Impact, Help Others, Stay in the Loop
+- Formspree endpoint: `https://formspree.io/f/mzdaobek`
+- Email field required; first name optional; anonymous submit button removed
+- Pre-checked opt-in checkbox with yellow recessed background
+- Progress bar, auto-save to localStorage, conditional money-lost field
+- Blue hearts throughout, absolute asset paths, back-to-site link under logo
+- Added "Story?" to desktop + mobile nav and footer
+
+### Older Adult Fraud Intelligence Brief (`/reports/older-adult-fraud-2024-2025`)
+- Full HTML report at `public/reports/older-adult-fraud-2024-2025/index.html`
+- Redirect added in `next.config.js`
+- Interactive effects: scroll-reveal, animated progress bars, counter animations on stats, coloured glow hovers, callout slides, table row highlights, staggered card entrance delays
+- Back-to-blog navigation bar at top of report
+
+### Blog post (`/blog/older-adult-fraud-report-2024-2025`)
+- New page at `app/blog/older-adult-fraud-report-2024-2025/page.tsx`
+- Stat callout cards ($4.9B, +43%, $81.5B), AI voice cloning callout ($897M / $410M H1 2025)
+- Large CTA: "View the Interactive Report →"
+- Added to blog listing as latest post (SPECIAL REPORT)
+- Featured card on homepage blog section with inline stats
