@@ -18,6 +18,12 @@
 ### Positioning
 - Both resources are now presented as free evergreen campaign downloads (not paid/tripwire assets)
 
+### URL cleanup
+- Moved resources into clean slug folders with `index.html` entry files:
+  - `/resources/dont-let-a-text-steal-everything`
+  - `/resources/phishing-link-survival-guide`
+- Added redirects to canonical clean URLs if `index.html` is hit directly
+
 ## 2026-02-25 — Scam stories form, fraud report, blog post
 
 ### Scam stories intake form (`/scam-stories`)

@@ -24,6 +24,16 @@ const nextConfig = {
         destination: '/reports/older-adult-fraud-2024-2025/index.html',
         permanent: false,
       },
+      {
+        source: '/resources/dont-let-a-text-steal-everything/index.html',
+        destination: '/resources/dont-let-a-text-steal-everything',
+        permanent: true,
+      },
+      {
+        source: '/resources/phishing-link-survival-guide/index.html',
+        destination: '/resources/phishing-link-survival-guide',
+        permanent: true,
+      },
     ]
   },
 }
