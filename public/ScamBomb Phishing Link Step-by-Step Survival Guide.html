@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What If I Clicked a Link? — ScamBomb Step-by-Step Survival Guide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💣</text></svg>">
+  <style>
+    :root {
+      --navy:       #0B1324;
+      --yellow:     #F5C84C;
+      --white:      #FFFFFF;
+      --off-white:  #F9FAFB;
+      --light-yellow: #FEF3C7;
+      --red:        #DC2626;
+      --red-bg:     #FEE2E2;
+      --orange:     #D97706;
+      --orange-bg:  #FEF3C7;
+      --green:      #15803D;
+      --green-bg:   #DCFCE7;
+      --blue:       #1D4ED8;
+      --blue-bg:    #EFF6FF;
+      --gray:       #6B7280;
+      --border:     #E5E7EB;
+      --font:       'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font);
+      font-size: 19px;
+      line-height: 1.7;
+      color: var(--navy);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── BACK BAR ─────────────────────────────────────── */
+    .back-bar {
+      background: var(--navy);
+      padding: 10px 40px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+    .back-bar a { color: var(--yellow); text-decoration: none; }
+    .back-bar a:hover { text-decoration: underline; }
+    .back-bar .sep { color: rgba(255,255,255,0.2); }
+
+    /* ── COVER PAGE ───────────────────────────────────── */
+    .cover {
+      background: var(--navy);
+      color: var(--white);
+      padding: 70px 60px 60px;
+      text-align: center;
+      page-break-after: always;
+    }
+
+    .cover .logo {
+      font-size: 38px;
+      font-weight: 900;
+      color: var(--yellow);
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+      display: block;
+    }
+    .cover .logo .bomb { font-size: 44px; }
+
+    .cover .tagline-sub {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 56px;
+    }
+
+    .cover h1 {
+      font-size: clamp(30px, 5vw, 50px);
+      font-weight: 900;
+      line-height: 1.1;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    .cover h1 em {
+      color: var(--yellow);
+      font-style: normal;
+    }
+
+    .cover .sub-title {
+      font-size: 18px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 48px;
+    }
+
+    .cover .hook {
+      background: rgba(220,38,38,0.15);
+      border: 2px solid var(--red);
+      border-radius: 12px;
+      padding: 28px 36px;
+      max-width: 640px;
+      margin: 0 auto 48px;
+      font-size: 22px;
+      font-weight: 700;
+      color: #FCA5A5;
+      line-height: 1.4;
+    }
+
+    .cover .reassurance {
+      background: rgba(245,200,76,0.1);
+      border: 1.5px solid rgba(245,200,76,0.4);
+      border-radius: 8px;
+      padding: 18px 28px;
+      max-width: 580px;
+      margin: 0 auto 40px;
+      font-size: 17px;
+      font-style: italic;
+      color: rgba(255,255,255,0.75);
+    }
+
+    .cover .free-badge {
+      display: inline-block;
+      border: 1.5px solid rgba(255,255,255,0.2);
+      border-radius: 20px;
+      padding: 6px 20px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+    }
+
+    /* ── MAIN CONTENT ─────────────────────────────────── */
+    .content {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 56px 40px 80px;
+    }
+
+    /* ── SECTION HEADERS ──────────────────────────────── */
+    h2 {
+      font-size: 26px;
+      font-weight: 900;
+      color: var(--navy);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      border-bottom: 3px solid var(--yellow);
+      padding-bottom: 10px;
+      margin-top: 56px;
+      margin-bottom: 28px;
+    }
+
+    h3 {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--navy);
+      margin-top: 32px;
+      margin-bottom: 14px;
+    }
+
+    p { margin-bottom: 18px; }
+    li { margin-bottom: 10px; }
+    strong { font-weight: 800; }
+
+    ul {
+      padding-left: 24px;
+      margin-bottom: 18px;
+    }
+
+    /* ── URGENT BOX ───────────────────────────────────── */
+    .urgent-box {
+      border: 2px solid var(--red);
+      border-top: 5px solid var(--red);
+      background: var(--red-bg);
+      border-radius: 8px;
+      padding: 32px 36px;
+      margin: 36px 0;
+    }
+
+    .urgent-box h2 {
+      margin-top: 0;
+      border-bottom: 2px solid rgba(220,38,38,0.25);
+      color: var(--red);
+      font-size: 22px;
+    }
+
+    /* ── STEP BOXES ───────────────────────────────────── */
+    .step-box {
+      margin-bottom: 32px;
+    }
+
+    .step-label {
+      font-size: 17px;
+      font-weight: 900;
+      color: var(--red);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      display: block;
+      margin-bottom: 10px;
+      padding: 8px 16px;
+      background: rgba(220,38,38,0.08);
+      border-left: 4px solid var(--red);
+      border-radius: 0 4px 4px 0;
+    }
+
+    /* ── TIMELINE BOX ─────────────────────────────────── */
+    .timeline-box {
+      border: 2px solid var(--orange);
+      border-top: 5px solid var(--orange);
+      background: var(--orange-bg);
+      border-radius: 8px;
+      padding: 32px 36px;
+      margin: 36px 0;
+    }
+
+    .timeline-box h3 {
+      margin-top: 0;
+      text-align: center;
+      color: var(--orange);
+    }
+
+    .timeline-box li {
+      font-size: 18px;
+    }
+
+    .text-red {
+      color: var(--red);
+      font-weight: 900;
+    }
+
+    /* ── PRINT CHECKLIST ──────────────────────────────── */
+    .print-checklist {
+      border: 2px dashed var(--navy);
+      border-radius: 8px;
+      padding: 36px 40px;
+      margin: 36px 0;
+      background: var(--white);
+    }
+
+    .print-checklist h2 {
+      border: none;
+      text-align: center;
+      margin-top: 0;
+      font-size: 24px;
+    }
+
+    .checklist-item {
+      font-size: 18px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .checkbox-square {
+      width: 22px;
+      height: 22px;
+      border: 2px solid var(--navy);
+      border-radius: 3px;
+      flex-shrink: 0;
+      display: inline-block;
+    }
+
+    /* ── STATS BOX ────────────────────────────────────── */
+    .stats-box {
+      background: var(--navy);
+      border-radius: 12px;
+      padding: 32px 36px;
+      margin: 28px 0;
+      color: var(--white);
+    }
+
+    .stat-item {
+      font-size: 19px;
+      margin-bottom: 16px;
+      padding-left: 20px;
+      border-left: 3px solid var(--yellow);
+      padding-top: 4px;
+      padding-bottom: 4px;
+    }
+    .stat-item:last-child { margin-bottom: 0; }
+
+    .big-number {
+      color: var(--yellow);
+      font-weight: 900;
+      font-size: 21px;
+    }
+
+    /* ── CREDIT BUREAUS ───────────────────────────────── */
+    .bureau-list {
+      list-style: none;
+      padding: 0;
+      margin: 16px 0 24px;
+    }
+    .bureau-list li {
+      display: flex;
+      gap: 12px;
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border);
+      font-size: 18px;
+    }
+    .bureau-list li:last-child { border-bottom: none; }
+    .bureau-name { font-weight: 800; color: var(--navy); min-width: 120px; }
+    .bureau-phone { color: var(--gray); font-weight: 600; }
+
+    /* ── REPORT LINKS ─────────────────────────────────── */
+    .report-links {
+      list-style: none;
+      padding: 0;
+      margin: 16px 0 24px;
+    }
+    .report-links li {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border);
+      font-size: 18px;
+    }
+    .report-links li:last-child { border-bottom: none; }
+
+    /* ── NOT ALONE BOX ────────────────────────────────── */
+    .not-alone-box {
+      background: var(--blue-bg);
+      border-left: 5px solid var(--blue);
+      border-radius: 4px;
+      padding: 24px 28px;
+      margin: 36px 0;
+    }
+
+    .not-alone-box h3 {
+      margin-top: 0;
+      color: var(--blue);
+    }
+
+    /* ── SCAMBOMB METHOD ──────────────────────────────── */
+    .scambomb-method {
+      background: var(--navy);
+      color: var(--white);
+      padding: 44px 48px;
+      border-radius: 12px;
+      text-align: center;
+      margin: 40px 0;
+      border: 2px solid var(--yellow);
+    }
+
+    .scambomb-method h2 {
+      color: var(--yellow);
+      border-bottom: 2px solid rgba(245,200,76,0.3);
+      font-size: 24px;
+    }
+
+    .scambomb-method h3 {
+      color: var(--white);
+      font-size: 20px;
+      margin-top: 20px;
+    }
+
+    .scambomb-method p {
+      font-size: 20px;
+      color: rgba(255,255,255,0.85);
+    }
+
+    .scambomb-method .step-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      text-align: left;
+      margin: 16px 0;
+      padding: 16px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 8px;
+    }
+
+    .scambomb-method .step-num {
+      font-size: 28px;
+      font-weight: 900;
+      color: var(--yellow);
+      min-width: 36px;
+      line-height: 1;
+    }
+
+    .scambomb-method .step-text {
+      font-size: 18px;
+      color: rgba(255,255,255,0.85);
+      margin: 0;
+    }
+
+    /* ── PREVENTION BOX ───────────────────────────────── */
+    .prevention-box {
+      background: var(--green-bg);
+      border: 2px solid var(--green);
+      border-radius: 10px;
+      padding: 32px 36px;
+      text-align: center;
+      margin: 36px 0;
+    }
+
+    .prevention-box h3 {
+      color: var(--green);
+      margin-top: 0;
+      font-size: 22px;
+    }
+
+    .prevention-box ul {
+      list-style: none;
+      padding: 0;
+      margin: 16px 0 0;
+    }
+
+    .prevention-box ul li {
+      font-size: 19px;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    /* ── BONUS BOX ────────────────────────────────────── */
+    .bonus-box {
+      background: var(--light-yellow);
+      border: 2px solid var(--yellow);
+      border-radius: 10px;
+      padding: 24px 32px;
+      text-align: center;
+      margin: 36px 0;
+      font-size: 19px;
+    }
+
+    /* ── FINAL MESSAGE ────────────────────────────────── */
+    .final-message {
+      text-align: center;
+      padding: 48px 32px;
+      border-top: 3px solid var(--yellow);
+      margin-top: 48px;
+    }
+
+    .final-message h2 {
+      border: none;
+      font-size: 26px;
+      text-transform: none;
+      letter-spacing: 0;
+      color: var(--navy);
+    }
+
+    /* ── FOOTER ───────────────────────────────────────── */
+    .page-footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.4);
+      text-align: center;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 20px 40px;
+      margin-top: 64px;
+    }
+    .page-footer a { color: var(--yellow); text-decoration: none; }
+
+    hr { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+
+    /* ── PRINT ────────────────────────────────────────── */
+    @media print {
+      .back-bar { display: none; }
+      body { font-size: 16px; }
+      .cover { padding: 48px 40px; page-break-after: always; min-height: 90vh; display: flex; flex-direction: column; justify-content: center; }
+      .page-break { page-break-before: always; }
+      h2 { page-break-after: avoid; }
+      .urgent-box, .timeline-box, .print-checklist, .step-box { page-break-inside: avoid; }
+      .scambomb-method { page-break-inside: avoid; }
+      .page-footer { margin-top: 32px; }
+    }
+
+    /* ── RESPONSIVE ───────────────────────────────────── */
+    @media (max-width: 600px) {
+      .cover { padding: 48px 24px 40px; }
+      .cover h1 { font-size: 26px; }
+      .cover .hook { padding: 20px; font-size: 18px; }
+      .content { padding: 40px 20px 60px; }
+      .scambomb-method { padding: 32px 24px; }
+      h2 { font-size: 20px; }
+      .urgent-box, .timeline-box, .print-checklist { padding: 24px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- BACK BAR -->
+  <div class="back-bar">
+    <a href="/">ScamB💣mb</a>
+    <span class="sep">·</span>
+    <a href="/blog">Blog</a>
+    <span class="sep">·</span>
+    <a href="/blog/older-adult-fraud-report-2024-2025">Fraud Report 2024–2025</a>
+  </div>
+
+  <!-- COVER PAGE -->
+  <div class="cover">
+    <span class="logo">SCAMB<span class="bomb">💣</span>MB</span>
+    <div class="tagline-sub">scambomb.com &nbsp;·&nbsp; Free Resource</div>
+
+    <h1>What If I <em>DID</em> Click<br>a Scam Link?</h1>
+    <div class="sub-title">Your Step-by-Step Survival Plan</div>
+
+    <div class="hook">
+      Don't panic — take these actions<br>
+      NOW to protect yourself.
+    </div>
+
+    <div class="reassurance">
+      "You're not alone. Millions click on scam links every year.<br>What matters now is acting <strong>FAST.</strong>"
+    </div>
+
+    <span class="free-badge">Free Downloadable Resource</span>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="content">
+
+    <p>
+      <strong>IMPORTANT:</strong> Whether you clicked a link in a <strong>text message (SMS)</strong> or an
+      <strong>email</strong>, the danger is the same. Scammers want your personal data or money.
+      Time is critical. Follow these steps immediately.
+    </p>
+
+    <!-- IMMEDIATE ACTIONS -->
+    <div class="urgent-box">
+      <h2>⚠ Immediate Actions — First 5 Minutes</h2>
+
+      <div class="step-box">
+        <span class="step-label">Step 1 — Stop. Don't Enter Any Information</span>
+        <ul>
+          <li>If the link took you to a website, <strong>DO NOT</strong> enter passwords, credit card numbers, Social Security numbers, or ANY personal information.</li>
+          <li><strong>Close the browser or app immediately.</strong></li>
+          <li>Do not click "Yes," "No," or any buttons on pop-up windows. Just close the window.</li>
+        </ul>
+      </div>
+
+      <div class="step-box">
+        <span class="step-label">Step 2 — Stop Any Downloads</span>
+        <ul>
+          <li>Check your browser to see if any files are currently downloading. Cancel them.</li>
+          <li>Look in your "Downloads" folder. If you see a file you didn't ask for (like a .zip or .exe), <strong>DO NOT OPEN IT.</strong> Delete it immediately.</li>
+        </ul>
+      </div>
+
+      <div class="step-box">
+        <span class="step-label">Step 3 — Disconnect from the Internet Immediately</span>
+        <ul>
+          <li><strong>WiFi:</strong> Turn off WiFi on your device OR unplug your home WiFi router from the wall.</li>
+          <li><strong>Wired Connection:</strong> Unplug the ethernet cable from your computer.</li>
+          <li><strong>Why?</strong> This cuts the connection to the scammer and prevents malware from sending your data to criminals.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- PROTECT YOUR DATA -->
+    <h2>Protect Your Data — Next 30 Minutes</h2>
+
+    <div class="step-box">
+      <span class="step-label">Step 4 — Back Up Important Files</span>
+      <p>If you have an external hard drive or USB stick, copy your most essential documents and photos to it now.</p>
+      <ul>
+        <li>Focus on irreplaceable items like family photos or financial records.</li>
+        <li><strong>Warning:</strong> Do NOT back up any files that were just downloaded from the suspicious link.</li>
+      </ul>
+    </div>
+
+    <div class="step-box">
+      <span class="step-label">Step 5 — Scan for Malware</span>
+      <p>Run a complete scan using your antivirus software. Do this while still disconnected from the internet if possible.</p>
+      <ul>
+        <li>If your scan finds a threat, let the software delete or quarantine it.</li>
+        <li>If you aren't sure how to do this, consider taking your device to a professional repair shop.</li>
+        <li><strong>Tip:</strong> If you have a second computer, you can download a free tool like Malwarebytes, put it on a USB drive, and install it on the affected computer.</li>
+      </ul>
+    </div>
+
+    <!-- SECURE YOUR ACCOUNTS -->
+    <h2>Secure Your Accounts — Within 24 Hours</h2>
+
+    <div class="step-box">
+      <span class="step-label">Step 6 — Change ALL Your Passwords</span>
+      <p>Using a different device (like a phone or tablet not connected to your home WiFi), change your passwords.</p>
+      <ul>
+        <li><strong>Priority:</strong> Email accounts, Online Banking, and Retirement accounts.</li>
+        <li>Create strong, unique passwords for every account.</li>
+        <li><strong>Never</strong> use the same password for two different accounts.</li>
+      </ul>
+    </div>
+
+    <div class="step-box">
+      <span class="step-label">Step 7 — Enable Two-Factor Authentication (2FA)</span>
+      <p>Turn on "Two-Factor Authentication" for your email and bank accounts.</p>
+      <ul>
+        <li>This adds a second lock to your door. Even if a scammer has your password, they can't get in without the code sent to your phone.</li>
+      </ul>
+    </div>
+
+    <div class="step-box">
+      <span class="step-label">Step 8 — Contact Your Bank and Credit Card Companies</span>
+      <p>Call the fraud department of your financial institutions.</p>
+      <ul>
+        <li>Tell them: "I may have clicked on a phishing link and want to protect my account."</li>
+        <li>Ask them to watch for suspicious charges.</li>
+        <li>Consider asking for a temporary freeze on your cards.</li>
+      </ul>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- PROTECT YOUR CREDIT -->
+    <h2>Protect Your Credit — Within 48 Hours</h2>
+
+    <div class="step-box">
+      <span class="step-label">Step 9 — Place a Fraud Alert on Your Credit</span>
+      <p>Contact ONE of the three major credit bureaus. They are required to tell the other two. This is a <strong>FREE</strong> service.</p>
+      <ul class="bureau-list">
+        <li><span class="bureau-name">Experian</span><span class="bureau-phone">1-888-397-3742</span></li>
+        <li><span class="bureau-name">Equifax</span><span class="bureau-phone">1-800-685-1111</span></li>
+        <li><span class="bureau-name">TransUnion</span><span class="bureau-phone">1-800-916-8800</span></li>
+      </ul>
+      <p>A fraud alert makes it harder for criminals to open new accounts in your name.</p>
+    </div>
+
+    <div class="step-box">
+      <span class="step-label">Step 10 — Monitor Your Credit Reports</span>
+      <p>Go to <strong>AnnualCreditReport.com</strong> to get your free reports. Check for any loans or credit cards you didn't open.</p>
+    </div>
+
+    <!-- REPORT THE CRIME -->
+    <h2>Report the Crime</h2>
+
+    <div class="step-box">
+      <span class="step-label">Step 11 — Report to Authorities</span>
+      <ul class="report-links">
+        <li><strong>Federal Trade Commission:</strong> ReportFraud.ftc.gov</li>
+        <li><strong>FBI Internet Crime Complaint Center:</strong> IC3.gov</li>
+      </ul>
+    </div>
+
+    <div class="step-box">
+      <span class="step-label">Step 12 — Report to Your Provider</span>
+      <ul>
+        <li><strong>Text Messages:</strong> Forward the scam text to <strong>7726 (SPAM)</strong>.</li>
+        <li><strong>Email:</strong> Mark the message as "Spam" or "Phishing" in your email app.</li>
+      </ul>
+    </div>
+
+    <!-- TIMELINE -->
+    <div class="timeline-box">
+      <h3>⏳ How Fast Should I Act?</h3>
+      <ul>
+        <li><strong>First 5 Minutes:</strong> <span class="text-red">CRITICAL</span> — Disconnect internet &amp; stop downloads.</li>
+        <li><strong>Within 1 Hour:</strong> Scan your device for viruses.</li>
+        <li><strong>Within 24 Hours:</strong> Change passwords &amp; secure bank accounts.</li>
+        <li><strong>Within 48 Hours:</strong> Place fraud alert on credit reports.</li>
+        <li><strong>Within 1 Week:</strong> Monitor all accounts closely for strange activity.</li>
+      </ul>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- PRINT CHECKLIST -->
+    <div class="print-checklist">
+      <h2>Print This Checklist</h2>
+      <p style="text-align:center;margin-bottom:24px;">Check off each step as you complete it to ensure you are safe.</p>
+
+      <div class="checklist-item"><span class="checkbox-square"></span> Stopped entering info &amp; closed browser</div>
+      <div class="checklist-item"><span class="checkbox-square"></span> Stopped any active downloads</div>
+      <div class="checklist-item"><span class="checkbox-square"></span> Disconnected device from the internet</div>
+      <div class="checklist-item"><span class="checkbox-square"></span> Backed up important files</div>
+      <div class="checklist-item"><span class="checkbox-square"></span> Scanned device for malware</div>
+      <div class="checklist-item"><span class="checkbox-square"></span> Changed ALL passwords</div>
+      <div class="checklist-item"><span class="checkbox-square"></span> Enabled Two-Factor Authentication</div>
+      <div class="checklist-item"><span class="checkbox-square"></span> Contacted bank &amp; credit card companies</div>
+      <div class="checklist-item"><span class="checkbox-square"></span> Placed fraud alert on credit</div>
+      <div class="checklist-item"><span class="checkbox-square"></span> Reported to FTC (ReportFraud.ftc.gov)</div>
+      <div class="checklist-item"><span class="checkbox-square"></span> Forwarded spam text to 7726</div>
+      <div class="checklist-item"><span class="checkbox-square"></span> Monitoring accounts for 30+ days</div>
+    </div>
+
+    <!-- NOT ALONE -->
+    <div class="not-alone-box">
+      <h3>💙 You Are NOT Alone</h3>
+      <p>
+        <strong>98% of people open text messages.</strong> Scammers are sophisticated, manipulating urgency and fear.
+        The fact that you are reading this guide means you are taking the <strong>RIGHT</strong> steps to protect
+        yourself. Do not be embarrassed. Be proactive.
+      </p>
+    </div>
+
+    <!-- SCAMBOMB METHOD -->
+    <div class="scambomb-method">
+      <h2>The ScamBomb Method</h2>
+      <h3>Next Time — Check Before You Click</h3>
+      <p>Before clicking any suspicious link, use ScamBomb.com</p>
+
+      <div class="step-row">
+        <span class="step-num">1</span>
+        <p class="step-text"><strong>Paste the message</strong> or upload a screenshot into ScamBomb.com</p>
+      </div>
+      <div class="step-row">
+        <span class="step-num">2</span>
+        <p class="step-text">Our AI <strong>analyses it instantly</strong> to detect scam patterns</p>
+      </div>
+      <div class="step-row">
+        <span class="step-num">3</span>
+        <p class="step-text">Get <strong>peace of mind in seconds</strong> — for free, before anything bad happens</p>
+      </div>
+    </div>
+
+    <!-- PREVENTION TIP -->
+    <div class="prevention-box">
+      <h3>✅ Prevention Is Easier Than Recovery</h3>
+      <p style="font-size:20px;font-weight:700;margin-bottom:8px;">Next time, use ScamBomb.com BEFORE you click!</p>
+      <ul>
+        <li>👉 Paste suspicious messages into ScamBomb.com</li>
+        <li>👉 Upload screenshots of suspicious texts</li>
+        <li>👉 Get instant AI-powered scam detection</li>
+      </ul>
+    </div>
+
+    <hr>
+
+    <!-- FINAL MESSAGE -->
+    <div class="final-message">
+      <h2>"You're Not Alone. You're Not Helpless."</h2>
+      <p>
+        At ScamBomb.com, we're fighting back against scammers every single day. This guide gives you
+        the steps to recover fast and protect yourself going forward.
+      </p>
+      <p>
+        <strong>Remember: Real companies will never pressure you into clicking a link in a text or email.</strong>
+        When in doubt, check it out at ScamBomb.com.
+      </p>
+      <p>Stay safe, stay informed, stay protected.</p>
+      <br>
+      <p>Your partners in the fight against fraud,<br><strong>— The ScamBomb Team 💙</strong></p>
+    </div>
+
+    <div class="bonus-box">
+      <strong>💣 Want to go deeper?</strong><br>
+      Read our free <a href="/blog/older-adult-fraud-report-2024-2025" style="color:var(--navy);font-weight:800;text-decoration:underline;">Older Adult Fraud Intelligence Brief 2024–2025</a> — the full data report on where scam losses are coming from and what AI voice cloning really costs.
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="page-footer">
+    <a href="https://scambomb.com">ScamBomb.com</a> &nbsp;·&nbsp; Diffuse scams before they blow up in your face! 💙
+  </footer>
+
+</body>
+</html>

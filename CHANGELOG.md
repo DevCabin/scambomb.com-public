@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-02-26 — Downloadable guide rebrands
+
+### New branded free resources (`/public/*.html`)
+- Added and fully rebranded `public/ScamBomb.com Senior Text Fraud Protection Guide.html`
+- Added and fully rebranded `public/ScamBomb Phishing Link Step-by-Step Survival Guide.html`
+- Removed generic template styling and rebuilt both in ScamBomb brand system
+
+### Branding and UX updates across both guides
+- ScamBomb visual language applied: Montserrat, navy (`#0B1324`), yellow (`#F5C84C`), high-contrast typography
+- New branded cover pages with SCAMB💣MB lockup, strong hooks, and "Free Downloadable Resource" badge
+- Added top back/navigation bar for integration with the main site
+- Added polished section hierarchy, branded callout boxes, checklist blocks, and print-friendly layouts
+- Added ScamBomb method sections and aligned messaging with site voice
+- Added closing CTA blocks and consistent footer tagline treatment
+
+### Positioning
+- Both resources are now presented as free evergreen campaign downloads (not paid/tripwire assets)
+
 ## 2026-02-25 — Scam stories form, fraud report, blog post
 
 ### Scam stories intake form (`/scam-stories`)
