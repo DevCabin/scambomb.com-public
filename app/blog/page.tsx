@@ -3,6 +3,13 @@ import Link from 'next/link'
 
 const posts = [
   {
+    slug: 'scam-triage-file-001-android-had-3-viruses-but-didnt',
+    title: 'Scam Triage File #001: The Android That “Had 3 Viruses” — But Didn’t',
+    description: 'Real incident breakdown: fake “3 viruses detected” Android scareware, Safe Mode diagnosis, rogue app cleanup, and full recovery in about 15 minutes.',
+    date: '2026-02-27',
+    tag: 'SCAM TRIAGE'
+  },
+  {
     slug: 'older-adult-fraud-report-2024-2025',
     title: 'Older Adult Fraud Is Now a Multi-Billion-Dollar Crisis — Our 2024–2025 Report',
     description: '$4.9B in losses, a 43% year-over-year surge, and AI voice cloning responsible for $897M in cumulative deepfake fraud. We commissioned the research. Here\'s what we found.',

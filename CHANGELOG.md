@@ -1,5 +1,27 @@
 # Changelog
 
+## 2026-02-27 — New blog post: Scam Triage File #001
+
+### Added new post
+- Created `app/blog/scam-triage-file-001-android-had-3-viruses-but-didnt/page.tsx`
+- Published "Scam Triage File #001: The Android That 'Had 3 Viruses' — But Didn’t"
+- Structured as a real incident teardown with step-by-step diagnosis and fix
+- Included CTA to ScamBomb app + phishing survival resource
+
+### Added in-post incident images
+- Wired all SPAM_DROID screenshots into the article flow:
+  - `public/scam-stories/SPAM_DROID_IMG_2927.jpeg`
+  - `public/scam-stories/SPAM_DROID_IMG_2928.jpeg`
+  - `public/scam-stories/SPAM_DROID_IMG_2929.jpeg`
+  - `public/scam-stories/SPAM_DROID_IMG_2930.jpeg`
+- Added contextual captions + alt text for accessibility
+
+### Surfaced as latest content across site
+- Added as newest item in `app/blog/page.tsx` posts array (tag: `SCAM TRIAGE`)
+- Updated homepage blog module in `app/page.tsx`:
+  - Featured card now points to Scam Triage File #001
+  - Supporting post cards adjusted so the special report remains visible
+
 ## 2026-02-26 — Downloadable guide rebrands
 
 ### New branded free resources (`/public/*.html`)

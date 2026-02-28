@@ -196,33 +196,33 @@ export default function ScamBombLanding() {
       <section id="blog" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
         <HeaderEyebrow>From the blog</HeaderEyebrow>
 
-        {/* Featured special report */}
+        {/* Featured latest post */}
         <div className="hover-lift mb-6">
-          <a href="/blog/older-adult-fraud-report-2024-2025" className="block rounded-2xl border border-yellow-300/30 bg-yellow-300/5 p-8 hover:bg-yellow-300/10 transition-colors group">
+          <a href="/blog/scam-triage-file-001-android-had-3-viruses-but-didnt" className="block rounded-2xl border border-yellow-300/30 bg-yellow-300/5 p-8 hover:bg-yellow-300/10 transition-colors group">
             <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
               <div className="flex-1">
-                <div className="text-xs font-bold tracking-widest text-yellow-300/70 mb-3">SPECIAL REPORT</div>
+                <div className="text-xs font-bold tracking-widest text-yellow-300/70 mb-3">SCAM TRIAGE FILE #001</div>
                 <h3 className="text-2xl font-bold mb-3 group-hover:text-yellow-300 transition-colors">
-                  Older Adult Fraud Is Now a Multi-Billion-Dollar Crisis
+                  The Android That “Had 3 Viruses” — But Didn’t
                 </h3>
                 <p className="text-white/70 mb-4 max-w-2xl">
-                  $4.9B in losses. A 43% year-over-year surge. AI voice cloning responsible for $897M in cumulative deepfake fraud. We commissioned the research — here&apos;s what we found.
+                  Real incident breakdown: fake “3 viruses detected” Android scareware, Safe Mode diagnosis, rogue app cleanup, and full recovery in about 15 minutes.
                 </p>
                 <div className="flex flex-wrap gap-6 text-sm">
-                  <span className="text-white/50">February 25, 2026</span>
+                  <span className="text-white/50">February 27, 2026</span>
                   <span className="flex items-center gap-2 text-yellow-300 font-semibold">
-                    Read the report <span aria-hidden="true">→</span>
+                    Read the triage file <span aria-hidden="true">→</span>
                   </span>
                 </div>
               </div>
               <div className="flex gap-4 sm:flex-col sm:items-end shrink-0">
                 <div className="text-right">
-                  <div className="text-3xl font-extrabold text-red-400">$4.9B</div>
-                  <div className="text-xs text-white/40 uppercase tracking-wider">FBI losses 2024</div>
+                  <div className="text-3xl font-extrabold text-red-400">~15 min</div>
+                  <div className="text-xs text-white/40 uppercase tracking-wider">Time to fix</div>
                 </div>
                 <div className="text-right">
-                  <div className="text-3xl font-extrabold text-amber-400">+43%</div>
-                  <div className="text-xs text-white/40 uppercase tracking-wider">Year-over-year</div>
+                  <div className="text-3xl font-extrabold text-amber-400">Safe Mode</div>
+                  <div className="text-xs text-white/40 uppercase tracking-wider">Key diagnosis step</div>
                 </div>
               </div>
             </div>
@@ -230,7 +230,7 @@ export default function ScamBombLanding() {
         </div>
 
         <div className="grid md:grid-cols-3 gap-6">
-          <div className="hover-lift"><PostCard tag="GUIDE" title="How to spot fake bank texts in 30 seconds" slug="how-to-spot-fake-bank-texts-in-30-seconds" excerpt="Spot common red flags in banking texts to protect your money." /></div>
+          <div className="hover-lift"><PostCard tag="SPECIAL REPORT" title="Older Adult Fraud Is Now a Multi-Billion-Dollar Crisis" slug="older-adult-fraud-report-2024-2025" excerpt="$4.9B in losses, +43% year-over-year, and the AI voice cloning numbers everyone should know." /></div>
           <div className="hover-lift"><PostCard tag="ALERT" title="New USPS delivery scam: what to do" slug="new-usps-delivery-scam-what-to-do" excerpt="Stay informed on the latest USPS scams and how to respond safely." /></div>
           <div className="hover-lift"><PostCard tag="HOW-TO" title="Three questions to ask before you click" slug="three-questions-to-ask-before-you-click" excerpt="Learn practical questions to evaluate suspicious links before clicking." /></div>
         </div>
