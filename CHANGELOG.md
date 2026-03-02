@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-03-02 — GHL opt-in form integration + /thank-you page + CRM wiring
+
+### Added
+- `components/GHLOptInForm.tsx` — reusable GHL embedded form component (form ID: fMvTbzE0i0SO5sTMPscV)
+- `app/thank-you/page.tsx` — post-opt-in confirmation page with guide delivery message and Pro CTA
+- GHL opt-in form section added to homepage (`app/page.tsx`) between blog preview and FAQ
+- GHL opt-in form added to blog listing page (`app/blog/page.tsx`) below posts grid
+- GHL opt-in form added to all 5 blog post pages before the back-link footer
+- GHL opt-in form added to `/reports/older-adult-fraud-2024-2025/index.html` as a section at page end
+
+### CRM Integration (free — no webhook trigger)
+- `scam-stories/js/script.js` + `public/scam-stories/js/script.js`: on form success, if user opted in, POSTs email silently to `backend.leadconnectorhq.com/forms/submit` to create GHL contact
+- `user-testing/js/script.js` + `public/testing/js/script.js`: same — fires if user answered Yes to follow-up email question
+
 ## 2026-02-27 — New blog post: Scam Triage File #001
 
 ### Added new post

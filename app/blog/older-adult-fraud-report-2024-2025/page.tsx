@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import GHLOptInForm from '../../../components/GHLOptInForm'
 
 export const metadata = {
   title: 'Older Adult Fraud Is Now a Multi-Billion-Dollar Crisis — Our 2024–2025 Report',
@@ -139,6 +140,15 @@ export default function BlogPost() {
             View the Interactive Report →
           </a>
           <p className="text-white/30 text-xs mt-5">No sign-up required · Shareable with family and colleagues</p>
+        </div>
+
+        <div className="mt-16 pt-10 border-t border-white/10 not-prose">
+          <div className="text-center mb-6">
+            <p className="text-xs font-bold tracking-widest text-white/40 uppercase mb-2">Free Resource</p>
+            <h2 className="text-2xl font-bold mb-2">Get the Free Senior Safety Guide</h2>
+            <p className="text-white/70">Plain-English protection tips for you and the people you care about.</p>
+          </div>
+          <GHLOptInForm />
         </div>
 
         <footer className="mt-12 pt-8 border-t border-white/10">

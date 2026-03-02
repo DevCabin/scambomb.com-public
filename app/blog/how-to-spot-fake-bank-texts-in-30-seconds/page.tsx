@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import GHLOptInForm from '../../../components/GHLOptInForm'
 
 export const metadata = {
   title: 'How to spot fake bank texts in 30 seconds',
@@ -42,6 +43,15 @@ export default function BlogPost() {
           <p>If you're worried about your account, open your bank's official app or call the number on the back of your card. Don't use any numbers from the suspicious text.</p>
 
           <p>Remember: Your bank already has your information. They don't need you to "confirm" anything via text.</p>
+        </div>
+
+        <div className="mt-16 pt-10 border-t border-white/10 not-prose">
+          <div className="text-center mb-6">
+            <p className="text-xs font-bold tracking-widest text-white/40 uppercase mb-2">Free Resource</p>
+            <h2 className="text-2xl font-bold mb-2">Get the Free Senior Safety Guide</h2>
+            <p className="text-white/70">Plain-English protection tips for you and the people you care about.</p>
+          </div>
+          <GHLOptInForm />
         </div>
 
         <footer className="mt-12 pt-8 border-t border-white/10">

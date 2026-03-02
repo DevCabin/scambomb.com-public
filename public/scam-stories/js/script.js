@@ -263,6 +263,16 @@ async function handleFormSubmit(e) {
         if (response.ok) {
             form.classList.add('submitted');
             clearSavedData();
+
+            // Send to GHL CRM if user opted in
+            const wantsUpdates = form.querySelector('#wantsUpdates');
+            if (wantsUpdates && wantsUpdates.checked) {
+                const emailEl = form.querySelector('#email');
+                if (emailEl && emailEl.value) {
+                    sendToGHL(emailEl.value, '');
+                }
+            }
+
             showSuccessMessage();
 
             setTimeout(() => {
@@ -345,6 +355,26 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+// ==================== GHL CRM CONTACT CREATION ====================
+async function sendToGHL(email, firstName) {
+    try {
+        await fetch('https://backend.leadconnectorhq.com/forms/submit', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                location_id: 'DaQ8hQRpgjJ0fIdTGhuo',
+                id: 'fMvTbzE0i0SO5sTMPscV',
+                first_name: firstName || '',
+                email: email
+            })
+        });
+        console.log('✅ GHL contact created');
+    } catch (e) {
+        // Silent fail — GHL contact creation is supplementary to main submission
+        console.warn('⚠️ GHL contact creation failed silently:', e);
+    }
+}
 
 // ==================== UTILITY ====================
 function debounce(func, wait) {
