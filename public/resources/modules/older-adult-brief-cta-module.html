@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ScamBomb CTA Module — Older Adult Fraud Intelligence Brief</title>
+  <style>
+    :root {
+      --sb-navy: #0B1324;
+      --sb-yellow: #F5C84C;
+      --sb-yellow-soft: rgba(245, 200, 76, 0.08);
+      --sb-yellow-border: rgba(245, 200, 76, 0.35);
+      --sb-white: #ffffff;
+      --sb-white-soft: rgba(255, 255, 255, 0.72);
+      --sb-white-muted: rgba(255, 255, 255, 0.46);
+      --sb-white-faint: rgba(255, 255, 255, 0.28);
+    }
+
+    body {
+      margin: 0;
+      background: var(--sb-navy);
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      color: var(--sb-white);
+      padding: 40px 20px;
+    }
+
+    .sb-brief-cta {
+      max-width: 860px;
+      margin: 0 auto;
+      border: 2px solid var(--sb-yellow-border);
+      border-radius: 20px;
+      background: linear-gradient(135deg, rgba(245, 200, 76, 0.12), var(--sb-yellow-soft));
+      padding: 40px 26px;
+      text-align: center;
+      box-shadow: 0 14px 42px rgba(0, 0, 0, 0.28);
+    }
+
+    .sb-brief-eyebrow {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(245, 200, 76, 0.85);
+      margin: 0 0 14px;
+    }
+
+    .sb-brief-title {
+      font-size: clamp(30px, 4vw, 46px);
+      line-height: 1.08;
+      font-weight: 900;
+      margin: 0 0 14px;
+      color: var(--sb-white);
+    }
+
+    .sb-brief-title span {
+      color: var(--sb-yellow);
+    }
+
+    .sb-brief-subtitle {
+      max-width: 720px;
+      margin: 0 auto 8px;
+      font-size: 18px;
+      line-height: 1.5;
+      color: var(--sb-white-soft);
+    }
+
+    .sb-brief-meta {
+      max-width: 700px;
+      margin: 0 auto 28px;
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--sb-white-muted);
+    }
+
+    .sb-brief-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border: 0;
+      border-radius: 12px;
+      padding: 16px 28px;
+      font-size: 20px;
+      font-weight: 900;
+      color: var(--sb-navy);
+      background: var(--sb-yellow);
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.18s ease, background-color 0.18s ease;
+    }
+
+    .sb-brief-button:hover {
+      transform: translateY(-1px) scale(1.02);
+      background: #f8d76d;
+    }
+
+    .sb-brief-footnote {
+      margin-top: 14px;
+      font-size: 12px;
+      color: var(--sb-white-faint);
+    }
+
+    .sb-form-slot {
+      margin-top: 20px;
+      border: 1px dashed rgba(245, 200, 76, 0.45);
+      border-radius: 12px;
+      padding: 14px;
+      text-align: left;
+      color: var(--sb-white-muted);
+      background: rgba(255, 255, 255, 0.02);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <!--
+    ScamBomb reusable CTA module.
+    Use this block on any page and wire .sb-brief-button to your branded GHL form flow.
+  -->
+  <section class="sb-brief-cta" id="older-adult-brief-cta">
+    <p class="sb-brief-eyebrow">Free Special Report — Interactive Edition</p>
+
+    <h2 class="sb-brief-title">
+      Older Adult Fraud Intelligence Brief<br />
+      <span>2024–2025</span>
+    </h2>
+
+    <p class="sb-brief-subtitle">
+      The complete data report with interactive charts, animated loss breakdowns, and the full AI voice cloning threat analysis.
+    </p>
+
+    <p class="sb-brief-meta">
+      Scam type breakdowns · Dollar loss tables · AI threat landscape · Sources for every figure
+    </p>
+
+    <!--
+      Replace this button behavior with your actual form trigger behavior.
+      Example: open GHL modal / reveal inline form section / trigger custom popup.
+    -->
+    <button class="sb-brief-button" type="button">View the Interactive Report →</button>
+
+    <p class="sb-brief-footnote">Quick email opt-in to unlock · Shareable with family and colleagues</p>
+
+    <!--
+      FORM SLOT:
+      Paste your branded/customized GHL embed markup here (inline version),
+      or keep this as trigger-only if using popup mode.
+    -->
+    <div class="sb-form-slot">
+      <strong>Form slot placeholder:</strong> Paste your branded GHL form markup here when ready.
+    </div>
+  </section>
+</body>
+</html>

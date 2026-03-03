@@ -1,5 +1,26 @@
 # Changelog
 
+## 2026-03-03 — Exported modular CTA file + removed direct report link behavior on blog CTA
+
+### Added
+- `public/resources/modules/older-adult-brief-cta-module.html`
+  - New reusable standalone HTML/CSS module for the **Older Adult Fraud Intelligence Brief** CTA block.
+  - Preserves branded visual structure and includes:
+    - eyebrow
+    - headline
+    - supporting copy
+    - CTA button
+    - footnote
+    - dedicated placeholder slot for branded/custom GHL form markup.
+
+### Updated
+- `app/blog/older-adult-fraud-report-2024-2025/page.tsx`
+  - Replaced bottom CTA anchor link (`/reports/older-adult-fraud-2024-2025`) with a non-navigating button trigger.
+  - This removes direct jump behavior so the CTA can be used as a form-first access action.
+
+### Goal
+- Prepare a modular, reusable branded CTA foundation for building a custom-styled (non-default) GHL form experience.
+
 ## 2026-03-03 — Added gated popup embed to static report page
 
 ### Updated

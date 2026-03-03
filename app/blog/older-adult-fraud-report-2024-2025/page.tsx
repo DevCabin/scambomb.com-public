@@ -152,12 +152,13 @@ export default function BlogPost() {
           <p className="text-white/40 text-sm mb-8 max-w-md mx-auto">
             Scam type breakdowns · Dollar loss tables · AI threat landscape · Sources for every figure
           </p>
-          <a
-            href="/reports/older-adult-fraud-2024-2025"
+          <button
+            type="button"
             className="inline-block bg-yellow-300 text-[#0B1324] font-extrabold text-xl px-12 py-5 rounded-xl hover:bg-yellow-200 hover:scale-105 transition-all duration-200 shadow-lg shadow-yellow-300/20"
+            aria-label="Open report access form"
           >
             View the Interactive Report →
-          </a>
+          </button>
           <p className="text-white/30 text-xs mt-5">Quick email opt-in to unlock · Shareable with family and colleagues</p>
         </div>
 
