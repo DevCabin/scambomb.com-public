@@ -13,6 +13,7 @@
 - `public/resources/dont-let-a-text-steal-everything/index.html`
 - `public/resources/phishing-link-survival-guide/index.html`
 - `app/blog/scam-triage-file-001-android-had-3-viruses-but-didnt/page.tsx`
+- `public/reports/older-adult-fraud-2024-2025/index.html`
 
 ## 2026-03-03 — Implemented canonical branded lead-capture CTA (native site form → GHL)
 
