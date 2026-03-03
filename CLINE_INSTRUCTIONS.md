@@ -304,6 +304,19 @@ After any requested code updates or changes, please follow this workflow:
   2. Write the **full** detailed commit notes in `CHANGELOG.md`.
   3. Push to GitHub immediately for live testing.
 
+## 🎨 **Blog Visual Quality Gate (Publishing Standard)**
+
+All blog posts (especially recurring formats like Scam Triage files) must pass a minimum visual quality standard before publishing.
+
+Required standard:
+- Visually appealing layout (not plain wall-of-text)
+- Clear hierarchy (headline, summary, section rhythm)
+- Structured visual blocks/cards/checklists where appropriate
+- Readable spacing and contrast on mobile + desktop
+- Repeatable format consistency for recurring series
+
+If a post does not meet this quality bar, it should be revised before it is considered publish-ready.
+
 
 ---
 *This document reflects the current production state of ScamBomb. All major features are implemented and tested.*

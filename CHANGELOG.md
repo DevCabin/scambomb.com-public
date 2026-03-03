@@ -1,5 +1,17 @@
 # Changelog
 
+## 2026-03-03 — Added blog visual quality gate note
+
+### Updated
+- `CLINE_INSTRUCTIONS.md`
+  - Added a permanent **Blog Visual Quality Gate** publishing standard.
+  - Requires all blog posts (especially recurring series like Scam Triage) to meet a visual quality baseline before publish:
+    - clear hierarchy
+    - visually appealing layout
+    - structured blocks/checklists where appropriate
+    - strong readability on mobile and desktop
+    - repeatable format consistency
+
 ## 2026-03-03 — Scam Triage File #001 visual template upgrade
 
 ### Updated
