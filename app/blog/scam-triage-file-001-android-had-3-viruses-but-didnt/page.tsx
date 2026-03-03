@@ -190,8 +190,8 @@ export default function BlogPost() {
             <a href="https://app.scambomb.com" className="inline-block rounded-xl bg-yellow-300 text-[#0B1324] font-bold px-5 py-3 hover:bg-yellow-200 transition-colors">
               Try ScamBomb Free →
             </a>
-            <a href="/resources/phishing-link-survival-guide" className="inline-block rounded-xl border border-white/20 px-5 py-3 font-semibold hover:bg-white/10 transition-colors">
-              Phishing Link Survival Guide
+            <a href="/blog/older-adult-fraud-report-2024-2025" className="inline-block rounded-xl border border-white/20 px-5 py-3 font-semibold hover:bg-white/10 transition-colors">
+              Older Adult Fraud Intelligence Brief 2024–2025
             </a>
           </div>
         </div>

@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-03-03 — Triage CTA rerouted to first gated resource flow
+
+### Updated
+- `app/blog/scam-triage-file-001-android-had-3-viruses-but-didnt/page.tsx`
+  - Updated the secondary CTA in the ScamBomb Move block.
+  - Replaced link target:
+    - from: `/resources/phishing-link-survival-guide`
+    - to: `/blog/older-adult-fraud-report-2024-2025`
+  - Updated CTA label to:
+    - `Older Adult Fraud Intelligence Brief 2024–2025`
+
+### Goal
+- Ensure triage readers enter the **first gated resource flow** via the Older Adult Fraud Intelligence Brief pathway instead of the previous resource link.
+
 ## 2026-03-03 — Added blog visual quality gate note
 
 ### Updated
