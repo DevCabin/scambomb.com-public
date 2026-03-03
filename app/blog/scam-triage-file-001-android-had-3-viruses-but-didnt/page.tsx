@@ -191,7 +191,7 @@ export default function BlogPost() {
               Try ScamBomb Free →
             </a>
             <a href="/blog/older-adult-fraud-report-2024-2025" className="inline-block rounded-xl border border-white/20 px-5 py-3 font-semibold hover:bg-white/10 transition-colors">
-              Older Adult Fraud Intelligence Brief 2024–2025
+              Fraud Target Older Adults: Annual Intelligence Brief 2024–2025
             </a>
           </div>
         </div>

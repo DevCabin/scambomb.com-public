@@ -17,7 +17,7 @@ type LeadCaptureCTAProps = {
 
 export default function LeadCaptureCTA({
   eyebrow = 'Free Special Report — Interactive Edition',
-  title = 'Older Adult Fraud Intelligence Brief',
+  title = 'Fraud Target Older Adults: Annual Intelligence Brief',
   titleAccent = '2024–2025',
   description = 'The complete data report with interactive charts, animated loss breakdowns, and the full AI voice cloning threat analysis.',
   meta = 'Scam type breakdowns · Dollar loss tables · AI threat landscape · Sources for every figure',

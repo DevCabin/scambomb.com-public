@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-03-03 — Sitewide naming update for annual fraud brief
+
+### Updated copy
+- Replaced user-facing label:
+  - from: `Older Adult Fraud Intelligence Brief`
+  - to: `Fraud Target Older Adults: Annual Intelligence Brief`
+
+### Files updated
+- `components/LeadCaptureCTA.tsx`
+- `public/resources/modules/older-adult-brief-cta-module.html`
+- `public/resources/dont-let-a-text-steal-everything/index.html`
+- `public/resources/phishing-link-survival-guide/index.html`
+- `app/blog/scam-triage-file-001-android-had-3-viruses-but-didnt/page.tsx`
+
 ## 2026-03-03 — Implemented canonical branded lead-capture CTA (native site form → GHL)
 
 ### Added
