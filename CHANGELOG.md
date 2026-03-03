@@ -1,5 +1,21 @@
 # Changelog
 
+## 2026-03-03 — Added GHL popup embed for first gated resource flow
+
+### Updated
+- `app/blog/older-adult-fraud-report-2024-2025/page.tsx`
+  - Added GoHighLevel popup embed (form ID: `fMvTbzE0i0SO5sTMPscV`) using Next.js-safe implementation:
+    - hidden popup iframe with `POPUP` layout
+    - trigger: `showAfter` + activation on visit
+    - deactivation: `leadCollected`
+    - loader script via `next/script` (`https://link.msgsndr.com/js/form_embed.js`)
+  - Updated CTA footnote copy to reflect gating behavior:
+    - from: `No sign-up required · Shareable with family and colleagues`
+    - to: `Quick email opt-in to unlock · Shareable with family and colleagues`
+
+### Goal
+- Start users in the first gated resource flow for the Older Adult Fraud Intelligence Brief path.
+
 ## 2026-03-03 — Triage CTA rerouted to first gated resource flow
 
 ### Updated

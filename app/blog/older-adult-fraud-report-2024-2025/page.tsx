@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Script from 'next/script'
 
 export const metadata = {
   title: 'Older Adult Fraud Is Now a Multi-Billion-Dollar Crisis — Our 2024–2025 Report',
@@ -8,6 +9,25 @@ export const metadata = {
 export default function BlogPost() {
   return (
     <div className="py-16">
+      <iframe
+        src="https://api.leadconnectorhq.com/widget/form/fMvTbzE0i0SO5sTMPscV"
+        style={{ display: 'none', width: '100%', height: '100%', border: 'none', borderRadius: '3px' }}
+        id="popup-fMvTbzE0i0SO5sTMPscV"
+        data-layout="{'id':'POPUP'}"
+        data-trigger-type="showAfter"
+        data-trigger-value="2"
+        data-activation-type="activateOnVisit"
+        data-activation-value="2"
+        data-deactivation-type="leadCollected"
+        data-deactivation-value=""
+        data-form-name="ScamBomb - Free Guide Opt-In"
+        data-height="undefined"
+        data-layout-iframe-id="popup-fMvTbzE0i0SO5sTMPscV"
+        data-form-id="fMvTbzE0i0SO5sTMPscV"
+        title="ScamBomb - Free Guide Opt-In"
+      />
+      <Script src="https://link.msgsndr.com/js/form_embed.js" strategy="lazyOnload" />
+
       <article className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
 
         <header className="mb-10">
@@ -138,7 +158,7 @@ export default function BlogPost() {
           >
             View the Interactive Report →
           </a>
-          <p className="text-white/30 text-xs mt-5">No sign-up required · Shareable with family and colleagues</p>
+          <p className="text-white/30 text-xs mt-5">Quick email opt-in to unlock · Shareable with family and colleagues</p>
         </div>
 
         <footer className="mt-12 pt-8 border-t border-white/10">
