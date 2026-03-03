@@ -296,6 +296,14 @@ After any requested code updates or changes, please follow this workflow:
 
 **Rationale**: Maintains clean git history, keeps documentation current, and ensures changes are deployed promptly.
 
+## 🚫 **Execution Constraint (Must Follow Every Time)**
+
+- **DO NOT run local dev** (`npm run dev`, `next dev`, etc.) unless explicitly asked in that exact task.
+- After every code change, always do this order:
+  1. Commit with a **minimal** commit message.
+  2. Write the **full** detailed commit notes in `CHANGELOG.md`.
+  3. Push to GitHub immediately for live testing.
+
 
 ---
 *This document reflects the current production state of ScamBomb. All major features are implemented and tested.*

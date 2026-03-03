@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect } from 'react';
-import GHLOptInForm from '../components/GHLOptInForm';
 
 export default function ScamBombLanding() {
   const base = "bg-[#0B1324] text-white"; // Navy default
@@ -237,27 +236,6 @@ export default function ScamBombLanding() {
         </div>
         <div className="mt-6">
           <a href="/blog" className="underline decoration-white/40 underline-offset-4 hover:decoration-white">Read all posts</a>
-        </div>
-      </section>
-
-      {/* Free Guide Opt-In */}
-      <section id="free-guide" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid lg:grid-cols-2 gap-10 items-center">
-          <div>
-            <p className="text-sm font-semibold tracking-wider uppercase text-white/60 mb-2">Free Resource</p>
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">Get the Free Senior Safety Guide</h2>
-            <p className="text-white/80 text-lg leading-relaxed">
-              A plain-English guide to the most dangerous scams targeting people 60+. Covers phone scams, Medicare fraud, grandparent scams, and more — with scripts you can use right now.
-            </p>
-            <ul className="mt-6 space-y-2 text-white/80">
-              <li className="flex items-start gap-3"><Check /> What to say when a scammer calls</li>
-              <li className="flex items-start gap-3"><Check /> Red flags to spot in every message</li>
-              <li className="flex items-start gap-3"><Check /> How to protect parents and grandparents</li>
-            </ul>
-          </div>
-          <div className="rounded-2xl border border-white/10 bg-white/5 p-1 overflow-hidden">
-            <GHLOptInForm />
-          </div>
         </div>
       </section>
 

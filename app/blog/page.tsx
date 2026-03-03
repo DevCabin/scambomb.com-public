@@ -1,6 +1,5 @@
 // Simple blog system - rebuilt from scratch without contentlayer
 import Link from 'next/link'
-import GHLOptInForm from '../../components/GHLOptInForm'
 
 const posts = [
   {
@@ -70,15 +69,6 @@ export default function BlogPage() {
               </time>
             </article>
           ))}
-        </div>
-
-        <div className="mt-16 pt-10 border-t border-white/10">
-          <div className="text-center mb-6">
-            <p className="text-xs font-bold tracking-widest text-white/40 uppercase mb-2">Free Resource</p>
-            <h2 className="text-2xl font-bold mb-2">Get the Free Senior Safety Guide</h2>
-            <p className="text-white/70">Plain-English protection tips for you and the people you care about.</p>
-          </div>
-          <GHLOptInForm />
         </div>
 
         <div className="text-center mt-12">

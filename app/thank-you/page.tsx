@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export const metadata = {
   title: 'You\'re In! — ScamBomb',
-  description: 'Thanks for signing up. Your free Senior Safety Guide is on its way.',
+  description: 'Thanks for joining the ScamBomb community. Monthly scam and AI fraud updates are on the way.',
 }
 
 export default function ThankYouPage() {
@@ -17,7 +17,7 @@ export default function ThankYouPage() {
             You&apos;re on the list!
           </h1>
           <p className="text-white/80 text-xl leading-relaxed">
-            Your <strong style={{ color: '#F5C84C' }}>free Senior Safety Guide</strong> is headed to your inbox right now. Check your email — it should arrive within a few minutes.
+            Thanks for joining our community of concerned citizens and agreeing to get the latest scams and AI-powered fraud schemes — plus tips, tactics, and tricks to thwart them — sent right to your inbox monthly.
           </p>
           <p className="text-white/60 text-sm mt-3">
             (Don&apos;t see it? Check your spam or promotions folder and mark us as safe.)

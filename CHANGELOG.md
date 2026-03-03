@@ -1,5 +1,34 @@
 # Changelog
 
+## 2026-03-03 — Remove Senior Safety Guide promo language site-wide + thank-you copy generalization
+
+### Summary
+- Removed the "Free Resource / Get the Free Senior Safety Guide" promotional block and embedded form from key app and report surfaces.
+- Updated thank-you messaging to a generalized monthly community/update message (no direct Safety Guide mention).
+- Added persistent Cline workflow constraint to avoid local dev runs and enforce commit → changelog → push sequence.
+
+### Removed (UI/Content)
+- Deleted the Senior Safety Guide promo section (including `GHLOptInForm`) from:
+  - `app/page.tsx`
+  - `app/blog/page.tsx`
+  - `app/blog/how-to-spot-fake-bank-texts-in-30-seconds/page.tsx`
+  - `app/blog/new-usps-delivery-scam-what-to-do/page.tsx`
+  - `app/blog/three-questions-to-ask-before-you-click/page.tsx`
+  - `app/blog/scam-triage-file-001-android-had-3-viruses-but-didnt/page.tsx`
+  - `app/blog/older-adult-fraud-report-2024-2025/page.tsx`
+  - `public/reports/older-adult-fraud-2024-2025/index.html`
+
+### Updated copy
+- `app/thank-you/page.tsx`
+  - Replaced Safety Guide-specific messaging with generalized community/update messaging.
+  - Updated metadata description to match monthly scams + AI fraud updates positioning.
+
+### Internal process/docs
+- `CLINE_INSTRUCTIONS.md`
+  - Added explicit execution constraint:
+    - no local dev commands unless explicitly requested,
+    - after code changes: minimal commit message, full changelog notes, then push to GitHub.
+
 ## 2026-03-02 — GHL opt-in form integration + /thank-you page + CRM wiring
 
 ### Added

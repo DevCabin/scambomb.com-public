@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import GHLOptInForm from '../../../components/GHLOptInForm'
 
 export const metadata = {
   title: 'New USPS delivery scam: what to do',
@@ -57,15 +56,6 @@ export default function BlogPost() {
           </ul>
 
           <p>Stay safe: When in doubt, go directly to the official website or app.</p>
-        </div>
-
-        <div className="mt-16 pt-10 border-t border-white/10 not-prose">
-          <div className="text-center mb-6">
-            <p className="text-xs font-bold tracking-widest text-white/40 uppercase mb-2">Free Resource</p>
-            <h2 className="text-2xl font-bold mb-2">Get the Free Senior Safety Guide</h2>
-            <p className="text-white/70">Plain-English protection tips for you and the people you care about.</p>
-          </div>
-          <GHLOptInForm />
         </div>
 
         <footer className="mt-12 pt-8 border-t border-white/10">
