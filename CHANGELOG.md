@@ -1,5 +1,20 @@
 # Changelog
 
+## 2026-03-03 — Added gated popup embed to static report page
+
+### Updated
+- `public/reports/older-adult-fraud-2024-2025/index.html`
+  - Added GoHighLevel popup embed directly to the static interactive report page so gating appears on the actual destination URL.
+  - Embed details:
+    - form ID: `fMvTbzE0i0SO5sTMPscV`
+    - trigger: `showAfter`
+    - activation: `activateOnVisit`
+    - deactivation: `leadCollected`
+    - script loader: `https://link.msgsndr.com/js/form_embed.js`
+
+### Reason
+- Previous embed was on the blog wrapper page, while user flow lands on `/reports/older-adult-fraud-2024-2025` (static HTML), so popup was not visible at destination.
+
 ## 2026-03-03 — Added GHL popup embed for first gated resource flow
 
 ### Updated
