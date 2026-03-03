@@ -1,5 +1,22 @@
 # Changelog
 
+## 2026-03-03 — Scam Triage File #001 visual template upgrade
+
+### Updated
+- `app/blog/scam-triage-file-001-android-had-3-viruses-but-didnt/page.tsx`
+  - Upgraded layout for a more polished, repeatable “Scam Triage” format while keeping core narrative content intact.
+  - Added a branded **At a glance** hero summary block.
+  - Added a 4-card quick-stats strip (time to fix, diagnosis move, threat type, outcome).
+  - Added a reusable **Triage workflow** card row for Step 1/2/3 presentation.
+  - Added side-by-side structured blocks for:
+    - likely chain of events,
+    - 3 signs it’s fake.
+  - Added a dedicated green **Fix checklist (repeatable formula)** section.
+  - Removed duplicated prose sections so the new structured blocks are the primary visual treatment.
+  - Added reusable helper components in-file:
+    - `Stat`
+    - `TriageCard`
+
 ## 2026-03-03 — Thank-you copy emphasis tweak (our community)
 
 ### Updated

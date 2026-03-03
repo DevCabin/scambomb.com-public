@@ -9,8 +9,8 @@ export const metadata = {
 export default function BlogPost() {
   return (
     <div className="py-16">
-      <article className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-        <header className="mb-10">
+      <article className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+        <header className="mb-8">
           <div className="text-xs font-semibold tracking-widest text-yellow-300/80 mb-3">SCAM TRIAGE FILE #001</div>
           <h1 className="text-3xl sm:text-4xl font-bold mb-5 leading-tight">
             The Android That “Had 3 Viruses” — But Didn’t
@@ -23,7 +23,25 @@ export default function BlogPost() {
           </time>
         </header>
 
-        <div className="prose prose-invert prose-lg max-w-none">
+        <section className="mb-8 not-prose">
+          <div className="rounded-2xl border border-yellow-300/30 bg-yellow-300/5 p-5 sm:p-6">
+            <div className="text-xs font-bold tracking-widest text-yellow-300/70 uppercase mb-2">At a glance</div>
+            <p className="text-white/80 leading-relaxed">
+              One Safe Mode test separated panic from signal. This wasn’t a system-level Android infection — it was scareware triggered by a rogue app.
+            </p>
+          </div>
+        </section>
+
+        <section className="mb-10 not-prose">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            <Stat label="Time to Fix" value="~15 min" color="text-red-400" />
+            <Stat label="Diagnosis Move" value="Safe Mode" color="text-amber-300" />
+            <Stat label="Threat Type" value="Scareware" color="text-yellow-300" />
+            <Stat label="Outcome" value="Recovered" color="text-emerald-300" />
+          </div>
+        </section>
+
+        <div className="prose prose-invert prose-lg max-w-none mb-8">
           <h2>🚨 The symptom</h2>
           <p>
             A friend handed me his Android phone and said, <em>“Something is seriously wrong.”</em>
@@ -37,7 +55,7 @@ export default function BlogPost() {
           </p>
         </div>
 
-        <div className="my-8 grid gap-4 sm:grid-cols-2 not-prose">
+        <div className="mb-10 grid gap-4 sm:grid-cols-2 not-prose">
           <figure className="rounded-xl overflow-hidden border border-white/10 bg-white/5">
             <img src="/scam-stories/SPAM_DROID_IMG_2927.jpeg" alt="Android screen showing fake virus warning pop-up" className="w-full h-auto" />
             <figcaption className="px-4 py-3 text-sm text-white/60">Fake “virus detected” scare page with urgency prompts.</figcaption>
@@ -48,7 +66,22 @@ export default function BlogPost() {
           </figure>
         </div>
 
-        <div className="prose prose-invert prose-lg max-w-none">
+        <section className="mb-10 not-prose">
+          <div className="text-xs font-bold tracking-widest text-white/50 uppercase mb-3">Triage workflow</div>
+          <div className="grid gap-4 sm:grid-cols-3">
+            <TriageCard step="Step 1" title="Isolate in Safe Mode">
+              Boot into Safe Mode so Android runs core services only and third-party apps are disabled.
+            </TriageCard>
+            <TriageCard step="Step 2" title="Observe signal change">
+              Pop-ups stopped instantly. That confirmed the OS was not compromised.
+            </TriageCard>
+            <TriageCard step="Step 3" title="Remove rogue app">
+              Reviewed recently installed apps, removed suspicious entries, rebooted, and validated normal behavior.
+            </TriageCard>
+          </div>
+        </section>
+
+        <div className="prose prose-invert prose-lg max-w-none mb-8">
           <h2>🔬 Step 1: Isolate the problem</h2>
           <p>
             Before installing random cleaner apps or paying for “protection,” we booted into <strong>Safe Mode</strong>. In Safe Mode, Android
@@ -83,7 +116,7 @@ export default function BlogPost() {
           </p>
         </div>
 
-        <div className="my-8 grid gap-4 sm:grid-cols-2 not-prose">
+        <div className="mb-10 grid gap-4 sm:grid-cols-2 not-prose">
           <figure className="rounded-xl overflow-hidden border border-white/10 bg-white/5">
             <img src="/scam-stories/SPAM_DROID_IMG_2929.jpeg" alt="Android app list used to identify suspicious recent installs" className="w-full h-auto" />
             <figcaption className="px-4 py-3 text-sm text-white/60">App audit: remove unknown installs first, test, then continue.</figcaption>
@@ -94,23 +127,28 @@ export default function BlogPost() {
           </figure>
         </div>
 
+        <section className="mb-10 not-prose grid gap-4 md:grid-cols-2">
+          <div className="rounded-xl border border-white/10 bg-white/5 p-5">
+            <div className="text-xs font-bold tracking-widest text-white/50 uppercase mb-2">Likely chain of events</div>
+            <ol className="list-decimal ml-5 space-y-1 text-white/80 text-sm">
+              <li>User visited a sketchy page.</li>
+              <li>Scare redirects fired.</li>
+              <li>An adware-style app got installed.</li>
+              <li>The app launched redirects on wake/unlock.</li>
+              <li>Warnings appeared even when apps seemed closed.</li>
+            </ol>
+          </div>
+          <div className="rounded-xl border border-red-400/30 bg-red-400/10 p-5">
+            <div className="text-xs font-bold tracking-widest text-red-300 uppercase mb-2">3 signs it’s fake</div>
+            <ol className="list-decimal ml-5 space-y-1 text-white/85 text-sm">
+              <li>Alert appears in a web page, not Android security settings.</li>
+              <li>URL/domain looks off, even when branding looks legit.</li>
+              <li>Safe Mode stops the behavior immediately.</li>
+            </ol>
+          </div>
+        </section>
+
         <div className="prose prose-invert prose-lg max-w-none">
-          <h2>🛠 Likely chain of events</h2>
-          <ol>
-            <li>User visited a sketchy page.</li>
-            <li>Scare redirects fired.</li>
-            <li>An adware-style app got installed.</li>
-            <li>The app launched browser redirects on wake/unlock.</li>
-            <li>The warnings appeared even when apps seemed “closed.”</li>
-          </ol>
-
-          <h2>🎓 Three signs it’s not a real virus outbreak</h2>
-          <ol>
-            <li>The alert appears in a web page, not Android system security settings.</li>
-            <li>The URL/domain is odd even if the page looks like Google.</li>
-            <li>Safe Mode stops the behavior.</li>
-          </ol>
-
           <h2>❌ What we did NOT do</h2>
           <ul>
             <li>Install random antivirus apps from pop-ups</li>
@@ -118,19 +156,21 @@ export default function BlogPost() {
             <li>Click “Clean now”</li>
             <li>Panic-reset the phone before diagnosing</li>
           </ul>
+        </div>
 
-          <h2>📌 The fix (summary)</h2>
-          <ol>
+        <section className="my-10 not-prose rounded-xl border border-emerald-400/30 bg-emerald-400/10 p-5 sm:p-6">
+          <div className="text-xs font-bold tracking-widest text-emerald-300 uppercase mb-3">Fix checklist (repeatable formula)</div>
+          <ol className="list-decimal ml-5 space-y-1 text-white/85">
             <li>Boot into Safe Mode</li>
             <li>Confirm symptoms disappear</li>
             <li>Remove suspicious apps</li>
             <li>Clear browser data/cache</li>
             <li>Reboot and test normally</li>
           </ol>
-          <p>
-            Total time: under 15 minutes.
-          </p>
+          <p className="text-white/70 mt-3">Total time: under 15 minutes.</p>
+        </section>
 
+        <div className="prose prose-invert prose-lg max-w-none">
           <h2>Final takeaway</h2>
           <p>
             The phone wasn’t infected. The user was manipulated.
@@ -162,6 +202,25 @@ export default function BlogPost() {
           </Link>
         </footer>
       </article>
+    </div>
+  )
+}
+
+function Stat({ label, value, color }: { label: string; value: string; color: string }) {
+  return (
+    <div className="rounded-xl border border-white/10 bg-white/5 p-4">
+      <div className={`text-xl sm:text-2xl font-extrabold ${color}`}>{value}</div>
+      <div className="text-xs uppercase tracking-wider text-white/50 mt-1">{label}</div>
+    </div>
+  )
+}
+
+function TriageCard({ step, title, children }: { step: string; title: string; children: React.ReactNode }) {
+  return (
+    <div className="rounded-xl border border-white/10 bg-white/5 p-5">
+      <div className="text-xs font-bold tracking-widest text-yellow-300/70 uppercase mb-2">{step}</div>
+      <h3 className="font-semibold text-white mb-2">{title}</h3>
+      <p className="text-sm text-white/70 leading-relaxed">{children}</p>
     </div>
   )
 }
