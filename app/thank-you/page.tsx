@@ -17,7 +17,7 @@ export default function ThankYouPage() {
             You&apos;re on the list!
           </h1>
           <p className="text-white/80 text-xl leading-relaxed">
-            Thanks for joining our community of concerned citizens and agreeing to get the latest scams and AI-powered fraud schemes — plus tips, tactics, and tricks to thwart them — sent right to your inbox monthly.
+            Thanks for joining our community of concerned citizens and agreeing to get the <strong style={{ color: '#F5C84C' }}>latest scams</strong> and AI-powered fraud schemes — <strong style={{ color: '#F5C84C' }}>plus tips, tactics, and tricks</strong> to thwart them — sent right to your inbox monthly.
           </p>
           <p className="text-white/60 text-sm mt-3">
             (Don&apos;t see it? Check your spam or promotions folder and mark us as safe.)

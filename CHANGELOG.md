@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-03-03 — Thank-you emphasis styling tweak
+
+### Updated
+- `app/thank-you/page.tsx`
+  - Styled these phrases in the confirmation paragraph as yellow + bold:
+    - **latest scams**
+    - **plus tips, tactics, and tricks**
+
 ## 2026-03-03 — Remove Senior Safety Guide promo language site-wide + thank-you copy generalization
 
 ### Summary
