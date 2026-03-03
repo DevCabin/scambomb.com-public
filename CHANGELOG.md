@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-03-03 — Thank-you copy emphasis tweak (our community)
+
+### Updated
+- `app/thank-you/page.tsx`
+  - Added yellow + bold emphasis to phrase: **our community**.
+
 ## 2026-03-03 — Thank-you emphasis styling tweak
 
 ### Updated
