@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-03-03 — Removed legacy popup embed from static report HTML
+
+### Updated
+- `public/reports/older-adult-fraud-2024-2025/index.html`
+  - Removed legacy GoHighLevel popup embed markup:
+    - hidden popup iframe (`popup-fMvTbzE0i0SO5sTMPscV`)
+    - `https://link.msgsndr.com/js/form_embed.js` loader script
+
+### Reason
+- Ensure static report page no longer runs popup form behavior and aligns with the native branded lead-capture flow.
+
 ## 2026-03-03 — Sitewide naming update for annual fraud brief
 
 ### Updated copy
