@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import Script from 'next/script'
+import LeadCaptureCTA from '@/components/LeadCaptureCTA'
 
 export const metadata = {
   title: 'Older Adult Fraud Is Now a Multi-Billion-Dollar Crisis — Our 2024–2025 Report',
@@ -9,25 +9,6 @@ export const metadata = {
 export default function BlogPost() {
   return (
     <div className="py-16">
-      <iframe
-        src="https://api.leadconnectorhq.com/widget/form/fMvTbzE0i0SO5sTMPscV"
-        style={{ display: 'none', width: '100%', height: '100%', border: 'none', borderRadius: '3px' }}
-        id="popup-fMvTbzE0i0SO5sTMPscV"
-        data-layout="{'id':'POPUP'}"
-        data-trigger-type="showAfter"
-        data-trigger-value="2"
-        data-activation-type="activateOnVisit"
-        data-activation-value="2"
-        data-deactivation-type="leadCollected"
-        data-deactivation-value=""
-        data-form-name="ScamBomb - Free Guide Opt-In"
-        data-height="undefined"
-        data-layout-iframe-id="popup-fMvTbzE0i0SO5sTMPscV"
-        data-form-id="fMvTbzE0i0SO5sTMPscV"
-        title="ScamBomb - Free Guide Opt-In"
-      />
-      <Script src="https://link.msgsndr.com/js/form_embed.js" strategy="lazyOnload" />
-
       <article className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
 
         <header className="mb-10">
@@ -139,28 +120,7 @@ export default function BlogPost() {
 
         </div>
 
-        {/* CTA to interactive report */}
-        <div className="my-12 rounded-2xl border-2 border-yellow-300/40 bg-gradient-to-br from-yellow-300/10 to-yellow-300/5 p-10 text-center not-prose">
-          <div className="text-xs font-bold tracking-widest text-yellow-300/70 uppercase mb-4">Free Special Report — Interactive Edition</div>
-          <h3 className="text-3xl font-extrabold text-white mb-4 leading-tight">
-            Older Adult Fraud Intelligence Brief<br/>
-            <span className="text-yellow-300">2024–2025</span>
-          </h3>
-          <p className="text-white/70 text-lg mb-3 max-w-lg mx-auto">
-            The complete data report with interactive charts, animated loss breakdowns, and the full AI voice cloning threat analysis.
-          </p>
-          <p className="text-white/40 text-sm mb-8 max-w-md mx-auto">
-            Scam type breakdowns · Dollar loss tables · AI threat landscape · Sources for every figure
-          </p>
-          <button
-            type="button"
-            className="inline-block bg-yellow-300 text-[#0B1324] font-extrabold text-xl px-12 py-5 rounded-xl hover:bg-yellow-200 hover:scale-105 transition-all duration-200 shadow-lg shadow-yellow-300/20"
-            aria-label="Open report access form"
-          >
-            View the Interactive Report →
-          </button>
-          <p className="text-white/30 text-xs mt-5">Quick email opt-in to unlock · Shareable with family and colleagues</p>
-        </div>
+        <LeadCaptureCTA />
 
         <footer className="mt-12 pt-8 border-t border-white/10">
           <Link href="/blog" className="text-yellow-300 hover:text-yellow-400 underline underline-offset-4">

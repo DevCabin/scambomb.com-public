@@ -1,5 +1,28 @@
 # Changelog
 
+## 2026-03-03 — Implemented canonical branded lead-capture CTA (native site form → GHL)
+
+### Added
+- `components/LeadCaptureCTA.tsx`
+  - New reusable branded CTA component that captures email directly on-site.
+  - Submits leads to GHL via Forms API:
+    - endpoint: `https://backend.leadconnectorhq.com/forms/submit`
+    - location ID: `DaQ8hQRpgjJ0fIdTGhuo`
+    - form ID: `fMvTbzE0i0SO5sTMPscV`
+  - Includes:
+    - polished CTA presentation
+    - email validation
+    - submit/loading/error states
+    - success redirect to gated destination (`/reports/older-adult-fraud-2024-2025`)
+
+### Updated
+- `app/blog/older-adult-fraud-report-2024-2025/page.tsx`
+  - Removed embedded GHL popup iframe/script implementation from this page.
+  - Replaced static CTA block with reusable `<LeadCaptureCTA />` component.
+
+### Outcome
+- Establishes the preferred efficient workflow: **pretty native CTA + direct GHL lead capture + drip flow enrollment**, minimizing manual GHL builder friction moving forward.
+
 ## 2026-03-03 — Exported modular CTA file + removed direct report link behavior on blog CTA
 
 ### Added
