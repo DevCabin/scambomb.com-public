@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import LeadCaptureCTA from '@/components/LeadCaptureCTA'
+import LeadCaptureCTA from '../../../components/LeadCaptureCTA'
 
 export const metadata = {
   title: 'Older Adult Fraud Is Now a Multi-Billion-Dollar Crisis — Our 2024–2025 Report',
