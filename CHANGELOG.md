@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-03-03 — CTA title copy update (remove year + yellow emphasis target)
+
+### Updated
+- `components/LeadCaptureCTA.tsx`
+  - Updated CTA title lines:
+    - from: `Fraud Target Older Adults: Annual Intelligence Brief` + accent `2024–2025`
+    - to: `Fraud Targeting Older Adults:` + accent `Annual Intelligence Brief`
+
+### Reason
+- Align CTA headline with latest approved copy and remove year from the highlighted line.
+
 ## 2026-03-03 — Blog typography hardening for special report page
 
 ### Updated
