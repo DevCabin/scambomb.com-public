@@ -1,5 +1,17 @@
 # Changelog
 
+## 2026-03-03 — Hero-integrated report branding badge (“Provided by ScamBomb”)
+
+### Updated
+- `public/reports/older-adult-fraud-2024-2025/index.html`
+  - Added a visible hero banner badge directly in report masthead:
+    - bomb mark icon
+    - label: `Provided by ScamBomb`
+  - Positioned under eyebrow copy so branding appears in the core banner area (not only in the top utility/back bar).
+
+### Reason
+- Improve brand visibility in the primary report hero area for clearer “provided by” attribution.
+
 ## 2026-03-03 — Report accessibility sizing + branding + downloadable PDF
 
 ### Updated
