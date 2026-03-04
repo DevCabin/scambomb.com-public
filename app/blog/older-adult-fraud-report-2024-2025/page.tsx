@@ -26,7 +26,7 @@ export default function BlogPost() {
           </time>
         </header>
 
-        <div className="prose prose-invert prose-lg max-w-none">
+        <div className="prose prose-invert prose-lg max-w-none [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:mt-10 [&_h2]:mb-4 [&_p]:text-white/80 [&_p]:leading-relaxed [&_p]:mb-5">
 
           <p>
             Every year, the FTC and FBI release data on fraud losses. Every year, the numbers go up. But the 2024–2025 figures represent something different — not just growth, but acceleration. The largest single-year jump on record. And a new category of threat that official reporting hasn&apos;t even caught up to yet.
@@ -63,7 +63,7 @@ export default function BlogPost() {
           </div>
         </div>
 
-        <div className="prose prose-invert prose-lg max-w-none">
+        <div className="prose prose-invert prose-lg max-w-none [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:mt-10 [&_h2]:mb-4 [&_p]:text-white/80 [&_p]:leading-relaxed [&_p]:mb-5">
 
           <h2>The scam types doing the most damage</h2>
 
@@ -98,7 +98,7 @@ export default function BlogPost() {
           </p>
         </div>
 
-        <div className="prose prose-invert prose-lg max-w-none">
+        <div className="prose prose-invert prose-lg max-w-none [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:mt-10 [&_h2]:mb-4 [&_p]:text-white/80 [&_p]:leading-relaxed [&_p]:mb-5">
 
           <p>
             The &quot;grandkid scam&quot; is the human face of this data. A scammer harvests audio from a grandchild&apos;s TikTok or voicemail greeting. They clone the voice. They call a grandparent claiming to be in trouble — an accident, an arrest, an emergency. They need bail money. They need it now. Individual losses typically range from several thousand dollars upward, with some victims sending multiple transfers before anyone spots what&apos;s happening.

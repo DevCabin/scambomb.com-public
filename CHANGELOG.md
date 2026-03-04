@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-03-03 — Blog typography hardening for special report page
+
+### Updated
+- `app/blog/older-adult-fraud-report-2024-2025/page.tsx`
+  - Added explicit utility styles for embedded content blocks to stabilize rendering when prose styles are inconsistent:
+    - heading size/weight/spacing (`h2`)
+    - paragraph color/line-height/margins (`p`)
+
+### Reason
+- Fix visual formatting drift on the live blog page and keep text hierarchy readable/consistent.
+
 ## 2026-03-03 — Fixed production build blocker for report/blog flow
 
 ### Fixed
