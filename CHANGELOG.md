@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026-03-03 — Report accessibility sizing + branding + downloadable PDF
+
+### Updated
+- `public/reports/older-adult-fraud-2024-2025/index.html`
+  - Increased report typography floor so no fixed `font-size` values render below `15px`.
+  - Added ScamBomb brand presence above the fold in the top back bar with bomb mark icon.
+  - Added top-of-page PDF download link:
+    - `Download PDF Version`
+    - points to: `/reports/older-adult-fraud-2024-2025/older-adult-fraud-2024-2025.pdf`
+
+### Added
+- `public/reports/older-adult-fraud-2024-2025/older-adult-fraud-2024-2025.pdf`
+  - Generated from the updated report layout for direct download.
+
+### Reason
+- Improve readability for older-adult audiences.
+- Ensure clear ScamBomb visual branding in report header area.
+- Provide a printable/downloadable version linked from the HTML report entry point.
+
 ## 2026-03-03 — Lead CTA submit resilience fallback for GHL endpoint instability
 
 ### Updated
