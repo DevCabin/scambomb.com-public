@@ -1,5 +1,21 @@
 # Changelog
 
+## 2026-03-03 — CTA next-step label moved above card + header tagline added
+
+### Updated
+- `components/LeadCaptureCTA.tsx`
+  - Moved the explicit "next step" messaging out of the small eyebrow position and into a larger yellow line above the CTA card for better visibility.
+  - New default top line:
+    - `Read the FULL report now — free download continues after unlock`
+
+- `components/Header.tsx`
+  - Added site tagline below nav/menu area:
+    - `Scam detection made simple. Free to use.`
+
+### Reason
+- Improve handoff clarity and make continuation intent obvious for visitors.
+- Introduce concise site-wide positioning tagline in available header space.
+
 ## 2026-03-03 — CTA handoff messaging made explicit (continue/download)
 
 ### Updated

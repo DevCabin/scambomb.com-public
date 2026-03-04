@@ -62,6 +62,12 @@ function UniversalHeader() {
             </button>
           </div>
 
+          <div className="pb-3 text-center">
+            <p className="text-yellow-300/90 text-sm font-semibold tracking-wide">
+              Scam detection made simple. Free to use.
+            </p>
+          </div>
+
           {isMobileMenuOpen && (
             <nav className="md:hidden pb-4" aria-label="Mobile Primary">
               <div className="flex flex-col gap-3 rounded-xl border border-white/15 bg-black/40 p-4">

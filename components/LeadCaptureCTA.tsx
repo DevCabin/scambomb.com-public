@@ -16,7 +16,7 @@ type LeadCaptureCTAProps = {
 }
 
 export default function LeadCaptureCTA({
-  eyebrow = 'Next Step — Continue to the Full Report Download',
+  eyebrow = 'Read the FULL report now — free download continues after unlock',
   title = 'Fraud Targeting Older Adults:',
   titleAccent = 'Annual Intelligence Brief',
   description = 'Read the FULL report now and continue to the free download with complete data tables, visual breakdowns, and AI voice-cloning threat analysis.',
@@ -62,8 +62,9 @@ export default function LeadCaptureCTA({
   }
 
   return (
-    <div className="my-12 rounded-2xl border-2 border-yellow-300/40 bg-gradient-to-br from-yellow-300/10 to-yellow-300/5 p-10 text-center not-prose">
-      <div className="text-xs font-bold tracking-widest text-yellow-300/70 uppercase mb-4">{eyebrow}</div>
+    <div className="my-12 not-prose">
+      <p className="text-center text-yellow-300 font-semibold text-sm sm:text-base mb-4">{eyebrow}</p>
+      <div className="rounded-2xl border-2 border-yellow-300/40 bg-gradient-to-br from-yellow-300/10 to-yellow-300/5 p-10 text-center">
       <h3 className="text-3xl font-extrabold text-white mb-4 leading-tight">
         {title}
         <br />
@@ -94,6 +95,7 @@ export default function LeadCaptureCTA({
       {error ? <p className="text-red-300 text-sm mt-3">{error}</p> : null}
 
       <p className="text-white/30 text-xs mt-5">{footnote}</p>
+      </div>
     </div>
   )
 }
