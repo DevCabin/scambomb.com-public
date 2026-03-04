@@ -47,6 +47,7 @@ export default function LeadCaptureCTA({
         body: JSON.stringify({
           location_id: locationId,
           id: formId,
+          first_name: 'ScamBomb',
           email,
         }),
       })
@@ -55,7 +56,44 @@ export default function LeadCaptureCTA({
 
       window.location.href = redirectUrl
     } catch {
-      setError('Could not submit right now. Please try again.')
+      // Fallback: submit directly to GHL widget endpoint via hidden iframe form POST
+      // so visitor flow continues even if backend forms endpoint is unstable.
+      try {
+        const iframeName = 'ghl-submit-fallback'
+        let iframe = document.querySelector(`iframe[name="${iframeName}"]`) as HTMLIFrameElement | null
+        if (!iframe) {
+          iframe = document.createElement('iframe')
+          iframe.name = iframeName
+          iframe.style.display = 'none'
+          document.body.appendChild(iframe)
+        }
+
+        const form = document.createElement('form')
+        form.method = 'POST'
+        form.action = `https://api.leadconnectorhq.com/widget/form/${formId}`
+        form.target = iframeName
+        form.style.display = 'none'
+
+        const emailInput = document.createElement('input')
+        emailInput.type = 'hidden'
+        emailInput.name = 'email'
+        emailInput.value = email
+
+        const firstNameInput = document.createElement('input')
+        firstNameInput.type = 'hidden'
+        firstNameInput.name = 'first_name'
+        firstNameInput.value = 'ScamBomb'
+
+        form.appendChild(emailInput)
+        form.appendChild(firstNameInput)
+        document.body.appendChild(form)
+        form.submit()
+        form.remove()
+      } catch {
+        // no-op: final fallback is still to continue visitor flow
+      }
+
+      window.location.href = redirectUrl
     } finally {
       setIsSubmitting(false)
     }

@@ -1,5 +1,18 @@
 # Changelog
 
+## 2026-03-03 — Lead CTA submit resilience fallback for GHL endpoint instability
+
+### Updated
+- `components/LeadCaptureCTA.tsx`
+  - Added `first_name` to primary JSON submit payload for parity with other working scripts.
+  - Added fallback path when `backend.leadconnectorhq.com/forms/submit` fails:
+    - hidden iframe + browser form POST to `https://api.leadconnectorhq.com/widget/form/{formId}`
+    - continues visitor to report URL so user flow does not dead-end on transient API failures.
+
+### Reason
+- Observed live `500 Internal server error` responses from GHL Forms API endpoint during CTA tests.
+- Prevent user-facing dead-end error and preserve funnel progression while upstream issue is unstable.
+
 ## 2026-03-03 — Tagline styling update (bold/all-caps with upward shift)
 
 ### Updated
