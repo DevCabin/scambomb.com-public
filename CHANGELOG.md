@@ -1,5 +1,17 @@
 # Changelog
 
+## 2026-03-03 — Fixed production build blocker for report/blog flow
+
+### Fixed
+- `app/blog/older-adult-fraud-report-2024-2025/page.tsx`
+  - Replaced alias import with relative import for `LeadCaptureCTA`:
+    - from: `@/components/LeadCaptureCTA`
+    - to: `../../../components/LeadCaptureCTA`
+
+### Reason
+- Vercel production build failed with module resolution error, preventing new deploys from going live.
+- With successful deploys restored, latest report HTML changes (including popup embed removal) can publish to production.
+
 ## 2026-03-03 — Removed legacy popup embed from static report HTML
 
 ### Updated
