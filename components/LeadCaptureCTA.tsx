@@ -16,13 +16,13 @@ type LeadCaptureCTAProps = {
 }
 
 export default function LeadCaptureCTA({
-  eyebrow = 'Free Special Report — Interactive Edition',
+  eyebrow = 'Next Step — Continue to the Full Report Download',
   title = 'Fraud Targeting Older Adults:',
   titleAccent = 'Annual Intelligence Brief',
-  description = 'The complete data report with interactive charts, animated loss breakdowns, and the full AI voice cloning threat analysis.',
+  description = 'Read the FULL report now and continue to the free download with complete data tables, visual breakdowns, and AI voice-cloning threat analysis.',
   meta = 'Scam type breakdowns · Dollar loss tables · AI threat landscape · Sources for every figure',
-  buttonLabel = 'Unlock the Interactive Report →',
-  footnote = 'Quick email opt-in to unlock · Shareable with family and colleagues',
+  buttonLabel = 'Read the FULL Report Now (Free Download) →',
+  footnote = 'This is not the end — continue to the full downloadable report after email unlock.',
   redirectUrl = '/reports/older-adult-fraud-2024-2025',
   formId = 'fMvTbzE0i0SO5sTMPscV',
   locationId = 'DaQ8hQRpgjJ0fIdTGhuo',

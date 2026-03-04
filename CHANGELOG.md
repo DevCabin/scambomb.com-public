@@ -1,5 +1,18 @@
 # Changelog
 
+## 2026-03-03 — CTA handoff messaging made explicit (continue/download)
+
+### Updated
+- `components/LeadCaptureCTA.tsx`
+  - Updated CTA copy to clearly signal post-opt-in continuation to full report/download:
+    - Eyebrow: `Next Step — Continue to the Full Report Download`
+    - Description: explicitly says "Read the FULL report now" and "continue to the free download"
+    - Button label: `Read the FULL Report Now (Free Download) →`
+    - Footnote: `This is not the end — continue to the full downloadable report after email unlock.`
+
+### Reason
+- Make handoff intent unmistakable for general visitors so users understand there is a next-step full report/download after CTA action.
+
 ## 2026-03-03 — CTA title copy update (remove year + yellow emphasis target)
 
 ### Updated
