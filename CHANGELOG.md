@@ -1,5 +1,18 @@
 # Changelog
 
+## 2026-03-03 — Tagline styling update (bold/all-caps with upward shift)
+
+### Updated
+- `components/Header.tsx`
+  - Adjusted header tagline presentation:
+    - applied negative top margin of ~1rem (`-mt-4`)
+    - increased size (`text-base sm:text-lg`)
+    - switched to all caps (`uppercase`)
+    - stronger emphasis (`font-extrabold`, `tracking-wider`)
+
+### Reason
+- Make the new positioning tagline more prominent and confident in the header.
+
 ## 2026-03-03 — CTA next-step label moved above card + header tagline added
 
 ### Updated
