@@ -49,13 +49,16 @@ function UniversalFooter() {
         </div>
         <div>
           <h4 className="font-semibold">Newsletter</h4>
-          <form className="mt-2 flex flex-col gap-3" action="https://formspree.io/f/xzzyeoak" method="POST" aria-label="Subscribe to newsletter">
-            <label htmlFor="email" className="sr-only">Email</label>
-            <div className="flex gap-2">
-              <input id="newsletter-email" name="email" type="email" required className="flex-1 rounded-xl border border-white/20 bg-white/10 px-3 py-2 text-sm placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-yellow-300" placeholder="you@example.com" />
-              <button type="submit" className="rounded-xl px-3 py-2 font-semibold bg-[#F5C84C] text-[#0B1324] hover:bg-[#F5C84C]/90">Subscribe</button>
-            </div>
-          </form>
+          <div className="mt-2">
+            <a
+              href="https://scambomb.beehiiv.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block rounded-xl px-3 py-2 font-semibold bg-[#F5C84C] text-[#0B1324] hover:bg-[#F5C84C]/90"
+            >
+              Subscribe
+            </a>
+          </div>
           <p className="mt-2 text-white/60 text-xs">Cutting edge safety tips, once or twice a month. No spam. No scams!</p>
         </div>
       </div>
