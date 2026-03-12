@@ -42,11 +42,6 @@ export default function ProtectParentsPage() {
 
       <section className="hero">
         <div className="hero-inner">
-          <div className="brand-bar">
-            <img src="/ScamBomb-just-the-bomb.png" className="brand-logo" alt="ScamBomb" />
-            <span className="brand-name">ScamBomb</span>
-          </div>
-
           <div className="eyebrow">⚠ Scam Alert — 2026</div>
 
           <h1>
@@ -132,7 +127,6 @@ export default function ProtectParentsPage() {
           <div className="demo-result">
             <div className="verdict-badge">
               <span className="score">94</span>
-              <span className="score-label">/ 100</span>
             </div>
             <div className="verdict-text">
               <h4>⚠ HIGH DANGER — Government Impersonation Scam</h4>
@@ -183,6 +177,7 @@ export default function ProtectParentsPage() {
             </div>
           </div>
         </div>
+        <p className="simulated-note">Simulated testimonials for layout preview — real customer quotes will be added soon.</p>
       </div>
 
       <div className="section reveal">
@@ -271,9 +266,6 @@ export default function ProtectParentsPage() {
         .hero { position: relative; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 60px 24px 80px; overflow: hidden; }
         .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(245,200,76,0.09) 0%, transparent 70%), radial-gradient(ellipse 60% 40% at 80% 80%, rgba(211,47,47,0.08) 0%, transparent 60%); pointer-events: none; }
         .hero-inner { max-width: 680px; margin: 0 auto; position: relative; z-index: 1; }
-        .brand-bar { display: flex; align-items: center; gap: 12px; margin-bottom: 48px; }
-        .brand-logo { width: 42px; height: 42px; object-fit: contain; }
-        .brand-name { font-family: var(--font-montserrat), Montserrat, system-ui, -apple-system, sans-serif; font-size: 20px; font-weight: 800; letter-spacing: 0.08em; color: var(--gold); text-transform: uppercase; }
         .eyebrow { display: inline-block; background: rgba(211,47,47,0.15); border: 1px solid rgba(211,47,47,0.5); color: #ff6b6b; font-family: var(--font-montserrat), Montserrat, system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 6px 14px; border-radius: 3px; margin-bottom: 24px; }
         .hero h1 { font-family: var(--font-montserrat), Montserrat, system-ui, -apple-system, sans-serif; font-size: clamp(38px, 8vw, 68px); font-weight: 800; line-height: 1.05; letter-spacing: -0.01em; margin-bottom: 28px; color: var(--white); }
         .hero h1 .highlight { color: var(--gold); display: block; }
@@ -310,10 +302,12 @@ export default function ProtectParentsPage() {
         .verdict-badge { flex-shrink: 0; width: 68px; height: 68px; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: rgba(211,47,47,0.15); border: 2px solid var(--red); }
         .testimonials { display: flex; flex-direction: column; gap: 20px; margin-bottom: 48px; }
         .testimonial { background: var(--navy-mid); border: 1px solid rgba(245,200,76,0.15); border-radius: 10px; padding: 24px; }
+        .simulated-note { margin-top: -24px; margin-bottom: 8px; font-size: 12px; color: rgba(255,255,255,0.55); font-style: italic; text-align: center; }
         .pricing-cards { display: flex; flex-direction: column; gap: 16px; margin-bottom: 32px; }
         .pricing-card { border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 24px; display: flex; align-items: center; gap: 20px; text-decoration: none; color: var(--white); }
         .pricing-card.featured { border-color: var(--gold); background: rgba(245,200,76,0.08); position: relative; }
         .featured-tag { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--gold); color: var(--navy); font-family: var(--font-montserrat), Montserrat, system-ui, -apple-system, sans-serif; font-size: 11px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 12px; border-radius: 3px; }
+        .pricing-price .period { display: block; margin-top: 6px; }
         .final-cta { background: linear-gradient(180deg, var(--navy) 0%, var(--navy-mid) 100%); border-top: 1px solid rgba(245,200,76,0.2); padding: 80px 24px; text-align: center; }
         .final-cta h2 { font-family: var(--font-montserrat), Montserrat, system-ui, -apple-system, sans-serif; font-size: clamp(30px, 6vw, 52px); font-weight: 800; line-height: 1.1; margin-bottom: 20px; }
         .lp-footer { padding: 32px 24px; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); background: #0B1324; }
