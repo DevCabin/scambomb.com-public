@@ -4,6 +4,7 @@ import { useEffect } from 'react'
 import Script from 'next/script'
 
 const FB_PIXEL_ID = '486466700592099'
+const APP_URL = `https://app.scambomb.com/?safe_source=true&SBID=${crypto.randomUUID()}`
 
 export default function ProtectParentsPage() {
   useEffect(() => {
@@ -76,7 +77,7 @@ export default function ProtectParentsPage() {
             <div className="cta-offer">Try ScamBomb Free — Upgrade Anytime</div>
             <div className="cta-price">Premium protection just <strong>$4.99/mo</strong> or <strong>$49/yr</strong></div>
 
-            <a href="https://scambomb.com" className="btn-primary" onClick={() => {
+            <a href={APP_URL} className="btn-primary" onClick={() => {
               const fbq = (window as unknown as { fbq?: (...args: unknown[]) => void }).fbq
               if (fbq) fbq('track', 'InitiateCheckout')
             }}>
@@ -187,7 +188,7 @@ export default function ProtectParentsPage() {
         <h2>Protection That Costs Less<br />Than One Scam</h2>
 
         <div className="pricing-cards">
-          <a href="https://scambomb.com" className="pricing-card"> 
+          <a href={APP_URL} className="pricing-card"> 
             <div className="pricing-icon">🔍</div>
             <div className="pricing-details">
               <div className="pricing-name">Free — Try It Now</div>
@@ -229,7 +230,7 @@ export default function ProtectParentsPage() {
       <section className="final-cta reveal">
         <h2>Don&apos;t Let the Next Scam<br />Be the One That Hits Home</h2>
         <p>Takes 30 seconds to get started. Free forever on the basic plan. Your family is worth it.</p>
-        <a href="https://scambomb.com" className="btn-primary">
+        <a href={APP_URL} className="btn-primary">
           🛡 Protect My Family Now — It&apos;s Free →
         </a>
         <a href="https://scambomb.com" className="btn-free">
