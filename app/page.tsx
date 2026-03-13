@@ -112,6 +112,50 @@ export default function ScamBombLanding() {
         </div>
       </section>
 
+      {/* Quick app instructions */}
+      <section aria-label="How to use ScamBomb app" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
+        <div className={`rounded-2xl border ${brandBorder} bg-white/5 p-4 sm:p-5`}>
+          <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <HeaderEyebrow>How to use the app</HeaderEyebrow>
+              <h2 className="text-xl sm:text-2xl font-bold">Check a suspicious message in seconds</h2>
+            </div>
+            <p className="text-sm text-white/65 sm:text-right max-w-md">
+              Built to be fast, simple, and clear on phone or desktop.
+            </p>
+          </div>
+
+          <div className="mt-5 grid gap-3 md:grid-cols-[1fr_auto_1fr_auto_1fr] items-stretch">
+            <QuickStep
+              n={1}
+              title="Copy or snap"
+              text="Copy a suspicious text, SMS, or email — or just take/upload a picture."
+            />
+            <StepArrow />
+            <QuickStep
+              n={2}
+              title="Paste or upload"
+              text="Paste it into the message area, or upload an image to extract the text."
+            />
+            <StepArrow />
+            <QuickStep
+              n={3}
+              title="Analyze"
+              text="Run the check. It may trigger an EARLY ALERT if the message looks especially suspicious."
+              highlight
+            />
+          </div>
+
+          <div className="mt-3">
+            <QuickResultStep
+              n={4}
+              title="Get notified in seconds"
+              text="See fast, plain-English guidance on whether the message is a scam."
+            />
+          </div>
+        </div>
+      </section>
+
       {/* Trust bar */}
       <section aria-label="Trust signals" className="border-y border-black/20" style={{ backgroundColor: brandYellow, color: "#0B1324" }}>
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 grid sm:grid-cols-3 gap-4 text-center">
@@ -280,6 +324,49 @@ function Step({ n, title, text }: { n: number; title: string; text: string }) {
         <h3 className="font-semibold text-lg">{title}</h3>
       </div>
       <p className="mt-3 text-white/80">{text}</p>
+    </div>
+  );
+}
+
+function QuickStep({ n, title, text, highlight = false }: { n: number; title: string; text: string; highlight?: boolean }) {
+  return (
+    <div className={`rounded-2xl border p-4 sm:p-5 h-full ${highlight ? 'border-yellow-300/40 bg-yellow-300/10' : 'border-white/10 bg-white/5'}`}>
+      <div className="flex items-center gap-3">
+        <div className={`h-9 w-9 rounded-full flex items-center justify-center font-bold ${highlight ? 'bg-yellow-300 text-[#0B1324]' : 'bg-white/10 border border-white/10 text-white'}`}>
+          {n}
+        </div>
+        <h3 className="font-semibold text-base sm:text-lg">{title}</h3>
+      </div>
+      <p className="mt-3 text-sm sm:text-[15px] text-white/80 leading-relaxed">{text}</p>
+    </div>
+  );
+}
+
+function QuickResultStep({ n, title, text }: { n: number; title: string; text: string }) {
+  return (
+    <div className="rounded-2xl border border-yellow-300/40 bg-gradient-to-r from-yellow-300/15 to-white/5 p-4 sm:p-5">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex items-center gap-3">
+          <div className="h-10 w-10 rounded-full flex items-center justify-center font-bold bg-[#F5C84C] text-[#0B1324]">
+            {n}
+          </div>
+          <div>
+            <h3 className="font-semibold text-base sm:text-lg">{title}</h3>
+            <p className="mt-1 text-sm sm:text-[15px] text-white/85">{text}</p>
+          </div>
+        </div>
+        <div className="text-sm font-semibold uppercase tracking-[0.14em] text-yellow-300">
+          Scam verdict fast
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function StepArrow() {
+  return (
+    <div className="hidden md:flex items-center justify-center text-yellow-300/80 text-2xl font-bold" aria-hidden>
+      →
     </div>
   );
 }
