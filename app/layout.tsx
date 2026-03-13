@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Montserrat } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 import GoogleAnalytics from '../components/GoogleAnalytics'
 import Header from '../components/Header'
@@ -94,6 +95,7 @@ export default function RootLayout({
           {children}
         </main>
         <UniversalFooter />
+        <Analytics />
       </body>
     </html>
   )
