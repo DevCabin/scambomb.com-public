@@ -42,63 +42,6 @@ export default function ScamBombLanding() {
   return (
     <div className={`${base} antialiased`}>
 
-      {/* Quick app instructions (toggle) */}
-      <section aria-label="How to use ScamBomb app" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-3 sm:pt-4 pb-2 sm:pb-3">
-        <div className={`rounded-2xl border ${brandBorder} bg-white/5 p-3 sm:p-4`}>
-          <button
-            type="button"
-            onClick={() => setIsHowToOpen((prev) => !prev)}
-            aria-expanded={isHowToOpen}
-            aria-controls="how-to-app-panel"
-            className="w-full text-left flex items-center justify-between gap-3"
-          >
-            <div className="flex items-center gap-3">
-              <span className="h-8 w-8 rounded-full bg-[#F5C84C] text-[#0B1324] font-extrabold flex items-center justify-center">?</span>
-              <h2 className="text-sm sm:text-base md:text-lg font-extrabold tracking-[0.08em] uppercase">How to use the app</h2>
-            </div>
-            <span className={`text-yellow-300 text-xl transition-transform duration-300 ${isHowToOpen ? 'rotate-180' : ''}`} aria-hidden>
-              ⌄
-            </span>
-          </button>
-
-          <div
-            id="how-to-app-panel"
-            className={`grid overflow-hidden transition-all duration-300 ease-out ${isHowToOpen ? 'grid-rows-[1fr] opacity-100 mt-4' : 'grid-rows-[0fr] opacity-0'}`}
-          >
-            <div className="min-h-0">
-              <div className="grid gap-3 md:grid-cols-[1fr_auto_1fr_auto_1fr] items-stretch">
-                <QuickStep
-                  n={1}
-                  title="Copy or snap"
-                  text="Copy a suspicious text, SMS, or email — or just take/upload a picture."
-                />
-                <StepArrow />
-                <QuickStep
-                  n={2}
-                  title="Paste or upload"
-                  text="Paste it into the message area, or upload an image to extract the text."
-                />
-                <StepArrow />
-                <QuickStep
-                  n={3}
-                  title="Analyze"
-                  text="Run the check. It may trigger an EARLY ALERT if the message looks especially suspicious."
-                  highlight
-                />
-              </div>
-
-              <div className="mt-3">
-                <QuickResultStep
-                  n={4}
-                  title="Get notified in seconds"
-                  text="See fast, plain-English guidance on whether the message is a scam."
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Hero */}
       <section id="hero" className="relative overflow-hidden">
         <div aria-hidden className="pointer-events-none absolute -top-24 right-[-10%] h-72 w-72 rounded-full blur-3xl" style={{ background: `${brandYellow}33` }} />
@@ -164,6 +107,63 @@ export default function ScamBombLanding() {
                     Check a message →
                   </a>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Quick app instructions (toggle) */}
+      <section aria-label="How to use ScamBomb app" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-3 sm:pt-4 pb-2 sm:pb-3">
+        <div className={`rounded-2xl border ${brandBorder} bg-white/5 p-3 sm:p-4`}>
+          <button
+            type="button"
+            onClick={() => setIsHowToOpen((prev) => !prev)}
+            aria-expanded={isHowToOpen}
+            aria-controls="how-to-app-panel"
+            className="w-full text-left flex items-center justify-between gap-3"
+          >
+            <div className="flex items-center gap-3">
+              <span className="h-8 w-8 rounded-full bg-[#F5C84C] text-[#0B1324] font-extrabold flex items-center justify-center">?</span>
+              <h2 className="text-sm sm:text-base md:text-lg font-extrabold tracking-[0.08em] uppercase">How to use the app</h2>
+            </div>
+            <span className={`text-yellow-300 text-xl transition-transform duration-300 ${isHowToOpen ? 'rotate-180' : ''}`} aria-hidden>
+              ⌄
+            </span>
+          </button>
+
+          <div
+            id="how-to-app-panel"
+            className={`grid overflow-hidden transition-all duration-300 ease-out ${isHowToOpen ? 'grid-rows-[1fr] opacity-100 mt-4' : 'grid-rows-[0fr] opacity-0'}`}
+          >
+            <div className="min-h-0">
+              <div className="grid gap-3 md:grid-cols-[1fr_auto_1fr_auto_1fr] items-stretch">
+                <QuickStep
+                  n={1}
+                  title="Copy or snap"
+                  text="Copy a suspicious text, SMS, or email — or just take/upload a picture."
+                />
+                <StepArrow />
+                <QuickStep
+                  n={2}
+                  title="Paste or upload"
+                  text="Paste it into the message area, or upload an image to extract the text."
+                />
+                <StepArrow />
+                <QuickStep
+                  n={3}
+                  title="Analyze"
+                  text="Run the check. It may trigger an EARLY ALERT if the message looks especially suspicious."
+                  highlight
+                />
+              </div>
+
+              <div className="mt-3">
+                <QuickResultStep
+                  n={4}
+                  title="Get notified in seconds"
+                  text="See fast, plain-English guidance on whether the message is a scam."
+                />
               </div>
             </div>
           </div>
