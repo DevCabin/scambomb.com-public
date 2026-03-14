@@ -4,6 +4,7 @@ import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 import GoogleAnalytics from '../components/GoogleAnalytics'
 import Header from '../components/Header'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -94,6 +95,7 @@ export default function RootLayout({
         <main id="main">
           {children}
         </main>
+        <SpeedInsights />
         <UniversalFooter />
         <Analytics />
       </body>
