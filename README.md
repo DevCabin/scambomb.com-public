@@ -99,7 +99,7 @@ scambomb.com-public/
 - **Interactive Elements**: Hover states and focus indicators
 - **Loading States**: Smooth transitions and feedback
 
-## 📋 Current Status: v1.2.0
+## 📋 Current Status: v1.4.0
 
 ### ✅ Completed Features
 - [x] Next.js 16 setup with App Router (security upgrades)
@@ -107,7 +107,8 @@ scambomb.com-public/
 - [x] Montserrat font integration
 - [x] Responsive homepage with accessibility features
 - [x] Contentlayer blog system with sample posts
-- [x] Google Analytics integration (modular)
+- [x] Google Analytics GA4 (`G-T61B4NX3J8`) — sitewide via `app/layout.tsx`
+- [x] Facebook Pixel (`486466700592099`) — on `/protect-parents` and both Scam Jammer static pages
 - [x] Custom logo implementation
 - [x] ProductHunt launch messaging
 - [x] Vercel deployment ready
@@ -115,10 +116,25 @@ scambomb.com-public/
 - [x] **Clean Architecture**: Marketing site without authentication complexity
 - [x] **5 Free Searches**: Anonymous app access via fingerprinting
 - [x] **User Testing Form**: Hosted at /testing with auto-save and Formspree backend
+- [x] **Scam Stories Form**: `/scam-stories` — 6-section form with Formspree + GHL CRM wiring
+- [x] **Older Adult Fraud Report**: `/reports/older-adult-fraud-2024-2025` — interactive HTML report with PDF download
+- [x] **Gated Lead Capture**: `/blog/older-adult-fraud-report-2024-2025` with `LeadCaptureCTA` → GHL drip enrollment
+- [x] **Blog Posts (5)**: Three guides + Scam Triage File #001 + Older Adult Fraud Special Report
+- [x] **Protect Parents Landing Page**: `/protect-parents` — dedicated FB Pixel landing page with app CTA
+- [x] **AI Clone Scam Jammer**: `/ai-clone-scam-jammer` — first paid product ($7 PDF, static HTML sales page)
+- [x] **Purchase Thank-You Page**: `/thank-you-scamjammer-purchase` — post-purchase confirmation with PDF download
+- [x] **`@vercel/analytics`**: Added as explicit dependency; Vercel Analytics + Speed Insights active
+
+### ⚠️ Analytics Coverage Note
+- All **Next.js pages** receive GA4 automatically via `<GoogleAnalytics>` in `app/layout.tsx`
+- **Static HTML pages** (`public/*.html`) are served via Next.js rewrites and bypass `layout.tsx` — they require **inline** GA4 + FB Pixel scripts
+- Pages with inline analytics confirmed: `ai-clone-scam-jammer.html`, `thank-you-scamjammer-purchase.html`
+- Other static HTML pages (scam-stories, testing, reports, resources) currently have **no inline analytics**
 
 ### 🚧 Known Issues
 - Some TypeScript type definitions incomplete
 - Contentlayer configuration may need optimization
+- Static HTML pages in `public/reports/` and `public/resources/` do not yet have GA4/FB Pixel tracking
 
 ## 📋 Changelog
 

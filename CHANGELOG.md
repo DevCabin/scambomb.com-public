@@ -1,5 +1,48 @@
 # Changelog
 
+## 2026-03-16 — Added GA4 + FB Pixel to new static HTML landing pages
+
+### Updated
+- `public/ai-clone-scam-jammer.html`
+  - Added Google Analytics GA4 (`G-T61B4NX3J8`) — PageView fires on load.
+  - Added Facebook Pixel (`486466700592099`) — PageView fires on load.
+- `public/thank-you-scamjammer-purchase.html`
+  - Added Google Analytics GA4 (`G-T61B4NX3J8`) — PageView + `purchase` conversion event fires on load ($7, USD).
+  - Added Facebook Pixel (`486466700592099`) — PageView + `Purchase` event fires on load ($7, USD).
+
+### Reason
+- Static HTML files served via Next.js rewrites bypass `app/layout.tsx` entirely and do not receive the sitewide `<GoogleAnalytics>` component.
+- Both pages were live with zero analytics coverage; this restores full visibility and enables conversion tracking for the AI Clone Scam Jammer product funnel.
+
+## 2026-03-15 — AI Clone Scam Jammer product launch (sales page, thank-you, PDF, OG image)
+
+### Added
+- `public/ai-clone-scam-jammer.html`
+  - Full standalone sales page for the AI Clone Scam Jammer ($7 PDF guide).
+  - Includes: real news story (Fox 13 Tampa Bay — Dover, FL, July 2025), FBI/FTC stats grid, benefits checklist, math comparison card, FAQ section, and two CTA blocks.
+  - Checkout link: `https://pay.scambomb.com/ai-voice-clone-scamjammer-checkout`
+  - Reachable at clean URL: `/ai-clone-scam-jammer` (via Next.js rewrite).
+- `public/thank-you-scamjammer-purchase.html`
+  - Post-purchase confirmation page with direct PDF download button, 3-step next-action instructions, share CTA, and ScamBomb app upsell.
+  - Reachable at clean URL: `/thank-you-scamjammer-purchase` (via Next.js rewrite).
+  - Marked `noindex, nofollow`.
+- `public/AI_Clone_Scam_Jammer_v1.0_final.pdf`
+  - Downloadable guide (6-page PDF) served directly at `/AI_Clone_Scam_Jammer_v1.0_final.pdf`.
+- `public/OG_img_scam-jammer-scambomb.png`
+  - Open Graph social share image for the sales page.
+
+### Updated
+- `next.config.js`
+  - Added two rewrites for clean URL access:
+    - `/ai-clone-scam-jammer` → `/ai-clone-scam-jammer.html`
+    - `/thank-you-scamjammer-purchase` → `/thank-you-scamjammer-purchase.html`
+- `package.json`
+  - Added missing `@vercel/analytics` dependency to fix Vercel build warning.
+
+### Reason
+- Launch first paid digital product under the ScamBomb brand.
+- Establish a repeatable static-HTML sales page pattern for future product releases.
+
 ## 2026-03-03 — Hero-integrated report branding badge (“Provided by ScamBomb”)
 
 ### Updated

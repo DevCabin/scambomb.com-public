@@ -234,6 +234,99 @@ export const metadata = {
 - **Social Sharing**: Add share buttons and meta tags
 - **Related Posts**: Show related content recommendations
 
+## 🛒 Static HTML Sales Pages (2026-03-15)
+
+Some marketing and product pages are built as standalone static HTML files in `public/` and served via Next.js rewrites. This pattern is used when a page needs:
+- Full visual control outside of Next.js layout/header/footer
+- Maximum portability (can be tested as a raw file)
+- Fast iteration without a TypeScript build cycle
+
+### Current Static Pages
+
+| Clean URL | File | Purpose |
+|-----------|------|---------|
+| `/ai-clone-scam-jammer` | `public/ai-clone-scam-jammer.html` | Paid product sales page ($7 PDF guide) |
+| `/thank-you-scamjammer-purchase` | `public/thank-you-scamjammer-purchase.html` | Post-purchase confirmation + PDF download |
+| `/scam-stories` | `public/scam-stories/index.html` | Story submission form |
+| `/testing` | `public/testing/index.html` | User testing intake form |
+| `/reports/older-adult-fraud-2024-2025` | `public/reports/older-adult-fraud-2024-2025/index.html` | Interactive fraud report |
+
+### Adding a New Static Page
+
+**Step 1: Create the HTML file in `public/`**
+```
+public/your-page-name.html
+```
+Or for folder-based:
+```
+public/your-section/your-page/index.html
+```
+
+**Step 2: Add a rewrite (preferred) or redirect in `next.config.js`**
+```js
+// next.config.js
+async rewrites() {
+  return [
+    {
+      source: '/your-page-slug',
+      destination: '/your-page-name.html',
+    },
+  ]
+}
+```
+Use `rewrites` (not `redirects`) for static HTML pages — rewrites serve the file at the clean URL without a browser redirect.
+
+**Step 3: Add inline analytics — REQUIRED**
+Static HTML files bypass `app/layout.tsx` entirely. They do **not** automatically receive the `<GoogleAnalytics>` component. You must embed GA4 and FB Pixel manually in the `<head>` of every static page:
+
+```html
+<!-- Google Analytics GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-T61B4NX3J8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-T61B4NX3J8');
+</script>
+
+<!-- Facebook Pixel -->
+<script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '486466700592099');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=486466700592099&ev=PageView&noscript=1"
+/></noscript>
+```
+
+For **purchase confirmation / thank-you pages**, also fire conversion events:
+```html
+<script>
+  // Inside your gtag config block:
+  gtag('event', 'purchase', {
+    transaction_id: Date.now().toString(),
+    value: 7.00,
+    currency: 'USD',
+    items: [{ item_name: 'Product Name', price: 7.00, quantity: 1 }]
+  });
+</script>
+<!-- And in the FB Pixel block: -->
+<script>
+  fbq('track', 'Purchase', { value: 7.00, currency: 'USD' });
+</script>
+```
+
+### Analytics IDs
+| Platform | ID |
+|----------|-----|
+| Google Analytics 4 | `G-T61B4NX3J8` |
+| Facebook Pixel | `486466700592099` |
+
 ## 🧪 User Testing Form (2026-01-30)
 
 The public site now hosts a standalone user testing form at `/testing`.
