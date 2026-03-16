@@ -1,6 +1,16 @@
 # Changelog
 
-## 2026-03-16 — Added GA4 + FB Pixel to new static HTML landing pages
+## 2026-03-16 — Brand consistency fixes on AI Clone Scam Jammer LP
+
+### Updated
+- `public/ai-clone-scam-jammer.html`
+  - Added bomb emoji favicon (`<link rel="icon">` SVG) — was missing, all three resource pages have it.
+  - Updated header wordmark from `💣 ScamBomb.com` to `SCAMB💣MB.COM` to match resource page brand standard.
+  - Updated footer: first column now shows `SCAMB💣MB.COM`; center column now shows the sitewide tagline "Diffuse scams before they blow up in your face! 💙" with copyright below it.
+
+---
+
+## 2026-03-16b — Added GA4 + FB Pixel to new static HTML landing pages
 
 ### Updated
 - `public/ai-clone-scam-jammer.html`

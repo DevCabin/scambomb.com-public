@@ -90,23 +90,26 @@
         margin: 0 auto;
       }
 
-      .header {
+      .back-bar {
         background: var(--bg);
-        padding: 16px 0;
-      }
-
-      .wordmark {
-        font-weight: 900;
-        font-size: 1.35rem;
-        letter-spacing: 0.01em;
-        display: inline-flex;
+        padding: 10px 40px;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        display: flex;
+        gap: 16px;
         align-items: center;
-        gap: 8px;
       }
 
-      .wordmark span {
+      .back-bar a {
         color: var(--yellow);
+        text-decoration: none;
       }
+
+      .back-bar a:hover { text-decoration: underline; }
+
+      .back-bar .sep { color: rgba(255,255,255,0.2); }
 
       .trust-bar {
         background: var(--yellow);
@@ -140,6 +143,11 @@
         font-weight: 900;
         line-height: 1.15;
         margin: 14px 0;
+      }
+
+      h1 em {
+        color: var(--yellow);
+        font-style: normal;
       }
 
       .hero h2 {
@@ -407,11 +415,13 @@
     </style>
   </head>
   <body>
-    <header class="header">
-      <div class="container">
-        <div class="wordmark">SCAMB<span style="font-size:1.5em;line-height:1;">💣</span>MB.COM</div>
-      </div>
-    </header>
+    <div class="back-bar">
+      <a href="/">ScamB💣mb</a>
+      <span class="sep">·</span>
+      <a href="/blog">Blog</a>
+      <span class="sep">·</span>
+      <a href="/blog/older-adult-fraud-report-2024-2025">Fraud Report 2024–2025</a>
+    </div>
 
     <div class="trust-bar">
       FBI-Confirmed Threat | Surged 2,000%+ in 2024 | 5-Minute Family Fix
@@ -420,7 +430,7 @@
     <section class="hero">
       <div class="narrow">
         <div class="eyebrow">⚠ AI VOICE CLONING SCAMS — PROTECT YOUR FAMILY NOW</div>
-        <h1>Your Family's Voice Can Be Cloned in 3 Seconds.</h1>
+        <h1>Your Family's Voice Can Be Cloned in <em>3 Seconds.</em></h1>
         <h2>Here's the Fix.</h2>
         <p class="lead">
           AI scammers can now clone your family member's voice from a single
