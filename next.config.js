@@ -7,6 +7,18 @@ const nextConfig = {
     // This helps with static generation
     serverComponentsExternalPackages: ['contentlayer'],
   },
+  async rewrites() {
+    return [
+      {
+        source: '/ai-clone-scam-jammer',
+        destination: '/ai-clone-scam-jammer.html',
+      },
+      {
+        source: '/thank-you-scamjammer-purchase',
+        destination: '/thank-you-scamjammer-purchase.html',
+      },
+    ]
+  },
   async redirects() {
     return [
       {
