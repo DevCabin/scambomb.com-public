@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ScamBomb AI Starter Pack | Digital Self-Defense Division</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0B1426;
+      --gold: #FFD700;
+      --charcoal: #1A1D21;
+      --slate: #23272A;
+      --grid-line: #2D3138;
+      --text-primary: #F0F2F5;
+      --text-secondary: #9BA3AF;
+      --android-green: #3DDC84;
+      --amber: #FBBF24;
+      --mint: #A0E8B0;
+      --card-bg: var(--slate);
+      --border-subtle: var(--grid-line);
+      --border-accent: var(--gold);
+      --shadow: 0 10px 40px rgba(0,0,0,0.4);
+      --radius: 16px;
+      --radius-sm: 8px;
+    }
+    
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--charcoal);
+      color: var(--text-primary);
+      line-height: 1.5;
+      min-height: 100vh;
+      background-image: 
+        linear-gradient(var(--grid-line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+      background-size: 40px 40px;
+      background-position: center top;
+    }
+    
+    .brand-header {
+      border-bottom: 2px solid var(--gold);
+      background: var(--navy);
+      padding: 16px 0;
+    }
+    
+    .brand-bar {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    
+    .logo-mark {
+      width: 40px;
+      height: 40px;
+      background: var(--gold);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      color: var(--navy);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    
+    .brand-text {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--text-primary);
+      letter-spacing: 0.02em;
+    }
+    
+    .division-pill {
+      margin-left: auto;
+      background: rgba(255,215,0,0.12);
+      border: 1px solid rgba(255,215,0,0.35);
+      color: var(--gold);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+    
+    .hero {
+      text-align: center;
+      padding: 40px 0 48px;
+    }
+    
+    .eyebrow {
+      display: inline-block;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      padding: 8px 18px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 24px;
+    }
+    
+    h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin: 0 0 16px;
+      color: var(--text-primary);
+    }
+    
+    .sub {
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      color: var(--text-secondary);
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+    
+    .note {
+      margin: 32px auto 0;
+      max-width: 760px;
+      background: var(--slate);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 16px 20px;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+    
+    .note strong { color: var(--gold); }
+    
+    .section { margin-top: 56px; }
+    
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 28px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--grid-line);
+    }
+    
+    .section-number {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--gold);
+      opacity: 0.3;
+      line-height: 1;
+    }
+    
+    h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+    
+    .card-grid {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: 1fr;
+    }
+    
+    @media (min-width: 768px) {
+      .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+      }
+    }
+    
+    @media (min-width: 1100px) {
+      .card-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    
+    .card {
+      display: grid;
+      grid-template-columns: 64px 1fr;
+      gap: 16px;
+      align-items: start;
+      background: var(--card-bg);
+      border: 1px solid var(--border-subtle);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 20px;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+    
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 48px rgba(0,0,0,0.5);
+      border-color: var(--border-accent);
+    }
+    
+    @media (min-width: 1100px) {
+      .card {
+        padding: 20px;
+        gap: 16px;
+      }
+    }
+    
+    .icon {
+      width: 64px;
+      height: 64px;
+      border-radius: var(--radius-sm);
+      background: linear-gradient(135deg, rgba(255,215,0,0.15) 0%, rgba(255,215,0,0.05) 100%);
+      border: 1px solid rgba(255,215,0,0.3);
+      color: var(--gold);
+      display: grid;
+      place-items: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+    
+    @media (min-width: 1100px) {
+      .icon {
+        width: 56px;
+        height: 56px;
+        font-size: 1.35rem;
+      }
+    }
+    
+    .card-body h3 {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0 0 8px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.3;
+    }
+    
+    @media (min-width: 1100px) {
+      .card-body h3 {
+        font-size: 1.05rem;
+      }
+    }
+    
+    .card-body p {
+      margin: 0 0 16px;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+    
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    
+    .btn {
+      appearance: none;
+      border: 0;
+      text-decoration: none;
+      cursor: pointer;
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      transition: all 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    
+    .btn:active { transform: scale(0.98); }
+    
+    .btn-primary {
+      background: var(--gold);
+      color: var(--navy);
+      border: 2px solid var(--gold);
+    }
+    
+    .btn-primary:hover {
+      background: transparent;
+      color: var(--gold);
+      box-shadow: 0 0 20px rgba(255,215,0,0.15);
+    }
+    
+    .btn-secondary {
+      background: transparent;
+      color: var(--text-primary);
+      border: 1px solid var(--grid-line);
+    }
+    
+    .btn-secondary:hover {
+      border-color: var(--text-secondary);
+      background: rgba(255,255,255,0.03);
+    }
+    
+    .scambomb-footer {
+      margin-top: 80px;
+      border-top: 4px solid var(--gold);
+      background: var(--navy);
+      padding: 32px 24px;
+    }
+    
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    
+    .footer-logo {
+      width: 40px;
+      height: 40px;
+      background: var(--gold);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      color: var(--navy);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 16px;
+    }
+    
+    .footer-text {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+    
+    .footer-text strong {
+      color: var(--gold);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+    }
+    
+    .classification {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: 24px;
+      transform: translateX(-50%) translateY(20px);
+      opacity: 0;
+      background: var(--slate);
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      padding: 14px 24px;
+      border-radius: 999px;
+      font-weight: 600;
+      box-shadow: var(--shadow);
+      transition: 0.2s ease;
+      pointer-events: none;
+      z-index: 999;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.9rem;
+    }
+    
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+    
+    @media (max-width: 767px) {
+      .card {
+        grid-template-columns: 1fr;
+        border-left-width: 4px;
+        padding: 20px;
+      }
+      .icon {
+        width: 48px;
+        height: 48px;
+        font-size: 1.25rem;
+      }
+      .division-pill { display: none; }
+      .footer-content {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+    
+    @media print {
+      body { 
+        background: #fff !important; 
+        color: #000 !important;
+        background-image: none !important;
+      }
+      .card { 
+        break-inside: avoid; 
+        box-shadow: none !important;
+        border: 1px solid #ccc !important;
+        border-left: 4px solid var(--gold) !important;
+      }
+      .scambomb-footer, .brand-header { 
+        background: #f5f5f5 !important; 
+        border-color: #000 !important;
+      }
+      .btn-primary {
+        background: #ddd !important;
+        color: #000 !important;
+        border-color: #999 !important;
+      }
+      .note { background: #f5f5f5 !important; }
+      .icon { background: #eee !important; }
+    }
+  </style>
+<base target="_blank">
+</head>
+<body>
+
+  <header class="brand-header">
+    <div class="brand-bar">
+      <div class="logo-mark">SB</div>
+      <div class="brand-text">SCAMBOMB</div>
+      <div class="division-pill">Digital Self-Defense Division</div>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <header class="hero">
+      <div class="eyebrow">Field Edition 1.0 | 2026</div>
+      <h1>ScamBomb AI Starter Pack</h1>
+      <p class="sub">30 field-tested prompts for photos, recipes, travel, safety, and everyday digital tasks. Designed for beginners, seniors, and caregivers navigating AI safely.</p>
+      
+      <div class="note">
+        <strong>Field Tip:</strong> Tap <strong>Open</strong> to launch ChatGPT with the prompt pre-filled. If your browser doesn't prefill automatically, tap <strong>Copy</strong> and paste manually. Always review AI outputs before acting on them—stay sharp.
+      </div>
+    </header>
+
+    <!-- SECTION 01: Getting Started (6 cards) -->
+    <section class="section">
+      <div class="section-header">
+        <span class="section-number">01</span>
+        <h2>Getting Started</h2>
+      </div>
+      <div class="card-grid">
+        <article class="card" data-prompt="Explain this in simple terms: [type your question here]">
+          <div class="icon" aria-hidden="true">💬</div>
+          <div class="card-body">
+            <h3>Ask Anything in Plain English</h3>
+            <p>Get a simple answer to almost any question in everyday language—no technical jargon required.</p>
+            <div class="actions">
+              <a class="btn btn-primary" href="https://chatgpt.com/?q=Explain%20this%20in%20simple%20terms%3A%20%5Btype%20your%20question%20here%5D" target="_blank" rel="noopener">Open Prompt →</a>
+              <button class="btn btn-secondary copy-btn" type="button">Copy</button>
+            </div>
+          </div>
+        </article>
+        
+        <article class="card" data-prompt="Help me write a clear and friendly message about: [type topic here]">
+          <div class="icon" aria-hidden="true">✍️</div>
+          <div class="card-body">
+            <h3>Draft a Friendly Message</h3>
+            <p>Professional or personal—get help writing clear, kind text or email responses.</p>
+            <div class="actions">
+              <a class="btn btn-primary" href="https://chatgpt.com/?q=Help%20me%20write%20a%20clear%20and%20friendly%20message%20about%3A%20%5Btype%20topic%20here%5D" target="_blank" rel="noopener">Open Prompt →</a>
+              <button class="btn btn-secondary copy-btn" type="button">Copy</button>
+            </div>
+          </div>
+        </article>
+        
+        <article class="card" data-prompt="Explain this like I am not technical: [paste text here]">
+          <div class="icon" aria-hidden="true">🧠</div>
+          <div class="card-body">
+            <h3>Decode Technical Jargon</h3>
+            <p>Paste confusing text (contracts, manuals, errors) and get a plain-English translation.</p>
+            <div class="actions">
+              <a class="btn btn-primary" href="https://chatgpt.com/?q=Explain%20this%20like%20I%20am%20not%20technical%3A%20%5Bpaste%20text%20here%5D" target="_blank" rel="noopener">Open Prompt →</a>
+              <button class="btn btn-secondary copy-btn" type="button">Copy</button>
+            </div>
+          </div>
+        </article>
+        
+        <article class="card" data-prompt="Summarize this in simple bullet points: [paste text here]">
+          <div class="icon" aria-hidden="true">📄</div>
+          <div class="card-body">
+            <h3>Summarize Long Content</h3>
+            <p>Convert walls of text into digestible bullet points for quick comprehension.</p>
+            <div class="actions">
+              <a class="btn btn-primary" href="https://chatgpt.com/?q=Summarize%20this%20in%20simple%20bullet%20points%3A%20%5Bpaste%20text%20here%5D" target="_blank" rel="noopener">Open Prompt →</a>
+              <button class="btn btn-secondary copy-btn" type="button">Copy</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- REVISED CARD 5/6: Proactive verification instead of reactive scam detection -->
+        <article class="card" data-prompt="Help me verify if [company name or individual name] is legitimate before I do business with them. They contacted me via [email/phone/website/door-to-door] claiming to offer [describe their offer or service]. Create a verification checklist including: official sources where I can check their credentials or license, specific questions I should ask to test if they're real, warning signs that would indicate a scam, and what safe steps to take before sharing any personal information or payment.">
+          <div class="icon" aria-hidden="true">🔍</div>
+          <div class="card-body">
+            <h3>Verify Before You Trust</h3>
+            <p>Investigate companies, contractors, or salespeople BEFORE you engage. Get a due diligence checklist to spot fake businesses and verify credentials safely.</p>
+            <div class="actions">
+              <a class="btn btn-primary" href="https://chatgpt.com/?q=Help%20me%20verify%20if%20%5Bcompany%20name%20or%20individual%20name%5D%20is%20legitimate%20before%20I%20do%20business%20with%20them.%20They%20contacted%20me%20via%20%5Bemail%2Fphone%2Fwebsite%2Fdoor-to-door%5D%20claiming%20to%20offer%20%5Bdescribe%20their%20offer%20or%20service%5D.%20Create%20a%20verification%20checklist%20including%3A%20official%20sources%20where%20I%20can%20check%20their%20credentials%20or%20license%2C%20specific%20questions%20I%20should%20ask%20to%20test%20if%20they%27re%20real%2C%20warning%20signs%20that%20would%20indicate%20a%20scam%2C%20and%20what%20safe%20steps%20to%20take%20before%20sharing%20any%20personal%20information%20or%20payment." target="_blank" rel="noopener">Open Prompt →</a>
+              <button class="btn btn-secondary copy-btn" type="button">Copy</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD 6/6 -->
+        <article class="card" data-prompt="Help me compare these two options side-by-side: [Option A details] versus [Option B details]. Create a simple pros and cons list for each, highlight the key differences that matter for seniors, and suggest which option might be better for my needs without using technical jargon.">
+          <div class="icon" aria-hidden="true">⚖️</div>
+          <div class="card-body">
+            <h3>Compare Options Clearly</h3>
+            <p>Choosing between insurance plans, phone providers, or medical options? Get a clear, unbiased breakdown to avoid decision paralysis.</p>
+            <div class="actions">
+              <a class="btn btn-primary" href="https://chatgpt.com/?q=Help%20me%20compare%20these%20two%20options%20side-by-side%3A%20%5BOption%20A%20details%5D%20versus%20%5BOption%20B%20details%5D.%20Create%20a%20simple%20pros%20and%20cons%20list%20for%20each%2C%20highlight%20the%20key%20differences%20that%20matter%20for%20seniors%2C%20and%20suggest%20which%20option%20might%20be%20better%20for%20my%20needs%20without%20using%20technical%20jargon." target="_blank" rel="noopener">Open Prompt →</a>
+              <button class="btn btn-secondary copy-btn" type="button">Copy</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SECTION 02: Photos & Visuals (6 cards) -->
+    <section class="section">
+      <div class="section-header">
+        <span class="section-number">02</span>
+        <h2>Photos & Visuals</h2>
+      </div>
+      <div class="card-grid">
+        <article class="card" data-prompt="I am going to upload a photo. Tell me what is in it and any details you notice.">
+          <div class="icon" aria-hidden="true">📷</div>
+          <div class="card-body">
+            <h3>Identify Photo Contents</h3>
+            <p>Upload any image for instant description—great for identifying objects, reading text in images, or understanding scenes.</p>
+            <div class="actions">
+              <a class="btn btn-primary" href="https://chatgpt.com/?q=I%20am%20going%20to%20upload%20a%20photo.%20Tell%20me%20what%20is%20in%20it%20and%20any%20details%20you%20notice." target="_blank" rel="noopener">Open Prompt →</a>
+              <button class="btn btn-secondary copy-btn" type="button">Copy</button>
+            </div>
+          </div>
+        </article>
+        
+        <article class="card" data-prompt="My friend shared a pic of their meal. Turn the photo into a recipe I can try.">
+          <div class="icon" aria-hidden="true">🍽️</div>
+          <div class="card-body">
+            <h3>Recipe From Food Photo</h3>
+            <p>See a delicious meal? Snap it and get a workable recipe to recreate at home.</p>
+            <div class="actions">
+              <a class="btn btn-primary" href="https://chatgpt.com/?q=My%20friend%20shared%20a%20pic%20of%20their%20meal.%20Turn%20the%20photo%20into%20a%20recipe%20I%20can%20try." target="_blank" rel="noopener">Open Prompt →</a>
+              <button class="btn btn-secondary copy-btn" type="button">Copy</button>
+            </div>
+          </div>
+        </article>
+        
+        <article class="card" data-prompt="I am uploading an old photo. Help me restore it, improve it, and write a short caption for it.">
+          <div class="icon" aria-hidden="true">🖼️</div>
+          <div class="card-body">
+            <h3>Restore Old Photos</h3>
+            <p>Get restoration tips, improvement suggestions, and caption ideas for vintage family photos.</p>
+            <div class="actions">
+              <a class="btn btn-primary" href="https://chatgpt.com/?q=I%20am%20uploading%20an%20old%20photo.%20Help%20me%20restore%20it%2C%20improve%20it%2C%20and%20write%20a%20short%20caption%20for%20it." target="_blank" rel="noopener">Open Prompt →</a>
+              <button class="btn btn-secondary copy-btn" type="button">Copy</button>
+            </div>
+          </div>
+        </article>
+        
+        <article class="card" data-prompt="I am uploading a photo. Turn the person or pet into a cute plush doll concept and describe what it would look like.">
+          <div class="icon" aria-hidden="true">🧸</div>
+          <div class="card-body">
+            <h3>Create Plush Doll Concepts</h3>
+            <p>Fun for gifts: Turn photos of people or pets into cute plush toy design ideas.</p>
+            <div class="actions">
+              <a class="btn btn-primary" href="https://chatgpt.com/?q=I%20am%20uploading%20a%20photo.%20Turn%20the%20person%20or%20pet%20into%20a%20cute%20plush%20doll%20concept%20and%20describe%20what%20it%20would%20look%20like." target="_blank" rel="noopener">Open Prompt →</a>
+              <button class="btn btn-secondary copy-btn" type="button">Copy</button>
+            </div>
+          </div>
+        </article>
+        
+        <article class="card" data-prompt="I am uploading a family photo. Write 5 warm caption ideas I could use to share it.">
+          <div class="icon" aria-hidden="true">💌</div>
+          <div class="card-body">
+            <h3>Family Photo Captions</h3>
+            <p>Perfect social sharing companion—generate warm, authentic captions for family memories.</p>
+            <div class="actions">
+              <a class="btn btn-primary" href="https://chatgpt.com/?q=I%20am%20uploading%20a%20family%20photo.%20Write%205%20warm%20caption%20ideas%20I%20could%20use%20to%20share%20it." target="_blank" rel="noopener">Open Prompt →</a>
+              <button class="btn btn-secondary copy-btn" type="button">Copy</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD 6/6 -->
+        <article class="card" data-prompt="I am uploading a photo of small text that is hard to read (prescription label, nutrition facts, serial number, or instructions). Please read the text aloud for me, explain what it means in simple terms, and tell me any important warnings or dosage information I should know.">
+          <div class="icon" aria-hidden="true">🔍</div>
+          <div class="card-body">
+            <h3>Read Small Text & Labels</h3>
+            <p>Accessibility aid for aging eyes—upload photos of medication labels, nutrition facts, or fine print to have them read aloud and explained clearly.</p>
+            <div class="actions">
+              <a class="btn btn-primary" href="https://chatgpt.com/?q=I%20am%20uploading%20a%20photo%20of%20small%20text%20that%20is%20hard%20to%20read%20%28prescription%20label%2C%20nutrition%20facts%2C%20serial%20number%2C%20or%20instructions%29.%20Please%20read%20the%20text%20aloud%20for%20me%2C%20explain%20what%20it%20means%20in%20simple%20terms%2C%20and%20tell%20me%20any%20important%20warnings%20or%20dosage%20information%20I%20should%20know." target="_blank" rel="noopener">Open Prompt →</a>
+              <button class="btn btn-secondary copy-btn" type="button">Copy</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SECTION 03: Food & Recipes (6 cards) -->
+    <section class="section">
+      <div class="section-header">
+        <span class="section-number">03</span>
+        <h2>Food & Recipes</h2>
+      </div>
+      <div class="card-grid">
+        <article class="card" data-prompt="I have these ingredients: [list ingredients here]. What can I make with them?">
+          <div class="icon" aria-hidden="true">🥘</div>
+          <div class="card-body">
+            <h3>Pantry-to-Plate Ideas</h3>
+            <p>List what you have on hand—get meal ideas without a grocery run.</p>
+            <div class="actions">
+              <a class="btn btn-primary" href="https://chatgpt.com/?q=I%20have%20these%20ingredients%3A%20%5Blist%20ingredients%20here%5D.%20What%20can%20I%20make%20with%20them%3F" target="_blank" rel="noopener">Open Prompt →</a>
+              <button class="btn btn-secondary copy-btn" type="button">Copy</button>
+            </div>
+          </div>
+        </article>
+        
+        <article class="card" data-prompt="Create a simple grocery list for a week of easy meals for [number] people.">
+          <div class="icon" aria-hidden="true">🛒</div>
+          <div class="card-body">
+            <h3>Weekly Grocery List</h3>
+            <p>Get organized with a complete shopping list based on simple, easy-prep meals.</p>
+            <div class="actions">
+              <a class="btn btn-primary" href="https://chatgpt.com/?q=Create%20a%20simple%20grocery%20list%20for%20a%20week%20of%20easy%20meals%20for%20%5Bnumber%5D%20people." target="_blank" rel="noopener">Open Prompt →</a>
+              <button class="btn btn-secondary copy-btn" type="button">Copy</button>
+            </div>
+          </div>
+        </article>
+        
+        <article class="card" data-prompt="Create a simple 7-day meal plan with easy recipes and a shopping list.">
+          <div class="icon" aria-hidden="true">📅</div>
+          <div class="card-body">
+            <h3>7-Day Meal Planner</h3>
+            <p>Breakfast, lunch, dinner—planned out with accompanying shopping list.</p>
+            <div class="actions">
+              <a class="btn btn-primary" href="https://chatgpt.com/?q=Create%20a%20simple%207-day%20meal%20plan%20with%20easy%20recipes%20and%20a%20shopping%20list." target="_blank" rel="noopener">Open Prompt →</a>
+              <button class="btn btn-secondary copy-btn" type="button">Copy</button>
+            </div>
+          </div>
+        </article>
+        
+        <article class="card" data-prompt="I want to make a perfect cup of coffee. Teach me how with a simple step-by-step guide and photo tips.">
+          <div class="icon" aria-hidden="true">☕</div>
+          <div class="card-body">
+            <h3>Better Coffee Guide</h3>
+            <p>Step-by-step brewing instructions with visual guidance for that perfect cup.</p>
+            <div class="actions">
+              <a class="btn btn-primary" href="https://chatgpt.com/?q=I%20want%20to%20make%20a%20perfect%20cup%20of%20coffee.%20Teach%20me%20how%20with%20a%20simple%20step-by-step%20guide%20and%20photo%20tips." target="_blank" rel="noopener">Open Prompt →</a>
+              <button class="btn btn-secondary copy-btn" type="button">Copy</button>
+            </div>
+          </div>
+        </article>
+        
+        <article class="card" data-prompt="How can I make this meal healthier without making it complicated: [meal name here]?">
+          <div class="icon" aria-hidden="true">❤️</div>
+          <div class="card-body">
+            <h3>Healthy Swaps</h3>
+            <p>Keep the comfort, lose the guilt—simple modifications for healthier versions of favorites.</p>
+            <div class="actions">
+              <a class="btn btn-primary" href="https://chatgpt.com/?q=How%20can%20I%20make%20this%20meal%20healthier%20without%20making%20it%20complicated%3A%20%5Bmeal%20name%20here%5D%3F" target="_blank" rel="noopener">Open Prompt →</a>
+              <button class="btn btn-secondary copy-btn" type="button">Copy</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD 6/6 -->
+        <article class="card" data-prompt="I have this recipe: [paste recipe here]. I need to adapt it for [diabetic-friendly / low-sodium / gluten-free / dairy-free / allergies: specify]. Please rewrite the recipe with safe substitutions that keep the flavor similar, and highlight any ingredients I should watch out for at the grocery store.">
+          <div class="icon" aria-hidden="true">🥗</div>
+          <div class="card-body">
+            <h3>Adapt for Dietary Needs</h3>
+            <p>Modify beloved recipes for diabetes, low-sodium, allergies, or other health requirements without sacrificing taste or texture.</p>
+            <div class="actions">
+              <a class="btn btn-primary" href="https://chatgpt.com/?q=I%20have%20this%20recipe%3A%20%5Bpaste%20recipe%20here%5D.%20I%20need%20to%20adapt%20it%20for%20%5Bdiabetic-friendly%20%2F%20low-sodium%20%2F%20gluten-free%20%2F%20dairy-free%20%2F%20allergies%3A%20specify%5D.%20Please%20rewrite%20the%20recipe%20with%20safe%20substitutions%20that%20keep%20the%20flavor%20similar%2C%20and%20highlight%20any%20ingredients%20I%20should%20watch%20out%20for%20at%20the%20grocery%20store." target="_blank" rel="noopener">Open Prompt →</a>
+              <button class="btn btn-secondary copy-btn" type="button">Copy</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SECTION 04: Everyday Helpers (6 cards) -->
+    <section class="section">
+      <div class="section-header">
+        <span class="section-number">04</span>
+        <h2>Everyday Helpers</h2>
+      </div>
+      <div class="card-grid">
+        <article class="card" data-prompt="Plan a road trip to [destination] for [number] days with activities for kids ages [ages] who like [interests].">
+          <div class="icon" aria-hidden="true">🚗</div>
+          <div class="card-body">
+            <h3>Family Road Trip Planner</h3>
+            <p>Scenic stops, kid-friendly activities, and travel logistics tailored to your crew.</p>
+            <div class="actions">
+              <a class="btn btn-primary" href="https://chatgpt.com/?q=Plan%20a%20road%20trip%20to%20%5Bdestination%5D%20for%20%5Bnumber%5D%20days%20with%20activities%20for%20kids%20ages%20%5Bages%5D%20who%20like%20%5Binterests%5D." target="_blank" rel="noopener">Open Prompt →</a>
+              <button class="btn btn-secondary copy-btn" type="button">Copy</button>
+            </div>
+          </div>
+        </article>
+        
+        <article class="card" data-prompt="I am having this problem with my device: [describe issue here]. Help me fix it step by step.">
+          <div class="icon" aria-hidden="true">📱</div>
+          <div class="card-body">
+            <h3>Tech Troubleshooting</h3>
+            <p>Calm, step-by-step guidance for phone, computer, or device issues—no judgment.</p>
+            <div class="actions">
+              <a class="btn btn-primary" href="https://chatgpt.com/?q=I%20am%20having%20this%20problem%20with%20my%20device%3A%20%5Bdescribe%20issue%20here%5D.%20Help%20me%20fix%20it%20step%20by%20step." target="_blank" rel="noopener">Open Prompt →</a>
+              <button class="btn btn-secondary copy-btn" type="button">Copy</button>
+            </div>
+          </div>
+        </article>
+        
+        <article class="card" data-prompt="Explain this bill or charge in simple terms and tell me what stands out: [paste details here].">
+          <div class="icon" aria-hidden="true">💵</div>
+          <div class="card-body">
+            <h3>Bill Decoder</h3>
+            <p>Paste statement text to identify suspicious charges or confusing fees—financial self-defense.</p>
+            <div class="actions">
+              <a class="btn btn-primary" href="https://chatgpt.com/?q=Explain%20this%20bill%20or%20charge%20in%20simple%20terms%20and%20tell%20me%20what%20stands%20out%3A%20%5Bpaste%20details%20here%5D." target="_blank" rel="noopener">Open Prompt →</a>
+              <button class="btn btn-secondary copy-btn" type="button">Copy</button>
+            </div>
+          </div>
+        </article>
+        
+        <article class="card" data-prompt="Help me create a simple daily routine for energy, appointments, meals, and rest.">
+          <div class="icon" aria-hidden="true">🗓️</div>
+          <div class="card-body">
+            <h3>Daily Routine Builder</h3>
+            <p>Structured schedules for energy management, caregiving, or maintaining healthy habits.</p>
+            <div class="actions">
+              <a class="btn btn-primary" href="https://chatgpt.com/?q=Help%20me%20create%20a%20simple%20daily%20routine%20for%20energy%2C%20appointments%2C%20meals%2C%20and%20rest." target="_blank" rel="noopener">Open Prompt →</a>
+              <button class="btn btn-secondary copy-btn" type="button">Copy</button>
+            </div>
+          </div>
+        </article>
+        
+        <article class="card" data-prompt="Give me gift ideas for a [relationship] who likes [interests] and my budget is [$ amount].">
+          <div class="icon" aria-hidden="true">🎁</div>
+          <div class="card-body">
+            <h3>Personalized Gift Finder</h3>
+            <p>Birthday, holiday, or just-because—thoughtful ideas tailored to recipients and budget.</p>
+            <div class="actions">
+              <a class="btn btn-primary" href="https://chatgpt.com/?q=Give%20me%20gift%20ideas%20for%20a%20%5Brelationship%5D%20who%20likes%20%5Binterests%5D%20and%20my%20budget%20is%20%5B%24%20amount%5D." target="_blank" rel="noopener">Open Prompt →</a>
+              <button class="btn btn-secondary copy-btn" type="button">Copy</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD 6/6 -->
+        <article class="card" data-prompt="I have a doctor appointment coming up. Help me organize: my current symptoms are [list], my medications are [list], and my main concerns are [list]. Create a concise summary I can print or save to my phone to make sure I don't forget anything important during the visit.">
+          <div class="icon" aria-hidden="true">🏥</div>
+          <div class="card-body">
+            <h3>Prep for Medical Visits</h3>
+            <p>Organize symptoms, medications, and questions before appointments. Essential for caregiving and self-advocacy in short exam windows.</p>
+            <div class="actions">
+              <a class="btn btn-primary" href="https://chatgpt.com/?q=I%20have%20a%20doctor%20appointment%20coming%20up.%20Help%20me%20organize%3A%20my%20current%20symptoms%20are%20%5Blist%5D%2C%20my%20medications%20are%20%5Blist%5D%2C%20and%20my%20main%20concerns%20are%20%5Blist%5D.%20Create%20a%20concise%20summary%20I%20can%20print%20or%20save%20to%20my%20phone%20to%20make%20sure%20I%20don%27t%20forget%20anything%20important%20during%20the%20visit." target="_blank" rel="noopener">Open Prompt →</a>
+              <button class="btn btn-secondary copy-btn" type="button">Copy</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SECTION 05: Fun & Creative (6 cards) -->
+    <section class="section">
+      <div class="section-header">
+        <span class="section-number">05</span>
+        <h2>Fun & Creative</h2>
+      </div>
+      <div class="card-grid">
+        <article class="card" data-prompt="I am uploading a photo. Turn it into a fun cartoon idea and describe the style.">
+          <div class="icon" aria-hidden="true">🎨</div>
+          <div class="card-body">
+            <h3>Cartoon Converter</h3>
+            <p>Transform family photos or pet pics into fun cartoon concepts and art styles.</p>
+            <div class="actions">
+              <a class="btn btn-primary" href="https://chatgpt.com/?q=I%20am%20uploading%20a%20photo.%20Turn%20it%20into%20a%20fun%20cartoon%20idea%20and%20describe%20the%20style." target="_blank" rel="noopener">Open Prompt →</a>
+              <button class="btn btn-secondary copy-btn" type="button">Copy</button>
+            </div>
+          </div>
+        </article>
+        
+        <article class="card" data-prompt="Turn this memory into a short heartfelt story: [type memory here].">
+          <div class="icon" aria-hidden="true">📚</div>
+          <div class="card-body">
+            <h3>Memory to Story</h3>
+            <p>Preserve family history by turning personal memories into written narratives.</p>
+            <div class="actions">
+              <a class="btn btn-primary" href="https://chatgpt.com/?q=Turn%20this%20memory%20into%20a%20short%20heartfelt%20story%3A%20%5Btype%20memory%20here%5D." target="_blank" rel="noopener">Open Prompt →</a>
+              <button class="btn btn-secondary copy-btn" type="button">Copy</button>
+            </div>
+          </div>
+        </article>
+        
+        <article class="card" data-prompt="Make me a playlist for [mood or event] with songs from [favorite decade or style].">
+          <div class="icon" aria-hidden="true">🎶</div>
+          <div class="card-body">
+            <h3>Mood-Based Playlists</h3>
+            <p>Music curation for road trips, dinner parties, workouts, or relaxation.</p>
+            <div class="actions">
+              <a class="btn btn-primary" href="https://chatgpt.com/?q=Make%20me%20a%20playlist%20for%20%5Bmood%20or%20event%5D%20with%20songs%20from%20%5Bfavorite%20decade%20or%20style%5D." target="_blank" rel="noopener">Open Prompt →</a>
+              <button class="btn btn-secondary copy-btn" type="button">Copy</button>
+            </div>
+          </div>
+        </article>
+        
+        <article class="card" data-prompt="Give me simple makeover ideas for my [room/porch/patio] with a budget of [$ amount].">
+          <div class="icon" aria-hidden="true">🏡</div>
+          <div class="card-body">
+            <h3>Space Makeover Ideas</h3>
+            <p>Budget-friendly room refresh concepts—no professional design skills required.</p>
+            <div class="actions">
+              <a class="btn btn-primary" href="https://chatgpt.com/?q=Give%20me%20simple%20makeover%20ideas%20for%20my%20%5Broom%2Fporch%2Fpatio%5D%20with%20a%20budget%20of%20%5B%24%20amount%5D." target="_blank" rel="noopener">Open Prompt →</a>
+              <button class="btn btn-secondary copy-btn" type="button">Copy</button>
+            </div>
+          </div>
+        </article>
+        
+        <article class="card" data-prompt="Give me 5 fun image or caption ideas I could share with family based on this topic: [topic here].">
+          <div class="icon" aria-hidden="true">😂</div>
+          <div class="card-body">
+            <h3>Social Content Ideas</h3>
+            <p>Light, playful content ideas perfect for sharing with family groups or social feeds.</p>
+            <div class="actions">
+              <a class="btn btn-primary" href="https://chatgpt.com/?q=Give%20me%205%20fun%20image%20or%20caption%20ideas%20I%20could%20share%20with%20family%20based%20on%20this%20topic%3A%20%5Btopic%20here%5D." target="_blank" rel="noopener">Open Prompt →</a>
+              <button class="btn btn-secondary copy-btn" type="button">Copy</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD 6/6 -->
+        <article class="card" data-prompt="Create a 10-question family trivia game about [topic: family history, favorite movies, shared memories, etc.] suitable for ages [range]. Include the answers at the end and make the questions fun but not too embarrassing for anyone.">
+          <div class="icon" aria-hidden="true">🎲</div>
+          <div class="card-body">
+            <h3>Family Trivia Night</h3>
+            <p>Generate custom quizzes about family lore, favorite films, or shared history. Perfect for reunions, holidays, or bridging generational gaps.</p>
+            <div class="actions">
+              <a class="btn btn-primary" href="https://chatgpt.com/?q=Create%20a%2010-question%20family%20trivia%20game%20about%20%5Btopic%3A%20family%20history%2C%20favorite%20movies%2C%20shared%20memories%2C%20etc.%5D%20suitable%20for%20ages%20%5Brange%5D.%20Include%20the%20answers%20at%20the%20end%20and%20make%20the%20questions%20fun%20but%20not%20too%20embarrassing%20for%20anyone." target="_blank" rel="noopener">Open Prompt →</a>
+              <button class="btn btn-secondary copy-btn" type="button">Copy</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+  </div>
+
+  <footer class="scambomb-footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <div class="footer-logo">SB</div>
+        <div class="footer-text">
+          Provided by <strong>ScamBomb.com</strong><br>
+          <span style="font-size: 0.8rem; opacity: 0.8;">Helping families stay safer and smarter in an AI-powered world.</span>
+        </div>
+      </div>
+      <div class="classification">
+        CONFIDENTIAL — SCAMBOMB FIELD MANUAL<br>
+        <span style="color: var(--gold);">Field Edition 1.0 | 2026</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast">Prompt copied to clipboard</div>
+
+  <script>
+    const toast = document.getElementById('toast');
+    function showToast(message) {
+      toast.textContent = message;
+      toast.classList.add('show');
+      clearTimeout(window.__toastTimer);
+      window.__toastTimer = setTimeout(() => toast.classList.remove('show'), 2000);
+    }
+
+    document.querySelectorAll('.copy-btn').forEach(btn => {
+      btn.addEventListener('click', async (e) => {
+        const card = e.target.closest('.card');
+        const prompt = card.dataset.prompt || '';
+        try {
+          await navigator.clipboard.writeText(prompt);
+          showToast('Copied to clipboard');
+        } catch (err) {
+          showToast('Press Ctrl+C to copy');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
