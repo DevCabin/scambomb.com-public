@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fraud Targeting Older Adults in the Age of AI | ScamBomb Workshop</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reset.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #0B1426;
+            --gold: #FFD700;
+            --android-green: #3DDC84;
+            --soft-mint: #A0E8B0;
+            --amber: #FBBF24;
+            --text-primary: #F0F2F5;
+            --text-secondary: #9BA3AF;
+            --bg-primary: #1A1D21;
+            --bg-secondary: #23272A;
+            --grid-line: #2D3138;
+        }
+
+        .reveal {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+        }
+
+        .reveal .slides {
+            text-align: left;
+        }
+
+        .reveal .slides section {
+            padding: 60px;
+            height: 100%;
+            box-sizing: border-box;
+            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+            border-top: 4px solid var(--gold);
+        }
+
+        .reveal h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 2.0em;
+            color: var(--text-primary);
+            text-transform: uppercase;
+            line-height: 1.2;
+            margin-bottom: 0.5em;
+            letter-spacing: 0.02em;
+        }
+
+        .reveal h1 .highlight {
+            color: var(--gold);
+        }
+
+        .reveal h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.6em;
+            color: var(--text-primary);
+            text-transform: uppercase;
+            margin-bottom: 0.6em;
+            border-bottom: 2px solid var(--navy);
+            padding-bottom: 0.3em;
+            letter-spacing: 0.02em;
+        }
+
+        .reveal h2 .highlight {
+            color: var(--gold);
+        }
+
+        .reveal h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 1.2em;
+            color: var(--soft-mint);
+            text-transform: uppercase;
+            margin-bottom: 0.5em;
+            letter-spacing: 0.02em;
+        }
+
+        .reveal h3 .highlight {
+            color: var(--gold);
+        }
+
+        .reveal p, .reveal li {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85em;
+            line-height: 1.5;
+            color: var(--text-primary);
+        }
+
+        .reveal ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .reveal ul li {
+            position: relative;
+            padding-left: 1.5em;
+            margin-bottom: 0.6em;
+        }
+
+        .reveal ul li::before {
+            content: "▸";
+            color: var(--gold);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .title-slide {
+            background: var(--navy) !important;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .title-slide h1 {
+            color: var(--text-primary);
+            font-size: 2.2em;
+            margin-bottom: 0.3em;
+        }
+
+        .title-slide h1 .highlight {
+            color: var(--gold);
+        }
+
+        .title-slide .subtitle {
+            color: var(--text-secondary);
+            font-size: 1.2em;
+            font-weight: 300;
+            margin-bottom: 2em;
+            font-family: 'Montserrat', sans-serif;
+            text-transform: none;
+        }
+
+        .title-slide .brand {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--gold);
+            font-size: 0.9em;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-top: 2em;
+            padding: 0.5em 1em;
+            border: 1px solid var(--gold);
+            font-weight: 600;
+        }
+
+        .signals-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .signal-box {
+            background: var(--bg-secondary);
+            border-left: 4px solid var(--gold);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .signal-box h3 {
+            color: var(--gold);
+            font-size: 1.0em;
+            margin-bottom: 0.3em;
+        }
+
+        .signal-box p {
+            font-size: 0.75em;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+
+        .highlight-box {
+            background: var(--navy);
+            border: 2px solid var(--gold);
+            padding: 30px;
+            margin: 30px 0;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .highlight-box h2 {
+            color: var(--text-primary);
+            border: none;
+            font-size: 1.4em;
+            margin-bottom: 0.5em;
+        }
+
+        .highlight-box h2 .highlight {
+            color: var(--gold);
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background: var(--navy);
+            border: 2px solid var(--gold);
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .break-slide {
+            background: var(--navy) !important;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .break-slide h1 {
+            color: var(--text-primary);
+            font-size: 2.8em;
+        }
+
+        .break-slide h1 .highlight {
+            color: var(--gold);
+        }
+
+        .steps-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            gap: 20px;
+        }
+
+        .step-box {
+            flex: 1;
+            background: var(--bg-secondary);
+            border-top: 4px solid var(--android-green);
+            padding: 25px;
+            text-align: center;
+        }
+
+        .step-number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2em;
+            color: var(--gold);
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .step-box h3 {
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+
+        .step-box p {
+            font-size: 0.7em;
+            color: var(--text-secondary);
+        }
+
+        .warning-box {
+            background: rgba(251, 191, 36, 0.1);
+            border-left: 4px solid var(--amber);
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .warning-box strong {
+            color: var(--amber);
+        }
+
+        .reveal .speaker-notes {
+            display: none;
+        }
+
+        .reveal .progress {
+            background: var(--bg-secondary);
+            height: 4px;
+        }
+
+        .reveal .progress span {
+            background: var(--gold);
+        }
+
+        .reveal .controls {
+            color: var(--gold);
+        }
+
+        .reveal .slide-number {
+            background: var(--navy);
+            color: var(--gold);
+            font-family: 'Montserrat', sans-serif;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-size: 14px;
+            border: 1px solid var(--gold);
+            font-weight: 600;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .quote {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2em;
+            color: var(--soft-mint);
+            font-style: italic;
+            border-left: 4px solid var(--gold);
+            padding-left: 20px;
+            margin: 30px 0;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .center-text {
+            text-align: center;
+        }
+
+        .large-text {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .large-text .highlight {
+            color: var(--gold);
+        }
+
+        .final-slide {
+            background: var(--navy) !important;
+            text-align: center;
+        }
+
+        .final-slide h1 {
+            color: var(--text-primary);
+        }
+
+        .final-slide h1 .highlight {
+            color: var(--gold);
+        }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+
+            <section class="title-slide" data-background-color="#0B1426">
+                <div class="brand">Knowledge Over Fear</div>
+                <h1><span class="highlight">Fraud</span> Targeting <span class="highlight">Older Adults</span> in the Age of <span class="highlight">AI</span></h1>
+                <div class="subtitle">How to Spot It and Stop It</div>
+                <p style="color: #9BA3AF; font-size: 0.8em; margin-top: 40px;">A Community Workshop</p>
+                <aside class="notes">
+                    Good evening everyone --- thank you for coming out tonight. First, let me say something right away: this is not going to be one of those scary internet talks where I tell you the world is doomed and we should all unplug our routers and move into the woods. If that were the solution... honestly, East Texas already has plenty of good woods. The truth is something much more encouraging.
+                </aside>
+            </section>
+
+            <section>
+                <h2><span class="highlight">Welcome</span></h2>
+                <div class="highlight-box">
+                    <p style="font-size: 1.2em; margin: 0;">The same technology scammers are using...<br><strong style="color: #FFD700;">is available to us too.</strong></p>
+                </div>
+                <ul>
+                    <li>Scams are getting more sophisticated</li>
+                    <li>Artificial intelligence is changing the game</li>
+                    <li>The most powerful defense has never been technology</li>
+                    <li><strong>It's awareness</strong></li>
+                </ul>
+                <aside class="notes">
+                    Yes --- scams are getting more sophisticated. Yes --- artificial intelligence is changing the game. But the good news is this: The same technology scammers are using... is available to us too. And more importantly --- the most powerful defense has never been technology at all. It's awareness.
+                </aside>
+            </section>
+
+            <section>
+                <h2>The <span class="highlight">Problem</span></h2>
+                <div class="two-column">
+                    <div>
+                        <h3>Scams are Becoming More Sophisticated</h3>
+                        <ul>
+                            <li>Evolved from clumsy spam emails</li>
+                            <li>Now extremely convincing messages</li>
+                            <li>Even experienced users struggle to identify them</li>
+                            <li>AI makes them harder to detect</li>
+                        </ul>
+                    </div>
+                    <div class="highlight-box" style="margin: 0;">
+                        <p style="font-size: 1em;">FBI Reported Fraud Losses in 2024:</p>
+                        <p style="font-size: 2em; color: #FFD700; font-weight: 700; margin: 10px 0;">$16.6 Billion</p>
+                        <p style="font-size: 0.9em; color: #9BA3AF;">Up 33% in one year</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="center-text">
+                <h2 style="text-align: center; border: none;">Tonight's <span class="highlight">Goal</span></h2>
+                <p class="large-text">By the time you leave here, you'll be able to spot the <span class="highlight">warning signs</span> of a scam quickly, understand how modern scams work, and know what tools exist to help you <span class="highlight">double-check</span> suspicious messages before they can do any harm.</p>
+                <div class="warning-box" style="margin-top: 40px;">
+                    <p style="margin: 0; text-align: center;"><strong>You do not need to be a computer expert to stay safe online.</strong></p>
+                </div>
+            </section>
+
+            <section>
+                <h2>About the <span class="highlight">Speaker</span></h2>
+                <div class="two-column">
+                    <div>
+                        <h3>George Featherstone</h3>
+                        <ul>
+                            <li>Web developer & AI builder</li>
+                            <li>15+ years in internet technology</li>
+                            <li>Creator of ScamBomb.com</li>
+                            <li>Local East Texas resident</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="highlight-box" style="background: #23272A;">
+                            <p style="font-size: 0.9em; color: #9BA3AF; margin-bottom: 10px;">MISSION</p>
+                            <p style="font-size: 1em; margin: 0;">Helping you live safer online with the power of Ai</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Why This <span class="highlight">Matters</span></h2>
+                <div class="quote">
+                    "The internet had become incredibly useful... but also incredibly confusing for people who didn't grow up with it. And scammers know that."
+                </div>
+                <h3>The Personal Connection</h3>
+                <ul>
+                    <li>Father-in-law targeted multiple times</li>
+                    <li>Smart, <strong>smart</strong> person --- still vulnerable</li>
+                    <li>Community members facing similar threats</li>
+                    <li>Decision to take action and help others</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Why Scams <span class="highlight">Work</span></h2>
+                <div class="highlight-box">
+                    <p style="font-size: 1.3em; margin: 0; color: #F0F2F5;">Scams are not successful because people are foolish.</p>
+                    <p style="font-size: 1.1em; margin: 10px 0 0 0; color: #FFD700;">They are successful because scammers study human behavior.</p>
+                </div>
+                <ul style="margin-top: 30px;">
+                    <li>Use same techniques as marketing and advertising</li>
+                    <li>Trigger emotional reactions before we can think</li>
+                    <li>Count on us being busy, distracted, or reacting quickly</li>
+                    <li><strong>Anyone can fall for a scam under the right circumstances</strong></li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>The <span class="highlight">Five Signals</span> of a Scam</h2>
+                <p style="margin-bottom: 20px;">Most scams follow a recognizable pattern. Once you know the signals, they become much easier to identify.</p>
+                <div class="signals-grid">
+                    <div class="signal-box">
+                        <h3>1. Urgency</h3>
+                        <p>"Act now", "Your account will be closed", "Your grandchild is in trouble."</p>
+                    </div>
+                    <div class="signal-box">
+                        <h3>2. Authority</h3>
+                        <p>Pretending to be a bank, the IRS, Amazon, Microsoft, or law enforcement.</p>
+                    </div>
+                    <div class="signal-box">
+                        <h3>3. Emotion</h3>
+                        <p>Fear, concern, excitement, greed, or love.</p>
+                    </div>
+                    <div class="signal-box">
+                        <h3>4. Unusual Payment</h3>
+                        <p>Gift cards, wire transfers, crypto, or payment apps.</p>
+                    </div>
+                    <div class="signal-box">
+                        <h3>5. Secrecy</h3>
+                        <p>"Don't tell anyone", "Keep this confidential."</p>
+                    </div>
+                    <div class="signal-box" style="background: #0B1426; border-color: #FFD700;">
+                        <h3 style="color: #FFD700;">Remember</h3>
+                        <p>Scams almost always contain at least two of these signals, often three or four.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="center-text">
+                <h2 style="text-align: center; border: none;">The <span class="highlight">Golden Rule</span></h2>
+                <div class="highlight-box" style="margin-top: 40px;">
+                    <p style="font-size: 2em; margin: 0; font-weight: 700;"><span style="color: #F0F2F5;">If a message creates urgency</span><br><span style="color: #FFD700;">→ Slow down ←</span></p>
+                </div>
+                <p style="margin-top: 40px; text-align: center; font-size: 1.1em;">
+                    Scams depend on speed.<br>
+                    <strong style="color: #3DDC84;">Protection comes from pausing and verifying.</strong>
+                </p>
+            </section>
+
+            <section>
+                <h2>The <span class="highlight">Grandparent</span> Scam</h2>
+                <h3>Traditional Version</h3>
+                <ul>
+                    <li>Someone calls pretending to be a grandchild in trouble</li>
+                    <li>Claims car accident, arrested, or stranded</li>
+                    <li>Urgently needs money immediately</li>
+                    <li>Goal: Create panic so person doesn't verify the story</li>
+                </ul>
+                <div class="warning-box" style="margin-top: 30px;">
+                    <p style="margin: 0;"><strong>This scam has existed for years.</strong> But now it has evolved with AI technology.</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>The <span class="highlight">New Version</span>: AI Voice Cloning</h2>
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Hrdq4Gjcb9A" title="ABC7 Investigation - AI Voice Scam" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <p style="font-size: 0.75em; color: #9BA3AF; text-align: center; margin-top: 10px;">ABC7 Investigation: AI Voice Scam</p>
+            </section>
+
+            <section class="center-text">
+                <h2 style="text-align: center; border: none;">Imagine <span class="highlight">This</span>...</h2>
+                <p style="font-size: 1.2em; margin: 30px 0;">How many of you have grandchildren or younger family members?</p>
+                <div class="quote" style="text-align: left;">
+                    "Now imagine getting a phone call that sounds like one of them... saying they're in trouble."
+                </div>
+                <p style="margin-top: 30px; color: #FBBF24; font-size: 1.1em;">
+                    <strong>That emotional reaction is exactly what scammers are counting on.</strong>
+                </p>
+            </section>
+
+            <section>
+                <h2>How the <span class="highlight">AI Voice Scam</span> Works</h2>
+                <div class="steps-container">
+                    <div class="step-box">
+                        <div class="step-number">1</div>
+                        <h3>Harvest</h3>
+                        <p>Scammers find 3-30 seconds of voice from social media, voicemail, YouTube, or TikTok</p>
+                    </div>
+                    <div class="step-box">
+                        <div class="step-number">2</div>
+                        <h3>Clone</h3>
+                        <p>AI software learns tone, pitch, and patterns to recreate the voice</p>
+                    </div>
+                    <div class="step-box">
+                        <div class="step-number">3</div>
+                        <h3>Attack</h3>
+                        <p>Call victim with cloned voice claiming emergency, needing money immediately</p>
+                    </div>
+                </div>
+                <div class="warning-box" style="margin-top: 30px;">
+                    <p style="margin: 0;"><strong>Scammers almost always tell victims:</strong> "Don't tell anyone — it'll make things worse." This is the #1 manipulation tactic.</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Why This Scam <span class="highlight">Works</span></h2>
+                <p>This scam succeeds because it combines three powerful triggers:</p>
+                <div class="signals-grid" style="grid-template-columns: 1fr 1fr 1fr;">
+                    <div class="signal-box" style="text-align: center;">
+                        <h3>1. Familiar Voice</h3>
+                        <p>Sounds exactly like your loved one</p>
+                    </div>
+                    <div class="signal-box" style="text-align: center;">
+                        <h3>2. Urgent Emergency</h3>
+                        <p>Creates immediate stress response</p>
+                    </div>
+                    <div class="signal-box" style="text-align: center;">
+                        <h3>3. Pressure to Act</h3>
+                        <p>No time to think or verify</p>
+                    </div>
+                </div>
+                <div class="highlight-box" style="margin-top: 40px;">
+                    <p style="margin: 0; font-size: 1.1em;">When these three things happen together, people often react emotionally<br><strong style="color: #FFD700;">before they have time to stop and verify.</strong></p>
+                </div>
+            </section>
+
+            <section>
+                <h2>The <span class="highlight">Simple Defense</span></h2>
+                <div class="highlight-box">
+                    <h2 style="border: none; margin: 0 0 20px 0;"><span class="highlight">Hang Up</span> and <span class="highlight">Verify</span></h2>
+                    <ol style="text-align: left; font-size: 0.9em; margin: 0;">
+                        <li style="margin-bottom: 10px;"><strong style="color: #FFD700;">Hang up</strong> the phone</li>
+                        <li style="margin-bottom: 10px;"><strong style="color: #FFD700;">Call the family member directly</strong> using a known number (not one provided by the caller)</li>
+                        <li style="margin-bottom: 10px;"><strong style="color: #FFD700;">Confirm the emergency</strong> with other family members if possible</li>
+                        <li><strong style="color: #FFD700;">Never send money</strong> under pressure without verification</li>
+                    </ol>
+                </div>
+                <div class="warning-box" style="margin-top: 30px;">
+                    <p style="margin: 0; text-align: center;"><strong>Remember:</strong> AI may change how scams sound, but the defense remains the same.</p>
+                </div>
+            </section>
+
+            <section>
+                <h2><span class="highlight">Family</span> Verification System</h2>
+                <p>Families can create a private verification method to confirm identity during emergencies.</p>
+                <div class="two-column" style="margin-top: 30px;">
+                    <div>
+                        <h3>What It Is:</h3>
+                        <ul>
+                            <li>The "Secret Word" Protocol for the whole family</li>
+                            <li>Shared in person or securely, never online</li>
+                            <li>Used to verify identity in emergencies</li>
+                            <li>Changed periodically for security</li>
+                        </ul>
+                    </div>
+                    <div style="text-align: center;">
+                        <p style="font-size: 0.9em; color: #9BA3AF; margin-bottom: 10px;">Get the complete setup guide:</p>
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZoAAAGaAQAAAAAefbjOAAADHklEQVR4nO2cXYrjOhBGT40MebRhFpClyDuYJTW9pN6BvZReQIP1GJD57oMkJ32Zl5nc63THJYgJIYeUSKV+PpVj4o/X/OPPGXDIIYcccsghh54Tsro6IJn97lLW+BDzHNofipKkBZjPko19Ls8AsJEgSdJnaD/zHNofSlsASB2aUoeNrGYjobpFiSAPMs+hB0L9xczOGU0E6fV8sf/rkxz6ilD3uxcFyOKydorLikj/wSc59L2gXtIE2Mt7B/MAeh2CbCTIRkBSfpx5Du0G1Rgxl9QQAEK2+N6VC6SfGVg/pY4vvieH7oGKR1ylbM3nDPQZzQPGfL4Y9J+17i++J4fugShdZVQtJYlbk1le69vluqYvvieH7oFqjJiHD4z+wyD9zAIwCCIuyOrb1o447WueQ7tD22+/lo2l5yxqVJ+huIUyxIWqZHmMOAQUilvY2F/MxmRGdYaLQTrpKmF+nz05dAeUOmxMp/ad9xlpAU1Qm9Hp2nB8kz059DdQyxpL0K0f9LlliFpMeNY4ClQqSyuP1GHxLWTYTjPiMpjmob5be5vn0O5Q6z6XoBIZ6GsVqYmWNeJSy0vvPp8fagpVWk2kk4x0EqSQof/obqTKefjY3zyHdodonWZrQeMWMko8KOLUJ5nKY8QzQzceUXJF/fZrtVkv2zyNV5ZPD211BFRJqjUclPLyxlUk94jjQL2kqZQQJ5kNAKwmvZs1ccr1iONAdYyutBmr1Qyx1BFLSHVm4kHmOfQAPaK/GPGty4LcMf/KnUAYgEiDCYJsb/McehBUxerzxZiHUFPHmDr0OkAJHg80z6FHKVTUs8927Ak3z1yhOgZ0OwmzdR21+yxn4NsUTe+9xhGgpkeU1QLF1UFq91mPOTxGHAaKTYOyF0lmZrWIvAoVUSpT2d9lTw7drVBdi4mrGqUWHprQ7THiYJC9LEFmw2p6HVYzO1+sFhOLK1RHhMptffH9JEpZkTqYzxnmIXjWOADU7vLrBfVmviBIqwFd7TzjVIdlfGLm+aF/9xptdmbrNPvWcOCn4YeAzP+ZzCGHHHLIIYcc+kvoH/BYZUmluVL6AAAAAElFTkSuQmCC" alt="ScamBomb QR Code" style="width: 150px; height: 150px; border: 3px solid #FFD700; background: white; padding: 5px;">
+                        <p style="font-size: 0.8em; color: #FFD700;">Available for $7 at ScamBomb.com</p>
+                    </div>
+                </div>
+                <div class="warning-box" style="margin-top: 20px;">
+                    <p style="margin: 0;"><strong>Important:</strong> Full step-by-step instructions and scripts available via QR code or at ScamBomb.com</p>
+                </div>
+            </section>
+
+            <section class="center-text">
+                <h2 style="text-align: center; border: none;"><span class="highlight">Key</span> Takeaway</h2>
+                <div class="highlight-box" style="margin-top: 40px;">
+                    <p style="font-size: 1.2em; margin-bottom: 20px; color: #9BA3AF;">AI may change how scams sound.</p>
+                    <p style="font-size: 1.5em; margin: 20px 0; color: #F0F2F5;">But the defense remains the same:</p>
+                    <div style="display: flex; justify-content: space-around; margin-top: 40px; font-family: 'Montserrat', sans-serif;">
+                        <div style="text-align: center;">
+                            <div style="font-size: 2em; color: #FFD700; font-weight: 800;">1</div>
+                            <div style="font-size: 1.3em; color: #3DDC84; font-weight: 700;">PAUSE</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 2em; color: #FFD700; font-weight: 800;">2</div>
+                            <div style="font-size: 1.3em; color: #3DDC84; font-weight: 700;">VERIFY</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 2em; color: #FFD700; font-weight: 800;">3</div>
+                            <div style="font-size: 1.3em; color: #3DDC84; font-weight: 700;">ASK QUESTIONS</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="break-slide" data-background-color="#0B1426">
+                <h1><span class="highlight">10</span> Minute Break</h1>
+                <p style="color: #9BA3AF; font-size: 1.1em; margin: 20px 0;">Refreshments available in the back</p>
+                <div style="margin-top: 30px; text-align: center;">
+                    <div style="display: flex; justify-content: center; gap: 60px; align-items: flex-start;">
+                        <div style="text-align: center;">
+                            <p style="font-size: 0.8em; color: #FFD700; margin-bottom: 10px; text-transform: uppercase; font-weight: 600;">Complete Guide ($7)</p>
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZoAAAGaAQAAAAAefbjOAAADHklEQVR4nO2cXYrjOhBGT40MebRhFpClyDuYJTW9pN6BvZReQIP1GJD57oMkJ32Zl5nc63THJYgJIYeUSKV+PpVj4o/X/OPPGXDIIYcccsghh54Tsro6IJn97lLW+BDzHNofipKkBZjPko19Ls8AsJEgSdJnaD/zHNofSlsASB2aUoeNrGYjobpFiSAPMs+hB0L9xczOGU0E6fV8sf/rkxz6ilD3uxcFyOKydorLikj/wSc59L2gXtIE2Mt7B/MAeh2CbCTIRkBSfpx5Du0G1Rgxl9QQAEK2+N6VC6SfGVg/pY4vvieH7oGKR1ylbM3nDPQZzQPGfL4Y9J+17i++J4fugShdZVQtJYlbk1le69vluqYvvieH7oFqjJiHD4z+wyD9zAIwCCIuyOrb1o447WueQ7tD22+/lo2l5yxqVJ+huIUyxIWqZHmMOAQUilvY2F/MxmRGdYaLQTrpKmF+nz05dAeUOmxMp/ad9xlpAU1Qm9Hp2nB8kz059DdQyxpL0K0f9LlliFpMeNY4ClQqSyuP1GHxLWTYTjPiMpjmob5be5vn0O5Q6z6XoBIZ6GsVqYmWNeJSy0vvPp8fagpVWk2kk4x0EqSQof/obqTKefjY3zyHdodonWZrQeMWMko8KOLUJ5nKY8QzQzceUXJF/fZrtVkv2zyNV5ZPD211BFRJqjUclPLyxlUk94jjQL2kqZQQJ5kNAKwmvZs1ccr1iONAdYyutBmr1Qyx1BFLSHVm4kHmOfQAPaK/GPGty4LcMf/KnUAYgEiDCYJsb/McehBUxerzxZiHUFPHmDr0OkAJHg80z6FHKVTUs8927Ak3z1yhOgZ0OwmzdR21+yxn4NsUTe+9xhGgpkeU1QLF1UFq91mPOTxGHAaKTYOyF0lmZrWIvAoVUSpT2d9lTw7drVBdi4mrGqUWHprQ7THiYJC9LEFmw2p6HVYzO1+sFhOLK1RHhMptffH9JEpZkTqYzxnmIXjWOADU7vLrBfVmviBIqwFd7TzjVIdlfGLm+aF/9xptdmbrNPvWcOCn4YeAzP+ZzCGHHHLIIYcc+kvoH/BYZUmluVL6AAAAAElFTkSuQmCC" alt="ScamBomb Guide QR" style="width: 120px; height: 120px; border: 3px solid #FFD700; background: white; padding: 5px;">
+                            <p style="font-size: 0.7em; color: #9BA3AF; margin-top: 5px;">For those who missed it</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <p style="font-size: 0.8em; color: #3DDC84; margin-bottom: 10px; text-transform: uppercase; font-weight: 600;">Attendee Freebies</p>
+                            <div style="width: 120px; height: 120px; border: 3px dashed #3DDC84; background: #23272A; display: flex; align-items: center; justify-content: center; color: #3DDC84; font-size: 0.6em; text-align: center; margin: 0 auto;">
+                                [QR CODE<br>PLACEHOLDER]<br>Free Resources
+                            </div>
+                            <p style="font-size: 0.7em; color: #9BA3AF; margin-top: 5px;">Exclusive workshop bonuses</p>
+                        </div>
+                    </div>
+                    <p style="color: #FFD700; font-size: 0.9em; margin-top: 30px; font-weight: 600;">info@scamBomb.com</p>
+                </div>
+            </section>
+
+            <section class="final-slide" data-background-color="#0B1426">
+                <h1><span class="highlight">Thank</span> You</h1>
+                <p style="color: #9BA3AF; font-size: 1.1em; margin: 30px 0;">Stay safe, stay aware, and remember:<br>pause before you act.</p>
+                <div style="margin-top: 50px; padding: 30px; border: 2px solid #FFD700; display: inline-block;">
+                    <p style="color: #FFD700; font-size: 1.2em; margin: 0; font-family: 'Montserrat', sans-serif; font-weight: 700;">ScamBomb.com</p>
+                    <p style="color: #9BA3AF; font-size: 0.9em; margin: 10px 0 0 0;">Digital Self-Defense Division</p>
+                </div>
+                <p style="color: #9BA3AF; font-size: 0.8em; margin-top: 40px;">Questions? Contact: [Your Contact Info]</p>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            slideNumber: 'c/t',
+            showSlideNumber: 'all',
+            transition: 'slide',
+            transitionSpeed: 'default',
+            backgroundTransition: 'fade',
+            progress: true,
+            controls: true,
+            center: false,
+            width: 1200,
+            height: 700,
+            margin: 0.04
+        });
+    </script>
+</body>
+</html>
