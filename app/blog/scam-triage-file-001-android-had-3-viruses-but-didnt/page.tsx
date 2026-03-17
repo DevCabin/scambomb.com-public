@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import GHLPoliteSlideIn from '../../../components/GHLPoliteSlideIn'
 
 export const metadata = {
   title: 'Scam Triage File #001: The Android That “Had 3 Viruses” — But Didn’t',
@@ -202,6 +203,7 @@ export default function BlogPost() {
           </Link>
         </footer>
       </article>
+      <GHLPoliteSlideIn />
     </div>
   )
 }

@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import GHLPoliteSlideIn from '../../../components/GHLPoliteSlideIn'
 
 export const metadata = {
   title: 'Three questions to ask before you click',
@@ -63,6 +64,7 @@ export default function BlogPost() {
           </Link>
         </footer>
       </article>
+      <GHLPoliteSlideIn />
     </div>
   )
 }

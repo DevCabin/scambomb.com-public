@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import LeadCaptureCTA from '../../../components/LeadCaptureCTA'
+import GHLPoliteSlideIn from '../../../components/GHLPoliteSlideIn'
 
 export const metadata = {
   title: 'Older Adult Fraud Is Now a Multi-Billion-Dollar Crisis — Our 2024–2025 Report',
@@ -129,6 +130,7 @@ export default function BlogPost() {
         </footer>
 
       </article>
+      <GHLPoliteSlideIn />
     </div>
   )
 }
