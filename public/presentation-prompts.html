@@ -54,29 +54,26 @@
       padding: 0 24px;
       display: flex;
       align-items: center;
-      gap: 12px;
-    }
-    
-    .logo-mark {
-      width: 40px;
-      height: 40px;
-      background: var(--gold);
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      font-weight: 800;
-      color: var(--navy);
-      font-family: 'Montserrat', sans-serif;
-      font-size: 18px;
-      flex-shrink: 0;
+      gap: 10px;
     }
     
     .brand-text {
       font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
+      font-weight: 800;
       font-size: 1.25rem;
       color: var(--text-primary);
       letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    .brand-text .scam,
+    .footer-wordmark .scam {
+      color: var(--text-primary);
+    }
+
+    .brand-text .bomb,
+    .footer-wordmark .bomb {
+      color: var(--gold);
     }
     
     .division-pill {
@@ -331,20 +328,7 @@
     .footer-brand {
       display: flex;
       align-items: center;
-      gap: 12px;
-    }
-    
-    .footer-logo {
-      width: 40px;
-      height: 40px;
-      background: var(--gold);
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      font-weight: 800;
-      color: var(--navy);
-      font-family: 'Montserrat', sans-serif;
-      font-size: 16px;
+      gap: 10px;
     }
     
     .footer-text {
@@ -352,8 +336,15 @@
       font-size: 0.9rem;
     }
     
+    .footer-wordmark {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
     .footer-text strong {
-      color: var(--gold);
+      color: var(--text-primary);
       font-family: 'Montserrat', sans-serif;
       font-weight: 700;
     }
@@ -494,8 +485,7 @@
 
   <header class="brand-header">
     <div class="brand-bar">
-      <div class="logo-mark">SB</div>
-      <div class="brand-text">SCAMBOMB</div>
+      <div class="brand-text"><span class="scam">SCAM</span><span class="bomb">B💣MB</span><span class="scam">.com</span></div>
       <div class="division-pill">Power Prompts</div>
     </div>
   </header>
@@ -503,7 +493,7 @@
   <div class="wrap">
     <header class="hero">
       <div class="eyebrow">Field Edition 1.0 | 2026</div>
-      <h1><span style="color: var(--gold);">SB</span> <span style="color: var(--text-primary);">SCAM</span><span style="color: var(--gold);">BOMB</span></h1>
+      <h1><span style="color: var(--text-primary);">SCAM</span><span style="color: var(--gold);">B💣MB</span><span style="color: var(--text-primary);">.com</span></h1>
       <p class="sub">30 field-tested prompts for photos, recipes, travel, safety, and everyday digital tasks. Designed for beginners, seniors, and caregivers navigating AI safely.</p>
       
       <div class="note">
@@ -927,14 +917,13 @@
   <footer class="scambomb-footer">
     <div class="footer-content">
       <div class="footer-brand">
-        <div class="footer-logo">SB</div>
         <div class="footer-text">
-          Provided by <strong>ScamBomb.com</strong><br>
+          Provided by <span class="footer-wordmark"><span class="scam">SCAM</span><span class="bomb">B💣MB</span><span class="scam">.com</span></span><br>
           <span style="font-size: 0.8rem; opacity: 0.8;">Helping families stay safer and smarter in an AI-powered world.</span>
         </div>
       </div>
       <div class="classification">
-        CONFIDENTIAL — SCAMBOMB FIELD MANUAL<br>
+        CONFIDENTIAL — SCAMB💣MB FIELD MANUAL<br>
         <span style="color: var(--gold);">Field Edition 1.0 | 2026</span>
       </div>
     </div>
