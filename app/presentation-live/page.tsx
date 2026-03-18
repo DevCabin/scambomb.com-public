@@ -43,6 +43,15 @@ export default function PresentationLivePage() {
             allowFullScreen
           />
         </div>
+
+        <div className="mt-5 flex justify-end">
+          <a
+            href="/presentation-trivia"
+            className="inline-flex items-center justify-center rounded-xl px-4 py-2 font-semibold border border-[#F5C84C] text-[#F5C84C] hover:bg-[#F5C84C]/10"
+          >
+            Open Trivia Slideshow
+          </a>
+        </div>
       </div>
     </section>
   );

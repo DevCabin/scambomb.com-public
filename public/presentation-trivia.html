@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adults & AI Usage | ScamBomb Trivia</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #0B1426;
+    --gold: #FFD700;
+    --green: #3DDC84;
+    --mint: #A0E8B0;
+    --amber: #FBBF24;
+    --tp: #F0F2F5;
+    --ts: #9BA3AF;
+    --bg1: #1A1D21;
+    --bg2: #23272A;
+    --border: #2D3138;
+  }
+
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--bg1);
+    color: var(--tp);
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .deck {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .slide {
+    position: absolute;
+    inset: 0;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 56px 72px;
+    background: linear-gradient(135deg, var(--bg1) 0%, var(--bg2) 100%);
+    border-top: 4px solid var(--gold);
+    text-align: center;
+    animation: fadeIn 0.35s ease;
+  }
+
+  .slide.active { display: flex; }
+  .slide.left-align { align-items: flex-start; text-align: left; }
+
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+
+  .chrome {
+    background: var(--navy);
+    border-top: 1px solid var(--border);
+    padding: 12px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+  }
+
+  .chrome .slide-count { font-size: 13px; font-weight: 600; color: var(--gold); letter-spacing: 0.08em; }
+
+  .nav-btns { display: flex; gap: 10px; }
+
+  .nav-btn {
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    padding: 7px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    transition: background 0.15s, color 0.15s;
+  }
+
+  .nav-btn:hover { background: var(--gold); color: var(--navy); }
+  .nav-btn:disabled { opacity: 0.3; cursor: default; }
+  .nav-btn:disabled:hover { background: transparent; color: var(--gold); }
+
+  .progress-bar-wrap { flex: 1; margin: 0 28px; height: 4px; background: var(--border); border-radius: 2px; }
+  .progress-bar-fill { height: 100%; background: var(--gold); border-radius: 2px; transition: width 0.3s ease; }
+
+  .slide-title { background: var(--navy) !important; }
+
+  .title-h1 {
+    font-size: clamp(1.6rem, 4vw, 2.8rem);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+    margin-bottom: 10px;
+  }
+
+  .title-h1 .g { color: var(--gold); }
+
+  .title-sub {
+    font-size: clamp(0.8rem, 1.8vw, 1.05rem);
+    font-weight: 300;
+    color: #D9DEE6;
+    margin-bottom: 6px;
+  }
+
+  .title-source {
+    font-size: clamp(0.55rem, 1.2vw, 0.65rem);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ts);
+    margin-top: 6px;
+  }
+
+  .title-badge {
+    margin-top: 32px;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-size: clamp(0.6rem, 1.3vw, 0.82rem);
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 8px 22px;
+  }
+
+  .title-pby {
+    margin-top: 36px;
+    font-size: 0.55rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-weight: 600;
+    color: var(--ts);
+  }
+
+  .brand {
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-top: 6px;
+  }
+
+  .brand .s { color: var(--tp); }
+  .brand .b { color: var(--gold); }
+
+  .q-badge {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--navy);
+    font-weight: 800;
+    font-size: clamp(0.55rem, 1.2vw, 0.65rem);
+    padding: 5px 14px;
+    border-radius: 4px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+    align-self: flex-start;
+  }
+
+  .q-text {
+    font-size: clamp(0.95rem, 2.2vw, 1.25rem);
+    font-weight: 600;
+    line-height: 1.45;
+    margin-bottom: 28px;
+  }
+
+  .q-text strong { color: var(--gold); }
+
+  .choices { display: flex; flex-direction: column; gap: 12px; width: 100%; }
+
+  .choice {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    background: var(--bg2);
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    padding: 14px 22px;
+  }
+
+  .cl {
+    font-weight: 800;
+    font-size: clamp(0.8rem, 1.8vw, 1.0rem);
+    color: var(--gold);
+    min-width: 22px;
+  }
+
+  .ct {
+    font-size: clamp(0.75rem, 1.6vw, 0.88rem);
+    font-weight: 500;
+    color: var(--tp);
+  }
+
+  .dots { display: flex; gap: 9px; margin-top: 22px; align-self: flex-start; }
+  .dot { width: 10px; height: 10px; border-radius: 50%; background: transparent; border: 2px solid #444; }
+  .dot.active { background: var(--gold); border-color: var(--gold); }
+  .dot.done { background: var(--green); border-color: var(--green); }
+
+  .a-label {
+    font-size: clamp(0.6rem, 1.3vw, 0.75rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--ts);
+    letter-spacing: 0.1em;
+    margin-bottom: 12px;
+  }
+
+  .a-big {
+    font-size: clamp(2.8rem, 8vw, 5.5rem);
+    font-weight: 800;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .a-big.text { font-size: clamp(1.6rem, 4vw, 2.6rem); line-height: 1.25; }
+
+  .a-correct {
+    font-size: clamp(0.6rem, 1.3vw, 0.7rem);
+    font-weight: 700;
+    color: var(--green);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  .a-box {
+    background: var(--navy);
+    border: 2px solid var(--gold);
+    border-radius: 8px;
+    padding: 22px 36px;
+    max-width: 820px;
+  }
+
+  .a-box p {
+    font-size: clamp(0.75rem, 1.7vw, 0.88rem);
+    line-height: 1.65;
+  }
+
+  .a-box .insight {
+    font-size: clamp(0.75rem, 1.6vw, 0.88rem);
+    font-weight: 700;
+    color: var(--mint);
+    margin-top: 10px;
+  }
+
+  .slide-final { background: var(--navy) !important; }
+
+  .final-h1 {
+    font-size: clamp(1.6rem, 3.6vw, 2.2rem);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+
+  .final-h1 .g { color: var(--gold); }
+
+  .final-box {
+    border: 2px solid var(--gold);
+    border-radius: 8px;
+    padding: 24px 40px;
+    margin-top: 28px;
+    max-width: 660px;
+  }
+
+  .final-box p {
+    font-size: clamp(0.75rem, 1.7vw, 0.9rem);
+    color: var(--ts);
+    line-height: 1.8;
+  }
+
+  .final-box .gn { color: var(--green); font-weight: 700; }
+
+  .final-brand {
+    font-size: clamp(0.9rem, 2vw, 1.15rem);
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-top: 32px;
+    padding: 12px 26px;
+    border: 2px solid var(--gold);
+    border-radius: 6px;
+  }
+
+  .final-brand .s { color: var(--tp); }
+  .final-brand .b { color: var(--gold); }
+
+  .tagline {
+    font-size: clamp(0.5rem, 1.1vw, 0.62rem);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--ts);
+    margin-top: 22px;
+  }
+</style>
+</head>
+<body>
+
+<div class="deck" id="deck">
+
+  <div class="slide slide-title active" id="s0">
+    <div class="title-h1">Adults &amp; <span class="g">AI Usage</span></div>
+    <div class="title-source">Based on a study of nearly 3,000 Americans age 50+ &nbsp;·&nbsp; University of Michigan</div>
+    <div class="title-badge">Quick-Fire Trivia &nbsp;·&nbsp; 5 Questions</div>
+    <div class="title-pby">Presented by:</div>
+    <div class="brand"><span class="s">SCAM</span><span class="b">B💣MB</span><span class="s">.com</span></div>
+  </div>
+
+  <div class="slide left-align" id="s1">
+    <div class="q-badge">Question 1 of 5</div>
+    <div class="q-text">Among adults age 50 and older,<br>how many have <strong>used AI in some form</strong>?</div>
+    <div class="choices">
+      <div class="choice"><span class="cl">A</span><span class="ct">About 1 in 3 &nbsp;(33%)</span></div>
+      <div class="choice"><span class="cl">B</span><span class="ct">More than half &nbsp;(55%)</span></div>
+      <div class="choice"><span class="cl">C</span><span class="ct">About 3 in 4 &nbsp;(77%)</span></div>
+    </div>
+    <div class="dots">
+      <div class="dot active"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+    </div>
+  </div>
+
+  <div class="slide" id="s2">
+    <div class="a-label">Answer — Question 1</div>
+    <div class="a-big">55%</div>
+    <div class="a-correct">✓ More than half</div>
+    <div class="a-box">
+      <p>In a survey of nearly 3,000 Americans over 50, <strong style="color:var(--gold)">55% reported using some type of AI technology</strong> — either a voice assistant like Alexa, or a text chatbot like ChatGPT.</p>
+      <p class="insight">AI is already in more lives than most people realize.</p>
+    </div>
+  </div>
+
+  <div class="slide left-align" id="s3">
+    <div class="q-badge">Question 2 of 5</div>
+    <div class="q-text">Among older adults who use AI —<br>which type do they <strong>use more</strong>?</div>
+    <div class="choices">
+      <div class="choice"><span class="cl">A</span><span class="ct">Text chatbots like ChatGPT — twice as popular</span></div>
+      <div class="choice"><span class="cl">B</span><span class="ct">Voice assistants like Alexa — twice as popular</span></div>
+      <div class="choice"><span class="cl">C</span><span class="ct">About equal — people use both the same amount</span></div>
+    </div>
+    <div class="dots">
+      <div class="dot done"></div><div class="dot active"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+    </div>
+  </div>
+
+  <div class="slide" id="s4">
+    <div class="a-label">Answer — Question 2</div>
+    <div class="a-big text">Voice<br>Assistants</div>
+    <div class="a-correct">✓ And it's not close</div>
+    <div class="a-box">
+      <p><strong style="color:var(--gold)">50% used a voice assistant</strong> in the past year. Only <strong style="color:var(--gold)">25% used a text chatbot</strong> — half as many.</p>
+      <p class="insight">Talking to technology feels natural. Typing to it is still a newer habit for many.</p>
+    </div>
+  </div>
+
+  <div class="slide left-align" id="s5">
+    <div class="q-badge">Question 3 of 5</div>
+    <div class="q-text">Of older adults using <strong>AI-powered home security</strong> cameras and doorbells,<br>how many said they felt safer?</div>
+    <div class="choices">
+      <div class="choice"><span class="cl">A</span><span class="ct">About 3 in 4 &nbsp;(72%)</span></div>
+      <div class="choice"><span class="cl">B</span><span class="ct">About 5 in 6 &nbsp;(84%)</span></div>
+      <div class="choice"><span class="cl">C</span><span class="ct">Nearly all of them &nbsp;(96%)</span></div>
+    </div>
+    <div class="dots">
+      <div class="dot done"></div><div class="dot done"></div><div class="dot active"></div><div class="dot"></div><div class="dot"></div>
+    </div>
+  </div>
+
+  <div class="slide" id="s6">
+    <div class="a-label">Answer — Question 3</div>
+    <div class="a-big">96%</div>
+    <div class="a-correct">✓ Nearly all of them</div>
+    <div class="a-box">
+      <p>Of older adults using AI-powered home security, a remarkable <strong style="color:var(--gold)">96% said they felt safer</strong> — one of the highest satisfaction rates in the entire study.</p>
+      <p class="insight">When AI is practical and tangible, people embrace it quickly.</p>
+    </div>
+  </div>
+
+  <div class="slide left-align" id="s7">
+    <div class="q-badge">Question 4 of 5</div>
+    <div class="q-text">When asked whether they <strong>trust AI-generated content</strong>,<br>what did older adults say?</div>
+    <div class="choices">
+      <div class="choice"><span class="cl">A</span><span class="ct">Most trust it — about 3 in 4 said yes</span></div>
+      <div class="choice"><span class="cl">B</span><span class="ct">They're split roughly down the middle</span></div>
+      <div class="choice"><span class="cl">C</span><span class="ct">Most don't — fewer than 1 in 3 said yes</span></div>
+    </div>
+    <div class="dots">
+      <div class="dot done"></div><div class="dot done"></div><div class="dot done"></div><div class="dot active"></div><div class="dot"></div>
+    </div>
+  </div>
+
+  <div class="slide" id="s8">
+    <div class="a-label">Answer — Question 4</div>
+    <div class="a-big text">Right Down<br>the Middle</div>
+    <div class="a-correct">✓ 54% trust it &nbsp;/&nbsp; 46% do not</div>
+    <div class="a-box">
+      <p><strong style="color:var(--gold)">54% said they trust AI-generated content.</strong> 46% said they do not. And only <strong style="color:var(--gold)">half felt confident they could spot when AI content was wrong.</strong></p>
+      <p class="insight">And it's getting more difficult to tell every day.</p>
+    </div>
+  </div>
+
+  <div class="slide left-align" id="s9">
+    <div class="q-badge">Question 5 of 5</div>
+    <div class="q-text">What share of older adults said they want to <strong>know when content was made by AI</strong>?</div>
+    <div class="choices">
+      <div class="choice"><span class="cl">A</span><span class="ct">About 6 in 10 &nbsp;(60%)</span></div>
+      <div class="choice"><span class="cl">B</span><span class="ct">About 3 in 4 &nbsp;(75%)</span></div>
+      <div class="choice"><span class="cl">C</span><span class="ct">9 in 10 &nbsp;(90%)</span></div>
+    </div>
+    <div class="dots">
+      <div class="dot done"></div><div class="dot done"></div><div class="dot done"></div><div class="dot done"></div><div class="dot active"></div>
+    </div>
+  </div>
+
+  <div class="slide" id="s10">
+    <div class="a-label">Answer — Question 5</div>
+    <div class="a-big">90%</div>
+    <div class="a-correct">✓ 9 in 10 — overwhelming consensus</div>
+    <div class="a-box">
+      <p><strong style="color:var(--gold)">9 in 10 older adults want to know when content was generated by AI.</strong> On top of that, <strong style="color:var(--gold)">nearly 80% said they want to learn more about AI risks</strong> — where it can go wrong and what to do about it.</p>
+      <p class="insight">Another good use of AI tools — to detect other AI tools!</p>
+    </div>
+  </div>
+
+  <div class="slide slide-final" id="s11">
+    <div class="final-h1"><span class="g">Thank</span> You</div>
+    <div class="final-brand" style="margin-top:36px;"><span class="s">SCAM</span><span class="b">B💣MB</span><span class="s">.com</span></div>
+    <div class="tagline">Knowledge Over Fear</div>
+  </div>
+
+</div>
+
+<div class="chrome">
+  <button class="nav-btn" id="prevBtn" onclick="navigate(-1)" disabled>← Prev</button>
+  <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressFill"></div></div>
+  <span class="slide-count" id="slideCount">1 / 12</span>
+  <button class="nav-btn" id="nextBtn" onclick="navigate(1)">Next →</button>
+</div>
+
+<script>
+  const TOTAL = 12;
+  let cur = 0;
+
+  function navigate(dir) {
+    const slides = document.querySelectorAll('.slide');
+    slides[cur].classList.remove('active');
+    cur = Math.max(0, Math.min(TOTAL - 1, cur + dir));
+    slides[cur].classList.add('active');
+    document.getElementById('slideCount').textContent = (cur + 1) + ' / ' + TOTAL;
+    document.getElementById('prevBtn').disabled = cur === 0;
+    document.getElementById('nextBtn').disabled = cur === TOTAL - 1;
+    document.getElementById('progressFill').style.width = ((cur / (TOTAL - 1)) * 100) + '%';
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') navigate(1);
+    if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') navigate(-1);
+  });
+
+  document.getElementById('progressFill').style.width = '0%';
+</script>
+</body>
+</html>
