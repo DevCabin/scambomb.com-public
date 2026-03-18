@@ -16,7 +16,7 @@ export default function PresentationJobsPage() {
 
   return (
     <section className="bg-[#0B1324] text-white min-h-[calc(100vh-140px)]">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
+      <div className="w-full px-4 sm:px-6 lg:px-8 py-6">
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
           <div>
             <h1 className="text-3xl sm:text-4xl font-extrabold">Presentation Jobs</h1>
@@ -34,12 +34,12 @@ export default function PresentationJobsPage() {
           </button>
         </div>
 
-        <div className="mt-6 rounded-2xl border border-white/15 bg-black/30 overflow-hidden">
+        <div className="mt-5 w-full overflow-hidden">
           <iframe
             ref={frameRef}
             src="/presentation-jobs.html"
             title="ScamBomb AI jobs report presentation"
-            className="w-full h-[75vh] md:h-[80vh]"
+            className="w-full min-h-[calc(100vh-230px)] border-0"
             allowFullScreen
           />
         </div>
