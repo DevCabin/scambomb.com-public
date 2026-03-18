@@ -3,377 +3,494 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI-Attributed Layoffs | Presentation Jobs</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <title>AI-Attributed Layoffs Brief | ScamBomb</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
     :root {
-      --navy: #0b1426;
-      --gold: #ffd700;
-      --green: #3ddc84;
-      --mint: #a0e8b0;
-      --amber: #fbbf24;
-      --text-primary: #f0f2f5;
-      --text-secondary: #9ba3af;
-      --bg-primary: #1a1d21;
-      --bg-secondary: #23272a;
-      --border: #2d3138;
+      --navy: #0B1426;
+      --gold: #FFD700;
+      --charcoal: #1A1D21;
+      --slate: #23272A;
+      --grid-line: #2D3138;
+      --text-primary: #F0F2F5;
+      --text-secondary: #9BA3AF;
+      --android-green: #3DDC84;
+      --amber: #FBBF24;
+      --mint: #A0E8B0;
+      --card-bg: var(--slate);
+      --border-subtle: var(--grid-line);
+      --border-accent: var(--gold);
+      --shadow: 0 10px 40px rgba(0,0,0,0.4);
+      --radius: 16px;
+      --radius-sm: 8px;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Inter', sans-serif;
+      background: var(--charcoal);
       color: var(--text-primary);
-      background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+      line-height: 1.55;
       min-height: 100vh;
-      line-height: 1.5;
+      background-image:
+        linear-gradient(var(--grid-line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+      background-size: 40px 40px;
+      background-position: center top;
+    }
+
+    .brand-header {
+      border-bottom: 2px solid var(--gold);
+      background: var(--navy);
+      padding: 16px 0;
+    }
+
+    .brand-bar {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-text {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 1.25rem;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    .brand-text .scam { color: var(--text-primary); }
+    .brand-text .bomb { color: var(--gold); }
+
+    .division-pill {
+      margin-left: auto;
+      background: rgba(255,215,0,0.12);
+      border: 1px solid rgba(255,215,0,0.35);
+      color: var(--gold);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
     }
 
     .wrap {
-      max-width: 1180px;
+      max-width: 1240px;
       margin: 0 auto;
-      padding: 32px 24px 56px;
+      padding: 48px 24px 90px;
     }
 
-    .header {
-      border-bottom: 2px solid var(--gold);
-      padding-bottom: 20px;
-      margin-bottom: 22px;
+    .hero {
+      text-align: left;
+      padding: 10px 0 30px;
     }
 
-    .wordmark {
-      font-weight: 800;
-      letter-spacing: 0.02em;
+    .eyebrow {
+      display: inline-block;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 0.76rem;
+      font-weight: 700;
       text-transform: uppercase;
-      font-size: 1rem;
-      margin-bottom: 8px;
+      letter-spacing: 0.08em;
+      margin-bottom: 18px;
     }
-
-    .wordmark .scam { color: var(--text-primary); }
-    .wordmark .bomb { color: var(--gold); }
 
     h1 {
-      font-size: clamp(1.4rem, 3vw, 2.25rem);
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(2rem, 4vw, 3.1rem);
+      line-height: 1.1;
       font-weight: 800;
       text-transform: uppercase;
-      line-height: 1.2;
+      margin-bottom: 14px;
     }
 
     h1 .gold { color: var(--gold); }
 
     .sub {
-      margin-top: 8px;
       color: var(--text-secondary);
-      font-size: clamp(0.82rem, 1.5vw, 0.98rem);
       max-width: 980px;
+      font-size: clamp(1rem, 1.8vw, 1.2rem);
     }
 
+    .section { margin-top: 46px; }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      margin-bottom: 18px;
+      border-bottom: 1px solid var(--grid-line);
+      padding-bottom: 10px;
+    }
+
+    .section-number {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--gold);
+      font-size: 2.1rem;
+      line-height: 1;
+      opacity: 0.35;
+      font-weight: 800;
+    }
+
+    h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.35rem;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      font-weight: 700;
+    }
+
+    .muted { color: var(--text-secondary); }
+
     .kpi-grid {
-      margin-top: 18px;
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
+      gap: 22px;
+      margin-top: 18px;
     }
 
     .kpi {
-      background: rgba(11, 20, 38, 0.65);
-      border: 1px solid rgba(255, 215, 0, 0.25);
+      background: var(--card-bg);
+      border: 1px solid var(--border-subtle);
       border-left: 4px solid var(--gold);
-      border-radius: 10px;
-      padding: 14px 14px 12px;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      box-shadow: var(--shadow);
+      padding: 22px;
     }
 
     .kpi .label {
       color: var(--text-secondary);
+      font-size: 0.74rem;
       text-transform: uppercase;
-      font-size: 0.68rem;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.09em;
+      margin-bottom: 8px;
       font-weight: 700;
-      margin-bottom: 6px;
     }
 
     .kpi .value {
+      font-family: 'Montserrat', sans-serif;
       color: var(--gold);
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
       font-weight: 800;
-      font-size: clamp(1.05rem, 2.2vw, 1.45rem);
       line-height: 1.1;
-      margin-bottom: 4px;
+      margin-bottom: 8px;
     }
 
-    .kpi .note {
-      color: var(--text-secondary);
-      font-size: 0.78rem;
-    }
+    .kpi p { color: var(--text-secondary); font-size: 0.92rem; }
 
     .panel {
-      margin-top: 16px;
-      background: rgba(35, 39, 42, 0.78);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 16px;
+      background: var(--card-bg);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 24px;
+      margin-top: 18px;
     }
 
-    .panel h2 {
-      font-size: 1.05rem;
+    .panel-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.04rem;
       text-transform: uppercase;
       letter-spacing: 0.03em;
-      margin-bottom: 10px;
-      color: var(--text-primary);
+      margin-bottom: 8px;
+      font-weight: 700;
     }
 
-    .panel h2 .gold { color: var(--gold); }
+    .panel-title .gold { color: var(--gold); }
 
     .chart-note {
       color: var(--text-secondary);
-      font-size: 0.78rem;
-      margin-bottom: 10px;
+      font-size: 0.84rem;
+      margin-bottom: 14px;
     }
 
-    .bar-row {
-      margin-bottom: 11px;
-    }
+    .bar-group { display: grid; gap: 14px; }
+
+    .bar-row { display: grid; gap: 6px; }
 
     .bar-meta {
       display: flex;
       justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 4px;
-      font-size: 0.82rem;
+      gap: 16px;
+      font-size: 0.9rem;
       color: var(--text-primary);
       font-weight: 600;
     }
 
+    .bar-meta .val { color: var(--gold); font-weight: 700; }
+
     .bar-track {
       width: 100%;
-      height: 13px;
+      height: 15px;
       border-radius: 999px;
-      background: #2d3138;
+      background: #2b3038;
+      border: 1px solid rgba(255,255,255,0.07);
       overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.06);
     }
 
-    .bar-fill {
-      height: 100%;
-      border-radius: 999px;
-    }
+    .bar-fill { height: 100%; border-radius: 999px; }
+    .fill-gold { background: linear-gradient(90deg, #e5c41f 0%, #ffd700 100%); }
+    .fill-amber { background: linear-gradient(90deg, #de9f2a 0%, #fbbf24 100%); }
+    .fill-green { background: linear-gradient(90deg, #2cbc70 0%, #3ddc84 100%); }
+    .fill-mint { background: linear-gradient(90deg, #79d8a0 0%, #a0e8b0 100%); }
 
-    .gold { background: linear-gradient(90deg, #e3c31f 0%, #ffd700 100%); }
-    .green { background: linear-gradient(90deg, #32c174 0%, #3ddc84 100%); }
-    .mint { background: linear-gradient(90deg, #7cd9a2 0%, #a0e8b0 100%); }
-    .amber { background: linear-gradient(90deg, #e9a92b 0%, #fbbf24 100%); }
+    .split-wrap { margin-top: 16px; }
 
     .split-bar {
-      margin-top: 6px;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 10px;
-      overflow: hidden;
-      height: 20px;
-      display: flex;
       width: 100%;
-      background: #2d3138;
+      height: 22px;
+      border-radius: 999px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      background: #2b3038;
     }
 
-    .split-bar .ai {
-      background: linear-gradient(90deg, #e9a92b 0%, #ffd700 100%);
-      width: 20.4%;
-    }
-
-    .split-bar .other {
-      background: linear-gradient(90deg, #4d5561 0%, #636b77 100%);
-      width: 79.6%;
-    }
+    .split-ai { width: 20.4%; background: linear-gradient(90deg, #e8aa2c 0%, #ffd700 100%); }
+    .split-other { width: 79.6%; background: linear-gradient(90deg, #49515e 0%, #626b77 100%); }
 
     .legend {
-      margin-top: 8px;
+      margin-top: 10px;
       display: flex;
-      gap: 16px;
+      gap: 20px;
       flex-wrap: wrap;
-      font-size: 0.76rem;
+      font-size: 0.82rem;
       color: var(--text-secondary);
     }
 
     .legend span::before {
       content: '';
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
       display: inline-block;
-      margin-right: 6px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      margin-right: 7px;
       vertical-align: middle;
     }
 
-    .legend .ai-dot::before { background: var(--gold); }
-    .legend .other-dot::before { background: #626b78; }
+    .legend .ai::before { background: var(--gold); }
+    .legend .other::before { background: #626b77; }
 
-    .grid-two {
+    .two-col {
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 16px;
-      margin-top: 16px;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 22px;
+      margin-top: 18px;
     }
 
-    .mini-list {
+    .bullet-list {
       list-style: none;
-      margin-top: 6px;
+      margin-top: 10px;
+      display: grid;
+      gap: 9px;
     }
 
-    .mini-list li {
+    .bullet-list li {
       color: var(--text-secondary);
-      font-size: 0.82rem;
-      margin-bottom: 6px;
-      padding-left: 14px;
+      font-size: 0.92rem;
+      padding-left: 15px;
       position: relative;
+      line-height: 1.5;
     }
 
-    .mini-list li::before {
+    .bullet-list li::before {
       content: '▸';
+      color: var(--gold);
       position: absolute;
       left: 0;
-      color: var(--gold);
+      font-weight: 700;
     }
 
-    .sources {
-      margin-top: 16px;
-      border-top: 1px solid var(--border);
-      padding-top: 10px;
+    .source-box {
+      margin-top: 26px;
+      background: rgba(11,20,38,0.5);
+      border: 1px solid var(--grid-line);
+      border-top: 2px solid var(--gold);
+      border-radius: var(--radius);
+      padding: 18px 18px 16px;
     }
 
-    .sources h3 {
-      font-size: 0.8rem;
-      color: var(--text-secondary);
+    .source-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.84rem;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      margin-bottom: 8px;
+      color: var(--text-secondary);
+      margin-bottom: 10px;
     }
 
-    .sources ol {
+    .source-list {
       margin-left: 18px;
       display: grid;
-      gap: 4px;
+      gap: 5px;
     }
 
-    .sources li {
+    .source-list li {
       color: var(--text-secondary);
-      font-size: 0.72rem;
+      font-size: 0.75rem;
       line-height: 1.45;
     }
 
-    .sources a {
+    .source-list a {
       color: var(--mint);
       text-decoration: none;
     }
 
-    .sources a:hover { text-decoration: underline; }
+    .source-list a:hover { text-decoration: underline; }
 
-    @media (max-width: 980px) {
+    @media (max-width: 1024px) {
       .kpi-grid,
-      .grid-two {
+      .two-col {
         grid-template-columns: 1fr;
       }
     }
   </style>
 </head>
 <body>
+  <header class="brand-header">
+    <div class="brand-bar">
+      <div class="brand-text"><span class="scam">SCAM</span><span class="bomb">B💣MB</span><span class="scam">.com</span></div>
+      <div class="division-pill">AI Jobs Brief</div>
+    </div>
+  </header>
+
   <main class="wrap">
-    <header class="header">
-      <div class="wordmark"><span class="scam">SCAM</span><span class="bomb">B💣MB</span><span class="scam">.com</span></div>
-      <h1>AI-Attributed <span class="gold">Layoffs</span> (2024–2026 Snapshot)</h1>
-      <p class="sub">Publicly reported layoffs where AI/automation was explicitly cited or widely reported as a central driver. Values are best interpreted as conservative lower-bound estimates.</p>
-    </header>
-
-    <section class="kpi-grid" aria-label="Key metrics">
-      <article class="kpi">
-        <div class="label">U.S. AI-Attributed Cuts (2025)</div>
-        <div class="value">48,414–54,836</div>
-        <p class="note">Range reported across late-2025 summaries based on Challenger-linked reporting.</p>
-      </article>
-      <article class="kpi">
-        <div class="label">Early-2026 Tech Layoffs</div>
-        <div class="value">45,363 Total</div>
-        <p class="note">Of these, ~9,238 were explicitly tagged AI-driven.</p>
-      </article>
-      <article class="kpi">
-        <div class="label">AI Share of New Tech Layoffs</div>
-        <div class="value">20.4%</div>
-        <p class="note">Roughly 1 in 5 newly announced tech layoffs in early 2026.</p>
-      </article>
+    <section class="hero">
+      <div class="eyebrow">Data Brief | 2024–2026 Snapshot</div>
+      <h1>AI-Attributed <span class="gold">Layoffs</span> in the Last Two Years</h1>
+      <p class="sub">Scope: primarily U.S. employers plus selected global tech/logistics firms where AI or automation was explicitly cited—or is a central, credible factor—in workforce reductions.</p>
     </section>
 
-    <section class="panel" aria-label="Metric bars">
-      <h2><span class="gold">Bar View:</span> Scale of Reported Impact</h2>
-      <p class="chart-note">Bars normalized for visual comparison using 54,836 as the maximum reference point.</p>
-
-      <div class="bar-row">
-        <div class="bar-meta"><span>U.S. AI-Attributed Job Cuts (Upper Range)</span><span>54,836</span></div>
-        <div class="bar-track"><div class="bar-fill gold" style="width: 100%"></div></div>
+    <section class="section">
+      <div class="section-header">
+        <span class="section-number">01</span>
+        <h2>Headline Metrics</h2>
       </div>
 
-      <div class="bar-row">
-        <div class="bar-meta"><span>U.S. AI-Attributed Job Cuts (Lower Range)</span><span>48,414</span></div>
-        <div class="bar-track"><div class="bar-fill amber" style="width: 88.3%"></div></div>
-      </div>
+      <div class="kpi-grid">
+        <article class="kpi">
+          <div class="label">U.S. AI-attributed cuts (2025)</div>
+          <div class="value">48,414–54,836</div>
+          <p>Reported across late-2025 summaries based on Challenger-linked figures.</p>
+        </article>
 
-      <div class="bar-row">
-        <div class="bar-meta"><span>AI-Linked Portion of Early-2026 Tech Layoffs</span><span>~9,238</span></div>
-        <div class="bar-track"><div class="bar-fill green" style="width: 16.8%"></div></div>
-      </div>
+        <article class="kpi">
+          <div class="label">Early-2026 tech layoffs</div>
+          <div class="value">45,363 total</div>
+          <p>About 9,238 of those layoffs were explicitly labeled AI-driven.</p>
+        </article>
 
-      <div class="bar-row">
-        <div class="bar-meta"><span>Approx. U.S. Total AI-Attributed Layoffs (2-Year Order of Magnitude)</span><span>50,000–60,000</span></div>
-        <div class="bar-track"><div class="bar-fill mint" style="width: 91.2%"></div></div>
-      </div>
-
-      <p class="chart-note" style="margin-top:10px;">Early-2026 tech layoffs composition:</p>
-      <div class="split-bar" aria-label="Split of AI vs non-AI tech layoffs">
-        <div class="ai" title="AI-driven: 20.4%"></div>
-        <div class="other" title="Other factors: 79.6%"></div>
-      </div>
-      <div class="legend">
-        <span class="ai-dot">AI-driven (20.4%)</span>
-        <span class="other-dot">Other stated reasons (79.6%)</span>
+        <article class="kpi">
+          <div class="label">AI share of new tech layoffs</div>
+          <div class="value">20.4%</div>
+          <p>Roughly 1 in 5 newly reported tech layoffs in early 2026.</p>
+        </article>
       </div>
     </section>
 
-    <section class="grid-two">
-      <article class="panel" aria-label="Selected company scale">
-        <h2><span class="gold">Company Snapshot:</span> Selected AI-Linked Layoff Scales</h2>
-        <p class="chart-note">Illustrative estimates from public reporting (not a complete registry).</p>
+    <section class="section">
+      <div class="section-header">
+        <span class="section-number">02</span>
+        <h2>Visual Comparison: Reported Layoff Scale</h2>
+      </div>
 
-        <div class="bar-row">
-          <div class="bar-meta"><span>UPS</span><span>~20,000</span></div>
-          <div class="bar-track"><div class="bar-fill gold" style="width: 100%"></div></div>
-        </div>
-        <div class="bar-row">
-          <div class="bar-meta"><span>Dell</span><span>~12,500</span></div>
-          <div class="bar-track"><div class="bar-fill amber" style="width: 62.5%"></div></div>
-        </div>
-        <div class="bar-row">
-          <div class="bar-meta"><span>HP Inc.</span><span>~6,000</span></div>
-          <div class="bar-track"><div class="bar-fill mint" style="width: 30%"></div></div>
-        </div>
-        <div class="bar-row">
-          <div class="bar-meta"><span>Salesforce</span><span>~4,000–5,000</span></div>
-          <div class="bar-track"><div class="bar-fill green" style="width: 22.5%"></div></div>
-        </div>
-      </article>
+      <article class="panel">
+        <div class="panel-title"><span class="gold">Bar Chart:</span> Key Reported Metrics</div>
+        <p class="chart-note">Bars normalized to 54,836 for visual comparison.</p>
 
-      <article class="panel" aria-label="Interpretation notes">
-        <h2><span class="gold">Read This Carefully:</span> What the Numbers Mean</h2>
-        <ul class="mini-list">
-          <li>These figures are a lower bound, not a complete count.</li>
-          <li>Many employers do not explicitly label cuts as “AI-driven.”</li>
-          <li>“AI-attributed” here means AI/automation was named or clearly cited as a central factor.</li>
-          <li>Data blends U.S. and selected global examples for directional insight.</li>
-          <li>Trend signal: AI-related layoff attribution is increasing, but still not yet the majority driver.</li>
-        </ul>
+        <div class="bar-group">
+          <div class="bar-row">
+            <div class="bar-meta"><span>U.S. AI-attributed layoffs (upper estimate)</span><span class="val">54,836</span></div>
+            <div class="bar-track"><div class="bar-fill fill-gold" style="width:100%"></div></div>
+          </div>
+
+          <div class="bar-row">
+            <div class="bar-meta"><span>U.S. AI-attributed layoffs (lower estimate)</span><span class="val">48,414</span></div>
+            <div class="bar-track"><div class="bar-fill fill-amber" style="width:88.3%"></div></div>
+          </div>
+
+          <div class="bar-row">
+            <div class="bar-meta"><span>AI-linked portion of early-2026 tech layoffs</span><span class="val">~9,238</span></div>
+            <div class="bar-track"><div class="bar-fill fill-green" style="width:16.8%"></div></div>
+          </div>
+
+          <div class="bar-row">
+            <div class="bar-meta"><span>Approximate U.S. 2-year AI-attributed magnitude</span><span class="val">50,000–60,000</span></div>
+            <div class="bar-track"><div class="bar-fill fill-mint" style="width:91.2%"></div></div>
+          </div>
+        </div>
+
+        <div class="split-wrap">
+          <p class="chart-note">Early-2026 tech layoffs composition:</p>
+          <div class="split-bar" aria-label="AI vs other layoff attribution">
+            <div class="split-ai" title="AI-driven 20.4%"></div>
+            <div class="split-other" title="Other reasons 79.6%"></div>
+          </div>
+          <div class="legend">
+            <span class="ai">AI-driven (20.4%)</span>
+            <span class="other">Other cited reasons (79.6%)</span>
+          </div>
+        </div>
       </article>
     </section>
 
-    <section class="sources">
-      <h3>Sources</h3>
-      <ol>
+    <section class="section">
+      <div class="section-header">
+        <span class="section-number">03</span>
+        <h2>Company Examples + Interpretation</h2>
+      </div>
+
+      <div class="two-col">
+        <article class="panel">
+          <div class="panel-title"><span class="gold">Selected Company Scale</span> (Illustrative)</div>
+          <p class="chart-note">Examples from public reporting where AI/automation was linked to restructuring or layoffs.</p>
+
+          <div class="bar-group">
+            <div class="bar-row">
+              <div class="bar-meta"><span>UPS</span><span class="val">~20,000</span></div>
+              <div class="bar-track"><div class="bar-fill fill-gold" style="width:100%"></div></div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-meta"><span>Dell</span><span class="val">~12,500</span></div>
+              <div class="bar-track"><div class="bar-fill fill-amber" style="width:62.5%"></div></div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-meta"><span>HP Inc.</span><span class="val">~6,000</span></div>
+              <div class="bar-track"><div class="bar-fill fill-mint" style="width:30%"></div></div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-meta"><span>Salesforce</span><span class="val">~4,000–5,000</span></div>
+              <div class="bar-track"><div class="bar-fill fill-green" style="width:22.5%"></div></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-title"><span class="gold">Method Notes:</span> How to Read This</div>
+          <ul class="bullet-list">
+            <li>There is no unified global registry that tags layoffs as AI vs. non-AI.</li>
+            <li>These values should be interpreted as conservative lower-bound estimates.</li>
+            <li>“AI-attributed” here means AI/automation was explicitly cited by employer statements or reputable reporting.</li>
+            <li>Many firms likely use AI as a factor without naming it publicly in layoff rationale.</li>
+            <li>Trend: AI-linked attribution is rising, but still not yet the dominant layoff reason overall.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="source-box">
+      <div class="source-title">Sources</div>
+      <ol class="source-list">
         <li>Digital Journal — <a href="https://www.digitaljournal.com/business/ai-and-automation-cut-54836-u-s-jobs-in-2025/article" target="_blank" rel="noopener noreferrer">AI and automation cut 54,836 U.S. jobs in 2025</a> (2026-03-14).</li>
         <li>GoElite — <a href="https://goelite.com/blogs/ai-cited-50000-us-job-cuts-2025-automation" target="_blank" rel="noopener noreferrer">AI Cited in Nearly 50,000 U.S. Job Cuts in 2025</a> (2025-12-02).</li>
         <li>Los Angeles Times — <a href="https://www.latimes.com/business/story/2025-11-20/ai-cited-in-close-to-50-000-job-cuts-as-tech-giants-accelerate-automation" target="_blank" rel="noopener noreferrer">AI cited in nearly 50,000 job cuts as tech giants accelerate automation</a> (2025-11-20).</li>
