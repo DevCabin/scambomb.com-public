@@ -29,12 +29,18 @@
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
+    html, body {
+      width: 100%;
+      overflow-x: hidden;
+    }
+
     body {
       font-family: 'Inter', sans-serif;
       background: var(--charcoal);
       color: var(--text-primary);
       line-height: 1.55;
       min-height: 100vh;
+      margin: 0;
       background-image:
         linear-gradient(var(--grid-line) 1px, transparent 1px),
         linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
@@ -49,8 +55,9 @@
     }
 
     .brand-bar {
-      max-width: 1240px;
-      margin: 0 auto;
+      width: 100%;
+      max-width: none;
+      margin: 0;
       padding: 0 24px;
       display: flex;
       align-items: center;
@@ -82,8 +89,9 @@
     }
 
     .wrap {
-      max-width: 1240px;
-      margin: 0 auto;
+      width: 100%;
+      max-width: none;
+      margin: 0;
       padding: 48px 24px 90px;
     }
 
@@ -219,12 +227,18 @@
     .bar-row { display: grid; gap: 6px; }
 
     .bar-meta {
-      display: flex;
-      justify-content: space-between;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: end;
       gap: 16px;
       font-size: 0.9rem;
       color: var(--text-primary);
       font-weight: 600;
+    }
+
+    .bar-meta span {
+      min-width: 0;
+      overflow-wrap: anywhere;
     }
 
     .bar-meta .val { color: var(--gold); font-weight: 700; }
@@ -339,6 +353,7 @@
       color: var(--text-secondary);
       font-size: 0.75rem;
       line-height: 1.45;
+      overflow-wrap: anywhere;
     }
 
     .source-list a {
