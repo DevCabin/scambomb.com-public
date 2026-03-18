@@ -63,8 +63,8 @@ function UniversalHeader() {
           </div>
 
           <div className="-mt-4 pb-3 text-center">
-            <p className="text-yellow-300 text-base sm:text-lg font-extrabold tracking-wider uppercase">
-              Scam detection made simple. Free to use.
+            <p className="text-white text-base sm:text-lg font-extrabold tracking-wider uppercase">
+              <span className="text-yellow-300">Scam Detection</span> made simple. Free to use.
             </p>
           </div>
 
