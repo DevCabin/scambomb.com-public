@@ -517,5 +517,32 @@
       </ol>
     </section>
   </main>
+
+  <script>
+    function postHeightToParent() {
+      const height = Math.max(
+        document.body.scrollHeight,
+        document.documentElement.scrollHeight,
+        document.body.offsetHeight,
+        document.documentElement.offsetHeight
+      );
+
+      if (window.parent && window.parent !== window) {
+        window.parent.postMessage(
+          { type: 'presentation-jobs-height', height },
+          window.location.origin
+        );
+      }
+    }
+
+    window.addEventListener('load', postHeightToParent);
+    window.addEventListener('resize', postHeightToParent);
+
+    if ('ResizeObserver' in window) {
+      const ro = new ResizeObserver(postHeightToParent);
+      ro.observe(document.body);
+      ro.observe(document.documentElement);
+    }
+  </script>
 </body>
 </html>
