@@ -44,7 +44,14 @@ export default function PresentationTriviaPage() {
           />
         </div>
 
-        <div className="mt-5 flex justify-end">
+        <div className="mt-5 flex justify-end gap-3 flex-wrap">
+          <a
+            href="/presentation-prompts"
+            className="inline-flex items-center justify-center rounded-xl px-4 py-2 font-semibold border border-[#3DDC84] text-[#3DDC84] hover:bg-[#3DDC84]/10"
+          >
+            Open Power Prompts
+          </a>
+
           <a
             href="/presentation-live"
             className="inline-flex items-center justify-center rounded-xl px-4 py-2 font-semibold border border-[#F5C84C] text-[#F5C84C] hover:bg-[#F5C84C]/10"
