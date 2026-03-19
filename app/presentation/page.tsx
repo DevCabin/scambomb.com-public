@@ -51,9 +51,9 @@ export default function PresentationPostcardPage() {
               </ul>
 
               <div className="mt-6 rounded-lg border border-[#FFD700]/35 bg-[#F5C84C] text-[#0B1324] p-4 print:border-[#0B1324]/25">
-                <p className="font-extrabold uppercase text-sm tracking-wide">COMMUNITY TRAINING • SENIOR FRIENDLY • PRACTICAL</p>
-                <p className="mt-1 text-sm sm:text-base font-semibold">Led by George Featherstone</p>
-                <p className="mt-1 text-xs sm:text-sm font-medium">SCAMBOMB.COM • GILMER, TX</p>
+                <p className="font-extrabold uppercase text-base sm:text-lg tracking-wide">COMMUNITY TRAINING • SENIOR FRIENDLY • PRACTICAL</p>
+                <p className="mt-1 text-base sm:text-lg font-semibold">Led by George Featherstone</p>
+                <p className="mt-1 text-sm sm:text-base font-semibold">SCAMBOMB.COM • GILMER, TX</p>
               </div>
             </div>
           </div>
