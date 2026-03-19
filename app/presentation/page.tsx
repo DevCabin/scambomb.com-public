@@ -8,7 +8,7 @@ export default function PresentationPostcardPage() {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-0 print:grid-cols-12">
             <div className="md:col-span-7 print:col-span-7 p-5 sm:p-8 lg:p-10 print:p-8">
               <p className="inline-block bg-[#F5C84C] text-[#0B1324] font-extrabold text-xs sm:text-sm tracking-[0.14em] px-3 py-1 rounded-sm print:text-sm">
-                FRIDAY • TOMORROW • 6:00 PM CST
+                FRIDAY • MARCH 20 • 6:00 PM CST
               </p>
 
               <h1 className="mt-4 sm:mt-5 font-extrabold uppercase leading-[0.95] tracking-tight text-[clamp(1.8rem,8vw,4.2rem)] print:text-[42px]">
@@ -28,7 +28,7 @@ export default function PresentationPostcardPage() {
 
             <div className="md:col-span-5 print:col-span-5 p-5 sm:p-8 lg:p-10 print:p-8 bg-[#0B1324]/70 border-t md:border-t-0 md:border-l border-white/15 print:bg-[#F8F8FA] print:border-[#C7CDD9]">
               <h2 className="text-[#F5C84C] print:text-[#0B1324] text-xl sm:text-2xl font-extrabold uppercase tracking-tight">
-                WHAT YOU'LL GAIN
+                WHAT YOU'LL LEARN
               </h2>
 
               <ul className="mt-4 space-y-3 text-sm sm:text-base leading-relaxed print:text-[15px]">
@@ -38,11 +38,7 @@ export default function PresentationPostcardPage() {
                 </li>
                 <li className="flex gap-2">
                   <span className="text-[#FFD700] print:text-[#0B1324]">✅</span>
-                  <span><strong>VERIFY BEFORE YOU ACT</strong> with a simple pause-check-confirm process.</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-[#FFD700] print:text-[#0B1324]">✅</span>
-                  <span><strong>PROTECT FAMILY MEMBERS</strong> with a shared “safe word + callback” routine.</span>
+                  <span><strong>PROTECT FAMILY MEMBERS</strong> with a simple pause-check-confirm process.</span>
                 </li>
                 <li className="flex gap-2">
                   <span className="text-[#FFD700] print:text-[#0B1324]">✅</span>
@@ -50,7 +46,7 @@ export default function PresentationPostcardPage() {
                 </li>
                 <li className="flex gap-2">
                   <span className="text-[#FFD700] print:text-[#0B1324]">✅</span>
-                  <span><strong>FEEL LESS FEAR, MORE CONTROL</strong> online and on the phone.</span>
+                  <span><strong>FEEL EMPOWERED BY KNOWLEDGE</strong> and know exactly how to handle fraud.</span>
                 </li>
               </ul>
 
