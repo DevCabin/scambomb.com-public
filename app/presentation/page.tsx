@@ -74,49 +74,49 @@ export default function PresentationPostcardPage() {
             Printable front-and-back quick card for your wallet, fridge, or phone stand.
           </p>
 
-          <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4 print:grid-cols-2">
-            <article className="rounded-2xl border-2 border-[#FFD700]/60 bg-gradient-to-br from-[#0F1B34] to-[#0B1324] p-5 sm:p-6 print:bg-white print:border-[#0B1324]">
+          <div className="mt-4 flex flex-col gap-5 max-w-5xl">
+            <article className="rounded-2xl border-2 border-[#FFD700]/60 bg-gradient-to-br from-[#0F1B34] to-[#0B1324] p-6 sm:p-8 print:bg-white print:border-[#0B1324]">
               <p className="text-xs sm:text-sm uppercase tracking-[0.16em] font-bold text-[#9BA3AF] print:text-[#6B7280]">
                 Front
               </p>
-              <h3 className="mt-2 text-2xl sm:text-3xl font-extrabold uppercase leading-tight">
+              <h3 className="mt-2 text-3xl sm:text-4xl font-extrabold uppercase leading-tight">
                 <span className="text-[#F0F2F5] print:text-[#0B1324]">SCAM</span>
                 <span className="text-[#FFD700] print:text-[#0B1324]">B💣MB</span>
                 <span className="text-[#F0F2F5] print:text-[#0B1324]">.com</span>
               </h3>
-              <p className="mt-3 text-[#FFD700] print:text-[#0B1324] font-bold uppercase text-sm sm:text-base">
+              <p className="mt-3 text-[#FFD700] print:text-[#0B1324] font-bold uppercase text-base sm:text-lg">
                 60-Second Scam Defense Card
               </p>
               <div className="mt-5 rounded-xl border border-[#FFD700]/50 p-4">
-                <p className="text-lg sm:text-xl font-extrabold text-[#FFD700] print:text-[#0B1324] uppercase">
+                <p className="text-xl sm:text-2xl font-extrabold text-[#FFD700] print:text-[#0B1324] uppercase">
                   Stop. Breathe. Verify.
                 </p>
-                <p className="mt-2 text-white/85 print:text-[#1F2937] text-sm sm:text-base">
+                <p className="mt-2 text-white/85 print:text-[#1F2937] text-base sm:text-lg">
                   Use this card whenever a text, call, or email feels urgent, emotional, or suspicious.
                 </p>
               </div>
             </article>
 
-            <article className="rounded-2xl border-2 border-[#FFD700]/60 bg-gradient-to-br from-[#0B1324] to-[#0F1B34] p-5 sm:p-6 print:bg-white print:border-[#0B1324]">
+            <article className="rounded-2xl border-2 border-[#FFD700]/60 bg-gradient-to-br from-[#0B1324] to-[#0F1B34] p-6 sm:p-8 print:bg-white print:border-[#0B1324]">
               <p className="text-xs sm:text-sm uppercase tracking-[0.16em] font-bold text-[#9BA3AF] print:text-[#6B7280]">
                 Back
               </p>
-              <h3 className="mt-2 text-xl sm:text-2xl font-extrabold uppercase text-[#FFD700] print:text-[#0B1324]">
+              <h3 className="mt-2 text-2xl sm:text-3xl font-extrabold uppercase text-[#FFD700] print:text-[#0B1324]">
                 The 1 • 2 • 3 Rule
               </h3>
 
               <ol className="mt-4 space-y-3">
-                <li className="rounded-xl border border-[#FFD700]/45 p-3">
-                  <p className="text-[#FFD700] print:text-[#0B1324] font-extrabold uppercase text-sm">1) Pause</p>
-                  <p className="mt-1 text-white/90 print:text-[#1F2937] text-sm">Do not click, pay, or reply while stressed.</p>
+                <li className="rounded-xl border border-[#FFD700]/45 p-4">
+                  <p className="text-[#FFD700] print:text-[#0B1324] font-extrabold uppercase text-base">1) Pause</p>
+                  <p className="mt-1 text-white/90 print:text-[#1F2937] text-base">Do not click, pay, or reply while stressed.</p>
                 </li>
-                <li className="rounded-xl border border-[#FFD700]/45 p-3">
-                  <p className="text-[#FFD700] print:text-[#0B1324] font-extrabold uppercase text-sm">2) Verify</p>
-                  <p className="mt-1 text-white/90 print:text-[#1F2937] text-sm">Call the person or company using a trusted number you find yourself.</p>
+                <li className="rounded-xl border border-[#FFD700]/45 p-4">
+                  <p className="text-[#FFD700] print:text-[#0B1324] font-extrabold uppercase text-base">2) Verify</p>
+                  <p className="mt-1 text-white/90 print:text-[#1F2937] text-base">Call the person or company using a trusted number you find yourself.</p>
                 </li>
-                <li className="rounded-xl border border-[#FFD700]/45 p-3">
-                  <p className="text-[#FFD700] print:text-[#0B1324] font-extrabold uppercase text-sm">3) Decide</p>
-                  <p className="mt-1 text-white/90 print:text-[#1F2937] text-sm">Only act after calm confirmation from a trusted source.</p>
+                <li className="rounded-xl border border-[#FFD700]/45 p-4">
+                  <p className="text-[#FFD700] print:text-[#0B1324] font-extrabold uppercase text-base">3) Decide</p>
+                  <p className="mt-1 text-white/90 print:text-[#1F2937] text-base">Only act after calm confirmation from a trusted source.</p>
                 </li>
               </ol>
             </article>
