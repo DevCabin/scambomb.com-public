@@ -71,23 +71,61 @@ export default function PresentationPostcardPage() {
             Workshop Download
           </h2>
           <p className="mt-2 text-white/75 print:text-[#374151] text-sm sm:text-base">
-            Printable quick card for your wallet, fridge, or phone stand.
+            Printable front-and-back quick card for your wallet, fridge, or phone stand.
           </p>
 
           <a
-            href="/scambomb_workshop_download.pdf"
+            href="/scambomb_workshop_download_FINAL.pdf"
             className="mt-4 inline-flex items-center justify-center rounded-xl px-4 py-2 font-extrabold uppercase tracking-wide border border-[#FFD700] bg-[#FFD700] text-[#0B1324] hover:bg-[#F5C84C]"
           >
             Download PDF
           </a>
 
-          <div className="mt-4 max-w-5xl">
-            <article className="rounded-2xl border-2 border-[#FFD700]/60 bg-gradient-to-br from-[#0F1B34] to-[#0B1324] p-3 sm:p-4 print:bg-white print:border-[#0B1324]">
-              <img
-                src="/scambomb_workshop_download.png"
-                alt="ScamBomb workshop quick card preview"
-                className="w-full rounded-xl border border-[#FFD700]/40"
-              />
+          <div className="mt-4 flex flex-col gap-5 max-w-5xl">
+            <article className="rounded-2xl border-2 border-[#FFD700]/60 bg-gradient-to-br from-[#0F1B34] to-[#0B1324] p-6 sm:p-8 print:bg-white print:border-[#0B1324]">
+              <p className="text-xs sm:text-sm uppercase tracking-[0.16em] font-bold text-[#9BA3AF] print:text-[#6B7280]">
+                Front
+              </p>
+              <h3 className="mt-2 text-3xl sm:text-4xl font-extrabold uppercase leading-tight">
+                <span className="text-[#F0F2F5] print:text-[#0B1324]">SCAM</span>
+                <span className="text-[#FFD700] print:text-[#0B1324]">B💣MB</span>
+                <span className="text-[#F0F2F5] print:text-[#0B1324]">.com</span>
+              </h3>
+              <p className="mt-3 text-[#FFD700] print:text-[#0B1324] font-bold uppercase text-base sm:text-lg">
+                60-Second Scam Defense Card
+              </p>
+              <div className="mt-5 rounded-xl border border-[#FFD700]/50 p-4">
+                <p className="text-xl sm:text-2xl font-extrabold text-[#FFD700] print:text-[#0B1324] uppercase">
+                  Stop. Breathe. Verify.
+                </p>
+                <p className="mt-2 text-white/85 print:text-[#1F2937] text-base sm:text-lg">
+                  Use this card whenever a text, call, or email feels urgent, emotional, or suspicious.
+                </p>
+              </div>
+            </article>
+
+            <article className="rounded-2xl border-2 border-[#FFD700]/60 bg-gradient-to-br from-[#0B1324] to-[#0F1B34] p-6 sm:p-8 print:bg-white print:border-[#0B1324]">
+              <p className="text-xs sm:text-sm uppercase tracking-[0.16em] font-bold text-[#9BA3AF] print:text-[#6B7280]">
+                Back
+              </p>
+              <h3 className="mt-2 text-2xl sm:text-3xl font-extrabold uppercase text-[#FFD700] print:text-[#0B1324]">
+                The 1 • 2 • 3 Rule
+              </h3>
+
+              <ol className="mt-4 space-y-3">
+                <li className="rounded-xl border border-[#FFD700]/45 p-4">
+                  <p className="text-[#FFD700] print:text-[#0B1324] font-extrabold uppercase text-base">1) Pause</p>
+                  <p className="mt-1 text-white/90 print:text-[#1F2937] text-base">Do not click, pay, or reply while stressed.</p>
+                </li>
+                <li className="rounded-xl border border-[#FFD700]/45 p-4">
+                  <p className="text-[#FFD700] print:text-[#0B1324] font-extrabold uppercase text-base">2) Verify</p>
+                  <p className="mt-1 text-white/90 print:text-[#1F2937] text-base">Call the person or company using a trusted number you find yourself.</p>
+                </li>
+                <li className="rounded-xl border border-[#FFD700]/45 p-4">
+                  <p className="text-[#FFD700] print:text-[#0B1324] font-extrabold uppercase text-base">3) Decide</p>
+                  <p className="mt-1 text-white/90 print:text-[#1F2937] text-base">Only act after calm confirmation from a trusted source.</p>
+                </li>
+              </ol>
             </article>
           </div>
         </section>
