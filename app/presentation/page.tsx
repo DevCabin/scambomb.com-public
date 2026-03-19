@@ -74,12 +74,21 @@ export default function PresentationPostcardPage() {
             Printable front-and-back quick card for your wallet, fridge, or phone stand.
           </p>
 
-          <a
-            href="/scambomb_workshop_download_FINAL.pdf"
-            className="mt-4 inline-flex items-center justify-center rounded-xl px-4 py-2 font-extrabold uppercase tracking-wide border border-[#FFD700] bg-[#FFD700] text-[#0B1324] hover:bg-[#F5C84C]"
-          >
-            Download PDF
-          </a>
+          <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
+            <a
+              href="/scambomb_workshop_download_FINAL.pdf"
+              className="inline-flex items-center justify-center rounded-xl px-4 py-2 font-extrabold uppercase tracking-wide border border-[#FFD700] bg-[#FFD700] text-[#0B1324] hover:bg-[#F5C84C]"
+            >
+              Download PDF
+            </a>
+
+            <a
+              href="/presentation-prompts"
+              className="inline-flex items-center justify-center rounded-xl px-4 py-2 font-extrabold uppercase tracking-wide border border-[#FFD700] bg-[#FFD700] text-[#0B1324] hover:bg-[#F5C84C]"
+            >
+              Attendee Bonus
+            </a>
+          </div>
 
           <div className="mt-4 flex flex-col gap-5 max-w-5xl">
             <article className="rounded-2xl border-2 border-[#FFD700]/60 bg-gradient-to-br from-[#0F1B34] to-[#0B1324] p-6 sm:p-8 print:bg-white print:border-[#0B1324]">
