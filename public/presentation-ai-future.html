@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guide the AI. Or Be Guided By It.</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy:   #0B1324;
+    --coral:  #F5C84C;
+    --gold:   #FFD700;
+    --white:  #F0F2F5;
+    --ltgray: #F4F4F8;
+    --dkgray: #1F2937;
+    --muted:  #94A3B8;
+    --purple: #3DDC84;
+  }
+
+  html, body { width: 100%; height: 100%; overflow: hidden; background: #0B1324; }
+
+  #deck {
+    width: 100vw; height: 100vh;
+    position: relative;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .slide {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.55s ease, transform 0.55s ease;
+    transform: translateY(24px);
+    padding: 5vh 6vw;
+    overflow: hidden;
+  }
+  .slide.active {
+    opacity: 1; pointer-events: all; transform: translateY(0);
+  }
+  .slide.exit {
+    opacity: 0; transform: translateY(-24px);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+  }
+
+  .bg-navy   { background: var(--navy); }
+  .bg-light  { background: var(--ltgray); }
+  .bg-white  { background: #fff; }
+  .bg-coral  { background: var(--coral); }
+
+  .accent-top {
+    position: absolute; top: 0; left: 0; right: 0; height: 6px;
+  }
+  .accent-bottom {
+    position: absolute; bottom: 0; left: 0; right: 0; height: 6px;
+  }
+  .bar-coral  { background: var(--coral); }
+  .bar-gold   { background: var(--gold); }
+  .bar-navy   { background: var(--navy); }
+
+  #nav {
+    position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%);
+    display: flex; align-items: center; gap: 18px; z-index: 100;
+    background: rgba(11,19,36,0.45);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 50px;
+    padding: 10px 22px;
+  }
+  #nav button {
+    background: none; border: none; cursor: pointer;
+    color: rgba(255,255,255,0.7); font-size: 18px;
+    transition: color 0.2s, transform 0.2s;
+    line-height: 1; padding: 4px 8px;
+  }
+  #nav button:hover { color: #fff; transform: scale(1.2); }
+  #slide-counter {
+    color: rgba(255,255,255,0.7);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px; letter-spacing: 1px; min-width: 48px; text-align: center;
+  }
+  .dot-row { display: flex; gap: 6px; align-items: center; }
+  .dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: rgba(255,255,255,0.3);
+    transition: background 0.3s, transform 0.3s;
+    cursor: pointer;
+  }
+  .dot.on { background: var(--gold); transform: scale(1.4); }
+
+  #hint {
+    position: fixed; top: 20px; right: 24px;
+    font-size: 11px; color: rgba(255,255,255,0.45);
+    font-family: 'Montserrat', sans-serif; letter-spacing: 0.5px;
+  }
+
+  #s1 { justify-content: flex-start; padding-top: 10vh; }
+  #s1 .logo-bar {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    background: rgba(255,255,255,0.07);
+    padding: 12px 40px;
+    font-size: 12px; color: var(--muted); letter-spacing: 1px;
+  }
+  .headline-giant {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(72px, 11vw, 130px);
+    line-height: 0.95;
+    letter-spacing: 1px;
+  }
+  .hl-white { color: var(--white); }
+  .hl-coral { color: var(--coral); }
+  .hl-gold  { color: var(--gold); }
+  .hl-navy  { color: var(--navy); }
+  .subtitle-tag {
+    margin-top: 28px;
+    font-size: clamp(14px, 1.6vw, 20px);
+    color: var(--gold); font-style: italic;
+    max-width: 620px;
+  }
+  .tag-chip {
+    display: inline-block;
+    background: var(--coral);
+    color: #0B1324; font-size: 11px; font-weight: 800;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 4px 12px; border-radius: 2px;
+    margin-bottom: 18px;
+  }
+
+  #s2 { flex-direction: row; gap: 0; padding: 0; align-items: stretch; }
+  .s2-left {
+    width: 42%; background: var(--navy);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    padding: 48px 36px;
+    position: relative;
+  }
+  .s2-right {
+    width: 58%; background: var(--ltgray);
+    display: flex; flex-direction: column;
+    justify-content: center; padding: 48px 48px;
+    gap: 28px;
+  }
+  .breaking-badge {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 14px; letter-spacing: 5px;
+    color: var(--coral); margin-bottom: 12px;
+  }
+  .bk-emoji { font-size: 80px; line-height: 1; margin-bottom: 18px; }
+  .bk-headline {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(26px, 3.5vw, 42px);
+    color: var(--white); text-align: center; line-height: 1.1;
+  }
+  .bk-sub {
+    margin-top: 14px;
+    font-size: clamp(13px, 1.4vw, 17px);
+    color: var(--gold); font-style: italic; text-align: center;
+  }
+  .s2-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(36px, 5vw, 60px);
+    color: var(--navy); line-height: 1;
+  }
+  .s2-body {
+    font-size: clamp(14px, 1.4vw, 17px);
+    color: var(--dkgray); line-height: 1.65;
+    max-width: 520px;
+  }
+  .callout-box {
+    background: var(--coral);
+    padding: 22px 28px; border-radius: 4px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(20px, 2.5vw, 30px);
+    color: #0B1324; line-height: 1.2;
+    box-shadow: 0 8px 32px rgba(245,200,76,0.35);
+  }
+
+  #s3 { text-align: center; }
+  .giant-pct {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(160px, 24vw, 280px);
+    color: var(--gold); line-height: 0.85;
+    text-shadow: 0 0 80px rgba(255,215,0,0.25);
+  }
+  .stat-line1 {
+    font-size: clamp(18px, 2vw, 26px);
+    color: rgba(255,255,255,0.85);
+    margin-top: 18px;
+  }
+  .stat-line2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(22px, 3vw, 40px);
+    color: var(--coral); margin-top: 6px;
+    letter-spacing: 1px;
+  }
+  .stat-source {
+    margin-top: 24px; font-size: 12px;
+    color: var(--muted); font-style: italic;
+    letter-spacing: 0.5px;
+  }
+
+  #s4 { padding: 4vh 5vw; }
+  .s4-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(30px, 4vw, 52px);
+    color: var(--navy); margin-bottom: 28px;
+    text-align: center; letter-spacing: 0.5px;
+  }
+  .two-col { display: flex; gap: 20px; width: 100%; }
+  .future-card {
+    flex: 1; border-radius: 6px; padding: 28px 30px;
+    position: relative; overflow: hidden;
+  }
+  .future-card .card-bar {
+    position: absolute; top: 0; left: 0; right: 0; height: 5px;
+  }
+  .fc-dark { background: var(--dkgray); }
+  .fc-navy { background: var(--navy); }
+  .card-heading {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(22px, 2.8vw, 36px);
+    margin-bottom: 18px; margin-top: 10px;
+    letter-spacing: 0.5px;
+  }
+  .card-list { list-style: none; }
+  .card-list li {
+    padding: 9px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    color: rgba(255,255,255,0.85);
+    font-size: clamp(13px, 1.3vw, 16px);
+  }
+  .card-list li:last-child { border-bottom: none; }
+  .card-footer {
+    margin-top: 16px; font-style: italic;
+    font-size: 12px;
+  }
+  .cf-coral { color: var(--coral); }
+  .cf-gold  { color: var(--gold); }
+
+  #s5 { padding: 4vh 5vw; align-items: flex-start; }
+  .left-rule {
+    position: absolute; left: 0; top: 0; bottom: 0; width: 7px;
+  }
+  .s5-quote {
+    font-size: clamp(28px, 4.5vw, 58px);
+    color: var(--navy); line-height: 1.1;
+    font-style: italic;
+    font-weight: 600;
+  }
+  .s5-sub {
+    margin-top: 14px; margin-bottom: 32px;
+    font-size: clamp(14px, 1.4vw, 18px);
+    color: var(--dkgray);
+  }
+  .three-boxes { display: flex; gap: 16px; width: 100%; }
+  .tier-box {
+    flex: 1; border-radius: 5px; padding: 24px 22px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.09);
+  }
+  .tb-light { background: var(--ltgray); }
+  .tb-coral { background: var(--coral); }
+  .tb-navy  { background: var(--navy); }
+  .tier-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px; line-height: 1;
+  }
+  .tier-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(20px, 2.2vw, 28px);
+    margin: 8px 0; letter-spacing: 0.5px;
+  }
+  .tier-desc {
+    font-size: clamp(12px, 1.1vw, 14px);
+    line-height: 1.55;
+  }
+  .td-dark { color: var(--dkgray); }
+  .td-white { color: rgba(255,255,255,0.9); }
+  .s5-footnote {
+    margin-top: 18px; font-size: 12px;
+    color: var(--muted); font-style: italic; text-align: center; width: 100%;
+  }
+
+  #s6 { padding: 4vh 6vw; }
+  .s6-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(28px, 4vw, 52px);
+    color: var(--white); margin-bottom: 24px;
+    align-self: flex-start; letter-spacing: 0.5px;
+  }
+  .truth-rows { display: flex; flex-direction: column; gap: 14px; width: 100%; }
+  .truth-row {
+    display: flex; align-items: flex-start; gap: 18px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 5px; padding: 16px 20px;
+  }
+  .tr-emoji { font-size: 28px; flex-shrink: 0; line-height: 1; margin-top: 2px; }
+  .tr-head {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(16px, 1.8vw, 22px);
+    color: var(--gold); letter-spacing: 0.3px;
+  }
+  .tr-body {
+    font-size: clamp(12px, 1.2vw, 15px);
+    color: rgba(255,255,255,0.78); margin-top: 4px; line-height: 1.5;
+  }
+
+  #s7 { padding: 4vh 5vw; }
+  .s7-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(28px, 4vw, 50px);
+    color: var(--navy); margin-bottom: 22px; text-align: center;
+    letter-spacing: 0.5px;
+  }
+  .spectrum-bar {
+    width: 100%; height: 10px; border-radius: 5px;
+    background: linear-gradient(to right, var(--coral), var(--purple), var(--navy));
+    margin-bottom: 20px;
+  }
+  .spectrum-cards { display: flex; gap: 16px; width: 100%; }
+  .spec-card {
+    flex: 1; border-radius: 5px; padding: 24px 22px;
+    border: 2px solid; background: #fff;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  }
+  .sc-coral { border-color: var(--coral); }
+  .sc-purple { border-color: var(--purple); }
+  .sc-navy  { border-color: var(--navy); }
+  .spec-label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(20px, 2.5vw, 30px);
+    margin-bottom: 12px; letter-spacing: 0.5px;
+  }
+  .spec-desc {
+    font-size: clamp(13px, 1.2vw, 15px);
+    color: var(--dkgray); line-height: 1.6;
+  }
+  .spec-cta {
+    margin-top: 18px; padding: 12px 22px;
+    background: var(--navy); color: var(--gold);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(14px, 1.6vw, 20px);
+    border-radius: 3px; text-align: center;
+    letter-spacing: 1px; align-self: flex-end;
+  }
+
+  #s8 { padding: 4vh 5vw; align-items: flex-start; }
+  .s8-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(26px, 3.5vw, 46px);
+    color: var(--navy); margin-bottom: 20px;
+    letter-spacing: 0.5px;
+  }
+  .module-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 14px; width: 100%;
+  }
+  .module-grid .mod5 { grid-column: 1 / -1; }
+  .mod-card {
+    background: var(--ltgray); border-radius: 5px;
+    padding: 18px 20px; border-left: 5px solid var(--coral);
+    box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+  }
+  .mod-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px; color: var(--coral);
+    letter-spacing: 2px; margin-bottom: 4px;
+  }
+  .mod-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(17px, 1.8vw, 22px);
+    color: var(--navy); margin-bottom: 6px;
+    letter-spacing: 0.3px;
+  }
+  .mod-desc {
+    font-size: clamp(12px, 1.1vw, 14px);
+    color: var(--dkgray); line-height: 1.5;
+  }
+
+  #s9 { padding: 4vh 5vw; }
+  .s9-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(28px, 4vw, 52px);
+    color: var(--white); margin-bottom: 20px;
+    align-self: flex-start; letter-spacing: 0.5px;
+  }
+  .who-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 14px; width: 100%;
+  }
+  .who-card {
+    display: flex; align-items: flex-start; gap: 14px;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 5px; padding: 16px 18px;
+  }
+  .who-emoji { font-size: 26px; flex-shrink: 0; }
+  .who-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(16px, 1.8vw, 22px);
+    color: var(--gold); letter-spacing: 0.3px;
+  }
+  .who-desc {
+    font-size: clamp(12px, 1.1vw, 14px);
+    color: rgba(255,255,255,0.75); margin-top: 4px; line-height: 1.5;
+  }
+
+  #s10 { text-align: center; }
+  .cta-head {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(38px, 6vw, 80px);
+    color: var(--white); line-height: 0.95;
+    letter-spacing: 1px;
+  }
+  .cta-sub {
+    font-size: clamp(18px, 2.2vw, 28px);
+    color: var(--navy); font-style: italic;
+    margin-top: 10px; margin-bottom: 32px;
+    font-weight: 600;
+  }
+  .cta-box {
+    background: var(--navy); border-radius: 6px;
+    padding: 28px 40px;
+    box-shadow: 0 12px 48px rgba(0,0,0,0.25);
+    max-width: 640px;
+  }
+  .cta-box-head {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(18px, 2.5vw, 32px);
+    color: var(--white); letter-spacing: 0.5px;
+    margin-bottom: 10px;
+  }
+  .cta-name {
+    font-size: clamp(13px, 1.3vw, 16px);
+    color: var(--gold); margin-bottom: 6px;
+  }
+  .cta-contact {
+    font-size: clamp(12px, 1.1vw, 14px);
+    color: var(--muted); font-style: italic;
+  }
+  .cta-close {
+    margin-top: 24px;
+    font-size: clamp(14px, 1.5vw, 18px);
+    color: rgba(255,255,255,0.85); font-style: italic;
+  }
+
+  .slide.active .anim { animation: fadeUp 0.5s ease both; }
+  .slide.active .anim:nth-child(1) { animation-delay: 0.05s; }
+  .slide.active .anim:nth-child(2) { animation-delay: 0.15s; }
+  .slide.active .anim:nth-child(3) { animation-delay: 0.25s; }
+  .slide.active .anim:nth-child(4) { animation-delay: 0.35s; }
+  .slide.active .anim:nth-child(5) { animation-delay: 0.45s; }
+  .slide.active .anim:nth-child(6) { animation-delay: 0.55s; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  #progress {
+    position: fixed; top: 0; left: 0; height: 3px;
+    background: var(--gold); transition: width 0.4s ease;
+    z-index: 200;
+  }
+</style>
+</head>
+<body>
+
+<div id="progress"></div>
+<div id="hint">← → Arrow keys to navigate</div>
+
+<div id="deck">
+  <div class="slide bg-navy active" id="s1">
+    <div class="accent-top bar-coral"></div>
+    <div class="anim tag-chip">AI Literacy Workshop</div>
+    <div class="anim headline-giant hl-white">Guide the AI.</div>
+    <div class="anim headline-giant hl-coral">Or Be Guided By It.</div>
+    <div class="anim subtitle-tag">An honest look at where AI is going — and why literacy comes first.</div>
+    <div class="logo-bar">SCAMB💣MB.com &nbsp;|&nbsp; Featherstone Web Solutions</div>
+  </div>
+
+  <div class="slide" id="s2">
+    <div class="s2-left">
+      <div class="anim breaking-badge">⚡ Breaking</div>
+      <div class="anim bk-emoji">🍔</div>
+      <div class="anim bk-headline">Burger King just put an AI in every employee headset.</div>
+      <div class="anim bk-sub">"It checks if workers say 'please' and 'thank you.'"</div>
+    </div>
+    <div class="s2-right">
+      <div class="anim s2-title">Meet Patty.</div>
+      <div class="anim s2-body">Burger King's new AI assistant lives in the headsets of every crew member — answering kitchen questions, tracking inventory, and quietly scoring employee friendliness for managers.</div>
+      <div class="anim callout-box">The AI isn't replacing the burger flipper.<br>It's watching them flip burgers.</div>
+    </div>
+  </div>
+
+  <div class="slide bg-navy" id="s3">
+    <div class="accent-top bar-gold"></div>
+    <div class="anim giant-pct">72%</div>
+    <div class="anim stat-line1">of CEOs believe most employees will have an AI agent</div>
+    <div class="anim stat-line2">reporting to them within five years.</div>
+    <div class="anim stat-source">Source: IDC / Salesforce CEO Study</div>
+  </div>
+
+  <div class="slide bg-light" id="s4">
+    <div class="anim s4-title">Two Futures. Same Technology.</div>
+    <div class="anim two-col">
+      <div class="future-card fc-dark">
+        <div class="card-bar bar-coral"></div>
+        <div class="card-heading hl-coral">AI directs you</div>
+        <ul class="card-list">
+          <li>You follow the script</li>
+          <li>AI scores your tone</li>
+          <li>Manager sees your report</li>
+          <li>You optimize for the metric</li>
+          <li>You don't understand why</li>
+        </ul>
+        <div class="card-footer cf-coral">← That's Burger King right now</div>
+      </div>
+      <div class="future-card fc-navy">
+        <div class="card-bar bar-gold"></div>
+        <div class="card-heading hl-gold">You direct the AI</div>
+        <ul class="card-list">
+          <li>You define the goal</li>
+          <li>You choose the tools</li>
+          <li>You verify the output</li>
+          <li>You own the result</li>
+          <li>You understand every step</li>
+        </ul>
+        <div class="card-footer cf-gold">← That's what we're building toward</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide bg-white" id="s5">
+    <div class="left-rule bar-coral"></div>
+    <div class="anim s5-quote">"Just learn to prompt."</div>
+    <div class="anim s5-sub">That's where most AI training stops. And that's the problem.</div>
+    <div class="anim three-boxes">
+      <div class="tier-box tb-light">
+        <div class="tier-num" style="color:var(--coral)">1</div>
+        <div class="tier-title hl-navy">Prompt<br>Engineering</div>
+        <div class="tier-desc td-dark">Writing instructions that get decent outputs from AI</div>
+      </div>
+      <div class="tier-box tb-coral">
+        <div class="tier-num" style="color:#0B1324">2</div>
+        <div class="tier-title" style="color:#0B1324">AI<br>Delegation</div>
+        <div class="tier-desc td-dark">Knowing which tasks to hand off, how to break them down, and when to step back in</div>
+      </div>
+      <div class="tier-box tb-navy">
+        <div class="tier-num" style="color:var(--gold)">3</div>
+        <div class="tier-title" style="color:#fff">Workflow<br>Orchestration</div>
+        <div class="tier-desc td-white">Connecting tools so outputs feed inputs and the whole thing runs without babysitting it</div>
+      </div>
+    </div>
+    <div class="s5-footnote">Most training covers Box 1. This workshop covers all three.</div>
+  </div>
+
+  <div class="slide bg-navy" id="s6">
+    <div class="accent-top bar-coral"></div>
+    <div class="anim s6-title">The Uncomfortable Truth</div>
+    <div class="truth-rows">
+      <div class="anim truth-row"><div class="tr-emoji">🧠</div><div><div class="tr-head">AI doesn't think.</div><div class="tr-body">It's If-This-Then-That at hyperspeed. Understanding that makes you better at using it.</div></div></div>
+      <div class="anim truth-row"><div class="tr-emoji">📊</div><div><div class="tr-head">The data matters more than the prompt.</div><div class="tr-body">Garbage in, garbage out. The best prompts can't fix a bad data source.</div></div></div>
+      <div class="anim truth-row"><div class="tr-emoji">⚠️</div><div><div class="tr-head">Superusers become obsolete.</div><div class="tr-body">Prompt engineers are like SEO experts — valuable today, automated tomorrow.</div></div></div>
+      <div class="anim truth-row"><div class="tr-emoji">✅</div><div><div class="tr-head">The durable skill is judgment.</div><div class="tr-body">Knowing when to trust AI, when to question it, and when to override it entirely.</div></div></div>
+    </div>
+  </div>
+
+  <div class="slide bg-light" id="s7">
+    <div class="anim s7-title">Where Do You Want to Land?</div>
+    <div class="anim spectrum-bar"></div>
+    <div class="anim spectrum-cards">
+      <div class="spec-card sc-coral"><div class="spec-label" style="color:var(--coral)">AI Bystander</div><div class="spec-desc">Doesn't know the tools exist. AI decisions happen to them.</div></div>
+      <div class="spec-card sc-purple"><div class="spec-label" style="color:var(--purple)">AI User</div><div class="spec-desc">Uses ChatGPT occasionally. Treats it like Google with better grammar.</div></div>
+      <div class="spec-card sc-navy"><div class="spec-label" style="color:var(--navy)">AI Orchestrator</div><div class="spec-desc">Directs agents, builds workflows, owns outcomes.</div></div>
+    </div>
+    <div class="anim spec-cta">This workshop gets you moving right →</div>
+  </div>
+
+  <div class="slide bg-white" id="s8">
+    <div class="left-rule bar-navy"></div>
+    <div class="anim s8-title">What This Workshop Covers</div>
+    <div class="anim module-grid">
+      <div class="mod-card"><div class="mod-num">01</div><div class="mod-title">What AI Actually Is</div><div class="mod-desc">Cut through the hype. Understand what LLMs can and can't do — and why that matters.</div></div>
+      <div class="mod-card"><div class="mod-num">04</div><div class="mod-title">Evaluating AI Output</div><div class="mod-desc">How to know if the AI got it right — even when it sounds perfectly confident and is perfectly wrong.</div></div>
+      <div class="mod-card"><div class="mod-num">02</div><div class="mod-title">Prompting That Works</div><div class="mod-desc">Not just "ask it better questions." Real techniques for consistent, reliable output.</div></div>
+      <div class="mod-card"><div class="mod-num">05</div><div class="mod-title">Building Simple Workflows</div><div class="mod-desc">Connect tools together so AI does the heavy lifting and you just steer.</div></div>
+      <div class="mod-card mod5"><div class="mod-num">03</div><div class="mod-title">Delegating to AI</div><div class="mod-desc">Which tasks are AI-ready? How do you break complex work into agent-manageable pieces without losing control of the outcome?</div></div>
+    </div>
+  </div>
+
+  <div class="slide bg-navy" id="s9">
+    <div class="accent-top bar-gold"></div>
+    <div class="anim s9-title">Who Is This For?</div>
+    <div class="anim who-grid">
+      <div class="who-card"><div class="who-emoji">👩‍💼</div><div><div class="who-name">Business owners</div><div class="who-desc">Who want AI working for them, not the other way around</div></div></div>
+      <div class="who-card"><div class="who-emoji">💼</div><div><div class="who-name">Employees</div><div class="who-desc">Who sense the ground shifting and want to stay ahead of it</div></div></div>
+      <div class="who-card"><div class="who-emoji">🧑‍🏫</div><div><div class="who-name">Educators & coaches</div><div class="who-desc">Who want to understand what they're sending students into</div></div></div>
+      <div class="who-card"><div class="who-emoji">👴</div><div><div class="who-name">Anyone 45+</div><div class="who-desc">Who missed the "learn to code" wave and doesn't want to miss this one</div></div></div>
+      <div class="who-card"><div class="who-emoji">🤷</div><div><div class="who-name">Skeptics</div><div class="who-desc">Who aren't sure they believe the hype — and want an honest conversation</div></div></div>
+      <div class="who-card"><div class="who-emoji">🚀</div><div><div class="who-name">Early movers</div><div class="who-desc">Who want to go beyond basics and build real skills, not party tricks</div></div></div>
+    </div>
+  </div>
+
+  <div class="slide bg-coral" id="s10">
+    <div class="anim cta-head">The age of AI management<br>has already begun.</div>
+    <div class="anim cta-sub">The only question is whether you're ready.</div>
+    <div class="anim cta-box">
+      <div class="cta-box-head">Small group workshops. Real skills. Honest answers.</div>
+      <div class="cta-name">Led by George Featherstone &nbsp;|&nbsp; Featherstone Web Solutions</div>
+      <div class="cta-contact">Gilmer, TX &nbsp;|&nbsp; Scambomb.com</div>
+    </div>
+    <div class="anim cta-close">You don't need a computer science degree.<br>You just need to show up curious.</div>
+  </div>
+</div>
+
+<nav id="nav">
+  <button id="btn-prev" title="Previous">&#8592;</button>
+  <div class="dot-row" id="dots"></div>
+  <span id="slide-counter">1 / 10</span>
+  <button id="btn-next" title="Next">&#8594;</button>
+</nav>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  const dots = document.getElementById('dots');
+  const counter = document.getElementById('slide-counter');
+  const progress = document.getElementById('progress');
+  const total = slides.length;
+  let current = 0;
+
+  slides.forEach((_, i) => {
+    const d = document.createElement('div');
+    d.className = 'dot' + (i === 0 ? ' on' : '');
+    d.addEventListener('click', () => go(i));
+    dots.appendChild(d);
+  });
+
+  function go(n) {
+    if (n < 0 || n >= total) return;
+    slides[current].classList.remove('active');
+    slides[current].classList.add('exit');
+    setTimeout(() => slides[current].classList.remove('exit'), 400);
+
+    current = n;
+    slides[current].classList.add('active');
+    document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('on', i === current));
+    counter.textContent = `${current + 1} / ${total}`;
+    progress.style.width = `${((current + 1) / total) * 100}%`;
+  }
+
+  document.getElementById('btn-next').addEventListener('click', () => go(current + 1));
+  document.getElementById('btn-prev').addEventListener('click', () => go(current - 1));
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') go(current + 1);
+    if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   go(current - 1);
+    if (e.key === 'Home') go(0);
+    if (e.key === 'End')  go(total - 1);
+  });
+
+  let tx = 0;
+  document.addEventListener('touchstart', e => tx = e.touches[0].clientX, { passive: true });
+  document.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - tx;
+    if (Math.abs(dx) > 40) go(dx < 0 ? current + 1 : current - 1);
+  });
+
+  progress.style.width = `${(1 / total) * 100}%`;
+</script>
+</body>
+</html>

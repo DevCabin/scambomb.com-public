@@ -46,6 +46,13 @@ export default function PresentationLivePage() {
 
         <div className="mt-5 flex justify-end gap-3 flex-wrap">
           <a
+            href="/presentation-ai-future"
+            className="inline-flex items-center justify-center rounded-xl px-4 py-2 font-semibold border border-[#FFD700] text-[#FFD700] hover:bg-[#FFD700]/10"
+          >
+            Open AI Future Deck
+          </a>
+
+          <a
             href="/presentation-jobs"
             className="inline-flex items-center justify-center rounded-xl px-4 py-2 font-semibold border border-[#9BA3AF] text-[#F0F2F5] hover:bg-white/10"
           >

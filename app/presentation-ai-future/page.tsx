@@ -2,7 +2,7 @@
 
 import { useRef } from 'react';
 
-export default function PresentationTriviaPage() {
+export default function PresentationAiFuturePage() {
   const frameRef = useRef<HTMLIFrameElement>(null);
 
   const openFullscreen = async () => {
@@ -19,9 +19,9 @@ export default function PresentationTriviaPage() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
           <div>
-            <h1 className="text-3xl sm:text-4xl font-extrabold">Presentation Trivia</h1>
+            <h1 className="text-3xl sm:text-4xl font-extrabold">Presentation AI Future</h1>
             <p className="mt-2 text-white/75">
-              Quick-fire AI trivia companion slideshow.
+              "Now What?" companion deck for the AI jobs conversation.
             </p>
           </div>
 
@@ -37,8 +37,8 @@ export default function PresentationTriviaPage() {
         <div className="mt-6 rounded-2xl border border-white/15 bg-black/30 overflow-hidden">
           <iframe
             ref={frameRef}
-            src="/presentation-trivia.html"
-            title="ScamBomb presentation trivia"
+            src="/presentation-ai-future.html"
+            title="ScamBomb AI future presentation"
             className="w-full h-[75vh] md:h-[80vh]"
             allowFullScreen
           />
@@ -46,15 +46,15 @@ export default function PresentationTriviaPage() {
 
         <div className="mt-5 flex justify-end gap-3 flex-wrap">
           <a
-            href="/presentation-ai-future"
-            className="inline-flex items-center justify-center rounded-xl px-4 py-2 font-semibold border border-[#FFD700] text-[#FFD700] hover:bg-[#FFD700]/10"
+            href="/presentation-live"
+            className="inline-flex items-center justify-center rounded-xl px-4 py-2 font-semibold border border-[#9BA3AF] text-[#F0F2F5] hover:bg-white/10"
           >
-            Open AI Future Deck
+            Open Live Presentation
           </a>
 
           <a
             href="/presentation-jobs"
-            className="inline-flex items-center justify-center rounded-xl px-4 py-2 font-semibold border border-[#9BA3AF] text-[#F0F2F5] hover:bg-white/10"
+            className="inline-flex items-center justify-center rounded-xl px-4 py-2 font-semibold border border-[#F5C84C] text-[#F5C84C] hover:bg-[#F5C84C]/10"
           >
             Open AI Jobs Report
           </a>
@@ -67,10 +67,10 @@ export default function PresentationTriviaPage() {
           </a>
 
           <a
-            href="/presentation-live"
-            className="inline-flex items-center justify-center rounded-xl px-4 py-2 font-semibold border border-[#F5C84C] text-[#F5C84C] hover:bg-[#F5C84C]/10"
+            href="/presentation-trivia"
+            className="inline-flex items-center justify-center rounded-xl px-4 py-2 font-semibold border border-[#F0F2F5] text-[#F0F2F5] hover:bg-white/10"
           >
-            Back to Live Presentation
+            Open Trivia Slideshow
           </a>
         </div>
       </div>
