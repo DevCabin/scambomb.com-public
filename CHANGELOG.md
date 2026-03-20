@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-03-20 — presentation-live slide fixes (pre-live event)
+
+### Updated
+- `public/presentation-live.html`
+  - Slide 5 Mission box: "Mission" label now bold white Montserrat (was small grey caps); body text split into two lines: "Help you live safer online with the power of Ai" / "Raise awareness for increasing fraud"
+  - Slide 6 quote: replaced green `.quote` class with a yellow-bordered (`#F5C84C`) right-floated box, white italic text
+
+---
+
 ## 2026-03-16 — Brand consistency fixes on AI Clone Scam Jammer LP
 
 ### Updated
