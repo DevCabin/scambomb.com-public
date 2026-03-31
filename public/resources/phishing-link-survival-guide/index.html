@@ -495,16 +495,164 @@
 
     /* ── PRINT ────────────────────────────────────────── */
     @media print {
-      @page { size: auto; margin: 0.6in; }
-      .back-bar { display: none; }
-      .print-cta-wrap { display: none !important; }
-      body { font-size: 16px; }
-      .cover { padding: 48px 40px; page-break-after: always; min-height: 90vh; display: flex; flex-direction: column; justify-content: center; }
-      .page-break { page-break-before: always; }
-      h2 { page-break-after: avoid; }
-      .urgent-box, .timeline-box, .print-checklist, .step-box { page-break-inside: avoid; }
-      .scambomb-method { page-break-inside: avoid; }
-      .page-footer { margin-top: 32px; }
+      @page {
+        size: letter;
+        margin: 0.35in;
+      }
+
+      html, body {
+        background: #fff !important;
+        color: #111 !important;
+      }
+
+      * {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .back-bar,
+      .print-cta-wrap,
+      .bonus-box {
+        display: none !important;
+      }
+
+      body {
+        font-size: 13pt;
+        line-height: 1.45;
+      }
+
+      .cover {
+        background: #fff !important;
+        color: #111 !important;
+        padding: 0 0 14pt;
+        margin: 0 0 12pt;
+        text-align: left;
+        min-height: 0;
+        page-break-after: avoid;
+        border-bottom: 2px solid #222;
+      }
+
+      .cover .logo,
+      .cover h1,
+      .cover .sub-title,
+      .cover .tagline-sub,
+      .cover .hook,
+      .cover .reassurance,
+      .cover .free-badge {
+        color: #111 !important;
+        background: transparent !important;
+        border-color: #bbb !important;
+      }
+
+      .cover .logo { font-size: 20pt; margin-bottom: 6pt; }
+      .cover h1 { font-size: 24pt; line-height: 1.15; margin-bottom: 6pt; }
+      .cover .sub-title { font-size: 12pt; letter-spacing: 0.04em; margin-bottom: 8pt; }
+      .cover .tagline-sub,
+      .cover .free-badge,
+      .cover .hook,
+      .cover .reassurance { display: none; }
+
+      .content {
+        max-width: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      p, li { orphans: 3; widows: 3; }
+
+      h2 {
+        font-size: 17pt;
+        margin: 16pt 0 8pt;
+        padding-bottom: 4pt;
+        border-bottom: 1px solid #444;
+        page-break-after: avoid;
+        break-after: avoid-page;
+        text-transform: none;
+        letter-spacing: 0;
+      }
+
+      h3 {
+        font-size: 14pt;
+        margin: 12pt 0 6pt;
+        page-break-after: avoid;
+        break-after: avoid-page;
+      }
+
+      .urgent-box,
+      .timeline-box,
+      .not-alone-box,
+      .scambomb-method,
+      .prevention-box,
+      .print-checklist {
+        background: #fff !important;
+        color: #111 !important;
+        border: 1px solid #999 !important;
+        border-left-width: 4px !important;
+        border-radius: 0;
+        box-shadow: none;
+      }
+
+      .urgent-box,
+      .timeline-box,
+      .not-alone-box,
+      .scambomb-method,
+      .prevention-box {
+        padding: 10pt 12pt;
+        margin: 10pt 0;
+      }
+
+      .step-label {
+        background: #f5f5f5 !important;
+        border-left: 3px solid #555 !important;
+        color: #111 !important;
+        font-size: 11pt;
+        letter-spacing: 0.02em;
+      }
+
+      .step-box,
+      .timeline-box li,
+      .bureau-list li,
+      .report-links li {
+        break-inside: avoid-page;
+      }
+
+      .page-break { break-before: page; page-break-before: always; }
+
+      .print-checklist {
+        break-before: page;
+        page-break-before: always;
+        break-after: page;
+        page-break-after: always;
+        margin: 0;
+        min-height: 9.8in;
+        padding: 14pt 16pt;
+      }
+
+      .print-checklist h2 {
+        text-align: left;
+        margin-top: 0;
+      }
+
+      .checklist-item {
+        font-size: 12pt;
+        margin-bottom: 9pt;
+      }
+
+      .checkbox-square {
+        width: 16pt;
+        height: 16pt;
+      }
+
+      .page-footer {
+        margin-top: 12pt;
+        background: #fff !important;
+        color: #444 !important;
+        border-top: 1px solid #bbb;
+        padding: 8pt 0 0;
+        font-size: 9pt;
+        letter-spacing: 0.04em;
+      }
+      .page-footer a { color: #111 !important; }
     }
 
     /* ── RESPONSIVE ───────────────────────────────────── */

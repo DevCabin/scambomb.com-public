@@ -1,5 +1,29 @@
 # Changelog
 
+## 2026-03-31c — Phishing resource print layout overhaul (senior-friendly)
+
+### Updated
+- `public/resources/phishing-link-survival-guide/index.html`
+
+### Print optimization improvements
+- Reworked print stylesheet to prioritize clean PDF output over screen parity.
+- Tightened print page geometry for fuller-page usage:
+  - `@page size: letter`
+  - reduced margins (`0.35in`) to avoid oversized white gutters.
+- Converted print presentation to low-ink, high-readability format:
+  - white backgrounds, dark text, simplified borders.
+  - removed decorative cover callouts in print (hook/reassurance/free-badge/tagline).
+- Improved readability for older adults:
+  - larger print body sizing (`13pt`) and stronger heading hierarchy.
+  - reduced visual noise and preserved logical section flow.
+- Added stronger page-break control:
+  - avoid breaks immediately after headings.
+  - avoid splitting key step/list rows where possible.
+  - forced **Print Checklist** onto its own dedicated page and ended it with a page break.
+
+### Reason
+- Initial print export had awkward breaks and excessive margins; this update creates a more polished, handout-friendly senior-focused print format.
+
 ## 2026-03-31b — Resource print UX + print CSS upgrades
 
 ### Updated
