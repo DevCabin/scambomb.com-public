@@ -49,7 +49,7 @@ export default function ThankYouPage() {
               className="rounded-2xl px-6 py-3 border-2 font-semibold inline-block text-center hover:bg-white/10 transition-colors"
               style={{ borderColor: '#F5C84C', color: '#F5C84C' }}
             >
-              See Pro Plans
+              See Pricing (Free · Standard $10/$99 · Seniors 60+ $5/$49)
             </a>
           </div>
         </div>

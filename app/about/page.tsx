@@ -103,7 +103,7 @@ export default function AboutPage() {
           <div className="bg-white/5 rounded-2xl p-8 mb-12">
             <p className="text-center">
               <span className="text-2xl font-bold text-[#F5C84C]">
-                For $4.99/month or $49.99/year,
+                Standard is $10/month or $99/year, and seniors 60+ are locked at $5/month or $49/year,
               </span>
               <br/>
               SafeMessage AI offers peace of mind at a price anyone can afford — especially those who need it most.

@@ -75,7 +75,7 @@ export default function ProtectParentsPage() {
           <div className="cta-block">
             <div className="cta-label">Start protecting your family today</div>
             <div className="cta-offer">Try ScamBomb Free — Upgrade Anytime</div>
-            <div className="cta-price">Premium protection just <strong>$4.99/mo</strong> or <strong>$49/yr</strong></div>
+            <div className="cta-price">Premium protection is <strong>$10/mo or $99/yr standard</strong> and <strong>$5/mo or $49/yr for seniors 60+ (locked in)</strong></div>
 
             <a href={APP_URL} className="btn-primary" onClick={() => {
               const fbq = (window as unknown as { fbq?: (...args: unknown[]) => void }).fbq
@@ -192,7 +192,7 @@ export default function ProtectParentsPage() {
             <div className="pricing-icon">🔍</div>
             <div className="pricing-details">
               <div className="pricing-name">Free — Try It Now</div>
-              <div className="pricing-desc">Scan a few messages per day. See exactly how it works. No card needed.</div>
+              <div className="pricing-desc">5 free scans per month. See exactly how it works. No card needed. <span style={{ opacity: 0.8 }}>Psst... share ScamBomb on social for a bonus free scan.</span></div>
             </div>
             <div className="pricing-price">
               <span className="amount">$0</span>
@@ -204,24 +204,24 @@ export default function ProtectParentsPage() {
             <div className="featured-tag">Most Popular</div>
             <div className="pricing-icon">🛡</div>
             <div className="pricing-details">
-              <div className="pricing-name">Premium Monthly</div>
-              <div className="pricing-desc">Unlimited scans, priority detection, Chrome extension for Gmail, full history.</div>
+              <div className="pricing-name">Standard Plan</div>
+              <div className="pricing-desc">Unlimited scans, priority detection, Chrome extension for Gmail, full history. Choose monthly or save with annual.</div>
             </div>
             <div className="pricing-price">
-              <span className="amount">$4.99</span>
-              <span className="period">per month</span>
+              <span className="amount">$10 / $99</span>
+              <span className="period">month / year</span>
             </div>
           </a>
 
           <a href="https://scambomb.com" className="pricing-card">
-            <div className="pricing-icon">⚡</div>
+            <div className="pricing-icon">💛</div>
             <div className="pricing-details">
-              <div className="pricing-name">Premium Annual</div>
-              <div className="pricing-desc">Everything in monthly, plus 2 months free. Best value for ongoing protection.</div>
+              <div className="pricing-name">Senior 60+ Locked Plan</div>
+              <div className="pricing-desc">Everything in Standard, with permanent senior pricing. Built to stay affordable for older adults.</div>
             </div>
             <div className="pricing-price">
-              <span className="amount">$49</span>
-              <span className="period">per year</span>
+              <span className="amount">$5 / $49</span>
+              <span className="period">month / year</span>
             </div>
           </a>
         </div>

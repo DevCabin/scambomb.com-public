@@ -6,7 +6,8 @@ import { useEffect, useState } from 'react';
  * STAGING PAGE - Safe sandbox for testing new features
  * 
  * PLANNED CHANGES:
- * 1. Trial flow: 1 free scan/day (anyone), 5 free/day (email signup)
+ * 1. Trial flow: 5 free scans/month (all users)
+ *    Bonus: +1 scan when users share ScamBomb on social
  * 2. Fun UX: Bob-omb loading animation
  *    - Walking bomb while processing
  *    - Explodes in anger if scam detected
@@ -139,15 +140,16 @@ export default function StagingPage() {
           <div className="grid md:grid-cols-2 gap-6">
             <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
               <div className="text-3xl mb-3">👤</div>
-              <h3 className="font-bold text-lg">Anonymous Visitor</h3>
-              <p className="text-white/70 mt-2">1 free scan per day</p>
+              <h3 className="font-bold text-lg">Free Plan</h3>
+              <p className="text-white/70 mt-2">5 free scans per month</p>
               <p className="text-white/50 text-sm mt-1">No signup required — just paste and check</p>
             </div>
+
             <div className="rounded-2xl border border-yellow-300/50 bg-yellow-300/5 p-6">
-              <div className="text-3xl mb-3">📧</div>
-              <h3 className="font-bold text-lg" style={{ color: brandYellow }}>Email Signup</h3>
-              <p className="text-white/70 mt-2">5 free scans per day</p>
-              <p className="text-white/50 text-sm mt-1">+ Safety newsletter (better tracking for ads)</p>
+              <div className="text-3xl mb-3">📣</div>
+              <h3 className="font-bold text-lg" style={{ color: brandYellow }}>Bonus Scan</h3>
+              <p className="text-white/70 mt-2">Share ScamBomb on social = +1 free scan</p>
+              <p className="text-white/50 text-sm mt-1">Psst... it&apos;s our quiet thank-you for spreading the word.</p>
             </div>
           </div>
         </div>
@@ -157,7 +159,7 @@ export default function StagingPage() {
           <h3 className="font-bold text-yellow-300 mb-3">📋 Implementation Notes</h3>
           <ul className="space-y-2 text-white/70">
             <li>• <strong>Bob-omb sprites:</strong> Need walking, idle, fuse-lit, fuse-out, explosion frames</li>
-            <li>• <strong>Tracking:</strong> Use localStorage or cookies for daily scan count (anon), email for registered</li>
+            <li>• <strong>Tracking:</strong> Use localStorage or cookies for monthly scan count and bonus-scan unlock state</li>
             <li>• <strong>GoHighLevel:</strong> Will handle Stripe + account management when ready</li>
             <li>• <strong>Email capture:</strong> Formspree or GoHighLevel form integration</li>
             <li>• <strong>UX:</strong> Never block the experience — scan limit reached = soft upsell, not wall</li>

@@ -1,5 +1,30 @@
 # Changelog
 
+## 2026-03-31 — Pricing model overhaul + brand standard fix
+
+### Updated pricing copy (sitewide live pages)
+- `app/page.tsx`
+  - Updated public pricing to:
+    - Forever Free: 5 scans/month (+ incentive bonus scan copy)
+    - Standard: `$10/mo` or `$99/yr`
+    - Senior 60+: `$5/mo` or `$49/yr` (locked-in)
+  - Replaced legacy plan wording (`Pro`, old annual messaging) with new standard/senior structure.
+- `app/protect-parents/page.tsx`
+  - Updated CTA and pricing cards to show full monthly + annual pricing for Standard and Senior plans.
+- `components/Header.tsx`
+  - Updated announcement bar with full pricing summary: Standard `$10/$99`, Seniors 60+ `$5/$49`.
+- `app/about/page.tsx`
+  - Updated narrative pricing section to reflect new monthly/annual structure.
+- `app/thank-you/page.tsx`
+  - Updated pricing CTA label to current four paid options + free plan context.
+
+### Brand consistency fix
+- `public/resources/ai-voice-cloning-survival-guide/index.html`
+  - Updated centered hero wordmark to brand standard:
+    - `SCAM` in white
+    - `B💣MB` in yellow
+  - Implemented via explicit logo span split + dedicated color classes.
+
 ## 2026-03-20 — presentation-live slide fixes (pre-live event)
 
 ### Updated
