@@ -53,6 +53,33 @@
     .back-bar a:hover { text-decoration: underline; }
     .back-bar .sep { color: rgba(255,255,255,0.2); }
 
+    .print-cta-wrap {
+      text-align: center;
+      padding: 12px 16px;
+      background: rgba(245, 200, 76, 0.08);
+      border-bottom: 1px solid rgba(245, 200, 76, 0.25);
+    }
+    .print-cta-wrap.bottom {
+      margin-top: 40px;
+      border: 1px solid rgba(245, 200, 76, 0.35);
+      border-radius: 10px;
+      background: rgba(245, 200, 76, 0.12);
+    }
+    .print-btn {
+      appearance: none;
+      border: 1px solid rgba(11, 19, 36, 0.25);
+      background: var(--yellow);
+      color: var(--navy);
+      font-family: var(--font);
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 12px;
+      border-radius: 999px;
+      padding: 8px 14px;
+      cursor: pointer;
+    }
+
     .cover {
       background: var(--navy);
       color: var(--white);
@@ -342,7 +369,9 @@
     hr { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
 
     @media print {
+      @page { size: auto; margin: 0.6in; }
       .back-bar { display: none; }
+      .print-cta-wrap { display: none !important; }
       body { font-size: 16px; }
       .cover { padding: 48px 40px; page-break-after: always; min-height: 90vh; display: flex; flex-direction: column; justify-content: center; }
       h2 { page-break-after: avoid; }
@@ -369,6 +398,10 @@
     <a href="/blog">Blog</a>
     <span class="sep">·</span>
     <a href="/blog/older-adult-fraud-report-2024-2025">Fraud Report 2024–2025</a>
+  </div>
+
+  <div class="print-cta-wrap">
+    <button class="print-btn" type="button" onclick="window.print()">🖨 Print Guide</button>
   </div>
 
   <div class="cover">
@@ -533,6 +566,10 @@
     <div class="bonus-box">
       <strong>💣 Want to go deeper?</strong><br>
       Read our free <a href="/blog/older-adult-fraud-report-2024-2025" style="color:var(--navy);font-weight:800;text-decoration:underline;">Fraud Target Older Adults: Annual Intelligence Brief 2024–2025</a> for broader fraud trends and prevention insights.
+    </div>
+
+    <div class="print-cta-wrap bottom">
+      <button class="print-btn" type="button" onclick="window.print()">🖨 Print This Resource</button>
     </div>
   </div>
 

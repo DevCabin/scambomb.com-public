@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-03-31b — Resource print UX + print CSS upgrades
+
+### Updated
+- `public/resources/ai-voice-cloning-survival-guide/index.html`
+- `public/resources/dont-let-a-text-steal-everything/index.html`
+- `public/resources/phishing-link-survival-guide/index.html`
+- `public/resources/modules/older-adult-brief-cta-module.html`
+
+### What changed
+- Added visible **Print** CTA buttons at both:
+  - top of page/module
+  - bottom of page/module
+- Added stronger print handling for cleaner hard copies:
+  - `@page` margins (`0.6in`)
+  - hide print UI controls in print output
+  - preserve existing page-break and section integrity rules
+
+### Reason
+- Encourage printing for offline safety use and make resource handouts look polished/consistent when printed.
+
 ## 2026-03-31 — Pricing model overhaul + brand standard fix
 
 ### Updated pricing copy (sitewide live pages)

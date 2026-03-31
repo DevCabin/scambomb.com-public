@@ -24,6 +24,26 @@
       padding: 40px 20px;
     }
 
+    .print-cta-wrap {
+      max-width: 860px;
+      margin: 0 auto 12px;
+      text-align: center;
+    }
+    .print-cta-wrap.bottom { margin-top: 14px; }
+    .print-btn {
+      appearance: none;
+      border: 1px solid rgba(245, 200, 76, 0.55);
+      background: var(--sb-yellow);
+      color: var(--sb-navy);
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 12px;
+      border-radius: 999px;
+      padding: 8px 14px;
+      cursor: pointer;
+    }
+
     .sb-brief-cta {
       max-width: 860px;
       margin: 0 auto;
@@ -111,6 +131,22 @@
       font-size: 13px;
       line-height: 1.5;
     }
+
+    @media print {
+      @page { size: auto; margin: 0.6in; }
+      .print-cta-wrap { display: none !important; }
+      body { padding: 0; background: #fff; color: #000; }
+      .sb-brief-cta {
+        box-shadow: none;
+        border: 1.5px solid rgba(11, 19, 36, 0.3);
+        background: #fff;
+        color: #0B1324;
+      }
+      .sb-brief-title,
+      .sb-brief-subtitle,
+      .sb-brief-meta,
+      .sb-form-slot { color: #0B1324; }
+    }
   </style>
 </head>
 <body>
@@ -118,6 +154,10 @@
     ScamBomb reusable CTA module.
     Use this block on any page and wire .sb-brief-button to your branded GHL form flow.
   -->
+  <div class="print-cta-wrap">
+    <button class="print-btn" type="button" onclick="window.print()">🖨 Print Module</button>
+  </div>
+
   <section class="sb-brief-cta" id="older-adult-brief-cta">
     <p class="sb-brief-eyebrow">Free Special Report — Interactive Edition</p>
 
@@ -151,5 +191,9 @@
       <strong>Form slot placeholder:</strong> Paste your branded GHL form markup here when ready.
     </div>
   </section>
+
+  <div class="print-cta-wrap bottom">
+    <button class="print-btn" type="button" onclick="window.print()">🖨 Print Module</button>
+  </div>
 </body>
 </html>
