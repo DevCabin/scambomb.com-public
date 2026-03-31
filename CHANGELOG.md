@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-03-31d — Fixed white-on-white print issue + aligned remaining resources to print standard
+
+### Fixed
+- `public/resources/phishing-link-survival-guide/index.html`
+  - Resolved white-on-white text in print output by explicitly forcing dark text for `.scambomb-method` headings/body/steps and white step-row backgrounds in print mode.
+
+### Updated to match print quality criteria
+- `public/resources/dont-let-a-text-steal-everything/index.html`
+- `public/resources/ai-voice-cloning-survival-guide/index.html`
+
+### Print standard now applied across guides
+- Letter print format with tighter margins (`@page size: letter; margin: 0.35in`)
+- Low-ink, high-contrast monochrome print styling
+- Reduced decorative print noise (cover callouts hidden in print)
+- Larger senior-friendly print typography and cleaner hierarchy
+- Stronger page-break control to avoid awkward section splits
+
+### Reason
+- Ensure polished, readable, handout-ready print output across all key resources after validating the phishing guide print flow.
+
 ## 2026-03-31c — Phishing resource print layout overhaul (senior-friendly)
 
 ### Updated

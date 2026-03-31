@@ -369,14 +369,106 @@
     hr { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
 
     @media print {
-      @page { size: auto; margin: 0.6in; }
-      .back-bar { display: none; }
-      .print-cta-wrap { display: none !important; }
-      body { font-size: 16px; }
-      .cover { padding: 48px 40px; page-break-after: always; min-height: 90vh; display: flex; flex-direction: column; justify-content: center; }
-      h2 { page-break-after: avoid; }
-      .story-box, .danger-box, .action-box, .report-box, .scambomb-method { page-break-inside: avoid; }
-      .page-footer { margin-top: 32px; }
+      @page { size: letter; margin: 0.35in; }
+
+      html, body { background: #fff !important; color: #111 !important; }
+      * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+      .back-bar,
+      .print-cta-wrap,
+      .bonus-box { display: none !important; }
+
+      body { font-size: 13pt; line-height: 1.45; }
+
+      .cover {
+        background: #fff !important;
+        color: #111 !important;
+        padding: 0 0 14pt;
+        margin: 0 0 12pt;
+        text-align: left;
+        min-height: 0;
+        page-break-after: avoid;
+        border-bottom: 2px solid #222;
+      }
+      .cover .logo,
+      .cover h1,
+      .cover .sub-title,
+      .cover .tagline-sub,
+      .cover .hook,
+      .cover .reassurance,
+      .cover .free-badge { color: #111 !important; background: transparent !important; border-color: #bbb !important; }
+      .cover .logo { font-size: 20pt; margin-bottom: 6pt; }
+      .cover h1 { font-size: 24pt; line-height: 1.15; margin-bottom: 6pt; }
+      .cover .sub-title { font-size: 12pt; letter-spacing: 0.04em; margin-bottom: 8pt; }
+      .cover .tagline-sub,
+      .cover .free-badge,
+      .cover .hook,
+      .cover .reassurance { display: none; }
+
+      .content { max-width: none; margin: 0; padding: 0; }
+      p, li { orphans: 3; widows: 3; }
+
+      h2 {
+        font-size: 17pt;
+        margin: 16pt 0 8pt;
+        padding-bottom: 4pt;
+        border-bottom: 1px solid #444;
+        page-break-after: avoid;
+        break-after: avoid-page;
+        text-transform: none;
+        letter-spacing: 0;
+      }
+      h3 {
+        font-size: 14pt;
+        margin: 12pt 0 6pt;
+        page-break-after: avoid;
+        break-after: avoid-page;
+      }
+
+      .story-box,
+      .danger-box,
+      .action-box,
+      .report-box,
+      .scambomb-method,
+      .final-message {
+        background: #fff !important;
+        color: #111 !important;
+        border: 1px solid #999 !important;
+        border-left-width: 4px !important;
+        border-radius: 0;
+        box-shadow: none;
+      }
+
+      .scambomb-method h2,
+      .scambomb-method h3,
+      .scambomb-method p,
+      .scambomb-method .step-text,
+      .scambomb-method .step-num { color: #111 !important; }
+      .scambomb-method .step-row { background: #fff !important; border: 1px solid #c9c9c9; }
+
+      .story-box,
+      .danger-box,
+      .action-box,
+      .report-box,
+      .step-box,
+      .checklist li { break-inside: avoid-page; }
+
+      h2 + .checklist,
+      h2 + p + .checklist {
+        break-before: page;
+        page-break-before: always;
+      }
+
+      .page-footer {
+        margin-top: 12pt;
+        background: #fff !important;
+        color: #444 !important;
+        border-top: 1px solid #bbb;
+        padding: 8pt 0 0;
+        font-size: 9pt;
+        letter-spacing: 0.04em;
+      }
+      .page-footer a { color: #111 !important; }
     }
 
     @media (max-width: 600px) {
