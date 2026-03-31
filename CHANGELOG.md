@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-03-31f — Usage-limit verbiage aligned to 5 scans/month + monthly reset messaging
+
+### Updated
+- `DEVELOPER_GUIDE.md`
+- `CLINE_INSTRUCTIONS.md`
+
+### Verbiage alignment completed
+- Replaced legacy/free-limit phrasing with monthly model language where controllable in this repo:
+  - `5 scans per month`
+  - counter reset language: `resets on the 1st of each month`
+  - soft paywall message:
+    - `You've used your 5 free scans this month. Upgrade to ScamBomb Pro to scan unlimited — starting at $5/month.`
+  - CTA/route guidance to pricing page (`/#pricing`)
+
+### Notes
+- No old `3 scans per day` / `per day` / `free uses` paywall verbiage remains in scanned project files.
+- This repository currently does not contain live `app/api/*` runtime files referenced by docs; updates here are documentation + internal instruction alignment only.
+
 ## 2026-03-31e — Enforced two-tone SCAMB💣MB wordmark across resource covers + print
 
 ### Updated

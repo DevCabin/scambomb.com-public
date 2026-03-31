@@ -391,7 +391,9 @@ export async function POST(req: NextRequest) {
   let used = (await kv.get<number>(`usage:${uid}`)) || 0;
 
   if (!premium && used >= FREE_LIMIT) {
-    return NextResponse.json({ error: "Free limit reached" }, { status: 402 });
+    return NextResponse.json({
+      error: "You've used your 5 free scans this month. Upgrade to ScamBomb Pro to scan unlimited — starting at $5/month."
+    }, { status: 402 });
   }
 
   // 5. Increment usage counter (pre-call)
@@ -455,7 +457,7 @@ export async function GET() {
   const premium = (await kv.get<boolean>(`premium:${uid}`)) || false;
 
   return NextResponse.json({
-    used,           // Number of analyses used
+    used,           // Number of scans used this month
     limit: FREE_LIMIT, // Always 5 for free tier
     premium        // Boolean premium status
   });
@@ -463,7 +465,7 @@ export async function GET() {
 ```
 
 **Storage Keys:**
-- `usage:${uid}` - Counter of free analyses used
+- `usage:${uid}` - Counter of free scans used this month
 - `premium:${uid}` - Boolean indicating premium status
 - `stripeCustomerFor:${uid}` - Stripe customer ID mapping
 - `uidFor:${customerId}` - Reverse mapping for webhooks
@@ -645,16 +647,10 @@ export default function HomePage() {
 
     // 3. Handle payment required
     if (response.status === 402) {
-      const confirmUpgrade = confirm("You've hit the free limit. Upgrade to premium?");
+      const confirmUpgrade = confirm("You've used your 5 free scans this month. Upgrade to ScamBomb Pro to scan unlimited — starting at $5/month.");
       if (confirmUpgrade) {
-        // Redirect to Stripe checkout
-        const { url } = await fetch("/api/stripe/checkout", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ email })
-        }).then(r => r.json());
-
-        if (url) window.location.href = url;
+        // Route to pricing/subscription page
+        window.location.href = '/#pricing';
       }
       return;
     }
@@ -705,7 +701,8 @@ The system prompt defines:
 - **HttpOnly Cookies:** Session tokens protected from client-side access
 
 ### Rate Limiting
-- **Free Tier Limits:** 5 analyses per device
+- **Free Tier Limits:** 5 scans per month
+- **Reset Cycle:** Counter resets on the 1st of each month
 - **Premium Unlimited:** No restrictions for paying users
 - **Device-Based:** Prevents abuse via multiple accounts
 
@@ -738,7 +735,7 @@ NEXT_PUBLIC_SITE_URL=http://localhost:3000
 ```
 
 ### Test Scenarios
-1. **Free User Flow:** Analyze 5 messages, attempt 6th → payment prompt
+1. **Free User Flow:** Analyze up to 5 messages/month, attempt 6th → soft paywall prompt + route to `/#pricing`
 2. **Premium User Flow:** Unlimited analyses, billing portal access
 3. **Webhook Testing:** Simulate subscription events
 4. **Error Handling:** Invalid inputs, API failures
@@ -755,7 +752,7 @@ NEXT_PUBLIC_SITE_URL=http://localhost:3000
 ```
 Key Pattern          | Value Type | Description
 ---------------------|------------|-------------
-usage:{uid}         | number     | Free analyses used
+usage:{uid}         | number     | Free scans used this month
 premium:{uid}       | boolean    | Premium status
 stripeCustomerFor:{uid} | string  | Stripe customer ID
 uidFor:{customerId} | string     | Reverse customer mapping
@@ -813,7 +810,7 @@ ScamBomb implements a sophisticated user tracking system that evolves from anony
 ### User Journey Flow
 
 ```
-Anonymous Visitor → Fingerprinted Device → Free Usage (5 scans)
+Anonymous Visitor → Fingerprinted Device → Free Usage (5 scans/month)
        ↓
 First Full Action (AI Scan OR Bomb) → User Record Created
        ↓

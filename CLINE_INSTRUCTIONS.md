@@ -114,7 +114,7 @@ Value: {
 #### **User Journey Integration:**
 1. **Anonymous Access**: User visits public site → clicks "Try ScamBomb" → gets SBUID → redirected to app
 2. **First Usage**: User performs AI scan or bomb action → user record created in database
-3. **Limit Reached**: User hits 5 free uses → prompted to sign up on public site
+3. **Limit Reached**: User hits 5 free scans in the current month → show soft paywall + pricing/subscription route
 4. **Authentication**: Google OAuth on public site → user data merged → extended free usage
 
 #### **API Endpoints (Future - when implemented):**
