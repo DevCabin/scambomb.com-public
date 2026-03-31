@@ -95,11 +95,12 @@
     .cover .logo {
       font-size: 38px;
       font-weight: 900;
-      color: var(--yellow);
       letter-spacing: -0.5px;
       margin-bottom: 8px;
       display: block;
     }
+    .cover .logo .scam { color: var(--white); }
+    .cover .logo .bomb-word { color: var(--yellow); }
     .cover .logo .bomb { font-size: 44px; }
 
     .cover .tagline-sub {
@@ -543,6 +544,8 @@
         background: transparent !important;
         border-color: #bbb !important;
       }
+      .cover .logo .scam { color: #111 !important; }
+      .cover .logo .bomb-word { color: var(--yellow) !important; }
 
       .cover .logo { font-size: 20pt; margin-bottom: 6pt; }
       .cover h1 { font-size: 24pt; line-height: 1.15; margin-bottom: 6pt; }
@@ -697,7 +700,7 @@
 
   <!-- COVER PAGE -->
   <div class="cover">
-    <span class="logo">SCAMB<span class="bomb">💣</span>MB</span>
+    <span class="logo"><span class="scam">SCAM</span><span class="bomb-word">B<span class="bomb">💣</span>MB</span></span>
     <div class="tagline-sub">scambomb.com &nbsp;·&nbsp; Free Resource</div>
 
     <h1>What If I <em>DID</em> Click<br>a Scam Link?</h1>

@@ -317,6 +317,16 @@ Required standard:
 
 If a post does not meet this quality bar, it should be revised before it is considered publish-ready.
 
+## 🧨 **Brand Wordmark Rule (Persistent)**
+
+Always render the ScamBomb wordmark as two-tone:
+
+- `SCAM` = **white** on dark backgrounds, **black** on white/light backgrounds (including print)
+- `B💣MB` = **yellow** at all times
+- Keep bomb emoji as the “O” equivalent in B💣MB
+
+Do not render the full wordmark in a single color.
+
 
 ---
 *This document reflects the current production state of ScamBomb. All major features are implemented and tested.*

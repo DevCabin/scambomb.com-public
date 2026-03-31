@@ -1,5 +1,30 @@
 # Changelog
 
+## 2026-03-31e — Enforced two-tone SCAMB💣MB wordmark across resource covers + print
+
+### Updated
+- `public/resources/phishing-link-survival-guide/index.html`
+- `public/resources/dont-let-a-text-steal-everything/index.html`
+- `CLINE_INSTRUCTIONS.md`
+
+### Brand correction
+- Standardized resource cover logo markup to explicit two-part wordmark:
+  - `SCAM` segment
+  - `B💣MB` segment
+- Applied required color behavior:
+  - Screen/dark cover: `SCAM` white, `B💣MB` yellow
+  - Print/light: `SCAM` black, `B💣MB` yellow
+- Ensured no single-color rendering for full wordmark on these pages.
+
+### Process hardening
+- Added persistent internal brand rule in `CLINE_INSTRUCTIONS.md` so future edits preserve:
+  - two-tone wordmark
+  - bomb emoji usage
+  - context-aware SCAM color (white on dark, black on light/print)
+
+### Reason
+- Align all resource branding with approved ScamBomb identity standard and prevent future regressions.
+
 ## 2026-03-31d — Fixed white-on-white print issue + aligned remaining resources to print standard
 
 ### Fixed
