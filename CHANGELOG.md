@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-04-02 — Added iPhone app Terms of Use page at /app-terms
+
+### Added
+- `app/app-terms/page.tsx`
+  - New legal page for ScamBomb iPhone app Terms of Use, published at `/app-terms`.
+  - Includes Apple/iOS-specific clauses (App Store relationship, support/warranty language, third-party beneficiary clause).
+  - Includes subscription and auto-renew terms, AI limitations/disclaimers, acceptable use, liability limits, termination, indemnity, and contact section.
+
 ## 2026-03-31f — Usage-limit verbiage aligned to 5 scans/month + monthly reset messaging
 
 ### Updated
