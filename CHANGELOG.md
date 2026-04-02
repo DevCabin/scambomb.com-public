@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-04-02b — Softened app terms liability section with explicit AI caution note
+
+### Updated
+- `app/app-terms/page.tsx`
+  - Added a plain-language caution under liability/disclaimer bullets:
+    - the app is powered by AI and can make mistakes
+    - users should verify important/high-stakes decisions with confirmed authoritative sources
+
 ## 2026-04-02 — Added iPhone app Terms of Use page at /app-terms
 
 ### Added

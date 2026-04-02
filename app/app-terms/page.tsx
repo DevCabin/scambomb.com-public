@@ -127,6 +127,10 @@ export default function AppTermsPage() {
               <li>We do not warrant uninterrupted, secure, or error-free operation.</li>
               <li>We do not guarantee scam detection accuracy or specific outcomes.</li>
               <li>
+                The App is powered by AI and it can make mistakes. Always verify important or high-stakes decisions using confirmed,
+                authoritative sources.
+              </li>
+              <li>
                 To the fullest extent permitted by law, ScamBomb is not liable for indirect, incidental, special, consequential, exemplary,
                 or punitive damages, or any loss of data, profits, goodwill, identity, or funds.
               </li>
