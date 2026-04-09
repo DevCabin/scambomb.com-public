@@ -5,6 +5,7 @@ import './globals.css'
 import GoogleAnalytics from '../components/GoogleAnalytics'
 import Header from '../components/Header'
 import { SpeedInsights } from '@vercel/speed-insights/next'
+import GHLPoliteSlideIn from '../components/GHLPoliteSlideIn'
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -25,10 +26,19 @@ export const metadata: Metadata = {
 function UniversalFooter() {
   return (
     <footer className="border-t border-white/10">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 grid grid-cols-1 md:grid-cols-[auto_0.7fr_0.7fr_1.5fr] gap-6 text-sm">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 grid grid-cols-1 md:grid-cols-[1fr_0.7fr_0.7fr_1.5fr] gap-6 text-sm">
         <div>
-          <Logo size="sm" />
-          <p className="mt-3 text-white/70">Simple, plain-English scam checks for everyone.</p>
+          <h4 className="font-semibold uppercase tracking-wider">
+            REPORT A <span className="text-[#F5C84C]">PROBLEM</span>
+          </h4>
+          <div className="mt-3">
+            <a
+              href="/contact"
+              className="inline-block rounded-xl px-3 py-2 font-semibold bg-[#F5C84C] text-[#0B1324] hover:bg-[#F5C84C]/90"
+            >
+              Contact Us
+            </a>
+          </div>
         </div>
         <div>
           <h4 className="font-semibold">Products</h4>
@@ -70,19 +80,6 @@ function UniversalFooter() {
   );
 }
 
-function Logo({ size = "md" }: { size?: "sm" | "md" }) {
-  const imgSize = size === "sm" ? "h-20 w-64" : "h-12 w-40";
-  return (
-    <div className="flex items-center gap-2" role="img" aria-label="ScamBomb logo">
-      <img
-        src="/logo.png"
-        alt="ScamBomb Logo"
-        className={`${imgSize} object-contain`}
-      />
-    </div>
-  );
-}
-
 export default function RootLayout({
   children,
 }: {
@@ -99,6 +96,7 @@ export default function RootLayout({
         <SpeedInsights />
         <UniversalFooter />
         <Analytics />
+        <GHLPoliteSlideIn />
       </body>
     </html>
   )
