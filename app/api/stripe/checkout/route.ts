@@ -29,11 +29,13 @@ export async function GET(request: NextRequest) {
   try {
     const stripeSecret = process.env.STRIPE_SECRET_KEY;
     if (!stripeSecret) {
+      const stripeEnvVars = Object.keys(process.env).filter(key => key.startsWith('STRIPE_'));
       return NextResponse.json(
         {
           error: 'Missing STRIPE_SECRET_KEY',
           checked: ['STRIPE_SECRET_KEY'],
-          hint: 'Verify this env var exists on the deployed project/environment and redeploy.',
+          foundStripeVars: stripeEnvVars,
+          hint: 'Verify STRIPE_SECRET_KEY is explicitly set in the Vercel project dashboard environment variables.',
         },
         { status: 500 }
       );
