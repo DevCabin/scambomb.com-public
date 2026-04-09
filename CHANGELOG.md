@@ -1,5 +1,32 @@
 # Changelog
 
+## 2026-04-09 — Homepage pricing CTAs now route to Stripe monthly checkout + annual upsell links
+
+### Updated
+- `app/page.tsx`
+  - Paid pricing card yellow buttons now route directly to Stripe checkout via server route with **monthly** billing default:
+    - Standard → `/api/stripe/checkout?plan=standard&billing=monthly`
+    - Senior → `/api/stripe/checkout?plan=senior&billing=monthly`
+  - Added text links under each paid CTA:
+    - `Or save %17 by paying annually!`
+    - Annual routes:
+      - Standard → `/api/stripe/checkout?plan=standard&billing=annual`
+      - Senior → `/api/stripe/checkout?plan=senior&billing=annual`
+  - Free card behavior unchanged.
+
+### Added
+- `app/api/stripe/checkout/route.ts`
+  - New Stripe checkout route that creates subscription sessions from query params:
+    - `plan=standard|senior`
+    - `billing=monthly|annual`
+  - Uses mapped Stripe Price IDs provided for standard/senior monthly+annual plans.
+  - Redirects to Stripe Checkout URL on success.
+
+### Updated dependencies
+- `package.json`
+- `package-lock.json`
+  - Added `stripe` package for server-side checkout session creation.
+
 ## 2026-04-02b — Softened app terms liability section with explicit AI caution note
 
 ### Updated

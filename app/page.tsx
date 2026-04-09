@@ -236,8 +236,8 @@ export default function ScamBombLanding() {
         <h2 className="text-3xl sm:text-4xl font-bold">Simple, affordable protection</h2>
         <div className="mt-8 grid lg:grid-cols-3 gap-6">
           <div className="hover-lift"><PriceCard highlight title="Free Plan" price="Free" note="5 scans per month" cta="Get started" color={brandYellow} href={appUrl} /></div>
-          <div className="hover-lift"><PriceCard title="Standard Plan" price="$10/mo · $99/yr" note="Unlimited scans with annual savings" cta="Choose standard" color={brandYellow} href={appUrl} /></div>
-          <div className="hover-lift"><PriceCard title="Senior 60+ Plan" price="$5/mo · $49/yr" note="Locked-in senior pricing" cta="Claim senior pricing" color={brandYellow} href="/protect-parents" /></div>
+          <div className="hover-lift"><PriceCard title="Standard Plan" price="$10/mo · $99/yr" note="Unlimited scans with annual savings" cta="Choose standard" color={brandYellow} href="/api/stripe/checkout?plan=standard&billing=monthly" annualHref="/api/stripe/checkout?plan=standard&billing=annual" /></div>
+          <div className="hover-lift"><PriceCard title="Senior 60+ Plan" price="$5/mo · $49/yr" note="Locked-in senior pricing" cta="Claim senior pricing" color={brandYellow} href="/api/stripe/checkout?plan=senior&billing=monthly" annualHref="/api/stripe/checkout?plan=senior&billing=annual" /></div>
         </div>
         <p className="mt-4 text-sm text-white/70">No strings attached, "cancel any time for any reason" guarantee.</p>
       </section>
@@ -399,7 +399,7 @@ function Card({ title, icon, children }: { title: string; icon?: React.ReactNode
   );
 }
 
-function PriceCard({ title, price, note, cta, color, highlight = false, href }: { title: string; price: string; note: string; cta: string; color: string; highlight?: boolean; href?: string }) {
+function PriceCard({ title, price, note, cta, color, highlight = false, href, annualHref }: { title: string; price: string; note: string; cta: string; color: string; highlight?: boolean; href?: string; annualHref?: string }) {
   const isFree = price === "Free";
   return (
     <div className={`rounded-2xl p-6 border ${highlight ? "border-yellow-300 bg-white/10" : "border-white/10 bg-white/5"}`}>
@@ -407,6 +407,11 @@ function PriceCard({ title, price, note, cta, color, highlight = false, href }: 
       <div className="mt-3 text-3xl font-extrabold">{price}</div>
       <p className="mt-1 text-white/70">{note}</p>
       <a href={href || "https://app.scambomb.com"} className="mt-5 w-full rounded-xl py-3 font-semibold inline-block text-center" style={{ backgroundColor: color, color: "#0B1324" }}>{cta}</a>
+      {!isFree && annualHref ? (
+        <a href={annualHref} className="mt-2 inline-block text-sm underline decoration-white/40 underline-offset-4 hover:decoration-white text-white/80 hover:text-white">
+          Or save %17 by paying annually!
+        </a>
+      ) : null}
       <ul className="mt-4 space-y-2 text-sm text-white/80">
         {isFree ? (
           <>
