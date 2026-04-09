@@ -1,6 +1,4 @@
 import Link from 'next/link'
-import GHLPoliteSlideIn from '../../../components/GHLPoliteSlideIn'
-
 export const metadata = {
   title: 'How to spot fake bank texts in 30 seconds',
   description: 'Learn the quick red flags that separate real bank alerts from scam texts trying to steal your money.',
@@ -51,7 +49,6 @@ export default function BlogPost() {
           </Link>
         </footer>
       </article>
-      <GHLPoliteSlideIn />
     </div>
   )
 }

@@ -1,6 +1,4 @@
 import Link from 'next/link'
-import GHLPoliteSlideIn from '../../../components/GHLPoliteSlideIn'
-
 export const metadata = {
   title: 'New USPS delivery scam: what to do',
   description: 'A new scam impersonates USPS delivery notifications. Here\'s how to spot it and protect yourself.',
@@ -65,7 +63,6 @@ export default function BlogPost() {
           </Link>
         </footer>
       </article>
-      <GHLPoliteSlideIn />
     </div>
   )
 }
