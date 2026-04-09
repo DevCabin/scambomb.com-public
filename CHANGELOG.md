@@ -1,5 +1,18 @@
 # Changelog
 
+## 2026-04-09b — Stripe checkout route hardening + annual upsell link style update
+
+### Updated
+- `app/api/stripe/checkout/route.ts`
+  - Added `export const runtime = 'nodejs'` for Stripe route reliability.
+  - Improved missing-env response details for `STRIPE_SECRET_KEY` to speed production troubleshooting.
+
+- `app/page.tsx`
+  - Annual upsell link under paid plan buttons is now centered and high-contrast.
+  - Styling update applied:
+    - full line now solid white
+    - leading phrase `Or save %17` is yellow for emphasis
+
 ## 2026-04-09 — Homepage pricing CTAs now route to Stripe monthly checkout + annual upsell links
 
 ### Updated

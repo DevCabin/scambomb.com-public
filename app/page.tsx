@@ -408,8 +408,8 @@ function PriceCard({ title, price, note, cta, color, highlight = false, href, an
       <p className="mt-1 text-white/70">{note}</p>
       <a href={href || "https://app.scambomb.com"} className="mt-5 w-full rounded-xl py-3 font-semibold inline-block text-center" style={{ backgroundColor: color, color: "#0B1324" }}>{cta}</a>
       {!isFree && annualHref ? (
-        <a href={annualHref} className="mt-2 inline-block text-sm underline decoration-white/40 underline-offset-4 hover:decoration-white text-white/80 hover:text-white">
-          Or save %17 by paying annually!
+        <a href={annualHref} className="mt-2 block text-center text-sm text-white underline decoration-white/60 underline-offset-4 hover:decoration-white">
+          <span className="text-[#F5C84C]">Or save %17</span> by paying annually!
         </a>
       ) : null}
       <ul className="mt-4 space-y-2 text-sm text-white/80">

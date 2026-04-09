@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import Stripe from 'stripe';
 
+export const runtime = 'nodejs';
+
 const PRICE_MAP = {
   standard: {
     monthly: 'price_1TGpxlAW2QCrL2OX6GDy4uNJ',
@@ -27,7 +29,14 @@ export async function GET(request: NextRequest) {
   try {
     const stripeSecret = process.env.STRIPE_SECRET_KEY;
     if (!stripeSecret) {
-      return NextResponse.json({ error: 'Missing STRIPE_SECRET_KEY' }, { status: 500 });
+      return NextResponse.json(
+        {
+          error: 'Missing STRIPE_SECRET_KEY',
+          checked: ['STRIPE_SECRET_KEY'],
+          hint: 'Verify this env var exists on the deployed project/environment and redeploy.',
+        },
+        { status: 500 }
+      );
     }
 
     const planParam = request.nextUrl.searchParams.get('plan');
