@@ -3,19 +3,8 @@ import Stripe from 'stripe';
 
 export const runtime = 'nodejs';
 
-const PRICE_MAP = {
-  standard: {
-    monthly: 'price_1TGpxlAW2QCrL2OX6GDy4uNJ',
-    annual: 'price_1TGqRxAW2QCrL2OXzKhwWFjd',
-  },
-  senior: {
-    monthly: 'price_1SPtfHAW2QCrL2OXAKcsiYpn',
-    annual: 'price_1SSltcAW2QCrL2OXtCse3sHN',
-  },
-} as const;
-
-type Plan = keyof typeof PRICE_MAP;
-type Billing = keyof typeof PRICE_MAP.standard;
+type Plan = 'standard' | 'senior';
+type Billing = 'monthly' | 'annual';
 
 function isPlan(value: string | null): value is Plan {
   return value === 'standard' || value === 'senior';
@@ -25,18 +14,22 @@ function isBilling(value: string | null): value is Billing {
   return value === 'monthly' || value === 'annual';
 }
 
+function getPriceId(plan: Plan, billing: Billing): string | undefined {
+  if (plan === 'standard') {
+    return billing === 'monthly' ? process.env.STRIPE_PRICE_ID : process.env.STRIPE_ANNUAL_PRICE_ID;
+  }
+  if (plan === 'senior') {
+    return billing === 'monthly' ? process.env.STRIPE_SENIOR_PRICE_ID : process.env.STRIPE_ANNUAL_SENIOR_PRICE_ID;
+  }
+  return undefined;
+}
+
 export async function GET(request: NextRequest) {
   try {
     const stripeSecret = process.env.STRIPE_SECRET_KEY;
     if (!stripeSecret) {
-      const stripeEnvVars = Object.keys(process.env).filter(key => key.startsWith('STRIPE_'));
       return NextResponse.json(
-        {
-          error: 'Missing STRIPE_SECRET_KEY',
-          checked: ['STRIPE_SECRET_KEY'],
-          foundStripeVars: stripeEnvVars,
-          hint: 'Verify STRIPE_SECRET_KEY is explicitly set in the Vercel project dashboard environment variables.',
-        },
+        { error: 'Internal Server Error: Missing STRIPE_SECRET_KEY' },
         { status: 500 }
       );
     }
@@ -51,7 +44,14 @@ export async function GET(request: NextRequest) {
       );
     }
 
-    const priceId = PRICE_MAP[planParam][billingParam];
+    const priceId = getPriceId(planParam, billingParam);
+    if (!priceId) {
+      return NextResponse.json(
+        { error: `Missing price ID for ${planParam} ${billingParam}` },
+        { status: 500 }
+      );
+    }
+
     const stripe = new Stripe(stripeSecret);
     const origin = request.nextUrl.origin;
 
