@@ -65,7 +65,7 @@ export default function ScamBombLanding() {
                     <a id="cta" href="#pricing" className="rounded-2xl px-6 py-3 font-semibold inline-block text-center w-full hover-lift btn-press" style={{ backgroundColor: brandYellow, color: "#0B1324" }}>
                       Unlimited Access
                     </a>
-                    <p className="text-sm text-white/80 mt-2">$10/mo or $99/yr standard · $5/mo or $49/yr for seniors 60+</p>
+                    <p className="text-sm text-white/80 mt-2">$9/mo or $99/yr standard · $5/mo or $49/yr for seniors 60+</p>
                   </div>
 
                   <div>
@@ -236,7 +236,7 @@ export default function ScamBombLanding() {
         <h2 className="text-3xl sm:text-4xl font-bold">Simple, affordable protection</h2>
         <div className="mt-8 grid lg:grid-cols-3 gap-6">
           <div className="hover-lift"><PriceCard highlight title="Free Plan" price="Free" note="5 scans per month" cta="Get started" color={brandYellow} href={appUrl} /></div>
-          <div className="hover-lift"><PriceCard title="Standard Plan" price="$10/mo · $99/yr" note="Unlimited scans with annual savings" cta="Choose standard" color={brandYellow} href="/api/stripe/checkout?plan=standard&billing=monthly" annualHref="/api/stripe/checkout?plan=standard&billing=annual" /></div>
+          <div className="hover-lift"><PriceCard title="Standard Plan" price="$9/mo · $99/yr" note="Unlimited scans with annual savings" cta="Choose standard" color={brandYellow} href="/api/stripe/checkout?plan=standard&billing=monthly" annualHref="/api/stripe/checkout?plan=standard&billing=annual" /></div>
           <div className="hover-lift"><PriceCard title="Senior 60+ Plan" price="$5/mo · $49/yr" note="Locked-in senior pricing" cta="Claim senior pricing" color={brandYellow} href="/api/stripe/checkout?plan=senior&billing=monthly" annualHref="/api/stripe/checkout?plan=senior&billing=annual" /></div>
         </div>
         <p className="mt-4 text-sm text-white/70">No strings attached, "cancel any time for any reason" guarantee.</p>

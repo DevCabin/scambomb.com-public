@@ -75,7 +75,7 @@ export default function ProtectParentsPage() {
           <div className="cta-block">
             <div className="cta-label">Start protecting your family today</div>
             <div className="cta-offer">Try ScamBomb Free — Upgrade Anytime</div>
-            <div className="cta-price">Premium protection is <strong>$10/mo or $99/yr standard</strong> and <strong>$5/mo or $49/yr for seniors 60+ (locked in)</strong></div>
+            <div className="cta-price">Premium protection is <strong>$9/mo or $99/yr standard</strong> and <strong>$5/mo or $49/yr for seniors 60+ (locked in)</strong></div>
 
             <a href={APP_URL} className="btn-primary" onClick={() => {
               const fbq = (window as unknown as { fbq?: (...args: unknown[]) => void }).fbq

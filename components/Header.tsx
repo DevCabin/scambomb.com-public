@@ -21,7 +21,7 @@ function UniversalHeader() {
       {/* Top Announcement Bar */}
       <a href="#pricing" className="block w-full border-b border-white/10 hover:border-white/20 transition-colors" role="region" aria-label="announcement">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-2 text-center text-sm text-white/80 hover:text-white">
-          New pricing: <strong style={{ color: brandYellow }}>Standard $10/mo or $99/yr</strong> · <strong style={{ color: brandYellow }}>Seniors 60+ $5/mo or $49/yr</strong>
+          New pricing: <strong style={{ color: brandYellow }}>Standard $9/mo or $99/yr</strong> · <strong style={{ color: brandYellow }}>Seniors 60+ $5/mo or $49/yr</strong>
         </div>
       </a>
 
