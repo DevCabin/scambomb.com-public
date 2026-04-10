@@ -86,26 +86,26 @@ export default function ScamBombLanding() {
             </div>
             <div>
               <div className={`rounded-2xl border ${brandBorder} bg-white/5 p-4 sm:p-6`}>
-                <div className="text-sm text-white/80 mb-2">Example message</div>
+                <div className="text-base font-semibold text-white/85 mb-2">Example message</div>
                 <div className="rounded-xl bg-white text-black p-4 sm:p-5 shadow-lg">
-                  <p className="text-sm sm:text-base">"URGENT! Your bank account has been locked. Click this link immediately to avoid permanent closure."</p>
+                  <p className="text-base leading-relaxed sm:text-lg">"URGENT! Your bank account has been locked. Click this link immediately to avoid permanent closure."</p>
                 </div>
-                <div className="mt-4 text-sm text-white/80">ScamBomb analysis</div>
+                <div className="mt-4 text-base font-semibold text-white/85">ScamBomb analysis</div>
                 <div className="mt-1 rounded-xl border border-black/10 bg-black/20 p-4">
-                  <ul className="list-disc ml-5 space-y-2 text-white/90">
+                  <ul className="list-disc ml-5 space-y-3 text-base leading-relaxed text-white/90">
                     <li>Urgency tactic detected ("immediately").</li>
                     <li>Suspicious link (domain doesn't match official site).</li>
                     <li>Requests action outside official app/website.</li>
                   </ul>
-                  <div className="mt-3 rounded-lg bg-[#0B1324] p-3" style={{ border: `1px dashed ${brandYellow}` }}>
+                  <div className="mt-4 rounded-lg bg-[#0B1324] p-4 text-base leading-relaxed" style={{ border: `1px dashed ${brandYellow}` }}>
                     <p>
                       <strong style={{ color: brandYellow }}>Do this:</strong> Ignore the link and open your bank's official app. If worried, call the number on the back of your card.
                     </p>
                   </div>
                 </div>
-                <div className="mt-4 flex items-center justify-between">
-                  <span className="text-sm text-white/70">Plain-English results in seconds</span>
-                  <a href={appUrl} className="inline-block rounded-xl px-4 py-2 font-semibold" style={{ backgroundColor: brandYellow, color: "#0B1324" }}>
+                <div className="mt-5 flex items-center justify-between gap-3">
+                  <span className="text-base text-white/75">Plain-English results in seconds</span>
+                  <a href={appUrl} className="inline-block rounded-xl px-5 py-3 text-base font-semibold" style={{ backgroundColor: brandYellow, color: "#0B1324" }}>
                     Check a message →
                   </a>
                 </div>
