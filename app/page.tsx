@@ -56,7 +56,7 @@ export default function ScamBombLanding() {
                 you if they're<br/>
                 <span style={{ color: brandYellow, fontWeight: 'bold' }}>safe</span> <span style={{ color: 'white' }}>or</span> <span style={{ color: brandYellow, fontWeight: 'bold' }}>dangerous</span></span>
               </h1>
-              <p className="mt-4 max-w-xl text-base leading-relaxed text-white/85 sm:text-lg">
+              <p className="mt-5 max-w-xl text-lg leading-relaxed text-white/90 sm:text-xl">
                 Paste any suspicious text, email, or SMS. Get instant AI analysis, plain-English explanations, and step-by-step next actions.
               </p>
               <div className="mt-7 text-center">
@@ -65,15 +65,15 @@ export default function ScamBombLanding() {
                     <a id="cta" href="#pricing" className="rounded-2xl px-6 py-4 text-lg font-semibold inline-block text-center w-full hover-lift btn-press" style={{ backgroundColor: brandYellow, color: "#0B1324" }}>
                       Unlimited Access
                     </a>
-                    <p className="text-base text-white/85 mt-2">$9/mo or $99/yr standard</p>
-                    <p className="text-base text-white/85">$5/mo or $49/yr for seniors 60+</p>
+                    <p className="text-lg text-white/90 mt-3">$9/mo or $99/yr standard</p>
+                    <p className="text-lg text-white/90">$5/mo or $49/yr for seniors 60+</p>
                   </div>
 
                   <div>
                     <a href={appUrl} className="rounded-2xl px-6 py-4 border-2 text-lg font-semibold inline-block text-center w-full hover:bg-white/10 hover-lift btn-press" style={{ borderColor: brandYellow, color: brandYellow }}>
                       Try Free!
                     </a>
-                    <p className="text-base text-white/85 mt-2">Instant access, no sign up</p>
+                    <p className="text-lg text-white/90 mt-3">Instant access, no sign up</p>
                   </div>
                 </div>
               </div>
@@ -86,18 +86,18 @@ export default function ScamBombLanding() {
             </div>
             <div>
               <div className={`rounded-2xl border ${brandBorder} bg-white/5 p-4 sm:p-6`}>
-                <div className="text-base font-semibold text-white/85 mb-2">Example message</div>
+                <div className="text-xl font-semibold text-white/90 mb-3">Example message</div>
                 <div className="rounded-xl bg-white text-black p-4 sm:p-5 shadow-lg">
-                  <p className="text-base leading-relaxed sm:text-lg">"URGENT! Your bank account has been locked. Click this link immediately to avoid permanent closure."</p>
+                  <p className="text-lg leading-relaxed sm:text-xl">"URGENT! Your bank account has been locked. Click this link immediately to avoid permanent closure."</p>
                 </div>
-                <div className="mt-4 text-base font-semibold text-white/85">ScamBomb analysis</div>
+                <div className="mt-5 text-xl font-semibold text-white/90">ScamBomb analysis</div>
                 <div className="mt-1 rounded-xl border border-black/10 bg-black/20 p-4">
-                  <ul className="list-disc ml-5 space-y-3 text-base leading-relaxed text-white/90">
+                  <ul className="list-disc ml-5 space-y-4 text-lg leading-relaxed text-white/95">
                     <li>Urgency tactic detected ("immediately").</li>
                     <li>Suspicious link (domain doesn't match official site).</li>
                     <li>Requests action outside official app/website.</li>
                   </ul>
-                  <div className="mt-4 rounded-lg bg-[#0B1324] p-4 text-base leading-relaxed" style={{ border: `1px dashed ${brandYellow}` }}>
+                  <div className="mt-5 rounded-lg bg-[#0B1324] p-5 text-lg leading-relaxed" style={{ border: `1px dashed ${brandYellow}` }}>
                     <p>
                       <strong style={{ color: brandYellow }}>Do this:</strong> Ignore the link and open your bank's official app. If worried, call the number on the back of your card.
                     </p>
