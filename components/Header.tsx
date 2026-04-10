@@ -20,7 +20,7 @@ function UniversalHeader() {
 
       {/* Top Announcement Bar */}
       <a href="#pricing" className="block w-full border-b border-white/10 hover:border-white/20 transition-colors" role="region" aria-label="announcement">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-2 text-center text-sm text-white/80 hover:text-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-3 text-center text-base sm:text-sm text-white/85 hover:text-white">
           New pricing: <strong style={{ color: brandYellow }}>Standard $9/mo or $99/yr</strong> · <strong style={{ color: brandYellow }}>Seniors 60+ $5/mo or $49/yr</strong>
         </div>
       </a>
@@ -51,7 +51,7 @@ function UniversalHeader() {
             </div>
             <button
               type="button"
-              className="md:hidden inline-flex items-center justify-center rounded-lg border border-white/30 px-3 py-2 text-white hover:bg-white/10"
+              className="md:hidden inline-flex items-center justify-center rounded-lg border border-white/30 px-4 py-3 text-lg font-semibold text-white hover:bg-white/10"
               aria-label="Toggle mobile menu"
               aria-expanded={isMobileMenuOpen}
               onClick={() => setIsMobileMenuOpen((prev) => !prev)}
@@ -68,7 +68,7 @@ function UniversalHeader() {
 
           {isMobileMenuOpen && (
             <nav className="md:hidden pb-4" aria-label="Mobile Primary">
-              <div className="flex flex-col gap-3 rounded-xl border border-white/15 bg-black/40 p-4">
+              <div className="flex flex-col gap-4 rounded-xl border border-white/15 bg-black/40 p-5 text-lg">
                 <a className="opacity-90 hover:opacity-100" href="/" onClick={() => setIsMobileMenuOpen(false)}>Home</a>
                 <a className="opacity-90 hover:opacity-100" href="/extension" onClick={() => setIsMobileMenuOpen(false)}>Extension</a>
                 <a className="opacity-90 hover:opacity-100" href="/#pricing" onClick={() => setIsMobileMenuOpen(false)}>Pricing</a>

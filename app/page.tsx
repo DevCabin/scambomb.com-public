@@ -116,8 +116,8 @@ export default function ScamBombLanding() {
       </section>
 
       {/* Quick app instructions (toggle) */}
-      <section aria-label="How to use ScamBomb app" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
-        <div className={`rounded-2xl border ${brandBorder} bg-white/5 p-3 sm:p-4`}>
+      <section aria-label="How to use ScamBomb app" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4 sm:py-4">
+        <div className={`rounded-2xl border ${brandBorder} bg-white/5 p-4 sm:p-4`}>
           <button
             type="button"
             onClick={() => setIsHowToOpen((prev) => !prev)}
@@ -126,10 +126,10 @@ export default function ScamBombLanding() {
             className="w-full text-left flex items-center justify-between gap-3"
           >
             <div className="flex items-center gap-3">
-              <span className="h-8 w-8 rounded-full bg-[#F5C84C] text-[#0B1324] font-extrabold flex items-center justify-center">?</span>
-              <h2 className="text-sm sm:text-base md:text-lg font-extrabold tracking-[0.08em] uppercase">How to use the app</h2>
+              <span className="h-10 w-10 rounded-full bg-[#F5C84C] text-[#0B1324] text-lg font-extrabold flex items-center justify-center">?</span>
+              <h2 className="text-lg sm:text-base md:text-lg font-extrabold tracking-[0.08em] uppercase">How to use the app</h2>
             </div>
-            <span className={`text-yellow-300 text-xl transition-transform duration-300 ${isHowToOpen ? 'rotate-180' : ''}`} aria-hidden>
+            <span className={`text-yellow-300 text-2xl transition-transform duration-300 ${isHowToOpen ? 'rotate-180' : ''}`} aria-hidden>
               ⌄
             </span>
           </button>
@@ -184,7 +184,7 @@ export default function ScamBombLanding() {
       {/* How it works */}
       <section id="how" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
         <HeaderEyebrow>How it works</HeaderEyebrow>
-          <h2 className="text-3xl sm:text-4xl font-bold">From confusion to confident in 3 steps</h2>
+          <h2 className="text-4xl sm:text-4xl font-bold">From confusion to confident in 3 steps</h2>
         <div className="mt-8 grid md:grid-cols-3 gap-6">
           <div className="hover-lift"><Step n={1} title="Paste a message" text="Copy any email, text, or social DM into ScamBomb." /></div>
           <div className="hover-lift"><Step n={2} title="We flag risks" text="We detect urgency, spoofed links, fake invoices, and more." /></div>
@@ -198,7 +198,7 @@ export default function ScamBombLanding() {
         <div className="absolute inset-0 bg-[#0B1324] opacity-80 pointer-events-none z-0"></div>
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <HeaderEyebrow>Features</HeaderEyebrow>
-          <h2 className="text-3xl sm:text-4xl font-bold">Built for everyone (55+ included!)</h2>
+          <h2 className="text-4xl sm:text-4xl font-bold">Built for everyone (55+ included!)</h2>
           <div className="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="hover-lift"><Card title="Plain-English explanations" icon={<Check />}>No tech-speak. We explain what's risky and why, in friendly language.</Card></div>
             <div className="hover-lift"><Card title="Link & sender checks" icon={<Check />}>Spot spoofed addresses, mismatched domains, and impersonation cues.</Card></div>
@@ -214,11 +214,11 @@ export default function ScamBombLanding() {
       <section id="demo" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
         <div className={`rounded-2xl border ${brandBorder} bg-white/5 p-6 lg:p-10 grid lg:grid-cols-2 gap-8 items-center`}>
           <div>
-            <h3 className="text-2xl font-bold">Try the demo — no signup required!</h3>
-            <p className="mt-2 text-white/80">Paste a suspicious message and see how ScamBomb explains it in seconds.</p>
-            <div className="mt-6 flex gap-3">
-              <a href="#pricing" className="rounded-2xl px-5 py-3 font-semibold hover-lift btn-press" style={{ backgroundColor: brandYellow, color: "#0B1324" }}>Unlock full protection</a>
-              <a href={appUrl} className="rounded-2xl px-6 py-3 border-2 font-semibold hover:bg-white/10 hover-lift btn-press" style={{ borderColor: brandYellow, color: brandYellow }}>
+            <h3 className="text-3xl font-bold">Try the demo — no signup required!</h3>
+            <p className="mt-3 text-lg leading-relaxed text-white/85">Paste a suspicious message and see how ScamBomb explains it in seconds.</p>
+            <div className="mt-6 flex flex-col sm:flex-row gap-3">
+              <a href="#pricing" className="rounded-2xl px-6 py-4 text-lg font-semibold hover-lift btn-press" style={{ backgroundColor: brandYellow, color: "#0B1324" }}>Unlock full protection</a>
+              <a href={appUrl} className="rounded-2xl px-6 py-4 border-2 text-lg font-semibold hover:bg-white/10 hover-lift btn-press" style={{ borderColor: brandYellow, color: brandYellow }}>
                 Try Free!
               </a>
             </div>
@@ -234,13 +234,13 @@ export default function ScamBombLanding() {
       {/* Pricing */}
       <section id="pricing" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
         <HeaderEyebrow>Pricing</HeaderEyebrow>
-        <h2 className="text-3xl sm:text-4xl font-bold">Simple, affordable protection</h2>
+        <h2 className="text-4xl sm:text-4xl font-bold">Simple, affordable protection</h2>
         <div className="mt-8 grid lg:grid-cols-3 gap-6">
           <div className="hover-lift"><PriceCard highlight title="Free Plan" price="Free" note="5 scans per month" cta="Get started" color={brandYellow} href={appUrl} /></div>
           <div className="hover-lift"><PriceCard title="Standard Plan" price="$9/mo · $99/yr" note="Unlimited scans with annual savings" cta="Choose standard" color={brandYellow} href="/api/stripe/checkout?plan=standard&billing=monthly" annualHref="/api/stripe/checkout?plan=standard&billing=annual" /></div>
           <div className="hover-lift"><PriceCard title="Senior 60+ Plan" price="$5/mo · $49/yr" note="Locked-in senior pricing" cta="Claim senior pricing" color={brandYellow} href="/api/stripe/checkout?plan=senior&billing=monthly" annualHref="/api/stripe/checkout?plan=senior&billing=annual" /></div>
         </div>
-        <p className="mt-4 text-sm text-white/70">No strings attached, "cancel any time for any reason" guarantee.</p>
+        <p className="mt-4 text-lg text-white/80">No strings attached, "cancel any time for any reason" guarantee.</p>
       </section>
 
       {/* Testimonials (hidden) */}
@@ -304,16 +304,16 @@ export default function ScamBombLanding() {
         {/* Heavy Overlay */}
         <div className="absolute inset-0 bg-[#0B1324] opacity-70 pointer-events-none z-0"></div>
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl sm:text-4xl font-bold">Frequently Asked Questions</h2>
+          <h2 className="text-4xl sm:text-4xl font-bold">Frequently Asked Questions</h2>
           <dl className="divide-y divide-white/10 rounded-2xl border border-white/10 bg-[#0B1324] mt-8">
             {[
               { q: "Do you sell my data?", a: "Short answer: Never.\n\nLong answer: We collect only the bare minimum amount of information to allow this service to function. Any potential scam message that is uploaded for testing, text or image, is NOT stored or logged. It is not used for training purposes. It is certainly not sold. You can rest assured anything you share with us ... is kept between us." },
               { q: "Does it work on my phone?", a: "Yes, you may use your mobile device to paste messages or even upload a screenshot of a message." },
               { q: "Can I cancel anytime?", a: "Absolutely. Subscriptions are month-to-month with a \"No strings attached, 'cancel any time for any reason'\" guarantee." },
             ].map((item, i) => (
-              <div key={i} className="p-5">
-                <dt className="font-semibold">{item.q}</dt>
-                <dd className="mt-2 text-white/80" dangerouslySetInnerHTML={{ __html: item.a.split('\n\n').join('<br/><br/>') }}></dd>
+              <div key={i} className="p-6">
+                <dt className="text-xl font-semibold">{item.q}</dt>
+                <dd className="mt-3 text-lg leading-relaxed text-white/85" dangerouslySetInnerHTML={{ __html: item.a.split('\n\n').join('<br/><br/>') }}></dd>
               </div>
             ))}
           </dl>
