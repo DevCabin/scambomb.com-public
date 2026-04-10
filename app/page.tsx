@@ -49,30 +49,31 @@ export default function ScamBombLanding() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-8 pb-16 sm:pt-12 sm:pb-24">
           <div className="grid lg:grid-cols-2 gap-10 items-center">
             <div>
-              <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight" style={{ lineHeight: '1.2' }}>
+              <h1 className="text-[2.35rem] leading-[1.1] sm:text-5xl sm:leading-tight font-extrabold">
                 Give us your<br/>
                 <span style={{ color: 'white' }}>Suspicious:</span> <span id="changing-inputs" style={{ color: brandYellow }}></span><br/>
-                <span style={{ marginTop: '1.5rem', display: 'block' }}>and we'll tell<br/>
+                <span className="mt-5 block">and we'll tell<br/>
                 you if they're<br/>
                 <span style={{ color: brandYellow, fontWeight: 'bold' }}>safe</span> <span style={{ color: 'white' }}>or</span> <span style={{ color: brandYellow, fontWeight: 'bold' }}>dangerous</span></span>
               </h1>
-              <p className="mt-4 max-w-xl text-white/80">
-                Paste any suspicious text, email, or SMS. Get instant AI analysis, plain-English explanations, and step-by-step next actions. Start protecting yourself now.
+              <p className="mt-4 max-w-xl text-base leading-relaxed text-white/85 sm:text-lg">
+                Paste any suspicious text, email, or SMS. Get instant AI analysis, plain-English explanations, and step-by-step next actions.
               </p>
-              <div className="mt-6 text-center">
-                <div className="grid grid-cols-2 gap-6 max-w-lg mx-auto">
+              <div className="mt-7 text-center">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 max-w-lg mx-auto">
                   <div>
-                    <a id="cta" href="#pricing" className="rounded-2xl px-6 py-3 font-semibold inline-block text-center w-full hover-lift btn-press" style={{ backgroundColor: brandYellow, color: "#0B1324" }}>
+                    <a id="cta" href="#pricing" className="rounded-2xl px-6 py-4 text-lg font-semibold inline-block text-center w-full hover-lift btn-press" style={{ backgroundColor: brandYellow, color: "#0B1324" }}>
                       Unlimited Access
                     </a>
-                    <p className="text-sm text-white/80 mt-2">$9/mo or $99/yr standard · $5/mo or $49/yr for seniors 60+</p>
+                    <p className="text-base text-white/85 mt-2">$9/mo or $99/yr standard</p>
+                    <p className="text-base text-white/85">$5/mo or $49/yr for seniors 60+</p>
                   </div>
 
                   <div>
-                    <a href={appUrl} className="rounded-2xl px-6 py-3 border-2 font-semibold inline-block text-center w-full hover:bg-white/10 hover-lift btn-press" style={{ borderColor: brandYellow, color: brandYellow }}>
+                    <a href={appUrl} className="rounded-2xl px-6 py-4 border-2 text-lg font-semibold inline-block text-center w-full hover:bg-white/10 hover-lift btn-press" style={{ borderColor: brandYellow, color: brandYellow }}>
                       Try Free!
                     </a>
-                    <p className="text-sm text-white/80 mt-2">Instant access, no sign up</p>
+                    <p className="text-base text-white/85 mt-2">Instant access, no sign up</p>
                   </div>
                 </div>
               </div>
@@ -328,7 +329,7 @@ export default function ScamBombLanding() {
 // ---- UI Helpers ----
 function HeaderEyebrow({ children }: { children: React.ReactNode }) {
   return (
-    <p className="text-sm font-semibold tracking-wider uppercase text-white/60 mb-2">{children}</p>
+    <p className="text-base sm:text-sm font-semibold tracking-wider uppercase text-white/70 mb-2">{children}</p>
   );
 }
 
@@ -336,10 +337,10 @@ function Step({ n, title, text }: { n: number; title: string; text: string }) {
   return (
     <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
       <div className="flex items-center gap-3">
-        <div className="h-9 w-9 rounded-full flex items-center justify-center bg-white/10 border border-white/10">{n}</div>
-        <h3 className="font-semibold text-lg">{title}</h3>
+        <div className="h-10 w-10 rounded-full flex items-center justify-center bg-white/10 border border-white/10 text-base font-semibold">{n}</div>
+        <h3 className="font-semibold text-lg sm:text-xl">{title}</h3>
       </div>
-      <p className="mt-3 text-white/80">{text}</p>
+      <p className="mt-3 text-base leading-relaxed text-white/85">{text}</p>
     </div>
   );
 }
@@ -392,9 +393,9 @@ function Card({ title, icon, children }: { title: string; icon?: React.ReactNode
     <div className="rounded-2xl border border-white/10 bg-[#F5C84C] p-5 text-[#0B1324]">
       <div className="flex items-center gap-2">
         <span aria-hidden>{icon}</span>
-        <h3 className="font-bold uppercase text-lg">{title}</h3>
+        <h3 className="font-bold uppercase text-lg sm:text-xl">{title}</h3>
       </div>
-      <p className="mt-2 opacity-80">{children}</p>
+      <p className="mt-2 text-base leading-relaxed opacity-90">{children}</p>
     </div>
   );
 }
@@ -403,29 +404,29 @@ function PriceCard({ title, price, note, cta, color, highlight = false, href, an
   const isFree = price === "Free";
   return (
     <div className={`rounded-2xl p-6 border ${highlight ? "border-yellow-300 bg-white/10" : "border-white/10 bg-white/5"}`}>
-      <h3 className="text-lg font-semibold">{title}</h3>
-      <div className="mt-3 text-3xl font-extrabold">{price}</div>
-      <p className="mt-1 text-white/70">{note}</p>
-      <a href={href || "https://app.scambomb.com"} className="mt-5 w-full rounded-xl py-3 font-semibold inline-block text-center" style={{ backgroundColor: color, color: "#0B1324" }}>{cta}</a>
-      
+      <h3 className="text-xl font-semibold">{title}</h3>
+      <div className="mt-3 text-4xl font-extrabold">{price}</div>
+      <p className="mt-2 text-base leading-relaxed text-white/80">{note}</p>
+      <a href={href || "https://app.scambomb.com"} className="mt-5 w-full rounded-xl py-4 text-lg font-semibold inline-block text-center" style={{ backgroundColor: color, color: "#0B1324" }}>{cta}</a>
+
       {!isFree && annualHref && (
-        <a href={annualHref} className="mt-2 block text-center text-sm text-white underline decoration-white underline-offset-4 hover:decoration-white">
+        <a href={annualHref} className="mt-3 block text-center text-base text-white underline decoration-white/60 underline-offset-4 hover:decoration-white">
           <span className="text-[#F5C84C]">Or save 17%</span> <span className="text-white">by paying annually!</span>
         </a>
       )}
-      
-      <ul className="mt-4 space-y-2 text-sm text-white/80">
+
+      <ul className="mt-5 space-y-3 text-base text-white/85">
         {isFree ? (
           <>
-            <li className="flex items-start gap-2"><Check /> 5 scans per month</li>
-            <li className="flex items-start gap-2"><Check /> Plain-English results</li>
-            <li className="flex items-start gap-2"><Check /> Upgrade anytime</li>
+            <li className="flex items-start gap-3"><Check /> 5 scans per month</li>
+            <li className="flex items-start gap-3"><Check /> Plain-English results</li>
+            <li className="flex items-start gap-3"><Check /> Upgrade anytime</li>
           </>
         ) : (
           <>
-            <li className="flex items-start gap-2"><Check /> Unlimited message checks</li>
-            <li className="flex items-start gap-2"><Check /> Plain-English results</li>
-            <li className="flex items-start gap-2"><Check /> Priority updates on new scams</li>
+            <li className="flex items-start gap-3"><Check /> Unlimited message checks</li>
+            <li className="flex items-start gap-3"><Check /> Plain-English results</li>
+            <li className="flex items-start gap-3"><Check /> Priority updates on new scams</li>
           </>
         )}
       </ul>
@@ -435,11 +436,11 @@ function PriceCard({ title, price, note, cta, color, highlight = false, href, an
 
 function PostCard({ tag, title, slug, excerpt }: { tag: string; title: string; slug: string; excerpt?: string }) {
   return (
-    <article className="rounded-2xl border border-white/10 bg-white/5 p-5">
-      <div className="text-xs font-semibold tracking-widest text-white/60">{tag}</div>
-      <h3 className="mt-2 font-semibold">{title}</h3>
-      <p className="mt-2 text-white/80">{excerpt || "Short, friendly explanations you can share with family or seniors you support."}</p>
-      <a href={`/blog/${slug}`} className="mt-3 inline-block rounded-lg border border-white/20 px-3 py-2 hover:bg-white/10">Read</a>
+    <article className="rounded-2xl border border-white/10 bg-white/5 p-6">
+      <div className="text-sm font-semibold tracking-widest text-white/70">{tag}</div>
+      <h3 className="mt-3 text-xl font-semibold">{title}</h3>
+      <p className="mt-3 text-base leading-relaxed text-white/85">{excerpt || "Short, friendly explanations you can share with family or seniors you support."}</p>
+      <a href={`/blog/${slug}`} className="mt-4 inline-block rounded-lg border border-white/20 px-4 py-3 text-base hover:bg-white/10">Read</a>
     </article>
   );
 }
@@ -456,8 +457,8 @@ function Quote({ text, author }: { text: string; author: string }) {
 function TrustItem({ title, text }: { title: string; text: string }) {
   return (
     <div>
-      <div style={{ textTransform: "uppercase", fontWeight: "bold", fontSize: "1.75rem", lineHeight: "2rem" }}>{title}</div>
-      <div className="text-black/80">{text}</div>
+      <div className="uppercase font-extrabold text-2xl sm:text-[1.75rem] leading-tight">{title}</div>
+      <div className="mt-1 text-base leading-relaxed text-black/80">{text}</div>
     </div>
   );
 }
