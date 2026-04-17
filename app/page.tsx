@@ -64,8 +64,13 @@ export default function ScamBombLanding() {
                     <a id="cta" href="#pricing" className="rounded-2xl px-6 py-4 text-lg font-semibold inline-block text-center w-full hover-lift btn-press" style={{ backgroundColor: brandYellow, color: "#0B1324" }}>
                       Unlimited Access
                     </a>
-                    <p className="text-lg text-white/90 mt-3">$9/mo or $99/yr standard</p>
-                    <p className="text-lg text-white/90">$5/mo or $49/yr for seniors 60+</p>
+                    <div className="hidden md:block">
+                      <p className="text-lg text-white/90 mt-3">$9/mo or $99/yr</p>
+                    </div>
+                    <div className="md:hidden">
+                      <p className="text-lg text-white/90 mt-3">$9/mo or $99/yr standard</p>
+                      <p className="text-lg text-white/90">$5/mo or $49/yr for seniors 60+</p>
+                    </div>
                   </div>
 
                   <div>
