@@ -1,5 +1,41 @@
 # Changelog
 
+## 2026-04-17 — Mobile UX improvements + GHL popup conditional + responsive pricing
+
+### Updated
+- `components/Header.tsx`
+  - **Mobile Menu Enhancements**: Centered all menu items and increased font size/boldness
+    - Changed text size from `text-lg` to `text-xl` for better readability
+    - Added `text-center font-bold` to all menu items for improved visual hierarchy
+    - Enhanced "Try Free!" button with bold styling
+  - **Responsive Pricing Text**: Mobile keeps full pricing, desktop shows simplified version
+    - Mobile: "Standard $9/mo or $99/yr · Seniors 60+ $5/mo or $49/yr" (unchanged)
+    - Desktop: "Standard $9/mo or $99/yr" (senior pricing hidden on desktop)
+    - Uses `md:hidden` class to conditionally show senior pricing only on mobile
+
+### Added
+- `components/ConditionalGHLPoliteSlideIn.tsx`
+  - New wrapper component that conditionally renders GHL popup based on current route
+  - Uses Next.js `usePathname()` hook to detect current page
+  - Returns `null` when on homepage (`/`), renders `<GHLPoliteSlideIn />` on all other pages
+  - Maintains GHL functionality on blog posts, resources, and other pages while hiding it from homepage
+
+### Updated
+- `app/layout.tsx`
+  - Replaced direct `<GHLPoliteSlideIn />` component with `<ConditionalGHLPoliteSlideIn />`
+  - GHL popup now only appears on non-homepage routes for cleaner homepage experience
+  - Preserves GHL lead capture functionality across the rest of the site
+
+## 2026-04-17 — Mobile header layout improvements
+
+### Updated
+- `components/Header.tsx`
+  - Increased mobile header height by ~30px for better spacing on small screens
+  - Fixed tagline positioning to stay at bottom of header section
+  - Mobile: `py-4` padding (was `py-3`), Desktop: unchanged `py-3`
+  - Removed negative margin from tagline section, replaced with proper padding
+  - Result: Logo/menu button stay at top, tagline stays at bottom with adequate spacing
+
 ## 2026-04-09b — Stripe checkout route hardening + annual upsell link style update
 
 ### Updated
