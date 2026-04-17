@@ -21,7 +21,7 @@ function UniversalHeader() {
       {/* Top Announcement Bar */}
       <a href="#pricing" className="block w-full border-b border-white/10 hover:border-white/20 transition-colors" role="region" aria-label="announcement">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-3 text-center text-base sm:text-sm text-white/85 hover:text-white">
-          New pricing: <strong style={{ color: brandYellow }}>Standard $9/mo or $99/yr</strong> · <strong style={{ color: brandYellow }}>Seniors 60+ $5/mo or $49/yr</strong>
+          New pricing: <strong style={{ color: brandYellow }}>Standard $9/mo or $99/yr</strong><span className="md:hidden"> · <strong style={{ color: brandYellow }}>Seniors 60+ $5/mo or $49/yr</strong></span>
         </div>
       </a>
 
@@ -68,15 +68,15 @@ function UniversalHeader() {
 
           {isMobileMenuOpen && (
             <nav className="md:hidden pb-4" aria-label="Mobile Primary">
-              <div className="flex flex-col gap-4 rounded-xl border border-white/15 bg-black/40 p-5 text-lg">
-                <a className="opacity-90 hover:opacity-100" href="/" onClick={() => setIsMobileMenuOpen(false)}>Home</a>
-                <a className="opacity-90 hover:opacity-100" href="/extension" onClick={() => setIsMobileMenuOpen(false)}>Extension</a>
-                <a className="opacity-90 hover:opacity-100" href="/#pricing" onClick={() => setIsMobileMenuOpen(false)}>Pricing</a>
-                <a className="opacity-90 hover:opacity-100" href="/#faq" onClick={() => setIsMobileMenuOpen(false)}>FAQ</a>
-                <a className="opacity-90 hover:opacity-100" href="/blog" onClick={() => setIsMobileMenuOpen(false)}>Blog</a>
+              <div className="flex flex-col gap-4 rounded-xl border border-white/15 bg-black/40 p-5 text-xl">
+                <a className="opacity-90 hover:opacity-100 text-center font-bold" href="/" onClick={() => setIsMobileMenuOpen(false)}>Home</a>
+                <a className="opacity-90 hover:opacity-100 text-center font-bold" href="/extension" onClick={() => setIsMobileMenuOpen(false)}>Extension</a>
+                <a className="opacity-90 hover:opacity-100 text-center font-bold" href="/#pricing" onClick={() => setIsMobileMenuOpen(false)}>Pricing</a>
+                <a className="opacity-90 hover:opacity-100 text-center font-bold" href="/#faq" onClick={() => setIsMobileMenuOpen(false)}>FAQ</a>
+                <a className="opacity-90 hover:opacity-100 text-center font-bold" href="/blog" onClick={() => setIsMobileMenuOpen(false)}>Blog</a>
                 <a
                   href={trialHref}
-                  className="mt-1 rounded-2xl px-6 py-3 border-2 font-semibold hover:bg-white/10 glow text-center"
+                  className="mt-1 rounded-2xl px-6 py-3 border-2 font-bold hover:bg-white/10 glow text-center"
                   style={{ borderColor: brandYellow, color: brandYellow }}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >

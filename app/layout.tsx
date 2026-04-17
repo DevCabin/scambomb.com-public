@@ -5,7 +5,7 @@ import './globals.css'
 import GoogleAnalytics from '../components/GoogleAnalytics'
 import Header from '../components/Header'
 import { SpeedInsights } from '@vercel/speed-insights/next'
-import GHLPoliteSlideIn from '../components/GHLPoliteSlideIn'
+import ConditionalGHLPoliteSlideIn from '../components/ConditionalGHLPoliteSlideIn'
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -96,7 +96,7 @@ export default function RootLayout({
         <SpeedInsights />
         <UniversalFooter />
         <Analytics />
-        <GHLPoliteSlideIn />
+        <ConditionalGHLPoliteSlideIn />
       </body>
     </html>
   )
