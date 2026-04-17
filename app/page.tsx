@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import GHLPoliteSlideIn from '../components/GHLPoliteSlideIn';
 
 export default function ScamBombLanding() {
   const base = "bg-[#0B1324] text-white"; // Navy default
@@ -321,7 +320,6 @@ export default function ScamBombLanding() {
       </section>
 
 
-      <GHLPoliteSlideIn />
     </div>
   );
 }
