@@ -356,9 +356,9 @@ function QuickStep({ n, title, text, highlight = false }: { n: number; title: st
         <div className={`h-9 w-9 rounded-full flex items-center justify-center font-bold ${highlight ? 'bg-yellow-300 text-[#0B1324]' : 'bg-white/10 border border-white/10 text-white'}`}>
           {n}
         </div>
-        <h3 className="font-semibold text-base sm:text-lg">{title}</h3>
+        <h3 className="font-semibold text-lg sm:text-xl">{title}</h3>
       </div>
-      <p className="mt-3 text-sm sm:text-[15px] text-white/80 leading-relaxed">{text}</p>
+      <p className="mt-3 text-base sm:text-lg text-white/80 leading-relaxed">{text}</p>
     </div>
   );
 }
@@ -372,11 +372,11 @@ function QuickResultStep({ n, title, text }: { n: number; title: string; text: s
             {n}
           </div>
           <div>
-            <h3 className="font-semibold text-base sm:text-lg">{title}</h3>
-            <p className="mt-1 text-sm sm:text-[15px] text-white/85">{text}</p>
+            <h3 className="font-semibold text-lg sm:text-xl">{title}</h3>
+            <p className="mt-1 text-base sm:text-lg text-white/85">{text}</p>
           </div>
         </div>
-        <div className="text-sm font-semibold uppercase tracking-[0.14em] text-yellow-300">
+        <div className="text-base font-semibold uppercase tracking-[0.14em] text-yellow-300">
           Scam verdict fast
         </div>
       </div>
