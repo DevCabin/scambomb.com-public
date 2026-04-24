@@ -10,8 +10,8 @@
 
 - `components/Header.tsx`
   - Replaced boring "New pricing:" announcement with exciting savings message
-  - New copy: "💰 Save up to $11 by going annual!" with pricing details
-  - Highlights real dollar savings (up to $11 for seniors going annual)
+  - New copy: "💰 Save 18% by going annual!" with pricing details
+  - Highlights percentage savings (18% for seniors going annual)
 
 ## 2026-04-17 — Mobile UX improvements + GHL popup conditional + responsive pricing
 
