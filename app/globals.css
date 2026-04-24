@@ -109,3 +109,114 @@ html {
     opacity: 1;
   }
 }
+
+/* Blog Post Prose Styling */
+.prose-invert {
+  --tw-prose-body: rgba(255, 255, 255, 0.8);
+  --tw-prose-headings: #ffffff;
+  --tw-prose-lead: rgba(255, 255, 255, 0.7);
+  --tw-prose-links: #F5C84C;
+  --tw-prose-bold: #ffffff;
+  --tw-prose-counters: #F5C84C;
+  --tw-prose-bullets: #F5C84C;
+  --tw-prose-hr: rgba(255, 255, 255, 0.1);
+  --tw-prose-quotes: rgba(255, 255, 255, 0.9);
+  --tw-prose-quote-borders: #F5C84C;
+  --tw-prose-captions: rgba(255, 255, 255, 0.5);
+  --tw-prose-code: #ffffff;
+  --tw-prose-pre-code: #ffffff;
+  --tw-prose-pre-bg: rgba(0, 0, 0, 0.3);
+  --tw-prose-th-borders: rgba(255, 255, 255, 0.2);
+  --tw-prose-td-borders: rgba(255, 255, 255, 0.1);
+}
+
+/* Blog post typography improvements */
+.prose-invert h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.prose-invert h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  color: #F5C84C;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.prose-invert h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+.prose-invert p {
+  margin-bottom: 1.25rem;
+  line-height: 1.7;
+}
+
+.prose-invert ul,
+.prose-invert ol {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+.prose-invert li {
+  margin-bottom: 0.5rem;
+}
+
+.prose-invert blockquote {
+  border-left: 4px solid #F5C84C;
+  padding-left: 1rem;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.prose-invert code {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+  font-size: 0.875em;
+}
+
+.prose-invert pre {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+}
+
+.prose-invert a {
+  color: #F5C84C;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.prose-invert a:hover {
+  text-decoration: underline;
+}
+
+.prose-invert strong {
+  color: #F5C84C;
+  font-weight: 600;
+}
+
+.prose-invert img {
+  border-radius: 0.5rem;
+  margin: 1.5rem 0;
+}
+
+.prose-invert hr {
+  border-color: rgba(255, 255, 255, 0.1);
+  margin: 2rem 0;
+}
