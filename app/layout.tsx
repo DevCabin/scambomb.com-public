@@ -41,24 +41,24 @@ function UniversalFooter() {
             </a>
           </div>
         </div>
-        <div>
-          <h4 className="font-semibold">Products</h4>
-          <ul className="mt-2 space-y-2 text-white/80">
-            <li><a href="/#how">How it works</a></li>
-            <li><a href="/#pricing">Pricing</a></li>
-            <li><a href="/blog">Blog</a></li>
-            <li><a href="/extension">Chrome Extension</a></li>
+        <div className="text-center md:text-left">
+          <h4 className="font-semibold text-base mb-3">Products</h4>
+          <ul className="mt-2 space-y-3 md:space-y-2 text-white/80">
+            <li><a href="/#how" className="text-lg md:text-sm font-bold md:font-normal hover:text-white transition-colors">How it works</a></li>
+            <li><a href="/#pricing" className="text-lg md:text-sm font-bold md:font-normal hover:text-white transition-colors">Pricing</a></li>
+            <li><a href="/blog" className="text-lg md:text-sm font-bold md:font-normal hover:text-white transition-colors">Blog</a></li>
+            <li><a href="/extension" className="text-lg md:text-sm font-bold md:font-normal hover:text-white transition-colors">Chrome Extension</a></li>
           </ul>
         </div>
-        <div>
-          <h4 className="font-semibold">Company</h4>
-          <ul className="mt-2 space-y-2 text-white/80">
-            <li><a href="/about">About</a></li>
-            <li><a href="/contact">Contact</a></li>
-            <li><a href="/testing">Testing</a></li>
-            <li><a href="/scam-stories">Story</a></li>
-            <li><a href="/terms">Terms of Use</a></li>
-            <li><a href="/extension-privacy">Extension Policy</a></li>
+        <div className="text-center md:text-left">
+          <h4 className="font-semibold text-base mb-3">Company</h4>
+          <ul className="mt-2 space-y-3 md:space-y-2 text-white/80">
+            <li><a href="/about" className="text-lg md:text-sm font-bold md:font-normal hover:text-white transition-colors">About</a></li>
+            <li><a href="/contact" className="text-lg md:text-sm font-bold md:font-normal hover:text-white transition-colors">Contact</a></li>
+            <li><a href="/testing" className="text-lg md:text-sm font-bold md:font-normal hover:text-white transition-colors">Testing</a></li>
+            <li><a href="/scam-stories" className="text-lg md:text-sm font-bold md:font-normal hover:text-white transition-colors">Story</a></li>
+            <li><a href="/terms" className="text-lg md:text-sm font-bold md:font-normal hover:text-white transition-colors">Terms of Use</a></li>
+            <li><a href="/extension-privacy" className="text-lg md:text-sm font-bold md:font-normal hover:text-white transition-colors">Extension Policy</a></li>
           </ul>
         </div>
         <div>
