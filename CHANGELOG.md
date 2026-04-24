@@ -1,5 +1,31 @@
 # Changelog
 
+## 2026-04-24 — Final updates: nav font size, pricing background, favicon fixes, blog branding
+
+### Updated
+- `components/Header.tsx`
+  - Increased navigation font size from `text-sm` to `text-base` for better senior readability
+  - Updated CTA button text size to `text-base` for consistency
+
+- `app/page.tsx`
+  - Added subtle bomb icon pattern background to pricing section
+  - 107px tile size with fixed attachment for parallax effect
+  - 95% navy overlay to maintain contrast with pricing cards
+
+- `app/layout.tsx`
+  - Fixed favicon to use proper PNG files (`scambomb-favicon-64.png`, `scambomb-logo-512.png`)
+  - Added Apple touch icon support with 512px icon
+
+- `app/globals.css`
+  - Added CSS rule to fix button text visibility on yellow backgrounds in prose sections
+  - Forces dark text color (#0B1324) on all yellow CTA buttons
+
+- `app/extension/page.tsx`
+  - Fixed "Download Now" button text visibility with explicit inline style
+
+- `app/blog/page.tsx`
+  - Updated title to use brand styling: "SCAMB💣MB BLOG" with bomb emoji
+
 ## 2026-04-24 — Updated favicon + announcement bar messaging
 
 ### Updated
