@@ -54,8 +54,10 @@ export default function BlogPage() {
       <div className="border-b border-white/10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
           <div className="text-center max-w-3xl mx-auto">
-            <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6 tracking-tight">
-              ScamBomb Blog
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 tracking-tight font-montserrat uppercase">
+              <span className="text-white">SCAM</span>
+              <span className="text-[#F5C84C]">BOMB</span>
+              <span className="text-white"> BLOG</span>
             </h1>
             <p className="text-xl text-white/70 leading-relaxed">
               Stay ahead of scammers with expert guides, real incident breakdowns, and actionable security tips.
