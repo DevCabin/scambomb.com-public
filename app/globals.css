@@ -206,6 +206,17 @@ html {
   text-decoration: underline;
 }
 
+/* Ensure button text is visible on yellow backgrounds in prose sections */
+.prose-invert a.bg-\[\#F5C84C\],
+.prose-invert a[class*="bg-[#F5C84C]"] {
+  color: #0B1324 !important;
+}
+
+.prose-invert a.bg-\[\#F5C84C\]:hover,
+.prose-invert a[class*="bg-[#F5C84C]"]:hover {
+  text-decoration: none;
+}
+
 .prose-invert strong {
   color: #F5C84C;
   font-weight: 600;
