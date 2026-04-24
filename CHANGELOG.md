@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-04-24 — Updated favicon to use ScamBomb bomb logo
+
+### Updated
+- `app/layout.tsx`
+  - Changed favicon from `/favicon.ico` to `/ScamBomb_favicon_NEW.png` (bomb character logo)
+  - Added Apple touch icon support for iOS web app saving
+  - Unifies public site branding with the actual app
+
 ## 2026-04-17 — Mobile UX improvements + GHL popup conditional + responsive pricing
 
 ### Updated
