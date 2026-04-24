@@ -16,8 +16,9 @@ export const metadata: Metadata = {
   title: 'ScamBomb - Stop scams in one click',
   description: 'Paste any text, email, or SMS. ScamBomb checks red flags, explains the risk in plain English, and tells you exactly what to do next.',
   icons: {
-    icon: '/ScamBomb-just-the-bomb.png',
-    apple: '/ScamBomb-just-the-bomb.png',
+    icon: '/scambomb-favicon-64.png',
+    apple: '/scambomb-logo-512.png',
+    shortcut: '/scambomb-favicon-64.png',
   },
   other: {
     'facebook-domain-verification': 'tmq14fiwi4rwno7tljlobhqospl9ni',
