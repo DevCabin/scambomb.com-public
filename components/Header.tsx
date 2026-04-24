@@ -51,31 +51,31 @@ function UniversalHeader() {
             {/* Navigation - Center */}
             <nav className="hidden md:flex items-center gap-8" aria-label="Primary">
               <a 
-                className="text-white/80 hover:text-white text-sm font-medium transition-colors relative hover:after:content-[''] hover:after:absolute hover:after:bottom-[-4px] hover:after:left-0 hover:after:w-full hover:after:h-0.5 hover:after:bg-[#F5C84C]" 
+                className="text-white/80 hover:text-white text-base font-medium transition-colors relative hover:after:content-[''] hover:after:absolute hover:after:bottom-[-4px] hover:after:left-0 hover:after:w-full hover:after:h-0.5 hover:after:bg-[#F5C84C]" 
                 href="/"
               >
                 Home
               </a>
               <a 
-                className="text-white/80 hover:text-white text-sm font-medium transition-colors relative hover:after:content-[''] hover:after:absolute hover:after:bottom-[-4px] hover:after:left-0 hover:after:w-full hover:after:h-0.5 hover:after:bg-[#F5C84C]" 
+                className="text-white/80 hover:text-white text-base font-medium transition-colors relative hover:after:content-[''] hover:after:absolute hover:after:bottom-[-4px] hover:after:left-0 hover:after:w-full hover:after:h-0.5 hover:after:bg-[#F5C84C]" 
                 href="/extension"
               >
                 Extension
               </a>
               <a 
-                className="text-white/80 hover:text-white text-sm font-medium transition-colors relative hover:after:content-[''] hover:after:absolute hover:after:bottom-[-4px] hover:after:left-0 hover:after:w-full hover:after:h-0.5 hover:after:bg-[#F5C84C]" 
+                className="text-white/80 hover:text-white text-base font-medium transition-colors relative hover:after:content-[''] hover:after:absolute hover:after:bottom-[-4px] hover:after:left-0 hover:after:w-full hover:after:h-0.5 hover:after:bg-[#F5C84C]" 
                 href="/#pricing"
               >
                 Pricing
               </a>
               <a 
-                className="text-white/80 hover:text-white text-sm font-medium transition-colors relative hover:after:content-[''] hover:after:absolute hover:after:bottom-[-4px] hover:after:left-0 hover:after:w-full hover:after:h-0.5 hover:after:bg-[#F5C84C]" 
+                className="text-white/80 hover:text-white text-base font-medium transition-colors relative hover:after:content-[''] hover:after:absolute hover:after:bottom-[-4px] hover:after:left-0 hover:after:w-full hover:after:h-0.5 hover:after:bg-[#F5C84C]" 
                 href="/#faq"
               >
                 FAQ
               </a>
               <a 
-                className="text-white/80 hover:text-white text-sm font-medium transition-colors relative hover:after:content-[''] hover:after:absolute hover:after:bottom-[-4px] hover:after:left-0 hover:after:w-full hover:after:h-0.5 hover:after:bg-[#F5C84C]" 
+                className="text-white/80 hover:text-white text-base font-medium transition-colors relative hover:after:content-[''] hover:after:absolute hover:after:bottom-[-4px] hover:after:left-0 hover:after:w-full hover:after:h-0.5 hover:after:bg-[#F5C84C]" 
                 href="/blog"
               >
                 Blog
@@ -86,7 +86,7 @@ function UniversalHeader() {
             <div className="hidden md:flex items-center gap-4">
               <a
                 href={trialHref}
-                className="inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold text-[#0B1324] bg-[#F5C84C] rounded-lg hover:bg-[#F5C84C]/90 transition-colors shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#F5C84C] focus:ring-offset-2 focus:ring-offset-[#0B1324]"
+                className="inline-flex items-center justify-center px-5 py-2.5 text-base font-semibold text-[#0B1324] bg-[#F5C84C] rounded-lg hover:bg-[#F5C84C]/90 transition-colors shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#F5C84C] focus:ring-offset-2 focus:ring-offset-[#0B1324]"
               >
                 Try Free
               </a>
