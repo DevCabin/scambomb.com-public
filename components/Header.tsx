@@ -28,7 +28,7 @@ function UniversalHeader() {
         aria-label="announcement"
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-2 text-center text-sm text-white/80 hover:text-white">
-          <span className="text-[#F5C84C] font-semibold">Save 18% with annual billing</span>
+          <span className="text-[#F5C84C] font-semibold">Save 17% with annual billing</span>
           <span className="hidden sm:inline mx-2">•</span>
           <span className="hidden sm:inline">Starting at $5/mo for seniors</span>
         </div>
