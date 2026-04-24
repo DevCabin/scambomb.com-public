@@ -57,7 +57,7 @@ export default function BlogPage() {
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-black mb-6 tracking-tight uppercase">
               <span className="text-white">SCAM</span>
               <span className="text-[#F5C84C]">B💣MB</span>
-              <span className="text-white"> BL💣G</span>
+              <span className="text-white"> BLOG</span>
             </h1>
             <p className="text-xl text-white/70 leading-relaxed">
               Stay ahead of scammers with expert guides, real incident breakdowns, and actionable security tips.
