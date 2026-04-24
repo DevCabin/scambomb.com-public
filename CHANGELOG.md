@@ -1,10 +1,10 @@
 # Changelog
 
-## 2026-04-24 — Updated favicon to use ScamBomb bomb logo
+## 2026-04-24 — Updated favicon to use correct ScamBomb bomb logo (SB_smile_280.png)
 
 ### Updated
 - `app/layout.tsx`
-  - Changed favicon from `/favicon.ico` to `/ScamBomb_favicon_NEW.png` (bomb character logo)
+  - Changed favicon from `/ScamBomb_favicon_NEW.png` to `/SB_smile_280.png` (correct bomb character logo)
   - Added Apple touch icon support for iOS web app saving
   - Unifies public site branding with the actual app
 
