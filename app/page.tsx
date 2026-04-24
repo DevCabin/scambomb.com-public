@@ -119,9 +119,18 @@ export default function ScamBombLanding() {
         </div>
       </section>
 
-      {/* Quick app instructions (toggle) */}
-      <section aria-label="How to use ScamBomb app" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4 sm:py-4">
-        <div className={`rounded-2xl border ${brandBorder} bg-white/5 p-4 sm:p-4`}>
+      {/* Trust bar */}
+      <section aria-label="Trust signals" className="border-y border-black/20" style={{ backgroundColor: brandYellow, color: "#0B1324" }}>
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 grid sm:grid-cols-3 gap-4 text-center">
+          <TrustItem title="Privacy-first" text="We don't sell info to third parties. Ever." />
+          <TrustItem title="Human-friendly" text="No jargon. Clear next steps." />
+          <TrustItem title="Always improving" text="New scam patterns added monthly." />
+        </div>
+      </section>
+
+      {/* How to use the app - Moved down to replace "How it works" */}
+      <section id="how" aria-label="How to use ScamBomb app" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+        <div className={`rounded-2xl border ${brandBorder} bg-white/5 p-4 sm:p-6`}>
           <button
             type="button"
             onClick={() => setIsHowToOpen((prev) => !prev)}
@@ -131,7 +140,11 @@ export default function ScamBombLanding() {
           >
             <div className="flex items-center gap-3">
               <span className="h-10 w-10 rounded-full bg-[#F5C84C] text-[#0B1324] text-lg font-extrabold flex items-center justify-center">?</span>
-              <h2 className="text-lg sm:text-base md:text-lg font-extrabold tracking-[0.08em] uppercase">How to use the app</h2>
+              <div>
+                <h2 className="text-lg sm:text-xl font-extrabold tracking-[0.08em] uppercase">How to use the app</h2>
+                <span className="text-sm text-white/50 md:hidden">(tap to open)</span>
+                <span className="text-sm text-white/50 hidden md:inline">(click to expand)</span>
+              </div>
             </div>
             <span className={`text-yellow-300 text-2xl transition-transform duration-300 ${isHowToOpen ? 'rotate-180' : ''}`} aria-hidden>
               ⌄
@@ -173,26 +186,6 @@ export default function ScamBombLanding() {
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Trust bar */}
-      <section aria-label="Trust signals" className="border-y border-black/20" style={{ backgroundColor: brandYellow, color: "#0B1324" }}>
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 grid sm:grid-cols-3 gap-4 text-center">
-          <TrustItem title="Privacy-first" text="We don't sell info to third parties. Ever." />
-          <TrustItem title="Human-friendly" text="No jargon. Clear next steps." />
-          <TrustItem title="Always improving" text="New scam patterns added monthly." />
-        </div>
-      </section>
-
-      {/* How it works */}
-      <section id="how" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
-        <HeaderEyebrow>How it works</HeaderEyebrow>
-          <h2 className="text-4xl sm:text-4xl font-bold">From confusion to confident in 3 steps</h2>
-        <div className="mt-8 grid md:grid-cols-3 gap-6">
-          <div className="hover-lift"><Step n={1} title="Paste a message" text="Copy any email, text, or social DM into ScamBomb." /></div>
-          <div className="hover-lift"><Step n={2} title="We flag risks" text="We detect urgency, spoofed links, fake invoices, and more." /></div>
-          <div className="hover-lift"><Step n={3} title="Get next steps" text="We tell you exactly what to do—simply and safely." /></div>
         </div>
       </section>
 
