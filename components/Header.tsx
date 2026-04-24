@@ -38,14 +38,13 @@ function UniversalHeader() {
       <header className="sticky top-0 z-40 bg-[#0B1324] border-b border-white/10 shadow-lg shadow-black/20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            {/* Logo - Left */}
+            {/* Logo - Left - Text based matching app */}
             <div className="flex-shrink-0 flex items-center">
-              <a href="/" className="flex items-center gap-2 group" aria-label="ScamBomb home">
-                <img 
-                  src="/ScamBomb.com-Logo-NEW.png" 
-                  alt="ScamBomb" 
-                  className="h-8 w-auto object-contain group-hover:opacity-90 transition-opacity"
-                />
+              <a href="/" className="group" aria-label="ScamBomb home">
+                <div className="text-xl sm:text-2xl font-black tracking-wide">
+                  <span className="text-white group-hover:text-white/90 transition-colors">SCAM</span>
+                  <span className="text-[#F5C84C] group-hover:text-[#F5C84C]/90 transition-colors">B💣MB</span>
+                </div>
               </a>
             </div>
 
