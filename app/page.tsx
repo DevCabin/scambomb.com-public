@@ -234,9 +234,10 @@ export default function ScamBombLanding() {
         className="relative py-16"
         style={{
           backgroundImage: "url('/ScamBomb-just-the-bomb.png')",
-          backgroundSize: '24px',
+          backgroundSize: '107px',
           backgroundRepeat: 'repeat',
           backgroundPosition: 'center',
+          backgroundAttachment: 'fixed',
         }}
       >
         <div className="absolute inset-0 bg-[#0B1324]/95 pointer-events-none"></div>
