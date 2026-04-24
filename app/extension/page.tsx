@@ -40,7 +40,8 @@ export default function ExtensionPage() {
             <div className="text-center mb-6">
               <a
                 href="https://chromewebstore.google.com/detail/scambomb-gmail-scanner/cmlmjbphbgcbaomeicbinbelfielkeab?authuser=0&hl=en"
-                className="inline-block rounded-2xl px-6 py-3 font-semibold text-lg bg-[#F5C84C] text-[#0B1324] hover:bg-[#F5C84C]/90 transition-colors"
+                className="inline-block rounded-2xl px-6 py-3 font-semibold text-lg bg-[#F5C84C] hover:bg-[#F5C84C]/90 transition-colors"
+                style={{ color: '#0B1324' }}
                 target="_blank"
                 rel="noopener noreferrer"
               >
