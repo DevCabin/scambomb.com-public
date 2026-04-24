@@ -1,12 +1,17 @@
 # Changelog
 
-## 2026-04-24 — Updated favicon to use correct ScamBomb bomb logo (SB_smile_280.png)
+## 2026-04-24 — Updated favicon + announcement bar messaging
 
 ### Updated
 - `app/layout.tsx`
   - Changed favicon from `/ScamBomb_favicon_NEW.png` to `/SB_smile_280.png` (correct bomb character logo)
   - Added Apple touch icon support for iOS web app saving
   - Unifies public site branding with the actual app
+
+- `components/Header.tsx`
+  - Replaced boring "New pricing:" announcement with exciting savings message
+  - New copy: "💰 Save up to $11 by going annual!" with pricing details
+  - Highlights real dollar savings (up to $11 for seniors going annual)
 
 ## 2026-04-17 — Mobile UX improvements + GHL popup conditional + responsive pricing
 
