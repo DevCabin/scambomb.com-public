@@ -16,105 +16,156 @@ function UniversalHeader() {
   return (
     <>
       {/* Skip link */}
-      <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:bg-yellow-300 focus:text-black focus:px-3 focus:py-2 focus:rounded-lg">Skip to content</a>
+      <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:bg-yellow-300 focus:text-black focus:px-3 focus:py-2 focus:rounded-lg">
+        Skip to content
+      </a>
 
-      {/* Top Announcement Bar */}
-      <a href="#pricing" className="block w-full border-b border-white/10 hover:border-white/20 transition-colors" role="region" aria-label="announcement">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-3 text-center text-base sm:text-sm text-white/85 hover:text-white">
-          <strong style={{ color: brandYellow }}>💰 Save 18% by going annual!</strong> <span className="hidden sm:inline">— </span>Standard $9/mo or $99/yr<span className="md:hidden"> · Seniors 60+ $5/mo or $49/yr</span>
+      {/* Top Announcement Bar - Simplified */}
+      <a 
+        href="#pricing" 
+        className="block w-full bg-[#0B1324] border-b border-white/10 hover:border-white/20 transition-colors" 
+        role="region" 
+        aria-label="announcement"
+      >
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-2 text-center text-sm text-white/80 hover:text-white">
+          <span className="text-[#F5C84C] font-semibold">Save 18% with annual billing</span>
+          <span className="hidden sm:inline mx-2">•</span>
+          <span className="hidden sm:inline">Starting at $5/mo for seniors</span>
         </div>
       </a>
 
-      {/* Header */}
-      <header className="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-black/30 border-b border-white/10">
+      {/* Main Header - Norton/Chase Style */}
+      <header className="sticky top-0 z-40 bg-[#0B1324] border-b border-white/10 shadow-lg shadow-black/20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between py-3">
-            <div className="flex items-center gap-3" aria-label="ScamBomb home">
-              <Logo />
-              <span className="sr-only">ScamBomb</span>
-            </div>
-            <nav className="hidden md:flex items-center gap-6" aria-label="Primary">
-              <a className="opacity-90 hover:opacity-100" href="/">Home</a>
-              <a className="opacity-90 hover:opacity-100" href="/extension">Extension</a>
-              <a className="opacity-90 hover:opacity-100" href="/#pricing">Pricing</a>
-              <a className="opacity-90 hover:opacity-100" href="/#faq">FAQ</a>
-              <a className="opacity-90 hover:opacity-100" href="/blog">Blog</a>
-            </nav>
-            <div className="hidden md:flex items-center gap-2">
-              <a
-                href={trialHref}
-                className="ml-2 rounded-2xl px-6 py-3 border-2 font-semibold hover:bg-white/10 glow"
-                style={{ borderColor: brandYellow, color: brandYellow }}
-              >
-                Try Free!
+          <div className="flex items-center justify-between h-16">
+            {/* Logo - Left */}
+            <div className="flex-shrink-0 flex items-center">
+              <a href="/" className="flex items-center gap-2 group" aria-label="ScamBomb home">
+                <img 
+                  src="/ScamBomb.com-Logo-NEW.png" 
+                  alt="ScamBomb" 
+                  className="h-8 w-auto object-contain group-hover:opacity-90 transition-opacity"
+                />
               </a>
             </div>
+
+            {/* Navigation - Center */}
+            <nav className="hidden md:flex items-center gap-8" aria-label="Primary">
+              <a 
+                className="text-white/80 hover:text-white text-sm font-medium transition-colors relative hover:after:content-[''] hover:after:absolute hover:after:bottom-[-4px] hover:after:left-0 hover:after:w-full hover:after:h-0.5 hover:after:bg-[#F5C84C]" 
+                href="/"
+              >
+                Home
+              </a>
+              <a 
+                className="text-white/80 hover:text-white text-sm font-medium transition-colors relative hover:after:content-[''] hover:after:absolute hover:after:bottom-[-4px] hover:after:left-0 hover:after:w-full hover:after:h-0.5 hover:after:bg-[#F5C84C]" 
+                href="/extension"
+              >
+                Extension
+              </a>
+              <a 
+                className="text-white/80 hover:text-white text-sm font-medium transition-colors relative hover:after:content-[''] hover:after:absolute hover:after:bottom-[-4px] hover:after:left-0 hover:after:w-full hover:after:h-0.5 hover:after:bg-[#F5C84C]" 
+                href="/#pricing"
+              >
+                Pricing
+              </a>
+              <a 
+                className="text-white/80 hover:text-white text-sm font-medium transition-colors relative hover:after:content-[''] hover:after:absolute hover:after:bottom-[-4px] hover:after:left-0 hover:after:w-full hover:after:h-0.5 hover:after:bg-[#F5C84C]" 
+                href="/#faq"
+              >
+                FAQ
+              </a>
+              <a 
+                className="text-white/80 hover:text-white text-sm font-medium transition-colors relative hover:after:content-[''] hover:after:absolute hover:after:bottom-[-4px] hover:after:left-0 hover:after:w-full hover:after:h-0.5 hover:after:bg-[#F5C84C]" 
+                href="/blog"
+              >
+                Blog
+              </a>
+            </nav>
+
+            {/* CTA - Right */}
+            <div className="hidden md:flex items-center gap-4">
+              <a
+                href={trialHref}
+                className="inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold text-[#0B1324] bg-[#F5C84C] rounded-lg hover:bg-[#F5C84C]/90 transition-colors shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#F5C84C] focus:ring-offset-2 focus:ring-offset-[#0B1324]"
+              >
+                Try Free
+              </a>
+            </div>
+
+            {/* Mobile menu button */}
             <button
               type="button"
-              className="md:hidden inline-flex items-center justify-center rounded-lg border border-white/30 px-4 py-3 text-lg font-semibold text-white hover:bg-white/10"
+              className="md:hidden inline-flex items-center justify-center p-2 rounded-lg text-white/80 hover:text-white hover:bg-white/10 transition-colors"
               aria-label="Toggle mobile menu"
               aria-expanded={isMobileMenuOpen}
               onClick={() => setIsMobileMenuOpen((prev) => !prev)}
             >
-              {isMobileMenuOpen ? 'Close' : 'Menu'}
+              <span className="sr-only">{isMobileMenuOpen ? 'Close menu' : 'Open menu'}</span>
+              {isMobileMenuOpen ? (
+                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              ) : (
+                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              )}
             </button>
           </div>
 
-          <div className="pb-4 md:pb-3 text-center">
-            <p className="text-white text-base sm:text-lg font-extrabold tracking-wider uppercase">
-              <span className="text-yellow-300">Scam Detection</span> made simple. <span className="text-yellow-300">Free</span> to use.
-            </p>
-          </div>
-
+          {/* Mobile Menu */}
           {isMobileMenuOpen && (
-            <nav className="md:hidden pb-4" aria-label="Mobile Primary">
-              <div className="flex flex-col gap-4 rounded-xl border border-white/15 bg-black/40 p-5 text-xl">
-                <a className="opacity-90 hover:opacity-100 text-center font-bold" href="/" onClick={() => setIsMobileMenuOpen(false)}>Home</a>
-                <a className="opacity-90 hover:opacity-100 text-center font-bold" href="/extension" onClick={() => setIsMobileMenuOpen(false)}>Extension</a>
-                <a className="opacity-90 hover:opacity-100 text-center font-bold" href="/#pricing" onClick={() => setIsMobileMenuOpen(false)}>Pricing</a>
-                <a className="opacity-90 hover:opacity-100 text-center font-bold" href="/#faq" onClick={() => setIsMobileMenuOpen(false)}>FAQ</a>
-                <a className="opacity-90 hover:opacity-100 text-center font-bold" href="/blog" onClick={() => setIsMobileMenuOpen(false)}>Blog</a>
-                <a
-                  href={trialHref}
-                  className="mt-1 rounded-2xl px-6 py-3 border-2 font-bold hover:bg-white/10 glow text-center"
-                  style={{ borderColor: brandYellow, color: brandYellow }}
+            <div className="md:hidden border-t border-white/10 bg-[#0B1324]">
+              <nav className="px-4 py-4 space-y-2" aria-label="Mobile Primary">
+                <a 
+                  className="block px-3 py-2 text-base font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-colors" 
+                  href="/" 
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  Try Free!
+                  Home
                 </a>
-              </div>
-            </nav>
+                <a 
+                  className="block px-3 py-2 text-base font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-colors" 
+                  href="/extension" 
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Extension
+                </a>
+                <a 
+                  className="block px-3 py-2 text-base font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-colors" 
+                  href="/#pricing" 
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Pricing
+                </a>
+                <a 
+                  className="block px-3 py-2 text-base font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-colors" 
+                  href="/#faq" 
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  FAQ
+                </a>
+                <a 
+                  className="block px-3 py-2 text-base font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-colors" 
+                  href="/blog" 
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Blog
+                </a>
+                <a
+                  href={trialHref}
+                  className="block mt-4 px-3 py-3 text-center text-base font-semibold text-[#0B1324] bg-[#F5C84C] rounded-lg hover:bg-[#F5C84C]/90 transition-colors"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Try Free
+                </a>
+              </nav>
+            </div>
           )}
         </div>
       </header>
     </>
-  );
-}
-
-function Logo({ size = "md" }: { size?: "sm" | "md" }) {
-  const bombSize = size === "sm" ? "h-10 w-10" : "h-12 w-12";
-  const textSize = size === "sm" ? "h-8" : "h-10";
-
-  return (
-    <div className="flex items-center gap-2" role="img" aria-label="ScamBomb logo">
-      <img
-        src="/ScamBomb-just-the-bomb.png"
-        alt="ScamBomb Bomb"
-        className={`${bombSize} object-contain hidden md:block`}
-        style={{
-          width: '150px',
-          height: '200px',
-          position: 'relative',
-          left: '45px',
-          marginTop: '-35px'
-        }}
-      />
-      <img
-        src="/ScamBomb.com_NEW_V2.1.png"
-        alt="ScamBomb.com"
-        className={`${textSize} object-contain`}
-      />
-    </div>
   );
 }
 
