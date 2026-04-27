@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spot the Scam | Career Scam | ScamBomb</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root{--navy:#0B1324;--navy2:#142646;--yellow:#F5C84C;--text:#eaf0f8;--muted:#b8c5d8;--line:rgba(255,255,255,.14)}
+    *{box-sizing:border-box}body{margin:0;font-family:Montserrat,sans-serif;background:linear-gradient(150deg,var(--navy),var(--navy2));color:var(--text)}
+    .wrap{max-width:1100px;margin:0 auto;padding:28px 18px 56px}.top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+    .brand{font-weight:800;text-transform:uppercase}.scam{color:#fff}.bomb{color:var(--yellow)}a{color:inherit;text-decoration:none}.back{font-size:13px;color:var(--muted)}
+    h1{font-size:clamp(34px,6vw,62px);line-height:.94;margin:14px 0}.lead{color:var(--muted)}
+    .layout{display:grid;grid-template-columns:1fr 1fr;gap:12px}.panel{border:1px solid var(--line);border-radius:14px;padding:16px;background:rgba(255,255,255,.04)}
+    .msg{padding:12px;border-radius:10px;background:rgba(255,255,255,.03);border:1px solid var(--line);margin:8px 0;color:var(--muted)}
+    button{width:100%;margin:6px 0;padding:10px;border-radius:10px;border:1px solid var(--line);background:rgba(245,200,76,.12);color:#fff;font-family:inherit;font-weight:700;cursor:pointer;text-align:left}
+    #result{margin-top:8px;color:var(--muted);line-height:1.45}
+    @media (max-width:860px){.layout{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="top"><div class="brand"><span class="scam">SCAM</span><span class="bomb">B💣MB</span></div><a class="back" href="/career-scam-case-study">← Back to hub</a></div>
+    <h1>Spot the Scam</h1>
+    <p class="lead">Click each flag to reveal the risk explanation.</p>
+    <section class="layout">
+      <article class="panel">
+        <div class="msg"><strong>Recruiter:</strong> We can interview by text only and start immediately.</div>
+        <div class="msg"><strong>Recruiter:</strong> You’ll make $40/hr for basic data entry.</div>
+        <div class="msg"><strong>Recruiter:</strong> We’ll send a check for your office equipment.</div>
+        <button onclick="show('text')">Flag: Text-only interview</button>
+        <button onclick="show('pay')">Flag: Unrealistic compensation</button>
+        <button onclick="show('check')">Flag: Equipment check</button>
+      </article>
+      <article class="panel">
+        <h2 style="color:var(--yellow);margin:0 0 8px">Training notes</h2>
+        <div id="result">Select a flag to view the teaching explanation.</div>
+      </article>
+    </section>
+  </main>
+  <script>
+    const notes={
+      text:'Text-only interviewing removes normal verification points and is common in recruiter impersonation scams.',
+      pay:'High pay for simple remote work is often used as a pressure lure to bypass skepticism.',
+      check:'“We will send a check for equipment” is a known fake-check fraud pattern.'
+    };
+    function show(key){document.getElementById('result').textContent=notes[key];}
+  </script>
+</body>
+</html>

@@ -1,5 +1,30 @@
 # Changelog
 
+## 2026-04-27 — Jeff training slideshow launch + career scam case-study campaign section
+
+### Added
+- `public/jeff.html`
+  - Published a new private/internal **Jeff training boot camp slideshow** using a Reveal.js presentation format aligned to ScamBomb brand styling.
+  - Includes explicit robots directive: `noindex, nofollow`.
+
+- `public/career-scam-case-study/index.html`
+  - Added new campaign hub page for the recruiter-impersonation case-study asset family.
+
+- `public/career-scam-case-study/case-study.html`
+- `public/career-scam-case-study/landing.html`
+- `public/career-scam-case-study/social-carousel.html`
+- `public/career-scam-case-study/victim-checklist.html`
+- `public/career-scam-case-study/spot-the-scam.html`
+- `public/career-scam-case-study/print-guide.html`
+- `public/career-scam-case-study/newsletter.html`
+- `public/career-scam-case-study/poster-flyer.html`
+  - Added a cohesive, on-brand public section for career-scam education/marketing assets with consistent ScamBomb visual language.
+
+### Updated
+- `next.config.js`
+  - Added rewrite route for `/jeff` → `/jeff.html`.
+  - Added rewrite routes for `/career-scam-case-study` and all related child pages.
+
 ## 2026-04-24 — Final updates: nav font size, pricing background, favicon fixes, blog branding
 
 ### Updated

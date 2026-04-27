@@ -10,12 +10,52 @@ const nextConfig = {
   async rewrites() {
     return [
       {
+        source: '/jeff',
+        destination: '/jeff.html',
+      },
+      {
         source: '/ai-clone-scam-jammer',
         destination: '/ai-clone-scam-jammer.html',
       },
       {
         source: '/thank-you-scamjammer-purchase',
         destination: '/thank-you-scamjammer-purchase.html',
+      },
+      {
+        source: '/career-scam-case-study',
+        destination: '/career-scam-case-study/index.html',
+      },
+      {
+        source: '/career-scam-case-study/case-study',
+        destination: '/career-scam-case-study/case-study.html',
+      },
+      {
+        source: '/career-scam-case-study/landing',
+        destination: '/career-scam-case-study/landing.html',
+      },
+      {
+        source: '/career-scam-case-study/social-carousel',
+        destination: '/career-scam-case-study/social-carousel.html',
+      },
+      {
+        source: '/career-scam-case-study/victim-checklist',
+        destination: '/career-scam-case-study/victim-checklist.html',
+      },
+      {
+        source: '/career-scam-case-study/spot-the-scam',
+        destination: '/career-scam-case-study/spot-the-scam.html',
+      },
+      {
+        source: '/career-scam-case-study/print-guide',
+        destination: '/career-scam-case-study/print-guide.html',
+      },
+      {
+        source: '/career-scam-case-study/newsletter',
+        destination: '/career-scam-case-study/newsletter.html',
+      },
+      {
+        source: '/career-scam-case-study/poster-flyer',
+        destination: '/career-scam-case-study/poster-flyer.html',
       },
     ]
   },
