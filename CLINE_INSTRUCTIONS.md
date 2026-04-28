@@ -327,6 +327,17 @@ Always render the ScamBomb wordmark as two-tone:
 
 Do not render the full wordmark in a single color.
 
+## 🔠 **Heading Typography Rule (Persistent)**
+
+Apply this to all new/updated ScamBomb pages and assets:
+
+- **All headings must render in ALL CAPS**.
+- **Large/display headings (especially H1/Hero)** must use two-tone treatment:
+  - alternate/emphasize words in **white** and **brand yellow**
+  - yellow should be used for emphasis words or alternating word rhythm
+- Smaller headings can be all-white or all-yellow when needed for readability,
+  but maintain high contrast and ScamBomb visual consistency.
+
 
 ---
 *This document reflects the current production state of ScamBomb. All major features are implemented and tested.*

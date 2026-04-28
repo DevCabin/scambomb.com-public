@@ -1,5 +1,28 @@
 # Changelog
 
+## 2026-04-27c — Added persistent heading style rule + applied heading normalization pass
+
+### Added
+- `CLINE_INSTRUCTIONS.md`
+  - Added a persistent **Heading Typography Rule** for future agents:
+    - all headings in ALL CAPS
+    - large/display headings use ScamBomb two-tone white/yellow emphasis treatment
+
+### Updated
+- `public/jeff.html`
+- `public/career-scam-case-study/index.html`
+- `public/career-scam-case-study/landing.html`
+- `public/career-scam-case-study/case-study.html`
+- `public/career-scam-case-study/social-carousel.html`
+- `public/career-scam-case-study/newsletter.html`
+- `public/career-scam-case-study/print-guide.html`
+- `public/career-scam-case-study/victim-checklist.html`
+- `public/career-scam-case-study/spot-the-scam.html`
+- `public/career-scam-case-study/poster-flyer.html`
+  - Normalized heading presentation to match the documented style guidance.
+  - Converted large H1/display headings to all-caps with white/yellow emphasis split.
+  - Added/extended uppercase heading behavior for smaller heading levels.
+
 ## 2026-04-27b — Jeff boot camp slideshow content corrected to match source packet
 
 ### Updated
