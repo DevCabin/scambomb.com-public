@@ -1,5 +1,29 @@
 # Changelog
 
+## 2026-04-27d — Jeff readability increase + favicon/app-icon alignment on static campaign pages
+
+### Updated
+- `public/jeff.html`
+  - Increased slideshow typography and spacing for senior readability:
+    - larger H1/H2/H3 sizes
+    - larger paragraph/list text
+    - larger monospace prompt blocks
+    - increased slide padding for cleaner visual rhythm
+
+- `public/jeff.html`
+- `public/career-scam-case-study/index.html`
+- `public/career-scam-case-study/landing.html`
+- `public/career-scam-case-study/case-study.html`
+- `public/career-scam-case-study/social-carousel.html`
+- `public/career-scam-case-study/newsletter.html`
+- `public/career-scam-case-study/print-guide.html`
+- `public/career-scam-case-study/victim-checklist.html`
+- `public/career-scam-case-study/spot-the-scam.html`
+- `public/career-scam-case-study/poster-flyer.html`
+  - Added explicit static-page icon tags to match current site icon standards used in app layout:
+    - `icon`: `/scambomb-favicon-64.png`
+    - `apple-touch-icon`: `/scambomb-logo-512.png`
+
 ## 2026-04-27c — Added persistent heading style rule + applied heading normalization pass
 
 ### Added
