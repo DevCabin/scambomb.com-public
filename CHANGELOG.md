@@ -1,5 +1,22 @@
 # Changelog
 
+## 2026-04-28 — Jeff boot camp KPI realignment (Phase 1 FB-first execution)
+
+### Updated
+- `public/jeff.html`
+  - Updated Section 01 responsibilities to match current execution priorities:
+    - Facebook target is now explicit: **MIN 3–5 posts daily** (batch + schedule supported)
+    - YouTube cadence changed from fixed weekly quota to flexible large-core-video + smaller-cutdown model
+    - Removed formal weekly reporting requirement in favor of lightweight "done" activity logs
+    - Clarified comment management is **not phase one** and will be trained later with tooling
+    - Reinforced current primary KPI: consistent Facebook output (3x/day minimum)
+
+  - Updated Weekly Rhythm section to emphasize daily Facebook minimum continuity first, with video production as secondary/supporting flow.
+
+  - Updated pipeline and troubleshooting language to remove phase-one dependency on live comment moderation.
+
+  - Replaced "Weekly Report Template" slide with a simple "Production Tracking Example" format and folded tracking behavior into the Daily Desk Checklist.
+
 ## 2026-04-27d — Jeff readability increase + favicon/app-icon alignment on static campaign pages
 
 ### Updated
