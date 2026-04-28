@@ -1,5 +1,22 @@
 # Changelog
 
+## 2026-04-27b — Jeff boot camp slideshow content corrected to match source packet
+
+### Updated
+- `public/jeff.html`
+  - Rebuilt slideshow content to closely follow `jeff/jeff_training_packet.html` structure and training intent.
+  - Preserved private-route behavior and robots `noindex, nofollow` directive.
+  - Included packet-aligned sections:
+    - role/big-picture
+    - Facebook fundamentals
+    - YouTube upload workflow
+    - Canva production process
+    - GoHighLevel scheduling
+    - AI tool usage + prompt templates
+    - pipeline workflow
+    - quality checklist/troubleshooting
+    - quick-reference/report template
+
 ## 2026-04-27 — Jeff training slideshow launch + career scam case-study campaign section
 
 ### Added
