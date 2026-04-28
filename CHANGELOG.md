@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-04-28b — Jeff wording polish (human-readable responsibility copy)
+
+### Updated
+- `public/jeff.html`
+  - Rewrote the "Your responsibilities" bullet copy from internal/all-caps directive style into clean, readable presentation language for Jeff.
+  - Preserved the same execution intent/KPIs while improving tone and legibility.
+
 ## 2026-04-28 — Jeff boot camp KPI realignment (Phase 1 FB-first execution)
 
 ### Updated
