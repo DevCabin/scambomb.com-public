@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-04-28c — Jeff deck flow + spacing polish
+
+### Updated
+- `public/jeff.html`
+  - Removed the **Weekly Rhythm** section per request (no time-management framing).
+  - Reordered section flow so **AI Tools** appears before **GoHighLevel Scheduling**.
+  - Updated Table of Contents to match the new section order.
+  - Removed front-slide source line: `Converted directly from: jeff/jeff_training_packet.html`.
+  - Added presentation breathing room via spacing refinements:
+    - increased section padding
+    - improved paragraph/list line-height and spacing
+    - increased card spacing/padding
+    - increased prompt-box padding and readability
+
 ## 2026-04-28b — Jeff wording polish (human-readable responsibility copy)
 
 ### Updated
