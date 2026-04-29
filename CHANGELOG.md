@@ -1,5 +1,20 @@
 # Changelog
 
+## 2026-04-29s — Training nav polish: add index entry link + right-align top Training Home link
+
+### Updated
+- `public/jeff.html`
+  - Added a clear link on Jeff training home slideshow hero:
+    - `Open Training Index →`
+    - routes to `/jeff/training`
+
+- `public/jeff/training/style.css`
+  - Adjusted header utility-link alignment so `← Training Home` now floats to the **right** at the top of the training pages.
+
+### Why
+- Improve navigation handoff between slideshow home and lesson index.
+- Match requested top-right placement for the Training Home utility link.
+
 ## 2026-04-29r — Jeff slideshow title color-break audit (white/gold alternation pass)
 
 ### Updated

@@ -53,6 +53,7 @@ a { color: var(--yellow); }
   color: var(--muted);
   text-decoration: none;
   width: fit-content;
+  align-self: flex-end;
 }
 
 .training-home-link:hover {
