@@ -1,5 +1,20 @@
 # Changelog
 
+## 2026-04-29l — Item 7 scheduling flow merged into Item 1 posting workflow
+
+### Updated
+- `public/jeff/training/facebook-posting-guide.html`
+  - Refined the merged publish/schedule branch so it reads as one beginner-friendly flow.
+  - Clarified wording for publish-now vs schedule-later decisions in Step 7.
+  - Expanded scheduling setup language in Step 8 (date/time selection).
+  - Improved final confirmation guidance in Step 9.
+  - Added Step 10 to verify scheduled posts in Professional dashboard / Meta Business Suite.
+
+### Confirmed current structure
+- `public/jeff/training/index.html`
+  - Scheduling item is already removed from the visible training index path.
+  - Item 1 card description now reflects combined publish/schedule workflow.
+
 ## 2026-04-29k — Jeff training index title split + header icon cleanup
 
 ### Updated
