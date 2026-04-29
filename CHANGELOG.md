@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-04-29b — Jeff training CSS 404 hotfix (absolute path routing)
+
+### Fixed
+- `public/jeff/training/index.html`
+- `public/jeff/training/facebook-posting-guide.html`
+- `public/jeff/training/facebook-video-post-guide.html`
+- `public/jeff/training/canva-image-guide.html`
+- `public/jeff/training/canva-video-guide.html`
+- `public/jeff/training/chatgpt-caption-guide.html`
+- `public/jeff/training/youtube-upload-guide.html`
+- `public/jeff/training/scheduling-posts-guide.html`
+  - Replaced relative paths with absolute `/jeff/training/...` paths for stylesheet and lesson links.
+  - Resolves `style.css` 404 when opening `/jeff/training` (no trailing slash) and restores full branded styling.
+
 ## 2026-04-29 — Jeff beginner training course published at /jeff/training
 
 ### Added
