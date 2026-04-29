@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-04-29j — Jeff training title markup simplification (parent span removed)
+
+### Updated
+- `public/jeff/training/index.html`
+- `public/jeff/training/style.css`
+  - Removed parent wrapper span from each training card title.
+  - Converted title parts to sibling spans (`.guide-title-main` + `.guide-title-accent`) for cleaner HTML and predictable color control.
+  - Removed old parent-span styling rule and moved typography styling directly onto main/accent classes.
+
 ## 2026-04-29i — Jeff training hero title brand emphasis update
 
 ### Updated
