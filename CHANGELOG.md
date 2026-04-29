@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-04-29k — Jeff training index title split + header icon cleanup
+
+### Updated
+- `public/jeff/training/index.html`
+  - Removed header bomb icon element (`<span class="logo-bomb">💣</span>`) from the index page brand row.
+  - Refined card title split so accent styling consistently covers at least the final two words (e.g., `Post Guide`, `Image Guide`, `Upload Guide`).
+
 ## 2026-04-29j — Jeff training title markup simplification (parent span removed)
 
 ### Updated
