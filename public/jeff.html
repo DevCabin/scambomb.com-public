@@ -13,8 +13,14 @@
   <style>
     :root { --navy:#0B1324; --navy2:#162748; --gold:#F5C84C; --text:#EEF3FB; --muted:#BCC9DD; --line:rgba(255,255,255,.14); }
     .reveal { font-family:Montserrat,sans-serif; color:var(--text); background:linear-gradient(160deg,var(--navy),var(--navy2)); }
-    .reveal .slides section { text-align:left; padding:52px; border-top:4px solid var(--gold); box-sizing:border-box; }
-    .reveal .slides section > * { max-width: 1120px; }
+    .reveal .slides section { text-align:left; padding:48px 56px; border-top:4px solid var(--gold); box-sizing:border-box; }
+    .reveal .slides section > h1,
+    .reveal .slides section > h2,
+    .reveal .slides section > h3,
+    .reveal .slides section > p,
+    .reveal .slides section > ul,
+    .reveal .slides section > .mono { max-width: 760px; }
+    .reveal .slides section > .grid-2 { max-width: 1040px; }
     .reveal h1,.reveal h2,.reveal h3 { text-transform:uppercase; letter-spacing:.02em; }
     .reveal h1 { font-size:2.15em; font-weight:800; margin-bottom:.38em; }
     .reveal h2 { font-size:1.35em; color:var(--text); font-weight:800; margin-bottom:.5em; }

@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-04-29u — Jeff slideshow text-wrap/layout refinement (safe width constraint pass)
+
+### Updated
+- `public/jeff.html`
+  - Refined slide layout to improve text breaking and overall content flow without using brittle absolute/left offsets.
+  - Updated section padding for steadier rhythm and less crowding.
+  - Applied targeted content-width constraints:
+    - primary text blocks (`h1/h2/h3/p/ul/.mono`) capped to a readable measure (`760px`)
+    - two-column grids kept wider (`1040px`) to preserve card usability.
+
+### Why
+- Improve readability and line-break quality in Jeff deck content.
+- Avoid layout hacks that can destabilize Reveal slide positioning across viewport sizes.
+
 ## 2026-04-29t — Navigation intent/contrast pass for Jeff training home + slideshow controls
 
 ### Updated
