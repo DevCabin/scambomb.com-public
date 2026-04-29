@@ -14,6 +14,9 @@
 - `public/jeff/training/index.html`
   - Scheduling item is already removed from the visible training index path.
   - Item 1 card description now reflects combined publish/schedule workflow.
+- `public/jeff/training/youtube-upload-guide.html`
+  - Removed remaining learner-facing `Next` link to `scheduling-posts-guide.html`.
+  - `Next` now routes back to `/jeff/training/`, keeping Item 7 out of the guided path.
 
 ## 2026-04-29k — Jeff training index title split + header icon cleanup
 
