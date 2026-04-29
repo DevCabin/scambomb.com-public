@@ -150,11 +150,11 @@ h3 {
   letter-spacing: .02em;
 }
 
-.guide-title-main {
+.guide-card .guide-title-main {
   color: var(--white);
 }
 
-.guide-title-accent {
+.guide-card .guide-title-accent {
   color: var(--yellow);
 }
 

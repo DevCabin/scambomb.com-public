@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-04-29g — Jeff training index title accent hotfix
+
+### Fixed
+- `public/jeff/training/style.css`
+  - Increased selector specificity for split-title colors so accent words reliably render gold on index cards.
+  - Updated to scoped selectors:
+    - `.guide-card .guide-title-main` (white)
+    - `.guide-card .guide-title-accent` (gold)
+
 ## 2026-04-29f — Jeff training index card title visual polish
 
 ### Updated
