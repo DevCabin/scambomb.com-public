@@ -1,5 +1,20 @@
 # Changelog
 
+## 2026-04-29e — Jeff training wordmark color compliance fix
+
+### Fixed
+- `public/jeff/training/index.html`
+- `public/jeff/training/facebook-posting-guide.html`
+- `public/jeff/training/facebook-video-post-guide.html`
+- `public/jeff/training/canva-image-guide.html`
+- `public/jeff/training/canva-video-guide.html`
+- `public/jeff/training/chatgpt-caption-guide.html`
+- `public/jeff/training/youtube-upload-guide.html`
+- `public/jeff/training/scheduling-posts-guide.html`
+  - Corrected ScamBomb wordmark color split in training header/footer.
+  - Enforced brand rule: `SCAM` in white and `B💣MB` in gold.
+  - Fixed prior mismatches where portions of `BOMB` rendered white.
+
 ## 2026-04-29d — Jeff training nav wording clarity update
 
 ### Updated
