@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-04-29v — Jeff hero title line-break control
+
+### Updated
+- `public/jeff.html`
+  - Forced explicit line break in opening hero title after `INTERN`:
+    - `SOCIAL MEDIA INTERN`
+    - `TRAINING BOOT CAMP`
+
+### Why
+- Match requested title rhythm and improve headline legibility/composition on the opening slide.
+
 ## 2026-04-29u — Jeff slideshow text-wrap/layout refinement (safe width constraint pass)
 
 ### Updated
