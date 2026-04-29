@@ -1,5 +1,35 @@
 # Changelog
 
+## 2026-04-29 — Jeff beginner training course published at /jeff/training
+
+### Added
+- `public/jeff/training/index.html`
+- `public/jeff/training/facebook-posting-guide.html`
+- `public/jeff/training/facebook-video-post-guide.html`
+- `public/jeff/training/canva-image-guide.html`
+- `public/jeff/training/canva-video-guide.html`
+- `public/jeff/training/chatgpt-caption-guide.html`
+- `public/jeff/training/youtube-upload-guide.html`
+- `public/jeff/training/scheduling-posts-guide.html`
+- `public/jeff/training/style.css`
+  - Published the new linked beginner training mini-site as a public static course path.
+  - Kept all step-by-step instructional content intact while making the course browsable online.
+
+### Updated
+- `public/jeff/training/style.css`
+  - Refined visual system to better align with ScamBomb branding:
+    - Montserrat typography
+    - navy/gold color treatment polish
+    - uppercase heading language
+    - stronger CTA/button treatment and spacing consistency
+
+- `public/jeff/training/*.html`
+  - Added brand icon tags and Montserrat font loading.
+  - Updated course header/footer branding text to ScamBomb internal training style.
+
+- `next.config.js`
+  - Added rewrite for `/jeff/training` → `/jeff/training/index.html`.
+
 ## 2026-04-28c — Jeff deck flow + spacing polish
 
 ### Updated

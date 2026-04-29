@@ -14,6 +14,10 @@ const nextConfig = {
         destination: '/jeff.html',
       },
       {
+        source: '/jeff/training',
+        destination: '/jeff/training/index.html',
+      },
+      {
         source: '/ai-clone-scam-jammer',
         destination: '/ai-clone-scam-jammer.html',
       },
