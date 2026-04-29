@@ -40,6 +40,25 @@ a { color: var(--yellow); }
   z-index: 10;
 }
 
+.header-top-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.training-home-link {
+  font-size: 12px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  width: fit-content;
+}
+
+.training-home-link:hover {
+  color: var(--yellow);
+}
+
 .brand {
   display: flex;
   align-items: center;

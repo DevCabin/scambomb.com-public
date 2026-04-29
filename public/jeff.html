@@ -13,10 +13,11 @@
   <style>
     :root { --navy:#0B1324; --navy2:#162748; --gold:#F5C84C; --text:#EEF3FB; --muted:#BCC9DD; --line:rgba(255,255,255,.14); }
     .reveal { font-family:Montserrat,sans-serif; color:var(--text); background:linear-gradient(160deg,var(--navy),var(--navy2)); }
-    .reveal .slides section { text-align:left; padding:68px; border-top:4px solid var(--gold); }
+    .reveal .slides section { text-align:left; padding:52px; border-top:4px solid var(--gold); box-sizing:border-box; }
+    .reveal .slides section > * { max-width: 1120px; }
     .reveal h1,.reveal h2,.reveal h3 { text-transform:uppercase; letter-spacing:.02em; }
     .reveal h1 { font-size:2.15em; font-weight:800; margin-bottom:.38em; }
-    .reveal h2 { font-size:1.45em; color:var(--gold); font-weight:800; margin-bottom:.5em; }
+    .reveal h2 { font-size:1.35em; color:var(--text); font-weight:800; margin-bottom:.5em; }
     .reveal h3 { font-size:1em; color:var(--gold); margin-top:1em; margin-bottom:.35em; }
     .reveal p,.reveal li { color:var(--muted); font-size:.82em; line-height:1.62; }
     .reveal p { margin:.45em 0 .7em; }
@@ -29,7 +30,10 @@
     .brand { font-size:.62em; font-weight:800; letter-spacing:.04em; text-transform:uppercase; }
     .scam { color:#fff; } .bomb { color:var(--gold); }
     .white { color:#fff; } .gold { color:var(--gold); }
-    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size:.68em; color:var(--text); background:rgba(0,0,0,.25); border-left:3px solid var(--gold); padding:14px; border-radius:8px; white-space:pre-wrap; line-height:1.62; margin-top:.4em; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size:.66em; color:var(--text); background:rgba(0,0,0,.25); border-left:3px solid var(--gold); padding:14px; border-radius:8px; white-space:pre-wrap; overflow-wrap:anywhere; line-height:1.62; margin-top:.4em; }
+    .section-label .label { color:#fff; }
+    .section-label .num { color:var(--gold); }
+    .section-title { color:var(--gold); }
     .small { font-size:.62em !important; }
     @media (max-width:900px){ .grid-2{grid-template-columns:1fr;} }
   </style>
@@ -59,7 +63,7 @@
       </section>
 
       <section>
-        <h2>Section 01 — Your Role &amp; Big Picture</h2>
+        <h2><span class="section-label"><span class="label">Slide</span> <span class="num">01</span></span> — <span class="section-title">Your Role &amp; Big Picture</span></h2>
         <p>Mission: publish repeatable, useful anti-scam content on Facebook + YouTube to drive awareness and trusted action toward ScamBomb.com.</p>
         <div class="grid-2">
           <div class="card"><strong>Your responsibilities</strong><ul><li>Minimum 3–5 Facebook posts daily (you can batch create + schedule)</li><li>YouTube output is flexible: some weeks one large core video, other weeks many smaller cut-down videos shared to YouTube + Facebook</li><li>Comment replies are not phase one — we’ll train this later and give you easy tools</li><li>Keep a simple “done” log (example: “I got 3 videos scheduled today”)</li><li>Run the pipeline consistently — main KPI right now is Facebook 3x/day minimum</li></ul></div>
@@ -68,7 +72,7 @@
       </section>
 
       <section>
-        <h2>Section 02 — Facebook 101</h2>
+        <h2><span class="section-label"><span class="label">Slide</span> <span class="num">02</span></span> — <span class="section-title">Facebook 101</span></h2>
         <ul>
           <li>Log in as ScamBomb Page (never personal profile).</li>
           <li>Create post → paste approved copy → attach media → publish.</li>
@@ -81,7 +85,7 @@
       </section>
 
       <section>
-        <h2>Section 03 — YouTube Basics</h2>
+        <h2><span class="section-label"><span class="label">Slide</span> <span class="num">03</span></span> — <span class="section-title">YouTube Basics</span></h2>
         <ul>
           <li>Go to studio.youtube.com using ScamBomb channel account.</li>
           <li>Create → Upload video (.mp4 from Canva).</li>
@@ -92,7 +96,7 @@
       </section>
 
       <section>
-        <h2>Section 04 — Canva Workflow</h2>
+        <h2><span class="section-label"><span class="label">Slide</span> <span class="num">04</span></span> — <span class="section-title">Canva Workflow</span></h2>
         <div class="grid-2">
           <div class="card"><strong>Static post</strong><ul><li>Use approved template</li><li>Edit text only unless instructed</li><li>Export PNG</li><li>Keep logo, colors, fonts intact</li></ul></div>
           <div class="card"><strong>Video asset</strong><ul><li>Use video template</li><li>Replace scene text</li><li>Add approved audio/voiceover</li><li>Export MP4 1080p</li></ul></div>
@@ -101,7 +105,7 @@
       </section>
 
       <section>
-        <h2>Section 04 — Brand Guardrails</h2>
+        <h2><span class="section-label"><span class="label">Slide</span> <span class="num">04B</span></span> — <span class="section-title">Brand Guardrails</span></h2>
         <ul>
           <li>Colors: ScamBomb navy + gold (+ approved accents only)</li>
           <li>Typography: headline/body consistency from approved templates</li>
@@ -111,7 +115,7 @@
       </section>
 
       <section>
-        <h2>Section 05 — AI Tools (Practical Only)</h2>
+        <h2><span class="section-label"><span class="label">Slide</span> <span class="num">05</span></span> — <span class="section-title">AI Tools (Practical Only)</span></h2>
         <div class="grid-2">
           <div class="card"><strong>ChatGPT use cases</strong><ul><li>Condense scripts into social copy</li><li>Prepare future comment-reply drafts for training phase</li><li>Summarize articles into practical bullets</li></ul></div>
           <div class="card"><strong>Gemini use cases</strong><ul><li>Grammar checks</li><li>Clarity tuning</li><li>Basic wording validation</li></ul></div>
@@ -120,7 +124,7 @@
       </section>
 
       <section>
-        <h2>Section 06 — GoHighLevel Scheduling</h2>
+        <h2><span class="section-label"><span class="label">Slide</span> <span class="num">06</span></span> — <span class="section-title">GoHighLevel Scheduling</span></h2>
         <ul>
           <li>Login → Social Planner → New Post</li>
           <li>Select channel, add text/media, set date/time (Central)</li>
@@ -145,7 +149,7 @@
       </section>
 
       <section>
-        <h2>Section 07 — Content Pipeline System</h2>
+        <h2><span class="section-label"><span class="label">Slide</span> <span class="num">07</span></span> — <span class="section-title">Content Pipeline System</span></h2>
         <p>Status flow: <strong>Pending → In Progress → Ready for Review → Scheduled → Published</strong></p>
         <ul>
           <li>Intake: claim tasks in shared queue</li>
@@ -157,7 +161,7 @@
       </section>
 
       <section>
-        <h2>Section 08 — Pre-Publish Quality Gate</h2>
+        <h2><span class="section-label"><span class="label">Slide</span> <span class="num">08</span></span> — <span class="section-title">Pre-Publish Quality Gate</span></h2>
         <div class="grid-2">
           <div class="card"><strong>Static/Image checks</strong><ul><li>Readable text</li><li>No spelling errors</li><li>Correct logo/colors</li><li>Correct dimensions/file type</li><li>Links work</li></ul></div>
           <div class="card"><strong>Video checks</strong><ul><li>Playback works</li><li>Audio clear</li><li>Phone readability</li><li>No placeholder text</li><li>Correct title/description/thumbnail</li></ul></div>
@@ -165,7 +169,7 @@
       </section>
 
       <section>
-        <h2>Section 08 — Troubleshooting Playbook</h2>
+        <h2><span class="section-label"><span class="label">Slide</span> <span class="num">08B</span></span> — <span class="section-title">Troubleshooting Playbook</span></h2>
         <ul>
           <li>Blurry Canva export → increase export quality, use PNG/1080p</li>
           <li>Scheduled post failed → re-upload media and reschedule</li>
@@ -176,7 +180,7 @@
       </section>
 
       <section>
-        <h2>Section 09 — Quick Reference</h2>
+        <h2><span class="section-label"><span class="label">Slide</span> <span class="num">09</span></span> — <span class="section-title">Quick Reference</span></h2>
         <ul>
           <li>Core tools: Facebook Page, YouTube Studio, Canva, GoHighLevel</li>
           <li>Copy tools: ChatGPT + Gemini</li>

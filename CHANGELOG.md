@@ -1,5 +1,35 @@
 # Changelog
 
+## 2026-04-29q — Jeff slideshow overflow fix + title brand pass + training home utility link
+
+### Updated
+- `public/jeff.html`
+  - Reduced slide padding and constrained content width to prevent right-edge overflow on desktop.
+  - Tightened monospaced prompt block behavior with safe wrapping for long lines.
+  - Applied branded section-heading treatment with white/gold split labels:
+    - `Slide` in white
+    - slide number (e.g., `09`) in gold
+  - Added consistent title styling for section headings to better match ScamBomb brand rules.
+
+- `public/jeff/training/style.css`
+  - Added subtle utility-link styling for a small top header link (`Training Home`).
+
+- `public/jeff/training/index.html`
+- `public/jeff/training/index-v2.html`
+- `public/jeff/training/facebook-posting-guide.html`
+- `public/jeff/training/facebook-video-post-guide.html`
+- `public/jeff/training/canva-image-guide.html`
+- `public/jeff/training/canva-video-guide.html`
+- `public/jeff/training/chatgpt-caption-guide.html`
+- `public/jeff/training/youtube-upload-guide.html`
+  - Added small header utility link back to Jeff training deck home:
+    - `← Training Home` → `https://www.scambomb.com/jeff`
+
+### Why
+- Improve usability/navigation for interns.
+- Eliminate desktop slide overflow issues.
+- Enforce clearer white/gold heading consistency across the Jeff training presentation.
+
 ## 2026-04-29p — Route /jeff/training to versioned index to break stale edge cache
 
 ### Added
