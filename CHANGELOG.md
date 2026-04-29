@@ -1,5 +1,17 @@
 # Changelog
 
+## 2026-04-29o — Force-refresh training index payload and remove scheduling wording
+
+### Updated
+- `public/jeff/training/index.html`
+  - Added explicit version marker meta tag:
+    - `scambomb-training-version: 2026-04-29-item7-removed-v2`
+  - Updated hero lead copy to remove "scheduling" wording.
+  - Keeps training index at 6 cards only (Item 7 removed).
+
+### Why
+- User still observed stale Item 7 index card on live page; this introduces a clear payload fingerprint for verification and forces a fresh deploy artifact diff.
+
 ## 2026-04-29n — Remove Item 7 from legacy training index source used by deploy path
 
 ### Updated
