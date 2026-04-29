@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-04-29m — Hard retire Item 7 URL with redirect to Item 1
+
+### Updated
+- `public/jeff/training/scheduling-posts-guide.html`
+  - Replaced legacy standalone page content with an immediate redirect to:
+    - `/jeff/training/facebook-posting-guide.html`
+  - Added canonical hint to Item 1.
+  - Ensures stale bookmarks or cached direct visits to Item 7 always land on the merged guide.
+
 ## 2026-04-29l — Item 7 scheduling flow merged into Item 1 posting workflow
 
 ### Updated
