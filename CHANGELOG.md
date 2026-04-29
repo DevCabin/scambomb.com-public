@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-04-29c — Jeff training usability pass (clickable external tool links)
+
+### Updated
+- `public/jeff/training/facebook-posting-guide.html`
+- `public/jeff/training/facebook-video-post-guide.html`
+- `public/jeff/training/canva-image-guide.html`
+- `public/jeff/training/canva-video-guide.html`
+- `public/jeff/training/chatgpt-caption-guide.html`
+- `public/jeff/training/youtube-upload-guide.html`
+- `public/jeff/training/scheduling-posts-guide.html`
+  - Converted typed website references into direct clickable links for beginner ease-of-use.
+  - Added safe new-tab behavior for external destinations (`target="_blank"` + `rel="noopener noreferrer"`).
+  - Covers key workflow tools: Facebook, YouTube, Canva, and ChatGPT.
+
 ## 2026-04-29b — Jeff training CSS 404 hotfix (absolute path routing)
 
 ### Fixed
