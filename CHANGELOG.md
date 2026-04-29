@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-04-29i — Jeff training hero title brand emphasis update
+
+### Updated
+- `public/jeff/training/index.html`
+  - Updated hero H1 styling split per request:
+    - `SCAM` in white and `B💣MB` in gold (brand-correct wordmark treatment)
+    - `SOCIAL MEDIA` highlighted in gold
+
 ## 2026-04-29h — Jeff training split-title cascade fix
 
 ### Fixed
