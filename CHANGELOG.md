@@ -1,5 +1,20 @@
 # Changelog
 
+## 2026-04-29t — Navigation intent/contrast pass for Jeff training home + slideshow controls
+
+### Updated
+- `public/jeff.html`
+  - Softened training-index link treatment on hero slide so it reads as a utility link instead of a directional “next-step” CTA:
+    - label changed from `Open Training Index →` to `View Lesson Index`
+    - reduced visual emphasis (smaller size, muted color, subtler underline)
+  - Increased Reveal.js control arrow visibility/contrast to avoid near-black-on-dark appearance:
+    - set control arrows to ScamBomb gold by default
+    - brightened hover state to white
+
+### Why
+- Remove unintended workflow guidance signal from the training-index link.
+- Improve discoverability of bottom-right slideshow navigation arrows on dark backgrounds.
+
 ## 2026-04-29s — Training nav polish: add index entry link + right-align top Training Home link
 
 ### Updated
