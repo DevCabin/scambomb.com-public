@@ -1,5 +1,17 @@
 # Changelog
 
+## 2026-04-29d — Jeff training nav wording clarity update
+
+### Updated
+- `public/jeff/training/facebook-posting-guide.html`
+- `public/jeff/training/facebook-video-post-guide.html`
+- `public/jeff/training/canva-image-guide.html`
+- `public/jeff/training/canva-video-guide.html`
+- `public/jeff/training/chatgpt-caption-guide.html`
+- `public/jeff/training/youtube-upload-guide.html`
+- `public/jeff/training/scheduling-posts-guide.html`
+  - Renamed lesson-bottom nav button label from `Index` to `Back to Start` for clearer beginner guidance.
+
 ## 2026-04-29c — Jeff training usability pass (clickable external tool links)
 
 ### Updated
