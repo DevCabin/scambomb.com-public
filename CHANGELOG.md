@@ -1,5 +1,21 @@
 # Changelog
 
+## 2026-04-29r — Jeff slideshow title color-break audit (white/gold alternation pass)
+
+### Updated
+- `public/jeff.html`
+  - Audited and refined major slide title treatments to make white/gold breakpoints explicit and visually obvious.
+  - Applied clearer alternating split to key headings, including:
+    - `FACEBOOK` (white) + `101` (gold)
+    - `YOUTUBE` (white) + `BASICS` (gold)
+    - `CANVA` (white) + `WORKFLOW` (gold)
+    - `GOHIGHLEVEL` (white) + `SCHEDULING` (gold)
+    - `QUICK` (white) + `REFERENCE` (gold)
+  - Extended same style logic across utility/title slides (table of contents, prompt templates, tracking/checklist) for consistent brand rhythm.
+
+### Why
+- Improve visual title hierarchy and make brand color segmentation more obvious at a glance throughout the deck.
+
 ## 2026-04-29q — Jeff slideshow overflow fix + title brand pass + training home utility link
 
 ### Updated
