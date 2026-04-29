@@ -144,10 +144,18 @@ h3 {
 }
 
 .guide-card span {
-  color: var(--yellow);
+  color: var(--white);
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: .02em;
+}
+
+.guide-title-main {
+  color: var(--white);
+}
+
+.guide-title-accent {
+  color: var(--yellow);
 }
 
 .guide-card p {

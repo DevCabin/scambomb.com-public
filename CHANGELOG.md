@@ -1,5 +1,18 @@
 # Changelog
 
+## 2026-04-29f — Jeff training index card title visual polish
+
+### Updated
+- `public/jeff/training/index.html`
+- `public/jeff/training/style.css`
+  - Removed green-dot emoji markers from index card titles.
+  - Updated card title styling to requested white/gold split treatment:
+    - base title text in white
+    - final keyword(s) (e.g., `Guide`, `Posting Guide`) in gold.
+  - Added dedicated title span classes for cleaner future control:
+    - `.guide-title-main`
+    - `.guide-title-accent`
+
 ## 2026-04-29e — Jeff training wordmark color compliance fix
 
 ### Fixed
