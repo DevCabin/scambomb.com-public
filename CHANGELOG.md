@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-04-29n — Remove Item 7 from legacy training index source used by deploy path
+
+### Updated
+- `jeff/training/index.html`
+  - Removed the visible `7. Scheduling Posts Guide` card from the index grid.
+  - Updated Item 1 description to reflect merged publish-now/schedule-later workflow.
+
+### Why
+- Production `https://www.scambomb.com/jeff/training` was still returning HTML that contained Item 7.
+- Live response matched the legacy `jeff/training/index.html` source shape, so this file was patched as a hard compatibility fix.
+
 ## 2026-04-29m — Hard retire Item 7 URL with redirect to Item 1
 
 ### Updated
