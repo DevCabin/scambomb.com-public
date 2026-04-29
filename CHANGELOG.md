@@ -1,5 +1,20 @@
 # Changelog
 
+## 2026-04-29p — Route /jeff/training to versioned index to break stale edge cache
+
+### Added
+- `public/jeff/training/index-v2.html`
+  - Versioned copy of the current 6-card training index (Item 7 removed).
+
+### Updated
+- `next.config.js`
+  - Changed rewrite:
+    - `/jeff/training` → `/jeff/training/index-v2.html`
+
+### Why
+- Production edge continued returning stale HTML payload for `/jeff/training` even after content updates.
+- Route-to-new-file forces a fresh artifact key and bypasses the stuck cached response.
+
 ## 2026-04-29o — Force-refresh training index payload and remove scheduling wording
 
 ### Updated

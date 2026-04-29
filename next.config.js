@@ -15,7 +15,7 @@ const nextConfig = {
       },
       {
         source: '/jeff/training',
-        destination: '/jeff/training/index.html',
+        destination: '/jeff/training/index-v2.html',
       },
       {
         source: '/ai-clone-scam-jammer',
