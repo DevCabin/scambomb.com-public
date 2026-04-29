@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-04-29h — Jeff training split-title cascade fix
+
+### Fixed
+- `public/jeff/training/style.css`
+  - Narrowed base title selector from `.guide-card span` to `.guide-card > span`.
+  - Prevents inherited white color from overriding nested accent span text.
+  - Ensures final title words remain gold as designed.
+
 ## 2026-04-29g — Jeff training index title accent hotfix
 
 ### Fixed

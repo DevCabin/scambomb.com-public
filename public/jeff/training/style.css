@@ -143,7 +143,7 @@ h3 {
   border-color: var(--yellow);
 }
 
-.guide-card span {
+.guide-card > span {
   color: var(--white);
   font-weight: 800;
   text-transform: uppercase;
