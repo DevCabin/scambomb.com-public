@@ -41,6 +41,27 @@
 - Make the entire career-scam case-study family feel more human, public-ready, and senior-friendly.
 - Improve readability and trust for community sharing, print use, and awareness campaigns.
 
+## 2026-05-21b — Resource wordmark + favicon brand compliance fix
+
+### Updated
+- `public/resources/ai-voice-cloning-survival-guide/index.html`
+- `public/resources/dont-let-a-text-steal-everything/index.html`
+- `public/resources/phishing-link-survival-guide/index.html`
+  - Replaced the old inline bomb favicon with the current site-standard icon assets:
+    - `/scambomb-favicon-64.png`
+    - `/scambomb-logo-512.png`
+  - Corrected the top-left back-bar wordmark to follow the persistent ScamBomb two-tone rule:
+    - `SCAM` in white on dark background
+    - `B💣MB` in yellow
+
+- `public/resources/modules/older-adult-brief-cta-module.html`
+  - Added the same site-standard favicon and Apple touch icon tags for consistency with the rest of the site.
+
+### Why
+- Bring the resource pages into full brand compliance.
+- Ensure iconography matches the rest of the public site and saved-home-screen behavior.
+- Prevent inconsistent single-color or legacy favicon treatment on ScamBomb resource pages.
+
 ## 2026-04-29v — Jeff hero title line-break control
 
 ### Updated
