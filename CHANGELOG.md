@@ -1,5 +1,46 @@
 # Changelog
 
+## 2026-05-21 — Career scam case-study copy audit for public-facing senior-ready voice
+
+### Updated
+- `public/career-scam-case-study/index.html`
+  - Removed the internal "Jeff" reference from the hub intro.
+  - Rewrote hub overview and card descriptions to be fully public-facing, clearer, and more useful for older adults, caregivers, and community readers.
+
+- `public/career-scam-case-study/landing.html`
+  - Rewrote hero/supporting copy in plainer language.
+  - Softened strategy-style phrasing into public safety language with clearer action framing.
+
+- `public/career-scam-case-study/case-study.html`
+  - Reworked the case-study narrative into more accessible plain English.
+  - Renamed jargon-heavy sections (for example, `Risk ladder` → `How the scam can escalate`).
+  - Replaced compressed/internal phrasing with clearer public guidance for scam recognition and response.
+
+- `public/career-scam-case-study/social-carousel.html`
+  - Simplified panel copy for fast public comprehension and easier senior readability.
+
+- `public/career-scam-case-study/newsletter.html`
+  - Rewrote alert/module copy to sound more natural, public-facing, and easy to forward/share.
+
+- `public/career-scam-case-study/print-guide.html`
+  - Improved handout copy clarity with more explicit, senior-friendly wording.
+
+- `public/career-scam-case-study/victim-checklist.html`
+  - Rewrote steps in more direct plain English.
+  - Clarified identity-theft risk language and immediate response actions.
+
+- `public/career-scam-case-study/spot-the-scam.html`
+  - Reframed interaction copy away from internal/training wording and into public educational language.
+  - Simplified warning-sign explanations.
+
+- `public/career-scam-case-study/poster-flyer.html`
+  - Polished poster/flyer copy for clearer public guidance and stronger plain-language action steps.
+
+### Why
+- Remove internal context leakage from a public resource set.
+- Make the entire career-scam case-study family feel more human, public-ready, and senior-friendly.
+- Improve readability and trust for community sharing, print use, and awareness campaigns.
+
 ## 2026-04-29v — Jeff hero title line-break control
 
 ### Updated

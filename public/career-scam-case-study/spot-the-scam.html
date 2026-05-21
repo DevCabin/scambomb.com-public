@@ -26,7 +26,7 @@
   <main class="wrap">
     <div class="top"><div class="brand"><span class="scam">SCAM</span><span class="bomb">B💣MB</span></div><a class="back" href="/career-scam-case-study">← Back to hub</a></div>
     <h1><span class="white">SPOT THE</span> <span class="gold">SCAM</span></h1>
-    <p class="lead">Click each flag to reveal the risk explanation.</p>
+    <p class="lead">Click each warning sign to see why it matters and how this scam works.</p>
     <section class="layout">
       <article class="panel">
         <div class="msg"><strong>Recruiter:</strong> We can interview by text only and start immediately.</div>
@@ -37,16 +37,16 @@
         <button onclick="show('check')">Flag: Equipment check</button>
       </article>
       <article class="panel">
-        <h2 style="color:var(--yellow);margin:0 0 8px">Training notes</h2>
-        <div id="result">Select a flag to view the teaching explanation.</div>
+        <h2 style="color:var(--yellow);margin:0 0 8px">Why this is a warning sign</h2>
+        <div id="result">Select a warning sign to see the explanation.</div>
       </article>
     </section>
   </main>
   <script>
     const notes={
-      text:'Text-only interviewing removes normal verification points and is common in recruiter impersonation scams.',
-      pay:'High pay for simple remote work is often used as a pressure lure to bypass skepticism.',
-      check:'“We will send a check for equipment” is a known fake-check fraud pattern.'
+      text:'A text-only interview removes normal verification steps and is common in fake recruiter scams.',
+      pay:'Very high pay for simple remote work is often used to make people lower their guard.',
+      check:'“We will send a check for equipment” is a well-known fake-check scam pattern.'
     };
     function show(key){document.getElementById('result').textContent=notes[key];}
   </script>
