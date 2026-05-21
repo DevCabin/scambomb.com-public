@@ -62,6 +62,22 @@
 - Ensure iconography matches the rest of the public site and saved-home-screen behavior.
 - Prevent inconsistent single-color or legacy favicon treatment on ScamBomb resource pages.
 
+## 2026-05-21c — Added newsletter opt-in CTA to core resource guides
+
+### Updated
+- `public/resources/ai-voice-cloning-survival-guide/index.html`
+- `public/resources/dont-let-a-text-steal-everything/index.html`
+- `public/resources/phishing-link-survival-guide/index.html`
+  - Added a new on-page newsletter/community opt-in CTA near the bottom of each guide.
+  - Uses the existing ScamBomb GHL submit flow and redirects to `/thank-you` on success.
+  - Includes the same fallback behavior pattern used elsewhere if the primary GHL submit endpoint fails.
+  - Styled the CTA natively to match the ScamBomb resource design system and senior-friendly readability standards.
+
+### Why
+- Give resource readers a clear path to join the newsletter/community list.
+- Reuse the existing working lead-capture flow instead of introducing a disconnected static form pattern.
+- Improve follow-up and retention opportunities from high-intent resource traffic.
+
 ## 2026-04-29v — Jeff hero title line-break control
 
 ### Updated

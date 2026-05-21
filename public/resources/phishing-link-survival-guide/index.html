@@ -467,6 +467,45 @@
       font-size: 19px;
     }
 
+    .newsletter-cta {
+      background: var(--navy);
+      color: var(--white);
+      border: 2px solid var(--yellow);
+      border-radius: 14px;
+      padding: 32px 28px;
+      margin: 36px 0;
+      text-align: center;
+    }
+    .newsletter-cta h3 { color: var(--yellow); margin: 0 0 10px; font-size: 24px; }
+    .newsletter-cta p { color: rgba(255,255,255,0.82); margin-bottom: 18px; font-size: 18px; }
+    .newsletter-form { display:flex; gap:12px; max-width:620px; margin:0 auto; flex-wrap:wrap; justify-content:center; }
+    .newsletter-form input {
+      flex: 1 1 320px;
+      min-width: 260px;
+      border-radius: 12px;
+      border: 2px solid transparent;
+      padding: 15px 16px;
+      font-size: 16px;
+      font-family: var(--font);
+      color: var(--navy);
+    }
+    .newsletter-form input:focus { outline:none; border-color: var(--yellow); }
+    .newsletter-form button {
+      border:0;
+      border-radius:12px;
+      padding:15px 22px;
+      font-size:16px;
+      font-weight:900;
+      background:var(--yellow);
+      color:var(--navy);
+      cursor:pointer;
+      font-family: var(--font);
+    }
+    .newsletter-note,
+    .newsletter-error { font-size:12px; margin-top:12px; }
+    .newsletter-note { color: rgba(255,255,255,0.46); }
+    .newsletter-error { color:#FCA5A5; display:none; }
+
     /* ── FINAL MESSAGE ────────────────────────────────── */
     .final-message {
       text-align: center;
@@ -950,6 +989,17 @@
       <p>Your partners in the fight against fraud,<br><strong>— The ScamBomb Team 💙</strong></p>
     </div>
 
+    <div class="newsletter-cta">
+      <h3>GET MONTHLY SCAM ALERTS</h3>
+      <p>Join the ScamBomb email list for new scam warnings, AI fraud updates, and simple safety tips you can share with family.</p>
+      <form class="newsletter-form" data-newsletter-form>
+        <input type="email" name="email" placeholder="Enter your best email" aria-label="Email address" required>
+        <button type="submit">JOIN THE LIST →</button>
+      </form>
+      <div class="newsletter-error" data-newsletter-error>Something went wrong. Please try again.</div>
+      <div class="newsletter-note">Free updates · Monthly tips · No spam</div>
+    </div>
+
     <div class="bonus-box">
       <strong>💣 Want to go deeper?</strong><br>
       Read our free <a href="/blog/older-adult-fraud-report-2024-2025" style="color:var(--navy);font-weight:800;text-decoration:underline;">Fraud Target Older Adults: Annual Intelligence Brief 2024–2025</a> — the full data report on where scam losses are coming from and what AI voice cloning really costs.
@@ -965,6 +1015,69 @@
   <footer class="page-footer">
     <a href="https://scambomb.com">ScamBomb.com</a> &nbsp;·&nbsp; Diffuse scams before they blow up in your face! 💙
   </footer>
+
+  <script>
+    (function () {
+      const form = document.querySelector('[data-newsletter-form]');
+      const errorEl = document.querySelector('[data-newsletter-error]');
+      if (!form) return;
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        if (errorEl) errorEl.style.display = 'none';
+        const email = form.querySelector('input[name="email"]').value.trim();
+        if (!/.+@.+\..+/.test(email)) {
+          if (errorEl) errorEl.style.display = 'block';
+          return;
+        }
+        try {
+          const res = await fetch('https://backend.leadconnectorhq.com/forms/submit', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              location_id: 'DaQ8hQRpgjJ0fIdTGhuo',
+              id: 'fMvTbzE0i0SO5sTMPscV',
+              first_name: 'ScamBomb',
+              email,
+            }),
+          });
+          if (!res.ok) throw new Error('submit failed');
+          window.location.href = '/thank-you';
+        } catch (err) {
+          try {
+            const iframeName = 'ghl-newsletter-fallback';
+            let iframe = document.querySelector(`iframe[name="${iframeName}"]`);
+            if (!iframe) {
+              iframe = document.createElement('iframe');
+              iframe.name = iframeName;
+              iframe.style.display = 'none';
+              document.body.appendChild(iframe);
+            }
+            const fallbackForm = document.createElement('form');
+            fallbackForm.method = 'POST';
+            fallbackForm.action = 'https://api.leadconnectorhq.com/widget/form/fMvTbzE0i0SO5sTMPscV';
+            fallbackForm.target = iframeName;
+            fallbackForm.style.display = 'none';
+            const emailInput = document.createElement('input');
+            emailInput.type = 'hidden';
+            emailInput.name = 'email';
+            emailInput.value = email;
+            const firstNameInput = document.createElement('input');
+            firstNameInput.type = 'hidden';
+            firstNameInput.name = 'first_name';
+            firstNameInput.value = 'ScamBomb';
+            fallbackForm.appendChild(emailInput);
+            fallbackForm.appendChild(firstNameInput);
+            document.body.appendChild(fallbackForm);
+            fallbackForm.submit();
+            fallbackForm.remove();
+            window.location.href = '/thank-you';
+          } catch (_) {
+            if (errorEl) errorEl.style.display = 'block';
+          }
+        }
+      });
+    })();
+  </script>
 
 </body>
 </html>
