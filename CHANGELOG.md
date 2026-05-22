@@ -55,6 +55,15 @@
 - Improve readability for adults who need reading glasses or want a more comfortable reading experience.
 - Preserve hierarchy while making the page feel less visually small.
 
+## 2026-05-22e — Text survival plan stat wording tweak
+
+### Updated
+- `public/resources/dont-let-a-text-steal-everything/index.html`
+  - Replaced `scammers know this` with `scammers take advantage of this` in the text-message open-rate stat.
+
+### Why
+- Read more naturally and clearly in plain-English audience-facing copy.
+
 ## 2026-05-21 — Resource title fix
 - `public/resources/dont-let-a-text-steal-everything/index.html` — changed title to "Survival Plan" for GHL campaign consistency
 
