@@ -30,6 +30,19 @@
 - Make the opening hook feel more concrete and emotionally immediate for campaign traffic.
 - Anchor the warning in a real case story instead of a generic top-line stat.
 
+## 2026-05-22c — Resource callout/source link styling fix
+
+### Updated
+- `public/resources/dont-let-a-text-steal-everything/index.html`
+- `public/resources/ai-voice-cloning-survival-guide/index.html`
+- `public/resources/phishing-link-survival-guide/index.html`
+  - Added shared styling for links inside callout/hook-style blocks.
+  - Callout/source links now render white, slightly smaller than surrounding text, and only underline on hover.
+
+### Why
+- Prevent browser-default blue links from clashing with ScamBomb callout styling.
+- Keep resource source links visually consistent with the rest of the brand presentation.
+
 ## 2026-05-21 — Resource title fix
 - `public/resources/dont-let-a-text-steal-everything/index.html` — changed title to "Survival Plan" for GHL campaign consistency
 
