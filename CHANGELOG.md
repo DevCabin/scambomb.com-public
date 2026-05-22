@@ -19,6 +19,17 @@
 - Keep the resources easy to distribute manually in email while reducing casual public exposure.
 - Encourage readers to bookmark the plans for future scam-response use.
 
+## 2026-05-22b — Text survival plan hook updated with real $42K case
+
+### Updated
+- `public/resources/dont-let-a-text-steal-everything/index.html`
+  - Replaced the old hook statistic with the requested real-world $42,000 scam-loss example.
+  - Added the provided News4Jax source link directly in the hero hook.
+
+### Why
+- Make the opening hook feel more concrete and emotionally immediate for campaign traffic.
+- Anchor the warning in a real case story instead of a generic top-line stat.
+
 ## 2026-05-21 — Resource title fix
 - `public/resources/dont-let-a-text-steal-everything/index.html` — changed title to "Survival Plan" for GHL campaign consistency
 
