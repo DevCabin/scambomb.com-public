@@ -1,5 +1,18 @@
 # Changelog
 
+## 2026-05-22h — Resource guide header nav matched to career case study
+
+### Updated
+- `public/resources/phishing-link-survival-guide/index.html`
+- `public/resources/ai-voice-cloning-survival-guide/index.html`
+- `public/resources/dont-let-a-text-steal-everything/index.html`
+  - Updated the top `.back-bar` header styling (padding, border, shadow, typography) to match the Career Scam Case Study header.
+  - Added the right-aligned **Join Newsletter** pill CTA to the header so all campaign resources share the same top-nav pattern.
+
+### Why
+- Keep brand/navigation consistent across campaign resource pages.
+- Provide a consistent newsletter join path from the top navigation.
+
 ## 2026-05-22g — AI voice cloning guide: updated real scenario with new Philadelphia case
 
 ### Updated
