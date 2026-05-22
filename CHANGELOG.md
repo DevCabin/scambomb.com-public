@@ -23,6 +23,16 @@
 ### Why
 - Improve visual hierarchy on the cover while keeping citations clearly visible.
 
+## 2026-05-22j — Footer newsletter CTA copy refresh
+
+### Updated
+- `app/layout.tsx`
+  - Replaced footer newsletter blurb with new urgency/value copy.
+  - Updated the footer newsletter button label to: `→ Keep my family protected`.
+
+### Why
+- Improve conversion intent/clarity on the homepage footer newsletter CTA.
+
 ## 2026-05-22g — AI voice cloning guide: updated real scenario with new Philadelphia case
 
 ### Updated
