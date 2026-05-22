@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Don't Let a Text Steal Everything — ScamBomb Free Guide</title>
+  <meta name="robots" content="noindex, nofollow">
+  <title>Don't Let a Text Steal Everything — ScamBomb Free Plan</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
@@ -456,6 +457,97 @@
     .newsletter-note { color: rgba(255,255,255,0.46); }
     .newsletter-error { color:#FCA5A5; display:none; }
 
+    .resource-gate {
+      display: none;
+      max-width: 820px;
+      margin: 28px auto 0;
+      padding: 0 20px;
+    }
+    .gate-card {
+      background: var(--navy);
+      color: var(--white);
+      border: 2px solid var(--yellow);
+      border-radius: 16px;
+      padding: 32px 28px;
+      text-align: center;
+    }
+    .gate-card h2 {
+      color: var(--yellow);
+      border: none;
+      margin: 0 0 10px;
+      padding: 0;
+      font-size: 28px;
+      letter-spacing: 0.04em;
+    }
+    .gate-card p {
+      color: rgba(255,255,255,0.82);
+      font-size: 18px;
+      margin-bottom: 18px;
+    }
+
+    .bookmark-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: rgba(11,19,36,0.72);
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .bookmark-modal.is-open { display: flex; }
+    .bookmark-card {
+      max-width: 560px;
+      width: 100%;
+      background: #fff;
+      color: var(--navy);
+      border-radius: 18px;
+      border: 3px solid var(--yellow);
+      padding: 28px 24px;
+      box-shadow: 0 18px 50px rgba(0,0,0,0.28);
+      text-align: center;
+    }
+    .bookmark-card h2 {
+      border: none;
+      margin: 0 0 12px;
+      padding: 0;
+      font-size: 28px;
+      color: var(--navy);
+    }
+    .bookmark-card p {
+      font-size: 17px;
+      color: #334155;
+      margin-bottom: 12px;
+    }
+    .bookmark-tip {
+      background: var(--off-white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin: 16px 0 18px;
+      text-align: left;
+      font-size: 15px;
+      line-height: 1.55;
+      color: #334155;
+    }
+    .bookmark-actions {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .bookmark-actions button {
+      border: 0;
+      border-radius: 12px;
+      padding: 13px 18px;
+      font-size: 15px;
+      font-weight: 800;
+      cursor: pointer;
+      font-family: var(--font);
+    }
+    .bookmark-primary { background: var(--yellow); color: var(--navy); }
+    .bookmark-secondary { background: #e5e7eb; color: #0f172a; }
+
     /* ── FOOTER ───────────────────────────────────────── */
     .page-footer {
       background: var(--navy);
@@ -642,13 +734,26 @@
     <button class="print-btn" type="button" onclick="window.print()">🖨 Print Guide</button>
   </div>
 
+  <div class="resource-gate" id="resource-gate">
+    <div class="gate-card">
+      <h2>GET INSTANT ACCESS TO THIS SURVIVAL PLAN</h2>
+      <p>Enter your email and we’ll send you the access link right away so you can keep this plan handy for yourself and your family.</p>
+      <form class="newsletter-form" data-newsletter-form>
+        <input type="email" name="email" placeholder="Enter your best email" aria-label="Email address" required>
+        <button type="submit">SEND MY PLAN →</button>
+      </form>
+      <div class="newsletter-error" data-newsletter-error>Something went wrong. Please try again.</div>
+      <div class="newsletter-note">We’ll email your access link right away.</div>
+    </div>
+  </div>
+
   <!-- COVER PAGE -->
   <div class="cover">
     <span class="logo"><span class="scam">SCAM</span><span class="bomb-word">B<span class="bomb">💣</span>MB</span></span>
     <div class="tagline-sub">scambomb.com &nbsp;·&nbsp; Free Resource</div>
 
     <h1>Don't Let a Text<br><em>Steal Everything</em></h1>
-    <div class="sub-title">Your ScamBomb Survival Guide</div>
+    <div class="sub-title">Your ScamBomb Survival Plan</div>
 
     <div class="hook">
       A text message can drain $84,000 in 7 seconds.<br>
@@ -904,65 +1009,141 @@
     <a href="https://scambomb.com">ScamBomb.com</a> &nbsp;·&nbsp; Diffuse scams before they blow up in your face! 💙
   </footer>
 
+  <div class="bookmark-modal" id="bookmark-modal" aria-hidden="true">
+    <div class="bookmark-card">
+      <h2>BOOKMARK THIS PLAN NOW</h2>
+      <p>Save this page so you can pull it up fast whenever you or a family member needs it.</p>
+      <div class="bookmark-tip">
+        <strong>Desktop:</strong> Press <strong>Cmd + D</strong><br>
+        <strong>iPhone/iPad:</strong> Tap <strong>Share</strong> → <strong>Add Bookmark</strong> or <strong>Add to Favorites</strong><br>
+        <strong>Android:</strong> Tap the browser menu → <strong>Star</strong> or <strong>Bookmark</strong>
+      </div>
+      <div class="bookmark-actions">
+        <button type="button" class="bookmark-primary" data-bookmark-close>GOT IT</button>
+        <button type="button" class="bookmark-secondary" data-bookmark-dismiss>REMIND ME LATER</button>
+      </div>
+    </div>
+  </div>
+
   <script>
     (function () {
-      const form = document.querySelector('[data-newsletter-form]');
-      const errorEl = document.querySelector('[data-newsletter-error]');
-      if (!form) return;
-      form.addEventListener('submit', async function (e) {
-        e.preventDefault();
-        if (errorEl) errorEl.style.display = 'none';
-        const email = form.querySelector('input[name="email"]').value.trim();
-        if (!/.+@.+\..+/.test(email)) {
-          if (errorEl) errorEl.style.display = 'block';
-          return;
-        }
-        try {
-          const res = await fetch('https://backend.leadconnectorhq.com/forms/submit', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              location_id: 'DaQ8hQRpgjJ0fIdTGhuo',
-              id: 'fMvTbzE0i0SO5sTMPscV',
-              first_name: 'ScamBomb',
-              email,
-            }),
-          });
-          if (!res.ok) throw new Error('submit failed');
-          window.location.href = '/thank-you';
-        } catch (err) {
-          try {
-            const iframeName = 'ghl-newsletter-fallback';
-            let iframe = document.querySelector(`iframe[name="${iframeName}"]`);
-            if (!iframe) {
-              iframe = document.createElement('iframe');
-              iframe.name = iframeName;
-              iframe.style.display = 'none';
-              document.body.appendChild(iframe);
-            }
-            const fallbackForm = document.createElement('form');
-            fallbackForm.method = 'POST';
-            fallbackForm.action = 'https://api.leadconnectorhq.com/widget/form/fMvTbzE0i0SO5sTMPscV';
-            fallbackForm.target = iframeName;
-            fallbackForm.style.display = 'none';
-            const emailInput = document.createElement('input');
-            emailInput.type = 'hidden';
-            emailInput.name = 'email';
-            emailInput.value = email;
-            const firstNameInput = document.createElement('input');
-            firstNameInput.type = 'hidden';
-            firstNameInput.name = 'first_name';
-            firstNameInput.value = 'ScamBomb';
-            fallbackForm.appendChild(emailInput);
-            fallbackForm.appendChild(firstNameInput);
-            document.body.appendChild(fallbackForm);
-            fallbackForm.submit();
-            fallbackForm.remove();
-            window.location.href = '/thank-you';
-          } catch (_) {
+      const accessKeyName = 'scambomb_resource_access';
+      const bookmarkKey = 'scambomb-bookmark-' + window.location.pathname;
+      const params = new URLSearchParams(window.location.search);
+      const hasValidParam = params.get('resource_key_active') === 'true';
+      const hasAccessCookie = document.cookie.includes(accessKeyName + '=true');
+      const contentEls = [
+        document.querySelector('.cover'),
+        document.querySelector('.content'),
+        document.querySelector('.page-footer'),
+        document.querySelector('.print-cta-wrap')
+      ].filter(Boolean);
+      const gateEl = document.getElementById('resource-gate');
+      const bookmarkModal = document.getElementById('bookmark-modal');
+
+      function setAccessCookie() {
+        document.cookie = accessKeyName + '=true; max-age=' + (60 * 60 * 24 * 30) + '; path=/; SameSite=Lax';
+      }
+
+      function showContent() {
+        contentEls.forEach((el) => { el.style.display = ''; });
+        if (gateEl) gateEl.style.display = 'none';
+      }
+
+      function showGate() {
+        contentEls.forEach((el) => { el.style.display = 'none'; });
+        if (gateEl) gateEl.style.display = 'block';
+      }
+
+      function maybeShowBookmarkModal() {
+        if (!bookmarkModal) return;
+        if (window.localStorage.getItem(bookmarkKey) === 'dismissed') return;
+        bookmarkModal.classList.add('is-open');
+        bookmarkModal.setAttribute('aria-hidden', 'false');
+      }
+
+      function closeBookmarkModal(remember) {
+        if (!bookmarkModal) return;
+        if (remember) window.localStorage.setItem(bookmarkKey, 'dismissed');
+        bookmarkModal.classList.remove('is-open');
+        bookmarkModal.setAttribute('aria-hidden', 'true');
+      }
+
+      if (hasValidParam) {
+        setAccessCookie();
+        showContent();
+        history.replaceState(null, '', window.location.pathname + window.location.hash);
+        maybeShowBookmarkModal();
+      } else if (hasAccessCookie) {
+        showContent();
+      } else {
+        showGate();
+      }
+
+      document.querySelectorAll('[data-bookmark-close]').forEach((btn) => {
+        btn.addEventListener('click', function () { closeBookmarkModal(true); });
+      });
+      document.querySelectorAll('[data-bookmark-dismiss]').forEach((btn) => {
+        btn.addEventListener('click', function () { closeBookmarkModal(false); });
+      });
+
+      document.querySelectorAll('[data-newsletter-form]').forEach((form) => {
+        const errorEl = form.parentElement.querySelector('[data-newsletter-error]');
+        form.addEventListener('submit', async function (e) {
+          e.preventDefault();
+          if (errorEl) errorEl.style.display = 'none';
+          const email = form.querySelector('input[name="email"]').value.trim();
+          if (!/.+@.+\..+/.test(email)) {
             if (errorEl) errorEl.style.display = 'block';
+            return;
           }
-        }
+          try {
+            const res = await fetch('https://backend.leadconnectorhq.com/forms/submit', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                location_id: 'DaQ8hQRpgjJ0fIdTGhuo',
+                id: 'fMvTbzE0i0SO5sTMPscV',
+                first_name: 'ScamBomb',
+                email,
+              }),
+            });
+            if (!res.ok) throw new Error('submit failed');
+            window.location.href = '/thank-you';
+          } catch (err) {
+            try {
+              const iframeName = 'ghl-newsletter-fallback';
+              let iframe = document.querySelector(`iframe[name="${iframeName}"]`);
+              if (!iframe) {
+                iframe = document.createElement('iframe');
+                iframe.name = iframeName;
+                iframe.style.display = 'none';
+                document.body.appendChild(iframe);
+              }
+              const fallbackForm = document.createElement('form');
+              fallbackForm.method = 'POST';
+              fallbackForm.action = 'https://api.leadconnectorhq.com/widget/form/fMvTbzE0i0SO5sTMPscV';
+              fallbackForm.target = iframeName;
+              fallbackForm.style.display = 'none';
+              const emailInput = document.createElement('input');
+              emailInput.type = 'hidden';
+              emailInput.name = 'email';
+              emailInput.value = email;
+              const firstNameInput = document.createElement('input');
+              firstNameInput.type = 'hidden';
+              firstNameInput.name = 'first_name';
+              firstNameInput.value = 'ScamBomb';
+              fallbackForm.appendChild(emailInput);
+              fallbackForm.appendChild(firstNameInput);
+              document.body.appendChild(fallbackForm);
+              fallbackForm.submit();
+              fallbackForm.remove();
+              window.location.href = '/thank-you';
+            } catch (_) {
+              if (errorEl) errorEl.style.display = 'block';
+            }
+          }
+        });
       });
     })();
   </script>
