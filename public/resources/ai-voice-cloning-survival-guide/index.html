@@ -40,24 +40,41 @@
       -webkit-font-smoothing: antialiased;
     }
 
+    /* ── BACK BAR (MATCH CAREER CASE STUDY HEADER) ─────── */
     .back-bar {
       background: var(--navy);
-      padding: 10px 40px;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.12em;
+      padding: 18px 48px 16px 48px;
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 0.13em;
       text-transform: uppercase;
       display: flex;
-      gap: 16px;
+      gap: 24px;
       align-items: center;
+      border-bottom: 2px solid rgba(255,255,255,.14);
+      box-shadow: 0 2px 8px 0 rgba(0,0,0,0.04);
+      min-height: 48px;
     }
     .back-bar a { color: var(--yellow); text-decoration: none; }
     .back-bar a:hover { text-decoration: underline; }
     .back-bar .sep { color: rgba(255,255,255,0.2); }
-    .back-bar .brand-link { color: var(--white); }
+    .back-bar .brand-link {
+      color: var(--white);
+      font-weight: 900;
+      letter-spacing: 0.02em;
+      font-size: 2.2em;
+      display: flex;
+      align-items: center;
+      margin-right: 32px;
+      margin-bottom: 0;
+      line-height: 1.1;
+    }
     .back-bar .brand-link .scam { color: var(--white); }
     .back-bar .brand-link .bomb-word,
     .back-bar .brand-link .bomb { color: var(--yellow); }
+    @media (max-width: 600px) {
+      .back-bar { padding: 10px 12px; font-size: 11px; }
+    }
 
     .print-cta-wrap {
       text-align: center;
@@ -747,6 +764,8 @@
     <a href="/blog">Blog</a>
     <span class="sep">·</span>
     <a href="/blog/older-adult-fraud-report-2024-2025">Fraud Report 2024–2025</a>
+    <span style="flex:1"></span>
+    <a href="https://scambomb.beehiiv.com/subscribe" target="_blank" rel="noopener" class="newsletter-cta-link" style="background:var(--yellow);color:var(--navy);font-weight:900;padding:7px 18px;border-radius:999px;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;box-shadow:0 1px 4px 0 rgba(0,0,0,0.04);margin-left:18px;">Join Newsletter</a>
   </div>
 
   <div class="print-cta-wrap">
