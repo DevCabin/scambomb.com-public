@@ -64,17 +64,22 @@ function UniversalFooter() {
         </div>
         <div className="text-center md:text-left">
           <h4 className="font-semibold text-base mb-3">Newsletter</h4>
-          <div className="mt-2">
+          <p className="text-white/90 text-sm md:text-xs font-semibold">
+            🚨 Scammers are getting smarter every week. So are we.
+          </p>
+          <p className="mt-2 text-white/70 text-sm md:text-xs">
+            Join thousands of families getting weekly scam alerts, real stories, and simple protection tips — straight to your inbox.
+          </p>
+          <div className="mt-4">
             <a
               href="https://scambomb.beehiiv.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block text-lg md:text-sm font-bold md:font-semibold rounded-xl px-4 py-3 md:px-3 md:py-2 bg-[#F5C84C] text-[#0B1324] hover:bg-[#F5C84C]/90"
             >
-              Subscribe
+              → Keep my family protected
             </a>
           </div>
-          <p className="mt-3 text-white/60 text-sm md:text-xs">Cutting edge safety tips, once or twice a month. No spam. No scams!</p>
         </div>
       </div>
       <div className="border-t border-white/10 py-6 text-center text-xs text-white/60">© {new Date().getFullYear()} ScamBomb.com — All rights reserved.</div>
