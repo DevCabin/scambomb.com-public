@@ -33,6 +33,25 @@
 ### Why
 - Improve conversion intent/clarity on the homepage footer newsletter CTA.
 
+## 2026-05-22k — Outbound link UTM tagging + career-scam footer wordmark compliance
+
+### Updated
+- `public/career-scam-case-study/index.html`
+  - Footer brand link updated to match ScamBomb two-tone wordmark standard.
+  - Added `utm_source=scambomb.com` to outbound newsletter + ScamBomb.com links.
+
+- `public/resources/phishing-link-survival-guide/index.html`
+- `public/resources/dont-let-a-text-steal-everything/index.html`
+- `public/resources/ai-voice-cloning-survival-guide/index.html`
+  - Added `utm_source=scambomb.com` to all user-facing outbound links (Beehiiv, sources, FTC/FBI/reporting links, etc.).
+
+- `app/layout.tsx`
+  - Added `utm_source=scambomb.com` to the footer newsletter Beehiiv outbound link.
+
+### Why
+- Ensure consistent attribution for outbound traffic from ScamBomb public assets.
+- Enforce brand wordmark rules on campaign pages.
+
 ## 2026-05-22g — AI voice cloning guide: updated real scenario with new Philadelphia case
 
 ### Updated
