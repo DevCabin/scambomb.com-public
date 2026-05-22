@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-05-22f — Memory rhymes section updated with new safety rhymes
+
+### Updated
+- `public/resources/dont-let-a-text-steal-everything/index.html`
+  - Replaced the entire “Memory Rhymes to Keep You Safe” section with new, re-worked scam safety rhymes for improved clarity and memorability.
+
+### Why
+- Refreshes the rhymes with more direct, actionable language and memorable phrasing for readers.
+
 ## 2026-05-22 — Resource campaign gating rollout completed
 
 ### Updated
