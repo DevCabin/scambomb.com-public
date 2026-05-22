@@ -43,6 +43,18 @@
 - Prevent browser-default blue links from clashing with ScamBomb callout styling.
 - Keep resource source links visually consistent with the rest of the brand presentation.
 
+## 2026-05-22d — Text survival plan readability bump
+
+### Updated
+- `public/resources/dont-let-a-text-steal-everything/index.html`
+  - Increased overall typography slightly for easier reading.
+  - Bumped body text, hero headline/hook, section headings, checklist items, stats, and support text.
+  - Kept the existing layout and structure intact while making the page more comfortable to scan.
+
+### Why
+- Improve readability for adults who need reading glasses or want a more comfortable reading experience.
+- Preserve hierarchy while making the page feel less visually small.
+
 ## 2026-05-21 — Resource title fix
 - `public/resources/dont-let-a-text-steal-everything/index.html` — changed title to "Survival Plan" for GHL campaign consistency
 
