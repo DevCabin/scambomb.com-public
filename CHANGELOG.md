@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026-05-22 — Resource campaign gating rollout completed
+
+### Updated
+- `public/resources/ai-voice-cloning-survival-guide/index.html`
+- `public/resources/dont-let-a-text-steal-everything/index.html`
+- `public/resources/phishing-link-survival-guide/index.html`
+  - Standardized campaign-facing naming to **Survival Plan** in page titles/subtitles.
+  - Added `noindex, nofollow` meta tags so these resources are not intended for search indexing.
+  - Added simple query-param access gating using:
+    - `?resource_key_active=true`
+  - Added cookie persistence so validated visitors can return without re-entering from the email link every time.
+  - Added blocked-state fallback that hides the resource and shows the signup form again.
+  - Added a one-time bookmark prompt/modal for valid visitors so they can save the plan for family use.
+
+### Why
+- Support GHL email delivery with a lightweight access gate.
+- Keep the resources easy to distribute manually in email while reducing casual public exposure.
+- Encourage readers to bookmark the plans for future scam-response use.
+
 ## 2026-05-21 — Resource title fix
 - `public/resources/dont-let-a-text-steal-everything/index.html` — changed title to "Survival Plan" for GHL campaign consistency
 
