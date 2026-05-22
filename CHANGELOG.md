@@ -78,6 +78,22 @@
 - Reuse the existing working lead-capture flow instead of introducing a disconnected static form pattern.
 - Improve follow-up and retention opportunities from high-intent resource traffic.
 
+## 2026-05-21d — AI voice cloning guide print-layout refinement
+
+### Updated
+- `public/resources/ai-voice-cloning-survival-guide/index.html`
+  - Refined print-only CSS to reduce awkward section splits and improve printable handout rhythm.
+  - Hid the newly added newsletter CTA from print output so form UI does not disrupt pagination.
+  - Tightened print spacing for headings, paragraphs, and lists.
+  - Strengthened heading-to-content grouping and `break-inside` protection for key blocks, lists, and step sequences.
+  - Added more intentional page-break behavior for major print sections like the scam-mechanics box and the ScamBomb method block.
+  - Improved print block padding/margins so the printed layout feels more composed and less like a raw web export.
+
+### Why
+- Create a cleaner, more beautiful printable version for workshops and handouts.
+- Prevent awkward page breaks in critical reading sections.
+- Preserve senior readability while making pagination feel more intentional.
+
 ## 2026-04-29v — Jeff hero title line-break control
 
 ### Updated

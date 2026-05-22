@@ -441,9 +441,10 @@
 
       .back-bar,
       .print-cta-wrap,
-      .bonus-box { display: none !important; }
+      .bonus-box,
+      .newsletter-cta { display: none !important; }
 
-      body { font-size: 13pt; line-height: 1.45; }
+      body { font-size: 13pt; line-height: 1.42; }
 
       .cover {
         background: #fff !important;
@@ -473,9 +474,17 @@
       .content { max-width: none; margin: 0; padding: 0; }
       p, li { orphans: 3; widows: 3; }
 
+      p {
+        margin-bottom: 10pt;
+      }
+
+      ul {
+        margin-bottom: 10pt;
+      }
+
       h2 {
         font-size: 17pt;
-        margin: 16pt 0 8pt;
+        margin: 15pt 0 7pt;
         padding-bottom: 4pt;
         border-bottom: 1px solid #444;
         page-break-after: avoid;
@@ -485,9 +494,23 @@
       }
       h3 {
         font-size: 14pt;
-        margin: 12pt 0 6pt;
+        margin: 10pt 0 5pt;
         page-break-after: avoid;
         break-after: avoid-page;
+      }
+
+      h2 + p,
+      h2 + ul,
+      h3 + p,
+      h3 + ul,
+      h3 + .checklist,
+      h2 + .story-box,
+      h2 + .danger-box,
+      h2 + .action-box,
+      h2 + .report-box,
+      h2 + .scambomb-method {
+        break-before: avoid-page;
+        page-break-before: avoid;
       }
 
       .story-box,
@@ -502,6 +525,8 @@
         border-left-width: 4px !important;
         border-radius: 0;
         box-shadow: none;
+        margin: 10pt 0;
+        padding: 10pt 12pt;
       }
 
       .scambomb-method h2,
@@ -509,23 +534,65 @@
       .scambomb-method p,
       .scambomb-method .step-text,
       .scambomb-method .step-num { color: #111 !important; }
-      .scambomb-method .step-row { background: #fff !important; border: 1px solid #c9c9c9; }
+      .scambomb-method .step-row {
+        background: #fff !important;
+        border: 1px solid #c9c9c9;
+        break-inside: avoid-page;
+        margin: 8pt 0;
+        padding: 8pt 10pt;
+      }
 
       .story-box,
       .danger-box,
       .action-box,
       .report-box,
       .step-box,
-      .checklist li { break-inside: avoid-page; }
+      .checklist,
+      .checklist li,
+      .final-message { break-inside: avoid-page; }
 
-      h2 + .checklist,
-      h2 + p + .checklist {
+      .danger-box .step-box,
+      .action-box ul,
+      .report-box ul,
+      .story-box p,
+      .final-message p {
+        break-inside: avoid-page;
+      }
+
+      .step-box {
+        margin-bottom: 12pt;
+      }
+
+      .step-label {
+        background: #f5f5f5 !important;
+        color: #111 !important;
+        border-left: 3px solid #555 !important;
+        font-size: 11pt;
+        letter-spacing: 0.02em;
+        margin-bottom: 6pt;
+      }
+
+      .story-box {
+        margin-top: 0;
+      }
+
+      .danger-box {
         break-before: page;
         page-break-before: always;
       }
 
+      .scambomb-method {
+        break-before: page;
+        page-break-before: always;
+      }
+
+      .final-message {
+        break-before: avoid-page;
+        page-break-before: avoid;
+      }
+
       .page-footer {
-        margin-top: 12pt;
+        margin-top: 10pt;
         background: #fff !important;
         color: #444 !important;
         border-top: 1px solid #bbb;
