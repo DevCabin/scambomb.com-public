@@ -94,6 +94,23 @@
 - Prevent awkward page breaks in critical reading sections.
 - Preserve senior readability while making pagination feel more intentional.
 
+## 2026-05-21e — Print-layout refinement extended to remaining core resource guides
+
+### Updated
+- `public/resources/dont-let-a-text-steal-everything/index.html`
+- `public/resources/phishing-link-survival-guide/index.html`
+  - Applied the same print-quality cleanup used on the AI voice cloning guide.
+  - Hid newsletter CTA blocks from print output so form UI no longer clutters handouts.
+  - Tightened print spacing for headings, paragraphs, lists, and boxed sections.
+  - Improved `break-inside` protection for cards, lists, step groups, and closing sections.
+  - Added more intentional page-break handling for major sections to reduce awkward splits.
+  - Tuned print block margins/padding so the exported PDF feels more polished and deliberately laid out.
+
+### Why
+- Keep print quality consistent across the main ScamBomb resource handouts.
+- Reduce awkward pagination on the two remaining core guides.
+- Make all three flagship printable resources feel workshop-ready and senior-friendly.
+
 ## 2026-04-29v — Jeff hero title line-break control
 
 ### Updated
