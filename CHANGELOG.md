@@ -52,6 +52,15 @@
 - Ensure consistent attribution for outbound traffic from ScamBomb public assets.
 - Enforce brand wordmark rules on campaign pages.
 
+## 2026-05-22l — Placeholder route for Command Center thank-you path
+
+### Added
+- `app/thank-you/command-center/page.tsx`
+  - Blank white placeholder page for `/thank-you/command-center/`.
+
+### Why
+- Reserve the URL and keep it deployable while Command Center files/content are prepared.
+
 ## 2026-05-22g — AI voice cloning guide: updated real scenario with new Philadelphia case
 
 ### Updated
