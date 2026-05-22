@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-05-21 — Resource title fix
+- `public/resources/dont-let-a-text-steal-everything/index.html` — changed title to "Survival Plan" for GHL campaign consistency
+
 ## 2026-05-21 — Career scam case-study copy audit for public-facing senior-ready voice
 
 ### Updated
