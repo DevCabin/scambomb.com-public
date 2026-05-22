@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-05-22g — AI voice cloning guide: updated real scenario with new Philadelphia case
+
+### Updated
+- `public/resources/ai-voice-cloning-survival-guide/index.html`
+  - Replaced the “Real scenario” story with a new, sourced Philadelphia grandmother/granddaughter AI scam case and citation.
+
+### Why
+- Provides a more specific, recent, and sourced example for readers.
+
 ## 2026-05-22f — Memory rhymes section updated with new safety rhymes
 
 ### Updated
