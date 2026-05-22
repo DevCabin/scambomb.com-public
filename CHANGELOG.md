@@ -13,6 +13,16 @@
 - Keep brand/navigation consistent across campaign resource pages.
 - Provide a consistent newsletter join path from the top navigation.
 
+## 2026-05-22i — AI voice cloning cover sources repositioned
+
+### Updated
+- `public/resources/ai-voice-cloning-survival-guide/index.html`
+  - Centered the “Source 1 / Source 2 / Source 3” citations.
+  - Moved the citations to the bottom of the navy cover section for cleaner hero rhythm.
+
+### Why
+- Improve visual hierarchy on the cover while keeping citations clearly visible.
+
 ## 2026-05-22g — AI voice cloning guide: updated real scenario with new Philadelphia case
 
 ### Updated
