@@ -473,26 +473,9 @@
 
     .resource-gate {
       display: none;
-      position: fixed;
-      inset: 0;
-      z-index: 9998;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      background: rgba(11,19,36,0.35);
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
-    }
-    body.gate-is-open .cover,
-    body.gate-is-open .content,
-    body.gate-is-open .page-footer,
-    body.gate-is-open .print-cta-wrap,
-    body.gate-is-open main.wrap,
-    body.gate-is-open footer.page-footer {
-      filter: blur(6px);
-      opacity: 0.25;
-      pointer-events: none;
-      user-select: none;
+      max-width: 820px;
+      margin: 28px auto 0;
+      padding: 0 20px;
     }
     .gate-card {
       background: var(--navy);
@@ -501,8 +484,6 @@
       border-radius: 16px;
       padding: 32px 28px;
       text-align: center;
-      width: 100%;
-      max-width: 820px;
     }
     .gate-card h2 {
       color: var(--yellow);

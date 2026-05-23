@@ -42,20 +42,6 @@
   - reduced input/button sizing for cleaner horizontal fit
   - mobile behavior keeps stacked layout with equal full-width controls
 
-### Gate visual treatment follow-up (overlay blur pass)
-- Converted resource gate behavior from hard hide/show to overlay mode:
-  - content remains rendered behind the gate
-  - `body.gate-is-open` class now controls gated visual state
-- Added medium blur treatment (Option B) across all 4 gated pages:
-  - overlay scrim: `rgba(11,19,36,0.35)`
-  - backdrop blur: `6px`
-  - underlying content blur: `6px`
-  - underlying content opacity while gated: `0.25`
-- Updated shared gate script:
-  - `public/js/resource-gate.js`
-  - `showGate()` now sets `display:flex` on gate + applies `gate-is-open` class
-  - `showContent()` removes `gate-is-open` class and hides gate
-
 ## 2026-05-23 — Resource gate sync + redirect unification (3 resource guides + Career hub)
 
 ### Updated

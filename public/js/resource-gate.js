@@ -20,15 +20,13 @@
   }
 
   function showContent() {
-    document.body.classList.remove('gate-is-open');
     contentEls.forEach((el) => { el.style.display = ''; });
     if (gateEl) gateEl.style.display = 'none';
   }
 
   function showGate() {
-    document.body.classList.add('gate-is-open');
-    contentEls.forEach((el) => { el.style.display = ''; });
-    if (gateEl) gateEl.style.display = 'flex';
+    contentEls.forEach((el) => { el.style.display = 'none'; });
+    if (gateEl) gateEl.style.display = 'block';
   }
 
   function maybeShowBookmarkModal() {
