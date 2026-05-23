@@ -30,7 +30,9 @@
 
   function show(el) {
     if (!el) return;
-    el.style.display = '';
+    // Explicitly override CSS gates like `.cc-lock { display:none }` and
+    // `[data-cc-content] { display:none }`.
+    el.style.display = 'block';
   }
 
   function hide(el) {
