@@ -120,6 +120,16 @@
 - Some pages were rendering a blank navy background because both the lock state and content state were `display:none` and the script wasn’t overriding it.
 - After this fix, authorized users will reliably see the hub content, and unauthorized users will see the lock screen.
 
+## 2026-05-22q — GA4 enabled on Command Center static HTML pages
+
+### Updated
+- `public/thank-you/command-center/*.html`
+  - Added GA4 tag (gtag.js) with measurement ID `G-T61B4NX3J8` to each static Command Center page.
+
+### Notes
+- Next.js routes already include GA4 via `app/layout.tsx`.
+- Static HTML pages in `/public/...` do **not** automatically inherit `app/layout.tsx`, so they must include GA explicitly.
+
 ## 2026-05-22g — AI voice cloning guide: updated real scenario with new Philadelphia case
 
 ### Updated
