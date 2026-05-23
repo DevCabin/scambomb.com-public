@@ -251,6 +251,89 @@ Some marketing and product pages are built as standalone static HTML files in `p
 | `/testing` | `public/testing/index.html` | User testing intake form |
 | `/reports/older-adult-fraud-2024-2025` | `public/reports/older-adult-fraud-2024-2025/index.html` | Interactive fraud report |
 
+## 🔐 Resource Gate System (Unified)
+
+### Overview
+ScamBomb resource access is now standardized through one shared client-side gate script:
+
+- **Script file**: `public/js/resource-gate.js`
+- **Unlock query param**: `resource_key_active=true`
+- **Access cookie**: `scambomb_resource_access=true` (30 days)
+
+This replaced per-page inline gate scripts to keep logic consistent and reduce drift across resource pages.
+
+### Pages currently using the shared gate
+
+- `public/resources/dont-let-a-text-steal-everything/index.html`
+- `public/resources/ai-voice-cloning-survival-guide/index.html`
+- `public/resources/phishing-link-survival-guide/index.html`
+- `public/career-scam-case-study/index.html`
+
+### Required HTML contract
+
+For a page to work with `resource-gate.js`, include:
+
+1. A gate container:
+```html
+<div id="resource-gate" class="resource-gate">...</div>
+```
+
+2. One or more newsletter forms:
+```html
+<form data-newsletter-form>...
+  <input name="email" type="email" required />
+</form>
+<div data-newsletter-error>Something went wrong...</div>
+```
+
+3. Shared script include near end of `<body>`:
+```html
+<script src="/js/resource-gate.js"></script>
+```
+
+### Runtime behavior
+
+On page load:
+- If URL has `?resource_key_active=true`:
+  - set auth cookie
+  - show content, hide gate
+  - remove query string via `history.replaceState`
+  - optionally open bookmark helper modal (if present)
+- Else if auth cookie exists:
+  - show content, hide gate
+- Else:
+  - hide content, show gate
+
+### Redirect behavior after submit
+
+Both submit paths redirect to the same page with unlock param:
+
+- primary: `fetch('https://backend.leadconnectorhq.com/forms/submit', ... )`
+- fallback: hidden iframe form POST to `https://api.leadconnectorhq.com/widget/form/XbTyKHKvvW1Ad6zIG1A2`
+
+Redirect target is generated from current path:
+
+```js
+const currentPath = window.location.pathname;
+const successRedirect = currentPath + '?resource_key_active=true';
+window.location.href = successRedirect;
+```
+
+### Content selectors supported by shared gate
+
+The script currently supports both resource-guide and career-hub layouts by toggling:
+
+- `.cover`
+- `.content`
+- `.page-footer`
+- `.print-cta-wrap`
+- `main.wrap`
+- `footer.page-footer`
+
+### Operational note
+
+If GHL form-level redirect settings appear to be ignored, check page JS first. Client-side redirects in page scripts override GHL redirect config.
+
 ### Adding a New Static Page
 
 **Step 1: Create the HTML file in `public/`**

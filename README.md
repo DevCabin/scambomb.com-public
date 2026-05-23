@@ -37,8 +37,8 @@ ScamBomb analyzes suspicious messages (emails, texts, social media) and provides
 - **Deployment**: Vercel
 
 ### Content Management
-- **Blog System**: Contentlayer with MDX support
-- **Static Generation**: Next.js SSG for optimal performance
+- **Blog System**: Static Next.js App Router pages (file-based routing)
+- **Legacy MDX Content**: Historical `content/blog/*.mdx` files retained for reference
 
 ### Analytics & Tracking
 - **Google Analytics**: Modular implementation with GA4
@@ -56,9 +56,9 @@ ScamBomb analyzes suspicious messages (emails, texts, social media) and provides
 ```
 scambomb.com-public/
 ├── app/                          # Next.js App Router
-│   ├── blog/                     # Blog pages
+│   ├── blog/                     # Blog pages (static routes)
 │   │   ├── page.tsx             # Blog index
-│   │   └── [slug]/              # Individual blog posts
+│   │   └── */page.tsx           # Individual blog posts
 │   ├── email-to-scan/           # Email-to-scan feature page
 │   │   └── page.tsx             # Email forwarding instructions
 │   ├── extension/                # Chrome extension page
@@ -69,12 +69,12 @@ scambomb.com-public/
 │   └── page.tsx                 # Homepage
 ├── components/                   # Reusable components
 │   └── GoogleAnalytics.tsx      # GA4 implementation
-├── content/                      # Contentlayer content
-│   └── blog/                     # Blog posts (MDX)
+├── content/                      # Legacy content references
+│   └── blog/                     # Historical MDX source files
 ├── public/                       # Static assets
 │   └── logo.png                  # Site logo
 │   └── testing/                  # Static user testing form assets
-├── contentlayer.config.js        # Contentlayer configuration
+├── contentlayer.config.js        # Legacy config (not used by active blog routing)
 ├── next.config.js               # Next.js configuration
 ├── tailwind.config.js           # Tailwind CSS config
 └── package.json                 # Dependencies
@@ -99,14 +99,14 @@ scambomb.com-public/
 - **Interactive Elements**: Hover states and focus indicators
 - **Loading States**: Smooth transitions and feedback
 
-## 📋 Current Status: v1.4.0
+## 📋 Current Status: v2.3.0
 
 ### ✅ Completed Features
 - [x] Next.js 16 setup with App Router (security upgrades)
 - [x] Tailwind CSS styling with custom design system
 - [x] Montserrat font integration
 - [x] Responsive homepage with accessibility features
-- [x] Contentlayer blog system with sample posts
+- [x] Static blog routing (Contentlayer-independent) for reliable post availability
 - [x] Google Analytics GA4 (`G-T61B4NX3J8`) — sitewide via `app/layout.tsx`
 - [x] Facebook Pixel (`486466700592099`) — on `/protect-parents` and both Scam Jammer static pages
 - [x] Custom logo implementation
@@ -124,6 +124,19 @@ scambomb.com-public/
 - [x] **AI Clone Scam Jammer**: `/ai-clone-scam-jammer` — first paid product ($7 PDF, static HTML sales page)
 - [x] **Purchase Thank-You Page**: `/thank-you-scamjammer-purchase` — post-purchase confirmation with PDF download
 - [x] **`@vercel/analytics`**: Added as explicit dependency; Vercel Analytics + Speed Insights active
+- [x] **Resource Gate Unification**: Shared gate script + self-unlock redirect across 3 resource guides + Career Scam Case Study hub
+
+### ✅ Resource Access Gate (Current)
+- Shared script: `public/js/resource-gate.js`
+- Unlock param: `?resource_key_active=true`
+- Access cookie: `scambomb_resource_access=true` (30-day)
+- Success behavior: redirects back to same page with unlock param, then removes query string from address bar
+
+Covered pages:
+- `/resources/dont-let-a-text-steal-everything`
+- `/resources/ai-voice-cloning-survival-guide`
+- `/resources/phishing-link-survival-guide`
+- `/career-scam-case-study/index.html`
 
 ### ⚠️ Analytics Coverage Note
 - All **Next.js pages** receive GA4 automatically via `<GoogleAnalytics>` in `app/layout.tsx`
@@ -133,7 +146,7 @@ scambomb.com-public/
 
 ### 🚧 Known Issues
 - Some TypeScript type definitions incomplete
-- Contentlayer configuration may need optimization
+- Legacy Contentlayer artifacts remain in repo for historical compatibility
 - Static HTML pages in `public/reports/` and `public/resources/` do not yet have GA4/FB Pixel tracking
 
 ## 📋 Changelog
