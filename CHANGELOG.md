@@ -80,6 +80,20 @@
 - Prevent casual public access to paid Command Center pages while keeping delivery simple.
 - Provide a clean, branded entry point from the thank-you route.
 
+## 2026-05-22n — Single Stripe link unlocks both Command Center hubs
+
+### Updated
+- `app/thank-you/command-center/page.tsx`
+  - Added a one-link flow: the thank-you route now accepts `?cc=1&k=...`, sets the Command Center access cookie, and cleans the URL.
+  - After the cookie is set, users can open **both**:
+    - `scambomb_senior_tech_mega_hub.html`
+    - `scambomb_ai_prompts_hub.html`
+    without needing params on each link.
+
+### Why
+- Allows a single Stripe “success/thank-you” URL to unlock the entire bundle.
+- Keeps the customer-facing link and Stripe config as simple as possible.
+
 ## 2026-05-22g — AI voice cloning guide: updated real scenario with new Philadelphia case
 
 ### Updated
