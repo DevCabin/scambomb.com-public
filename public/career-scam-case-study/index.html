@@ -32,10 +32,10 @@
     .card{padding:18px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.04)} .card h3{margin:0 0 8px;color:var(--yellow);font-size:18px}
     .card p{margin:0;color:var(--muted);font-size:14px;line-height:1.45}
     .tag{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(245,200,76,.14);color:var(--yellow);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
-    .newsletter-form { display:flex; gap:12px; max-width:620px; margin:0 auto; flex-wrap:wrap; justify-content:center; }
-    .newsletter-form input { flex: 1 1 320px; min-width: 260px; border-radius: 12px; border: 2px solid transparent; padding: 15px 16px; font-size: 16px; font-family: Montserrat, sans-serif; color: var(--navy); }
+    .newsletter-form { display:flex; gap:10px; max-width:760px; margin:0 auto; flex-wrap:nowrap; justify-content:center; align-items:center; }
+    .newsletter-form input { flex: 1 1 auto; min-width: 0; border-radius: 12px; border: 2px solid transparent; padding: 13px 14px; font-size: 15px; font-family: Montserrat, sans-serif; color: var(--navy); }
     .newsletter-form input:focus { outline:none; border-color: var(--yellow); }
-    .newsletter-form button { border:0; border-radius:12px; padding:15px 22px; font-size:16px; font-weight:900; background:var(--yellow); color:var(--navy); cursor:pointer; font-family: Montserrat, sans-serif; }
+    .newsletter-form button { border:0; border-radius:12px; padding:13px 18px; font-size:15px; font-weight:900; background:var(--yellow); color:var(--navy); cursor:pointer; font-family: Montserrat, sans-serif; white-space: nowrap; }
     .newsletter-note,.newsletter-error { font-size:12px; margin-top:12px; text-align:center; }
     .newsletter-note { color: rgba(255,255,255,0.46); }
     .newsletter-error { color:#FCA5A5; display:none; }
@@ -101,7 +101,7 @@
         <button type="submit">GIVE ME INSTANT ACCESS →</button>
       </form>
       <div class="newsletter-error" data-newsletter-error>Something went wrong. Please try again.</div>
-      <div class="newsletter-note">We’ll email your access link right away.</div>
+      <div class="newsletter-note">We'll email you confirmation and links to more free resources.</div>
     </div>
   </div>
 

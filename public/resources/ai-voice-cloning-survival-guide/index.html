@@ -430,19 +430,20 @@
     }
     .newsletter-form {
       display: flex;
-      gap: 12px;
-      max-width: 620px;
+      gap: 10px;
+      max-width: 760px;
       margin: 0 auto;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
       justify-content: center;
+      align-items: center;
     }
     .newsletter-form input {
-      flex: 1 1 320px;
-      min-width: 260px;
+      flex: 1 1 auto;
+      min-width: 0;
       border-radius: 12px;
       border: 2px solid transparent;
-      padding: 15px 16px;
-      font-size: 16px;
+      padding: 13px 14px;
+      font-size: 15px;
       font-family: var(--font);
       color: var(--navy);
     }
@@ -453,13 +454,14 @@
     .newsletter-form button {
       border: 0;
       border-radius: 12px;
-      padding: 15px 22px;
-      font-size: 16px;
+      padding: 13px 18px;
+      font-size: 15px;
       font-weight: 900;
       background: var(--yellow);
       color: var(--navy);
       cursor: pointer;
       font-family: var(--font);
+      white-space: nowrap;
     }
     .newsletter-note,
     .newsletter-error {
@@ -746,6 +748,15 @@
     }
 
     @media (max-width: 600px) {
+      .newsletter-form {
+        flex-direction: column;
+        align-items: stretch;
+        max-width: 100%;
+      }
+      .newsletter-form input,
+      .newsletter-form button {
+        width: 100%;
+      }
       .cover { padding: 48px 24px 40px; }
       .cover h1 { font-size: 28px; }
       .cover .hook { padding: 20px; font-size: 18px; }
@@ -784,7 +795,7 @@
         <button type="submit">GIVE ME INSTANT ACCESS →</button>
       </form>
       <div class="newsletter-error" data-newsletter-error>Something went wrong. Please try again.</div>
-      <div class="newsletter-note">We’ll email your access link right away.</div>
+      <div class="newsletter-note">We'll email you confirmation and links to more free resources.</div>
     </div>
   </div>
 

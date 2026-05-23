@@ -33,6 +33,15 @@
   - reduced sentence length and removed extra wording
   - preserved the same core value props per page (voice, text, phishing, career hub)
 
+### Gate helper note + form layout follow-up
+- Updated gate helper microcopy on all 4 gates:
+  - from: `We’ll email your access link right away.`
+  - to: `We'll email you confirmation and links to more free resources.`
+- Adjusted gate form layout on all 4 gates:
+  - wider desktop row (input left, submit button right)
+  - reduced input/button sizing for cleaner horizontal fit
+  - mobile behavior keeps stacked layout with equal full-width controls
+
 ## 2026-05-23 — Resource gate sync + redirect unification (3 resource guides + Career hub)
 
 ### Updated
