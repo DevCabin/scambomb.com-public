@@ -65,6 +65,13 @@
   - added `contextmenu` listener with `preventDefault()` when `body.gate-is-open` is present
   - behavior automatically restores after unlock since blocking only runs in gated state.
 
+### Print logo color fix (3 resource guides)
+- Updated print-only CSS in the 3 resource guides so the `SCAM` wordmark text prints in brand navy instead of near-white:
+  - `public/resources/ai-voice-cloning-survival-guide/index.html`
+  - `public/resources/dont-let-a-text-steal-everything/index.html`
+  - `public/resources/phishing-link-survival-guide/index.html`
+- Scope is print-only (`@media print`) and does not alter on-screen logo colors.
+
 ## 2026-05-23 — Resource gate sync + redirect unification (3 resource guides + Career hub)
 
 ### Updated
