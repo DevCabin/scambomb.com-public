@@ -4,7 +4,7 @@ export const metadata = {
 }
 
 const CC_COOKIE_NAME = 'scambomb_cc_access'
-const CC_COOKIE_MAX_AGE_DAYS = 30
+const CC_COOKIE_MAX_AGE_DAYS = 365
 // Must match `public/thank-you/command-center/access.js`
 const CC_CURRENT_ACCESS_KEY = '202605_X9Q3P7'
 
@@ -81,7 +81,7 @@ export default function CommandCenterThankYouEntryPage() {
               <span className="font-bold text-yellow-300">1)</span> Use the full private link from your receipt/email (it contains access parameters).
             </li>
             <li>
-              <span className="font-bold text-yellow-300">2)</span> Once you’re in, your browser will remember you for 30 days.
+              <span className="font-bold text-yellow-300">2)</span> Once you’re in, your browser will remember you for 1 year.
             </li>
           </ul>
         </div>

@@ -6,7 +6,9 @@
   // NOTE: This is best-effort client-side gating (not true auth).
 
   const COOKIE_NAME = 'scambomb_cc_access';
-  const COOKIE_MAX_AGE_DAYS = 30;
+  // Keep this long to reduce friction for older adults.
+  // Note: this is still best-effort client-side gating.
+  const COOKIE_MAX_AGE_DAYS = 365;
 
   // Rotate monthly (or whenever) by changing this value.
   // Example format: YYYYMM_<random>
