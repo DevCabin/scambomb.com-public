@@ -107,6 +107,19 @@
 ### Why
 - Reduce friction for older adults so they aren’t forced to re-enter via the private link as often.
 
+## 2026-05-22p — Fix Command Center pages rendering blank after unlock
+
+### Fixed
+- `public/thank-you/command-center/access.js`
+  - `show()` now sets `display: block` instead of an empty string.
+  - This ensures the access script properly overrides the CSS gate rules:
+    - `.cc-lock { display: none; }`
+    - `[data-cc-content] { display: none; }`
+
+### Why
+- Some pages were rendering a blank navy background because both the lock state and content state were `display:none` and the script wasn’t overriding it.
+- After this fix, authorized users will reliably see the hub content, and unauthorized users will see the lock screen.
+
 ## 2026-05-22g — AI voice cloning guide: updated real scenario with new Philadelphia case
 
 ### Updated
