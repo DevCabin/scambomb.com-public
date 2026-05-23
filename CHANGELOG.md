@@ -1,5 +1,32 @@
 # Changelog
 
+## 2026-05-23 — Gate CTA + conversion copy refresh (4 resource gates)
+
+### Updated
+- `public/resources/ai-voice-cloning-survival-guide/index.html`
+  - Gate body copy rewritten to emphasize immediate unlock and specific value (verification script + family code word setup + exact response steps).
+  - Gate CTA button changed:
+    - `SEND MY PLAN →` → `GIVE ME INSTANT ACCESS →`
+
+- `public/resources/dont-let-a-text-steal-everything/index.html`
+  - Gate body copy rewritten for stronger FB conversion intent (top text scam patterns + what to reply/not reply + quick checklist value).
+  - Gate CTA button changed:
+    - `SEND MY PLAN →` → `GIVE ME INSTANT ACCESS →`
+
+- `public/resources/phishing-link-survival-guide/index.html`
+  - Gate body copy rewritten to stress urgent post-click recovery value (first 5 minutes + account lockdown + bank/credit protection).
+  - Gate CTA button changed:
+    - `SEND MY PLAN →` → `GIVE ME INSTANT ACCESS →`
+
+- `public/career-scam-case-study/index.html`
+  - Gate body copy rewritten to highlight hub value (real examples + red flags + share-ready assets).
+  - Gate CTA button changed:
+    - `SEND MY ACCESS LINK →` → `GIVE ME INSTANT ACCESS →`
+
+### Messaging intent
+- Removed “we’ll send you the access link” framing from gate hero copy.
+- Reframed all 4 gates around **instant on-page unlock** with stronger, benefit-led language for social/Facebook traffic.
+
 ## 2026-05-23 — Resource gate sync + redirect unification (3 resource guides + Career hub)
 
 ### Updated
