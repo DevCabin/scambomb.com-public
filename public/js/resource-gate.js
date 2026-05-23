@@ -27,6 +27,34 @@
     document.cookie = accessKeyName + '=true; max-age=' + (60 * 60 * 24 * 30) + '; path=/; SameSite=Lax';
   }
 
+  function getResourceFormConfig(pathname) {
+    if (pathname.includes('/resources/ai-voice-cloning-survival-guide')) {
+      return {
+        formId: 'kWxJbVTosuKXR0yIvSU1',
+        formName: 'ScamBomb - AI Voice Cloning Survival Guide Opt-in'
+      };
+    }
+
+    if (pathname.includes('/resources/phishing-link-survival-guide')) {
+      return {
+        formId: 'f62GQmkrmf5tSfGMzYGY',
+        formName: 'ScamBomb - Phishing Link Survival Guide Opt-in'
+      };
+    }
+
+    if (pathname.includes('/resources/dont-let-a-text-steal-everything')) {
+      return {
+        formId: 'XbTyKHKvvW1Ad6zIG1A2',
+        formName: "ScamBomb - Don't Let a Text Steal Everything Opt-in"
+      };
+    }
+
+    return {
+      formId: 'fMvTbzE0i0SO5sTMPscV',
+      formName: 'ScamBomb - Free Guide Opt-In'
+    };
+  }
+
   function showContent() {
     document.body.classList.remove('gate-is-open');
     contentEls.forEach((el) => { el.style.display = ''; });
@@ -85,6 +113,7 @@
       // Determine redirect URL
       const currentPath = window.location.pathname;
       const successRedirect = currentPath + (currentPath.includes('?') ? '&' : '?') + 'resource_key_active=true';
+      const formConfig = getResourceFormConfig(currentPath);
 
       try {
         const res = await fetch('https://backend.leadconnectorhq.com/forms/submit', {
@@ -92,7 +121,7 @@
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             location_id: 'DaQ8hQRpgjJ0fIdTGhuo',
-            id: 'fMvTbzE0i0SO5sTMPscV',
+            id: formConfig.formId,
             first_name: 'ScamBomb',
             email,
           }),
@@ -111,7 +140,7 @@
           }
           const fallbackForm = document.createElement('form');
           fallbackForm.method = 'POST';
-          fallbackForm.action = 'https://api.leadconnectorhq.com/widget/form/XbTyKHKvvW1Ad6zIG1A2';
+          fallbackForm.action = `https://api.leadconnectorhq.com/widget/form/${formConfig.formId}`;
           fallbackForm.target = iframeName;
           fallbackForm.style.display = 'none';
           const emailInput = document.createElement('input');

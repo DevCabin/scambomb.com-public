@@ -72,6 +72,17 @@
   - `public/resources/phishing-link-survival-guide/index.html`
 - Scope is print-only (`@media print`) and does not alter on-screen logo colors.
 
+### Resource gate form routing fix (resource-specific GHL workflows)
+- Updated `public/js/resource-gate.js` so each resource gate now submits to its own matching GHL form ID instead of using one generic form for all 3 guides.
+- New per-resource routing:
+  - AI Voice Cloning Survival Guide → `kWxJbVTosuKXR0yIvSU1`
+  - Don't Let a Text Steal Everything → `XbTyKHKvvW1Ad6zIG1A2`
+  - Phishing Link Survival Guide → `f62GQmkrmf5tSfGMzYGY`
+- Applied to both submission paths:
+  - primary JSON submit to `backend.leadconnectorhq.com/forms/submit`
+  - fallback widget POST to `api.leadconnectorhq.com/widget/form/{formId}`
+- This aligns page submissions with resource-specific GHL workflow triggers and should resolve the "No Enrollments found" mismatch caused by hardcoded generic form usage.
+
 ## 2026-05-23 — Resource gate sync + redirect unification (3 resource guides + Career hub)
 
 ### Updated
