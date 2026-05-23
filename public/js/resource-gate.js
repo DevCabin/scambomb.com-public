@@ -14,6 +14,14 @@
   ].filter(Boolean);
   const gateEl = document.getElementById('resource-gate');
   const bookmarkModal = document.getElementById('bookmark-modal');
+  
+  function blockContextMenuWhileGated(e) {
+    if (document.body.classList.contains('gate-is-open')) {
+      e.preventDefault();
+    }
+  }
+
+  document.addEventListener('contextmenu', blockContextMenuWhileGated);
 
   function setAccessCookie() {
     document.cookie = accessKeyName + '=true; max-age=' + (60 * 60 * 24 * 30) + '; path=/; SameSite=Lax';

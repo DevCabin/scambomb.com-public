@@ -60,6 +60,11 @@
 - Updated `public/resources/phishing-link-survival-guide/index.html` cover headline styling:
   - changed “Scam Link?” to brand gold (`var(--yellow)`) per visual request.
 
+### Gate interaction hardening (right-click while gated)
+- Updated `public/js/resource-gate.js` to disable right-click context menu while gate is active:
+  - added `contextmenu` listener with `preventDefault()` when `body.gate-is-open` is present
+  - behavior automatically restores after unlock since blocking only runs in gated state.
+
 ## 2026-05-23 — Resource gate sync + redirect unification (3 resource guides + Career hub)
 
 ### Updated
