@@ -61,6 +61,25 @@
 ### Why
 - Reserve the URL and keep it deployable while Command Center files/content are prepared.
 
+## 2026-05-22m — Senior Tech Command Center access gate + entry page
+
+### Added
+- `public/thank-you/command-center/`
+  - Added the initial Senior Tech Command Center static HTML bundle.
+  - Added `access.js` to handle lightweight access gating.
+  - Added lock-screen UI + content wrapper (`[data-cc-content]`) so paid resources are hidden unless authorized.
+
+### Updated
+- `app/thank-you/command-center/page.tsx`
+  - Replaced the blank placeholder with a real paid-access entry page linking to:
+    - `scambomb_senior_tech_mega_hub.html`
+    - `scambomb_ai_prompts_hub.html`
+  - Headings follow ScamBomb typography rule (ALL CAPS + two-tone white/yellow).
+
+### Why
+- Prevent casual public access to paid Command Center pages while keeping delivery simple.
+- Provide a clean, branded entry point from the thank-you route.
+
 ## 2026-05-22g — AI voice cloning guide: updated real scenario with new Philadelphia case
 
 ### Updated
