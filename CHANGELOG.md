@@ -94,6 +94,19 @@
 - Allows a single Stripe “success/thank-you” URL to unlock the entire bundle.
 - Keeps the customer-facing link and Stripe config as simple as possible.
 
+## 2026-05-22o — Command Center access cookie extended to 1 year
+
+### Updated
+- `public/thank-you/command-center/access.js`
+  - Increased `COOKIE_MAX_AGE_DAYS` from 30 → 365.
+
+- `app/thank-you/command-center/page.tsx`
+  - Increased thank-you route cookie lifetime to match (1 year).
+  - Updated the “remember you” help text to reflect 1-year access.
+
+### Why
+- Reduce friction for older adults so they aren’t forced to re-enter via the private link as often.
+
 ## 2026-05-22g — AI voice cloning guide: updated real scenario with new Philadelphia case
 
 ### Updated
