@@ -304,6 +304,12 @@ On page load:
 - Else:
   - hide content, show gate
 
+### Interaction hardening while gated
+
+- While `body.gate-is-open` is active, right-click context menu is disabled.
+- Implemented in `public/js/resource-gate.js` via a `contextmenu` listener that calls `preventDefault()` only in gated state.
+- After unlock, normal right-click behavior is restored.
+
 ### Redirect behavior after submit
 
 Both submit paths redirect to the same page with unlock param:

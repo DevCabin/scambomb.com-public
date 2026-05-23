@@ -131,6 +131,7 @@ scambomb.com-public/
 - Unlock param: `?resource_key_active=true`
 - Access cookie: `scambomb_resource_access=true` (30-day)
 - Success behavior: redirects back to same page with unlock param, then removes query string from address bar
+- Gated interaction rule: right-click context menu is disabled while `body.gate-is-open` is active (restores after unlock)
 
 Covered pages:
 - `/resources/dont-let-a-text-steal-everything`
