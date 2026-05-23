@@ -83,6 +83,12 @@
   - fallback widget POST to `api.leadconnectorhq.com/widget/form/{formId}`
 - This aligns page submissions with resource-specific GHL workflow triggers and should resolve the "No Enrollments found" mismatch caused by hardcoded generic form usage.
 
+### Resource gate trigger compatibility fix (widget submit as primary)
+- Updated `public/js/resource-gate.js` to use the GHL widget form POST path as the primary submission method for resource gates:
+  - `https://api.leadconnectorhq.com/widget/form/{formId}`
+- Removed `backend.leadconnectorhq.com/forms/submit` as the primary path for gated resources after audit indicated it may create contacts without firing the same "Form Submitted" workflow event as embedded/widget form submissions.
+- Resource gates still redirect to the same self-unlock URL after submit, but now do so through the workflow-compatible submission path first.
+
 ## 2026-05-23 — Resource gate sync + redirect unification (3 resource guides + Career hub)
 
 ### Updated

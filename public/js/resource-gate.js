@@ -116,50 +116,40 @@
       const formConfig = getResourceFormConfig(currentPath);
 
       try {
-        const res = await fetch('https://backend.leadconnectorhq.com/forms/submit', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            location_id: 'DaQ8hQRpgjJ0fIdTGhuo',
-            id: formConfig.formId,
-            first_name: 'ScamBomb',
-            email,
-          }),
-        });
-        if (!res.ok) throw new Error('submit failed');
-        window.location.href = successRedirect;
-      } catch (err) {
-        try {
-          const iframeName = 'ghl-newsletter-fallback';
-          let iframe = document.querySelector(`iframe[name="${iframeName}"]`);
-          if (!iframe) {
-            iframe = document.createElement('iframe');
-            iframe.name = iframeName;
-            iframe.style.display = 'none';
-            document.body.appendChild(iframe);
-          }
-          const fallbackForm = document.createElement('form');
-          fallbackForm.method = 'POST';
-          fallbackForm.action = `https://api.leadconnectorhq.com/widget/form/${formConfig.formId}`;
-          fallbackForm.target = iframeName;
-          fallbackForm.style.display = 'none';
-          const emailInput = document.createElement('input');
-          emailInput.type = 'hidden';
-          emailInput.name = 'email';
-          emailInput.value = email;
-          const firstNameInput = document.createElement('input');
-          firstNameInput.type = 'hidden';
-          firstNameInput.name = 'first_name';
-          firstNameInput.value = 'ScamBomb';
-          fallbackForm.appendChild(emailInput);
-          fallbackForm.appendChild(firstNameInput);
-          document.body.appendChild(fallbackForm);
-          fallbackForm.submit();
-          fallbackForm.remove();
-          window.location.href = successRedirect;
-        } catch (_) {
-          if (errorEl) errorEl.style.display = 'block';
+        const iframeName = 'ghl-newsletter-submit';
+        let iframe = document.querySelector(`iframe[name="${iframeName}"]`);
+        if (!iframe) {
+          iframe = document.createElement('iframe');
+          iframe.name = iframeName;
+          iframe.style.display = 'none';
+          document.body.appendChild(iframe);
         }
+
+        const submitForm = document.createElement('form');
+        submitForm.method = 'POST';
+        submitForm.action = `https://api.leadconnectorhq.com/widget/form/${formConfig.formId}`;
+        submitForm.target = iframeName;
+        submitForm.style.display = 'none';
+
+        const emailInput = document.createElement('input');
+        emailInput.type = 'hidden';
+        emailInput.name = 'email';
+        emailInput.value = email;
+
+        const firstNameInput = document.createElement('input');
+        firstNameInput.type = 'hidden';
+        firstNameInput.name = 'first_name';
+        firstNameInput.value = 'ScamBomb';
+
+        submitForm.appendChild(emailInput);
+        submitForm.appendChild(firstNameInput);
+        document.body.appendChild(submitForm);
+        submitForm.submit();
+        submitForm.remove();
+
+        window.location.href = successRedirect;
+      } catch (_) {
+        if (errorEl) errorEl.style.display = 'block';
       }
     });
   });
