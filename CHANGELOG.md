@@ -56,6 +56,10 @@
   - `showGate()` now applies `gate-is-open`, keeps content visible, and uses `display:flex`
   - `showContent()` removes `gate-is-open` and hides the gate
 
+### Phishing guide headline color tweak
+- Updated `public/resources/phishing-link-survival-guide/index.html` cover headline styling:
+  - changed “Scam Link?” to brand gold (`var(--yellow)`) per visual request.
+
 ## 2026-05-23 — Resource gate sync + redirect unification (3 resource guides + Career hub)
 
 ### Updated
