@@ -27,6 +27,12 @@
 - Removed “we’ll send you the access link” framing from gate hero copy.
 - Reframed all 4 gates around **instant on-page unlock** with stronger, benefit-led language for social/Facebook traffic.
 
+### Copy tightening follow-up
+- Tightened all 4 gate paragraphs for faster scanning:
+  - added explicit line breaks (`<br>`) after the “unlock instantly —” lead-in
+  - reduced sentence length and removed extra wording
+  - preserved the same core value props per page (voice, text, phishing, career hub)
+
 ## 2026-05-23 — Resource gate sync + redirect unification (3 resource guides + Career hub)
 
 ### Updated
