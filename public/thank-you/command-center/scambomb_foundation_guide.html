@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ScamBomb Foundation Guide — Mindset, Accessibility & Safety</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="/thank-you/command-center/access.js" defer></script>
+<style>
+:root {
+  --navy-deep: #0B1324;
+  --navy-primary: #0B1426;
+  --gold: #F5C84C;
+  --gold-bright: #FFD700;
+  --white: #FFFFFF;
+  --off-white: #F0F2F5;
+  --bg-body: #111827;
+  --bg-card: #151B2B;
+  --bg-card-hover: #1A2235;
+  --border-subtle: #2D3138;
+  --text-secondary: #9BA3AF;
+  --text-muted: #6B7280;
+  --success: #3DDC84;
+  --warning: #FBBF24;
+  --danger: #EF4444;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --shadow-soft: 0 4px 24px rgba(0,0,0,0.25);
+  --shadow-gold: 0 0 20px rgba(245,200,76,0.15);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 18px; }
+body {
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg-body);
+  color: var(--off-white);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ACCESS GATE */
+.cc-lock { display: none; max-width: 920px; margin: 0 auto; padding: 5rem 1.5rem 6rem; text-align: center; }
+.cc-lock-card { background: var(--bg-card); border: 2px solid rgba(245,200,76,0.35); border-radius: var(--radius-xl); box-shadow: var(--shadow-soft); padding: 2.5rem 2rem; }
+.cc-lock h1 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); font-weight: 900; text-transform: uppercase; line-height: 1.15; margin-bottom: 0.75rem; }
+.cc-lock h1 .w { color: var(--white); }
+.cc-lock h1 .g { color: var(--gold); }
+.cc-lock p { color: var(--text-secondary); font-size: 1.05rem; max-width: 680px; margin: 0.75rem auto 1.5rem; }
+.cc-lock .note { font-size: 0.9rem; color: rgba(255,255,255,0.55); margin-top: 0.9rem; }
+.cc-lock-actions { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; margin-top: 1.25rem; }
+.cc-lock-actions a { min-height: 46px; display: inline-flex; align-items: center; justify-content: center; padding: 0.9rem 1.35rem; border-radius: 999px; font-weight: 900; letter-spacing: 0.04em; text-transform: uppercase; text-decoration: none; }
+.cc-lock-primary { background: var(--gold); color: var(--navy-primary); box-shadow: 0 6px 20px rgba(245,200,76,0.22); }
+.cc-lock-secondary { border: 2px solid rgba(245,200,76,0.55); color: var(--gold); }
+[data-cc-content] { display: none; }
+img { max-width: 100%; display: block; }
+
+/* HEADER */
+.site-header {
+  background: var(--navy-primary);
+  border-bottom: 2px solid var(--gold);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+.brand-text {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  line-height: 1;
+}
+.brand-scam { color: var(--white); }
+.brand-bomb { color: var(--gold); }
+.brand-icon { font-size: 1.3rem; line-height: 1; }
+.brand-tagline {
+  font-size: 0.65rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-top: 0.15rem;
+  font-weight: 600;
+}
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.6rem 1.25rem;
+  background: transparent;
+  border: 2px solid var(--gold);
+  border-radius: var(--radius-xl);
+  color: var(--gold);
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  transition: all 0.2s;
+  min-height: 44px;
+}
+.back-btn:hover, .back-btn:focus {
+  background: rgba(245,200,76,0.15);
+  box-shadow: var(--shadow-gold);
+  outline: 3px solid var(--white);
+  outline-offset: 2px;
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(180deg, var(--navy-deep) 0%, var(--bg-body) 100%);
+  padding: 3rem 1.5rem 2.5rem;
+  text-align: center;
+  border-bottom: 1px solid var(--border-subtle);
+}
+.hero-inner { max-width: 800px; margin: 0 auto; }
+.hero-badge {
+  display: inline-block;
+  padding: 0.35rem 1rem;
+  background: rgba(245,200,76,0.12);
+  border: 1px solid rgba(245,200,76,0.3);
+  color: var(--gold);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: 100px;
+  margin-bottom: 1.25rem;
+}
+.hero h1 {
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+.hero h1 .text-white { color: var(--white); }
+.hero h1 .text-gold { color: var(--gold); }
+.hero-subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  color: var(--text-secondary);
+  font-weight: 500;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* MAIN */
+.main-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+/* SECTION */
+.guide-section {
+  margin-bottom: 3rem;
+  scroll-margin-top: 100px;
+}
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--gold);
+}
+.section-number {
+  width: 48px;
+  height: 48px;
+  background: var(--navy-primary);
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+.section-time {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 0.25rem;
+}
+
+/* BODY CONTENT */
+.guide-body p {
+  font-size: 1rem;
+  color: var(--off-white);
+  margin-bottom: 1.25rem;
+  line-height: 1.7;
+}
+.guide-body h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin: 2rem 0 1rem;
+}
+.guide-body ul, .guide-body ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.guide-body li {
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+  color: var(--off-white);
+}
+.guide-body strong {
+  color: var(--white);
+  font-weight: 700;
+}
+.guide-body code {
+  background: var(--navy-primary);
+  padding: 0.15rem 0.4rem;
+  border-radius: var(--radius-sm);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9em;
+  color: var(--success);
+}
+
+/* TIP BOX */
+.tip-box {
+  border-left: 4px solid var(--gold);
+  background: rgba(245,200,76,0.08);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
+}
+.tip-box-title {
+  color: var(--gold);
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.tip-box p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* WARNING BOX */
+.warning-box {
+  border-left: 4px solid var(--danger);
+  background: rgba(239,68,68,0.08);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
+}
+.warning-box-title {
+  color: var(--danger);
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.warning-box p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* CHECKLIST */
+.checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+}
+.checklist li {
+  position: relative;
+  padding: 0.75rem 0 0.75rem 2.25rem;
+  border-bottom: 1px solid var(--border-subtle);
+  color: var(--off-white);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+.checklist li::before {
+  content: "💣";
+  position: absolute;
+  left: 0;
+  top: 0.75rem;
+  color: var(--gold);
+  font-size: 1.2rem;
+  line-height: 1;
+}
+.checklist li strong {
+  color: var(--white);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.03em;
+}
+
+/* STEP CARDS */
+.step-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  transition: border-color 0.2s;
+}
+.step-card:hover {
+  border-color: rgba(245,200,76,0.25);
+}
+.step-number {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  background: var(--navy-primary);
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--gold);
+  margin-bottom: 0.75rem;
+}
+.step-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+.step-card p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* NAV */
+.section-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-subtle);
+}
+.nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.6rem 1.25rem;
+  background: var(--gold);
+  color: var(--navy-primary);
+  border: none;
+  border-radius: var(--radius-xl);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  min-height: 44px;
+}
+.nav-btn:hover {
+  background: var(--gold-bright);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(245,200,76,0.3);
+}
+.nav-btn.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.nav-btn-outline {
+  background: transparent;
+  border: 2px solid var(--gold);
+  color: var(--gold);
+}
+.nav-btn-outline:hover {
+  background: rgba(245,200,76,0.15);
+}
+
+/* CERTIFICATE */
+.certificate-wrap {
+  max-width: 800px;
+  margin: 4rem auto 2rem;
+  padding: 0 1.5rem;
+}
+.certificate {
+  background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy-primary) 100%);
+  border: 5px solid var(--gold);
+  border-radius: var(--radius-lg);
+  padding: 3rem 2.5rem;
+  text-align: center;
+  position: relative;
+  box-shadow: var(--shadow-gold);
+}
+.certificate::before {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border: 2px solid var(--gold);
+  border-radius: var(--radius-md);
+  pointer-events: none;
+  opacity: 0.4;
+}
+.cert-seal {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 1.5rem;
+  background: var(--navy-primary);
+  border: 3px solid var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+}
+.cert-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+.cert-subtitle {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+}
+.cert-name {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--white);
+  border-bottom: 2px solid var(--gold);
+  display: inline-block;
+  padding: 0 1rem 0.5rem;
+  margin-bottom: 1.5rem;
+  min-width: 300px;
+}
+.cert-id {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+.cert-date {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+.cert-helper {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-bottom: 1.5rem;
+}
+.cert-print-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.75rem 2rem;
+  background: var(--gold);
+  color: var(--navy-primary);
+  border: none;
+  border-radius: var(--radius-xl);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  transition: all 0.2s;
+  min-height: 44px;
+}
+.cert-print-btn:hover {
+  background: var(--gold-bright);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(245,200,76,0.3);
+}
+
+/* FOOTER */
+.site-footer {
+  background: var(--navy-primary);
+  border-top: 4px solid var(--gold);
+  padding: 2rem 1.5rem;
+  margin-top: 2rem;
+}
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  text-align: center;
+}
+@media (min-width: 640px) {
+  .footer-inner {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+}
+.footer-brand-text {
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+.footer-meta {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+}
+.footer-classification {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  border: 1px solid var(--border-subtle);
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* BACK TO TOP */
+.back-to-top {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 48px;
+  height: 48px;
+  background: var(--navy-primary);
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  text-decoration: none;
+  box-shadow: var(--shadow-gold);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s, transform 0.2s;
+  z-index: 90;
+  cursor: pointer;
+}
+.back-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+.back-to-top:hover {
+  transform: translateY(-3px);
+  background: rgba(245,200,76,0.1);
+}
+
+/* PRINT */
+@media print {
+  .site-header, .site-footer, .back-to-top, .cert-print-btn { display: none !important; }
+  body { background: #fff; color: #000; }
+  .hero { background: #fff; border-bottom: 2px solid #000; padding: 1rem; }
+  .hero h1 { color: #000; }
+  .hero h1 .text-white, .hero h1 .text-gold { color: #000; }
+  .guide-section { page-break-inside: avoid; }
+  .certificate { background: #fff; border: 3px solid #000; box-shadow: none; }
+  .certificate::before { display: none; }
+  .cert-name { color: #000; border-bottom-color: #000; }
+  .cert-title { color: #000; }
+  .cert-seal { border-color: #000; }
+  .step-card { background: #f5f5f5; border: 1px solid #ccc; }
+  .tip-box { background: #f9f9f9; border-left-color: #000; }
+  .warning-box { background: #fff5f5; border-left-color: #000; }
+  .checklist li::before { color: #000; }
+  .nav-btn { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+</style>
+</head>
+<body>
+
+  <!-- LOCK SCREEN (shown unless cc=1&k=... or access cookie exists) -->
+  <section class="cc-lock" data-cc-lock>
+    <div class="cc-lock-card">
+      <div class="hero-badge">PAID RESOURCE</div>
+      <h1><span class="w">FOUNDATION</span> <span class="g">FIELD GUIDE</span></h1>
+      <p>
+        This guide is locked because it’s part of the paid Command Center.
+        Use your private access link, or purchase access to continue.
+      </p>
+      <div class="cc-lock-actions">
+        <a class="cc-lock-primary" href="#" data-cc-checkout>GET ACCESS →</a>
+        <a class="cc-lock-secondary" href="/thank-you/command-center/">BACK TO THANK YOU PAGE</a>
+      </div>
+      <div class="note">Tip: If you purchased and can’t get in, double-check the full link from your email.</div>
+    </div>
+  </section>
+
+  <div data-cc-content>
+
+<!-- HEADER -->
+<header class="site-header" id="top">
+  <div class="header-inner">
+    <a href="scambomb_senior_tech_mega_hub.html" class="brand" aria-label="ScamBomb Home">
+      <div>
+        <div class="brand-text">
+          <span class="brand-scam">SCAM</span><span class="brand-bomb">B<span class="brand-icon">💣</span>MB</span>
+        </div>
+        <div class="brand-tagline">STAY SCAM-SMART</div>
+      </div>
+    </a>
+    <a href="scambomb_senior_tech_mega_hub.html" class="back-btn">← Back to Hub</a>
+  </div>
+</header>
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">FOUNDATION GUIDE | 2026</div>
+    <h1><span class="text-white">BUILD YOUR</span><br><span class="text-gold">DIGITAL FOUNDATION</span></h1>
+    <p class="hero-subtitle">Master the mindset, accessibility settings, and safety nets that make every other tech task easier.</p>
+  </div>
+</section>
+<main class="main-content">
+<section class="guide-section" id="mindset">
+  <div class="section-header">
+    <div class="section-number">1</div>
+    <div>
+      <div class="section-title">The Senior Tech Mindset Reset</div>
+      <div class="section-time">⏱ 15 min read</div>
+    </div>
+  </div>
+  <div class="guide-body">
+<p>Before you change a single setting, you need to change one belief: <strong>technology frustration is a design problem, not a you problem.</strong> The devices and apps you use were built by young people in a hurry. They are not intuitive by default. They are merely familiar to the people who built them.</p>
+
+<h4>🧠 The Three Core Beliefs</h4>
+<ul>
+<li><strong>Belief 1: Almost nothing is permanent.</strong> Every computer, phone, and tablet has an "undo" button. Deleted a photo? Check the Recently Deleted folder. Changed a setting and now nothing works? Change it back. You cannot break the internet by clicking the wrong button.</li>
+<li><strong>Belief 2: Confusion is data, not failure.</strong> When you feel stuck, write down exactly what you see on the screen. That note is worth more than any guess. Notes turn panic into data.</li>
+<li><strong>Belief 3: You are allowed to ask for help.</strong> Every tech company offers free support. Every library has a tech tutor. Every grandchild knows how to FaceTime. Asking is faster than suffering in silence.</li>
+</ul>
+
+<div class="tip-box">
+  <div class="tip-box-title">💡 The Golden Rule</div>
+  <p>When something goes wrong, ask yourself: "What changed?" The answer is almost always the last thing you touched, installed, or updated.</p>
+</div>
+
+<h4>📝 Build Your Tech Notebook</h4>
+<p>Buy a simple notebook. Label it "My Tech Log." Every time you solve a problem, write down:</p>
+<ol>
+<li>What the problem looked like (exact words on the screen)</li>
+<li>What you tried first</li>
+<li>What actually fixed it</li>
+<li>The date</li>
+</ol>
+<p>After three months, this notebook becomes your personal tech support database. You will reference it more than Google.</p>
+
+<h4>🛡️ The Safety-First Habit</h4>
+<p>Before you change anything significant — uninstall an app, update software, or tweak settings — do these two things:</p>
+<ul>
+<li><strong>Take a screenshot.</strong> On most devices, press the volume-up and power buttons together. Now you have a "before" picture.</li>
+<li><strong>Write down the current setting.</strong> If a toggle is ON, write "ON." If a number is 12, write "12." You can always put it back exactly as it was.</li>
+</ul>
+  </div>
+<div class="section-nav">
+  <span></span>
+  <a href="#accessibility" class="nav-btn">Next →</a>
+</div>
+</section>
+<section class="guide-section" id="accessibility">
+  <div class="section-header">
+    <div class="section-number">2</div>
+    <div>
+      <div class="section-title">The Accessibility Quick-Win Setup</div>
+      <div class="section-time">⏱ 20 min setup</div>
+    </div>
+  </div>
+  <div class="guide-body">
+<p>Your device was built for a 25-year-old with perfect vision and fast fingers. It is not set up for you — yet. These changes take about 20 minutes total and will make every interaction more comfortable.</p>
+
+<h4>📱 iPhone / iPad</h4>
+<div class="step-card">
+  <div class="step-number">1</div>
+  <div class="step-title">Increase Text Size</div>
+  <p>Settings → Display & Brightness → Text Size. Drag the slider to the right until text is comfortable across all apps. For even larger text, go to Settings → Accessibility → Display & Text Size → Larger Text and turn it on.</p>
+</div>
+<div class="step-card">
+  <div class="step-number">2</div>
+  <div class="step-title">Bold Text</div>
+  <p>Settings → Accessibility → Display & Text Size → Bold Text. Toggle it on. Your phone will restart once. After that, all text is thicker and easier to read.</p>
+</div>
+<div class="step-card">
+  <div class="step-number">3</div>
+  <div class="step-title">Increase Contrast</div>
+  <p>Settings → Accessibility → Display & Text Size → Increase Contrast. This makes buttons and borders stand out more clearly against backgrounds.</p>
+</div>
+<div class="step-card">
+  <div class="step-number">4</div>
+  <div class="step-title">LED Flash for Alerts</div>
+  <p>Settings → Accessibility → Audio/Visual → LED Flash for Alerts. Turn this on. Now your camera flash blinks when you get a call or text — perfect if you keep your phone face-down or in another room.</p>
+</div>
+<div class="step-card">
+  <div class="step-number">5</div>
+  <div class="step-title">Closed Captions</div>
+  <p>Settings → Accessibility → Subtitles & Captioning → Closed Captions + SDH. Turn it on. Videos in Safari, FaceTime, and most apps will now show captions automatically.</p>
+</div>
+
+<h4>💻 Windows Computer</h4>
+<div class="step-card">
+  <div class="step-number">1</div>
+  <div class="step-title">Scale Everything Larger</div>
+  <p>Settings → System → Display → Scale. Choose 125% or 150%. Everything — text, icons, buttons — gets bigger instantly. No restart required.</p>
+</div>
+<div class="step-card">
+  <div class="step-number">2</div>
+  <div class="step-title">High Contrast Mode</div>
+  <p>Settings → Accessibility → Contrast Themes. Pick "High Contrast" and click Apply. If you do not like it, switch back to "None." Nothing is permanent.</p>
+</div>
+<div class="step-card">
+  <div class="step-number">3</div>
+  <div class="step-title">Narrator (Screen Reader)</div>
+  <p>Settings → Accessibility → Narrator. Turn it on if you want the computer to read screen elements aloud. Press Ctrl + Windows + Enter to toggle it anytime.</p>
+</div>
+
+<h4>🍎 Mac Computer</h4>
+<div class="step-card">
+  <div class="step-number">1</div>
+  <div class="step-title">Display Zoom</div>
+  <p>System Settings → Displays → Resolution → Larger Text. The entire interface scales up. Menus, buttons, and windows all become easier to see.</p>
+</div>
+<div class="step-card">
+  <div class="step-number">2</div>
+  <div class="step-title">Increase Pointer Size</div>
+  <p>System Settings → Accessibility → Display → Pointer. Drag the size slider until you can find your cursor without hunting for it.</p>
+</div>
+
+<div class="tip-box">
+  <div class="tip-box-title">💡 Pro Tip</div>
+  <p>After making these changes, take a screenshot of each settings screen and email them to yourself. If an update ever resets something, you have a visual map of exactly how you had it.</p>
+</div>
+  </div>
+<div class="section-nav">
+  <a href="#mindset" class="nav-btn nav-btn-outline">← Previous</a>
+  <a href="#simplify" class="nav-btn">Next →</a>
+</div>
+</section>
+<section class="guide-section" id="simplify">
+  <div class="section-header">
+    <div class="section-number">3</div>
+    <div>
+      <div class="section-title">Interface Simplification</div>
+      <div class="section-time">⏱ 30 min cleanup</div>
+    </div>
+  </div>
+  <div class="guide-body">
+<p>Your home screen should feel like a clean desk, not a cluttered junk drawer. Every icon competes for your attention. Remove the competition.</p>
+
+<h4>📱 Step 1: The App Audit</h4>
+<p>Go through every app on your home screen. Ask one question: <strong>"Did I use this in the last 7 days?"</strong></p>
+<ul>
+<li>If YES: it stays on the home screen.</li>
+<li>If NO: remove it from the home screen. On iPhone, long-press the icon, tap "Remove App," then choose "Remove from Home Screen" (this keeps the app but hides it). On Android, long-press and drag to "Remove" — this also just removes the shortcut, not the app itself.</li>
+<li>If NEVER: uninstall it entirely. Long-press → Delete App. Free up space and mental clutter.</li>
+</ul>
+
+<h4>📱 Step 2: Folder Organization</h4>
+<p>Group remaining apps into clearly named folders. Do not overthink the names. Use plain English:</p>
+<ul>
+<li><strong>Talk</strong> — Phone, Messages, FaceTime, WhatsApp</li>
+<li><strong>Money</strong> — Banking, Credit Card, PayPal</li>
+<li><strong>Health</strong> — Pharmacy, Doctor Portal, Fitness</li>
+<li><strong>Photos</strong> — Camera, Photos, Google Photos</li>
+<li><strong>Tools</strong> — Maps, Weather, Calculator, Flashlight</li>
+</ul>
+<p>To create a folder: long-press an app, drag it on top of another app. The phone creates the folder automatically. Tap the name to rename it.</p>
+
+<h4>📝 Step 3: Create Printed Task Maps</h4>
+<p>Your phone can change overnight with an update. A laminated card on your desk cannot. For the three tasks you do most often — video calls, checking email, sending photos — write down the exact steps on paper.</p>
+<p>Use large handwriting. One step per line. Include the icon color and shape. For example:</p>
+<div class="tip-box">
+  <div class="tip-box-title">🗺️ Example: Video Call Map</div>
+  <p>1. Tap the <strong>green FaceTime</strong> icon<br>2. Tap the <strong>+</strong> at top right<br>3. Type <strong>"Sarah"</strong> and tap her name when it appears<br>4. Tap the <strong>video camera</strong> icon to start<br>5. Tap the <strong>red button</strong> to hang up</p>
+</div>
+
+<h4>🔕 Step 4: Notification Cleanup</h4>
+<p>Notifications are the enemy of focus. Go to Settings → Notifications. For every app that is not Phone, Messages, or a Health app, turn notifications OFF. Social media, games, shopping apps, and news apps do not need to interrupt your day.</p>
+<p>Leave ON: Phone, Messages, Calendar, Health/Medical apps, and Banking (for fraud alerts). Everything else OFF.</p>
+
+<h4>🌙 Step 5: Do Not Disturb Schedule</h4>
+<p>Set your phone to automatically go quiet at night:</p>
+<ul>
+<li><strong>iPhone:</strong> Settings → Focus → Do Not Disturb → Schedule. Set it for 9:00 PM to 7:00 AM. Allow calls from Favorites so family can still reach you in an emergency.</li>
+<li><strong>Android:</strong> Settings → Sound & Vibration → Do Not Disturb → Schedules. Set your sleep hours. Allow calls from contacts.</li>
+</ul>
+  </div>
+<div class="section-nav">
+  <a href="#accessibility" class="nav-btn nav-btn-outline">← Previous</a>
+  <a href="#safetynets" class="nav-btn">Next →</a>
+</div>
+</section>
+<section class="guide-section" id="safetynets">
+  <div class="section-header">
+    <div class="section-number">4</div>
+    <div>
+      <div class="section-title">Essential Safety Nets</div>
+      <div class="section-time">⏱ 25 min setup</div>
+    </div>
+  </div>
+  <div class="guide-body">
+<p>One lost phone. One spilled coffee on a laptop. One ransomware attack. These things happen every day. Safety nets mean you sleep soundly anyway.</p>
+
+<h4>☁️ Step 1: Turn On Cloud Backup</h4>
+<p>Cloud backup copies your photos, contacts, and settings to a secure server automatically. If your device breaks, your data is safe.</p>
+<ul>
+<li><strong>iPhone/iPad:</strong> Settings → [Your Name] → iCloud → iCloud Backup → Turn ON. Tap "Back Up Now" to force the first backup. Stay on Wi-Fi until it finishes.</li>
+<li><strong>Android:</strong> Settings → Google → Backup → Turn ON. Make sure "Back up to Google Drive" is enabled.</li>
+<li><strong>Windows:</strong> Settings → Accounts → Windows Backup → Turn ON "Remember my preferences" and "Back up my files to OneDrive."</li>
+<li><strong>Mac:</strong> System Settings → [Your Name] → iCloud → iCloud Drive → Turn ON. Check the box for every app you want backed up.</li>
+</ul>
+
+<div class="warning-box">
+  <div class="warning-box-title">⚠️ VERIFY IT WORKS</div>
+  <p>Backups are useless if they are broken. Once a month, log into your cloud account from a different device — a family member's phone, a library computer, or a tablet — and confirm you can see your photos and contacts. If you cannot, the backup failed and you need to fix it now.</p>
+</div>
+
+<h4>🔄 Step 2: Create System Restore Points</h4>
+<p>A restore point is a snapshot of your computer on a good day. If something breaks tomorrow, you can rewind to today.</p>
+<ul>
+<li><strong>Windows:</strong> In the search bar, type "Create a restore point." Click it. Select your main drive (usually C:), click "Configure," turn on system protection, and set max usage to 5%. Then click "Create" and name it "Before Big Change — [today's date]."</li>
+<li><strong>Mac:</strong> Macs use Time Machine. Connect an external USB drive. The Mac will ask if you want to use it for Time Machine. Say yes. From then on, it backs up hourly automatically.</li>
+</ul>
+
+<h4>🆘 Step 3: Set Up Account Recovery</h4>
+<p>Every account you own — email, banking, social media — has a "forgot password" flow. That flow usually sends a code to your phone or a backup email. Make sure those recovery paths actually work.</p>
+<ol>
+<li>Open your email account settings. Find "Security" or "Account Recovery."</li>
+<li>Add a backup email address (your spouse's, your child's, or a second email you own).</li>
+<li>Add a phone number for SMS recovery.</li>
+<li>Write down the backup email and phone number in your Tech Notebook.</li>
+</ol>
+
+<h4>👨‍👩‍👧 Step 4: The Trusted Contact</h4>
+<p>Pick one family member or close friend. Share with them:</p>
+<ul>
+<li>Your phone's lock screen passcode (sealed in an envelope if you prefer)</li>
+<li>The location of your Tech Notebook</li>
+<li>The name of your password manager (if you use one)</li>
+<li>Your primary doctor's phone number</li>
+</ul>
+<p>This is not about trust. It is about planning for the day you might need help. A locked phone with no recovery plan is a brick, not a safety net.</p>
+
+<h4>📋 Step 5: The Monthly Safety Check</h4>
+<p>Put a recurring calendar reminder for the first Sunday of every month. Label it "Safety Net Check." In 10 minutes, verify:</p>
+<ul class="checklist">
+  <li><strong>CLOUD BACKUP IS ON</strong> — Settings confirm it is active</li>
+  <li><strong>BACKUP IS RECENT</strong> — Last backup within the last 7 days</li>
+  <li><strong>RECOVERY INFO IS CURRENT</strong> — Phone number and email still valid</li>
+  <li><strong>TRUSTED CONTACT KNOWS LOCATION</strong> — Of notebook and password manager</li>
+  <li><strong>RESTORE POINT EXISTS</strong> — Computer has a recent restore point or Time Machine backup</li>
+</ul>
+  </div>
+<div class="section-nav">
+  <a href="#simplify" class="nav-btn nav-btn-outline">← Previous</a>
+  <span></span>
+</div>
+</section>
+</main>
+<div class="certificate-wrap" id="certificate">
+  <div class="certificate">
+    <div class="cert-seal">💣</div>
+    <div class="cert-title">Certificate of Completion</div>
+    <div class="cert-subtitle">ScamBomb Digital Self-Defense Division</div>
+    <div class="cert-helper">[ENTER YOUR NAME]</div>
+    <div class="cert-name" contenteditable="true">Your Name</div>
+    <div class="cert-id">SAPM-FDN-2026-<span contenteditable="true">XXX</span></div>
+    <div class="cert-date" id="certDate"></div>
+    <button class="cert-print-btn" onclick="window.print()">🖨️ Print Certificate</button>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-brand-text">
+        <span style="color: var(--white);">SCAM</span><span style="color: var(--gold);">B<span style="font-size:0.9em;">💣</span>MB</span>
+      </div>
+    </div>
+    <div class="footer-meta">
+      PROVIDED BY SCAMBOMB.COM · STAY SCAM-SMART
+    </div>
+    <div class="footer-classification">
+      CONFIDENTIAL — SCAMBOMB FIELD MANUAL
+    </div>
+  </div>
+</footer>
+
+<!-- BACK TO TOP -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+<script>
+// Back to top
+const backToTop = document.getElementById('backToTop');
+window.addEventListener('scroll', () => {
+  backToTop.classList.toggle('visible', window.scrollY > 500);
+});
+backToTop.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// Certificate date
+const dateEl = document.getElementById('certDate');
+if (dateEl) {
+  dateEl.textContent = new Date().toLocaleDateString('en-US', {
+    year: 'numeric', month: 'long', day: 'numeric'
+  });
+}
+</script>
+  <script>
+    (function () {
+      const checkoutUrl = ''; // TODO: set once pay.scambomb.com checkout exists
+      const el = document.querySelector('[data-cc-checkout]');
+      if (el && checkoutUrl) el.setAttribute('href', checkoutUrl);
+    })();
+  </script>
+
+  </div>
+
+</body>
+</html>

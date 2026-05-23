@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ScamBomb Slow Computer Guide — Speed, Freezes & Malware</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="/thank-you/command-center/access.js" defer></script>
+<style>
+:root {
+  --navy-deep: #0B1324;
+  --navy-primary: #0B1426;
+  --gold: #F5C84C;
+  --gold-bright: #FFD700;
+  --white: #FFFFFF;
+  --off-white: #F0F2F5;
+  --bg-body: #111827;
+  --bg-card: #151B2B;
+  --bg-card-hover: #1A2235;
+  --border-subtle: #2D3138;
+  --text-secondary: #9BA3AF;
+  --text-muted: #6B7280;
+  --success: #3DDC84;
+  --warning: #FBBF24;
+  --danger: #EF4444;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --shadow-soft: 0 4px 24px rgba(0,0,0,0.25);
+  --shadow-gold: 0 0 20px rgba(245,200,76,0.15);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 18px; }
+body {
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg-body);
+  color: var(--off-white);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ACCESS GATE */
+.cc-lock { display: none; max-width: 920px; margin: 0 auto; padding: 5rem 1.5rem 6rem; text-align: center; }
+.cc-lock-card { background: var(--bg-card); border: 2px solid rgba(245,200,76,0.35); border-radius: var(--radius-xl); box-shadow: var(--shadow-soft); padding: 2.5rem 2rem; }
+.cc-lock h1 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); font-weight: 900; text-transform: uppercase; line-height: 1.15; margin-bottom: 0.75rem; }
+.cc-lock h1 .w { color: var(--white); }
+.cc-lock h1 .g { color: var(--gold); }
+.cc-lock p { color: var(--text-secondary); font-size: 1.05rem; max-width: 680px; margin: 0.75rem auto 1.5rem; }
+.cc-lock .note { font-size: 0.9rem; color: rgba(255,255,255,0.55); margin-top: 0.9rem; }
+.cc-lock-actions { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; margin-top: 1.25rem; }
+.cc-lock-actions a { min-height: 46px; display: inline-flex; align-items: center; justify-content: center; padding: 0.9rem 1.35rem; border-radius: 999px; font-weight: 900; letter-spacing: 0.04em; text-transform: uppercase; text-decoration: none; }
+.cc-lock-primary { background: var(--gold); color: var(--navy-primary); box-shadow: 0 6px 20px rgba(245,200,76,0.22); }
+.cc-lock-secondary { border: 2px solid rgba(245,200,76,0.55); color: var(--gold); }
+[data-cc-content] { display: none; }
+img { max-width: 100%; display: block; }
+
+/* HEADER */
+.site-header {
+  background: var(--navy-primary);
+  border-bottom: 2px solid var(--gold);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+.brand-text {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  line-height: 1;
+}
+.brand-scam { color: var(--white); }
+.brand-bomb { color: var(--gold); }
+.brand-icon { font-size: 1.3rem; line-height: 1; }
+.brand-tagline {
+  font-size: 0.65rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-top: 0.15rem;
+  font-weight: 600;
+}
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.6rem 1.25rem;
+  background: transparent;
+  border: 2px solid var(--gold);
+  border-radius: var(--radius-xl);
+  color: var(--gold);
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  transition: all 0.2s;
+  min-height: 44px;
+}
+.back-btn:hover, .back-btn:focus {
+  background: rgba(245,200,76,0.15);
+  box-shadow: var(--shadow-gold);
+  outline: 3px solid var(--white);
+  outline-offset: 2px;
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(180deg, var(--navy-deep) 0%, var(--bg-body) 100%);
+  padding: 3rem 1.5rem 2.5rem;
+  text-align: center;
+  border-bottom: 1px solid var(--border-subtle);
+}
+.hero-inner { max-width: 800px; margin: 0 auto; }
+.hero-badge {
+  display: inline-block;
+  padding: 0.35rem 1rem;
+  background: rgba(245,200,76,0.12);
+  border: 1px solid rgba(245,200,76,0.3);
+  color: var(--gold);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: 100px;
+  margin-bottom: 1.25rem;
+}
+.hero h1 {
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+.hero h1 .text-white { color: var(--white); }
+.hero h1 .text-gold { color: var(--gold); }
+.hero-subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  color: var(--text-secondary);
+  font-weight: 500;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* MAIN */
+.main-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+/* SECTION */
+.guide-section {
+  margin-bottom: 3rem;
+  scroll-margin-top: 100px;
+}
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--gold);
+}
+.section-number {
+  width: 48px;
+  height: 48px;
+  background: var(--navy-primary);
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+.section-time {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 0.25rem;
+}
+
+/* BODY CONTENT */
+.guide-body p {
+  font-size: 1rem;
+  color: var(--off-white);
+  margin-bottom: 1.25rem;
+  line-height: 1.7;
+}
+.guide-body h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin: 2rem 0 1rem;
+}
+.guide-body ul, .guide-body ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.guide-body li {
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+  color: var(--off-white);
+}
+.guide-body strong {
+  color: var(--white);
+  font-weight: 700;
+}
+.guide-body code {
+  background: var(--navy-primary);
+  padding: 0.15rem 0.4rem;
+  border-radius: var(--radius-sm);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9em;
+  color: var(--success);
+}
+
+/* TIP BOX */
+.tip-box {
+  border-left: 4px solid var(--gold);
+  background: rgba(245,200,76,0.08);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
+}
+.tip-box-title {
+  color: var(--gold);
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.tip-box p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* WARNING BOX */
+.warning-box {
+  border-left: 4px solid var(--danger);
+  background: rgba(239,68,68,0.08);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
+}
+.warning-box-title {
+  color: var(--danger);
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.warning-box p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* CHECKLIST */
+.checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+}
+.checklist li {
+  position: relative;
+  padding: 0.75rem 0 0.75rem 2.25rem;
+  border-bottom: 1px solid var(--border-subtle);
+  color: var(--off-white);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+.checklist li::before {
+  content: "💣";
+  position: absolute;
+  left: 0;
+  top: 0.75rem;
+  color: var(--gold);
+  font-size: 1.2rem;
+  line-height: 1;
+}
+.checklist li strong {
+  color: var(--white);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.03em;
+}
+
+/* STEP CARDS */
+.step-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  transition: border-color 0.2s;
+}
+.step-card:hover {
+  border-color: rgba(245,200,76,0.25);
+}
+.step-number {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  background: var(--navy-primary);
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--gold);
+  margin-bottom: 0.75rem;
+}
+.step-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+.step-card p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* NAV */
+.section-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-subtle);
+}
+.nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.6rem 1.25rem;
+  background: var(--gold);
+  color: var(--navy-primary);
+  border: none;
+  border-radius: var(--radius-xl);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  min-height: 44px;
+}
+.nav-btn:hover {
+  background: var(--gold-bright);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(245,200,76,0.3);
+}
+.nav-btn.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.nav-btn-outline {
+  background: transparent;
+  border: 2px solid var(--gold);
+  color: var(--gold);
+}
+.nav-btn-outline:hover {
+  background: rgba(245,200,76,0.15);
+}
+
+/* CERTIFICATE */
+.certificate-wrap {
+  max-width: 800px;
+  margin: 4rem auto 2rem;
+  padding: 0 1.5rem;
+}
+.certificate {
+  background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy-primary) 100%);
+  border: 5px solid var(--gold);
+  border-radius: var(--radius-lg);
+  padding: 3rem 2.5rem;
+  text-align: center;
+  position: relative;
+  box-shadow: var(--shadow-gold);
+}
+.certificate::before {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border: 2px solid var(--gold);
+  border-radius: var(--radius-md);
+  pointer-events: none;
+  opacity: 0.4;
+}
+.cert-seal {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 1.5rem;
+  background: var(--navy-primary);
+  border: 3px solid var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+}
+.cert-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+.cert-subtitle {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+}
+.cert-name {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--white);
+  border-bottom: 2px solid var(--gold);
+  display: inline-block;
+  padding: 0 1rem 0.5rem;
+  margin-bottom: 1.5rem;
+  min-width: 300px;
+}
+.cert-id {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+.cert-date {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+.cert-helper {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-bottom: 1.5rem;
+}
+.cert-print-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.75rem 2rem;
+  background: var(--gold);
+  color: var(--navy-primary);
+  border: none;
+  border-radius: var(--radius-xl);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  transition: all 0.2s;
+  min-height: 44px;
+}
+.cert-print-btn:hover {
+  background: var(--gold-bright);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(245,200,76,0.3);
+}
+
+/* FOOTER */
+.site-footer {
+  background: var(--navy-primary);
+  border-top: 4px solid var(--gold);
+  padding: 2rem 1.5rem;
+  margin-top: 2rem;
+}
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  text-align: center;
+}
+@media (min-width: 640px) {
+  .footer-inner {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+}
+.footer-brand-text {
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+.footer-meta {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+}
+.footer-classification {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  border: 1px solid var(--border-subtle);
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* BACK TO TOP */
+.back-to-top {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 48px;
+  height: 48px;
+  background: var(--navy-primary);
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  text-decoration: none;
+  box-shadow: var(--shadow-gold);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s, transform 0.2s;
+  z-index: 90;
+  cursor: pointer;
+}
+.back-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+.back-to-top:hover {
+  transform: translateY(-3px);
+  background: rgba(245,200,76,0.1);
+}
+
+/* PRINT */
+@media print {
+  .site-header, .site-footer, .back-to-top, .cert-print-btn { display: none !important; }
+  body { background: #fff; color: #000; }
+  .hero { background: #fff; border-bottom: 2px solid #000; padding: 1rem; }
+  .hero h1 { color: #000; }
+  .hero h1 .text-white, .hero h1 .text-gold { color: #000; }
+  .guide-section { page-break-inside: avoid; }
+  .certificate { background: #fff; border: 3px solid #000; box-shadow: none; }
+  .certificate::before { display: none; }
+  .cert-name { color: #000; border-bottom-color: #000; }
+  .cert-title { color: #000; }
+  .cert-seal { border-color: #000; }
+  .step-card { background: #f5f5f5; border: 1px solid #ccc; }
+  .tip-box { background: #f9f9f9; border-left-color: #000; }
+  .warning-box { background: #fff5f5; border-left-color: #000; }
+  .checklist li::before { color: #000; }
+  .nav-btn { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+</style>
+</head>
+<body>
+
+  <!-- LOCK SCREEN (shown unless cc=1&k=... or access cookie exists) -->
+  <section class="cc-lock" data-cc-lock>
+    <div class="cc-lock-card">
+      <div class="hero-badge">PAID RESOURCE</div>
+      <h1><span class="w">SLOW COMPUTER</span> <span class="g">FIELD GUIDE</span></h1>
+      <p>
+        This guide is locked because it’s part of the paid Command Center.
+        Use your private access link, or purchase access to continue.
+      </p>
+      <div class="cc-lock-actions">
+        <a class="cc-lock-primary" href="#" data-cc-checkout>GET ACCESS →</a>
+        <a class="cc-lock-secondary" href="/thank-you/command-center/">BACK TO THANK YOU PAGE</a>
+      </div>
+      <div class="note">Tip: If you purchased and can’t get in, double-check the full link from your email.</div>
+    </div>
+  </section>
+
+  <div data-cc-content>
+
+<!-- HEADER -->
+<header class="site-header" id="top">
+  <div class="header-inner">
+    <a href="scambomb_senior_tech_mega_hub.html" class="brand" aria-label="ScamBomb Home">
+      <div>
+        <div class="brand-text">
+          <span class="brand-scam">SCAM</span><span class="brand-bomb">B<span class="brand-icon">💣</span>MB</span>
+        </div>
+        <div class="brand-tagline">STAY SCAM-SMART</div>
+      </div>
+    </a>
+    <a href="scambomb_senior_tech_mega_hub.html" class="back-btn">← Back to Hub</a>
+  </div>
+</header>
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">SLOW COMPUTER GUIDE | 2026</div>
+    <h1><span class="text-white">DIAGNOSE & FIX</span><br><span class="text-gold">ANY SLOWDOWN</span></h1>
+    <p class="hero-subtitle">From cluttered startup programs to hidden malware — restore speed without buying new hardware.</p>
+  </div>
+</section>
+<main class="main-content">
+<section class="guide-section" id="framework">
+  <div class="section-header">
+    <div class="section-number">1</div>
+    <div>
+      <div class="section-title">The Universal Troubleshooting Framework</div>
+      <div class="section-time">⏱ 10 min read</div>
+    </div>
+  </div>
+  <div class="guide-body">
+<p>When your computer acts up, panic is your worst enemy. This framework turns chaos into a checklist. Follow it in order. Do not skip steps.</p>
+
+<h4>🔍 Step 1: Check the Obvious First</h4>
+<p>Before you dive into settings or call for help, verify the basics:</p>
+<ul class="checklist">
+  <li><strong>POWER IS ON</strong> — Is the power light lit? Is the charger plugged in? Is the battery dead?</li>
+  <li><strong>NOT OVERHEATING</strong> — Is the fan loud? Is the bottom hot? Move it to a hard, flat surface. Soft beds and couches block air vents.</li>
+  <li><strong>TOO MANY TABS</strong> — Count your browser tabs. If you have more than 10, close the ones you are not using. Each tab eats memory.</li>
+  <li><strong>WHEN DID YOU LAST RESTART?</strong> — If the answer is "I don't remember," restart now. Sleep mode is not a restart.</li>
+</ul>
+
+<h4>🔄 Step 2: The Restart Hierarchy</h4>
+<p>Restart in this exact order. Stop when the problem goes away.</p>
+<ol>
+<li><strong>Restart the app.</strong> Close it completely and reopen it. On Windows, right-click the app icon on the taskbar and choose "Close window." On Mac, press Command + Q.</li>
+<li><strong>Restart the device.</strong> Full power off, wait 10 seconds, power on. Do not just close the lid.</li>
+<li><strong>Restart the network.</strong> Unplug your router and modem for 2 minutes, then plug them back in. See the Wi-Fi Guide for details.</li>
+<li><strong>Call for deeper help.</strong> If the first three steps did not fix it, you need a human. See the Trusted Help Directory in the Mega Hub.</li>
+</ol>
+
+<div class="tip-box">
+  <div class="tip-box-title">💡 The 80/20 Rule</div>
+  <p>Twenty percent of fixes solve eighty percent of slowdowns. The three fixes above — app restart, device restart, and network restart — solve the vast majority of problems you will ever face.</p>
+</div>
+
+<h4>📝 Step 3: Document Everything</h4>
+<p>Before you change anything, write it down. This turns panic into data. Your notes will help you, a family member, or a tech support person solve the problem faster.</p>
+<p>Write down:</p>
+<ul>
+<li>What the problem looks like (exact error messages, frozen screen, spinning wheel, etc.)</li>
+<li>What you were doing when it started</li>
+<li>Whether it is one program or everything</li>
+<li>When it started (today, after an update, gradually over weeks)</li>
+<li>What you have already tried</li>
+</ul>
+
+<h4>🧠 Step 4: The "What Changed?" Question</h4>
+<p>Computers do not break for no reason. Something changed. Ask yourself:</p>
+<ul>
+<li>Did I install new software?</li>
+<li>Did I update the operating system?</li>
+<li>Did I plug in a new device (printer, USB drive, webcam)?</li>
+<li>Did I change a setting I did not understand?</li>
+<li>Did someone else use the computer?</li>
+</ul>
+<p>The answer to "what changed?" is almost always the cause. Undo the change and see if the problem disappears.</p>
+  </div>
+<div class="section-nav">
+  <span></span>
+  <a href="#slow" class="nav-btn">Next →</a>
+</div>
+</section>
+<section class="guide-section" id="slow">
+  <div class="section-header">
+    <div class="section-number">2</div>
+    <div>
+      <div class="section-title">Fixing Slow Performance</div>
+      <div class="section-time">⏱ 30 min</div>
+    </div>
+  </div>
+  <div class="guide-body">
+<p>A slow computer feels like a broken computer, but it is usually just a cluttered one. These steps clean out the clutter and restore speed without buying new hardware.</p>
+
+<h4>🚀 Step 1: Disable Startup Programs</h4>
+<p>Every program that launches when you turn on the computer steals memory before you even open your first app.</p>
+<div class="step-card">
+  <div class="step-number">1</div>
+  <div class="step-title">Windows</div>
+  <p>Press Ctrl + Shift + Esc to open Task Manager. Click the "Startup" tab at the top. Look at the "Startup impact" column. Right-click anything rated "High" that you do not need immediately (Spotify, Adobe updater, game launchers) and choose "Disable." Do not disable your antivirus.</p>
+</div>
+<div class="step-card">
+  <div class="step-number">2</div>
+  <div class="step-title">Mac</div>
+  <p>System Settings → General → Login Items. Uncheck anything you do not need at startup. Common culprits: Dropbox, Adobe Creative Cloud, Steam, Zoom.</p>
+</div>
+
+<h4>🧹 Step 2: Run Disk Cleanup</h4>
+<p>Temporary files, old downloads, and system cache pile up over months. Disk Cleanup removes them safely.</p>
+<div class="step-card">
+  <div class="step-number">1</div>
+  <div class="step-title">Windows</div>
+  <p>Type "Disk Cleanup" in the search bar and open it. Select your main drive (C:). Check every box: Temporary files, Recycle Bin, Thumbnails, Delivery Optimization Files. Click "Clean up system files" and check the boxes again. Click OK. This can free 5–20 GB instantly.</p>
+</div>
+<div class="step-card">
+  <div class="step-number">2</div>
+  <div class="step-title">Mac</div>
+  <p>Click the Apple menu → About This Mac → More Info → Storage Settings. Click the "i" next to each category. Review Downloads, Trash, and Large Files. Delete what you do not need.</p>
+</div>
+
+<div class="warning-box">
+  <div class="warning-box-title">⚠️ SSD vs. HDD</div>
+  <p>If your computer has an <strong>SSD</strong> (solid-state drive, common in computers made after 2015), <strong>never defragment it.</strong> Defragmentation wears out SSDs. Use "Optimize Drives" instead — Windows does this automatically. If you have an older <strong>HDD</strong> (hard disk drive), defragmentation can help. Type "Defrag" in the search bar and run it monthly.</p>
+</div>
+
+<h4>🌐 Step 3: Limit Browser Tabs</h4>
+<p>Every open tab uses memory. Ten tabs can consume more RAM than your entire operating system. Give yourself a five-tab maximum. If you need to save a page for later, use a bookmark or a read-later service like Pocket — do not keep the tab open.</p>
+<p>To audit extensions: In Chrome, click the puzzle piece icon → Manage Extensions. Remove anything you do not recognize or use. Extensions are a common source of slowdowns and privacy leaks.</p>
+
+<h4>📁 Step 4: Enable Storage Sense (Windows) or Optimize Storage (Mac)</h4>
+<p>These features automatically clean up old files so you never have to think about it again.</p>
+<ul>
+<li><strong>Windows:</strong> Settings → System → Storage → Storage Sense → Turn ON. Set it to run every month and delete temporary files and Recycle Bin items older than 30 days.</li>
+<li><strong>Mac:</strong> System Settings → General → Storage → Turn ON "Empty Trash automatically" and "Reduce clutter."</li>
+</ul>
+
+<h4>🔥 Step 5: Check for Overheating</h4>
+<p>A hot computer slows itself down on purpose to avoid damage. If your laptop feels like a stovetop:</p>
+<ul>
+<li>Move it to a hard, flat desk. Beds, couches, and laps block air vents.</li>
+<li>Blow compressed air into the vents to clear dust. Do this outdoors — dust flies everywhere.</li>
+<li>Consider a laptop cooling pad ($15–$30). It sits under the laptop and adds extra fans.</li>
+</ul>
+  </div>
+<div class="section-nav">
+  <a href="#framework" class="nav-btn nav-btn-outline">← Previous</a>
+  <a href="#freezes" class="nav-btn">Next →</a>
+</div>
+</section>
+<section class="guide-section" id="freezes">
+  <div class="section-header">
+    <div class="section-number">3</div>
+    <div>
+      <div class="section-title">Handling Freezes and Crashes</div>
+      <div class="section-time">⏱ 15 min</div>
+    </div>
+  </div>
+  <div class="guide-body">
+<p>A frozen screen does not mean your computer is broken. It means one app is misbehaving. Learn to kill the app without killing the whole machine.</p>
+
+<h4>🛑 Step 1: Force-Close One App</h4>
+<p>Before you restart the entire computer, try closing just the frozen app. This saves your work in every other program.</p>
+<div class="step-card">
+  <div class="step-number">1</div>
+  <div class="step-title">Windows: Task Manager</div>
+  <p>Press <strong>Ctrl + Shift + Esc</strong> (all three at once). This opens Task Manager directly — no need for Ctrl + Alt + Delete. Find the frozen app in the list. It may say "Not Responding." Click it, then click "End task." Wait 10 seconds. If the app closes, save your work in other programs and reopen the frozen app.</p>
+</div>
+<div class="step-card">
+  <div class="step-number">2</div>
+  <div class="step-title">Mac: Force Quit</div>
+  <p>Press <strong>Command + Option + Esc</strong>. A window pops up showing all open apps. Select the frozen one and click "Force Quit." If the entire Mac is frozen and this does not work, hold the power button for 10 seconds to force a shutdown.</p>
+</div>
+
+<h4>💾 Step 2: The Save Habit</h4>
+<p>The best defense against crashes is not software. It is a finger habit. Press <strong>Ctrl + S</strong> (Windows) or <strong>Command + S</strong> (Mac) every few minutes. In Word, Google Docs, and most email programs, this takes half a second and saves hours of reconstruction.</p>
+<div class="tip-box">
+  <div class="tip-box-title">💡 Make It Automatic</div>
+  <p>Most modern programs auto-save. In Microsoft Word, go to File → Options → Save → check "AutoSave OneDrive and SharePoint Online files by default on Word." In Google Docs, auto-save is always on. But do not rely on it alone. Ctrl + S is your insurance policy.</p>
+</div>
+
+<h4>🔄 Step 3: When the Whole Machine Freezes</h4>
+<p>If the mouse does not move, the keyboard does nothing, and Task Manager will not open, the entire operating system is stuck.</p>
+<ol>
+<li><strong>Wait 60 seconds.</strong> Sometimes the computer is just thinking hard. Give it a full minute before you panic.</li>
+<li><strong>Try Ctrl + Alt + Delete.</strong> On Windows, this sometimes breaks through a freeze and shows a blue screen with options. Choose "Task Manager."</li>
+<li><strong>Hard power off.</strong> Hold the power button for 10 seconds. The screen goes black. Wait 10 more seconds. Press the power button once to restart. You will lose unsaved work, but the hardware is unharmed.</li>
+</ol>
+
+<h4>🧊 Step 4: Preventing Future Freezes</h4>
+<p>Freezes usually happen for one of three reasons:</p>
+<ul>
+<li><strong>Memory is full.</strong> Close unused programs and browser tabs. Consider upgrading RAM if you have less than 8 GB.</li>
+<li><strong>One app is buggy.</strong> If the same app freezes repeatedly, uninstall it and reinstall the latest version from the official website.</li>
+<li><strong>The computer is overheating.</strong> See the Slow Performance section for cooling tips.</li>
+</ul>
+  </div>
+<div class="section-nav">
+  <a href="#slow" class="nav-btn nav-btn-outline">← Previous</a>
+  <a href="#malware" class="nav-btn">Next →</a>
+</div>
+</section>
+<section class="guide-section" id="malware">
+  <div class="section-header">
+    <div class="section-number">4</div>
+    <div>
+      <div class="section-title">When Slowness Means Malware</div>
+      <div class="section-time">⏱ 1-2 hours</div>
+    </div>
+  </div>
+  <div class="guide-body">
+<p>Sometimes a slow computer is not cluttered — it is infected. Malware (viruses, spyware, ransomware) can hide for weeks before you notice. Know the warning signs and act fast.</p>
+
+<h4>🚨 The Warning Signs</h4>
+<p>One symptom alone does not mean infection. But if you see three or more of these together, assume the worst and act immediately:</p>
+<ul class="checklist">
+  <li><strong>SUDDEN SLOWDOWN</strong> — Computer was fine yesterday, unusable today</li>
+  <li><strong>POP-UPS EVERYWHERE</strong> — Ads appear even when the browser is closed</li>
+  <li><strong>HOMEPAGE CHANGED</strong> — Your usual search engine is now something you have never heard of</li>
+  <li><strong>NEW TOOLBARS</strong> — Extra buttons appeared in your browser that you did not install</li>
+  <li><strong>UNKNOWN PROGRAMS</strong> — Apps in your Start menu or Applications folder you do not recognize</li>
+  <li><strong>BATTERY DRAINS FAST</strong> — Malware runs in the background, consuming power</li>
+  <li><strong>FRIENDS GET WEIRD EMAILS</strong> — Your email account is sending spam without your knowledge</li>
+</ul>
+
+<h4>🛡️ Step 1: Run Windows Defender (Windows) or XProtect (Mac)</h4>
+<p>Every modern computer comes with built-in antivirus. Use it first.</p>
+<div class="step-card">
+  <div class="step-number">1</div>
+  <div class="step-title">Windows Defender</div>
+  <p>Type "Windows Security" in the search bar and open it. Click "Virus & threat protection" → "Quick scan." If it finds threats, let it remove them. Then run a "Full scan" — this takes 1-2 hours but checks every file. Leave the computer plugged in and do not use it during the scan.</p>
+</div>
+<div class="step-card">
+  <div class="step-number">2</div>
+  <div class="step-title">Mac XProtect</div>
+  <p>Macs do not have a manual scan button, but XProtect runs automatically in the background. To force a check, restart your Mac while holding the Shift key (Safe Mode). The system runs a basic diagnostic during startup. Restart normally afterward.</p>
+</div>
+
+<h4>🔍 Step 2: Run Malwarebytes for a Second Opinion</h4>
+<p>No single antivirus catches everything. Malwarebytes is the gold standard for a second scan. It is free for manual scans.</p>
+<ol>
+<li>Go to <strong>malwarebytes.com</strong> on your phone (not the infected computer, in case the browser is hijacked).</li>
+<li>Download the free version.</li>
+<li>Install it on the infected computer.</li>
+<li>Run a "Threat Scan." This takes 15-30 minutes.</li>
+<li>If it finds threats, click "Quarantine" and then "Restart" when prompted.</li>
+</ol>
+
+<div class="warning-box">
+  <div class="warning-box-title">⚠️ The Two-Scan Rule</div>
+  <p>Always run two different scanners. Windows Defender catches about 95% of threats. Malwarebytes catches a different 95%. Running both gives you 99.75% coverage. Never rely on just one.</p>
+</div>
+
+<h4>🔄 Step 3: Reset Your Browser</h4>
+<p>Malware often hijacks your browser settings — homepage, search engine, and extensions. Even after removing the malware, the browser may still be compromised.</p>
+<ul>
+<li><strong>Chrome:</strong> Settings → Reset settings → Restore settings to their original defaults.</li>
+<li><strong>Edge:</strong> Settings → Reset settings → Restore settings to their default values.</li>
+<li><strong>Safari:</strong> Safari menu → Settings → Privacy → Manage Website Data → Remove All. Then Settings → Extensions → uninstall anything you do not recognize.</li>
+</ul>
+
+<h4>🆘 Step 4: When to Escalate Immediately</h4>
+<p>Some infections are beyond home repair. Call a professional if you see any of these:</p>
+<ul>
+<li><strong>Ransomware message:</strong> A screen says your files are encrypted and demands payment in Bitcoin. Do not pay. Turn off the computer immediately and call a data recovery specialist.</li>
+<li><strong>Banking login stolen:</strong> You see transactions you did not make. Call your bank's fraud line immediately — before you do anything else.</li>
+<li><strong>Identity theft signs:</strong> New credit cards arrive in the mail that you did not apply for. File a police report and contact the three credit bureaus to freeze your credit.</li>
+</ul>
+
+<div class="tip-box">
+  <div class="tip-box-title">💡 Prevention Is the Best Cure</div>
+  <p>After you clean the infection, prevent the next one: keep your operating system updated, use a password manager so you do not reuse passwords, enable MFA on every account, and never click links in unexpected emails or texts. See the Password Playbook and Foundation Guide for details.</p>
+</div>
+  </div>
+<div class="section-nav">
+  <a href="#freezes" class="nav-btn nav-btn-outline">← Previous</a>
+  <span></span>
+</div>
+</section>
+</main>
+<div class="certificate-wrap" id="certificate">
+  <div class="certificate">
+    <div class="cert-seal">💣</div>
+    <div class="cert-title">Certificate of Completion</div>
+    <div class="cert-subtitle">ScamBomb Digital Self-Defense Division</div>
+    <div class="cert-helper">[ENTER YOUR NAME]</div>
+    <div class="cert-name" contenteditable="true">Your Name</div>
+    <div class="cert-id">SAPM-SLW-2026-<span contenteditable="true">XXX</span></div>
+    <div class="cert-date" id="certDate"></div>
+    <button class="cert-print-btn" onclick="window.print()">🖨️ Print Certificate</button>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-brand-text">
+        <span style="color: var(--white);">SCAM</span><span style="color: var(--gold);">B<span style="font-size:0.9em;">💣</span>MB</span>
+      </div>
+    </div>
+    <div class="footer-meta">
+      PROVIDED BY SCAMBOMB.COM · STAY SCAM-SMART
+    </div>
+    <div class="footer-classification">
+      CONFIDENTIAL — SCAMBOMB FIELD MANUAL
+    </div>
+  </div>
+</footer>
+
+<!-- BACK TO TOP -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+<script>
+// Back to top
+const backToTop = document.getElementById('backToTop');
+window.addEventListener('scroll', () => {
+  backToTop.classList.toggle('visible', window.scrollY > 500);
+});
+backToTop.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// Certificate date
+const dateEl = document.getElementById('certDate');
+if (dateEl) {
+  dateEl.textContent = new Date().toLocaleDateString('en-US', {
+    year: 'numeric', month: 'long', day: 'numeric'
+  });
+}
+</script>
+  <script>
+    (function () {
+      const checkoutUrl = ''; // TODO: set once pay.scambomb.com checkout exists
+      const el = document.querySelector('[data-cc-checkout]');
+      if (el && checkoutUrl) el.setAttribute('href', checkoutUrl);
+    })();
+  </script>
+
+  </div>
+
+</body>
+</html>

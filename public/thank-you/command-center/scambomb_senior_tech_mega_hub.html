@@ -1,0 +1,2725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ScamBomb Senior Tech Mega Hub — Guides, Worksheets & Quick Tips</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="/thank-you/command-center/access.js" defer></script>
+<style>
+  :root {
+    --navy-deep: #0B1324;
+    --navy-primary: #0B1426;
+    --gold: #F5C84C;
+    --gold-bright: #FFD700;
+    --white: #FFFFFF;
+    --off-white: #F0F2F5;
+    --bg-body: #111827;
+    --bg-card: #151B2B;
+    --bg-card-hover: #1A2235;
+    --border-subtle: #2D3138;
+    --text-secondary: #9BA3AF;
+    --text-muted: #6B7280;
+    --success: #3DDC84;
+    --warning: #FBBF24;
+    --danger: #EF4444;
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    --shadow-soft: 0 4px 24px rgba(0,0,0,0.25);
+    --shadow-gold: 0 0 20px rgba(245,200,76,0.15);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html {
+    scroll-behavior: smooth;
+    font-size: 18px;
+  }
+
+  body {
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--bg-body);
+    color: var(--off-white);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ACCESS GATE */
+  .cc-lock {
+    display: none;
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 5rem 1.5rem 6rem;
+    text-align: center;
+  }
+  .cc-lock-card {
+    background: var(--bg-card);
+    border: 2px solid rgba(245,200,76,0.35);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-soft);
+    padding: 2.5rem 2rem;
+  }
+  .cc-lock h1 {
+    font-size: clamp(1.7rem, 4.5vw, 2.4rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 1.15;
+    margin-bottom: 0.75rem;
+  }
+  .cc-lock h1 .w { color: var(--white); }
+  .cc-lock h1 .g { color: var(--gold); }
+  .cc-lock p {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    max-width: 680px;
+    margin: 0.75rem auto 1.5rem;
+  }
+  .cc-lock .note {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.55);
+    margin-top: 0.9rem;
+  }
+  .cc-lock-actions {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 1.25rem;
+  }
+  .cc-lock-actions a {
+    min-height: 46px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.9rem 1.35rem;
+    border-radius: 999px;
+    font-weight: 900;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  .cc-lock-primary {
+    background: var(--gold);
+    color: var(--navy-primary);
+    box-shadow: 0 6px 20px rgba(245,200,76,0.22);
+  }
+  .cc-lock-secondary {
+    border: 2px solid rgba(245,200,76,0.55);
+    color: var(--gold);
+  }
+
+  [data-cc-content] { display: none; }
+
+  /* HEADER */
+  .site-header {
+    background: var(--navy-primary);
+    border-bottom: 2px solid var(--gold);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+  }
+
+  .brand-text {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    line-height: 1;
+  }
+
+  .brand-scam { color: var(--white); }
+  .brand-bomb { color: var(--gold); }
+  .brand-icon { font-size: 1.3rem; line-height: 1; }
+
+  .brand-tagline {
+    font-size: 0.65rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-top: 0.15rem;
+    font-weight: 600;
+  }
+
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .ai-prompts-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.6rem 1.25rem;
+    background: transparent;
+    border: 2px solid var(--gold);
+    border-radius: var(--radius-xl);
+    color: var(--gold);
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    transition: all 0.2s;
+    min-height: 44px;
+  }
+
+  .ai-prompts-btn:hover, .ai-prompts-btn:focus {
+    background: rgba(245,200,76,0.15);
+    box-shadow: var(--shadow-gold);
+    outline: 3px solid var(--white);
+    outline-offset: 2px;
+  }
+
+  /* HAMBURGER */
+  .hamburger-btn {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    gap: 5px;
+    z-index: 110;
+  }
+  .hamburger-btn span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--gold);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+  .hamburger-btn.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+  .hamburger-btn.active span:nth-child(2) { opacity: 0; }
+  .hamburger-btn.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+  .mobile-nav-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(11, 20, 38, 0.95);
+    backdrop-filter: blur(8px);
+    z-index: 105;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2rem;
+  }
+  .mobile-nav-overlay.active { display: flex; }
+  .mobile-nav-overlay .nav-pill {
+    font-size: 1rem;
+    padding: 1rem 2rem;
+    min-width: 260px;
+    justify-content: center;
+  }
+
+  @media (max-width: 768px) {
+    .header-actions { display: none; }
+    .hamburger-btn { display: flex; }
+  }
+  @media (min-width: 769px) {
+    .mobile-nav-overlay { display: none !important; }
+  }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(180deg, var(--navy-deep) 0%, var(--bg-body) 100%);
+    padding: 3rem 1.5rem 2.5rem;
+    text-align: center;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .hero-inner { max-width: 800px; margin: 0 auto; }
+
+  .hero-badge {
+    display: inline-block;
+    padding: 0.35rem 1rem;
+    background: rgba(245,200,76,0.12);
+    border: 1px solid rgba(245,200,76,0.3);
+    color: var(--gold);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-radius: 100px;
+    margin-bottom: 1.25rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+  }
+
+  .hero h1 .text-white { color: var(--white); }
+  .hero h1 .text-gold { color: var(--gold); }
+
+  .hero-subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    color: var(--text-secondary);
+    font-weight: 500;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.5;
+  }
+
+  /* FILTER BAR */
+  .filter-bar {
+    background: var(--navy-primary);
+    border-bottom: 1px solid var(--border-subtle);
+    padding: 1.25rem 1.5rem;
+    position: sticky;
+    top: calc(1rem + 44px);
+    z-index: 95;
+  }
+
+  .filter-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: center;
+  }
+
+  .filter-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-right: 0.5rem;
+  }
+
+  .filter-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.4rem 0.9rem;
+    border-radius: 100px;
+    border: 1px solid var(--border-subtle);
+    background: transparent;
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    transition: all 0.2s;
+    min-height: 36px;
+    user-select: none;
+  }
+
+  .filter-chip:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
+  .filter-chip.active {
+    background: rgba(245,200,76,0.15);
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
+  .search-box {
+    flex: 1;
+    min-width: 250px;
+    position: relative;
+  }
+
+  .search-input {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 2.5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    background: var(--bg-body);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-xl);
+    color: var(--white);
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .search-input::placeholder { color: var(--text-muted); }
+
+  .search-input:focus {
+    outline: none;
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(245,200,76,0.15);
+  }
+
+  .search-icon {
+    position: absolute;
+    left: 0.9rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    font-size: 1rem;
+    pointer-events: none;
+  }
+
+  .sort-select {
+    padding: 0.6rem 1rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    background: var(--bg-body);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    color: var(--off-white);
+    cursor: pointer;
+    min-height: 40px;
+  }
+
+  .sort-select:focus {
+    outline: none;
+    border-color: var(--gold);
+  }
+
+  .view-toggle {
+    display: flex;
+    gap: 0.25rem;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+  }
+
+  .view-btn {
+    padding: 0.5rem 0.75rem;
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .view-btn.active {
+    background: rgba(245,200,76,0.15);
+    color: var(--gold);
+  }
+
+  .view-btn:hover:not(.active) {
+    color: var(--off-white);
+  }
+
+  .results-bar {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0.75rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .results-count { font-weight: 700; color: var(--gold); }
+
+  .clear-filters {
+    background: none;
+    border: none;
+    color: var(--gold);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    text-decoration: underline;
+    display: none;
+  }
+
+  .clear-filters.visible { display: inline-block; }
+
+  /* MEGA GRID */
+  .mega-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(48%, 1fr));
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .mega-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .mega-grid.list-view {
+    grid-template-columns: 1fr;
+  }
+
+  /* CARDS */
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    transition: border-color 0.2s, background 0.2s, transform 0.2s;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .card:hover {
+    border-color: rgba(245,200,76,0.25);
+    background: var(--bg-card-hover);
+    transform: translateY(-2px);
+  }
+
+  .card.hidden { display: none; }
+
+  .card-header { margin-bottom: 0.75rem; }
+
+  .card-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .badge {
+    display: inline-block;
+    padding: 0.2rem 0.55rem;
+    font-size: 0.6rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    border-radius: 100px;
+  }
+
+  .type-badge {
+    background: rgba(245,200,76,0.12);
+    border: 1px solid rgba(245,200,76,0.25);
+    color: var(--gold);
+  }
+
+  .guide-badge {
+    background: rgba(61,220,132,0.12);
+    border: 1px solid rgba(61,220,132,0.25);
+    color: var(--success);
+  }
+
+  .ws-badge {
+    background: rgba(251,191,36,0.12);
+    border: 1px solid rgba(251,191,36,0.25);
+    color: var(--warning);
+  }
+
+  .tip-badge {
+    background: rgba(239,68,68,0.12);
+    border: 1px solid rgba(239,68,68,0.25);
+    color: var(--danger);
+  }
+
+  .cat-badge {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--border-subtle);
+    color: var(--text-secondary);
+  }
+
+  .diff-badge {
+    background: rgba(245,200,76,0.08);
+    border: 1px solid rgba(245,200,76,0.15);
+    color: var(--gold-bright);
+  }
+
+  .card-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.3;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+
+  .card-teaser {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+  }
+
+  .card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-body.collapsed {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    padding: 0;
+    margin: 0;
+  }
+
+  .card-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    margin-top: auto;
+    padding: 0.6rem 1.25rem;
+    background: transparent;
+    border: 1px solid var(--border-subtle);
+    border-radius: 100px;
+    color: var(--gold);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: all 0.2s;
+    align-self: flex-start;
+  }
+
+  .card-toggle:hover {
+    background: rgba(245,200,76,0.1);
+    border-color: var(--gold);
+  }
+
+/* Worksheet card toggle spacing — ensures consistent gap from print button */
+.worksheet-card .card-toggle {
+  margin-top: 0.75rem;
+}
+
+  .toggle-icon {
+    display: inline-block;
+    transition: transform 0.2s;
+  }
+
+  .card-toggle[aria-expanded="true"] .toggle-icon {
+    transform: rotate(180deg);
+  }
+
+  /* WORKSHEET PREVIEW */
+  .worksheet-preview-content {
+    background: var(--navy-primary);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .worksheet-preview-content .worksheet-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .worksheet-preview-content .checklist {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem;
+  }
+
+  .worksheet-preview-content .checklist li {
+    position: relative;
+    padding: 0.6rem 0 0.6rem 2rem;
+    border-bottom: 1px solid var(--border-subtle);
+    color: var(--off-white);
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+
+  .worksheet-preview-content .checklist li::before {
+    content: "💣";
+    position: absolute;
+    left: 0;
+    top: 0.6rem;
+    color: var(--gold);
+    font-size: 1.1rem;
+    line-height: 1;
+  }
+
+  .worksheet-preview-content .checklist li strong {
+    color: var(--white);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.03em;
+  }
+
+  .worksheet-preview-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.85rem;
+  }
+
+  .worksheet-preview-content th,
+  .worksheet-preview-content td {
+    border: 1px solid var(--border-subtle);
+    padding: 0.6rem 0.75rem;
+    text-align: left;
+    color: var(--off-white);
+  }
+
+  .worksheet-preview-content th {
+    background: rgba(245,200,76,0.08);
+    color: var(--gold);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+  }
+
+  .worksheet-preview-content td {
+    background: var(--bg-card);
+  }
+
+  /* FORM ELEMENTS */
+  .worksheet-preview-content .form-group {
+    margin-bottom: 1.25rem;
+  }
+
+  .worksheet-preview-content .form-label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.4rem;
+  }
+
+  .worksheet-preview-content .form-input {
+    width: 100%;
+    padding: 0.6rem 0.75rem;
+    background: var(--bg-body);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-sm);
+    color: var(--white);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .worksheet-preview-content .form-input:focus {
+    outline: none;
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(245,200,76,0.15);
+  }
+
+  .worksheet-preview-content .form-input::placeholder {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+  }
+
+  .worksheet-preview-content .form-hint {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 0.3rem;
+    font-style: italic;
+  }
+
+  .worksheet-preview-content input[type="text"],
+  .worksheet-preview-content input[type="date"],
+  .worksheet-preview-content textarea {
+    width: 100%;
+    padding: 0.6rem 0.75rem;
+    background: var(--bg-body);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-sm);
+    color: var(--white);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .worksheet-preview-content input[type="text"]:focus,
+  .worksheet-preview-content input[type="date"]:focus,
+  .worksheet-preview-content textarea:focus {
+    outline: none;
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(245,200,76,0.15);
+  }
+
+  .worksheet-preview-content input[type="text"]::placeholder,
+  .worksheet-preview-content input[type="date"]::placeholder,
+  .worksheet-preview-content textarea::placeholder {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+  }
+
+  .worksheet-preview-content textarea {
+    min-height: 80px;
+    resize: vertical;
+  }
+
+  .worksheet-preview-content p {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+
+  .worksheet-preview-content h4 {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin: 1.5rem 0 0.75rem;
+  }
+
+  .worksheet-preview-content ol,
+  .worksheet-preview-content ul {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--off-white);
+    font-size: 0.85rem;
+  }
+
+  .worksheet-preview-content ol li,
+  .worksheet-preview-content ul li {
+    margin-bottom: 0.4rem;
+    line-height: 1.5;
+  }
+
+  /* CARD ACTIONS */
+  .card-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .action-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.55rem 1rem;
+    border-radius: var(--radius-xl);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+    min-height: 40px;
+  }
+
+  .print-btn {
+    background: var(--gold);
+    color: var(--navy-primary);
+    border: none;
+  }
+
+  .print-btn:hover, .print-btn:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(245,200,76,0.3);
+    outline: 3px solid var(--white);
+    outline-offset: 2px;
+  }
+
+  /* GUIDE CARD SPECIFICS */
+  .guide-time {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+  }
+
+  .takeaway-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem;
+  }
+
+  .takeaway-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.6rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+
+  .takeaway-list li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-weight: 700;
+  }
+
+  .guide-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    color: var(--gold);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin-top: auto;
+  }
+
+  .guide-link:hover { text-decoration: underline; }
+
+  /* TIP CARD */
+  .tip-card {
+    border-left: 3px solid var(--danger);
+  }
+
+  /* TOAST */
+  .toast {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background: var(--navy-primary);
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    padding: 1rem 2rem;
+    border-radius: var(--radius-xl);
+    font-size: 0.9rem;
+    font-weight: 700;
+    box-shadow: var(--shadow-gold);
+    z-index: 200;
+    opacity: 0;
+    transition: all 0.3s ease;
+    pointer-events: none;
+  }
+
+  .toast.show {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+
+  /* FLOATING BACK TO TOP */
+  .back-to-top-floating {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--navy-primary);
+    border: 2px solid var(--gold);
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    text-decoration: none;
+    box-shadow: var(--shadow-gold);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s, transform 0.2s;
+    z-index: 90;
+    cursor: pointer;
+  }
+
+  .back-to-top-floating.visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .back-to-top-floating:hover {
+    transform: translateY(-3px);
+    background: rgba(245,200,76,0.1);
+  }
+
+  /* FOOTER */
+  .site-footer {
+    background: var(--navy-primary);
+    border-top: 4px solid var(--gold);
+    padding: 2rem 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  @media (min-width: 640px) {
+    .footer-inner {
+      flex-direction: row;
+      justify-content: space-between;
+      text-align: left;
+    }
+  }
+
+  .footer-brand-text {
+    font-size: 1.1rem;
+    font-weight: 800;
+  }
+
+  .footer-meta {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+  }
+
+  .footer-classification {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    border: 1px solid var(--border-subtle);
+    padding: 0.35rem 0.75rem;
+    border-radius: var(--radius-sm);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  /* GLOBAL LINKS */
+  a {
+    color: var(--gold);
+    text-decoration: underline;
+    font-weight: 600;
+  }
+
+  a:hover { color: var(--gold-bright); }
+
+  .brand, .ai-prompts-btn, .card-toggle, .action-btn, .guide-link, .view-btn, .clear-filters, .back-to-top-floating {
+    text-decoration: none;
+  }
+
+  /* NO RESULTS */
+  .no-results {
+    text-align: center;
+    padding: 4rem 1.5rem;
+    grid-column: 1 / -1;
+  }
+
+  .no-results-emoji { font-size: 3rem; margin-bottom: 1rem; display: block; }
+
+  .no-results-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+  }
+
+  .no-results-text { color: var(--text-secondary); font-size: 0.95rem; }
+
+  /* PRINT SINGLE WORKSHEET */
+  body.printing-single-worksheet .card {
+    display: none !important;
+  }
+  body.printing-single-worksheet .card.ws-active-print {
+    display: flex !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999;
+    background: #fff !important;
+    color: #000 !important;
+    border: none !important;
+    box-shadow: none !important;
+    max-width: 100%;
+    border-radius: 0;
+    overflow-y: auto;
+    padding: 2rem;
+  }
+  body.printing-single-worksheet .card.ws-active-print .card-header,
+  body.printing-single-worksheet .card.ws-active-print .card-toggle,
+  body.printing-single-worksheet .card.ws-active-print .card-actions {
+    display: none !important;
+  }
+  body.printing-single-worksheet .card.ws-active-print .card-body {
+    max-height: none !important;
+    opacity: 1 !important;
+    overflow: visible !important;
+  }
+  body.printing-single-worksheet .card.ws-active-print .worksheet-preview-content {
+    background: #fff !important;
+    border: 1px solid #ccc !important;
+    color: #000 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  body.printing-single-worksheet .card.ws-active-print .worksheet-preview-content * {
+    color: #000 !important;
+  }
+  body.printing-single-worksheet .card.ws-active-print .worksheet-preview-content .worksheet-title {
+    color: #000 !important;
+    border-bottom-color: #ccc !important;
+  }
+  body.printing-single-worksheet .card.ws-active-print .worksheet-preview-content .form-label {
+    color: #333 !important;
+  }
+  body.printing-single-worksheet .card.ws-active-print .worksheet-preview-content .form-input {
+    background: #fff !important;
+    border-color: #999 !important;
+    color: #000 !important;
+  }
+  body.printing-single-worksheet .card.ws-active-print .worksheet-preview-content .form-input::placeholder {
+    color: #666 !important;
+  }
+  body.printing-single-worksheet .card.ws-active-print .worksheet-preview-content .form-hint {
+    color: #666 !important;
+  }
+  body.printing-single-worksheet .card.ws-active-print .worksheet-preview-content .checklist li {
+    color: #000 !important;
+    border-bottom-color: #ddd !important;
+  }
+  body.printing-single-worksheet .card.ws-active-print .worksheet-preview-content .checklist li::before {
+    color: #000 !important;
+  }
+  body.printing-single-worksheet .card.ws-active-print .worksheet-preview-content table th {
+    background: #f0f0f0 !important;
+    color: #000 !important;
+    border-color: #ccc !important;
+  }
+  body.printing-single-worksheet .card.ws-active-print .worksheet-preview-content table td {
+    background: #fff !important;
+    border-color: #ccc !important;
+  }
+  body.printing-single-worksheet .site-header,
+  body.printing-single-worksheet .site-footer,
+  body.printing-single-worksheet .filter-bar,
+  body.printing-single-worksheet .results-bar,
+  body.printing-single-worksheet .hero,
+  body.printing-single-worksheet .back-to-top-floating,
+  body.printing-single-worksheet .toast {
+    display: none !important;
+  }
+
+  /* GENERAL PRINT */
+  @media print {
+    body { background: #fff; color: #000; }
+    .site-header, .site-footer, .filter-bar, .results-bar, .back-to-top-floating, .hamburger-btn, .mobile-nav-overlay, .toast, .hero-cta-row {
+      display: none !important;
+    }
+    .hero { background: #fff; border-bottom: 2px solid #000; padding: 1rem; }
+    .hero h1 { color: #000; }
+    .hero h1 .text-white, .hero h1 .text-gold { color: #000; }
+    .hero-subtitle { color: #333; }
+    .card { 
+      background: #f5f5f5 !important; 
+      border: 1px solid #ccc !important; 
+      box-shadow: none !important;
+      page-break-inside: avoid;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .card-title { color: #000; }
+    .card-teaser, .takeaway-list li { color: #000; }
+    .worksheet-preview-content { background: #fff; border: 1px solid #ccc; }
+    .action-btn { background: #ddd; color: #000; border: 1px solid #000; }
+    .card-toggle { display: none; }
+    .card-body.collapsed { max-height: none; opacity: 1; overflow: visible; }
+    .mega-grid { grid-template-columns: 1fr; gap: 1rem; }
+    a { color: #000; text-decoration: underline; }
+    .badge { border: 1px solid #000; color: #000; background: #ddd; }
+  }
+
+  /* REDUCED MOTION */
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .card, .filter-chip, .action-btn, .card-toggle { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- LOCK SCREEN (shown unless cc=1&k=... or access cookie exists) -->
+  <section class="cc-lock" data-cc-lock>
+    <div class="cc-lock-card">
+      <div class="hero-badge">PAID RESOURCE</div>
+      <h1><span class="w">SENIOR TECH</span> <span class="g">COMMAND CENTER</span></h1>
+      <p>
+        This library is locked because it includes paid guides + printable tools.
+        Use your private access link, or purchase access to continue.
+      </p>
+      <div class="cc-lock-actions">
+        <!-- Placeholder; swap to real checkout URL once created -->
+        <a class="cc-lock-primary" href="#" data-cc-checkout>GET ACCESS →</a>
+        <a class="cc-lock-secondary" href="/thank-you/command-center/">BACK TO THANK YOU PAGE</a>
+      </div>
+      <div class="note">Tip: If you purchased and can’t get in, double-check the full link from your email.</div>
+    </div>
+  </section>
+
+  <div data-cc-content>
+
+<!-- HEADER -->
+<header class="site-header" id="top">
+  <div class="header-inner">
+    <a href="#top" class="brand" aria-label="ScamBomb Home">
+      <div>
+        <div class="brand-text">
+          <span class="brand-scam">SCAM</span><span class="brand-bomb">B<span class="brand-icon">💣</span>MB</span>
+        </div>
+        <div class="brand-tagline">STAY SCAM-SMART</div>
+      </div>
+    </a>
+    <div class="header-actions">
+      <a href="scambomb_ai_prompts_hub.html" class="ai-prompts-btn">🤖 AI Prompts Hub</a>
+    </div>
+    <button class="hamburger-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="mobile-nav-overlay" id="mobile-nav" aria-hidden="true" role="dialog" aria-label="Mobile navigation">
+      <a href="scambomb_ai_prompts_hub.html" class="ai-prompts-btn">🤖 AI Prompts Hub</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">MEGA RESOURCE | 2026</div>
+    <h1>
+      <span class="text-white">YOUR COMPLETE</span><br>
+      <span class="text-gold">SENIOR TECH COMMAND CENTER</span>
+    </h1>
+    <p class="hero-subtitle">Step-by-step guides, printable worksheets, and quick tips — all searchable and filterable in one place.</p>
+  </div>
+</section>
+
+<!-- FILTER BAR -->
+<div class="filter-bar">
+  <div class="filter-inner">
+    <div class="filter-row">
+      <span class="filter-label">Content</span>
+      <button class="filter-chip" data-filter="type" data-value="foundation">Foundation</button>
+      <button class="filter-chip" data-filter="type" data-value="passwords">Passwords</button>
+      <button class="filter-chip" data-filter="type" data-value="wifi">Wi-Fi</button>
+      <button class="filter-chip" data-filter="type" data-value="computer">Computer</button>
+      <button class="filter-chip" data-filter="type" data-value="worksheet">Worksheets</button>
+      <button class="filter-chip" data-filter="type" data-value="quick-tip">Quick Tips</button>
+    </div>
+    <div class="filter-row">
+      <span class="filter-label">Topic</span>
+      <button class="filter-chip" data-filter="category" data-value="Tech Support">Tech Support</button>
+      <button class="filter-chip" data-filter="category" data-value="Productivity">Productivity</button>
+      <button class="filter-chip" data-filter="category" data-value="Communication">Communication</button>
+      <button class="filter-chip" data-filter="category" data-value="Health">Health</button>
+      <button class="filter-chip" data-filter="category" data-value="Finance">Finance</button>
+      <button class="filter-chip" data-filter="category" data-value="Photos">Photos</button>
+      <button class="filter-chip" data-filter="category" data-value="Hobbies">Hobbies</button>
+    </div>
+    <div class="filter-row">
+      <span class="filter-label">Difficulty</span>
+      <button class="filter-chip" data-filter="difficulty" data-value="Quick Win">Quick Win</button>
+      <button class="filter-chip" data-filter="difficulty" data-value="5 Min">5 Min</button>
+      <button class="filter-chip" data-filter="difficulty" data-value="Deep Dive">Deep Dive</button>
+      <button class="filter-chip" data-filter="difficulty" data-value="Step-by-Step Guide">Step-by-Step</button>
+    </div>
+    <div class="filter-row">
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" class="search-input" id="searchInput" placeholder="Search guides, worksheets, tips..." aria-label="Search all content">
+      </div>
+      <select class="sort-select" id="sortSelect" aria-label="Sort results">
+        <option value="category">Sort by Category</option>
+        <option value="name">Sort by Name (A-Z)</option>
+        <option value="diff-asc">Difficulty: Easy → Deep</option>
+        <option value="diff-desc">Difficulty: Deep → Easy</option>
+      </select>
+      <div class="view-toggle">
+        <button class="view-btn active" data-view="grid" aria-label="Grid view">⊞ Grid</button>
+        <button class="view-btn" data-view="list" aria-label="List view">☰ List</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- RESULTS BAR -->
+<div class="results-bar">
+  <div>Showing <span class="results-count" id="resultsCount">55</span> resources</div>
+  <button class="clear-filters" id="clearFilters" onclick="clearAllFilters()">Clear All Filters</button>
+</div>
+
+<!-- MEGA GRID -->
+<main class="mega-grid" id="megaGrid">
+  <article class="card guide-card" data-type="foundation" data-category="Tech Support" data-difficulty="Step-by-Step Guide" data-id="guide-f-mindset">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="badge type-badge guide-badge">FOUNDATION GUIDE</span>
+      <span class="badge diff-badge">STEP-BY-STEP GUIDE</span>
+    </div>
+    <h3 class="card-title">The Senior Tech Mindset Reset</h3>
+    <div class="guide-time">⏱ 15 min read</div>
+  </div>
+  <div class="card-body">
+    <ul class="takeaway-list">
+      <li>Technology frustration is a design problem, not a you problem</li><li>Almost nothing you do is permanent — undo is your superpower</li><li>Set up automatic backups, restore points, and written maps before changing anything</li>
+    </ul>
+    <a href="scambomb_foundation_guide.html#mindset" class="guide-link" target="_blank" rel="noopener">Read Full Guide →</a>
+  </div>
+</article>
+<article class="card guide-card" data-type="foundation" data-category="Tech Support" data-difficulty="Step-by-Step Guide" data-id="guide-f-accessibility">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="badge type-badge guide-badge">FOUNDATION GUIDE</span>
+      <span class="badge diff-badge">STEP-BY-STEP GUIDE</span>
+    </div>
+    <h3 class="card-title">The Accessibility Quick-Win Setup</h3>
+    <div class="guide-time">⏱ 20 min setup</div>
+  </div>
+  <div class="card-body">
+    <ul class="takeaway-list">
+      <li>Increase text size, bold text, and contrast on every device</li><li>Turn on LED flash alerts and closed captions</li><li>Reduce notifications to only calls, texts, and health apps</li>
+    </ul>
+    <a href="scambomb_foundation_guide.html#accessibility" class="guide-link" target="_blank" rel="noopener">Read Full Guide →</a>
+  </div>
+</article>
+<article class="card guide-card" data-type="foundation" data-category="Productivity" data-difficulty="Step-by-Step Guide" data-id="guide-f-simplify">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="badge type-badge guide-badge">FOUNDATION GUIDE</span>
+      <span class="badge diff-badge">STEP-BY-STEP GUIDE</span>
+    </div>
+    <h3 class="card-title">Interface Simplification</h3>
+    <div class="guide-time">⏱ 30 min cleanup</div>
+  </div>
+  <div class="card-body">
+    <ul class="takeaway-list">
+      <li>Remove every app you don&#x27;t use weekly from your home screen</li><li>Group remaining apps into clearly named folders</li><li>Create printed task maps that survive software updates</li>
+    </ul>
+    <a href="scambomb_foundation_guide.html#simplify" class="guide-link" target="_blank" rel="noopener">Read Full Guide →</a>
+  </div>
+</article>
+<article class="card guide-card" data-type="foundation" data-category="Tech Support" data-difficulty="Step-by-Step Guide" data-id="guide-f-safetynets">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="badge type-badge guide-badge">FOUNDATION GUIDE</span>
+      <span class="badge diff-badge">STEP-BY-STEP GUIDE</span>
+    </div>
+    <h3 class="card-title">Essential Safety Nets</h3>
+    <div class="guide-time">⏱ 25 min setup</div>
+  </div>
+  <div class="card-body">
+    <ul class="takeaway-list">
+      <li>Turn on cloud backup and verify it works from another device</li><li>Create system restore points before big changes</li><li>Set up account recovery info and share it with one trusted family member</li>
+    </ul>
+    <a href="scambomb_foundation_guide.html#safetynets" class="guide-link" target="_blank" rel="noopener">Read Full Guide →</a>
+  </div>
+</article>
+<article class="card guide-card" data-type="passwords" data-category="Tech Support" data-difficulty="Step-by-Step Guide" data-id="guide-p-passphrases">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="badge type-badge guide-badge">PASSWORDS GUIDE</span>
+      <span class="badge diff-badge">STEP-BY-STEP GUIDE</span>
+    </div>
+    <h3 class="card-title">The Passphrase Method</h3>
+    <div class="guide-time">⏱ 10 min read</div>
+  </div>
+  <div class="card-body">
+    <ul class="takeaway-list">
+      <li>Use long passphrases (sentences or word chains) instead of short complex passwords</li><li>Apply the lyrics &amp; quotes technique for compact memorability</li><li>Add symbols and numbers in a consistent pattern across accounts</li>
+    </ul>
+    <a href="scambomb_password_playbook.html#passphrases" class="guide-link" target="_blank" rel="noopener">Read Full Guide →</a>
+  </div>
+</article>
+<article class="card guide-card" data-type="passwords" data-category="Tech Support" data-difficulty="Step-by-Step Guide" data-id="guide-p-mfa">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="badge type-badge guide-badge">PASSWORDS GUIDE</span>
+      <span class="badge diff-badge">STEP-BY-STEP GUIDE</span>
+    </div>
+    <h3 class="card-title">Multi-Factor Authentication</h3>
+    <div class="guide-time">⏱ 15 min setup</div>
+  </div>
+  <div class="card-body">
+    <ul class="takeaway-list">
+      <li>MFA adds a second lock even if your password is stolen</li><li>Start with SMS codes — easiest for seniors</li><li>Print and store backup codes in a fire-safe immediately</li>
+    </ul>
+    <a href="scambomb_password_playbook.html#mfa" class="guide-link" target="_blank" rel="noopener">Read Full Guide →</a>
+  </div>
+</article>
+<article class="card guide-card" data-type="passwords" data-category="Tech Support" data-difficulty="Step-by-Step Guide" data-id="guide-p-managers">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="badge type-badge guide-badge">PASSWORDS GUIDE</span>
+      <span class="badge diff-badge">STEP-BY-STEP GUIDE</span>
+    </div>
+    <h3 class="card-title">Password Managers</h3>
+    <div class="guide-time">⏱ 1 week gradual</div>
+  </div>
+  <div class="card-body">
+    <ul class="takeaway-list">
+      <li>A password manager remembers everything so you don&#x27;t have to</li><li>Bitwarden is free and senior-friendly; 1Password has the best support</li><li>Change your 5 most important passwords first — everything else can wait</li>
+    </ul>
+    <a href="scambomb_password_playbook.html#managers" class="guide-link" target="_blank" rel="noopener">Read Full Guide →</a>
+  </div>
+</article>
+<article class="card guide-card" data-type="passwords" data-category="Tech Support" data-difficulty="Quick Win" data-id="guide-p-rules">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="badge type-badge guide-badge">PASSWORDS GUIDE</span>
+      <span class="badge diff-badge">QUICK WIN</span>
+    </div>
+    <h3 class="card-title">The &#x27;Never&#x27; Rules</h3>
+    <div class="guide-time">⏱ 5 min read</div>
+  </div>
+  <div class="card-body">
+    <ul class="takeaway-list">
+      <li>Never reuse passwords across accounts</li><li>Never write passwords on sticky notes</li><li>Never share your password over phone, email, or text</li><li>Never ignore breach warnings</li>
+    </ul>
+    <a href="scambomb_password_playbook.html#rules" class="guide-link" target="_blank" rel="noopener">Read Full Guide →</a>
+  </div>
+</article>
+<article class="card guide-card" data-type="wifi" data-category="Tech Support" data-difficulty="Quick Win" data-id="guide-w-basics">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="badge type-badge guide-badge">WI-FI GUIDE</span>
+      <span class="badge diff-badge">QUICK WIN</span>
+    </div>
+    <h3 class="card-title">The Basics Checklist</h3>
+    <div class="guide-time">⏱ 5 min</div>
+  </div>
+  <div class="card-body">
+    <ul class="takeaway-list">
+      <li>Check airplane mode, Wi-Fi toggle, and network name first</li><li>Verify you&#x27;re close enough to the router — walls and distance kill signal</li><li>Confirm the internet isn&#x27;t out in your area before troubleshooting your device</li>
+    </ul>
+    <a href="scambomb_wifi_guide.html#basics" class="guide-link" target="_blank" rel="noopener">Read Full Guide →</a>
+  </div>
+</article>
+<article class="card guide-card" data-type="wifi" data-category="Tech Support" data-difficulty="5 Min" data-id="guide-w-troubleshoot">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="badge type-badge guide-badge">WI-FI GUIDE</span>
+      <span class="badge diff-badge">5 MIN</span>
+    </div>
+    <h3 class="card-title">Built-In Troubleshooting Tools</h3>
+    <div class="guide-time">⏱ 10 min</div>
+  </div>
+  <div class="card-body">
+    <ul class="takeaway-list">
+      <li>Windows Network Troubleshooter diagnoses and fixes automatically</li><li>Mac Wireless Diagnostics runs deeper analysis with a shareable report</li><li>iPhone and Android have network reset options in Settings</li>
+    </ul>
+    <a href="scambomb_wifi_guide.html#troubleshoot" class="guide-link" target="_blank" rel="noopener">Read Full Guide →</a>
+  </div>
+</article>
+<article class="card guide-card" data-type="wifi" data-category="Tech Support" data-difficulty="5 Min" data-id="guide-w-restart">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="badge type-badge guide-badge">WI-FI GUIDE</span>
+      <span class="badge diff-badge">5 MIN</span>
+    </div>
+    <h3 class="card-title">The Power Cycle Protocol</h3>
+    <div class="guide-time">⏱ 5 min</div>
+  </div>
+  <div class="card-body">
+    <ul class="takeaway-list">
+      <li>Unplug modem AND router for 2 full minutes — quick flicks don&#x27;t work</li><li>Plug modem in first, wait for stable lights, then router</li><li>Restart your device last to ensure a clean reconnection</li>
+    </ul>
+    <a href="scambomb_wifi_guide.html#restart" class="guide-link" target="_blank" rel="noopener">Read Full Guide →</a>
+  </div>
+</article>
+<article class="card guide-card" data-type="wifi" data-category="Tech Support" data-difficulty="5 Min" data-id="guide-w-browser">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="badge type-badge guide-badge">WI-FI GUIDE</span>
+      <span class="badge diff-badge">5 MIN</span>
+    </div>
+    <h3 class="card-title">Browser Fixes</h3>
+    <div class="guide-time">⏱ 5 min</div>
+  </div>
+  <div class="card-body">
+    <ul class="takeaway-list">
+      <li>Clear cache and cookies monthly — they corrupt over time</li><li>Keep a backup browser installed for fast diagnosis</li><li>Update your browser after every system update and restart it fully</li>
+    </ul>
+    <a href="scambomb_wifi_guide.html#browser" class="guide-link" target="_blank" rel="noopener">Read Full Guide →</a>
+  </div>
+</article>
+<article class="card guide-card" data-type="wifi" data-category="Tech Support" data-difficulty="5 Min" data-id="guide-w-mobile">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="badge type-badge guide-badge">WI-FI GUIDE</span>
+      <span class="badge diff-badge">5 MIN</span>
+    </div>
+    <h3 class="card-title">Smartphone &amp; Tablet Fixes</h3>
+    <div class="guide-time">⏱ 5 min</div>
+  </div>
+  <div class="card-body">
+    <ul class="takeaway-list">
+      <li>Toggle airplane mode for 10 seconds — the fastest mobile reset</li><li>Verify cellular data is on as a backup when Wi-Fi fails</li><li>Forget and rejoin a problematic network to fix authentication conflicts</li>
+    </ul>
+    <a href="scambomb_wifi_guide.html#mobile" class="guide-link" target="_blank" rel="noopener">Read Full Guide →</a>
+  </div>
+</article>
+<article class="card guide-card" data-type="computer" data-category="Tech Support" data-difficulty="Step-by-Step Guide" data-id="guide-s-framework">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="badge type-badge guide-badge">SLOW COMPUTER GUIDE</span>
+      <span class="badge diff-badge">STEP-BY-STEP GUIDE</span>
+    </div>
+    <h3 class="card-title">The Universal Troubleshooting Framework</h3>
+    <div class="guide-time">⏱ 10 min read</div>
+  </div>
+  <div class="card-body">
+    <ul class="takeaway-list">
+      <li>Check the obvious first: power, heat, tabs, and last restart</li><li>Follow the restart hierarchy: app → device → network → deeper help</li><li>Document everything before changing anything — notes turn panic into data</li>
+    </ul>
+    <a href="scambomb_slow_computer_guide.html#framework" class="guide-link" target="_blank" rel="noopener">Read Full Guide →</a>
+  </div>
+</article>
+<article class="card guide-card" data-type="computer" data-category="Tech Support" data-difficulty="Step-by-Step Guide" data-id="guide-s-slow">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="badge type-badge guide-badge">SLOW COMPUTER GUIDE</span>
+      <span class="badge diff-badge">STEP-BY-STEP GUIDE</span>
+    </div>
+    <h3 class="card-title">Fixing Slow Performance</h3>
+    <div class="guide-time">⏱ 30 min</div>
+  </div>
+  <div class="card-body">
+    <ul class="takeaway-list">
+      <li>Disable unnecessary startup programs in Task Manager / Login Items</li><li>Run Disk Cleanup monthly and enable Storage Sense</li><li>Never defrag an SSD — use Optimize Drives instead</li><li>Limit browser tabs to 5 and audit extensions monthly</li>
+    </ul>
+    <a href="scambomb_slow_computer_guide.html#slow" class="guide-link" target="_blank" rel="noopener">Read Full Guide →</a>
+  </div>
+</article>
+<article class="card guide-card" data-type="computer" data-category="Tech Support" data-difficulty="Step-by-Step Guide" data-id="guide-s-freezes">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="badge type-badge guide-badge">SLOW COMPUTER GUIDE</span>
+      <span class="badge diff-badge">STEP-BY-STEP GUIDE</span>
+    </div>
+    <h3 class="card-title">Handling Freezes and Crashes</h3>
+    <div class="guide-time">⏱ 15 min</div>
+  </div>
+  <div class="card-body">
+    <ul class="takeaway-list">
+      <li>Force-close one frozen app before restarting the whole machine</li><li>Ctrl+Shift+Esc opens Task Manager directly on Windows</li><li>Command+Option+Esc opens Force Quit on Mac</li><li>Save your work every few minutes — Ctrl+S is the best defense</li>
+    </ul>
+    <a href="scambomb_slow_computer_guide.html#freezes" class="guide-link" target="_blank" rel="noopener">Read Full Guide →</a>
+  </div>
+</article>
+<article class="card guide-card" data-type="computer" data-category="Tech Support" data-difficulty="Step-by-Step Guide" data-id="guide-s-malware">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="badge type-badge guide-badge">SLOW COMPUTER GUIDE</span>
+      <span class="badge diff-badge">STEP-BY-STEP GUIDE</span>
+    </div>
+    <h3 class="card-title">When Slowness Means Malware</h3>
+    <div class="guide-time">⏱ 1-2 hours</div>
+  </div>
+  <div class="card-body">
+    <ul class="takeaway-list">
+      <li>Sudden slowdown + pop-ups + homepage changes = possible infection</li><li>Run Windows Defender first, then Malwarebytes for a second opinion</li><li>Reset your browser after removing malware to clear hijacked settings</li><li>Escalate immediately if files are encrypted or you see payment demands</li>
+    </ul>
+    <a href="scambomb_slow_computer_guide.html#malware" class="guide-link" target="_blank" rel="noopener">Read Full Guide →</a>
+  </div>
+</article>
+
+<article class="card worksheet-card" data-type="foundation" data-category="Tech Support" data-difficulty="Quick Win" data-id="ws-0">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="badge type-badge ws-badge">WORKSHEET</span>
+      <span class="badge cat-badge">FOUNDATION</span>
+    </div>
+    <h3 class="card-title">📝 MY ACCESSIBILITY SETTINGS CHECKLIST</h3>
+  </div>
+  <div class="card-body collapsed" id="ws-body-0">
+    <div class="worksheet-preview-content">
+      <div class="worksheet-title">📝 MY ACCESSIBILITY SETTINGS CHECKLIST
+</div>
+      <p style="text-align:center; color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem;">Check each box as you turn it on. Come back if something stops working.</p>
+      <ul class="checklist">
+        <li><strong>FONT SIZE INCREASED</strong> — Settings → Display → Text Size → Large or Larger</li>
+        <li><strong>BOLD TEXT ON</strong> — Settings → Accessibility → Bold Text</li>
+        <li><strong>HIGH CONTRAST ON</strong> — Settings → Accessibility → Increase Contrast</li>
+        <li><strong>MAGNIFICATION / ZOOM READY</strong> — Triple-tap or keyboard shortcut tested</li>
+        <li><strong>FLASHING ALERTS ON</strong> — Settings → Accessibility → LED Flash for Alerts</li>
+        <li><strong>NOTIFICATIONS REDUCED</strong> — Only Phone, Messages, and Health remain on</li>
+        <li><strong>DO NOT DISTURB SCHEDULED</strong> — Night hours set automatically</li>
+        <li><strong>VOICE CONTROL / ASSISTANT TESTED</strong> — Siri, Google Assistant, or Alexa responds</li>
+      </ul>
+</div>
+    </div>
+    <div class="card-actions">
+      <button class="action-btn print-btn" onclick="printWorksheetCard('ws-0')" aria-label="Print worksheet">
+        <span>🖨️</span> Print / Save as PDF
+      </button>
+    </div>
+  <button class="card-toggle" onclick="toggleCard('ws-0')" aria-expanded="false" aria-controls="ws-body-0">
+    <span class="toggle-text">Open Worksheet</span> <span class="toggle-icon">▼</span>
+  </button>
+</article>
+<article class="card worksheet-card" data-type="foundation" data-category="Tech Support" data-difficulty="Quick Win" data-id="ws-1">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="badge type-badge ws-badge">WORKSHEET</span>
+      <span class="badge cat-badge">FOUNDATION</span>
+    </div>
+    <h3 class="card-title">🗺️ MY PERSONAL TASK MAP</h3>
+  </div>
+  <div class="card-body collapsed" id="ws-body-1">
+    <div class="worksheet-preview-content">
+      <div class="worksheet-title">🗺️ MY PERSONAL TASK MAP
+</div>
+      <p style="text-align:center; color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem;">Write the steps for one task you do often. Use colors, shapes, and plain words.</p>
+      <div class="form-group">
+        <label class="form-label">TASK NAME</label>
+        <input type="text" class="form-input" placeholder="Example: Video Call My Sister" aria-label="Task name">
+      </div>
+      <div class="form-group">
+        <label class="form-label">STEP 1 — WHAT I OPEN</label>
+        <input type="text" class="form-input" placeholder="Example: Tap the green FaceTime icon" aria-label="Step 1">
+      </div>
+      <div class="form-group">
+        <label class="form-label">STEP 2 — WHAT I TAP NEXT</label>
+        <input type="text" class="form-input" placeholder="Example: Tap the + button at the top" aria-label="Step 2">
+      </div>
+      <div class="form-group">
+        <label class="form-label">STEP 3 — WHO I SELECT</label>
+        <input type="text" class="form-input" placeholder="Example: Type her name and tap it when it appears" aria-label="Step 3">
+      </div>
+      <div class="form-group">
+        <label class="form-label">STEP 4 — HOW I START / FINISH</label>
+        <input type="text" class="form-input" placeholder="Example: Tap the video camera icon. Tap red button to hang up." aria-label="Step 4">
+      </div>
+      <div class="form-group">
+        <label class="form-label">DATE I WROTE THIS</label>
+        <input type="text" class="form-input" placeholder="MM/DD/YYYY" aria-label="Date">
+        <div class="form-hint">Review and update this map after any major software update.</div>
+      </div>
+</div>
+    </div>
+    <div class="card-actions">
+      <button class="action-btn print-btn" onclick="printWorksheetCard('ws-1')" aria-label="Print worksheet">
+        <span>🖨️</span> Print / Save as PDF
+      </button>
+    </div>
+  <button class="card-toggle" onclick="toggleCard('ws-1')" aria-expanded="false" aria-controls="ws-body-1">
+    <span class="toggle-text">Open Worksheet</span> <span class="toggle-icon">▼</span>
+  </button>
+</article>
+<article class="card worksheet-card" data-type="foundation" data-category="Tech Support" data-difficulty="Quick Win" data-id="ws-2">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="badge type-badge ws-badge">WORKSHEET</span>
+      <span class="badge cat-badge">FOUNDATION</span>
+    </div>
+    <h3 class="card-title">☁️ MY BACKUP VERIFICATION LOG</h3>
+  </div>
+  <div class="card-body collapsed" id="ws-body-2">
+    <div class="worksheet-preview-content">
+      <div class="worksheet-title">☁️ MY BACKUP VERIFICATION LOG
+</div>
+      <p style="text-align:center; color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem;">Prove your backup is real by checking it from another device.</p>
+      <div class="form-group">
+        <label class="form-label">CLOUD SERVICE I USE</label>
+        <input type="text" class="form-input" placeholder="iCloud / Google One / OneDrive" aria-label="Cloud service">
+      </div>
+      <div class="form-group">
+        <label class="form-label">DATE I TURNED ON BACKUP</label>
+        <input type="text" class="form-input" placeholder="MM/DD/YYYY" aria-label="Backup date">
+      </div>
+      <div class="form-group">
+        <label class="form-label">DATE I VERIFIED IT WORKS</label>
+        <input type="text" class="form-input" placeholder="MM/DD/YYYY — Logged in from another device and saw my photos" aria-label="Verification date">
+      </div>
+      <div class="form-group">
+        <label class="form-label">FAMILY MEMBER WHO KNOWS MY RECOVERY INFO</label>
+        <input type="text" class="form-input" placeholder="Name and phone number" aria-label="Recovery contact">
+      </div>
+</div>
+    </div>
+    <div class="card-actions">
+      <button class="action-btn print-btn" onclick="printWorksheetCard('ws-2')" aria-label="Print worksheet">
+        <span>🖨️</span> Print / Save as PDF
+      </button>
+    </div>
+  <button class="card-toggle" onclick="toggleCard('ws-2')" aria-expanded="false" aria-controls="ws-body-2">
+    <span class="toggle-text">Open Worksheet</span> <span class="toggle-icon">▼</span>
+  </button>
+</article>
+<article class="card worksheet-card" data-type="foundation" data-category="Tech Support" data-difficulty="Quick Win" data-id="ws-3">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="badge type-badge ws-badge">WORKSHEET</span>
+      <span class="badge cat-badge">FOUNDATION</span>
+    </div>
+    <h3 class="card-title">📞 MY TRUSTED HELP DIRECTORY</h3>
+  </div>
+  <div class="card-body collapsed" id="ws-body-3">
+    <div class="worksheet-preview-content">
+      <div class="worksheet-title">📞 MY TRUSTED HELP DIRECTORY
+</div>
+      <p style="text-align:center; color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem;">Keep these numbers where you can find them — not just on your phone.</p>
+      <div class="resource-grid">
+        <div class="resource-card">
+          <div class="resource-card-title">🆓 SENIOR PLANET</div>
+          <div class="resource-card-body">Free tech classes for seniors. Virtual and in-person options. English, Spanish, and Cantonese.</div>
+          <a href="https://seniorplanet.org" target="_blank" rel="noopener" class="resource-card-link">VISIT SENIORPLANET.ORG →</a>
+        </div>
+        <div class="resource-card">
+          <div class="resource-card-title">🆓 CYBER-SENIORS</div>
+          <div class="resource-card-body">Free one-on-one tech support calls with trained student volunteers. Available in English, Spanish, and French.</div>
+          <a href="https://cyberseniors.org" target="_blank" rel="noopener" class="resource-card-link">VISIT CYBERSENIORS.ORG →</a>
+        </div>
+        <div class="resource-card">
+          <div class="resource-card-title">🆓 ABILITYNET</div>
+          <div class="resource-card-body">UK-based free tech support for older adults and people with disabilities. Bitesize Basics video series with transcripts.</div>
+          <a href="https://abilitynet.org.uk" target="_blank" rel="noopener" class="resource-card-link">VISIT ABILITYNET.ORG.UK →</a>
+        </div>
+        <div class="resource-card">
+          <div class="resource-card-title">🆓 TECHBOOMERS</div>
+          <div class="resource-card-body">Step-by-step tutorials for popular websites and apps. Designed specifically with seniors in mind. No registration required.</div>
+          <a href="https://techboomers.com" target="_blank" rel="noopener" class="resource-card-link">VISIT TECHBOOMERS.COM →</a>
+        </div>
+        <div class="resource-card">
+          <div class="resource-card-title">🆓 DIGITALLEARN.ORG</div>
+          <div class="resource-card-body">Self-paced learning modules from the Public Library Association. Practice exercises included. English and Spanish.</div>
+          <a href="https://digitallearn.org" target="_blank" rel="noopener" class="resource-card-link">VISIT DIGITALLEARN.ORG →</a>
+        </div>
+        <div class="resource-card">
+          <div class="resource-card-title">💼 CANDOO TECH</div>
+          <div class="resource-card-body">Paid tech concierge service specifically for seniors. Patient, one-on-one sessions with explanation, not just fixes.</div>
+          <a href="https://candoo.tech" target="_blank" rel="noopener" class="resource-card-link">VISIT CANDOO.TECH →</a>
+        </div>
+      </div>
+</div>
+    </div>
+    <div class="card-actions">
+      <button class="action-btn print-btn" onclick="printWorksheetCard('ws-3')" aria-label="Print worksheet">
+        <span>🖨️</span> Print / Save as PDF
+      </button>
+    </div>
+  <button class="card-toggle" onclick="toggleCard('ws-3')" aria-expanded="false" aria-controls="ws-body-3">
+    <span class="toggle-text">Open Worksheet</span> <span class="toggle-icon">▼</span>
+  </button>
+</article>
+<article class="card worksheet-card" data-type="passwords" data-category="Tech Support" data-difficulty="Quick Win" data-id="ws-4">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="badge type-badge ws-badge">WORKSHEET</span>
+      <span class="badge cat-badge">PASSWORDS</span>
+    </div>
+    <h3 class="card-title">📝 PASSPHRASE BUILDER WORKSHEET</h3>
+  </div>
+  <div class="card-body collapsed" id="ws-body-4">
+    <div class="worksheet-preview-content">
+      <div class="worksheet-title">📝 PASSPHRASE BUILDER WORKSHEET
+</div>
+      <p style="text-align:center; color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem;">Draft three passphrases. Pick your favorite and use it for your password manager master password.</p>
+      <div class="form-group">
+        <label class="form-label">PASSPHRASE 1 — A SENTENCE YOU CAN PICTURE</label>
+        <input type="text" class="form-input" placeholder="Example: Pancakes on the porch every Saturday!" aria-label="Passphrase 1">
+        <div class="form-hint">Make it at least 20 characters. Include spaces or hyphens.</div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">PASSPHRASE 2 — A CHAIN OF RANDOM WORDS</label>
+        <input type="text" class="form-input" placeholder="Example: guitar-breeze-pillow-mountain" aria-label="Passphrase 2">
+        <div class="form-hint">Four or more unrelated words joined by hyphens.</div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">PASSPHRASE 3 — LYRICS OR QUOTE INITIALS</label>
+        <input type="text" class="form-input" placeholder="Example: tLiatlWwts (from a favorite song)" aria-label="Passphrase 3">
+        <div class="form-hint">Write the source here so you remember it: <input type="text" class="form-input" style="margin-top:0.5rem;" placeholder="Song / Quote source"></div>
+      </div>
+</div>
+    </div>
+    <div class="card-actions">
+      <button class="action-btn print-btn" onclick="printWorksheetCard('ws-4')" aria-label="Print worksheet">
+        <span>🖨️</span> Print / Save as PDF
+      </button>
+    </div>
+  <button class="card-toggle" onclick="toggleCard('ws-4')" aria-expanded="false" aria-controls="ws-body-4">
+    <span class="toggle-text">Open Worksheet</span> <span class="toggle-icon">▼</span>
+  </button>
+</article>
+<article class="card worksheet-card" data-type="passwords" data-category="Tech Support" data-difficulty="Quick Win" data-id="ws-5">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="badge type-badge ws-badge">WORKSHEET</span>
+      <span class="badge cat-badge">PASSWORDS</span>
+    </div>
+    <h3 class="card-title">🔐 MFA SETUP CHECKLIST</h3>
+  </div>
+  <div class="card-body collapsed" id="ws-body-5">
+    <div class="worksheet-preview-content">
+      <div class="worksheet-title">🔐 MFA SETUP CHECKLIST
+</div>
+      <p style="text-align:center; color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem;">Turn on MFA for these five critical accounts. Check each box as you finish.</p>
+      <ul class="checklist">
+        <li><strong>EMAIL ACCOUNT</strong> — Gmail, Outlook, Yahoo, etc. (Your email is the key to resetting everything else.)</li>
+        <li><strong>BANKING / FINANCE</strong> — Primary checking, savings, or investment login.</li>
+        <li><strong>SOCIAL MEDIA</strong> — Facebook, Instagram, or whichever platform you use most.</li>
+        <li><strong>MEDICARE / HEALTH PORTAL</strong> — Patient portal, pharmacy, or insurance site.</li>
+        <li><strong>SHOPPING</strong> — Amazon, PayPal, or any site with your payment card saved.</li>
+      </ul>
+      <div class="form-group" style="margin-top: 1.5rem;">
+        <label class="form-label">METHOD I USED MOST OFTEN</label>
+        <input type="text" class="form-input" placeholder="SMS codes / Authenticator app / Hardware key" aria-label="MFA method used">
+      </div>
+</div>
+    </div>
+    <div class="card-actions">
+      <button class="action-btn print-btn" onclick="printWorksheetCard('ws-5')" aria-label="Print worksheet">
+        <span>🖨️</span> Print / Save as PDF
+      </button>
+    </div>
+  <button class="card-toggle" onclick="toggleCard('ws-5')" aria-expanded="false" aria-controls="ws-body-5">
+    <span class="toggle-text">Open Worksheet</span> <span class="toggle-icon">▼</span>
+  </button>
+</article>
+<article class="card worksheet-card" data-type="passwords" data-category="Tech Support" data-difficulty="Quick Win" data-id="ws-6">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="badge type-badge ws-badge">WORKSHEET</span>
+      <span class="badge cat-badge">PASSWORDS</span>
+    </div>
+    <h3 class="card-title">🗄️ PASSWORD MANAGER FIRST-WEEK MAP</h3>
+  </div>
+  <div class="card-body collapsed" id="ws-body-6">
+    <div class="worksheet-preview-content">
+      <div class="worksheet-title">🗄️ PASSWORD MANAGER FIRST-WEEK MAP
+</div>
+      <p style="text-align:center; color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem;">One step per day. No rush.</p>
+      <ul class="checklist">
+        <li><strong>DAY 1:</strong> Download Bitwarden, 1Password, or Dashlane. Create your account.</li>
+        <li><strong>DAY 2:</strong> Set your master passphrase and write it down in a safe place.</li>
+        <li><strong>DAY 3:</strong> Turn on MFA for the password manager itself.</li>
+        <li><strong>DAY 4:</strong> Save your email account password in the manager.</li>
+        <li><strong>DAY 5:</strong> Save your banking password. Let the manager generate a new, strong one if needed.</li>
+        <li><strong>DAY 6:</strong> Save your social media password.</li>
+        <li><strong>DAY 7:</strong> Review and test. Try logging into each account using the manager's auto-fill.</li>
+      </ul>
+</div>
+    </div>
+    <div class="card-actions">
+      <button class="action-btn print-btn" onclick="printWorksheetCard('ws-6')" aria-label="Print worksheet">
+        <span>🖨️</span> Print / Save as PDF
+      </button>
+    </div>
+  <button class="card-toggle" onclick="toggleCard('ws-6')" aria-expanded="false" aria-controls="ws-body-6">
+    <span class="toggle-text">Open Worksheet</span> <span class="toggle-icon">▼</span>
+  </button>
+</article>
+<article class="card worksheet-card" data-type="passwords" data-category="Tech Support" data-difficulty="Quick Win" data-id="ws-7">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="badge type-badge ws-badge">WORKSHEET</span>
+      <span class="badge cat-badge">PASSWORDS</span>
+    </div>
+    <h3 class="card-title">🚨 THE &quot;IS THIS LEGIT?&quot; LOGIN CARD</h3>
+  </div>
+  <div class="card-body collapsed" id="ws-body-7">
+    <div class="worksheet-preview-content">
+      <div class="worksheet-title">🚨 THE "IS THIS LEGIT?" LOGIN CARD
+</div>
+      <p style="text-align:center; color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem;">Before typing your password, run through this list.</p>
+      <h4 style="color: var(--gold); font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; margin: 1.5rem 0 0.75rem;">THE FOUR QUESTIONS</h4>
+      <ul class="checklist">
+        <li><strong>STEP 1 — DID I GET HERE MYSELF?</strong> If you clicked a link in an email or text, stop. Open your browser and type the website address yourself.</li>
+        <li><strong>STEP 2 — DOES THE ADDRESS LOOK CORRECT?</strong> Check the URL bar. <code>amazon.com</code> is safe. <code>amaz0n-security.net</code> is a trap.</li>
+        <li><strong>STEP 3 — IS ANYONE RUSHING ME?</strong> Urgency is a scammer's favorite tool. Real security teams do not pressure you to "act now."</li>
+        <li><strong>STEP 4 — WHEN IN DOUBT, CLOSE IT OUT.</strong> If something feels wrong, close the window. Call the company using a number you already have — not one from the message.</li>
+      </ul>
+</div>
+    </div>
+    <div class="card-actions">
+      <button class="action-btn print-btn" onclick="printWorksheetCard('ws-7')" aria-label="Print worksheet">
+        <span>🖨️</span> Print / Save as PDF
+      </button>
+    </div>
+  <button class="card-toggle" onclick="toggleCard('ws-7')" aria-expanded="false" aria-controls="ws-body-7">
+    <span class="toggle-text">Open Worksheet</span> <span class="toggle-icon">▼</span>
+  </button>
+</article>
+<article class="card worksheet-card" data-type="wifi" data-category="Tech Support" data-difficulty="Quick Win" data-id="ws-8">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="badge type-badge ws-badge">WORKSHEET</span>
+      <span class="badge cat-badge">WI-FI</span>
+    </div>
+    <h3 class="card-title">📝 THE 5-MINUTE WI-FI FIX CHECKLIST</h3>
+  </div>
+  <div class="card-body collapsed" id="ws-body-8">
+    <div class="worksheet-preview-content">
+      <div class="worksheet-title">📝 THE 5-MINUTE WI-FI FIX CHECKLIST
+</div>
+      <p style="text-align:center; color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem;">Run through these in order. Do not skip steps.</p>
+      <ul class="checklist">
+        <li><strong>AIRPLANE MODE OFF</strong> — Swiped down, checked for airplane icon, tapped to turn off</li>
+        <li><strong>WI-FI TURNED ON</strong> — Settings → Wi-Fi → toggle is green/blue</li>
+        <li><strong>RIGHT NETWORK SELECTED</strong> — Name matches my home network, not a neighbor's</li>
+        <li><strong>CLOSE TO ROUTER</strong> — Within same room or one room away</li>
+        <li><strong>INTERNET NOT OUT</strong> — Checked provider status page or asked neighbor</li>
+        <li><strong>DEVICE RESTARTED</strong> — Powered off, waited 30 seconds, powered on</li>
+        <li><strong>ROUTER POWER-CYCLED</strong> — Unplugged 2 minutes, plugged modem first, then router</li>
+        <li><strong>BROWSER CACHE CLEARED</strong> — Cleared cookies and cached files</li>
+        <li><strong>DIFFERENT BROWSER TESTED</strong> — Tried same site in backup browser</li>
+        <li><strong>PROVIDER CALLED</strong> — If all above failed, called with account number ready</li>
+      </ul>
+    </div>
+    </div>
+    <div class="card-actions">
+      <button class="action-btn print-btn" onclick="printWorksheetCard('ws-8')" aria-label="Print worksheet">
+        <span>🖨️</span> Print / Save as PDF
+      </button>
+    </div>
+  <button class="card-toggle" onclick="toggleCard('ws-8')" aria-expanded="false" aria-controls="ws-body-8">
+    <span class="toggle-text">Open Worksheet</span> <span class="toggle-icon">▼</span>
+  </button>
+</article>
+<article class="card worksheet-card" data-type="wifi" data-category="Tech Support" data-difficulty="Quick Win" data-id="ws-9">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="badge type-badge ws-badge">WORKSHEET</span>
+      <span class="badge cat-badge">WI-FI</span>
+    </div>
+    <h3 class="card-title">📶 MY NETWORK INFO CARD</h3>
+  </div>
+  <div class="card-body collapsed" id="ws-body-9">
+    <div class="worksheet-preview-content">
+      <div class="worksheet-title">📶 MY NETWORK INFO CARD
+</div>
+      <p style="text-align:center; color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem;">Fill this out once and keep it where you can find it.</p>
+      <div class="form-group">
+        <label class="form-label">MY WI-FI NETWORK NAME</label>
+        <input type="text" class="form-input" placeholder="Example: SmithHome_5G" aria-label="Network name">
+      </div>
+      <div class="form-group">
+        <label class="form-label">MY WI-FI PASSWORD</label>
+        <input type="text" class="form-input" placeholder="Write it clearly — distinguish 0 from O, 1 from l" aria-label="Wi-Fi password">
+        <div class="form-hint">Store this in a safe place, not on a sticky note on the router.</div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">INTERNET PROVIDER NAME</label>
+        <input type="text" class="form-input" placeholder="Example: Xfinity, AT&T, Spectrum" aria-label="Provider name">
+      </div>
+      <div class="form-group">
+        <label class="form-label">PROVIDER SUPPORT PHONE NUMBER</label>
+        <input type="text" class="form-input" placeholder="Save this in your phone contacts as 'Internet Support'" aria-label="Support number">
+      </div>
+      <div class="form-group">
+        <label class="form-label">ROUTER MODEL NUMBER</label>
+        <input type="text" class="form-input" placeholder="Found on sticker on bottom or back of router" aria-label="Router model">
+      </div>
+      <div class="form-group">
+        <label class="form-label">ROUTER LOGIN ADDRESS</label>
+        <input type="text" class="form-input" placeholder="Usually 192.168.1.1 or 192.168.0.1 — also on sticker" aria-label="Router login">
+      </div>
+    </div>
+    </div>
+    <div class="card-actions">
+      <button class="action-btn print-btn" onclick="printWorksheetCard('ws-9')" aria-label="Print worksheet">
+        <span>🖨️</span> Print / Save as PDF
+      </button>
+    </div>
+  <button class="card-toggle" onclick="toggleCard('ws-9')" aria-expanded="false" aria-controls="ws-body-9">
+    <span class="toggle-text">Open Worksheet</span> <span class="toggle-icon">▼</span>
+  </button>
+</article>
+<article class="card worksheet-card" data-type="wifi" data-category="Tech Support" data-difficulty="Quick Win" data-id="ws-10">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="badge type-badge ws-badge">WORKSHEET</span>
+      <span class="badge cat-badge">WI-FI</span>
+    </div>
+    <h3 class="card-title">🔌 MY POWER CYCLE LOG</h3>
+  </div>
+  <div class="card-body collapsed" id="ws-body-10">
+    <div class="worksheet-preview-content">
+      <div class="worksheet-title">🔌 MY POWER CYCLE LOG
+</div>
+      <p style="text-align:center; color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem;">Track when you restart equipment and whether it worked.</p>
+      <div class="form-group">
+        <label class="form-label">DATE OF LAST POWER CYCLE</label>
+        <input type="text" class="form-input" placeholder="MM/DD/YYYY" aria-label="Last power cycle date">
+      </div>
+      <div class="form-group">
+        <label class="form-label">DID IT FIX THE PROBLEM?</label>
+        <input type="text" class="form-input" placeholder="Yes / No / Partially — describe what changed" aria-label="Power cycle result">
+      </div>
+      <div class="form-group">
+        <label class="form-label">DATE OF LAST ROUTER UPGRADE</label>
+        <input type="text" class="form-input" placeholder="MM/DD/YYYY — If router is 5+ years old, consider upgrading" aria-label="Router upgrade date">
+      </div>
+      <div class="form-group">
+        <label class="form-label">MY BACKUP INTERNET OPTION</label>
+        <input type="text" class="form-input" placeholder="Phone hotspot / Neighbor's Wi-Fi / Library / Coffee shop" aria-label="Backup internet">
+        <div class="form-hint">Know where you can go if home internet is down for an extended period.</div>
+      </div>
+</div>
+    </div>
+    <div class="card-actions">
+      <button class="action-btn print-btn" onclick="printWorksheetCard('ws-10')" aria-label="Print worksheet">
+        <span>🖨️</span> Print / Save as PDF
+      </button>
+    </div>
+  <button class="card-toggle" onclick="toggleCard('ws-10')" aria-expanded="false" aria-controls="ws-body-10">
+    <span class="toggle-text">Open Worksheet</span> <span class="toggle-icon">▼</span>
+  </button>
+</article>
+<article class="card worksheet-card" data-type="computer" data-category="Tech Support" data-difficulty="Quick Win" data-id="ws-11">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="badge type-badge ws-badge">WORKSHEET</span>
+      <span class="badge cat-badge">SLOW COMPUTER</span>
+    </div>
+    <h3 class="card-title">📝 THE SLOW COMPUTER DIAGNOSTIC LOG</h3>
+  </div>
+  <div class="card-body collapsed" id="ws-body-11">
+    <div class="worksheet-preview-content">
+      <div class="worksheet-title">📝 THE SLOW COMPUTER DIAGNOSTIC LOG</div>
+      <p style="text-align:center; color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem;">Document what you observe before you change anything.</p>
+      <div class="form-group">
+        <label class="form-label">DATE</label>
+        <input type="text" class="form-input" placeholder="MM/DD/YYYY" aria-label="Date">
+      </div>
+      <div class="form-group">
+        <label class="form-label">WHAT WAS I DOING WHEN IT SLOWED?</label>
+        <input type="text" class="form-input" placeholder="Example: Opening email, watching video, nothing special" aria-label="Activity">
+      </div>
+      <div class="form-group">
+        <label class="form-label">IS IT ONE PROGRAM OR EVERYTHING?</label>
+        <input type="text" class="form-input" placeholder="Example: Word is slow, but solitaire runs fine" aria-label="Scope">
+      </div>
+      <div class="form-group">
+        <label class="form-label">WHEN DID IT START?</label>
+        <input type="text" class="form-input" placeholder="Example: Today / After an update / Gradually over weeks" aria-label="Onset">
+      </div>
+      <div class="form-group">
+        <label class="form-label">WHAT HAVE I ALREADY TRIED?</label>
+        <input type="text" class="form-input" placeholder="Example: Restarted, closed programs, cleared cache" aria-label="Tried">
+      </div>
+      <div class="form-group">
+        <label class="form-label">WHAT CHANGED RECENTLY?</label>
+        <input type="text" class="form-input" placeholder="Example: New software, update, new device plugged in" aria-label="Changes">
+      </div>
+</div>
+    </div>
+    <div class="card-actions">
+      <button class="action-btn print-btn" onclick="printWorksheetCard('ws-11')" aria-label="Print worksheet">
+        <span>🖨️</span> Print / Save as PDF
+      </button>
+    </div>
+  <button class="card-toggle" onclick="toggleCard('ws-11')" aria-expanded="false" aria-controls="ws-body-11">
+    <span class="toggle-text">Open Worksheet</span> <span class="toggle-icon">▼</span>
+  </button>
+</article>
+<article class="card worksheet-card" data-type="computer" data-category="Tech Support" data-difficulty="Quick Win" data-id="ws-12">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="badge type-badge ws-badge">WORKSHEET</span>
+      <span class="badge cat-badge">SLOW COMPUTER</span>
+    </div>
+    <h3 class="card-title">🧹 THE MONTHLY MAINTENANCE CHECKLIST</h3>
+  </div>
+  <div class="card-body collapsed" id="ws-body-12">
+    <div class="worksheet-preview-content">
+      <div class="worksheet-title">🧹 THE MONTHLY MAINTENANCE CHECKLIST</div>
+      <p style="text-align:center; color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem;">Do these once a month to prevent slowdowns before they start.</p>
+      <ul class="checklist">
+        <li><strong>RESTARTED DEVICE</strong> — Full power off and on, not just sleep</li>
+        <li><strong>CLOSED UNUSED BROWSER TABS</strong> — Counted tabs; closed everything not actively needed</li>
+        <li><strong>CLEARED BROWSER CACHE</strong> — Deleted cached images and cookies</li>
+        <li><strong>EMPTIED RECYCLE BIN / TRASH</strong> — Permanently deleted files sitting in bin</li>
+        <li><strong>RAN DISK CLEANUP</strong> — Removed temporary files and system cache</li>
+        <li><strong>CHECKED STARTUP PROGRAMS</strong> — Disabled anything new that launched automatically</li>
+        <li><strong>REVIEWED DOWNLOADS FOLDER</strong> — Deleted old installers and forgotten files</li>
+        <li><strong>RAN ANTIVIRUS SCAN</strong> — Quick scan clean; no threats detected</li>
+        <li><strong>CHECKED STORAGE SPACE</strong> — Drive has at least 15% free space remaining</li>
+        <li><strong>UPDATED BROWSER</strong> — Running latest version; restarted after update</li>
+      </ul>
+</div>
+    </div>
+    <div class="card-actions">
+      <button class="action-btn print-btn" onclick="printWorksheetCard('ws-12')" aria-label="Print worksheet">
+        <span>🖨️</span> Print / Save as PDF
+      </button>
+    </div>
+  <button class="card-toggle" onclick="toggleCard('ws-12')" aria-expanded="false" aria-controls="ws-body-12">
+    <span class="toggle-text">Open Worksheet</span> <span class="toggle-icon">▼</span>
+  </button>
+</article>
+<article class="card worksheet-card" data-type="computer" data-category="Tech Support" data-difficulty="Quick Win" data-id="ws-13">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="badge type-badge ws-badge">WORKSHEET</span>
+      <span class="badge cat-badge">SLOW COMPUTER</span>
+    </div>
+    <h3 class="card-title">🔧 MY SYSTEM PROFILE</h3>
+  </div>
+  <div class="card-body collapsed" id="ws-body-13">
+    <div class="worksheet-preview-content">
+      <div class="worksheet-title">🔧 MY SYSTEM PROFILE</div>
+      <p style="text-align:center; color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem;">Know what you have so you know what you can and cannot fix.</p>
+      <div class="form-group">
+        <label class="form-label">COMPUTER TYPE</label>
+        <input type="text" class="form-input" placeholder="Example: Windows laptop, iMac, Chromebook" aria-label="Computer type">
+      </div>
+      <div class="form-group">
+        <label class="form-label">DRIVE TYPE</label>
+        <input type="text" class="form-input" placeholder="HDD (hard disk) or SSD (solid state) — check in File Explorer / About This Mac" aria-label="Drive type">
+        <div class="form-hint">If HDD: defragmentation may help. If SSD: never defrag; use Optimize Drives only.</div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">RAM (MEMORY) AMOUNT</label>
+        <input type="text" class="form-input" placeholder="Example: 8 GB — check in Settings / About This Mac" aria-label="RAM amount">
+        <div class="form-hint">Less than 8 GB may struggle with modern browsing and video calls.</div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">STORAGE CAPACITY & FREE SPACE</label>
+        <input type="text" class="form-input" placeholder="Example: 500 GB total, 120 GB free" aria-label="Storage">
+        <div class="form-hint">If less than 15% free, cleanup is urgent.</div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">AGE OF DEVICE</label>
+        <input type="text" class="form-input" placeholder="Example: Purchased 2019 — 7 years old" aria-label="Device age">
+        <div class="form-hint">Computers older than 6–7 years may need hardware upgrades or replacement for modern tasks.</div>
+      </div>
+</div>
+    </div>
+    <div class="card-actions">
+      <button class="action-btn print-btn" onclick="printWorksheetCard('ws-13')" aria-label="Print worksheet">
+        <span>🖨️</span> Print / Save as PDF
+      </button>
+    </div>
+  <button class="card-toggle" onclick="toggleCard('ws-13')" aria-expanded="false" aria-controls="ws-body-13">
+    <span class="toggle-text">Open Worksheet</span> <span class="toggle-icon">▼</span>
+  </button>
+</article>
+
+<article class="card tip-card" data-type="quick-tip" data-category="Tech Support" data-difficulty="Quick Win" data-id="tip-9313">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="badge type-badge tip-badge">QUICK TIP</span>
+      <span class="badge cat-badge">TECH SUPPORT</span>
+    </div>
+    <h3 class="card-title">The 80/20 Rule</h3>
+    <p class="card-teaser">Twenty percent of fixes solve eighty percent of slowdowns. Start with startup cleanup, tab management, and disk cleanup before anything else.</p>
+  </div>
+</article>
+<article class="card tip-card" data-type="quick-tip" data-category="Tech Support" data-difficulty="Quick Win" data-id="tip-8549">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="badge type-badge tip-badge">QUICK TIP</span>
+      <span class="badge cat-badge">TECH SUPPORT</span>
+    </div>
+    <h3 class="card-title">The Golden Rule of Wi-Fi</h3>
+    <p class="card-teaser">Check the obvious first. The simplest explanation is usually the right one. A toggled setting or loose cable solves most problems.</p>
+  </div>
+</article>
+<article class="card tip-card" data-type="quick-tip" data-category="Tech Support" data-difficulty="Quick Win" data-id="tip-7614">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="badge type-badge tip-badge">QUICK TIP</span>
+      <span class="badge cat-badge">TECH SUPPORT</span>
+    </div>
+    <h3 class="card-title">The Undo Philosophy</h3>
+    <p class="card-teaser">Almost nothing you do is permanent. Ctrl+Z, the Recycle Bin, and System Restore are your safety nets.</p>
+  </div>
+</article>
+<article class="card tip-card" data-type="quick-tip" data-category="Productivity" data-difficulty="Quick Win" data-id="tip-9335">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="badge type-badge tip-badge">QUICK TIP</span>
+      <span class="badge cat-badge">PRODUCTIVITY</span>
+    </div>
+    <h3 class="card-title">The 5-Minute Rule</h3>
+    <p class="card-teaser">Spend five minutes turning off notifications for every app except calls, texts, and health. Your anxiety will drop within 24 hours.</p>
+  </div>
+</article>
+<article class="card tip-card" data-type="quick-tip" data-category="Tech Support" data-difficulty="Quick Win" data-id="tip-6855">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="badge type-badge tip-badge">QUICK TIP</span>
+      <span class="badge cat-badge">TECH SUPPORT</span>
+    </div>
+    <h3 class="card-title">The Tab Budget</h3>
+    <p class="card-teaser">Give yourself a five-tab maximum. If you need more, you&#x27;re using bookmarks poorly. The bookmark bar exists to save pages without keeping them open.</p>
+  </div>
+</article>
+<article class="card tip-card" data-type="quick-tip" data-category="Tech Support" data-difficulty="Quick Win" data-id="tip-8505">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="badge type-badge tip-badge">QUICK TIP</span>
+      <span class="badge cat-badge">TECH SUPPORT</span>
+    </div>
+    <h3 class="card-title">The Two-Scan Rule</h3>
+    <p class="card-teaser">No single antivirus catches everything. Run your primary antivirus first, then Malwarebytes second for far more thorough coverage.</p>
+  </div>
+</article>
+<article class="card tip-card" data-type="quick-tip" data-category="Tech Support" data-difficulty="Quick Win" data-id="tip-8148">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="badge type-badge tip-badge">QUICK TIP</span>
+      <span class="badge cat-badge">TECH SUPPORT</span>
+    </div>
+    <h3 class="card-title">The Kitchen Timer Method</h3>
+    <p class="card-teaser">When power-cycling your router, set a timer for 2 minutes. The most common mistake is not waiting long enough.</p>
+  </div>
+</article>
+<article class="card tip-card" data-type="quick-tip" data-category="Productivity" data-difficulty="Quick Win" data-id="tip-5007">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="badge type-badge tip-badge">QUICK TIP</span>
+      <span class="badge cat-badge">PRODUCTIVITY</span>
+    </div>
+    <h3 class="card-title">The Paper Advantage</h3>
+    <p class="card-teaser">Your phone can change overnight with an update. A laminated card on your desk cannot. Print your task maps.</p>
+  </div>
+</article>
+<article class="card tip-card" data-type="quick-tip" data-category="Communication" data-difficulty="Quick Win" data-id="tip-8221">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="badge type-badge tip-badge">QUICK TIP</span>
+      <span class="badge cat-badge">COMMUNICATION</span>
+    </div>
+    <h3 class="card-title">The Family Contact Rule</h3>
+    <p class="card-teaser">Give one trusted family member your password manager&#x27;s emergency contact info. Plan for the day you might need help.</p>
+  </div>
+</article>
+<article class="card tip-card" data-type="quick-tip" data-category="Tech Support" data-difficulty="Quick Win" data-id="tip-4597">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="badge type-badge tip-badge">QUICK TIP</span>
+      <span class="badge cat-badge">TECH SUPPORT</span>
+    </div>
+    <h3 class="card-title">The Save Habit</h3>
+    <p class="card-teaser">Press Ctrl+S every few minutes. The two seconds it takes saves hours of reconstruction if a freeze happens.</p>
+  </div>
+</article>
+<article class="card tip-card" data-type="quick-tip" data-category="Tech Support" data-difficulty="Quick Win" data-id="tip-6357">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="badge type-badge tip-badge">QUICK TIP</span>
+      <span class="badge cat-badge">TECH SUPPORT</span>
+    </div>
+    <h3 class="card-title">The Once-a-Month Rule</h3>
+    <p class="card-teaser">Clear your browser cache and cookies monthly. It prevents problems before they start. Passwords and bookmarks are unaffected.</p>
+  </div>
+</article>
+<article class="card tip-card" data-type="quick-tip" data-category="Tech Support" data-difficulty="Quick Win" data-id="tip-2528">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="badge type-badge tip-badge">QUICK TIP</span>
+      <span class="badge cat-badge">TECH SUPPORT</span>
+    </div>
+    <h3 class="card-title">The Conservative Rule</h3>
+    <p class="card-teaser">When in doubt about a startup program, disable it. You can always re-enable it later. Nothing is permanent.</p>
+  </div>
+</article>
+
+<article class="card worksheet-card" data-type="worksheet" data-category="Health" data-difficulty="Quick Win" data-id="ws-health">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="badge type-badge ws-badge">WORKSHEET</span>
+      <span class="badge cat-badge">HEALTH</span>
+    </div>
+    <h3 class="card-title">🏥 MY HEALTH PORTAL & APP DIRECTORY</h3>
+  </div>
+  <div class="card-body collapsed" id="ws-body-health">
+    <div class="worksheet-preview-content">
+      <div class="worksheet-title">🏥 MY HEALTH PORTAL & APP DIRECTORY</div>
+      <p style="text-align:center; color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem;">Keep your health logins in one place. Store this securely and share with a trusted family member.</p>
+      <table>
+        <thead>
+          <tr><th>SERVICE</th><th>WEBSITE / APP</th><th>USERNAME HINT</th><th>PASSWORD LOCATION</th><th>PHONE NUMBER</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Primary Doctor Portal</td><td><input type="text" class="form-input" placeholder="portal.example.com" aria-label="Primary doctor portal"></td><td><input type="text" class="form-input" placeholder="Hint" aria-label="Username hint"></td><td><input type="text" class="form-input" placeholder="Password manager / written" aria-label="Password location"></td><td><input type="text" class="form-input" placeholder="Phone" aria-label="Phone"></td></tr>
+          <tr><td>Pharmacy</td><td><input type="text" class="form-input" placeholder="walgreens.com / cvs.com" aria-label="Pharmacy"></td><td><input type="text" class="form-input" placeholder="Hint" aria-label="Username hint"></td><td><input type="text" class="form-input" placeholder="Password manager / written" aria-label="Password location"></td><td><input type="text" class="form-input" placeholder="Phone" aria-label="Phone"></td></tr>
+          <tr><td>Insurance</td><td><input type="text" class="form-input" placeholder="aetna.com / uhc.com" aria-label="Insurance"></td><td><input type="text" class="form-input" placeholder="Hint" aria-label="Username hint"></td><td><input type="text" class="form-input" placeholder="Password manager / written" aria-label="Password location"></td><td><input type="text" class="form-input" placeholder="Phone" aria-label="Phone"></td></tr>
+          <tr><td>Dentist</td><td><input type="text" class="form-input" placeholder="Portal URL" aria-label="Dentist"></td><td><input type="text" class="form-input" placeholder="Hint" aria-label="Username hint"></td><td><input type="text" class="form-input" placeholder="Password manager / written" aria-label="Password location"></td><td><input type="text" class="form-input" placeholder="Phone" aria-label="Phone"></td></tr>
+          <tr><td>Eye Doctor</td><td><input type="text" class="form-input" placeholder="Portal URL" aria-label="Eye doctor"></td><td><input type="text" class="form-input" placeholder="Hint" aria-label="Username hint"></td><td><input type="text" class="form-input" placeholder="Password manager / written" aria-label="Password location"></td><td><input type="text" class="form-input" placeholder="Phone" aria-label="Phone"></td></tr>
+          <tr><td>Telehealth Platform</td><td><input type="text" class="form-input" placeholder="teladoc.com / mdlive.com" aria-label="Telehealth"></td><td><input type="text" class="form-input" placeholder="Hint" aria-label="Username hint"></td><td><input type="text" class="form-input" placeholder="Password manager / written" aria-label="Password location"></td><td><input type="text" class="form-input" placeholder="Phone" aria-label="Phone"></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="card-actions">
+    <button class="action-btn print-btn" onclick="printWorksheetCard('ws-health')" aria-label="Print worksheet">
+      <span>🖨️</span> Print / Save as PDF
+    </button>
+  </div>
+  <button class="card-toggle" onclick="toggleCard('ws-health')" aria-expanded="false" aria-controls="ws-body-health">
+    <span class="toggle-text">Open Worksheet</span> <span class="toggle-icon">▼</span>
+  </button>
+</article>
+<article class="card worksheet-card" data-type="worksheet" data-category="Finance" data-difficulty="Quick Win" data-id="ws-finance">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="badge type-badge ws-badge">WORKSHEET</span>
+      <span class="badge cat-badge">FINANCE</span>
+    </div>
+    <h3 class="card-title">💰 MY FINANCIAL ACCOUNT DIRECTORY</h3>
+  </div>
+  <div class="card-body collapsed" id="ws-body-finance">
+    <div class="worksheet-preview-content">
+      <div class="worksheet-title">💰 MY FINANCIAL ACCOUNT DIRECTORY</div>
+      <p style="text-align:center; color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem;">A complete map of your money. Keep this printed in a fire-safe and share a copy with your trusted contact.</p>
+      <table>
+        <thead>
+          <tr><th>ACCOUNT TYPE</th><th>INSTITUTION</th><th>WEBSITE</th><th>USERNAME HINT</th><th>PASSWORD LOCATION</th><th>PHONE NUMBER</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Checking</td><td><input type="text" class="form-input" placeholder="Chase / Wells Fargo / Credit Union" aria-label="Checking institution"></td><td><input type="text" class="form-input" placeholder="Website" aria-label="Checking website"></td><td><input type="text" class="form-input" placeholder="Hint" aria-label="Username hint"></td><td><input type="text" class="form-input" placeholder="Password manager / written" aria-label="Password location"></td><td><input type="text" class="form-input" placeholder="Phone" aria-label="Phone"></td></tr>
+          <tr><td>Savings</td><td><input type="text" class="form-input" placeholder="Institution" aria-label="Savings institution"></td><td><input type="text" class="form-input" placeholder="Website" aria-label="Savings website"></td><td><input type="text" class="form-input" placeholder="Hint" aria-label="Username hint"></td><td><input type="text" class="form-input" placeholder="Password manager / written" aria-label="Password location"></td><td><input type="text" class="form-input" placeholder="Phone" aria-label="Phone"></td></tr>
+          <tr><td>Credit Card</td><td><input type="text" class="form-input" placeholder="Visa / Mastercard / Amex issuer" aria-label="Credit card"></td><td><input type="text" class="form-input" placeholder="Website" aria-label="Credit card website"></td><td><input type="text" class="form-input" placeholder="Hint" aria-label="Username hint"></td><td><input type="text" class="form-input" placeholder="Password manager / written" aria-label="Password location"></td><td><input type="text" class="form-input" placeholder="Phone" aria-label="Phone"></td></tr>
+          <tr><td>Investment / Retirement</td><td><input type="text" class="form-input" placeholder="Fidelity / Vanguard / Schwab" aria-label="Investment"></td><td><input type="text" class="form-input" placeholder="Website" aria-label="Investment website"></td><td><input type="text" class="form-input" placeholder="Hint" aria-label="Username hint"></td><td><input type="text" class="form-input" placeholder="Password manager / written" aria-label="Password location"></td><td><input type="text" class="form-input" placeholder="Phone" aria-label="Phone"></td></tr>
+          <tr><td>Mortgage / Loan</td><td><input type="text" class="form-input" placeholder="Lender name" aria-label="Mortgage"></td><td><input type="text" class="form-input" placeholder="Website" aria-label="Mortgage website"></td><td><input type="text" class="form-input" placeholder="Hint" aria-label="Username hint"></td><td><input type="text" class="form-input" placeholder="Password manager / written" aria-label="Password location"></td><td><input type="text" class="form-input" placeholder="Phone" aria-label="Phone"></td></tr>
+          <tr><td>Insurance</td><td><input type="text" class="form-input" placeholder="State Farm / Allstate / Geico" aria-label="Insurance"></td><td><input type="text" class="form-input" placeholder="Website" aria-label="Insurance website"></td><td><input type="text" class="form-input" placeholder="Hint" aria-label="Username hint"></td><td><input type="text" class="form-input" placeholder="Password manager / written" aria-label="Password location"></td><td><input type="text" class="form-input" placeholder="Phone" aria-label="Phone"></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="card-actions">
+    <button class="action-btn print-btn" onclick="printWorksheetCard('ws-finance')" aria-label="Print worksheet">
+      <span>🖨️</span> Print / Save as PDF
+    </button>
+  </div>
+  <button class="card-toggle" onclick="toggleCard('ws-finance')" aria-expanded="false" aria-controls="ws-body-finance">
+    <span class="toggle-text">Open Worksheet</span> <span class="toggle-icon">▼</span>
+  </button>
+</article>
+<article class="card worksheet-card" data-type="worksheet" data-category="Photos" data-difficulty="Quick Win" data-id="ws-photos">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="badge type-badge ws-badge">WORKSHEET</span>
+      <span class="badge cat-badge">PHOTOS</span>
+    </div>
+    <h3 class="card-title">📸 MY PHOTO BACKUP & ORGANIZATION PLAN</h3>
+  </div>
+  <div class="card-body collapsed" id="ws-body-photos">
+    <div class="worksheet-preview-content">
+      <div class="worksheet-title">📸 MY PHOTO BACKUP & ORGANIZATION PLAN</div>
+      <p style="text-align:center; color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem;">Protect your memories with a simple, repeatable system.</p>
+      <ul class="checklist">
+        <li><strong>CLOUD BACKUP TURNED ON</strong> — iCloud Photos, Google Photos, or OneDrive is syncing automatically</li>
+        <li><strong>EXTERNAL DRIVE OR USB BACKUP CREATED</strong> — Copied photos to a physical drive stored in a safe place</li>
+        <li><strong>PRINTED ALBUM FOR MOST PRECIOUS PHOTOS</strong> — Physical copies of the top 20–50 photos</li>
+        <li><strong>LOCATION TAGGING TURNED OFF</strong> — Camera app does not embed GPS coordinates</li>
+        <li><strong>FAMILY SHARING ALBUM SET UP</strong> — Private shared album with children or grandchildren</li>
+        <li><strong>MONTHLY PHOTO DECLUTTER SCHEDULED</strong> — Calendar reminder to delete blurry and duplicate shots</li>
+      </ul>
+      <div class="form-group" style="margin-top: 1.5rem;">
+        <label class="form-label">MY CLOUD SERVICE</label>
+        <input type="text" class="form-input" placeholder="iCloud / Google Photos / OneDrive / Amazon Photos" aria-label="Cloud service">
+      </div>
+      <div class="form-group">
+        <label class="form-label">MY EXTERNAL DRIVE LOCATION</label>
+        <input type="text" class="form-input" placeholder="Fire-safe / Safety deposit box / Daughter's house" aria-label="Drive location">
+      </div>
+      <div class="form-group">
+        <label class="form-label">LAST BACKUP DATE</label>
+        <input type="text" class="form-input" placeholder="MM/DD/YYYY" aria-label="Last backup date">
+      </div>
+    </div>
+  </div>
+  <div class="card-actions">
+    <button class="action-btn print-btn" onclick="printWorksheetCard('ws-photos')" aria-label="Print worksheet">
+      <span>🖨️</span> Print / Save as PDF
+    </button>
+  </div>
+  <button class="card-toggle" onclick="toggleCard('ws-photos')" aria-expanded="false" aria-controls="ws-body-photos">
+    <span class="toggle-text">Open Worksheet</span> <span class="toggle-icon">▼</span>
+  </button>
+</article>
+<article class="card worksheet-card" data-type="worksheet" data-category="Hobbies" data-difficulty="Quick Win" data-id="ws-hobbies">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="badge type-badge ws-badge">WORKSHEET</span>
+      <span class="badge cat-badge">HOBBIES</span>
+    </div>
+    <h3 class="card-title">🎯 MY DIGITAL LEARNING TRACKER</h3>
+  </div>
+  <div class="card-body collapsed" id="ws-body-hobbies">
+    <div class="worksheet-preview-content">
+      <div class="worksheet-title">🎯 MY DIGITAL LEARNING TRACKER</div>
+      <p style="text-align:center; color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem;">Turn curiosity into progress with free digital tools.</p>
+      <table>
+        <thead>
+          <tr><th>WHAT I WANT TO LEARN</th><th>BEST YOUTUBE CHANNEL / PLAYLIST</th><th>LIBRARY APP OR COURSE</th><th>PROGRESS NOTES</th><th>DATE STARTED</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><input type="text" class="form-input" placeholder="Example: Watercolor painting" aria-label="Learn 1"></td><td><input type="text" class="form-input" placeholder="Channel or playlist URL" aria-label="YouTube 1"></td><td><input type="text" class="form-input" placeholder="Libby / Kanopy / Coursera" aria-label="Library 1"></td><td><input type="text" class="form-input" placeholder="Notes" aria-label="Notes 1"></td><td><input type="text" class="form-input" placeholder="MM/DD/YYYY" aria-label="Date 1"></td></tr>
+          <tr><td><input type="text" class="form-input" placeholder="Example: Spanish basics" aria-label="Learn 2"></td><td><input type="text" class="form-input" placeholder="Channel or playlist URL" aria-label="YouTube 2"></td><td><input type="text" class="form-input" placeholder="Libby / Duolingo / Mango" aria-label="Library 2"></td><td><input type="text" class="form-input" placeholder="Notes" aria-label="Notes 2"></td><td><input type="text" class="form-input" placeholder="MM/DD/YYYY" aria-label="Date 2"></td></tr>
+          <tr><td><input type="text" class="form-input" placeholder="Example: Gardening techniques" aria-label="Learn 3"></td><td><input type="text" class="form-input" placeholder="Channel or playlist URL" aria-label="YouTube 3"></td><td><input type="text" class="form-input" placeholder="Libby / MasterClass / Great Courses" aria-label="Library 3"></td><td><input type="text" class="form-input" placeholder="Notes" aria-label="Notes 3"></td><td><input type="text" class="form-input" placeholder="MM/DD/YYYY" aria-label="Date 3"></td></tr>
+        </tbody>
+      </table>
+      <h4 style="margin-top: 1.5rem;">SETUP CHECKLIST</h4>
+      <ul class="checklist">
+        <li><strong>CREATED A DEDICATED "LEARNING" PLAYLIST</strong> — YouTube playlist named and saved</li>
+        <li><strong>DOWNLOADED LIBRARY APPS</strong> — Libby, hoopla, or Kanopy installed and logged in</li>
+        <li><strong>SET A WEEKLY PRACTICE REMINDER</strong> — Calendar or alarm for 30 min of learning</li>
+        <li><strong>FOUND AN ONLINE COMMUNITY</strong> — Joined a forum, group, or subreddit for this hobby</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-actions">
+    <button class="action-btn print-btn" onclick="printWorksheetCard('ws-hobbies')" aria-label="Print worksheet">
+      <span>🖨️</span> Print / Save as PDF
+    </button>
+  </div>
+  <button class="card-toggle" onclick="toggleCard('ws-hobbies')" aria-expanded="false" aria-controls="ws-body-hobbies">
+    <span class="toggle-text">Open Worksheet</span> <span class="toggle-icon">▼</span>
+  </button>
+</article>
+<article class="card tip-card" data-type="quick-tip" data-category="Health" data-difficulty="Quick Win" data-id="tip-health-1">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="badge type-badge tip-badge">QUICK TIP</span>
+      <span class="badge cat-badge">HEALTH</span>
+    </div>
+    <h3 class="card-title">Medication Reminder Setup</h3>
+    <p class="card-teaser">Set a daily alarm for each medication. Label the alarm with the medication name and dose. Use a pill organizer and your phone together — redundancy prevents missed doses.</p>
+  </div>
+</article>
+<article class="card tip-card" data-type="quick-tip" data-category="Health" data-difficulty="Quick Win" data-id="tip-health-2">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="badge type-badge tip-badge">QUICK TIP</span>
+      <span class="badge cat-badge">HEALTH</span>
+    </div>
+    <h3 class="card-title">Telehealth Prep Checklist</h3>
+    <p class="card-teaser">Test camera and microphone 10 minutes early. Have your insurance card, medication list, and a pen ready. Use headphones for privacy and clarity.</p>
+  </div>
+</article>
+<article class="card tip-card" data-type="quick-tip" data-category="Finance" data-difficulty="Quick Win" data-id="tip-finance-1">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="badge type-badge tip-badge">QUICK TIP</span>
+      <span class="badge cat-badge">FINANCE</span>
+    </div>
+    <h3 class="card-title">Turn On Every Transaction Alert</h3>
+    <p class="card-teaser">Set your bank to text or email you for every purchase, even $1. You will catch fraud before the bank does. It takes 3 minutes and saves thousands.</p>
+  </div>
+</article>
+<article class="card tip-card" data-type="quick-tip" data-category="Finance" data-difficulty="Quick Win" data-id="tip-finance-2">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="badge type-badge tip-badge">QUICK TIP</span>
+      <span class="badge cat-badge">FINANCE</span>
+    </div>
+    <h3 class="card-title">Freeze Your Credit for Free</h3>
+    <p class="card-teaser">Contact Equifax, Experian, and TransUnion online to freeze your credit at no cost. Thieves cannot open accounts in your name while it is frozen. Unfreeze anytime you need a loan.</p>
+  </div>
+</article>
+<article class="card tip-card" data-type="quick-tip" data-category="Photos" data-difficulty="Quick Win" data-id="tip-photos-1">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="badge type-badge tip-badge">QUICK TIP</span>
+      <span class="badge cat-badge">PHOTOS</span>
+    </div>
+    <h3 class="card-title">The 3-2-1 Photo Rule</h3>
+    <p class="card-teaser">Keep 3 copies of every important photo: on your device, in the cloud, and on an external drive or USB stick. If one fails, you still have two.</p>
+  </div>
+</article>
+<article class="card tip-card" data-type="quick-tip" data-category="Photos" data-difficulty="Quick Win" data-id="tip-photos-2">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="badge type-badge tip-badge">QUICK TIP</span>
+      <span class="badge cat-badge">PHOTOS</span>
+    </div>
+    <h3 class="card-title">Turn Off Location Tagging</h3>
+    <p class="card-teaser">Photos taken with your phone embed GPS coordinates. Scammers and thieves can map your home, routines, and travel. Disable location services for your camera app.</p>
+  </div>
+</article>
+<article class="card tip-card" data-type="quick-tip" data-category="Hobbies" data-difficulty="Quick Win" data-id="tip-hobbies-1">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="badge type-badge tip-badge">QUICK TIP</span>
+      <span class="badge cat-badge">HOBBIES</span>
+    </div>
+    <h3 class="card-title">YouTube as a Free Class</h3>
+    <p class="card-teaser">Search "beginner [your hobby]" and save videos to a playlist. Pause, rewind, and learn at your own pace. No sign-up, no cost, no pressure.</p>
+  </div>
+</article>
+<article class="card tip-card" data-type="quick-tip" data-category="Hobbies" data-difficulty="Quick Win" data-id="tip-hobbies-2">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="badge type-badge tip-badge">QUICK TIP</span>
+      <span class="badge cat-badge">HOBBIES</span>
+    </div>
+    <h3 class="card-title">Your Library Card Is a Superpower</h3>
+    <p class="card-teaser">Most public libraries offer free ebooks, audiobooks, and streaming courses through apps like Libby, hoopla, and Kanopy. All you need is your card number.</p>
+  </div>
+</article>
+</main>
+
+<!-- NO RESULTS (hidden by default) -->
+<div class="no-results" id="noResults" style="display:none;">
+  <span class="no-results-emoji">🔍</span>
+  <div class="no-results-title">No matches found</div>
+  <p class="no-results-text">Try adjusting your filters or search terms.</p>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast" role="status" aria-live="polite">Copied to clipboard!</div>
+
+<!-- FLOATING BACK TO TOP -->
+<button class="back-to-top-floating" aria-label="Back to top">↑</button>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-brand-text">
+        <span style="color: var(--white);">SCAM</span><span style="color: var(--gold);">B<span style="font-size:0.9em;">💣</span>MB</span>
+      </div>
+    </div>
+    <div class="footer-meta">
+      PROVIDED BY SCAMBOMB.COM · STAY SCAM-SMART
+    </div>
+    <div class="footer-classification">
+      CONFIDENTIAL — SCAMBOMB FIELD MANUAL
+    </div>
+  </div>
+</footer>
+
+<script>
+  // State
+  const activeFilters = { type: new Set(), category: new Set(), difficulty: new Set() };
+  let searchQuery = '';
+  let currentView = 'grid';
+
+  const difficultyOrder = { 'Quick Win': 1, '5 Min': 2, 'Deep Dive': 3, 'Step-by-Step Guide': 4 };
+  const grid = document.getElementById('megaGrid');
+  const cards = Array.from(grid.querySelectorAll('.card'));
+  const resultsCount = document.getElementById('resultsCount');
+  const clearBtn = document.getElementById('clearFilters');
+  const noResults = document.getElementById('noResults');
+  const toast = document.getElementById('toast');
+
+  // Filter chips
+  document.querySelectorAll('.filter-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      const filterType = chip.dataset.filter;
+      const value = chip.dataset.value;
+      if (activeFilters[filterType].has(value)) {
+        activeFilters[filterType].delete(value);
+        chip.classList.remove('active');
+      } else {
+        activeFilters[filterType].add(value);
+        chip.classList.add('active');
+      }
+      applyFilters();
+    });
+  });
+
+  // Search
+  document.getElementById('searchInput').addEventListener('input', (e) => {
+    searchQuery = e.target.value.toLowerCase().trim();
+    applyFilters();
+  });
+
+  // Sort
+  document.getElementById('sortSelect').addEventListener('change', (e) => {
+    sortCards(e.target.value);
+  });
+
+  // View toggle
+  document.querySelectorAll('.view-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentView = btn.dataset.view;
+      grid.classList.toggle('list-view', currentView === 'list');
+    });
+  });
+
+  function applyFilters() {
+    let visibleCount = 0;
+    const hasActiveFilters = activeFilters.type.size > 0 || activeFilters.category.size > 0 || activeFilters.difficulty.size > 0 || searchQuery.length > 0;
+    clearBtn.classList.toggle('visible', hasActiveFilters);
+
+    cards.forEach(card => {
+      const type = card.dataset.type;
+      const category = card.dataset.category;
+      const difficulty = card.dataset.difficulty;
+      const title = card.querySelector('.card-title').textContent.toLowerCase();
+      const teaser = card.querySelector('.card-teaser')?.textContent.toLowerCase() || '';
+
+      const isWorksheet = card.classList.contains('worksheet-card');
+    const typeMatch = activeFilters.type.size === 0 || activeFilters.type.has(type) || (activeFilters.type.has('worksheet') && isWorksheet);
+      const catMatch = activeFilters.category.size === 0 || activeFilters.category.has(category);
+      const diffMatch = activeFilters.difficulty.size === 0 || activeFilters.difficulty.has(difficulty);
+      const searchMatch = !searchQuery || title.includes(searchQuery) || teaser.includes(searchQuery) || category.toLowerCase().includes(searchQuery) || difficulty.toLowerCase().includes(searchQuery);
+
+      const isVisible = typeMatch && catMatch && diffMatch && searchMatch;
+      card.classList.toggle('hidden', !isVisible);
+      if (isVisible) visibleCount++;
+    });
+
+    resultsCount.textContent = visibleCount;
+    noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+    grid.style.display = visibleCount === 0 ? 'none' : 'grid';
+  }
+
+  function sortCards(sortValue) {
+    const visibleCards = cards.filter(c => !c.classList.contains('hidden'));
+
+    visibleCards.sort((a, b) => {
+      if (sortValue === 'name') {
+        return a.querySelector('.card-title').textContent.localeCompare(b.querySelector('.card-title').textContent);
+      }
+      if (sortValue === 'diff-asc') {
+        return difficultyOrder[a.dataset.difficulty] - difficultyOrder[b.dataset.difficulty];
+      }
+      if (sortValue === 'diff-desc') {
+        return difficultyOrder[b.dataset.difficulty] - difficultyOrder[a.dataset.difficulty];
+      }
+      const catA = a.dataset.category || '';
+      const catB = b.dataset.category || '';
+      if (catA !== catB) return catA.localeCompare(catB);
+      return a.querySelector('.card-title').textContent.localeCompare(b.querySelector('.card-title').textContent);
+    });
+
+    visibleCards.forEach(card => grid.appendChild(card));
+  }
+
+  function clearAllFilters() {
+    activeFilters.type.clear();
+    activeFilters.category.clear();
+    activeFilters.difficulty.clear();
+    searchQuery = '';
+    document.getElementById('searchInput').value = '';
+    document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+    applyFilters();
+  }
+
+  // Card toggle (worksheets)
+  function toggleCard(id) {
+    const card = document.querySelector(`[data-id="${id}"]`);
+    if (!card) return;
+    const body = card.querySelector('.card-body');
+    const btn = card.querySelector('.card-toggle');
+    const isCollapsed = body.classList.contains('collapsed');
+    body.classList.toggle('collapsed', !isCollapsed);
+    btn.setAttribute('aria-expanded', isCollapsed);
+
+    const isWorksheet = card.classList.contains('worksheet-card');
+    if (isWorksheet) {
+      btn.querySelector('.toggle-text').textContent = isCollapsed ? 'Close Worksheet' : 'Open Worksheet';
+    }
+  }
+
+  // Print single worksheet from card
+  function printWorksheetCard(wsId) {
+    const card = document.querySelector(`[data-id="${wsId}"]`);
+    if (!card) return;
+
+    // Ensure content is visible
+    const body = card.querySelector('.card-body');
+    const toggle = card.querySelector('.card-toggle');
+    if (body.classList.contains('collapsed')) {
+      body.classList.remove('collapsed');
+      toggle.setAttribute('aria-expanded', 'true');
+      toggle.querySelector('.toggle-text').textContent = 'Close Worksheet';
+    }
+
+    // Set print date
+    const dateEl = card.querySelector('.print-date-value');
+    if (dateEl) {
+      dateEl.textContent = new Date().toLocaleDateString('en-US', {
+        year: 'numeric', month: 'long', day: 'numeric'
+      });
+    }
+
+    card.classList.add('ws-active-print');
+    document.body.classList.add('printing-single-worksheet');
+    window.print();
+
+    const cleanup = () => {
+      document.body.classList.remove('printing-single-worksheet');
+      card.classList.remove('ws-active-print');
+      window.removeEventListener('afterprint', cleanup);
+    };
+    window.addEventListener('afterprint', cleanup);
+  }
+
+  // Hamburger
+  const hamburger = document.querySelector('.hamburger-btn');
+  const mobileNav = document.querySelector('.mobile-nav-overlay');
+  if (hamburger && mobileNav) {
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      mobileNav.classList.toggle('active');
+      const expanded = mobileNav.classList.contains('active');
+      hamburger.setAttribute('aria-expanded', expanded);
+      mobileNav.setAttribute('aria-hidden', !expanded);
+      document.body.style.overflow = expanded ? 'hidden' : '';
+    });
+    mobileNav.querySelectorAll('.nav-pill').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        mobileNav.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+        mobileNav.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      });
+    });
+  }
+
+  // Floating back-to-top
+  const floatingTop = document.querySelector('.back-to-top-floating');
+  if (floatingTop) {
+    window.addEventListener('scroll', () => {
+      floatingTop.classList.toggle('visible', window.scrollY > 600);
+    });
+    floatingTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  // Initial sort
+  sortCards('category');
+</script>
+
+</body>
+</html>

@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ScamBomb Wi-Fi Guide — Fix Any Connection Problem</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="/thank-you/command-center/access.js" defer></script>
+<style>
+:root {
+  --navy-deep: #0B1324;
+  --navy-primary: #0B1426;
+  --gold: #F5C84C;
+  --gold-bright: #FFD700;
+  --white: #FFFFFF;
+  --off-white: #F0F2F5;
+  --bg-body: #111827;
+  --bg-card: #151B2B;
+  --bg-card-hover: #1A2235;
+  --border-subtle: #2D3138;
+  --text-secondary: #9BA3AF;
+  --text-muted: #6B7280;
+  --success: #3DDC84;
+  --warning: #FBBF24;
+  --danger: #EF4444;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --shadow-soft: 0 4px 24px rgba(0,0,0,0.25);
+  --shadow-gold: 0 0 20px rgba(245,200,76,0.15);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 18px; }
+body {
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg-body);
+  color: var(--off-white);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ACCESS GATE */
+.cc-lock { display: none; max-width: 920px; margin: 0 auto; padding: 5rem 1.5rem 6rem; text-align: center; }
+.cc-lock-card { background: var(--bg-card); border: 2px solid rgba(245,200,76,0.35); border-radius: var(--radius-xl); box-shadow: var(--shadow-soft); padding: 2.5rem 2rem; }
+.cc-lock h1 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); font-weight: 900; text-transform: uppercase; line-height: 1.15; margin-bottom: 0.75rem; }
+.cc-lock h1 .w { color: var(--white); }
+.cc-lock h1 .g { color: var(--gold); }
+.cc-lock p { color: var(--text-secondary); font-size: 1.05rem; max-width: 680px; margin: 0.75rem auto 1.5rem; }
+.cc-lock .note { font-size: 0.9rem; color: rgba(255,255,255,0.55); margin-top: 0.9rem; }
+.cc-lock-actions { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; margin-top: 1.25rem; }
+.cc-lock-actions a { min-height: 46px; display: inline-flex; align-items: center; justify-content: center; padding: 0.9rem 1.35rem; border-radius: 999px; font-weight: 900; letter-spacing: 0.04em; text-transform: uppercase; text-decoration: none; }
+.cc-lock-primary { background: var(--gold); color: var(--navy-primary); box-shadow: 0 6px 20px rgba(245,200,76,0.22); }
+.cc-lock-secondary { border: 2px solid rgba(245,200,76,0.55); color: var(--gold); }
+[data-cc-content] { display: none; }
+img { max-width: 100%; display: block; }
+
+/* HEADER */
+.site-header {
+  background: var(--navy-primary);
+  border-bottom: 2px solid var(--gold);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+.brand-text {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  line-height: 1;
+}
+.brand-scam { color: var(--white); }
+.brand-bomb { color: var(--gold); }
+.brand-icon { font-size: 1.3rem; line-height: 1; }
+.brand-tagline {
+  font-size: 0.65rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-top: 0.15rem;
+  font-weight: 600;
+}
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.6rem 1.25rem;
+  background: transparent;
+  border: 2px solid var(--gold);
+  border-radius: var(--radius-xl);
+  color: var(--gold);
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  transition: all 0.2s;
+  min-height: 44px;
+}
+.back-btn:hover, .back-btn:focus {
+  background: rgba(245,200,76,0.15);
+  box-shadow: var(--shadow-gold);
+  outline: 3px solid var(--white);
+  outline-offset: 2px;
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(180deg, var(--navy-deep) 0%, var(--bg-body) 100%);
+  padding: 3rem 1.5rem 2.5rem;
+  text-align: center;
+  border-bottom: 1px solid var(--border-subtle);
+}
+.hero-inner { max-width: 800px; margin: 0 auto; }
+.hero-badge {
+  display: inline-block;
+  padding: 0.35rem 1rem;
+  background: rgba(245,200,76,0.12);
+  border: 1px solid rgba(245,200,76,0.3);
+  color: var(--gold);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: 100px;
+  margin-bottom: 1.25rem;
+}
+.hero h1 {
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+.hero h1 .text-white { color: var(--white); }
+.hero h1 .text-gold { color: var(--gold); }
+.hero-subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  color: var(--text-secondary);
+  font-weight: 500;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* MAIN */
+.main-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+/* SECTION */
+.guide-section {
+  margin-bottom: 3rem;
+  scroll-margin-top: 100px;
+}
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--gold);
+}
+.section-number {
+  width: 48px;
+  height: 48px;
+  background: var(--navy-primary);
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+.section-time {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 0.25rem;
+}
+
+/* BODY CONTENT */
+.guide-body p {
+  font-size: 1rem;
+  color: var(--off-white);
+  margin-bottom: 1.25rem;
+  line-height: 1.7;
+}
+.guide-body h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin: 2rem 0 1rem;
+}
+.guide-body ul, .guide-body ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.guide-body li {
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+  color: var(--off-white);
+}
+.guide-body strong {
+  color: var(--white);
+  font-weight: 700;
+}
+.guide-body code {
+  background: var(--navy-primary);
+  padding: 0.15rem 0.4rem;
+  border-radius: var(--radius-sm);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9em;
+  color: var(--success);
+}
+
+/* TIP BOX */
+.tip-box {
+  border-left: 4px solid var(--gold);
+  background: rgba(245,200,76,0.08);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
+}
+.tip-box-title {
+  color: var(--gold);
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.tip-box p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* WARNING BOX */
+.warning-box {
+  border-left: 4px solid var(--danger);
+  background: rgba(239,68,68,0.08);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
+}
+.warning-box-title {
+  color: var(--danger);
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.warning-box p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* CHECKLIST */
+.checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+}
+.checklist li {
+  position: relative;
+  padding: 0.75rem 0 0.75rem 2.25rem;
+  border-bottom: 1px solid var(--border-subtle);
+  color: var(--off-white);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+.checklist li::before {
+  content: "💣";
+  position: absolute;
+  left: 0;
+  top: 0.75rem;
+  color: var(--gold);
+  font-size: 1.2rem;
+  line-height: 1;
+}
+.checklist li strong {
+  color: var(--white);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.03em;
+}
+
+/* STEP CARDS */
+.step-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  transition: border-color 0.2s;
+}
+.step-card:hover {
+  border-color: rgba(245,200,76,0.25);
+}
+.step-number {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  background: var(--navy-primary);
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--gold);
+  margin-bottom: 0.75rem;
+}
+.step-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+.step-card p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* NAV */
+.section-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-subtle);
+}
+.nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.6rem 1.25rem;
+  background: var(--gold);
+  color: var(--navy-primary);
+  border: none;
+  border-radius: var(--radius-xl);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  min-height: 44px;
+}
+.nav-btn:hover {
+  background: var(--gold-bright);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(245,200,76,0.3);
+}
+.nav-btn.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.nav-btn-outline {
+  background: transparent;
+  border: 2px solid var(--gold);
+  color: var(--gold);
+}
+.nav-btn-outline:hover {
+  background: rgba(245,200,76,0.15);
+}
+
+/* CERTIFICATE */
+.certificate-wrap {
+  max-width: 800px;
+  margin: 4rem auto 2rem;
+  padding: 0 1.5rem;
+}
+.certificate {
+  background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy-primary) 100%);
+  border: 5px solid var(--gold);
+  border-radius: var(--radius-lg);
+  padding: 3rem 2.5rem;
+  text-align: center;
+  position: relative;
+  box-shadow: var(--shadow-gold);
+}
+.certificate::before {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border: 2px solid var(--gold);
+  border-radius: var(--radius-md);
+  pointer-events: none;
+  opacity: 0.4;
+}
+.cert-seal {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 1.5rem;
+  background: var(--navy-primary);
+  border: 3px solid var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+}
+.cert-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+.cert-subtitle {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+}
+.cert-name {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--white);
+  border-bottom: 2px solid var(--gold);
+  display: inline-block;
+  padding: 0 1rem 0.5rem;
+  margin-bottom: 1.5rem;
+  min-width: 300px;
+}
+.cert-id {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+.cert-date {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+.cert-helper {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-bottom: 1.5rem;
+}
+.cert-print-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.75rem 2rem;
+  background: var(--gold);
+  color: var(--navy-primary);
+  border: none;
+  border-radius: var(--radius-xl);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  transition: all 0.2s;
+  min-height: 44px;
+}
+.cert-print-btn:hover {
+  background: var(--gold-bright);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(245,200,76,0.3);
+}
+
+/* FOOTER */
+.site-footer {
+  background: var(--navy-primary);
+  border-top: 4px solid var(--gold);
+  padding: 2rem 1.5rem;
+  margin-top: 2rem;
+}
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  text-align: center;
+}
+@media (min-width: 640px) {
+  .footer-inner {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+}
+.footer-brand-text {
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+.footer-meta {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+}
+.footer-classification {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  border: 1px solid var(--border-subtle);
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* BACK TO TOP */
+.back-to-top {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 48px;
+  height: 48px;
+  background: var(--navy-primary);
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  text-decoration: none;
+  box-shadow: var(--shadow-gold);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s, transform 0.2s;
+  z-index: 90;
+  cursor: pointer;
+}
+.back-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+.back-to-top:hover {
+  transform: translateY(-3px);
+  background: rgba(245,200,76,0.1);
+}
+
+/* PRINT */
+@media print {
+  .site-header, .site-footer, .back-to-top, .cert-print-btn { display: none !important; }
+  body { background: #fff; color: #000; }
+  .hero { background: #fff; border-bottom: 2px solid #000; padding: 1rem; }
+  .hero h1 { color: #000; }
+  .hero h1 .text-white, .hero h1 .text-gold { color: #000; }
+  .guide-section { page-break-inside: avoid; }
+  .certificate { background: #fff; border: 3px solid #000; box-shadow: none; }
+  .certificate::before { display: none; }
+  .cert-name { color: #000; border-bottom-color: #000; }
+  .cert-title { color: #000; }
+  .cert-seal { border-color: #000; }
+  .step-card { background: #f5f5f5; border: 1px solid #ccc; }
+  .tip-box { background: #f9f9f9; border-left-color: #000; }
+  .warning-box { background: #fff5f5; border-left-color: #000; }
+  .checklist li::before { color: #000; }
+  .nav-btn { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+</style>
+</head>
+<body>
+
+  <!-- LOCK SCREEN (shown unless cc=1&k=... or access cookie exists) -->
+  <section class="cc-lock" data-cc-lock>
+    <div class="cc-lock-card">
+      <div class="hero-badge">PAID RESOURCE</div>
+      <h1><span class="w">WI-FI</span> <span class="g">FIELD GUIDE</span></h1>
+      <p>
+        This guide is locked because it’s part of the paid Command Center.
+        Use your private access link, or purchase access to continue.
+      </p>
+      <div class="cc-lock-actions">
+        <a class="cc-lock-primary" href="#" data-cc-checkout>GET ACCESS →</a>
+        <a class="cc-lock-secondary" href="/thank-you/command-center/">BACK TO THANK YOU PAGE</a>
+      </div>
+      <div class="note">Tip: If you purchased and can’t get in, double-check the full link from your email.</div>
+    </div>
+  </section>
+
+  <div data-cc-content>
+
+<!-- HEADER -->
+<header class="site-header" id="top">
+  <div class="header-inner">
+    <a href="scambomb_senior_tech_mega_hub.html" class="brand" aria-label="ScamBomb Home">
+      <div>
+        <div class="brand-text">
+          <span class="brand-scam">SCAM</span><span class="brand-bomb">B<span class="brand-icon">💣</span>MB</span>
+        </div>
+        <div class="brand-tagline">STAY SCAM-SMART</div>
+      </div>
+    </a>
+    <a href="scambomb_senior_tech_mega_hub.html" class="back-btn">← Back to Hub</a>
+  </div>
+</header>
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">WI-FI GUIDE | 2026</div>
+    <h1><span class="text-white">NEVER LOSE YOUR</span><br><span class="text-gold">CONNECTION AGAIN</span></h1>
+    <p class="hero-subtitle">From quick checks to deep troubleshooting — every fix you need, in the order that actually works.</p>
+  </div>
+</section>
+<main class="main-content">
+<section class="guide-section" id="basics">
+  <div class="section-header">
+    <div class="section-number">1</div>
+    <div>
+      <div class="section-title">The Basics Checklist</div>
+      <div class="section-time">⏱ 5 min</div>
+    </div>
+  </div>
+  <div class="guide-body">
+<p>Before you blame your router, your provider, or your device, run through this checklist. The simplest explanation is usually the right one.</p>
+
+<h4>✅ The 5-Second Checks</h4>
+<ul class="checklist">
+  <li><strong>AIRPLANE MODE IS OFF</strong> — Swipe down from the top of your phone screen. Look for the airplane icon. If it is lit up, tap it to turn it off.</li>
+  <li><strong>WI-FI IS TURNED ON</strong> — Settings → Wi-Fi → toggle is green (iPhone) or blue (Android). On a computer, look for the Wi-Fi icon in the taskbar or menu bar.</li>
+  <li><strong>RIGHT NETWORK SELECTED</strong> — Make sure you are connected to your home network name, not a neighbor's or a public hotspot. Public hotspots often have weak signal and require a login page.</li>
+  <li><strong>YOU ARE CLOSE ENOUGH</strong> — Walls, floors, and distance kill Wi-Fi signal. If you are three rooms away from the router, move closer. If the signal improves, the problem is distance, not the device.</li>
+  <li><strong>INTERNET IS NOT OUT IN YOUR AREA</strong> — Check your provider's status page on your phone using cellular data. Or ask a neighbor if their internet is working. If the whole neighborhood is down, the problem is upstream — call your provider.</li>
+</ul>
+
+<div class="tip-box">
+  <div class="tip-box-title">💡 The Golden Rule of Wi-Fi</div>
+  <p>Check the obvious first. A toggled setting or loose cable solves most problems. Do not dive into advanced settings until you have confirmed the basics.</p>
+</div>
+
+<h4>🔌 The Physical Check</h4>
+<p>Walk to your router. Look at the lights. Most routers have a row of LED indicators:</p>
+<ul>
+<li><strong>Power light:</strong> Should be solid green or blue. If red or off, the router has no power. Check the wall outlet.</li>
+<li><strong>Internet / WAN light:</strong> Should be solid or blinking green. If red or off, the router is not talking to your provider. Check the cable from the wall to the router.</li>
+<li><strong>Wi-Fi light:</strong> Should be blinking. If off, Wi-Fi is disabled. Press the Wi-Fi button on the router (usually on the side or back) to turn it back on.</li>
+</ul>
+  </div>
+<div class="section-nav">
+  <span></span>
+  <a href="#troubleshoot" class="nav-btn">Next →</a>
+</div>
+</section>
+<section class="guide-section" id="troubleshoot">
+  <div class="section-header">
+    <div class="section-number">2</div>
+    <div>
+      <div class="section-title">Built-In Troubleshooting Tools</div>
+      <div class="section-time">⏱ 10 min</div>
+    </div>
+  </div>
+  <div class="guide-body">
+<p>Your computer and phone have built-in network doctors. They diagnose and often fix problems automatically. Use them before you call anyone.</p>
+
+<h4>💻 Windows Network Troubleshooter</h4>
+<div class="step-card">
+  <div class="step-number">1</div>
+  <div class="step-title">Run the Troubleshooter</div>
+  <p>Click the Wi-Fi icon in the taskbar (bottom right). Right-click it and choose "Diagnose and repair" or "Troubleshoot problems." Windows will scan for issues and attempt fixes automatically. Follow any on-screen instructions. It may reset your network adapter, which is safe.</p>
+</div>
+<div class="step-card">
+  <div class="step-number">2</div>
+  <div class="step-title">Network Reset (Nuclear Option)</div>
+  <p>If the troubleshooter fails, go to Settings → Network & Internet → Advanced network settings → Network reset. Click "Reset now." This removes all network adapters and reinstalls them. You will need to re-enter your Wi-Fi password. Only do this if other fixes failed.</p>
+</div>
+
+<h4>🍎 Mac Wireless Diagnostics</h4>
+<div class="step-card">
+  <div class="step-number">1</div>
+  <div class="step-title">Run the Diagnostic</div>
+  <p>Hold the Option key and click the Wi-Fi icon in the menu bar. Choose "Open Wireless Diagnostics." Click "Continue." The Mac runs a full analysis and creates a report. The report is technical, but the Summary page usually tells you if the problem is your router, your provider, or interference from neighboring networks.</p>
+</div>
+
+<h4>📱 iPhone / iPad Network Reset</h4>
+<div class="step-card">
+  <div class="step-number">1</div>
+  <div class="step-title">Reset Network Settings</div>
+  <p>Settings → General → Transfer or Reset iPhone → Reset → Reset Network Settings. Enter your passcode. This forgets all Wi-Fi passwords and Bluetooth pairings, but does not delete photos or contacts. You will need to rejoin your Wi-Fi network.</p>
+</div>
+
+<h4>🤖 Android Network Reset</h4>
+<div class="step-card">
+  <div class="step-number">1</div>
+  <div class="step-title">Reset Network Settings</div>
+  <p>Settings → System → Reset options → Reset Wi-Fi, mobile & Bluetooth. Confirm. This is the same as the iPhone reset — it forgets networks but keeps your data safe.</p>
+</div>
+
+<div class="tip-box">
+  <div class="tip-box-title">💡 When to Use the Nuclear Option</div>
+  <p>Only reset network settings if you have already tried: restarting the device, restarting the router, and the built-in troubleshooter. Network reset is safe but annoying because you must re-enter every Wi-Fi password.</p>
+</div>
+  </div>
+<div class="section-nav">
+  <a href="#basics" class="nav-btn nav-btn-outline">← Previous</a>
+  <a href="#restart" class="nav-btn">Next →</a>
+</div>
+</section>
+<section class="guide-section" id="restart">
+  <div class="section-header">
+    <div class="section-number">3</div>
+    <div>
+      <div class="section-title">The Power Cycle Protocol</div>
+      <div class="section-time">⏱ 5 min</div>
+    </div>
+  </div>
+  <div class="guide-body">
+<p>Power cycling — unplugging your equipment and plugging it back in — fixes roughly 40% of all internet problems. But there is a right way to do it. Most people do it too fast and it does not work.</p>
+
+<h4>🔌 The Correct Sequence</h4>
+<ol>
+<li><strong>Unplug both devices.</strong> Pull the power cord from the back of the modem AND the router. If you have a single combo device, unplug just that one.</li>
+<li><strong>Wait 2 full minutes.</strong> Set a kitchen timer. This is the step everyone skips. The devices need time to fully discharge their capacitors and clear their memory. Quick 10-second flicks do not work.</li>
+<li><strong>Plug in the modem first.</strong> Wait for the modem lights to stabilize. This usually takes 1-2 minutes. You want the "Internet" or "Online" light to be solid green. Do not plug in the router yet.</li>
+<li><strong>Plug in the router second.</strong> Wait for the router lights to stabilize. The "Wi-Fi" light should blink, and the "Internet" light on the router should turn green.</li>
+<li><strong>Restart your device last.</strong> Turn your phone, tablet, or computer completely off and back on. This ensures it gets a fresh connection to the newly restarted network.</li>
+</ol>
+
+<div class="tip-box">
+  <div class="tip-box-title">💡 The Kitchen Timer Method</div>
+  <p>When power-cycling your router, set a timer for 2 minutes. The most common mistake is not waiting long enough. The second most common mistake is plugging the router in before the modem is ready.</p>
+</div>
+
+<h4>📋 When to Power Cycle</h4>
+<p>Do this before you call your internet provider. It solves most issues and takes 5 minutes. Providers will ask you to do it anyway, so doing it first saves you a 30-minute hold time.</p>
+<ul>
+<li>Slow speeds</li>
+<li>Intermittent disconnections</li>
+<li>One device cannot connect while others can</li>
+<li>After a power outage</li>
+<li>After your provider confirms an outage has been fixed in your area</li>
+</ul>
+
+<h4>📶 Router Age Check</h4>
+<p>If your router is more than 5 years old, power cycling may only provide temporary relief. Older routers struggle with modern internet speeds and the number of devices in today's homes. Consider upgrading if:</p>
+<ul>
+<li>The router is hot to the touch even when idle</li>
+<li>You have more than 10 devices connected (phones, tablets, TVs, smart speakers, etc.)</li>
+<li>Your internet plan is 100 Mbps or faster but your router only supports 50 Mbps</li>
+<li>The router manufacturer no longer releases security updates</li>
+</ul>
+  </div>
+<div class="section-nav">
+  <a href="#troubleshoot" class="nav-btn nav-btn-outline">← Previous</a>
+  <a href="#browser" class="nav-btn">Next →</a>
+</div>
+</section>
+<section class="guide-section" id="browser">
+  <div class="section-header">
+    <div class="section-number">4</div>
+    <div>
+      <div class="section-title">Browser Fixes</div>
+      <div class="section-time">⏱ 5 min</div>
+    </div>
+  </div>
+  <div class="guide-body">
+<p>Sometimes the internet works fine, but your browser is broken. A corrupted browser can make every website look broken or load impossibly slowly. These fixes take 5 minutes and solve the problem without touching your network.</p>
+
+<h4>🧹 Clear Cache and Cookies</h4>
+<p>Your browser saves copies of every website you visit. Over months, these files corrupt. Clearing them forces the browser to download fresh, clean copies.</p>
+<div class="step-card">
+  <div class="step-number">1</div>
+  <div class="step-title">Chrome / Edge</div>
+  <p>Press <strong>Ctrl + Shift + Delete</strong> (Windows) or <strong>Command + Shift + Delete</strong> (Mac). A window pops up. Set the time range to "All time." Check "Cached images and files" and "Cookies and other site data." Click "Clear data." Your saved passwords and bookmarks are safe. You will need to log back into websites.</p>
+</div>
+<div class="step-card">
+  <div class="step-number">2</div>
+  <div class="step-title">Safari</div>
+  <p>Safari menu → Settings → Privacy → Manage Website Data → Remove All. Then Safari menu → History → Clear History. Choose "all history."</p>
+</div>
+
+<div class="tip-box">
+  <div class="tip-box-title">💡 The Once-a-Month Rule</div>
+  <p>Clear your browser cache and cookies monthly. It prevents problems before they start. Passwords and bookmarks are unaffected. Set a recurring calendar reminder for the first of every month.</p>
+</div>
+
+<h4>🔄 Keep a Backup Browser</h4>
+<p>Install a second browser you rarely use. If your main browser breaks, you can test whether the problem is the browser or the internet itself.</p>
+<ul>
+<li>If the backup browser works fine → the problem is your main browser. Reinstall it.</li>
+<li>If the backup browser is also broken → the problem is your network or the website itself.</li>
+</ul>
+<p>Recommended pairs: Chrome + Edge (both free), or Safari + Chrome (Mac).</p>
+
+<h4>⬆️ Update Your Browser</h4>
+<p>Old browsers are slow, buggy, and dangerous. They lack security patches for known threats.</p>
+<ul>
+<li><strong>Chrome:</strong> Click the three dots → Help → About Google Chrome. It updates automatically if one is available. Restart the browser after updating.</li>
+<li><strong>Edge:</strong> Click the three dots → Help and feedback → About Microsoft Edge. Same process.</li>
+<li><strong>Safari:</strong> Updates with macOS. Go to System Settings → General → Software Update.</li>
+</ul>
+<p>Always restart the browser fully after an update. Simply closing the window does not restart the browser — the program keeps running in the background. On Windows, right-click the browser icon in the taskbar and choose "Close window" or restart the computer.</p>
+  </div>
+<div class="section-nav">
+  <a href="#restart" class="nav-btn nav-btn-outline">← Previous</a>
+  <a href="#mobile" class="nav-btn">Next →</a>
+</div>
+</section>
+<section class="guide-section" id="mobile">
+  <div class="section-header">
+    <div class="section-number">5</div>
+    <div>
+      <div class="section-title">Smartphone & Tablet Fixes</div>
+      <div class="section-time">⏱ 5 min</div>
+    </div>
+  </div>
+  <div class="guide-body">
+<p>Phones and tablets have their own Wi-Fi quirks. The fixes are different from computers, but just as simple.</p>
+
+<h4>✈️ The Airplane Mode Toggle</h4>
+<p>This is the fastest mobile Wi-Fi reset. It forces the phone to drop its current connection and build a fresh one.</p>
+<ol>
+<li>Swipe down from the top of the screen.</li>
+<li>Tap the airplane icon. Wait 10 seconds. All connections drop.</li>
+<li>Tap the airplane icon again. The phone reconnects to Wi-Fi and cellular automatically.</li>
+</ol>
+<p>This fixes about 30% of mobile Wi-Fi issues instantly.</p>
+
+<h4>📶 Verify Cellular Data as Backup</h4>
+<p>If Wi-Fi is completely down, your phone can use cellular data to stay connected. Make sure it is turned on:</p>
+<ul>
+<li><strong>iPhone:</strong> Settings → Cellular → Cellular Data → ON.</li>
+<li><strong>Android:</strong> Settings → Network & Internet → Mobile network → Mobile data → ON.</li>
+</ul>
+<div class="warning-box">
+  <div class="warning-box-title">⚠️ Watch Your Data Limit</div>
+  <p>Cellular data is not unlimited on most plans. Streaming video, video calls, and large downloads over cellular can eat your monthly allowance quickly. Use cellular for essential tasks only — checking email, reading news, messaging — until Wi-Fi is restored.</p>
+</div>
+
+<h4>🔄 Forget and Rejoin a Network</h4>
+<p>If one specific network gives you trouble — it connects but nothing loads, or it drops every few minutes — the saved network profile may be corrupted.</p>
+<div class="step-card">
+  <div class="step-number">1</div>
+  <div class="step-title">iPhone / iPad</div>
+  <p>Settings → Wi-Fi → Tap the "i" icon next to your network name → "Forget This Network." Confirm. Then tap the network name again, re-enter the password, and reconnect.</p>
+</div>
+<div class="step-card">
+  <div class="step-number">2</div>
+  <div class="step-title">Android</div>
+  <p>Settings → Network & Internet → Wi-Fi → Tap the gear icon next to your network → "Forget." Then reconnect and re-enter the password.</p>
+</div>
+
+<h4>🔧 Reset Network Settings (Mobile Only)</h4>
+<p>If multiple networks are failing and the airplane toggle did not help, reset the phone's entire network stack. This is safe but removes saved Wi-Fi passwords.</p>
+<ul>
+<li><strong>iPhone:</strong> Settings → General → Transfer or Reset iPhone → Reset → Reset Network Settings.</li>
+<li><strong>Android:</strong> Settings → System → Reset options → Reset Wi-Fi, mobile & Bluetooth.</li>
+</ul>
+
+<div class="tip-box">
+  <div class="tip-box-title">💡 The Mobile Wi-Fi Priority List</div>
+  <p>When your phone's Wi-Fi stops working, try in this order: 1) Airplane mode toggle (10 seconds), 2) Move closer to the router, 3) Forget and rejoin the network, 4) Restart the phone, 5) Reset network settings. Each step takes under a minute. Stop when it works.</p>
+</div>
+  </div>
+<div class="section-nav">
+  <a href="#browser" class="nav-btn nav-btn-outline">← Previous</a>
+  <span></span>
+</div>
+</section>
+</main>
+<div class="certificate-wrap" id="certificate">
+  <div class="certificate">
+    <div class="cert-seal">💣</div>
+    <div class="cert-title">Certificate of Completion</div>
+    <div class="cert-subtitle">ScamBomb Digital Self-Defense Division</div>
+    <div class="cert-helper">[ENTER YOUR NAME]</div>
+    <div class="cert-name" contenteditable="true">Your Name</div>
+    <div class="cert-id">SAPM-WFI-2026-<span contenteditable="true">XXX</span></div>
+    <div class="cert-date" id="certDate"></div>
+    <button class="cert-print-btn" onclick="window.print()">🖨️ Print Certificate</button>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-brand-text">
+        <span style="color: var(--white);">SCAM</span><span style="color: var(--gold);">B<span style="font-size:0.9em;">💣</span>MB</span>
+      </div>
+    </div>
+    <div class="footer-meta">
+      PROVIDED BY SCAMBOMB.COM · STAY SCAM-SMART
+    </div>
+    <div class="footer-classification">
+      CONFIDENTIAL — SCAMBOMB FIELD MANUAL
+    </div>
+  </div>
+</footer>
+
+<!-- BACK TO TOP -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+<script>
+// Back to top
+const backToTop = document.getElementById('backToTop');
+window.addEventListener('scroll', () => {
+  backToTop.classList.toggle('visible', window.scrollY > 500);
+});
+backToTop.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// Certificate date
+const dateEl = document.getElementById('certDate');
+if (dateEl) {
+  dateEl.textContent = new Date().toLocaleDateString('en-US', {
+    year: 'numeric', month: 'long', day: 'numeric'
+  });
+}
+</script>
+  <script>
+    (function () {
+      const checkoutUrl = ''; // TODO: set once pay.scambomb.com checkout exists
+      const el = document.querySelector('[data-cc-checkout]');
+      if (el && checkoutUrl) el.setAttribute('href', checkoutUrl);
+    })();
+  </script>
+
+  </div>
+
+</body>
+</html>

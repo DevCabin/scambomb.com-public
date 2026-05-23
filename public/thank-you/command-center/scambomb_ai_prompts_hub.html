@@ -1,0 +1,1614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ScamBomb AI Prompts & Digital Life Hacks Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="/thank-you/command-center/access.js" defer></script>
+  <style>
+    /* ========================================
+       ROOT VARIABLES
+    ======================================== */
+    :root {
+      --navy-deep: #0B1324;
+      --navy-primary: #0B1426;
+      --gold: #F5C84C;
+      --gold-bright: #FFD700;
+      --white: #FFFFFF;
+      --off-white: #F0F2F5;
+      --bg-body: #111827;
+      --bg-card: #151B2B;
+      --bg-card-hover: #1A2235;
+      --border-subtle: #2D3138;
+      --text-secondary: #9BA3AF;
+      --text-muted: #6B7280;
+      --success: #3DDC84;
+      --warning: #FBBF24;
+      --danger: #EF4444;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+      --shadow-soft: 0 4px 24px rgba(0,0,0,0.25);
+      --shadow-gold: 0 0 20px rgba(245,200,76,0.15);
+    }
+
+    /* ========================================
+       GLOBAL RESET & BASE
+    ======================================== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 18px; }
+     body {
+      font-family: 'Montserrat', sans-serif;
+      background: var(--bg-body);
+      color: var(--off-white);
+      line-height: 1.7;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ACCESS GATE */
+    .cc-lock {
+      display: none;
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 5rem 1.5rem 6rem;
+      text-align: center;
+    }
+    .cc-lock-card {
+      background: var(--bg-card);
+      border: 2px solid rgba(245,200,76,0.35);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-soft);
+      padding: 2.5rem 2rem;
+    }
+    .cc-lock h1 {
+      font-size: clamp(1.7rem, 4.5vw, 2.4rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 1.15;
+      margin-bottom: 0.75rem;
+    }
+    .cc-lock h1 .w { color: var(--white); }
+    .cc-lock h1 .g { color: var(--gold); }
+    .cc-lock p {
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+      max-width: 680px;
+      margin: 0.75rem auto 1.5rem;
+    }
+    .cc-lock .note {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.55);
+      margin-top: 0.9rem;
+    }
+    .cc-lock-actions {
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 1.25rem;
+    }
+    .cc-lock-actions a {
+      min-height: 46px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.9rem 1.35rem;
+      border-radius: 999px;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+    .cc-lock-primary {
+      background: var(--gold);
+      color: var(--navy-primary);
+      box-shadow: 0 6px 20px rgba(245,200,76,0.22);
+    }
+    .cc-lock-secondary {
+      border: 2px solid rgba(245,200,76,0.55);
+      color: var(--gold);
+    }
+
+    [data-cc-content] { display: none; }
+    img { max-width: 100%; display: block; }
+    button { font-family: inherit; }
+
+    /* ========================================
+       LINKS — CRITICAL GLOBAL OVERRIDE
+    ======================================== */
+    a { color: var(--gold); text-decoration: underline; font-weight: 600; transition: color 0.2s; }
+    a:hover { color: var(--gold-bright); }
+    .brand, .nav-pill, .hero-cta, .back-to-top, .print-btn, .filter-chip, .card-toggle, .copy-btn { text-decoration: none; font-weight: inherit; }
+
+    /* ========================================
+       HEADER
+    ======================================== */
+    .site-header {
+      background: var(--navy-primary);
+      border-bottom: 2px solid var(--gold);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      font-size: 1.25rem;
+      letter-spacing: 1px;
+      white-space: nowrap;
+    }
+    .brand-scam { color: var(--white); font-weight: 800; }
+    .brand-bomb { color: var(--gold); font-weight: 800; }
+    .brand-tagline {
+      display: none;
+      color: var(--text-secondary);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-left: 0.75rem;
+      padding-left: 0.75rem;
+      border-left: 1px solid var(--border-subtle);
+    }
+    @media (min-width: 640px) { .brand-tagline { display: inline; } }
+
+    .nav-pills {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .nav-pill {
+      color: var(--text-secondary);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.4rem 0.85rem;
+      border-radius: var(--radius-xl);
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .nav-pill:hover { color: var(--gold); background: rgba(245,200,76,0.08); }
+    .nav-pill.active { color: var(--navy-primary); background: var(--gold); font-weight: 700; }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--gold);
+      font-size: 1.5rem;
+      cursor: pointer;
+      min-height: 44px;
+      min-width: 44px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @media (max-width: 900px) {
+      .nav-pills {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        background: var(--navy-primary);
+        border-bottom: 2px solid var(--gold);
+        flex-direction: column;
+        padding: 1rem;
+        gap: 0.25rem;
+      }
+      .nav-pills.open { display: flex; }
+      .nav-pill { width: 100%; text-align: center; padding: 0.75rem; }
+      .mobile-menu-btn { display: flex; }
+    }
+
+    /* ========================================
+       HERO
+    ======================================== */
+    .hero {
+      background: linear-gradient(180deg, var(--navy-deep) 0%, var(--bg-body) 100%);
+      padding: 3rem 1.5rem 3.5rem;
+      text-align: center;
+    }
+    .hero-inner { max-width: 800px; margin: 0 auto; }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(245,200,76,0.12);
+      color: var(--gold);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 0.4rem 1rem;
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(245,200,76,0.25);
+      margin-bottom: 1.25rem;
+    }
+    .hero h1 {
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+    .hero h1 .gold { color: var(--gold); }
+    .hero-subtitle {
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+      max-width: 600px;
+      margin: 0 auto 1.5rem;
+      line-height: 1.6;
+    }
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--gold);
+      color: var(--navy-primary);
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 0.85rem 2rem;
+      border-radius: var(--radius-xl);
+      box-shadow: 0 4px 16px rgba(245,200,76,0.25);
+      transition: all 0.2s;
+      border: none;
+      cursor: pointer;
+      min-height: 44px;
+    }
+    .hero-cta:hover {
+      background: var(--gold-bright);
+      box-shadow: 0 6px 24px rgba(245,200,76,0.35);
+      transform: translateY(-1px);
+    }
+    .hero-cta:focus-visible {
+      outline: 3px solid var(--white);
+      outline-offset: 2px;
+    }
+
+    /* ========================================
+       MAIN CONTENT
+    ======================================== */
+    .main-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 1.5rem 4rem;
+    }
+
+    /* ========================================
+       TIP BOX
+    ======================================== */
+    .tip-box {
+      border-left: 4px solid var(--gold);
+      background: rgba(245,200,76,0.08);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .tip-box-title {
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .tip-box p {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* ========================================
+       CONTROLS SECTION
+    ======================================== */
+    .controls-section { margin-bottom: 2rem; }
+    .controls-top {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+      flex-wrap: wrap;
+    }
+    .search-wrap {
+      position: relative;
+      flex: 1;
+      min-width: 240px;
+    }
+    .search-bar {
+      width: 100%;
+      padding: 0.875rem 1rem 0.875rem 2.75rem;
+      background: var(--bg-card);
+      border: 2px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      color: var(--off-white);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .search-bar::placeholder { color: var(--text-muted); }
+    .search-bar:focus {
+      outline: none;
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(245,200,76,0.15);
+    }
+    .search-icon {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      font-size: 1rem;
+      pointer-events: none;
+    }
+    .sort-select {
+      padding: 0.875rem 2.5rem 0.875rem 1.25rem;
+      background: var(--bg-card);
+      border: 2px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      color: var(--off-white);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.95rem;
+      cursor: pointer;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%239BA3AF' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      min-height: 44px;
+      min-width: 180px;
+    }
+    .sort-select:focus {
+      outline: none;
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(245,200,76,0.15);
+    }
+
+    .filter-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 0.75rem;
+    }
+    .filter-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    .filter-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      background: var(--bg-card);
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all 0.2s;
+      font-size: 0.85rem;
+      font-weight: 600;
+      min-height: 44px;
+      user-select: none;
+    }
+    .filter-chip:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+    .filter-chip.active {
+      background: var(--gold);
+      color: var(--navy-primary);
+      border-color: var(--gold);
+      font-weight: 700;
+    }
+    .filter-chip:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 2px;
+    }
+
+    .results-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .results-count {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+    .results-count strong { color: var(--gold); }
+    .clear-filters {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--gold);
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      padding: 0.25rem 0.5rem;
+      min-height: 44px;
+    }
+    .clear-filters:hover { color: var(--gold-bright); text-decoration: underline; }
+    .clear-filters.visible { display: inline-flex; align-items: center; gap: 0.35rem; }
+
+    /* ========================================
+       CARD GRID
+    ======================================== */
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+    @media (min-width: 768px) {
+      .card-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 1100px) {
+      .card-grid { grid-template-columns: repeat(3, 1fr); }
+      .main-content { max-width: 1100px; }
+    }
+
+    /* ========================================
+       PROMPT CARD
+    ======================================== */
+    .prompt-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      transition: all 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .prompt-card:hover {
+      background: var(--bg-card-hover);
+      border-color: rgba(245,200,76,0.4);
+      box-shadow: var(--shadow-gold);
+    }
+    .prompt-card.expanded {
+      border-color: var(--gold);
+      box-shadow: var(--shadow-gold);
+    }
+
+    .card-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.875rem;
+    }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.25rem 0.65rem;
+      border-radius: var(--radius-xl);
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border: 1px solid transparent;
+    }
+    .tag-category {
+      background: var(--navy-primary);
+      color: var(--gold);
+      border-color: var(--border-subtle);
+    }
+    .tag-quick {
+      background: rgba(61,220,132,0.12);
+      color: var(--success);
+      border-color: rgba(61,220,132,0.25);
+    }
+    .tag-5min {
+      background: rgba(251,191,36,0.12);
+      color: var(--warning);
+      border-color: rgba(251,191,36,0.25);
+    }
+    .tag-deep {
+      background: rgba(245,200,76,0.12);
+      color: var(--gold);
+      border-color: rgba(245,200,76,0.25);
+    }
+
+    .card-header-btn {
+      background: none;
+      border: none;
+      text-align: left;
+      width: 100%;
+      cursor: pointer;
+      padding: 0;
+      color: inherit;
+    }
+    .card-header-btn:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 4px;
+      border-radius: var(--radius-sm);
+    }
+    .card-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+      line-height: 1.3;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+    .card-teaser {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .card-prompt-area {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.35s ease, margin 0.35s ease;
+      margin-top: 0;
+    }
+    .prompt-card.expanded .card-prompt-area {
+      grid-template-rows: 1fr;
+      margin-top: 1.25rem;
+    }
+    .card-prompt-inner {
+      overflow: hidden;
+    }
+    .prompt-box {
+      background: var(--navy-deep);
+      border: 1px solid var(--border-subtle);
+      border-left: 3px solid var(--gold);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: var(--off-white);
+      margin-bottom: 1rem;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+    .try-with {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+    .try-with-icon { flex-shrink: 0; font-size: 1rem; }
+
+    .card-actions {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .copy-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--gold);
+      color: var(--navy-primary);
+      border: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: var(--radius-xl);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      min-height: 44px;
+    }
+    .copy-btn:hover {
+      background: var(--gold-bright);
+      color: var(--navy-primary);
+      font-weight: 800;
+      box-shadow: var(--shadow-gold);
+    }
+    .copy-btn:focus-visible {
+      outline: 3px solid var(--white);
+      outline-offset: 2px;
+    }
+    .copy-btn.copied {
+      background: var(--success);
+      color: var(--navy-primary);
+    }
+    .open-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: transparent;
+      color: var(--gold);
+      border: 1.5px solid var(--gold);
+      padding: 0.6rem 1.2rem;
+      border-radius: var(--radius-xl);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      min-height: 44px;
+      text-decoration: none;
+    }
+    .open-btn:hover {
+      background: rgba(245,200,76,0.12);
+      border-color: var(--gold-bright);
+      color: var(--gold-bright);
+    }
+    .open-btn:focus-visible {
+      outline: 3px solid var(--white);
+      outline-offset: 2px;
+    }
+    .open-btn svg, .open-btn .btn-icon {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+    }
+
+    .card-toggle {
+      margin-top: auto;
+      padding-top: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      color: var(--gold);
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      background: none;
+      border: none;
+      width: 100%;
+      min-height: 44px;
+      transition: color 0.2s;
+    }
+    .card-toggle:hover { color: var(--gold-bright); }
+    .card-toggle:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 2px;
+      border-radius: var(--radius-sm);
+    }
+    .toggle-icon {
+      display: inline-block;
+      transition: transform 0.3s ease;
+      font-size: 0.7rem;
+    }
+    .prompt-card.expanded .toggle-icon { transform: rotate(180deg); }
+
+    /* No results */
+    .no-results {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 3rem 1.5rem;
+      color: var(--text-secondary);
+    }
+    .no-results-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      opacity: 0.5;
+    }
+    .no-results h3 {
+      color: var(--off-white);
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* ========================================
+       FOOTER
+    ======================================== */
+    .site-footer {
+      background: var(--navy-primary);
+      border-top: 4px solid var(--gold);
+      padding: 1.5rem;
+      margin-top: auto;
+    }
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+      text-align: center;
+    }
+    @media (min-width: 768px) {
+      .footer-inner {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+      }
+    }
+    .footer-brand {
+      font-size: 1rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+    .footer-meta {
+      color: var(--text-muted);
+      font-size: 0.8rem;
+    }
+    .footer-classification {
+      color: var(--text-secondary);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border: 1px solid var(--border-subtle);
+      padding: 0.35rem 0.75rem;
+      border-radius: var(--radius-sm);
+    }
+
+    /* ========================================
+       BACK TO TOP
+    ======================================== */
+    .back-to-top {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      width: 48px;
+      height: 48px;
+      background: var(--gold);
+      color: var(--navy-primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      box-shadow: var(--shadow-soft);
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+      z-index: 99;
+      border: none;
+      min-height: 44px;
+      min-width: 44px;
+    }
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    .back-to-top:hover {
+      background: var(--gold-bright);
+      transform: translateY(-2px);
+    }
+    .back-to-top:focus-visible {
+      outline: 3px solid var(--white);
+      outline-offset: 2px;
+    }
+
+    /* ========================================
+       TOAST
+    ======================================== */
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%) translateY(120px);
+      background: var(--navy-primary);
+      color: var(--gold);
+      padding: 1rem 2rem;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--gold);
+      font-weight: 700;
+      font-size: 0.95rem;
+      z-index: 1000;
+      transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+      box-shadow: var(--shadow-gold);
+      pointer-events: none;
+      white-space: nowrap;
+    }
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* ========================================
+       PRINT STYLES
+    ======================================== */
+    @media print {
+      html { font-size: 14px; }
+      body { background: #fff; color: #000; }
+      .site-header, .hero, .site-footer, .back-to-top, .controls-section, .card-toggle, .copy-btn, .open-btn, .toast { display: none !important; }
+      .main-content { max-width: 100%; padding: 0; }
+      .prompt-card {
+        background: #f5f5f5;
+        border: 1px solid #ccc;
+        break-inside: avoid;
+        margin-bottom: 1rem;
+        box-shadow: none;
+      }
+      .card-title { color: #000; }
+      .card-teaser, .try-with, .results-count { color: #333; }
+      .tag-category { background: #eee; color: #000; border-color: #999; }
+      .tag-quick { background: #e8f5e9; color: #2e7d32; border-color: #a5d6a7; }
+      .tag-5min { background: #fff8e1; color: #f57f17; border-color: #ffe082; }
+      .tag-deep { background: #fffde7; color: #f9a825; border-color: #fff59d; }
+      .prompt-box {
+        background: #fff;
+        border: 1px solid #ccc;
+        border-left: 3px solid #000;
+        color: #000;
+      }
+      .card-prompt-area {
+        display: block !important;
+        grid-template-rows: none;
+        margin-top: 1rem;
+      }
+      .card-prompt-inner { overflow: visible; }
+      a { color: #000; text-decoration: underline; }
+    }
+
+    /* ========================================
+       REDUCED MOTION
+    ======================================== */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- LOCK SCREEN (shown unless cc=1&k=... or access cookie exists) -->
+  <section class="cc-lock" data-cc-lock>
+    <div class="cc-lock-card">
+      <div class="hero-badge">PAID RESOURCE</div>
+      <h1><span class="w">AI POWER</span> <span class="g">PROMPTS HUB</span></h1>
+      <p>
+        This library is locked because it includes paid tools.
+        Use your private access link, or purchase access to continue.
+      </p>
+      <div class="cc-lock-actions">
+        <a class="cc-lock-primary" href="#" data-cc-checkout>GET ACCESS →</a>
+        <a class="cc-lock-secondary" href="/thank-you/command-center/">BACK TO THANK YOU PAGE</a>
+      </div>
+      <div class="note">Tip: If you purchased and can’t get in, double-check the full link from your email.</div>
+    </div>
+  </section>
+
+  <div data-cc-content>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#" class="brand" aria-label="ScamBomb Home">
+        <span class="brand-scam">SCAM</span><span class="brand-bomb">B<span style="font-size:0.9em; line-height:1;">💣</span>MB</span>
+        <span class="brand-tagline">Digital Self-Defense Division</span>
+      </a>
+      <button class="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false" onclick="toggleMobileNav()">☰</button>
+      <nav class="nav-pills" id="mainNav">
+        <a href="scambomb_senior_tech_mega_hub.html" class="nav-pill">📚 Resources</a>
+        <a href="#" class="nav-pill active" aria-current="page">AI Hub</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-badge">Hub Edition 1.0 | 2026</div>
+      <h1><span class="gold">Supercharge</span> Your Day <span class="gold">With AI</span></h1>
+      <p class="hero-subtitle">
+        Ready-to-use prompts and digital life hacks designed for seniors and adults. 
+        Copy, paste, and let AI handle the hard part — no tech degree required.
+      </p>
+      <a href="#prompt-library" class="hero-cta">Start Exploring ↓</a>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content" id="prompt-library">
+
+    <!-- Tip Box -->
+    <div class="tip-box">
+      <div class="tip-box-title">💡 How to Use This Hub</div>
+      <p>
+        Each card below contains a ready-to-use prompt you can copy and paste into 
+        <strong>ChatGPT</strong>, <strong>Claude</strong>, <strong>Google Gemini</strong>, or any AI assistant. 
+        Filter by category, search for a topic, or sort to find exactly what you need. Click any card to expand the full prompt.
+      </p>
+    </div>
+
+    <!-- Controls -->
+    <div class="controls-section">
+      <div class="controls-top">
+        <div class="search-wrap">
+          <span class="search-icon" aria-hidden="true">🔍</span>
+          <input 
+            type="search" 
+            class="search-bar" 
+            id="searchInput" 
+            placeholder="Search prompts, topics, or keywords..."
+            aria-label="Search prompts"
+          >
+        </div>
+        <select class="sort-select" id="sortSelect" aria-label="Sort prompts">
+          <option value="category">Sort by Category</option>
+          <option value="az">Sort by Name (A-Z)</option>
+          <option value="difficulty-asc">Difficulty: Easy First</option>
+          <option value="difficulty-desc">Difficulty: Deep First</option>
+        </select>
+      </div>
+
+      <div class="filter-label">Filter by Category</div>
+      <div class="filter-chips" id="filterChips" role="group" aria-label="Filter by category">
+        <button class="filter-chip active" data-category="All" aria-pressed="true">All</button>
+        <button class="filter-chip" data-category="Productivity" aria-pressed="false">Productivity</button>
+        <button class="filter-chip" data-category="Photo & Memory" aria-pressed="false">Photo & Memory</button>
+        <button class="filter-chip" data-category="Health & Wellness" aria-pressed="false">Health & Wellness</button>
+        <button class="filter-chip" data-category="Communication" aria-pressed="false">Communication</button>
+        <button class="filter-chip" data-category="Finance & Budgeting" aria-pressed="false">Finance & Budgeting</button>
+        <button class="filter-chip" data-category="Travel & Hobbies" aria-pressed="false">Travel & Hobbies</button>
+        <button class="filter-chip" data-category="Tech Support" aria-pressed="false">Tech Support</button>
+        
+      </div>
+
+      <div class="results-bar">
+        <div class="results-count" id="resultsCount">Loading prompts...</div>
+        <button class="clear-filters" id="clearFilters" onclick="resetFilters()">✕ Clear Filters</button>
+      </div>
+    </div>
+
+    <!-- Card Grid -->
+    <div class="card-grid" id="cardGrid" role="list">
+      <!-- Cards injected by JS -->
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span style="color: var(--white);">SCAM</span><span style="color: var(--gold);">B💣MB</span>
+        <span style="color: var(--text-muted); font-size: 0.8rem; font-weight: 500; margin-left: 0.5rem;">
+          PROVIDED BY SCAMBOMB.COM · DIGITAL SELF-DEFENSE DIVISION
+        </span>
+      </div>
+      <div class="footer-meta">Hub Edition 1.0 | 2026</div>
+      <div class="footer-classification">Confidential — ScamBomb Field Manual</div>
+    </div>
+  </footer>
+
+  <!-- BACK TO TOP -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast" role="status" aria-live="polite">Copied to clipboard!</div>
+
+  <script>
+    /* ========================================
+       PROMPT DATA
+    ======================================== */
+    const prompts = [
+      {
+        id: 1,
+        title: "Morning Briefing",
+        category: "Productivity",
+        difficulty: "Quick Win",
+        teaser: "Get a 3-sentence summary of your day using your calendar and reminders.",
+        promptText: "I have a busy day ahead. Please look at my calendar and reminders and give me a simple 3-sentence briefing: what's most important, what time I need to leave, and one thing I might forget. Use a friendly, encouraging tone.",
+        tryWith: "ChatGPT, Claude, or Google Gemini"
+      },
+      {
+        id: 2,
+        title: "Grocery List Organizer",
+        category: "Productivity",
+        difficulty: "5 Min",
+        teaser: "Turn a messy list into a store-aisle organized shopping list.",
+        promptText: "Please take my messy grocery list and reorganize it by store aisle: produce first, then dairy, meat, pantry items, frozen, and household goods. Also check if I forgot anything common like eggs, milk, or bread. Here's my list: [paste your list]",
+        tryWith: "Any AI assistant"
+      },
+      {
+        id: 3,
+        title: "Weekly Planner",
+        category: "Productivity",
+        difficulty: "Deep Dive",
+        teaser: "Build a balanced week with appointments, errands, and rest time built in.",
+        promptText: "Help me plan my week. I have these appointments and tasks: [list them]. I also need time for meals, rest, and at least one pleasant activity. Create a simple day-by-day plan that doesn't feel rushed. Include gentle reminders to take breaks.",
+        tryWith: "ChatGPT or Claude"
+      },
+      {
+        id: 4,
+        title: "Photo Album Storyteller",
+        category: "Photo & Memory",
+        difficulty: "5 Min",
+        teaser: "Write warm captions for vacation or family photos as if telling a story.",
+        promptText: "I'm making a photo album and need help with captions. Here are descriptions of 10 photos from my vacation: [describe them]. Write short, warm captions for each as if I'm telling the story to a friend. Keep them 1-2 sentences each.",
+        tryWith: "ChatGPT, Claude, or Gemini"
+      },
+      {
+        id: 5,
+        title: "Old Photo Restorer Guide",
+        category: "Photo & Memory",
+        difficulty: "Deep Dive",
+        teaser: "Step-by-step guide to scanning and fixing faded family photos.",
+        promptText: "I have a box of old family photos from the 1970s that I'd like to digitize and restore. Walk me through this step by step: what equipment I need, how to scan them properly, and how to fix faded colors or small scratches using free software. Break it into small, manageable tasks.",
+        tryWith: "ChatGPT or Claude"
+      },
+      {
+        id: 6,
+        title: "Memory Book Creator",
+        category: "Photo & Memory",
+        difficulty: "Deep Dive",
+        teaser: "Organize decades of photos into a chronological family history book.",
+        promptText: "I want to create a family history book using 50 years of photos. Help me organize this project: suggest a chronological structure, what information to include with each photo (names, dates, locations), and how to divide it into chapters. Give me a simple week-by-week plan to finish it in 2 months.",
+        tryWith: "Claude or ChatGPT"
+      },
+      {
+        id: 7,
+        title: "Medication Schedule Maker",
+        category: "Health & Wellness",
+        difficulty: "Quick Win",
+        teaser: "Create a clean weekly pill chart from your medication list.",
+        promptText: "Please create a simple weekly medication schedule for me. I take these medications: [list names, doses, and times]. Make a clean Monday-Sunday chart showing morning, afternoon, and evening. Use large, clear formatting that's easy to read at a glance.",
+        tryWith: "Any AI assistant"
+      },
+      {
+        id: 8,
+        title: "Doctor Visit Prep",
+        category: "Health & Wellness",
+        difficulty: "5 Min",
+        teaser: "Organize symptoms, questions, and meds before your appointment.",
+        promptText: "I have a doctor's appointment next week for [condition/symptoms]. Help me organize my thoughts. Create a simple list of: 1) My symptoms and when they started, 2) Questions I should ask, 3) My current medications, 4) Anything I should mention about my daily habits. Keep it brief so I can print it.",
+        tryWith: "ChatGPT, Claude, or Gemini"
+      },
+      {
+        id: 9,
+        title: "Gentle Exercise Routine",
+        category: "Health & Wellness",
+        difficulty: "5 Min",
+        teaser: "A 15-minute seated or chair-supported home exercise plan.",
+        promptText: "Design a gentle 15-minute exercise routine I can do at home while seated or holding onto a chair. I have [mention any limitations like knee pain or balance concerns]. Include warm-up, main exercises, and cool-down. Describe each movement simply and suggest how many repetitions.",
+        tryWith: "ChatGPT or Claude"
+      },
+      {
+        id: 10,
+        title: "Family Email Helper",
+        category: "Communication",
+        difficulty: "Quick Win",
+        teaser: "Write a warm check-in email to a grandchild or family member.",
+        promptText: "Help me write a warm, casual email to my [granddaughter/son/niece] checking in. I want to ask how they're doing, mention I was thinking of them, and maybe reference [shared memory or interest]. Keep it to 3-4 short paragraphs with a loving but not overly sentimental tone.",
+        tryWith: "Any AI assistant"
+      },
+      {
+        id: 11,
+        title: "Thank You Note Writer",
+        category: "Communication",
+        difficulty: "5 Min",
+        teaser: "Draft a heartfelt thank-you note for any gift or kindness.",
+        promptText: "I received [gift] from [person] and want to write a heartfelt thank-you note. Help me draft something that mentions the specific gift, why I appreciate it, and how I'll use it. Keep it warm, genuine, and about 5-6 sentences.",
+        tryWith: "Any AI assistant"
+      },
+      {
+        id: 13,
+        title: "Bill Decoder",
+        category: "Finance & Budgeting",
+        difficulty: "Quick Win",
+        teaser: "Understand a confusing medical bill in plain English.",
+        promptText: "Please explain this medical bill in plain English: [paste bill text or describe charges]. Tell me: what each charge means, what I actually owe versus what insurance covered, and whether anything looks unusual. Suggest questions I should call and ask about.",
+        tryWith: "ChatGPT, Claude, or Gemini"
+      },
+      {
+        id: 14,
+        title: "Monthly Spending Snapshot",
+        category: "Finance & Budgeting",
+        difficulty: "5 Min",
+        teaser: "Organize expenses by category and spot anything unusual.",
+        promptText: "Here's my list of expenses from this month: [paste or describe]. Please organize them into categories (housing, food, utilities, medical, entertainment, etc.), calculate totals for each, and flag anything that seems unusually high. Give me one sentence of gentle advice about my spending pattern.",
+        tryWith: "Any AI assistant"
+      },
+      {
+        id: 15,
+        title: "Budget Simple Tracker",
+        category: "Finance & Budgeting",
+        difficulty: "Deep Dive",
+        teaser: "Create a realistic monthly budget with room for fun.",
+        promptText: "My monthly income is $[amount] and my regular bills are: [list]. Help me create a simple monthly budget with categories for fixed expenses, variable expenses, savings, and fun money. Make it realistic — I don't want to feel deprived. Show me the amounts and percentages.",
+        tryWith: "ChatGPT or Claude"
+      },
+      {
+        id: 16,
+        title: "Day Trip Planner",
+        category: "Travel & Hobbies",
+        difficulty: "5 Min",
+        teaser: "Plan a senior-friendly outing with rest stops and easy parking.",
+        promptText: "Plan a senior-friendly day trip to [city/destination] for [date]. I need: easy parking or drop-off spots, attractions that don't require lots of walking or have benches, a nice lunch spot with reasonable prices, and rest breaks built in. Include addresses and phone numbers if possible.",
+        tryWith: "ChatGPT or Gemini"
+      },
+      {
+        id: 17,
+        title: "Recipe Scaler",
+        category: "Travel & Hobbies",
+        difficulty: "Quick Win",
+        teaser: "Resize any recipe from large servings down to one or two.",
+        promptText: "This recipe serves 8 people but I only need to serve 2. Please scale all the ingredients down for me and adjust the cooking time if needed. Here's the recipe: [paste recipe]. Also suggest one simple side dish that pairs well with it.",
+        tryWith: "Any AI assistant"
+      },
+      {
+        id: 18,
+        title: "Genealogy Interview Guide",
+        category: "Travel & Hobbies",
+        difficulty: "Deep Dive",
+        teaser: "Thoughtful questions to capture family stories, not just names.",
+        promptText: "I'm visiting my [aunt/uncle/parent] to learn about our family history. Create a list of 15-20 thoughtful questions that will help me gather stories, not just names and dates. Include questions about their childhood, family traditions, hard times they overcame, and advice they want to pass down.",
+        tryWith: "ChatGPT or Claude"
+      },
+      {
+        id: 19,
+        title: "Error Message Translator",
+        category: "Tech Support",
+        difficulty: "Quick Win",
+        teaser: "Turn confusing tech error messages into plain English.",
+        promptText: "My computer/phone showed me this message: '[paste exact error message]'. Please tell me in plain English: what this means, whether it's serious, and exactly what I should do next. Don't use technical jargon — explain it like you're talking to a neighbor.",
+        tryWith: "Any AI assistant"
+      },
+      {
+        id: 20,
+        title: "Password Reset Helper",
+        category: "Tech Support",
+        difficulty: "5 Min",
+        teaser: "Step-by-step walkthrough for resetting any account password.",
+        promptText: "I need to reset my password for [website/app] but I get confused by the steps. Walk me through it like you're sitting next to me: where to click, what to type, what email to check, and what to do if I don't get the reset email. Include a tip for creating a password I'll remember.",
+        tryWith: "Any AI assistant"
+      },
+      {
+        id: 21,
+        title: "Tech Jargon Decoder",
+        category: "Tech Support",
+        difficulty: "Quick Win",
+        teaser: "Understand any tech term using everyday analogies.",
+        promptText: "Explain [technical term like 'two-factor authentication' or 'cloud storage'] to me like I'm smart but not technical. Use an everyday analogy, tell me why it matters for my safety or convenience, and give me one simple action I can take related to it.",
+        tryWith: "Any AI assistant"
+      },
+      {
+        id: 24,
+        title: "Poem for Occasion",
+        category: "Communication",
+        difficulty: "5 Min",
+        teaser: "A short, heartfelt poem for anniversaries, retirements, or milestones.",
+        promptText: "Write a short, heartfelt poem for [occasion like 'my friend's 50th wedding anniversary' or 'my sister's retirement']. About 8-12 lines. It should feel personal and warm without being overly fancy. Mention [specific detail like 'their garden' or 'their laughter'] if possible.",
+        tryWith: "ChatGPT or Claude"
+      },
+      {
+        id: 26,
+        title: "Muppet Family Portrait",
+        category: "Photo & Memory",
+        difficulty: "5 Min",
+        teaser: "Transform your family photo into adorable fuzzy Muppet-style characters.",
+        promptText: "I uploaded a family photo. Please reimagine every person in the picture as a fuzzy, colorful Muppet-style character — think Jim Henson style with big googly eyes, felt-textured skin, and warm, playful expressions. Keep the original poses and group arrangement so it's still recognizable as our family. Make it charming and wholesome, not creepy.",
+        tryWith: "ChatGPT (DALL·E), Midjourney, or Google Gemini"
+      },
+      {
+        id: 27,
+        title: "Tiny World Cityscape",
+        category: "Photo & Memory",
+        difficulty: "5 Min",
+        teaser: "Turn a photo of a famous city into a magical miniature model world.",
+        promptText: "Take this photo of [city name] and transform it into a 'tiny world' tilt-shift miniature model scene. Make the buildings look like detailed architectural models, add tiny toy cars and people, give it a dreamy shallow-focus look with saturated colors, and make the sky look like a painted studio backdrop. It should feel like a magical diorama you could hold in your hands.",
+        tryWith: "ChatGPT (DALL·E), Midjourney, or Adobe Firefly"
+      },
+      {
+        id: 28,
+        title: "Generational Face Blend",
+        category: "Photo & Memory",
+        difficulty: "Deep Dive",
+        teaser: "Morph faces across generations to visualize family resemblance through time.",
+        promptText: "I have photos of family members from 4 generations: [describe who, e.g., 'my great-grandmother, grandmother, mother, and me']. Create a visual 'family face timeline' that blends each generation's portrait into the next, showing how features like eyes, nose, and smile have been passed down. Arrange them in a beautiful vertical or horizontal gallery with subtle morphing transitions between each face. Add elegant labels with names and years.",
+        tryWith: "ChatGPT (DALL·E), Midjourney, or MyHeritage Photo Tools"
+      },
+      {
+        id: 29,
+        title: "Soft Food Weekly Menu",
+        category: "Health & Wellness",
+        difficulty: "Deep Dive",
+        teaser: "A full week of flavorful, nutrient-dense soft foods for dental or swallowing needs.",
+        promptText: "I need a 7-day soft food meal plan because I have trouble chewing and swallowing harder foods. Each day should include breakfast, lunch, dinner, and one snack. Focus on foods that are naturally soft or easily mashed — not just bland purees. Include protein at every meal, keep sodium moderate, and make sure flavors are interesting (herbs, mild spices, citrus). Give me a simple shopping list organized by store section.",
+        tryWith: "ChatGPT, Claude, or Gemini"
+      },
+      {
+        id: 30,
+        title: "Low-Sodium Flavor Booster",
+        category: "Health & Wellness",
+        difficulty: "Quick Win",
+        teaser: "Make heart-healthy, low-sodium meals taste incredible with herbs and acids.",
+        promptText: "My doctor told me to cut way back on salt, but now everything tastes bland. Give me 10 simple ways to add big flavor to food without adding sodium. For each tip, include a specific example like 'add lemon juice to roasted vegetables' or 'use smoked paprika on chicken.' Keep suggestions practical — things I can find at a regular grocery store.",
+        tryWith: "Any AI assistant"
+      },
+      {
+        id: 31,
+        title: "One-Pot Senior Meals",
+        category: "Health & Wellness",
+        difficulty: "5 Min",
+        teaser: "Five complete, balanced dinners using just one pot and minimal prep.",
+        promptText: "Give me 5 one-pot dinner recipes perfect for seniors who want to cook less and clean less. Each recipe should use 8 ingredients or fewer, take under 45 minutes, include protein and vegetables, and not require fancy techniques. Include prep time, cook time, and a note about what one pot to use (skillet, Dutch oven, or slow cooker).",
+        tryWith: "ChatGPT or Claude"
+      },
+      {
+        id: 32,
+        title: "Diabetic-Friendly Sweet Treats",
+        category: "Health & Wellness",
+        difficulty: "5 Min",
+        teaser: "Satisfying desserts that won't spike blood sugar — with real flavor.",
+        promptText: "I have Type 2 diabetes but I still love dessert. Give me 5 simple, satisfying sweet treats that are lower in added sugar and higher in fiber or protein to help manage blood sugar. For each one, include the approximate carb count per serving and a tip for making it even more blood-sugar friendly. No artificial sweeteners unless they're easy to find.",
+        tryWith: "ChatGPT, Claude, or Gemini"
+      },
+      {
+        id: 33,
+        title: "Batch Cook for One",
+        category: "Health & Wellness",
+        difficulty: "Deep Dive",
+        teaser: "Cook once, eat for a week — portioning and freezing made simple.",
+        promptText: "I live alone and want to cook one big meal on Sunday that gives me 5-6 portions for the week. Give me 3 complete recipes that freeze and reheat beautifully (soups, stews, casseroles, or sheet-pan meals). For each recipe, include: the full ingredient list, step-by-step instructions, how to portion into containers, how to label them, and the best way to reheat each one. Assume I have basic pots, pans, and a freezer.",
+        tryWith: "ChatGPT or Claude"
+      },
+      {
+        id: 34,
+        title: "Photo to Recipe Decoder",
+        category: "Travel & Hobbies",
+        difficulty: "5 Min",
+        teaser: "Snap a photo of any dish and get a home-cookable recipe with ingredients and steps.",
+        promptText: "I took a photo of a dish I loved at a potluck / restaurant / friend's house. Please look at the photo and give me a recipe to recreate it at home. Identify the main ingredients I can see, estimate the cooking method, and write out simple step-by-step instructions. If you're unsure about an ingredient, give me 2-3 possible substitutes. Keep it realistic for a home cook.",
+        tryWith: "ChatGPT (with image upload), Google Gemini, or Claude"
+      },
+      {
+        id: 35,
+        title: "Fridge Photo Meal Maker",
+        category: "Travel & Hobbies",
+        difficulty: "Quick Win",
+        teaser: "Take a photo of what's in your fridge and get a recipe using only what you have.",
+        promptText: "I took a photo of what's currently in my refrigerator and pantry. Please look at the photo and suggest one complete meal I can make using only the ingredients you see — or with just one or two common additions like eggs or rice. Give me the recipe name, a short ingredient list from the photo, and simple cooking steps. If something looks like it's about to go bad, prioritize using that first.",
+        tryWith: "ChatGPT (with image upload) or Google Gemini"
+      },
+      {
+        id: 36,
+        title: "Restaurant Dish Replicator",
+        category: "Travel & Hobbies",
+        difficulty: "Deep Dive",
+        teaser: "Recreate your favorite restaurant meal at home with a grocery list and step-by-step guide.",
+        promptText: "I have a photo of my favorite dish from [restaurant name or cuisine type]. Please analyze the photo and create a detailed home-cooking recipe to replicate it. Include: a complete ingredient list with approximate amounts, a step-by-step cooking guide, any special techniques I should know, and a simple grocery list organized by store section. If there are secret ingredients or techniques the restaurant probably uses, mention those too.",
+        tryWith: "ChatGPT (with image upload), Claude, or Gemini"
+      },
+      {
+        id: 37,
+        title: "Handwritten Recipe Transcriber",
+        category: "Travel & Hobbies",
+        difficulty: "5 Min",
+        teaser: "Snap a photo of grandma's handwritten recipe card and get a clean, printable version.",
+        promptText: "I took a photo of a handwritten recipe card from [family member]. The handwriting is a bit hard to read. Please transcribe it into a clean, easy-to-read format with: a clear title, an organized ingredient list, numbered cooking steps, and any notes or tips written on the card. If you can't read a word, mark it with [?] and give me your best guess. At the end, suggest how I could scale this recipe up or down.",
+        tryWith: "ChatGPT (with image upload), Claude, or Google Gemini"
+      },
+      {
+        id: 39,
+        title: "Document Summarizer",
+        category: "Productivity",
+        difficulty: "Quick Win",
+        teaser: "Turn any long document into bite-sized bullet points or a quick TL;DR.",
+        promptText: "Please summarize this document for me. [Upload or paste the document text here.] Break it down into 5 key bullet points I can understand at a glance. If it's long, also give me a one-sentence TL;DR. Use a [friendly / formal / casual] tone. If there's anything I should act on, highlight that separately so I don't miss it.",
+        tryWith: "Any AI assistant with file upload"
+      },
+      {
+        id: 40,
+        title: "Tone & Style Rewriter",
+        category: "Communication",
+        difficulty: "Quick Win",
+        teaser: "Rewrite anything to sound more confident, friendlier, or perfectly suited to your audience.",
+        promptText: "Please rewrite this text for me so it sounds [more confident / warmer / less formal / more professional / more concise]. Here's the original: [paste your text]. Keep the same meaning but adjust the tone and style. If it's an email, make sure it still feels personal. If it's social media, make it engaging and easy to read. If it's a complaint, keep it firm but respectful.",
+        tryWith: "Any AI assistant"
+      },
+      {
+        id: 42,
+        title: "Side-by-Side Decider",
+        category: "Productivity",
+        difficulty: "5 Min",
+        teaser: "Compare two or more options with clear pros, cons, and a final recommendation.",
+        promptText: "Help me decide between these options: [list Option A and Option B, or more]. Give me a side-by-side comparison covering [what matters to you: cost, ease of use, time, reliability, etc.]. List the pros and cons of each. Then tell me which one you'd choose for my situation and explain your reasoning in plain English, not jargon.",
+        tryWith: "ChatGPT, Claude, or Gemini"
+      },
+      {
+        id: 43,
+        title: "Role-Play Coach",
+        category: "Communication",
+        difficulty: "5 Min",
+        teaser: "Practice any conversation by giving AI a role — therapist, hiring manager, picky customer, and more.",
+        promptText: "I want to practice a conversation. Please take on the role of [describe the role: a picky customer, a concerned family member, a hiring manager, a nutritionist, a doctor, etc.]. I'll share [my side of the conversation / my resume / my concern / my presentation], and you respond as that person would. Be realistic and specific. After a few back-and-forths, give me feedback on what I did well and what I could improve.",
+        tryWith: "ChatGPT, Claude, or Gemini"
+      },
+    ];
+
+    /* ========================================
+       STATE
+    ======================================== */
+    let activeCategory = 'All';
+    let searchQuery = '';
+    let sortMethod = 'category';
+
+    /* ========================================
+       RENDER
+    ======================================== */
+    const cardGrid = document.getElementById('cardGrid');
+    const resultsCount = document.getElementById('resultsCount');
+    const clearFiltersBtn = document.getElementById('clearFilters');
+
+    function getDifficultyClass(diff) {
+      if (diff === 'Quick Win') return 'tag-quick';
+      if (diff === '5 Min') return 'tag-5min';
+      return 'tag-deep';
+    }
+
+    function formatTitle(title) {
+      const upper = title.toUpperCase();
+      const words = upper.split(' ');
+      const mid = Math.ceil(words.length / 2);
+      const whitePart = words.slice(0, mid).join(' ');
+      const goldPart = words.slice(mid).join(' ');
+      return `<span style="color:var(--white);">${escapeHtml(whitePart)}</span> <span style="color:var(--gold);">${escapeHtml(goldPart)}</span>`;
+    }
+
+    function renderCards(cardsToRender) {
+      if (cardsToRender.length === 0) {
+        cardGrid.innerHTML = `
+          <div class="no-results">
+            <div class="no-results-icon" aria-hidden="true">🔍</div>
+            <h3>No prompts found</h3>
+            <p>Try adjusting your search or filters to find what you're looking for.</p>
+          </div>
+        `;
+        resultsCount.innerHTML = `Showing <strong>0</strong> prompts`;
+        return;
+      }
+
+      cardGrid.innerHTML = cardsToRender.map(card => `
+        <article class="prompt-card" data-id="${card.id}" role="listitem">
+          <div class="card-meta">
+            <span class="tag tag-category">${escapeHtml(card.category)}</span>
+            <span class="tag ${getDifficultyClass(card.difficulty)}">${escapeHtml(card.difficulty)}</span>
+          </div>
+          <button class="card-header-btn" onclick="toggleCard(${card.id})" aria-expanded="false" aria-controls="prompt-area-${card.id}">
+            <h3 class="card-title">${formatTitle(card.title)}</h3>
+            <p class="card-teaser">${escapeHtml(card.teaser)}</p>
+          </button>
+          <div class="card-prompt-area" id="prompt-area-${card.id}">
+            <div class="card-prompt-inner">
+              <div class="prompt-box">${escapeHtml(card.promptText)}</div>
+              <div class="try-with">
+                <span class="try-with-icon" aria-hidden="true">💡</span>
+                <span><strong>Best with:</strong> ${escapeHtml(card.tryWith)}</span>
+              </div>
+              <div class="card-actions">
+                <button class="copy-btn" onclick="copyPrompt(${card.id}, this)" aria-label="Copy prompt for ${escapeHtml(card.title)}">
+                  <span aria-hidden="true">📋</span> Click to Copy
+                </button>
+                <a href="https://chatgpt.com/?q=${encodeURIComponent(card.promptText)}" target="_blank" rel="noopener noreferrer" class="open-btn" aria-label="Open ${escapeHtml(card.title)} prompt in ChatGPT">
+                  <span class="btn-icon" aria-hidden="true">🤖</span> Open in ChatGPT
+                </a>
+                <a href="https://claude.ai/new?q=${encodeURIComponent(card.promptText)}" target="_blank" rel="noopener noreferrer" class="open-btn" aria-label="Open ${escapeHtml(card.title)} prompt in Claude">
+                  <span class="btn-icon" aria-hidden="true">🧠</span> Open in Claude
+                </a>
+              </div>
+            </div>
+          </div>
+          <button class="card-toggle" onclick="toggleCard(${card.id})" aria-label="Expand ${escapeHtml(card.title)} prompt">
+            <span>Expand for Full Prompt</span>
+            <span class="toggle-icon" aria-hidden="true">▼</span>
+          </button>
+        </article>
+      `).join('');
+
+      resultsCount.innerHTML = `Showing <strong>${cardsToRender.length}</strong> of <strong>${prompts.length}</strong> prompts`;
+    }
+
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    /* ========================================
+       FILTER & SORT LOGIC
+    ======================================== */
+    function filterAndSort() {
+      let filtered = prompts.filter(p => {
+        const matchesCategory = activeCategory === 'All' || p.category === activeCategory;
+        const q = searchQuery.toLowerCase();
+        const matchesSearch = !q ||
+          p.title.toLowerCase().includes(q) ||
+          p.teaser.toLowerCase().includes(q) ||
+          p.promptText.toLowerCase().includes(q) ||
+          p.category.toLowerCase().includes(q) ||
+          p.difficulty.toLowerCase().includes(q);
+        return matchesCategory && matchesSearch;
+      });
+
+      const diffOrder = { 'Quick Win': 1, '5 Min': 2, 'Deep Dive': 3 };
+
+      if (sortMethod === 'az') {
+        filtered.sort((a, b) => a.title.localeCompare(b.title));
+      } else if (sortMethod === 'category') {
+        filtered.sort((a, b) => a.category.localeCompare(b.category) || a.title.localeCompare(b.title));
+      } else if (sortMethod === 'difficulty-asc') {
+        filtered.sort((a, b) => diffOrder[a.difficulty] - diffOrder[b.difficulty] || a.title.localeCompare(b.title));
+      } else if (sortMethod === 'difficulty-desc') {
+        filtered.sort((a, b) => diffOrder[b.difficulty] - diffOrder[a.difficulty] || a.title.localeCompare(b.title));
+      }
+
+      renderCards(filtered);
+      updateClearButton();
+    }
+
+    function updateClearButton() {
+      const hasFilters = activeCategory !== 'All' || searchQuery !== '';
+      clearFiltersBtn.classList.toggle('visible', hasFilters);
+    }
+
+    function resetFilters() {
+      activeCategory = 'All';
+      searchQuery = '';
+      document.getElementById('searchInput').value = '';
+      document.querySelectorAll('.filter-chip').forEach(chip => {
+        chip.classList.toggle('active', chip.dataset.category === 'All');
+        chip.setAttribute('aria-pressed', chip.dataset.category === 'All');
+      });
+      filterAndSort();
+    }
+
+    /* ========================================
+       EVENT LISTENERS
+    ======================================== */
+    document.getElementById('searchInput').addEventListener('input', (e) => {
+      searchQuery = e.target.value;
+      filterAndSort();
+    });
+
+    document.getElementById('sortSelect').addEventListener('change', (e) => {
+      sortMethod = e.target.value;
+      filterAndSort();
+    });
+
+    document.getElementById('filterChips').addEventListener('click', (e) => {
+      const chip = e.target.closest('.filter-chip');
+      if (!chip) return;
+      activeCategory = chip.dataset.category;
+      document.querySelectorAll('.filter-chip').forEach(c => {
+        c.classList.toggle('active', c.dataset.category === activeCategory);
+        c.setAttribute('aria-pressed', c.dataset.category === activeCategory);
+      });
+      filterAndSort();
+    });
+
+    /* ========================================
+       CARD TOGGLE
+    ======================================== */
+    function toggleCard(id) {
+      const card = document.querySelector(`.prompt-card[data-id="${id}"]`);
+      if (!card) return;
+      const isExpanded = card.classList.toggle('expanded');
+      const btn = card.querySelector('.card-header-btn');
+      const toggleBtn = card.querySelector('.card-toggle');
+      if (btn) btn.setAttribute('aria-expanded', isExpanded);
+      if (toggleBtn) {
+        toggleBtn.querySelector('span').textContent = isExpanded ? 'Collapse' : 'Expand for Full Prompt';
+        toggleBtn.setAttribute('aria-label', (isExpanded ? 'Collapse ' : 'Expand ') + card.querySelector('.card-title').textContent + ' prompt');
+      }
+    }
+
+    /* ========================================
+       COPY TO CLIPBOARD
+    ======================================== */
+    async function copyPrompt(id, btn) {
+      const prompt = prompts.find(p => p.id === id);
+      if (!prompt) return;
+
+      try {
+        await navigator.clipboard.writeText(prompt.promptText);
+        showCopiedState(btn);
+      } catch (err) {
+        const textarea = document.createElement('textarea');
+        textarea.value = prompt.promptText;
+        textarea.style.position = 'fixed';
+        textarea.style.opacity = '0';
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+        showCopiedState(btn);
+      }
+      showToast('Copied to clipboard!');
+    }
+
+    function showCopiedState(btn) {
+      const originalHTML = btn.innerHTML;
+      btn.classList.add('copied');
+      btn.innerHTML = '<span aria-hidden="true">✓</span> Copied!';
+      setTimeout(() => {
+        btn.classList.remove('copied');
+        btn.innerHTML = originalHTML;
+      }, 2000);
+    }
+
+    /* ========================================
+       TOAST
+    ======================================== */
+    let toastTimeout;
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      toast.textContent = message;
+      toast.classList.add('show');
+      clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => toast.classList.remove('show'), 2500);
+    }
+
+    /* ========================================
+       MOBILE NAV
+    ======================================== */
+    function toggleMobileNav() {
+      const nav = document.getElementById('mainNav');
+      const btn = document.querySelector('.mobile-menu-btn');
+      const isOpen = nav.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen);
+      btn.textContent = isOpen ? '✕' : '☰';
+    }
+
+    /* ========================================
+       BACK TO TOP
+    ======================================== */
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      backToTop.classList.toggle('visible', window.scrollY > 500);
+    });
+
+    /* ========================================
+       SMOOTH SCROLL FOR ANCHORS
+    ======================================== */
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href === '#') return;
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+
+    /* ========================================
+       INIT
+    ======================================== */
+    filterAndSort();
+  </script>
+
+  <script>
+    // Allow setting checkout URL later without editing multiple places
+    (function () {
+      const checkoutUrl = ''; // TODO: set once pay.scambomb.com checkout exists
+      const el = document.querySelector('[data-cc-checkout]');
+      if (el && checkoutUrl) el.setAttribute('href', checkoutUrl);
+    })();
+  </script>
+
+  </div>
+
+</body>
+</html>
