@@ -32,6 +32,17 @@
     .card{padding:18px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.04)} .card h3{margin:0 0 8px;color:var(--yellow);font-size:18px}
     .card p{margin:0;color:var(--muted);font-size:14px;line-height:1.45}
     .tag{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(245,200,76,.14);color:var(--yellow);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+    .newsletter-form { display:flex; gap:12px; max-width:620px; margin:0 auto; flex-wrap:wrap; justify-content:center; }
+    .newsletter-form input { flex: 1 1 320px; min-width: 260px; border-radius: 12px; border: 2px solid transparent; padding: 15px 16px; font-size: 16px; font-family: Montserrat, sans-serif; color: var(--navy); }
+    .newsletter-form input:focus { outline:none; border-color: var(--yellow); }
+    .newsletter-form button { border:0; border-radius:12px; padding:15px 22px; font-size:16px; font-weight:900; background:var(--yellow); color:var(--navy); cursor:pointer; font-family: Montserrat, sans-serif; }
+    .newsletter-note,.newsletter-error { font-size:12px; margin-top:12px; text-align:center; }
+    .newsletter-note { color: rgba(255,255,255,0.46); }
+    .newsletter-error { color:#FCA5A5; display:none; }
+    .resource-gate { display:none; max-width:820px; margin:28px auto 0; padding:0 20px; }
+    .gate-card { background: var(--navy); color: #fff; border: 2px solid var(--yellow); border-radius: 16px; padding: 32px 28px; text-align: center; }
+    .gate-card h2 { color: var(--yellow); border: none; margin: 0 0 10px; padding: 0; font-size: 28px; letter-spacing: 0.04em; }
+    .gate-card p { color: rgba(255,255,255,0.82); font-size: 18px; margin-bottom: 18px; }
     /* --- ScamBomb Resource Top Nav Bar Styles --- */
     .back-bar {
       background: var(--navy);
@@ -78,6 +89,22 @@
   </script>
 </head>
 <body>
+  <div class="resource-gate" id="resource-gate">
+    <div class="gate-card">
+      <h2>
+        <span style="color:#fff;">GET INSTANT ACCESS TO THE</span>
+        <span style="color:#F5C84C;">CAREER SCAM CASE STUDY HUB</span>
+      </h2>
+      <p>Enter your email and we’ll send you the access link right away so you can keep this case study handy for your team and community.</p>
+      <form class="newsletter-form" data-newsletter-form>
+        <input type="email" name="email" placeholder="Enter your best email" aria-label="Email address" required>
+        <button type="submit">SEND MY ACCESS LINK →</button>
+      </form>
+      <div class="newsletter-error" data-newsletter-error>Something went wrong. Please try again.</div>
+      <div class="newsletter-note">We’ll email your access link right away.</div>
+    </div>
+  </div>
+
   <div class="back-bar">
     <a href="/" class="brand-link"><span class="scam">SCAM</span><span class="bomb">B💣MB</span></a>
     <span class="sep">·</span>
@@ -114,5 +141,6 @@
     <br>
     <a href="https://scambomb.beehiiv.com/subscribe?utm_source=scambomb.com" target="_blank" rel="noopener" style="color:var(--yellow);font-weight:800;text-decoration:underline;margin-top:8px;display:inline-block;">Join the ScamBomb Newsletter</a>
   </footer>
+  <script src="/js/resource-gate.js"></script>
 </body>
 </html>
