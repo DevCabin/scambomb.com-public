@@ -42,6 +42,20 @@
   - reduced input/button sizing for cleaner horizontal fit
   - mobile behavior keeps stacked layout with equal full-width controls
 
+### Gate overlay fix follow-up (revert + corrected see-behind)
+- Reverted prior overlay attempt commit (`8a69dad`) due to centering regression observed in-browser.
+- Implemented corrected overlay behavior across all 4 gated pages:
+  - gate remains perfectly centered via fixed full-screen flex container
+  - underlying page content stays rendered and visible behind gate
+  - lock state uses `body.gate-is-open` to blur/dim background content (instead of hiding it)
+- Updated tuning for “see behind the white” behavior:
+  - very light scrim: `rgba(11,19,36,0.15)`
+  - blur: `8px`
+  - background opacity while gated: `0.35`
+- Updated shared JS gate toggling in `public/js/resource-gate.js`:
+  - `showGate()` now applies `gate-is-open`, keeps content visible, and uses `display:flex`
+  - `showContent()` removes `gate-is-open` and hides the gate
+
 ## 2026-05-23 — Resource gate sync + redirect unification (3 resource guides + Career hub)
 
 ### Updated
