@@ -1,5 +1,26 @@
 # Changelog
 
+## 2026-05-24 — Phishing Link Survival Guide gate: migrated to official GHL iframe embed
+
+### Why
+- Same pattern as AI Voice Cloning (validated 2026-05-23) and Don't Let a Text Steal Everything (2026-05-24). Custom form never fired GHL "Form Submitted" workflow trigger.
+
+### Updated
+- `public/resources/phishing-link-survival-guide/index.html`
+  - Replaced custom `<form data-newsletter-form>` gate block with official GHL inline iframe:
+    - `<iframe src="https://api.leadconnectorhq.com/widget/form/f62GQmkrmf5tSfGMzYGY" ...>`
+    - Wrapped in `.ghl-embed-wrap` (370px clip, `overflow:hidden`, navy bg)
+    - `data-trigger-type="alwaysShow"`, `data-height="430"`
+  - Added `<script src="https://link.msgsndr.com/js/form_embed.js"></script>` loader after gate div
+  - Added postMessage backup unlock listener (identical to voice cloning + text guides)
+  - Helper note: "After submitting, your access will unlock instantly on this page."
+
+### Recommended GHL form setting
+- On Submit Redirect URL: `https://www.scambomb.com/resources/phishing-link-survival-guide/?resource_key_active=true`
+
+### Status
+- All 3 resource gates (AI Voice Cloning, Text Steal, Phishing) now on official GHL iframe pattern. Career hub gate still uses custom form pattern.
+
 ## 2026-05-24 — Don't Let a Text Steal Everything gate: migrated to official GHL iframe embed
 
 ### Why
