@@ -15,7 +15,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <script src="/thank-you/command-center/access.js" defer></script>
 <style>
   :root {
     --navy-deep: #0B1324;
@@ -119,8 +118,6 @@
     border: 2px solid rgba(245,200,76,0.55);
     color: var(--gold);
   }
-
-  [data-cc-content] { display: none; }
 
   /* HEADER */
   .site-header {
@@ -1185,24 +1182,7 @@
 </head>
 <body>
 
-  <!-- LOCK SCREEN (shown unless cc=1&k=... or access cookie exists) -->
-  <section class="cc-lock" data-cc-lock>
-    <div class="cc-lock-card">
-      <div class="hero-badge">PAID RESOURCE</div>
-      <h1><span class="w">SENIOR TECH</span> <span class="g">COMMAND CENTER</span></h1>
-      <p>
-        This library is locked because it includes paid guides + printable tools.
-        Use your private access link, or purchase access to continue.
-      </p>
-      <div class="cc-lock-actions">
-        <!-- Placeholder; swap to real checkout URL once created -->
-        <a class="cc-lock-secondary" href="/thank-you/command-center/">BACK TO THANK YOU PAGE</a>
-      </div>
-      <div class="note">Tip: If you purchased and can’t get in, double-check the full link from your email.</div>
-    </div>
-  </section>
-
-  <div data-cc-content>
+  <div>
 
 <!-- HEADER -->
 <header class="site-header" id="top">
