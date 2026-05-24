@@ -1,5 +1,22 @@
 # Changelog
 
+## 2026-05-24 — Fix unlockPage() race condition with form_embed.js redirect
+
+### Problem
+- `unlockPage()` was redirecting to `path + ?resource_key_active=true`, which races with form_embed.js's own post-submit redirect to GHL's thank-you page. Whichever redirect fires last wins, so the unlock URL may never actually load.
+- When GHL navigates the parent window to its TYP, our redirect fires but gets overridden; the cookie may never be set.
+
+### Fix
+- Simplified `unlockPage()` to call `setAccessCookie()` + `showContent()` in-place — no redirect.
+- Cookie is now set immediately on postMessage or iframe load event, before any navigation.
+- When user returns from GHL TYP to the resource page (with or without `?resource_key_active=true`), the cookie is present and the gate opens.
+
+### Architectural note
+- **GHL config change required**: In GHL, set each form's post-submit redirect URL to the resource page with `?resource_key_active=true` appended (e.g. `https://scambomb.com/career-scam-case-study/?resource_key_active=true`). This is the most reliable unlock path — URL param is read immediately on page load before any JS/postMessage logic.
+
+### Files updated
+- `public/js/resource-gate.js`
+
 ## 2026-05-24 — Gate unlock fix + resource-gate.js consolidation (all 4 gates)
 
 ### Problem
