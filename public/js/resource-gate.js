@@ -25,8 +25,7 @@
     if (unlocked) return;
     unlocked = true;
     setAccessCookie();
-    var path = window.location.pathname;
-    window.location.href = path + '?resource_key_active=true';
+    showContent();
   }
 
   // Comprehensive GHL postMessage listener.
