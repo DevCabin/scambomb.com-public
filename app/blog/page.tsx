@@ -54,7 +54,10 @@ const posts = [
 
 export default function BlogPage() {
   const featuredPost = posts[0]
-  const regularPosts = posts.slice(1)
+  // Show all posts (newest first) in the Latest Articles grid, including the
+  // featured post — so the most recent post is unmistakably at the top in both
+  // the hero block AND the article grid.
+  const regularPosts = posts
 
   return (
     <div className="min-h-screen bg-[#0B1324]">

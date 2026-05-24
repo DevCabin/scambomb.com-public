@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-05-23 — Scam Triage File #002 polish: brand-gold headline + blog index newest-on-top
+
+### Updated
+- `app/blog/she-heard-her-daughter-crying-ai-voice-clone-scam/page.tsx`
+  - Styled the closing half of the H1 in brand gold:
+    - “She Heard Her Daughter Crying for Help. **It Wasn’t Her Daughter.**”
+    - The second sentence now uses `text-yellow-300`.
+
+- `app/blog/page.tsx`
+  - Changed Latest Articles grid to include the featured post.
+    - Previously: `posts.slice(1)` (grid skipped the featured/newest post)
+    - Now: full `posts` array
+  - Result: the new post appears as both the **featured hero card** and the **first card** in the Latest Articles grid right below — making the newest post unmistakably on top in both spots.
+
 ## 2026-05-23 — New blog post: Scam Triage File #002 (AI Voice Clone — Dover, FL)
 
 ### Added

@@ -13,7 +13,7 @@ export default function BlogPost() {
         <header className="mb-8">
           <div className="text-xs font-semibold tracking-widest text-yellow-300/80 mb-3">SCAM TRIAGE FILE #002</div>
           <h1 className="text-3xl sm:text-4xl font-bold mb-5 leading-tight">
-            She Heard Her Daughter Crying for Help. It Wasn’t Her Daughter.
+            She Heard Her Daughter Crying for Help. <span className="text-yellow-300">It Wasn’t Her Daughter.</span>
           </h1>
           <p className="text-white/80 text-lg mb-5 leading-relaxed">
             A Florida woman lost $15,000 to an AI voice clone scam — and every single red flag was catchable.
