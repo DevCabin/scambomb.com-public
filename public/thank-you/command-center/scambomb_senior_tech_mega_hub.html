@@ -2635,6 +2635,13 @@
     const isWorksheet = card.classList.contains('worksheet-card');
     if (isWorksheet) {
       btn.querySelector('.toggle-text').textContent = isCollapsed ? 'Close Worksheet' : 'Open Worksheet';
+      if (isCollapsed && currentView === 'grid') {
+        currentView = 'list';
+        grid.classList.add('list-view');
+        document.querySelectorAll('.view-btn').forEach(b => {
+          b.classList.toggle('active', b.dataset.view === 'list');
+        });
+      }
     }
   }
 
