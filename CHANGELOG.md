@@ -1,5 +1,39 @@
 # Changelog
 
+## 2026-05-23 — Gate now uses official GHL iframe embed (fires real "Form Submitted" trigger)
+
+### Why
+- Prior gate used a custom HTML form that POSTed to GHL via hidden iframe. That path created contacts intermittently but **never fired the GHL "Form Submitted" workflow trigger**, so no submissions appeared in the form's Submissions tab and no enrollments fired in workflows.
+- Switching to the official GHL inline iframe widget makes every submit a real GHL form submission — the workflow trigger fires and submissions track properly.
+
+### Updated
+- `public/resources/ai-voice-cloning-survival-guide/index.html`
+  - Replaced the custom gate `<form class="newsletter-form" data-newsletter-form>` block (input + button + error/note) inside `.gate-card` with the official GHL widget embed:
+    - `<iframe src="https://api.leadconnectorhq.com/widget/form/kWxJbVTosuKXR0yIvSU1" ...>` (full data attributes from GHL Embed code)
+    - `<script src="https://link.msgsndr.com/js/form_embed.js"></script>` loader appended after the gate
+  - Iframe wrapper styled to fit the existing branded gate card (white background, 460px height, full width, rounded corners).
+  - Added a small helper note under the iframe: *"After submitting, your access will unlock instantly on this page."*
+
+- Added a **postMessage backup unlock listener** directly on the page:
+  - Listens for submit/success messages from `*.leadconnectorhq.com` origins.
+  - On success, sets the `scambomb_resource_access=true` cookie + redirects to `?resource_key_active=true` to unlock the page.
+  - This means the gate still works even if the GHL form's On-Submit Redirect URL isn't configured.
+
+### Recommended GHL form setting (cleanest path)
+- Set the form's **On Submit Redirect URL** to:
+  - `https://www.scambomb.com/resources/ai-voice-cloning-survival-guide/?resource_key_active=true`
+- With that set, GHL's native redirect handles the unlock and the postMessage listener acts as belt-and-suspenders.
+
+### Scope
+- Only the AI Voice Cloning Survival Guide gate has been migrated to the official iframe embed in this commit.
+- The other 3 gated resource pages (text, phishing, career hub) are unchanged and still use the custom form pattern until this new pattern is validated.
+
+### Verification checklist (post-deploy)
+1. Open the page (incognito) → submit a test email in the iframe.
+2. Confirm submission appears in GHL → Sub-Account → that form → Submissions.
+3. Confirm enrollment fires in the linked Workflow's Enrollment History.
+4. Confirm the page unlocks after submit (either via GHL redirect or postMessage fallback).
+
 ## 2026-05-23 — Scam Triage File #002: added attributed links to Fox 13 source article
 
 ### Updated

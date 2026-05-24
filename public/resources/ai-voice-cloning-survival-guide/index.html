@@ -809,14 +809,58 @@
         <span style="color:#F5C84C;">AI VOICE CLONING SURVIVAL PLAN</span>
       </h2>
       <p>Enter your email to unlock the full survival plan instantly —<br>including the 60-second verification script, and the exact steps to take if someone calls claiming to be a loved one.</p>
-      <form class="newsletter-form" data-newsletter-form>
-        <input type="email" name="email" placeholder="Enter your best email" aria-label="Email address" required>
-        <button type="submit">GIVE ME INSTANT ACCESS →</button>
-      </form>
-      <div class="newsletter-error" data-newsletter-error>Something went wrong. Please try again.</div>
-      <div class="newsletter-note">We'll email you confirmation and links to more free resources.</div>
+      <div class="ghl-embed-wrap">
+        <iframe
+          src="https://api.leadconnectorhq.com/widget/form/kWxJbVTosuKXR0yIvSU1"
+          style="width:100%;height:460px;border:none;border-radius:8px;background:#fff;"
+          id="inline-kWxJbVTosuKXR0yIvSU1"
+          data-layout="{'id':'INLINE'}"
+          data-trigger-type="alwaysShow"
+          data-trigger-value=""
+          data-activation-type="alwaysActivated"
+          data-activation-value=""
+          data-deactivation-type="neverDeactivate"
+          data-deactivation-value=""
+          data-form-name="ScamBomb - AI Voice Cloning Survival Guide Opt-in"
+          data-height="460"
+          data-layout-iframe-id="inline-kWxJbVTosuKXR0yIvSU1"
+          data-form-id="kWxJbVTosuKXR0yIvSU1"
+          title="ScamBomb - AI Voice Cloning Survival Guide Opt-in"
+        ></iframe>
+      </div>
+      <div class="newsletter-note" style="margin-top:14px;">After submitting, your access will unlock instantly on this page.</div>
     </div>
   </div>
+
+  <!-- GHL form embed loader (powers the iframe form widget above) -->
+  <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+
+  <!-- Backup unlock: if the GHL form's redirect URL isn't set, listen for the
+       submit-success postMessage from the iframe and unlock the page. -->
+  <script>
+    (function () {
+      function unlockPage() {
+        try {
+          document.cookie = 'scambomb_resource_access=true; max-age=' + (60 * 60 * 24 * 30) + '; path=/; SameSite=Lax';
+        } catch (_) {}
+        var path = window.location.pathname;
+        var sep = path.indexOf('?') >= 0 ? '&' : '?';
+        window.location.href = path + sep + 'resource_key_active=true';
+      }
+      window.addEventListener('message', function (e) {
+        try {
+          if (!e || !e.origin) return;
+          if (!/leadconnectorhq\.com$/.test(new URL(e.origin).hostname)) return;
+          var d = e.data || {};
+          var type = (d.type || d.event || d.eventType || '').toString().toLowerCase();
+          var ok = false;
+          if (type.includes('submit') || type.includes('form-submission') || type.includes('formsubmission')) ok = true;
+          if (d.formSubmitted === true || d.submitted === true || d.success === true) ok = true;
+          if (ok) unlockPage();
+        } catch (_) {}
+      });
+    })();
+  </script>
 
   <div class="cover">
     <span class="logo"><span class="scam">SCAM</span><span class="bomb-word">B<span class="bomb">💣</span>MB</span></span>
