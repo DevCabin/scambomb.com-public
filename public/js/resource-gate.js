@@ -14,7 +14,47 @@
   ].filter(Boolean);
   const gateEl = document.getElementById('resource-gate');
   const bookmarkModal = document.getElementById('bookmark-modal');
-  
+
+  var unlocked = false;
+
+  function setAccessCookie() {
+    document.cookie = accessKeyName + '=true; max-age=' + (60 * 60 * 24 * 30) + '; path=/; SameSite=Lax';
+  }
+
+  function unlockPage() {
+    if (unlocked) return;
+    unlocked = true;
+    setAccessCookie();
+    var path = window.location.pathname;
+    window.location.href = path + '?resource_key_active=true';
+  }
+
+  // Comprehensive GHL postMessage listener.
+  // GHL forms fire messages from various domains and in both object and
+  // stringified-JSON formats depending on version and configuration.
+  window.addEventListener('message', function (e) {
+    try {
+      if (!e || !e.origin) return;
+      var hostname = '';
+      try { hostname = new URL(e.origin).hostname; } catch (_) { return; }
+      if (!/leadconnectorhq\.com$|msgsndr\.com$|gohighlevel\.com$/.test(hostname)) return;
+
+      var d = e.data || {};
+      if (typeof d === 'string') {
+        try { d = JSON.parse(d); } catch (_) { d = {}; }
+      }
+      var rawStr = typeof e.data === 'string' ? e.data.toLowerCase() : '';
+      var type = (d.type || d.event || d.eventType || d.name || d.action || '').toString().toLowerCase();
+
+      var ok = false;
+      if (type.includes('submit') || type.includes('success') || type.includes('complete') ||
+          type.includes('form-submission') || type.includes('formsubmission')) ok = true;
+      if (rawStr.includes('submit') || rawStr.includes('form_submission') || rawStr.includes('success')) ok = true;
+      if (d.formSubmitted === true || d.submitted === true || d.success === true || d.isSubmitted === true) ok = true;
+      if (ok) unlockPage();
+    } catch (_) {}
+  });
+
   function blockContextMenuWhileGated(e) {
     if (document.body.classList.contains('gate-is-open')) {
       e.preventDefault();
@@ -22,38 +62,6 @@
   }
 
   document.addEventListener('contextmenu', blockContextMenuWhileGated);
-
-  function setAccessCookie() {
-    document.cookie = accessKeyName + '=true; max-age=' + (60 * 60 * 24 * 30) + '; path=/; SameSite=Lax';
-  }
-
-  function getResourceFormConfig(pathname) {
-    if (pathname.includes('/resources/ai-voice-cloning-survival-guide')) {
-      return {
-        formId: 'kWxJbVTosuKXR0yIvSU1',
-        formName: 'ScamBomb - AI Voice Cloning Survival Guide Opt-in'
-      };
-    }
-
-    if (pathname.includes('/resources/phishing-link-survival-guide')) {
-      return {
-        formId: 'f62GQmkrmf5tSfGMzYGY',
-        formName: 'ScamBomb - Phishing Link Survival Guide Opt-in'
-      };
-    }
-
-    if (pathname.includes('/resources/dont-let-a-text-steal-everything')) {
-      return {
-        formId: 'XbTyKHKvvW1Ad6zIG1A2',
-        formName: "ScamBomb - Don't Let a Text Steal Everything Opt-in"
-      };
-    }
-
-    return {
-      formId: 'fMvTbzE0i0SO5sTMPscV',
-      formName: 'ScamBomb - Free Guide Opt-In'
-    };
-  }
 
   function showContent() {
     document.body.classList.remove('gate-is-open');
@@ -68,7 +76,21 @@
       gateEl.style.display = 'flex';
       gateEl.querySelectorAll('iframe[data-src]').forEach(function (iframe) {
         iframe.src = iframe.getAttribute('data-src');
+        // Fallback: if GHL redirects the iframe on submit the iframe fires a second load event.
+        var initialLoad = false;
+        iframe.addEventListener('load', function () {
+          if (!initialLoad) { initialLoad = true; return; }
+          unlockPage();
+        });
       });
+      // Inject form_embed.js now (after iframe src is set) so GHL's bridge
+      // script can initialize and fire postMessage on form submit.
+      if (!document.querySelector('script[src*="form_embed"]')) {
+        var s = document.createElement('script');
+        s.src = 'https://link.msgsndr.com/js/form_embed.js';
+        s.async = true;
+        document.body.appendChild(s);
+      }
     }
   }
 
@@ -102,60 +124,5 @@
   });
   document.querySelectorAll('[data-bookmark-dismiss]').forEach((btn) => {
     btn.addEventListener('click', function () { closeBookmarkModal(false); });
-  });
-
-  document.querySelectorAll('[data-newsletter-form]').forEach((form) => {
-    const errorEl = form.parentElement.querySelector('[data-newsletter-error]');
-    form.addEventListener('submit', async function (e) {
-      e.preventDefault();
-      if (errorEl) errorEl.style.display = 'none';
-      const email = form.querySelector('input[name="email"]').value.trim();
-      if (!/.+@.+\..+/.test(email)) {
-        if (errorEl) errorEl.style.display = 'block';
-        return;
-      }
-      
-      // Determine redirect URL
-      const currentPath = window.location.pathname;
-      const successRedirect = currentPath + (currentPath.includes('?') ? '&' : '?') + 'resource_key_active=true';
-      const formConfig = getResourceFormConfig(currentPath);
-
-      try {
-        const iframeName = 'ghl-newsletter-submit';
-        let iframe = document.querySelector(`iframe[name="${iframeName}"]`);
-        if (!iframe) {
-          iframe = document.createElement('iframe');
-          iframe.name = iframeName;
-          iframe.style.display = 'none';
-          document.body.appendChild(iframe);
-        }
-
-        const submitForm = document.createElement('form');
-        submitForm.method = 'POST';
-        submitForm.action = `https://api.leadconnectorhq.com/widget/form/${formConfig.formId}`;
-        submitForm.target = iframeName;
-        submitForm.style.display = 'none';
-
-        const emailInput = document.createElement('input');
-        emailInput.type = 'hidden';
-        emailInput.name = 'email';
-        emailInput.value = email;
-
-        const firstNameInput = document.createElement('input');
-        firstNameInput.type = 'hidden';
-        firstNameInput.name = 'first_name';
-        firstNameInput.value = 'ScamBomb';
-
-        submitForm.appendChild(emailInput);
-        submitForm.appendChild(firstNameInput);
-        document.body.appendChild(submitForm);
-        submitForm.submit();
-        submitForm.remove();
-
-        window.location.href = successRedirect;
-      } catch (_) {
-        if (errorEl) errorEl.style.display = 'block';
-      }
-    });
   });
 })();

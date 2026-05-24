@@ -131,31 +131,7 @@
     </div>
   </div>
 
-  <!-- Backup unlock: listen for submit-success postMessage from the iframe -->
-  <script>
-    (function () {
-      function unlockPage() {
-        try {
-          document.cookie = 'scambomb_resource_access=true; max-age=' + (60 * 60 * 24 * 30) + '; path=/; SameSite=Lax';
-        } catch (_) {}
-        var path = window.location.pathname;
-        var sep = path.indexOf('?') >= 0 ? '&' : '?';
-        window.location.href = path + sep + 'resource_key_active=true';
-      }
-      window.addEventListener('message', function (e) {
-        try {
-          if (!e || !e.origin) return;
-          if (!/leadconnectorhq\.com$/.test(new URL(e.origin).hostname)) return;
-          var d = e.data || {};
-          var type = (d.type || d.event || d.eventType || '').toString().toLowerCase();
-          var ok = false;
-          if (type.includes('submit') || type.includes('form-submission') || type.includes('formsubmission')) ok = true;
-          if (d.formSubmitted === true || d.submitted === true || d.success === true) ok = true;
-          if (ok) unlockPage();
-        } catch (_) {}
-      });
-    })();
-  </script>
+
 
   <div class="back-bar">
     <a href="/" class="brand-link"><span class="scam">SCAM</span><span class="bomb">B💣MB</span></a>

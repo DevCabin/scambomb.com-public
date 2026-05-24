@@ -1,5 +1,26 @@
 # Changelog
 
+## 2026-05-24 — Gate unlock fix + resource-gate.js consolidation (all 4 gates)
+
+### Problem
+- Removing `form_embed.js` broke the unlock: GHL needs its bridge script present to fire the postMessage that triggers page unlock after form submit.
+- Inline backup unlock scripts on each page had a narrow origin check (only `leadconnectorhq.com`) and didn't handle string-format messages.
+
+### Fix
+- `public/js/resource-gate.js`
+  - Added `unlockPage()` with a once-only flag (prevents double redirect).
+  - Added comprehensive postMessage listener: handles object and stringified-JSON payloads, checks `leadconnectorhq.com`, `msgsndr.com`, and `gohighlevel.com` origins, matches all known GHL event name patterns.
+  - Added iframe `load` fallback inside `showGate()`: catches GHL redirect-on-submit as a secondary unlock path.
+  - `showGate()` now dynamically injects `form_embed.js` (async, once) after setting `iframe.src` — restoring GHL's message bridge without blocking page load.
+- Removed inline backup unlock `<script>` blocks from all 4 pages (logic now centralised in resource-gate.js).
+
+### Files updated
+- `public/js/resource-gate.js`
+- `public/resources/ai-voice-cloning-survival-guide/index.html`
+- `public/resources/dont-let-a-text-steal-everything/index.html`
+- `public/resources/phishing-link-survival-guide/index.html`
+- `public/career-scam-case-study/index.html`
+
 ## 2026-05-24 — Gate iframe: lazy-load src to eliminate tab spinner (all 4 gates)
 
 ### Problem
