@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-05-24 — Remove broken "GET ACCESS" button from all command center gate pages
+
+Removed the non-functional "GET ACCESS →" button (href="#", data-cc-checkout) and its dead checkoutUrl JS block from all 6 command center HTML pages. None of the other resource gates have a purchase CTA on the locked screen.
+
+Files: scambomb_senior_tech_mega_hub.html, scambomb_ai_prompts_hub.html, scambomb_foundation_guide.html, scambomb_password_playbook.html, scambomb_slow_computer_guide.html, scambomb_wifi_guide.html
+
 ## 2026-05-24 — Fix unlockPage() race condition with form_embed.js redirect
 
 ### Problem
