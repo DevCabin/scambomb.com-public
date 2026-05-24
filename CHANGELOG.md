@@ -1,5 +1,28 @@
 # Changelog
 
+## 2026-05-24 — Gate iframe: lazy-load src to eliminate tab spinner (all 4 gates)
+
+### Problem
+- Browser holds the tab loading spinner open until ALL subresources (including iframes) have loaded.
+- The GHL form iframe with a hard-coded `src` in HTML caused the page to keep spinning even after content was visually rendered.
+
+### Fix
+- Changed gate iframe `src` attribute to `data-src` on all 4 pages — browser no longer loads the GHL form during page load.
+- Updated `public/js/resource-gate.js` `showGate()` to set `iframe.src` from `data-src` at the moment the gate is displayed.
+- Removed `<script src="https://link.msgsndr.com/js/form_embed.js">` from all 4 pages — not needed; form loads via iframe src, unlock is handled by our postMessage listener.
+
+### Result
+- Page `load` event fires immediately (no GHL dependency).
+- Tab spinner stops as soon as our page assets load.
+- GHL form only loads when the gate is actually shown (gate-not-needed visitors pay zero cost).
+
+### Files updated
+- `public/js/resource-gate.js`
+- `public/resources/ai-voice-cloning-survival-guide/index.html`
+- `public/resources/dont-let-a-text-steal-everything/index.html`
+- `public/resources/phishing-link-survival-guide/index.html`
+- `public/career-scam-case-study/index.html`
+
 ## 2026-05-24 — Gate iframe fixes: defer script + remove scrollbar (all 4 gates)
 
 ### Fixed

@@ -64,7 +64,12 @@
   function showGate() {
     document.body.classList.add('gate-is-open');
     contentEls.forEach((el) => { el.style.display = ''; });
-    if (gateEl) gateEl.style.display = 'flex';
+    if (gateEl) {
+      gateEl.style.display = 'flex';
+      gateEl.querySelectorAll('iframe[data-src]').forEach(function (iframe) {
+        iframe.src = iframe.getAttribute('data-src');
+      });
+    }
   }
 
   function maybeShowBookmarkModal() {
