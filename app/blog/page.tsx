@@ -3,6 +3,14 @@ import Link from 'next/link'
 
 const posts = [
   {
+    slug: 'she-heard-her-daughter-crying-ai-voice-clone-scam',
+    title: 'Scam Triage File #002: She Heard Her Daughter Crying for Help. It Wasn\'t Her Daughter.',
+    description: 'A Florida woman lost $15,000 to an AI voice clone scam — and every single red flag was catchable. Full playbook breakdown + how to set up a family safe word today.',
+    date: '2026-05-23',
+    tag: 'SCAM TRIAGE',
+    readTime: '9 min read'
+  },
+  {
     slug: 'scam-triage-file-001-android-had-3-viruses-but-didnt',
     title: 'Scam Triage File #001: The Android That "Had 3 Viruses" — But Didn\'t',
     description: 'Real incident breakdown: fake "3 viruses detected" Android scareware, Safe Mode diagnosis, rogue app cleanup, and full recovery in about 15 minutes.',

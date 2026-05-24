@@ -1,5 +1,36 @@
 # Changelog
 
+## 2026-05-23 — New blog post: Scam Triage File #002 (AI Voice Clone — Dover, FL)
+
+### Added
+- `app/blog/she-heard-her-daughter-crying-ai-voice-clone-scam/page.tsx`
+  - New blog post: **Scam Triage File #002 — She Heard Her Daughter Crying for Help. It Wasn’t Her Daughter.**
+  - Format follows the established Scam Triage visual template (At a glance card, 4-stat strip, structured cards, fix checklist, ScamBomb Move CTA).
+  - Includes a **Local news segment** card with branded image placeholder + Fox 13 Tampa Bay attribution.
+    - Image path referenced: `/scam-stories/fox13-dover-ai-voice-clone.png` (image asset to be added separately to `public/scam-stories/`).
+  - Includes a **7 Red Flags** grid + an 8th "ScamBomb Rule" card on AI voice cloning realities (~3 sec of audio).
+  - Primary CTA: link to gated free resource — **AI Voice Cloning Survival Guide** (`/resources/ai-voice-cloning-survival-guide`).
+  - Secondary CTA: link to `https://app.scambomb.com`.
+  - Source attribution: Fox 13 Tampa Bay (Aaron Mesmer), interview with Sharon Brightwell of Dover, FL.
+
+### Updated — site-wide latest post placement
+- `app/blog/page.tsx`
+  - Added new post as `posts[0]` (becomes the featured post on `/blog`).
+  - All prior posts shift one slot down; index now leads with Scam Triage File #002.
+- `app/page.tsx` (homepage blog module)
+  - Replaced featured latest post card with Scam Triage File #002:
+    - eyebrow: `SCAM TRIAGE FILE #002`
+    - quick stats updated: `$15,000` loss / `~3 sec` audio to clone
+  - Reorganized 3-card row to keep series + variety visible:
+    - `SCAM TRIAGE` — Scam Triage File #001 (Android scareware)
+    - `SPECIAL REPORT` — Older Adult Fraud Brief 2024–2025
+    - `ALERT` — New USPS delivery scam
+  - Removed `three-questions-to-ask-before-you-click` from homepage card row (still present in `/blog` index).
+
+### Notes
+- Post meets the **Blog Visual Quality Gate** (hierarchy, structured blocks, repeatable Scam Triage series format).
+- No image file committed in this change — only the referenced path. Drop `fox13-dover-ai-voice-clone.png` into `public/scam-stories/` to light up the news card visual.
+
 ## 2026-05-23 — Gate CTA + conversion copy refresh (4 resource gates)
 
 ### Updated
