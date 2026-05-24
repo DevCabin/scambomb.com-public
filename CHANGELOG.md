@@ -1,5 +1,20 @@
 # Changelog
 
+## 2026-05-24 — Gate iframe fixes: defer script + remove scrollbar (all 4 gates)
+
+### Fixed
+- `form_embed.js` was loaded as a blocking script tag, causing pages to hang until GHL's CDN responded.
+  - Added `defer` to all 4 `<script src="https://link.msgsndr.com/js/form_embed.js" defer>` tags.
+  - Pages now render immediately; GHL script loads in background.
+- GHL form content height slightly exceeded iframe height, causing a visible vertical scrollbar on the right edge of the gate iframe.
+  - Added `scrolling="no"` to all 4 gate iframes to suppress the browser-rendered scrollbar.
+
+### Files updated
+- `public/resources/ai-voice-cloning-survival-guide/index.html`
+- `public/resources/dont-let-a-text-steal-everything/index.html`
+- `public/resources/phishing-link-survival-guide/index.html`
+- `public/career-scam-case-study/index.html`
+
 ## 2026-05-24 — Career Scam Case Study Hub gate: migrated to official GHL iframe embed
 
 ### Why
