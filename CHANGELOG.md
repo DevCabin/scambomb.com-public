@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-05-24 — Remove client-side gate from all command center hub pages
+
+The `k` variable on the thank-you page URL is the real lock. Secondary JS gating on the hub pages caused legitimate paying customers to get locked out on cookie clear/new device with no working recovery path. Removed `access.js` script tag, `[data-cc-content]` CSS, the `data-cc-lock` section block, and `data-cc-content` wrapper attribute from all 6 files.
+
+Files: scambomb_senior_tech_mega_hub.html, scambomb_ai_prompts_hub.html, scambomb_foundation_guide.html, scambomb_password_playbook.html, scambomb_slow_computer_guide.html, scambomb_wifi_guide.html
+
 ## 2026-05-24 — Remove broken "GET ACCESS" button from all command center gate pages
 
 Removed the non-functional "GET ACCESS →" button (href="#", data-cc-checkout) and its dead checkoutUrl JS block from all 6 command center HTML pages. None of the other resource gates have a purchase CTA on the locked screen.
