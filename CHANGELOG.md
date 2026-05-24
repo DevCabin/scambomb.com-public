@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-05-23 — Shrink GHL iframe + kill baseline gap on AI voice clone gate
+
+### Issue
+- A visible ~10px gap was rendering under the GHL embed iframe inside the gate card. Two compounding causes:
+  1. Iframe height was 460px (slightly too tall for the GHL form's actual rendered height).
+  2. Iframes are inline by default, which inherits parent `line-height` and adds a phantom baseline gap below the element.
+
+### Updated
+- `public/resources/ai-voice-cloning-survival-guide/index.html`
+  - Iframe inline style:
+    - `height:460px` → `height:450px`
+    - added `display:block`, `margin:0`, `vertical-align:top`
+  - Iframe `data-height` attribute: `460` → `450` (so the GHL embed script does not auto-resize it back up).
+  - Wrapper `.ghl-embed-wrap` now has inline `line-height:0;font-size:0;` to collapse the inline-context whitespace below the iframe.
+
+### Result
+- The hole the iframe sits in is now flush with the iframe content (no mystery margin under it).
+
 ## 2026-05-23 — Fixed broken news segment image on Scam Triage File #002
 
 ### Added
