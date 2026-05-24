@@ -1,5 +1,32 @@
 # Changelog
 
+## 2026-05-24 — Don't Let a Text Steal Everything gate: migrated to official GHL iframe embed
+
+### Why
+- Same pattern as the AI Voice Cloning Survival Guide gate (validated 2026-05-23): custom HTML form created contacts intermittently but never fired the GHL "Form Submitted" workflow trigger. Official GHL iframe widget makes every submit a real form submission.
+
+### Updated
+- `public/resources/dont-let-a-text-steal-everything/index.html`
+  - Replaced custom `<form data-newsletter-form>` gate block with official GHL inline iframe widget:
+    - `<iframe src="https://api.leadconnectorhq.com/widget/form/XbTyKHKvvW1Ad6zIG1A2" ...>`
+    - Wrapped in `.ghl-embed-wrap` (370px clip, `overflow:hidden`, navy bg) — same technique used on voice cloning guide to eliminate whitespace gap
+    - `data-trigger-type` set to `alwaysShow` (not `showAfter`) so the form renders immediately in the gate card
+    - `data-height="430"` on the iframe; wrapper clips to `370px`
+  - Added `<script src="https://link.msgsndr.com/js/form_embed.js"></script>` loader after the gate div
+  - Added postMessage backup unlock listener (same as voice cloning guide):
+    - Listens for submit/success messages from `*.leadconnectorhq.com`
+    - On success: sets `scambomb_resource_access=true` cookie + redirects to `?resource_key_active=true`
+  - Replaced old error/note divs with a single helper note: "After submitting, your access will unlock instantly on this page."
+
+### Recommended GHL form setting
+- Set On Submit Redirect URL to: `https://www.scambomb.com/resources/dont-let-a-text-steal-everything/?resource_key_active=true`
+
+### Verification checklist (post-deploy)
+1. Open page (incognito) → submit test email in iframe
+2. Confirm submission appears in GHL → that form → Submissions
+3. Confirm workflow enrollment fires
+4. Confirm page unlocks after submit (GHL redirect or postMessage fallback)
+
 ## 2026-05-23 — Shrink GHL iframe + kill baseline gap on AI voice clone gate
 
 ### Issue
