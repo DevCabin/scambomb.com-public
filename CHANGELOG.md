@@ -1,5 +1,26 @@
 # Changelog
 
+## 2026-05-24 — Career Scam Case Study Hub gate: migrated to official GHL iframe embed
+
+### Why
+- Same pattern as the 3 resource guides. Custom form never fired GHL "Form Submitted" workflow trigger.
+
+### Updated
+- `public/career-scam-case-study/index.html`
+  - Replaced custom `<form data-newsletter-form>` gate block with official GHL inline iframe:
+    - `<iframe src="https://api.leadconnectorhq.com/widget/form/fUS7VFLyTIsNKlQ65Rqp" ...>`
+    - Wrapped in `.ghl-embed-wrap` (370px clip, `overflow:hidden`, navy bg)
+    - `data-trigger-type="alwaysShow"`, `data-height="430"`
+  - Added `<script src="https://link.msgsndr.com/js/form_embed.js"></script>` loader after gate div
+  - Added postMessage backup unlock listener (identical pattern across all 4 gates)
+  - Helper note: "After submitting, your access will unlock instantly on this page."
+
+### Recommended GHL form setting
+- On Submit Redirect URL: `https://www.scambomb.com/career-scam-case-study/?resource_key_active=true`
+
+### Status
+- All 4 gates now on official GHL iframe pattern. Custom form pattern fully retired.
+
 ## 2026-05-24 — Phishing Link Survival Guide gate: migrated to official GHL iframe embed
 
 ### Why
