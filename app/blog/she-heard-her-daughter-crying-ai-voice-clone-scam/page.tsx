@@ -59,7 +59,7 @@ export default function BlogPost() {
           <div className="rounded-2xl overflow-hidden border border-white/10 bg-white/5">
             <div className="relative">
               <img
-                src="/scam-stories/fox13-dover-ai-voice-clone.png"
+                src="/scam-stories/woman-loses-15k-in-ai-scam.png"
                 alt="Local news segment: woman loses $15K in elaborate AI scam — Fox 13 Tampa Bay"
                 className="w-full h-auto"
               />

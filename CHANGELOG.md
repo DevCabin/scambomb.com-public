@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-05-23 — Fixed broken news segment image on Scam Triage File #002
+
+### Added
+- `public/scam-stories/woman-loses-15k-in-ai-scam.png` — Fox 13 Tampa Bay news segment screenshot used in the Local news segment card.
+
+### Updated
+- `app/blog/she-heard-her-daughter-crying-ai-voice-clone-scam/page.tsx`
+  - Pointed the Local news segment `<img>` at the actual delivered filename:
+    - was: `/scam-stories/fox13-dover-ai-voice-clone.png` (missing → broken image)
+    - now: `/scam-stories/woman-loses-15k-in-ai-scam.png`
+
 ## 2026-05-23 — Gate now uses official GHL iframe embed (fires real "Form Submitted" trigger)
 
 ### Why
