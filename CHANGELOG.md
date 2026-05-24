@@ -1,5 +1,17 @@
 # Changelog
 
+## 2026-05-23 — Scam Triage File #002: added attributed links to Fox 13 source article
+
+### Updated
+- `app/blog/she-heard-her-daughter-crying-ai-voice-clone-scam/page.tsx`
+  - Added 3 brand-gold links to the original Fox 13 Tampa Bay article:
+    - In the header byline ("Fox 13 Tampa Bay" → article URL)
+    - In the Local news segment card (headline + a "Watch / read the original report on fox13news.com" line)
+    - In the source footer paragraph
+  - All links use `utm_source=scambomb.com` for outbound attribution tracking:
+    - `https://www.fox13news.com/news/dover-woman-loses-15k-after-scammers-used-artificial-intelligence-impersonate-daughter?utm_source=scambomb.com`
+  - Links open in a new tab with `rel="noopener noreferrer"` for safety.
+
 ## 2026-05-23 — Scam Triage File #002 readability pass (larger fonts for older-adult audience)
 
 ### Updated

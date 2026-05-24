@@ -19,7 +19,16 @@ export default function BlogPost() {
             A Florida woman lost $15,000 to an AI voice clone scam — and every single red flag was catchable.
           </p>
           <p className="text-white/70 text-base mb-4 italic">
-            Original story reported by Fox 13 Tampa Bay, based on an interview with Sharon Brightwell of Dover, FL.
+            Original story reported by{' '}
+            <a
+              href="https://www.fox13news.com/news/dover-woman-loses-15k-after-scammers-used-artificial-intelligence-impersonate-daughter?utm_source=scambomb.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-yellow-300 underline underline-offset-4 hover:text-yellow-200 not-italic"
+            >
+              Fox 13 Tampa Bay
+            </a>
+            , based on an interview with Sharon Brightwell of Dover, FL.
           </p>
           <time className="text-base text-white/70" dateTime="2026-05-23">
             May 23, 2026
@@ -56,11 +65,25 @@ export default function BlogPost() {
               />
             </div>
             <div className="px-4 sm:px-5 py-4">
-              <div className="text-white text-lg sm:text-xl font-semibold mb-1">
-                Woman loses $15K in elaborate AI scam
-              </div>
+              <a
+                href="https://www.fox13news.com/news/dover-woman-loses-15k-after-scammers-used-artificial-intelligence-impersonate-daughter?utm_source=scambomb.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block text-white text-lg sm:text-xl font-semibold mb-1 hover:text-yellow-300 transition-colors underline underline-offset-4 decoration-white/30 hover:decoration-yellow-300"
+              >
+                Woman loses $15K in elaborate AI scam →
+              </a>
               <div className="text-white/70 text-base">
-                Fox 13 Tampa Bay — Aaron Mesmer interviews Sharon Brightwell (Dover, FL).
+                Fox 13 Tampa Bay — Aaron Mesmer interviews Sharon Brightwell (Dover, FL).{' '}
+                <a
+                  href="https://www.fox13news.com/news/dover-woman-loses-15k-after-scammers-used-artificial-intelligence-impersonate-daughter?utm_source=scambomb.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-yellow-300 hover:text-yellow-200 underline underline-offset-4"
+                >
+                  Watch / read the original report on fox13news.com
+                </a>
+                .
               </div>
             </div>
           </div>
@@ -208,8 +231,17 @@ export default function BlogPost() {
           </div>
         </div>
 
-        <p className="text-white/50 text-sm italic">
-          Source: This article is based on original reporting by Fox 13 Tampa Bay (Aaron Mesmer), from an interview with Sharon Brightwell of Dover, Florida. Hillsborough County detectives are investigating the case.
+        <p className="text-white/60 text-sm italic">
+          Source: This article is based on{' '}
+          <a
+            href="https://www.fox13news.com/news/dover-woman-loses-15k-after-scammers-used-artificial-intelligence-impersonate-daughter?utm_source=scambomb.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-yellow-300 hover:text-yellow-200 underline underline-offset-4 not-italic"
+          >
+            original reporting by Fox 13 Tampa Bay (Aaron Mesmer)
+          </a>
+          , from an interview with Sharon Brightwell of Dover, Florida. Hillsborough County detectives are investigating the case.
         </p>
 
         <footer className="mt-12 pt-8 border-t border-white/10">
