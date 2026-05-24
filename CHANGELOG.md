@@ -1,5 +1,22 @@
 # Changelog
 
+## 2026-05-23 — Scam Triage File #002 readability pass (larger fonts for older-adult audience)
+
+### Updated
+- `app/blog/she-heard-her-daughter-crying-ai-voice-clone-scam/page.tsx`
+  - Increased font sizes site-wide on this post for better accessibility (older-adult audience):
+    - H1 stepped up to `text-4xl sm:text-5xl`
+    - Subhead increased to `text-xl sm:text-2xl`
+    - Eyebrows on sections increased to `text-sm` (from `text-xs`)
+    - Body prose bumped to `prose-xl` throughout
+    - "At a glance" body increased to `text-lg sm:text-xl`
+    - Red-flag cards: titles now `text-xl sm:text-2xl`, body now `text-lg`
+    - "Why this story worked" + "What ~3 sec of audio can do": lists bumped to `text-lg`
+    - Family fix checklist: items bumped to `text-lg sm:text-xl`
+    - Stat cards: values now `text-2xl sm:text-3xl`, labels `text-sm`
+    - ScamBomb Move CTA: headline `text-2xl sm:text-3xl`, body `text-lg sm:text-xl`, buttons enlarged to `text-lg` with `px-6 py-4`
+    - "Back to all posts" link upsized to `text-lg`
+
 ## 2026-05-23 — Scam Triage File #002 polish: brand-gold headline + blog index newest-on-top
 
 ### Updated

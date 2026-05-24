@@ -11,25 +11,25 @@ export default function BlogPost() {
     <div className="py-16">
       <article className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <header className="mb-8">
-          <div className="text-xs font-semibold tracking-widest text-yellow-300/80 mb-3">SCAM TRIAGE FILE #002</div>
-          <h1 className="text-3xl sm:text-4xl font-bold mb-5 leading-tight">
+          <div className="text-sm font-semibold tracking-widest text-yellow-300/80 mb-3">SCAM TRIAGE FILE #002</div>
+          <h1 className="text-4xl sm:text-5xl font-bold mb-5 leading-tight">
             She Heard Her Daughter Crying for Help. <span className="text-yellow-300">It Wasn’t Her Daughter.</span>
           </h1>
-          <p className="text-white/80 text-lg mb-5 leading-relaxed">
+          <p className="text-white/85 text-xl sm:text-2xl mb-5 leading-relaxed">
             A Florida woman lost $15,000 to an AI voice clone scam — and every single red flag was catchable.
           </p>
-          <p className="text-white/60 text-sm mb-4 italic">
+          <p className="text-white/70 text-base mb-4 italic">
             Original story reported by Fox 13 Tampa Bay, based on an interview with Sharon Brightwell of Dover, FL.
           </p>
-          <time className="text-sm text-white/60" dateTime="2026-05-23">
+          <time className="text-base text-white/70" dateTime="2026-05-23">
             May 23, 2026
           </time>
         </header>
 
         <section className="mb-8 not-prose">
           <div className="rounded-2xl border border-yellow-300/30 bg-yellow-300/5 p-5 sm:p-6">
-            <div className="text-xs font-bold tracking-widest text-yellow-300/70 uppercase mb-2">At a glance</div>
-            <p className="text-white/80 leading-relaxed">
+            <div className="text-sm font-bold tracking-widest text-yellow-300/80 uppercase mb-2">At a glance</div>
+            <p className="text-white/85 text-lg sm:text-xl leading-relaxed">
               Scammers used AI to clone a daughter’s voice, fabricated a car-accident emergency, and walked a mother through a $15,000 cash handoff in hours. The story is heartbreaking — but the playbook is repeatable, and every step had a catchable red flag.
             </p>
           </div>
@@ -46,7 +46,7 @@ export default function BlogPost() {
 
         {/* Local news segment block */}
         <section className="mb-10 not-prose">
-          <div className="text-xs font-bold tracking-widest text-white/50 uppercase mb-3">Local news segment</div>
+          <div className="text-sm font-bold tracking-widest text-white/60 uppercase mb-3">Local news segment</div>
           <div className="rounded-2xl overflow-hidden border border-white/10 bg-white/5">
             <div className="relative">
               <img
@@ -56,17 +56,17 @@ export default function BlogPost() {
               />
             </div>
             <div className="px-4 sm:px-5 py-4">
-              <div className="text-white font-semibold mb-1">
+              <div className="text-white text-lg sm:text-xl font-semibold mb-1">
                 Woman loses $15K in elaborate AI scam
               </div>
-              <div className="text-white/60 text-sm">
+              <div className="text-white/70 text-base">
                 Fox 13 Tampa Bay — Aaron Mesmer interviews Sharon Brightwell (Dover, FL).
               </div>
             </div>
           </div>
         </section>
 
-        <div className="prose prose-invert prose-lg max-w-none mb-8">
+        <div className="prose prose-invert prose-xl max-w-none mb-8">
           <h2>📞 The call</h2>
           <p>
             Sharon Brightwell picked up the phone and heard her daughter sobbing.
@@ -99,7 +99,7 @@ export default function BlogPost() {
 
         {/* 7 Red Flags */}
         <section className="mb-12 not-prose">
-          <div className="text-xs font-bold tracking-widest text-white/50 uppercase mb-3">The 7 red flags</div>
+          <div className="text-sm font-bold tracking-widest text-white/60 uppercase mb-3">The 7 red flags</div>
           <div className="grid gap-4 sm:grid-cols-2">
             <FlagCard num="🚩 Red Flag #1" title="The call came from an unknown number">
               The “daughter” explained her phone was confiscated, so she was calling from a new number. Anytime a loved one calls from an unknown number and immediately asks for money — that is your cue to hang up and verify, not to react.
@@ -130,9 +130,9 @@ export default function BlogPost() {
 
         {/* Side-by-side blocks */}
         <section className="mb-10 not-prose grid gap-4 md:grid-cols-2">
-          <div className="rounded-xl border border-white/10 bg-white/5 p-5">
-            <div className="text-xs font-bold tracking-widest text-white/50 uppercase mb-2">Why this story worked</div>
-            <ol className="list-decimal ml-5 space-y-1 text-white/80 text-sm">
+          <div className="rounded-xl border border-white/10 bg-white/5 p-5 sm:p-6">
+            <div className="text-sm font-bold tracking-widest text-white/60 uppercase mb-3">Why this story worked</div>
+            <ol className="list-decimal ml-5 space-y-2 text-white/85 text-lg leading-relaxed">
               <li>Voice triggers parental fear instantly.</li>
               <li>Accident + injury = guilt and shame (you won’t want to tell others).</li>
               <li>Confiscated phone explains why you can’t verify.</li>
@@ -141,9 +141,9 @@ export default function BlogPost() {
               <li>Second ask only happens because the first one worked.</li>
             </ol>
           </div>
-          <div className="rounded-xl border border-red-400/30 bg-red-400/10 p-5">
-            <div className="text-xs font-bold tracking-widest text-red-300 uppercase mb-2">What ~3 seconds of audio can do</div>
-            <ul className="list-disc ml-5 space-y-1 text-white/85 text-sm">
+          <div className="rounded-xl border border-red-400/30 bg-red-400/10 p-5 sm:p-6">
+            <div className="text-sm font-bold tracking-widest text-red-300 uppercase mb-3">What ~3 seconds of audio can do</div>
+            <ul className="list-disc ml-5 space-y-2 text-white/90 text-lg leading-relaxed">
               <li>Generate a synthetic version of your loved one’s voice.</li>
               <li>Read any script in their tone — crying, panicked, calm.</li>
               <li>Hold a short live conversation with believable inflection.</li>
@@ -152,7 +152,7 @@ export default function BlogPost() {
           </div>
         </section>
 
-        <div className="prose prose-invert prose-lg max-w-none">
+        <div className="prose prose-invert prose-xl max-w-none">
           <h2>❌ What no real process ever asks you to do</h2>
           <ul>
             <li>Hand cash to a courier at your door for “bail.”</li>
@@ -164,18 +164,18 @@ export default function BlogPost() {
 
         {/* Fix checklist */}
         <section className="my-10 not-prose rounded-xl border border-emerald-400/30 bg-emerald-400/10 p-5 sm:p-6">
-          <div className="text-xs font-bold tracking-widest text-emerald-300 uppercase mb-3">Family fix checklist (do this today)</div>
-          <ol className="list-decimal ml-5 space-y-1 text-white/85">
+          <div className="text-sm font-bold tracking-widest text-emerald-300 uppercase mb-3">Family fix checklist (do this today)</div>
+          <ol className="list-decimal ml-5 space-y-2 text-white/90 text-lg sm:text-xl leading-relaxed">
             <li>Pick a <strong>family safe word</strong> — something nobody would post online.</li>
             <li>Agree: if anyone calls in a panic asking for money, you ask for the word.</li>
             <li>Always verify on a <strong>known number</strong>. Hang up. Call them. Call another family member.</li>
             <li>Treat <strong>cash + courier</strong> as a 100% scam pattern. Period.</li>
             <li>Have the conversation once, this week — make it a plan, not a reaction.</li>
           </ol>
-          <p className="text-white/70 mt-3">Total time: under 10 minutes at the dinner table.</p>
+          <p className="text-white/80 mt-4 text-lg">Total time: under 10 minutes at the dinner table.</p>
         </section>
 
-        <div className="prose prose-invert prose-lg max-w-none">
+        <div className="prose prose-invert prose-xl max-w-none">
           <h2>Final takeaway</h2>
           <p>
             Sharon isn’t naïve. She’s a loving mother who got hit with a script engineered to bypass her brain’s last line of defense — verification. We’re not blaming her. We’re studying the playbook so it doesn’t work on the next family.
@@ -187,33 +187,33 @@ export default function BlogPost() {
 
         {/* ScamBomb Move CTA */}
         <div className="my-10 rounded-2xl border border-yellow-300/30 bg-yellow-300/5 p-6 sm:p-8 not-prose">
-          <div className="text-xs font-bold tracking-widest text-yellow-300/70 uppercase mb-2">ScamBomb Move</div>
-          <h3 className="text-2xl font-bold mb-2">Set up your family safe word system today</h3>
-          <p className="text-white/70 mb-5">
+          <div className="text-sm font-bold tracking-widest text-yellow-300/80 uppercase mb-2">ScamBomb Move</div>
+          <h3 className="text-2xl sm:text-3xl font-bold mb-3">Set up your family safe word system today</h3>
+          <p className="text-white/80 text-lg sm:text-xl mb-6 leading-relaxed">
             Our free <strong>AI Voice Cloning Survival Guide</strong> walks you through the family safe word setup, a 60-second verification script, and exactly what to do if you get one of these calls.
           </p>
           <div className="flex flex-wrap gap-3">
             <a
               href="/resources/ai-voice-cloning-survival-guide"
-              className="inline-block rounded-xl bg-yellow-300 text-[#0B1324] font-bold px-5 py-3 hover:bg-yellow-200 transition-colors"
+              className="inline-block rounded-xl bg-yellow-300 text-[#0B1324] font-bold text-lg px-6 py-4 hover:bg-yellow-200 transition-colors"
             >
               Get the Free AI Voice Cloning Survival Guide →
             </a>
             <a
               href="https://app.scambomb.com"
-              className="inline-block rounded-xl border border-white/20 px-5 py-3 font-semibold hover:bg-white/10 transition-colors"
+              className="inline-block rounded-xl border border-white/20 px-6 py-4 text-lg font-semibold hover:bg-white/10 transition-colors"
             >
               Try ScamBomb Free
             </a>
           </div>
         </div>
 
-        <p className="text-white/40 text-xs italic">
+        <p className="text-white/50 text-sm italic">
           Source: This article is based on original reporting by Fox 13 Tampa Bay (Aaron Mesmer), from an interview with Sharon Brightwell of Dover, Florida. Hillsborough County detectives are investigating the case.
         </p>
 
         <footer className="mt-12 pt-8 border-t border-white/10">
-          <Link href="/blog" className="text-yellow-300 hover:text-yellow-400 underline underline-offset-4">
+          <Link href="/blog" className="text-yellow-300 hover:text-yellow-400 underline underline-offset-4 text-lg">
             ← Back to all posts
           </Link>
         </footer>
@@ -224,19 +224,19 @@ export default function BlogPost() {
 
 function Stat({ label, value, color }: { label: string; value: string; color: string }) {
   return (
-    <div className="rounded-xl border border-white/10 bg-white/5 p-4">
-      <div className={`text-xl sm:text-2xl font-extrabold ${color}`}>{value}</div>
-      <div className="text-xs uppercase tracking-wider text-white/50 mt-1">{label}</div>
+    <div className="rounded-xl border border-white/10 bg-white/5 p-4 sm:p-5">
+      <div className={`text-2xl sm:text-3xl font-extrabold ${color}`}>{value}</div>
+      <div className="text-sm uppercase tracking-wider text-white/60 mt-2">{label}</div>
     </div>
   )
 }
 
 function FlagCard({ num, title, children }: { num: string; title: string; children: React.ReactNode }) {
   return (
-    <div className="rounded-xl border border-white/10 bg-white/5 p-5">
-      <div className="text-xs font-bold tracking-widest text-yellow-300/70 uppercase mb-2">{num}</div>
-      <h3 className="font-semibold text-white mb-2">{title}</h3>
-      <p className="text-sm text-white/75 leading-relaxed">{children}</p>
+    <div className="rounded-xl border border-white/10 bg-white/5 p-5 sm:p-6">
+      <div className="text-sm font-bold tracking-widest text-yellow-300/80 uppercase mb-3">{num}</div>
+      <h3 className="text-xl sm:text-2xl font-semibold text-white mb-3 leading-snug">{title}</h3>
+      <p className="text-lg text-white/85 leading-relaxed">{children}</p>
     </div>
   )
 }
