@@ -2629,19 +2629,22 @@
     const body = card.querySelector('.card-body');
     const btn = card.querySelector('.card-toggle');
     const isCollapsed = body.classList.contains('collapsed');
+    const isWorksheet = card.classList.contains('worksheet-card');
+
+    // Switch to list BEFORE expanding so the card never opens in grid layout
+    if (isWorksheet && isCollapsed && currentView === 'grid') {
+      currentView = 'list';
+      grid.classList.add('list-view');
+      document.querySelectorAll('.view-btn').forEach(b => {
+        b.classList.toggle('active', b.dataset.view === 'list');
+      });
+    }
+
     body.classList.toggle('collapsed', !isCollapsed);
     btn.setAttribute('aria-expanded', isCollapsed);
 
-    const isWorksheet = card.classList.contains('worksheet-card');
     if (isWorksheet) {
       btn.querySelector('.toggle-text').textContent = isCollapsed ? 'Close Worksheet' : 'Open Worksheet';
-      if (isCollapsed && currentView === 'grid') {
-        currentView = 'list';
-        grid.classList.add('list-view');
-        document.querySelectorAll('.view-btn').forEach(b => {
-          b.classList.toggle('active', b.dataset.view === 'list');
-        });
-      }
     }
   }
 
