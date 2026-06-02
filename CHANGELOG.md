@@ -1,5 +1,17 @@
 # Changelog
 
+## 2026-06-02 — Archive AI Clone Scam Jammer product
+
+### Archived
+- Moved `public/ai-clone-scam-jammer.html`, `public/thank-you-scamjammer-purchase.html`, `public/AI_Clone_Scam_Jammer_v1.0_final.pdf`, and `public/OG_img_scam-jammer-scambomb.png` to `archive/ai-clone-scam-jammer/` folder
+- Removed URL rewrites for `/ai-clone-scam-jammer` and `/thank-you-scamjammer-purchase` from `next.config.js`
+- Updated `README.md` to remove product references from completed features list and analytics notes
+- Updated `DEVELOPER_GUIDE.md` to remove product from static pages table
+
+### Notes
+- Product is preserved in archive for potential future conversion to free gated resource
+- All links to the product have been removed from active codebase
+
 ## 2026-05-24 — Remove client-side gate from all command center hub pages
 
 The `k` variable on the thank-you page URL is the real lock. Secondary JS gating on the hub pages caused legitimate paying customers to get locked out on cookie clear/new device with no working recovery path. Removed `access.js` script tag, `[data-cc-content]` CSS, the `data-cc-lock` section block, and `data-cc-content` wrapper attribute from all 6 files.
