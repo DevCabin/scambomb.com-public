@@ -245,8 +245,6 @@ Some marketing and product pages are built as standalone static HTML files in `p
 
 | Clean URL | File | Purpose |
 |-----------|------|---------|
-| `/ai-clone-scam-jammer` | `public/ai-clone-scam-jammer.html` | Paid product sales page ($7 PDF guide) |
-| `/thank-you-scamjammer-purchase` | `public/thank-you-scamjammer-purchase.html` | Post-purchase confirmation + PDF download |
 | `/scam-stories` | `public/scam-stories/index.html` | Story submission form |
 | `/testing` | `public/testing/index.html` | User testing intake form |
 | `/reports/older-adult-fraud-2024-2025` | `public/reports/older-adult-fraud-2024-2025/index.html` | Interactive fraud report |

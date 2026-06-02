@@ -108,7 +108,7 @@ scambomb.com-public/
 - [x] Responsive homepage with accessibility features
 - [x] Static blog routing (Contentlayer-independent) for reliable post availability
 - [x] Google Analytics GA4 (`G-T61B4NX3J8`) — sitewide via `app/layout.tsx`
-- [x] Facebook Pixel (`486466700592099`) — on `/protect-parents` and both Scam Jammer static pages
+- [x] Facebook Pixel (`486466700592099`) — on `/protect-parents`
 - [x] Custom logo implementation
 - [x] ProductHunt launch messaging
 - [x] Vercel deployment ready
@@ -121,8 +121,6 @@ scambomb.com-public/
 - [x] **Gated Lead Capture**: `/blog/older-adult-fraud-report-2024-2025` with `LeadCaptureCTA` → GHL drip enrollment
 - [x] **Blog Posts (5)**: Three guides + Scam Triage File #001 + Older Adult Fraud Special Report
 - [x] **Protect Parents Landing Page**: `/protect-parents` — dedicated FB Pixel landing page with app CTA
-- [x] **AI Clone Scam Jammer**: `/ai-clone-scam-jammer` — first paid product ($7 PDF, static HTML sales page)
-- [x] **Purchase Thank-You Page**: `/thank-you-scamjammer-purchase` — post-purchase confirmation with PDF download
 - [x] **`@vercel/analytics`**: Added as explicit dependency; Vercel Analytics + Speed Insights active
 - [x] **Resource Gate Unification**: Shared gate script + self-unlock redirect across 3 resource guides + Career Scam Case Study hub
 
@@ -142,8 +140,7 @@ Covered pages:
 ### ⚠️ Analytics Coverage Note
 - All **Next.js pages** receive GA4 automatically via `<GoogleAnalytics>` in `app/layout.tsx`
 - **Static HTML pages** (`public/*.html`) are served via Next.js rewrites and bypass `layout.tsx` — they require **inline** GA4 + FB Pixel scripts
-- Pages with inline analytics confirmed: `ai-clone-scam-jammer.html`, `thank-you-scamjammer-purchase.html`
-- Other static HTML pages (scam-stories, testing, reports, resources) currently have **no inline analytics**
+- Static HTML pages (scam-stories, testing, reports, resources) currently have **no inline analytics**
 
 ### 🚧 Known Issues
 - Some TypeScript type definitions incomplete

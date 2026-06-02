@@ -18,14 +18,6 @@ const nextConfig = {
         destination: '/jeff/training/index-v2.html',
       },
       {
-        source: '/ai-clone-scam-jammer',
-        destination: '/ai-clone-scam-jammer.html',
-      },
-      {
-        source: '/thank-you-scamjammer-purchase',
-        destination: '/thank-you-scamjammer-purchase.html',
-      },
-      {
         source: '/career-scam-case-study',
         destination: '/career-scam-case-study/index.html',
       },
