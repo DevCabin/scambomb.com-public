@@ -8,6 +8,19 @@
   - Resolves issue where GHL form was not rendering on mobile devices (Comet browser)
   - Form now loads without JavaScript dependency
 
+## 2026-06-10 — Complete presentation updates for Friday workshop
+
+### Updated
+- `public/presentation-live.html`
+  - Slide 4: Changed "Tonight's Goal" to "Today's Goal"
+  - Slide 18: Changed "10 Minute Break" to "THANK YOU" (THANK white, YOU yellow)
+  - Slide 19: Final slide "Thank You" → "Thank You" reversed colors (Thank white, You yellow)
+  - Fixed mobile form display issues on AI Voice Cloning resource page
+
+### Reason
+- Presentation updates for live Friday workshop
+- Mobile compatibility verified (works on Safari/Chrome, Comet browser unsupported)
+
 ## 2026-06-10 — Update presentation QR codes to free AI Clone Survival Plan
 
 ### Updated
