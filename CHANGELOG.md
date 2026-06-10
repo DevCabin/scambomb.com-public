@@ -13,6 +13,7 @@
 ### Updated
 - `public/presentation-live.html`
   - Slide 16 (Family Verification System): Replaced base64-encoded QR with new PNG file, changed text from "$7 Complete Guide" to "free AI Clone Survival Plan"
+  - Changed QR code subtext from URL to "Prevent the loss of your life savings. Free Guide."
   - Break slide: Updated QR to use same free resource, removed pricing text
   - Added new QR code file: `public/qr-to-voice-resource.png`
 
