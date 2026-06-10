@@ -12,6 +12,7 @@
 
 ### Updated
 - `public/presentation-live.html`
+  - Slide 4: Changed "Tonight's Goal" to "Today's Goal"
   - Slide 16 (Family Verification System): Replaced base64-encoded QR with new PNG file, changed text from "$7 Complete Guide" to "free AI Clone Survival Plan"
   - Changed QR code subtext from URL to "Prevent the loss of your life savings. Free Guide."
   - Break slide: Updated QR to use same free resource, removed pricing text
@@ -21,6 +22,7 @@
 - QR codes were incorrectly pointing to paid product ($7 AI Clone Scam Jammer)
 - Now correctly point to free gated resource: https://www.scambomb.com/resources/ai-voice-cloning-survival-guide
 - Removed all purchase/paid language from presentation slides
+- Slide 4 text update for consistency
 
 ## 2026-06-02 — Archive AI Clone Scam Jammer product
 
