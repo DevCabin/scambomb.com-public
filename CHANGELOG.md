@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-06-10 — Fix mobile form display on AI Voice Cloning resource page
+
+### Fixed
+- `public/resources/ai-voice-cloning-survival-guide/index.html`
+  - Changed iframe `data-src` to `src` for immediate form loading
+  - Resolves issue where GHL form was not rendering on mobile devices (Comet browser)
+  - Form now loads without JavaScript dependency
+
 ## 2026-06-10 — Update presentation QR codes to free AI Clone Survival Plan
 
 ### Updated
