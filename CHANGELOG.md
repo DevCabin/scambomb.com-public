@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-06-12 — Add redirect: /live-presentation → /presentation-live
+
+### Added
+- `next.config.js`
+  - Added permanent redirect from `/live-presentation` to `/presentation-live`
+  - Enables cleaner URL access to the live presentation page
+
 ## 2026-06-10 — Fix mobile form display on AI Voice Cloning resource page
 
 ### Fixed
