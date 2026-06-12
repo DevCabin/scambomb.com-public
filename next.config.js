@@ -82,6 +82,11 @@ const nextConfig = {
         destination: '/resources/phishing-link-survival-guide',
         permanent: true,
       },
+      {
+        source: '/live-presentation',
+        destination: '/presentation-live',
+        permanent: true,
+      },
     ]
   },
 }
