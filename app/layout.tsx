@@ -72,7 +72,7 @@ function UniversalFooter() {
           </p>
           <div className="mt-4">
             <a
-              href="https://scambomb.beehiiv.com/?utm_source=scambomb.com"
+              href="https://featherstone.kit.com/3daabf1cc1"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block text-lg md:text-sm font-bold md:font-semibold rounded-xl px-4 py-3 md:px-3 md:py-2 bg-[#F5C84C] text-[#0B1324] hover:bg-[#F5C84C]/90"

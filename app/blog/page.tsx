@@ -181,7 +181,7 @@ export default function BlogPage() {
             Join thousands of people who receive our weekly scam alerts and safety tips. No spam, ever.
           </p>
           <a 
-            href="https://scambomb.beehiiv.com/" 
+            href="https://featherstone.kit.com/3daabf1cc1" 
             target="_blank" 
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold text-[#0B1324] bg-[#F5C84C] rounded-lg hover:bg-[#F5C84C]/90 transition-colors"
