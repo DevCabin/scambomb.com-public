@@ -6,6 +6,7 @@ import GoogleAnalytics from '../components/GoogleAnalytics'
 import Header from '../components/Header'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import ConditionalGHLPoliteSlideIn from '../components/ConditionalGHLPoliteSlideIn'
+import { AuthProvider } from '../components/AuthProvider'
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -95,15 +96,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${montserrat.variable} font-montserrat bg-[#0B1324] text-white min-h-screen antialiased selection:bg-yellow-300/30 text-base sm:text-lg`}>
-        <GoogleAnalytics measurementId="G-T61B4NX3J8" />
-        <Header />
-        <main id="main">
-          {children}
-        </main>
-        <SpeedInsights />
-        <UniversalFooter />
-        <Analytics />
-        <ConditionalGHLPoliteSlideIn />
+        <AuthProvider>
+          <GoogleAnalytics measurementId="G-T61B4NX3J8" />
+          <Header />
+          <main id="main">
+            {children}
+          </main>
+          <SpeedInsights />
+          <UniversalFooter />
+          <Analytics />
+          <ConditionalGHLPoliteSlideIn />
+        </AuthProvider>
       </body>
     </html>
   )
