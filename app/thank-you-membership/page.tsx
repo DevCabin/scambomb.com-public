@@ -1,11 +1,17 @@
-import Link from 'next/link'
+'use client'
 
-export const metadata = {
-  title: 'Welcome to ScamBomb! — Membership Confirmed',
-  description: 'Your ScamBomb membership is active. Start protecting yourself from scams today.',
-}
+import Link from 'next/link'
+import { useSearchParams } from 'next/navigation'
 
 export default function ThankYouMembershipPage() {
+  const searchParams = useSearchParams()
+  const sessionId = searchParams.get('session_id')
+  
+  // Build app URL with session_id for subscription sync
+  const appUrl = sessionId 
+    ? `https://app.scambomb.com/?session_id=${sessionId}`
+    : 'https://app.scambomb.com'
+
   return (
     <div className="min-h-screen py-20">
       <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8 text-center">
@@ -35,7 +41,7 @@ export default function ThankYouMembershipPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="https://app.scambomb.com"
+              href={appUrl}
               className="rounded-2xl px-6 py-3 font-semibold inline-block text-center hover:opacity-90 transition-opacity"
               style={{ backgroundColor: '#F5C84C', color: '#0B1324' }}
             >

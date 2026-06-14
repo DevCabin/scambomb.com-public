@@ -55,16 +55,21 @@ export async function GET(request: NextRequest) {
     const stripe = new Stripe(stripeSecret);
     const origin = request.nextUrl.origin;
 
+    // Get email from query params if provided (for linking to existing account)
+    const email = request.nextUrl.searchParams.get('email');
+
     const session = await stripe.checkout.sessions.create({
       mode: 'subscription',
       line_items: [{ price: priceId, quantity: 1 }],
       success_url: `${origin}/thank-you-membership?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${origin}/#pricing`,
       allow_promotion_codes: true,
+      customer_email: email || undefined,
       metadata: {
         source: 'scambomb-homepage-pricing',
         plan: planParam,
         billing: billingParam,
+        ...(email ? { user_email: email } : {}),
       },
     });
 
