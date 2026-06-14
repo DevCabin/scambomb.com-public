@@ -40,6 +40,13 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       const authCookie = getCookie('scambomb_auth')
       const userEmail = getCookie('scambomb_user_email')
       
+      // Debug logging
+      console.log('[AuthProvider] Checking auth...', {
+        authCookie: authCookie ? 'present' : 'missing',
+        userEmail: userEmail ? 'present' : 'missing',
+        allCookies: document.cookie.split(';').map(c => c.trim().split('=')[0])
+      })
+      
       setIsLoggedIn(!!authCookie)
       setEmail(userEmail)
       setIsLoading(false)

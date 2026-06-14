@@ -1,7 +1,5 @@
 'use client'
 
-import { ProtectedCheckoutButton } from './ProtectedCheckoutButton'
-
 function Check() {
   return (
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
@@ -18,13 +16,19 @@ type PriceCardProps = {
   color: string
   highlight?: boolean
   href?: string
-  annualHref?: string
   plan?: 'standard' | 'senior'
+  billing?: 'monthly' | 'annual'
 }
 
-function PriceCard({ title, price, note, cta, color, highlight = false, href, annualHref, plan }: PriceCardProps) {
+function PriceCard({ title, price, note, cta, color, highlight = false, href, plan, billing }: PriceCardProps) {
   const isFree = price === "Free"
-  const brandYellow = "#F5C84C"
+
+  // Build checkout URL - goes through app auth check first
+  const getCheckoutUrl = () => {
+    if (!plan || !billing) return href || "https://app.scambomb.com"
+    // Redirect through app to verify auth, then to Stripe
+    return `https://app.scambomb.com/api/auth/redirect?plan=${plan}&billing=${billing}`
+  }
 
   return (
     <div className={`rounded-2xl p-6 border ${highlight ? "border-yellow-300 bg-white/10" : "border-white/10 bg-white/5"}`}>
@@ -32,48 +36,13 @@ function PriceCard({ title, price, note, cta, color, highlight = false, href, an
       <div className="mt-3 text-4xl font-extrabold">{price}</div>
       <p className="mt-2 text-base leading-relaxed text-white/80">{note}</p>
       
-      {isFree ? (
-        <a 
-          href={href || "https://app.scambomb.com"} 
-          className="mt-5 w-full rounded-xl py-4 text-lg font-semibold inline-block text-center"
-          style={{ backgroundColor: color, color: "#0B1324" }}
-        >
-          {cta}
-        </a>
-      ) : plan ? (
-        <>
-          <ProtectedCheckoutButton
-            plan={plan}
-            billing="monthly"
-            planName={title}
-            priceDisplay={price}
-            className="mt-5 w-full rounded-xl py-4 text-lg font-semibold inline-block text-center"
-            style={{ backgroundColor: color, color: "#0B1324" }}
-          >
-            {cta}
-          </ProtectedCheckoutButton>
-          
-          {annualHref && (
-            <ProtectedCheckoutButton
-              plan={plan}
-              billing="annual"
-              planName={title}
-              priceDisplay={price}
-              className="mt-3 block text-center text-base text-white underline decoration-white/60 underline-offset-4 hover:decoration-white"
-            >
-              <span className="text-[#F5C84C]">Or save 17%</span> <span className="text-white">by paying annually!</span>
-            </ProtectedCheckoutButton>
-          )}
-        </>
-      ) : (
-        <a 
-          href={href || "https://app.scambomb.com"} 
-          className="mt-5 w-full rounded-xl py-4 text-lg font-semibold inline-block text-center"
-          style={{ backgroundColor: color, color: "#0B1324" }}
-        >
-          {cta}
-        </a>
-      )}
+      <a 
+        href={getCheckoutUrl()}
+        className="mt-5 w-full rounded-xl py-4 text-lg font-semibold inline-block text-center"
+        style={{ backgroundColor: color, color: "#0B1324" }}
+      >
+        {cta}
+      </a>
 
       <ul className="mt-5 space-y-3 text-base text-white/85">
         {isFree ? (
@@ -133,7 +102,7 @@ export function PricingSection() {
               cta="Choose standard" 
               color={brandYellow} 
               plan="standard"
-              annualHref="/api/stripe/checkout?plan=standard&billing=annual"
+              billing="monthly"
             />
           </div>
           <div className="hover-lift md:hidden">
@@ -144,7 +113,7 @@ export function PricingSection() {
               cta="Claim senior pricing" 
               color={brandYellow} 
               plan="senior"
-              annualHref="/api/stripe/checkout?plan=senior&billing=annual"
+              billing="monthly"
             />
           </div>
           <div className="hover-lift hidden md:block">
@@ -155,10 +124,31 @@ export function PricingSection() {
               cta="Claim senior pricing" 
               color={brandYellow} 
               plan="senior"
-              annualHref="/api/stripe/checkout?plan=senior&billing=annual"
+              billing="monthly"
             />
           </div>
         </div>
+        
+        {/* Annual savings links */}
+        <div className="mt-6 text-center">
+          <p className="text-white/60 text-sm mb-2">Save 17% with annual billing:</p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <a 
+              href="https://app.scambomb.com/api/auth/redirect?plan=standard&billing=annual" 
+              className="text-[#F5C84C] hover:underline"
+            >
+              Standard Annual ($99/yr)
+            </a>
+            <span className="text-white/30">|</span>
+            <a 
+              href="https://app.scambomb.com/api/auth/redirect?plan=senior&billing=annual" 
+              className="text-[#F5C84C] hover:underline"
+            >
+              Senior Annual ($49/yr)
+            </a>
+          </div>
+        </div>
+        
         <p className="mt-4 text-lg text-white/80">No strings attached, "cancel any time for any reason" guarantee.</p>
       </div>
     </section>
