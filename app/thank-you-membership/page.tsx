@@ -1,9 +1,10 @@
 'use client'
 
 import Link from 'next/link'
+import { Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 
-export default function ThankYouMembershipPage() {
+function ThankYouContent() {
   const searchParams = useSearchParams()
   const sessionId = searchParams.get('session_id')
   
@@ -103,5 +104,21 @@ export default function ThankYouMembershipPage() {
 
       </div>
     </div>
+  )
+}
+
+export default function ThankYouMembershipPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen py-20">
+        <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8 text-center">
+          <div className="text-6xl mb-6">🎉</div>
+          <h1 className="text-4xl sm:text-5xl font-extrabold mb-4">Welcome to ScamBomb!</h1>
+          <p className="text-white/80 text-xl">Loading...</p>
+        </div>
+      </div>
+    }>
+      <ThankYouContent />
+    </Suspense>
   )
 }
