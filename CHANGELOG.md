@@ -1,5 +1,33 @@
 # Changelog
 
+## 2026-06-13 — v1.3.0 — Membership purchase flow with login gate and subscription sync
+
+### Added
+- **Protected Checkout Flow** — Users must be logged in before purchasing membership
+  - `components/AuthProvider.tsx` — React context to detect existing ScamBomb app session from localStorage
+  - `components/LoginPromptModal.tsx` — Modal explaining sign-in requirement with benefits and CTA to app
+  - `components/ProtectedCheckoutButton.tsx` — Wrapper that checks auth state before allowing checkout
+  - `components/PricingSection.tsx` — Client-side pricing section using ProtectedCheckoutButton for paid plans
+- **Thank-you membership page** at `/thank-you-membership` — Dedicated post-purchase confirmation page
+- **Subscription sync endpoint** (ScamBomb-Ai app) at `/api/stripe/sync-subscription` — Links Stripe checkout session to user account
+- **Session ID handling** on app scan page — Detects `?session_id` param and syncs subscription automatically
+
+### Updated
+- `app/layout.tsx` — Wrapped app in AuthProvider for auth state availability
+- `app/page.tsx` — Replaced inline pricing with PricingSection component
+- `app/api/stripe/checkout/route.ts` — Added email parameter support for account linking
+- Stripe checkout success URL now redirects to `/thank-you-membership?session_id={CHECKOUT_SESSION_ID}`
+- App scan page now listens for `usageRefresh` event to update UI after subscription sync
+
+### Technical Details
+- Auth detection relies on `scambomb_session_token` in localStorage (set by ScamBomb-Ai app on login)
+- Checkout URLs now include `?email=user@example.com` when user is authenticated
+- Webhook and sync endpoint both create `customer:{customerId} → user:{userId}` mapping in KV
+- Subscription sync verifies email match between Stripe session and authenticated user
+
+### Version
+- Bumped to v1.3.0
+
 ## 2026-06-12 — Add redirect: /live-presentation → /presentation-live
 
 ### Added
