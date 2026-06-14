@@ -14,37 +14,42 @@ const AuthContext = createContext<AuthContextType>({
   isLoading: true,
 })
 
+// Helper to get cookie value by name
+function getCookie(name: string): string | null {
+  if (typeof document === 'undefined') return null
+  const value = `; ${document.cookie}`
+  const parts = value.split(`; ${name}=`)
+  if (parts.length === 2) return parts.pop()?.split(';').shift() || null
+  return null
+}
+
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [email, setEmail] = useState<string | null>(null)
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    // Check for session token in localStorage
+    // Check for auth cookie set by app.scambomb.com
+    // Cookie is set with Domain=.scambomb.com so it's shared across subdomains
     const checkAuth = () => {
-      if (typeof window === 'undefined') {
+      if (typeof document === 'undefined') {
         setIsLoading(false)
         return
       }
 
-      const token = localStorage.getItem('scambomb_session_token')
-      const userEmail = localStorage.getItem('scambomb_user_email')
+      const authCookie = getCookie('scambomb_auth')
+      const userEmail = getCookie('scambomb_user_email')
       
-      setIsLoggedIn(!!token)
+      setIsLoggedIn(!!authCookie)
       setEmail(userEmail)
       setIsLoading(false)
     }
 
     checkAuth()
 
-    // Listen for auth changes from other tabs/windows
-    const handleStorage = (e: StorageEvent) => {
-      if (e.key === 'scambomb_session_token') {
-        checkAuth()
-      }
-    }
-    window.addEventListener('storage', handleStorage)
-    return () => window.removeEventListener('storage', handleStorage)
+    // Check periodically in case user logs in/out in another tab
+    const interval = setInterval(checkAuth, 5000)
+    return () => clearInterval(interval)
   }, [])
 
   return (
