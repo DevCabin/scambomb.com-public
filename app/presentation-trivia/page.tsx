@@ -1,7 +1,6 @@
 'use client';
 
 import { useRef } from 'react';
-
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
