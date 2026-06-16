@@ -80,6 +80,12 @@ function UniversalHeader() {
               >
                 Blog
               </a>
+              <a 
+                className="text-white/80 hover:text-white text-base font-medium transition-colors relative hover:after:content-[''] hover:after:absolute hover:after:bottom-[-4px] hover:after:left-0 hover:after:w-full hover:after:h-0.5 hover:after:bg-[#F5C84C]" 
+                href="/resources"
+              >
+                Resources
+              </a>
             </nav>
 
             {/* CTA - Right */}
@@ -151,6 +157,13 @@ function UniversalHeader() {
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Blog
+                </a>
+                <a 
+                  className="block px-3 py-2 text-base font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-colors" 
+                  href="/resources" 
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Resources
                 </a>
                 <a
                   href={trialHref}

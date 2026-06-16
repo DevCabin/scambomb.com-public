@@ -103,10 +103,18 @@ export default function ResourcesPage() {
   const ResourceCard = ({ resource }: { resource: typeof resources[0] }) => {
     const href = resource.external ? resource.externalUrl! : `/resources/${resource.slug}`
     
-    // Split title for two-tone treatment: last word in yellow
-    const titleWords = resource.title.split(' ')
-    const lastWord = titleWords.pop()
-    const titleStart = titleWords.join(' ')
+    // Custom two-tone treatment per title
+    const getTitleParts = (title: string, slug: string) => {
+      if (slug === 'dont-let-a-text-steal-everything') {
+        return { start: "DON'T LET A TEXT ", gold: "STEAL ", end: "EVERYTHING" }
+      }
+      // Default: all but last word white, last word gold
+      const words = title.toUpperCase().split(' ')
+      const lastWord = words.pop()
+      return { start: words.join(' ') + ' ', gold: '', end: lastWord }
+    }
+    
+    const parts = getTitleParts(resource.title, resource.slug)
     
     return (
       <article 
@@ -123,8 +131,9 @@ export default function ResourcesPage() {
           </div>
           
           <h3 className="text-xl font-black uppercase tracking-tight mb-3 line-clamp-2">
-            <span className="text-white">{titleStart} </span>
-            <span className="text-[#F5C84C]">{lastWord}</span>
+            <span className="text-white">{parts.start}</span>
+            {parts.gold && <span className="text-[#F5C84C]">{parts.gold}</span>}
+            <span className="text-[#F5C84C]">{parts.end}</span>
           </h3>
           
           <p className="text-white/60 mb-6 line-clamp-3 flex-1">
