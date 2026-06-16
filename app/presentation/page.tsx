@@ -1,3 +1,12 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
+
 export default function PresentationPostcardPage() {
   return (
     <section className="bg-[#0B1324] text-white min-h-[calc(100vh-140px)] py-4 sm:py-8 px-3 sm:px-6 lg:px-8 print:bg-white print:text-[#0B1324] print:p-0">

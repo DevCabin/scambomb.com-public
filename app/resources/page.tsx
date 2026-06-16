@@ -58,41 +58,6 @@ const resources = [
   }
 ]
 
-const presentations = [
-  {
-    slug: 'presentation-live',
-    title: 'AI Voice Scams Workshop',
-    description: 'The complete live presentation deck: how AI voice scams work, the grandparent scam evolution, and family verification systems.',
-    tag: 'WORKSHOP',
-    external: true,
-    externalUrl: '/presentation-live'
-  },
-  {
-    slug: 'presentation-ai-future',
-    title: 'AI Literacy Workshop',
-    description: 'From AI basics to agent orchestration. A two-day workshop curriculum for seniors, students, and beginners ready to guide the AI.',
-    tag: 'WORKSHOP',
-    external: true,
-    externalUrl: '/presentation-ai-future'
-  },
-  {
-    slug: 'presentation-prompts',
-    title: '30 AI Prompts Playbook',
-    description: 'Field-tested prompts for everyday life: photos, recipes, travel planning, medical visits, and creative projects. No coding required.',
-    tag: 'TOOLKIT',
-    external: true,
-    externalUrl: '/presentation-prompts'
-  },
-  {
-    slug: 'presentation-trivia',
-    title: 'Adults & AI Usage Stats',
-    description: 'Interactive trivia deck on AI adoption among adults 50+. Perfect for audience warm-up and myth-busting about senior tech adoption.',
-    tag: 'TRIVIA',
-    external: true,
-    externalUrl: '/presentation-trivia'
-  }
-]
-
 export default function ResourcesPage() {
   const featuredResource = resources[0] // AI Voice Cloning guide
   const survivalGuides = resources.filter(r => 
@@ -150,46 +115,6 @@ export default function ResourcesPage() {
           </div>
         </Link>
       </article>
-    )
-  }
-
-  const PresentationCard = ({ presentation }: { presentation: typeof presentations[0] }) => {
-    // Split title for two-tone treatment: last word in yellow
-    const titleWords = presentation.title.split(' ')
-    const lastWord = titleWords.pop()
-    const titleStart = titleWords.join(' ')
-    
-    return (
-    <article 
-      className="group flex flex-col rounded-xl border border-white/10 bg-white/5 hover:bg-white/[0.07] hover:border-white/20 transition-all duration-200"
-    >
-      <Link href={presentation.externalUrl} className="flex flex-col flex-1 p-6">
-        <div className="flex items-center gap-3 mb-3">
-          <span className="inline-flex items-center rounded-full bg-white/5 px-2.5 py-0.5 text-xs font-medium text-white/70 ring-1 ring-inset ring-white/10">
-            {presentation.tag}
-          </span>
-        </div>
-        
-        <h3 className="text-lg font-black uppercase tracking-tight mb-2 line-clamp-2">
-          <span className="text-white">{titleStart} </span>
-          <span className="text-[#F5C84C]">{lastWord}</span>
-        </h3>
-        
-        <p className="text-sm text-white/60 line-clamp-2 flex-1">
-          {presentation.description}
-        </p>
-        
-        <div className="flex items-center justify-end pt-3 mt-3 border-t border-white/10">
-          <span className="text-[#F5C84C] text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity inline-flex items-center gap-1">
-            View deck
-            <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-            </svg>
-          </span>
-        </div>
-      </Link>
-    </article>
     )
   }
 
@@ -280,22 +205,6 @@ export default function ResourcesPage() {
         <div className="grid gap-6 md:grid-cols-2">
           {hubsAndCommunity.map((resource) => (
             <ResourceCard key={resource.slug} resource={resource} />
-          ))}
-        </div>
-      </div>
-
-      {/* Presentations Section */}
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-12">
-        <div className="mb-8">
-          <span className="text-sm font-semibold text-white/50 tracking-wider uppercase">
-            Workshop Presentations
-          </span>
-          <p className="text-white/40 text-sm mt-1">Interactive decks for community education</p>
-        </div>
-
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-          {presentations.map((presentation) => (
-            <PresentationCard key={presentation.slug} presentation={presentation} />
           ))}
         </div>
       </div>

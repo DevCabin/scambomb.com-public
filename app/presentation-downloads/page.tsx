@@ -1,3 +1,12 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
+
 const placeholderItems = [
   'Freebie #1 (Coming Soon)',
   'Freebie #2 (Coming Soon)',

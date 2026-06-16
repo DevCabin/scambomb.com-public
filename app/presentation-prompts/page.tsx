@@ -1,3 +1,12 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
+
 export default function PresentationPromptsPage() {
   return (
     <section className="bg-[#0B1324] text-white min-h-[calc(100vh-140px)]">
