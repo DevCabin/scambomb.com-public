@@ -1,14 +1,6 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import type { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  robots: {
-    index: false,
-    follow: false,
-  },
-};
 
 export default function PresentationJobsPage() {
   const [iframeHeight, setIframeHeight] = useState('calc(100vh - 140px)');
