@@ -95,7 +95,7 @@ const presentations = [
 
 export default function ResourcesPage() {
   const featuredResource = resources[0] // AI Voice Cloning guide
-  const survivalGuides = resources.filter(r => r.category === 'guides')
+  const survivalGuides = resources.filter(r => r.category === 'guides' && r.slug !== featuredResource.slug)
   const researchReports = resources.filter(r => r.category === 'reports')
   const hubsAndCommunity = resources.filter(r => r.category === 'hubs' || r.category === 'community')
 
