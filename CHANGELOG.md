@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026-06-15 — Add resources index page at /resources
+
+### Added
+- `app/resources/page.tsx` — New resources index page matching blog layout
+- **Featured resource**: AI Voice Cloning Survival Guide (hero card)
+- **Survival Guides section**: 3 gated guides (voice, text, phishing)
+- **Research & Reports section**: Older Adult Fraud Report
+- **Hubs & Community section**: Career Scam Case Study + Scam Stories submission
+- **Workshop Presentations section**: 4 presentation decks (AI Voice, AI Literacy, 30 Prompts, Trivia)
+- Consistent card-based layout with hover effects and category organization
+
+### Design
+- Mirrored blog index layout (two-tone hero, featured card, grid sections)
+- Responsive grid: 3-column for guides, 2-column for reports/hubs, 4-column for presentations
+- External link icons for non-Next.js resources
+- Newsletter CTA at bottom
+
+---
+
 ## 2026-06-13 — v1.3.0 — Membership purchase flow with login gate and subscription sync
 
 ### Added
