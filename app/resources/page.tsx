@@ -95,8 +95,9 @@ const presentations = [
 
 export default function ResourcesPage() {
   const featuredResource = resources[0] // AI Voice Cloning guide
-  const survivalGuides = resources.filter(r => r.category === 'guides' && r.slug !== featuredResource.slug)
-  const researchReports = resources.filter(r => r.category === 'reports')
+  const survivalGuides = resources.filter(r => 
+    (r.category === 'guides' && r.slug !== featuredResource.slug) || r.category === 'reports'
+  )
   const hubsAndCommunity = resources.filter(r => r.category === 'hubs' || r.category === 'community')
 
   const ResourceCard = ({ resource }: { resource: typeof resources[0] }) => {
@@ -228,33 +229,17 @@ export default function ResourcesPage() {
         </article>
       </div>
 
-      {/* Survival Guides Section */}
+      {/* Survival Guides & Reports Section */}
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-12">
         <div className="mb-8">
           <span className="text-sm font-semibold text-white/50 tracking-wider uppercase">
-            Survival Guides
+            Survival Guides & Reports
           </span>
-          <p className="text-white/40 text-sm mt-1">Step-by-step protection playbooks</p>
+          <p className="text-white/40 text-sm mt-1">Step-by-step playbooks and data-driven research</p>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {survivalGuides.map((resource) => (
-            <ResourceCard key={resource.slug} resource={resource} />
-          ))}
-        </div>
-      </div>
-
-      {/* Research & Reports Section */}
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-12">
-        <div className="mb-8">
-          <span className="text-sm font-semibold text-white/50 tracking-wider uppercase">
-            Research & Reports
-          </span>
-          <p className="text-white/40 text-sm mt-1">Data-driven insights on fraud trends</p>
-        </div>
-
-        <div className="grid gap-6 md:grid-cols-2">
-          {researchReports.map((resource) => (
             <ResourceCard key={resource.slug} resource={resource} />
           ))}
         </div>
