@@ -84,7 +84,7 @@ export default function TermsPage() {
                 <li>&bull; We are not liable for any direct, indirect, incidental, consequential, or punitive damages</li>
               </ul>
               <p className="mt-6">
-                We provide ScamBomb.com in good faith to help protect people from online scams. Our service represents our best effort to make the internet safer for everyone, but we cannot accept responsibility for the limitations of artificial intelligence technology.
+                We provide ScamBomb.com in good faith to help protect people from online scams. Our service represents our best effort to make the internet safer for everyone, but we cannot accept responsibility for the limitations of artificial intelligence technology, the cleverness of modern scammers, or poor decisions made by end consumers.
               </p>
             </div>
           </section>
