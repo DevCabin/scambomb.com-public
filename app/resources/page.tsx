@@ -103,6 +103,11 @@ export default function ResourcesPage() {
   const ResourceCard = ({ resource }: { resource: typeof resources[0] }) => {
     const href = resource.external ? resource.externalUrl! : `/resources/${resource.slug}`
     
+    // Split title for two-tone treatment: last word in yellow
+    const titleWords = resource.title.split(' ')
+    const lastWord = titleWords.pop()
+    const titleStart = titleWords.join(' ')
+    
     return (
       <article 
         className="group flex flex-col rounded-xl border border-white/10 bg-white/5 hover:bg-white/[0.07] hover:border-white/20 transition-all duration-200"
@@ -117,8 +122,9 @@ export default function ResourcesPage() {
             )}
           </div>
           
-          <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-[#F5C84C] transition-colors line-clamp-2">
-            {resource.title}
+          <h3 className="text-xl font-black uppercase tracking-tight mb-3 line-clamp-2">
+            <span className="text-white">{titleStart} </span>
+            <span className="text-[#F5C84C]">{lastWord}</span>
           </h3>
           
           <p className="text-white/60 mb-6 line-clamp-3 flex-1">
@@ -138,7 +144,13 @@ export default function ResourcesPage() {
     )
   }
 
-  const PresentationCard = ({ presentation }: { presentation: typeof presentations[0] }) => (
+  const PresentationCard = ({ presentation }: { presentation: typeof presentations[0] }) => {
+    // Split title for two-tone treatment: last word in yellow
+    const titleWords = presentation.title.split(' ')
+    const lastWord = titleWords.pop()
+    const titleStart = titleWords.join(' ')
+    
+    return (
     <article 
       className="group flex flex-col rounded-xl border border-white/10 bg-white/5 hover:bg-white/[0.07] hover:border-white/20 transition-all duration-200"
     >
@@ -149,8 +161,9 @@ export default function ResourcesPage() {
           </span>
         </div>
         
-        <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-[#F5C84C] transition-colors line-clamp-2">
-          {presentation.title}
+        <h3 className="text-lg font-black uppercase tracking-tight mb-2 line-clamp-2">
+          <span className="text-white">{titleStart} </span>
+          <span className="text-[#F5C84C]">{lastWord}</span>
         </h3>
         
         <p className="text-sm text-white/60 line-clamp-2 flex-1">
@@ -168,7 +181,8 @@ export default function ResourcesPage() {
         </div>
       </Link>
     </article>
-  )
+    )
+  }
 
   return (
     <div className="min-h-screen bg-[#0B1324]">
