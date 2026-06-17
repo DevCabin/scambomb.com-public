@@ -1,166 +1,167 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'About ScamBomb | Why We Built It',
+  description: 'ScamBomb was built after my father-in-law was scammed twice. I couldn\'t always be there to check every suspicious message — so I built the tool I wished he already had.',
+};
+
 export default function AboutPage() {
+  const appUrl = `https://app.scambomb.com/?safe_source=true&SBID=${crypto.randomUUID()}`;
+
   return (
-    <div className="bg-[#0B1324] text-white antialiased font-montserrat">
+    <div className="bg-[#0B1324] text-white antialiased">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-16">
 
         {/* Hero */}
         <section className="text-center mb-16">
           <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight mb-6">
-            About SafeMessage AI
+            About <span className="text-[#F5C84C]">ScamBomb</span>
           </h1>
           <p className="text-xl text-white/80 max-w-2xl mx-auto">
-            Built by a Digital Industry Veteran With 15+ Years of Real-World Experience
+            Built by someone who got tired of watching scammers win.
           </p>
         </section>
 
-        {/* Main Content */}
-        <section className="prose prose-lg prose-invert max-w-none">
+        {/* Why I Built ScamBomb */}
+        <section className="mb-16">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-[#F5C84C]">
+            Why I Built ScamBomb
+          </h2>
+          
+          <div className="space-y-6 text-lg text-white/90 leading-relaxed">
+            <p className="text-2xl font-semibold text-white">
+              It started with my father-in-law.
+            </p>
+            
+            <p>
+              He'd been scammed twice. Not because he's careless, and not because he's not smart — because the people doing this for a living have gotten very, very good at it. Urgent bank texts. A "grandson" who needed money wired fast. The kind of message that's designed to make you act before you think.
+            </p>
+            
+            <p>
+              After the second time, I realized something: I couldn't always be there. I couldn't be the one he texted a screenshot to at 9pm asking "is this real?" — not every time, not forever.
+            </p>
+            
+            <p>
+              So I built the tool I wished he already had.
+            </p>
+          </div>
 
-          {/* Intro */}
-          <div className="mb-12 text-center">
+          <div className="mt-10 bg-white/5 rounded-2xl p-8 border border-white/10">
+            <p className="text-lg text-white/90 leading-relaxed mb-4">
+              I'm George Featherstone. I've spent the last 20 years as a web developer and AI systems engineer — building, securing, and troubleshooting digital systems for a living. I know how scam pages are built because I know how real pages are built. I know the tricks because I've spent two decades on the other side of them, making sure legitimate businesses don't accidentally look like the thing ScamBomb was built to catch.
+            </p>
             <p className="text-lg text-white/90 leading-relaxed">
-              Hi, I'm George Featherstone — a digital marketing engineer, web developer, and AI systems consultant with more than 15 years of hands-on experience helping businesses and everyday users navigate the online world.
+              ScamBomb is that knowledge, pointed in one direction: giving people like my father-in-law a second opinion they can get in seconds, without having to wait for me — or anyone — to be available.
+            </p>
+          </div>
+        </section>
+
+        {/* What ScamBomb Actually Does */}
+        <section className="mb-16">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-[#F5C84C]">
+            What ScamBomb Actually Does
+          </h2>
+          
+          <div className="bg-[#F5C84C] rounded-2xl p-8 text-[#0B1324]">
+            <p className="text-lg leading-relaxed mb-6">
+              Paste a suspicious text, email, or screenshot. ScamBomb checks it against the red flags scammers actually use — urgency, spoofed links, impersonation — and tells you in plain English what's wrong with it and exactly what to do next.
+            </p>
+            <p className="text-lg leading-relaxed font-semibold">
+              It doesn't just say "safe" or "scam" and leave you to trust a verdict from a website you've never heard of. It shows you why — the same way I'd explain it if I were standing next to you.
+            </p>
+          </div>
+        </section>
+
+        {/* Pricing */}
+        <section className="mb-16">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-[#F5C84C]">
+            Why It's Priced the Way It Is
+          </h2>
+          
+          <div className="space-y-6 text-lg text-white/90 leading-relaxed">
+            <p>
+              Standard is $9/month or $99/year. Seniors 60+ are locked in at $5/month or $49/year — for good. Not an introductory rate that creeps up later.
+            </p>
+            
+            <p>
+              I didn't build this to compete with $40/month identity-theft monitoring services packed with features most people never touch. I built it to be something my father-in-law would actually use, and actually be able to afford, for as long as he needs it.
             </p>
           </div>
 
-          {/* Experience */}
-          <div className="mb-12">
-            <p className="text-white/90 leading-relaxed mb-4">
-              Throughout my career, I've worked on hundreds of websites, optimized and secured digital systems, and supported thousands of users through technical challenges. I've seen the internet at its best… and unfortunately, at its worst.
-            </p>
-            <p className="text-white/90 leading-relaxed mb-4">
-              And over the past few years, I've watched one thing grow faster than anything else:
-            </p>
-            <p className="text-2xl font-bold text-[#F5C84C] mb-6">
-              Scams targeting everyday people.
-            </p>
-          </div>
-
-          {/* Scam Types */}
-          <div className="bg-white/5 rounded-2xl p-8 mb-12">
-            <h2 className="text-2xl font-bold mb-6 text-[#F5C84C]">The Growing Threat</h2>
-            <div className="grid md:grid-cols-2 gap-4 text-white/80">
-              <ul className="space-y-2">
-                <li>• Fake "wrong number" messages</li>
-                <li>• Fraudulent job offers</li>
-                <li>• Romance scams</li>
-                <li>• Investment scams</li>
-              </ul>
-              <ul className="space-y-2">
-                <li>• Delivery phishing</li>
-                <li>• Identity theft attempts</li>
-                <li>• AI-enhanced trickery that looks frighteningly real</li>
-              </ul>
+          <div className="mt-8 grid md:grid-cols-2 gap-6">
+            <div className="bg-white/5 rounded-2xl p-6 border border-white/10 text-center">
+              <div className="text-3xl font-extrabold text-[#F5C84C] mb-2">$9/mo</div>
+              <div className="text-white/70 mb-4">or $99/year</div>
+              <div className="text-white/90">Standard Plan</div>
             </div>
-            <p className="mt-6 text-white/90">
-              What used to fool only a few people is now carefully engineered deception, designed to manipulate human psychology and steal time, money, and peace of mind.
-            </p>
-          </div>
-
-          {/* Personal Stories */}
-          <div className="mb-12">
-            <p className="text-white/90 leading-relaxed mb-4">
-              I've watched family members, seniors, clients, and even tech-savvy friends get targeted.
-            </p>
-            <p className="text-white/90 leading-relaxed mb-4">
-              Some lose money.<br/>
-              Some lose confidence.<br/>
-              Some lose trust in technology entirely.
-            </p>
-            <p className="text-lg font-bold text-[#F5C84C] mt-6">
-              And honestly?<br/>
-              I'm tired of seeing vulnerable people get taken advantage of.
-            </p>
-          </div>
-
-          {/* Why Built */}
-          <div className="bg-[#F5C84C] rounded-2xl p-8 mb-12 text-[#0B1324]">
-            <h2 className="text-2xl font-bold mb-6">Why I Built SafeMessage AI</h2>
-            <p className="text-lg mb-4">
-              SafeMessage AI exists for one reason:
-            </p>
-            <p className="text-2xl font-bold mb-6">
-              To give regular people an easy, affordable way to stay safe.
-            </p>
-            <div className="mb-6">
-              <p className="mb-2">No tech jargon.</p>
-              <p className="mb-2">No fear tactics.</p>
-              <p>No $30-$80/month security products full of features you'll never use.</p>
+            <div className="bg-[#F5C84C]/10 rounded-2xl p-6 border border-[#F5C84C]/30 text-center">
+              <div className="text-3xl font-extrabold text-[#F5C84C] mb-2">$5/mo</div>
+              <div className="text-white/70 mb-4">or $49/year</div>
+              <div className="text-white/90">Seniors 60+ <span className="text-[#F5C84C] font-semibold">(Locked In)</span></div>
             </div>
-            <p className="text-lg">
-              Just a simple tool that helps you:
-            </p>
-            <ul className="list-none space-y-1 mt-4">
-              <li>• Recognize scam texts and emails</li>
-              <li>• Understand what's risky (and why)</li>
-              <li>• Learn exactly what to do next</li>
-              <li>• Build confidence in spotting red flags</li>
-              <li>• Keep yourself and your loved ones safe</li>
-            </ul>
           </div>
+        </section>
 
-          {/* Pricing */}
-          <div className="bg-white/5 rounded-2xl p-8 mb-12">
-            <p className="text-center">
-              <span className="text-2xl font-bold text-[#F5C84C]">
-                Standard is $10/month or $99/year, and seniors 60+ are locked at $5/month or $49/year,
+        {/* Privacy Commitment */}
+        <section className="mb-16">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-[#F5C84C]">
+            My Commitment to You
+          </h2>
+          
+          <div className="space-y-6 text-lg text-white/90 leading-relaxed">
+            <p>
+              Nothing you paste into ScamBomb is stored, logged, or used to train anything. It's not sold. It's gone the moment you close the tab. If you're pasting a text from your bank or a message from your doctor, that privacy isn't a feature — it's the baseline.
+            </p>
+            
+            <p>
+              Cancel anytime, in one click, no phone call required. I'd rather earn your subscription every month than trap you in one.
+            </p>
+          </div>
+        </section>
+
+        {/* For Caregivers */}
+        <section className="mb-16">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-[#F5C84C]">
+            If You're Reading This for Someone Else
+          </h2>
+          
+          <div className="bg-white/5 rounded-2xl p-8 border border-white/10">
+            <p className="text-lg text-white/90 leading-relaxed mb-6">
+              Maybe you're not the one getting the scam texts — maybe it's your mom, your dad, your grandfather. If you're the "what does this mean?" contact in your family, ScamBomb is built so the people you love don't have to wait for you to be free. Share it with them. That's exactly what it's for.
+            </p>
+            
+            <div className="flex flex-wrap gap-4 justify-center">
+              <span className="inline-flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full text-white/90">
+                <span>👨‍👩‍👧</span> Parents
               </span>
-              <br/>
-              SafeMessage AI offers peace of mind at a price anyone can afford — especially those who need it most.
-            </p>
-          </div>
-
-          {/* Mission */}
-          <div className="mb-12">
-            <p className="text-lg text-white/90 mb-4">
-              I don't want online safety to be a luxury.<br/>
-              I want it to be accessible.
-            </p>
-            <p className="text-white/90 leading-relaxed">
-              This project is my way of fighting back — using my skills in web development, AI systems, cybersecurity awareness, and digital literacy to level the playing field.
-            </p>
-          </div>
-
-          <div className="bg-white/5 rounded-2xl p-8 mb-12">
-            <h2 className="text-2xl font-bold mb-6 text-[#F5C84C]">My Mission</h2>
-            <p className="text-xl font-bold text-center mb-6">
-              Empower people to stay safe online — with clarity, confidence, and common sense.
-            </p>
-            <div className="text-center">
-              <p className="mb-4">Whether you're:</p>
-              <ul className="list-none space-y-2 text-white/80">
-                <li>• A senior unsure about a suspicious text</li>
-                <li>• A parent helping your family avoid scams</li>
-                <li>• Someone tired of spam, phishing, and fake job offers</li>
-                <li>• Or just a person who wants a second opinion before replying…</li>
-              </ul>
-              <p className="mt-4 text-lg">
-                SafeMessage AI is here to help.
-              </p>
+              <span className="inline-flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full text-white/90">
+                <span>👴</span> Grandparents
+              </span>
+              <span className="inline-flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full text-white/90">
+                <span>💝</span> Family
+              </span>
             </div>
           </div>
+        </section>
 
-          {/* Closing */}
-          <div className="text-center">
-            <h2 className="text-2xl font-bold mb-6 text-[#F5C84C]">Thank You for Being Here</h2>
-            <div className="max-w-2xl mx-auto">
-              <p className="text-white/90 leading-relaxed mb-4">
-                Building this platform isn't just a project — it's a personal mission.
-                And every person who uses SafeMessage AI helps push back against scammers, fraudsters, and digital predators who thrive on confusion and fear.
-              </p>
-              <p className="text-white/90 leading-relaxed mb-4">
-                You deserve to feel safe online.<br/>
-                And I'm here to help make that happen.
-              </p>
-              <p className="text-white/90 leading-relaxed">
-                If there's ever anything you'd like to see added, expanded, or improved, please reach out. SafeMessage AI will grow right alongside the people it protects.
-              </p>
-              <p className="text-2xl font-bold mt-8 text-[#F5C84C]">
-                — George
-              </p>
-            </div>
+        {/* Closing */}
+        <section className="text-center">
+          <div className="text-2xl font-bold text-[#F5C84C] mb-6">— George</div>
+          
+          <div className="bg-[#F5C84C] rounded-2xl p-8 text-[#0B1324] max-w-2xl mx-auto">
+            <p className="text-lg font-semibold mb-6">
+              Ready to check a suspicious message?
+            </p>
+            <a 
+              href={appUrl}
+              className="inline-block rounded-xl px-8 py-4 text-lg font-bold bg-[#0B1324] text-[#F5C84C] hover:bg-[#0B1324]/90 transition-colors"
+            >
+              Try ScamBomb Free →
+            </a>
+            <p className="text-sm mt-4 text-[#0B1324]/80">
+              No card required. No email needed. Instant access.
+            </p>
           </div>
-
         </section>
 
       </div>
