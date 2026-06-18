@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-06-18 — Add Live Polling App for Presentations
+
+### Added
+- **`public/poll/`** - Complete live polling web app for in-person presentations
+  - **Attendee Voting Page** (`/poll/event/:code`) - Mobile-optimized with large touch targets for senior audiences
+  - **Results Display** (`/poll/event/:code/results`) - Projector-optimized live bar chart with real-time updates
+  - **Presenter Controls** (`/poll/event/:code/control`) - Manage questions and reveal results
+- **Supabase Integration** - Real-time Postgres database with subscriptions for instant vote sync
+- **Vite + React Stack** - Standalone app built with Vite, React Router, and plain CSS
+- **Schema & Documentation** - `schema.sql`, `seed-example.sql`, and `README.md` with setup instructions
+- **Next.js Rewrite** - `/poll/*` routes served from `public/poll/dist/`
+
+### Usage
+1. Run `schema.sql` in Supabase to create tables (`events`, `questions`, `responses`)
+2. Enable Realtime replication on all three tables in Supabase Dashboard
+3. Create event and questions via SQL (see `seed-example.sql`)
+4. URLs: `/poll/event/CODE` (vote), `/poll/event/CODE/results` (projector), `/poll/event/CODE/control` (presenter)
+
+---
+
 ## 2026-06-15 — Add resources index page at /resources
 
 ### Added
