@@ -1,14 +1,14 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { useSearchParams } from 'next/navigation'
 
-// Simple poll implementation directly in Next.js
-// This avoids the Vite build issues entirely
+// Simple poll implementation using window.location instead of useSearchParams
+// This avoids the Suspense boundary requirement
 
 type PollState = {
   step: 'code' | 'vote' | 'results' | 'control'
   eventCode: string
+  view: string
   question: {
     id: string
     prompt: string
@@ -19,51 +19,65 @@ type PollState = {
   hasVoted: boolean
   votes: number[]
   totalVotes: number
+  isClient: boolean
 }
 
 export default function PollPage() {
-  const searchParams = useSearchParams()
   const [state, setState] = useState<PollState>({
     step: 'code',
     eventCode: '',
+    view: 'vote',
     question: null,
     selectedOption: null,
     hasVoted: false,
     votes: [],
-    totalVotes: 0
+    totalVotes: 0,
+    isClient: false
   })
 
-  // Check URL params on load
+  // Parse URL params on client side only
   useEffect(() => {
-    const code = searchParams.get('code')
-    const view = searchParams.get('view') // 'vote', 'results', 'control'
+    // Mark as client-side rendered
+    setState(prev => ({ ...prev, isClient: true }))
     
-    if (code) {
-      setState(prev => ({ ...prev, eventCode: code }))
+    // Get params from window.location
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search)
+      const code = params.get('code') || ''
+      const view = params.get('view') || 'vote'
       
-      // Load mock question for demo
-      // In production, this would fetch from Supabase
-      setTimeout(() => {
-        setState(prev => ({
-          ...prev,
-          step: view as PollState['step'] || 'vote',
-          question: {
-            id: 'demo-1',
-            prompt: 'What percentage of adults 50+ are using AI tools?',
-            options: ['25%', '55%', '75%', '90%'],
-            revealed: view === 'results'
-          },
-          votes: [5, 12, 8, 3],
-          totalVotes: 28
+      if (code) {
+        setState(prev => ({ 
+          ...prev, 
+          eventCode: code,
+          view: view,
+          step: view as PollState['step'] || 'vote'
         }))
-      }, 500)
+        
+        // Load mock question for demo
+        // In production, this would fetch from Supabase
+        setTimeout(() => {
+          setState(prev => ({
+            ...prev,
+            step: view as PollState['step'] || 'vote',
+            question: {
+              id: 'demo-1',
+              prompt: 'What percentage of adults 50+ are using AI tools?',
+              options: ['25%', '55%', '75%', '90%'],
+              revealed: view === 'results'
+            },
+            votes: [5, 12, 8, 3],
+            totalVotes: 28
+          }))
+        }, 500)
+      }
     }
-  }, [searchParams])
+  }, [])
 
   const handleCodeSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    if (state.eventCode) {
-      window.location.href = `/poll?code=${state.eventCode}&view=vote`
+    if (state.eventCode && typeof window !== 'undefined') {
+      window.location.href = `/poll?code=${encodeURIComponent(state.eventCode)}&view=vote`
     }
   }
 
@@ -132,12 +146,6 @@ export default function PollPage() {
     transition: 'all 0.2s ease'
   }
 
-  const activeButtonStyle: React.CSSProperties = {
-    ...buttonStyle,
-    borderColor: '#FFD700',
-    background: '#23272A'
-  }
-
   const inputStyle: React.CSSProperties = {
     width: '100%',
     padding: '20px',
@@ -163,6 +171,17 @@ export default function PollPage() {
     width: '100%',
     fontFamily: 'inherit',
     textTransform: 'uppercase'
+  }
+
+  // Prevent hydration mismatch - render loading state on server
+  if (!state.isClient) {
+    return (
+      <div style={containerStyle}>
+        <div style={{ maxWidth: '600px', margin: '0 auto', textAlign: 'center', paddingTop: '100px' }}>
+          <p style={{ color: '#9BA3AF', fontSize: '1.2rem' }}>Loading...</p>
+        </div>
+      </div>
+    )
   }
 
   // Code Entry Step
@@ -249,8 +268,6 @@ export default function PollPage() {
 
   // Results Step
   if (state.step === 'results' && state.question) {
-    const maxVotes = Math.max(...state.votes, 1)
-    
     return (
       <div style={containerStyle}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
@@ -394,7 +411,7 @@ export default function PollPage() {
     )
   }
 
-  // Loading state
+  // Fallback loading state
   return (
     <div style={containerStyle}>
       <div style={{ maxWidth: '600px', margin: '0 auto', textAlign: 'center', paddingTop: '100px' }}>
