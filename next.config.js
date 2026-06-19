@@ -10,10 +10,6 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        source: '/poll/:path*',
-        destination: '/poll/dist/index.html',
-      },
-      {
         source: '/jeff',
         destination: '/jeff.html',
       },
