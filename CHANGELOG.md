@@ -1,6 +1,23 @@
 # Changelog
 
+## 2026-06-20 — Replace YouTube embed with local video in presentation-live
+
+### Updated
+- `public/presentation-live.html`
+  - Replaced embedded YouTube iframe (`Hrdq4Gjcb9A`) with local `<video>` element
+  - Video source: `/presentation-video.webm` (served from `public/`)
+  - Added `preload="auto"` so the video downloads in the background as the deck loads
+  - Added small source footnote under the video: `youtube.com/watch?v=Hrdq4Gjcb9A`
+  - Updated `.video-container` CSS to style `<video>` element in addition to `<iframe>`
+
+### Reason
+- Ensure the AI voice scam clip plays even when the presentation is run offline or with an unreliable internet connection.
+- Browser downloads the video once on first load, so subsequent slide navigation does not depend on connectivity.
+
+---
+
 ## 2026-06-18 — Add Live Polling App for Presentations
+
 
 ### Added
 - **`public/poll/`** - Complete live polling web app for in-person presentations
