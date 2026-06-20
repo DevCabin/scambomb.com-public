@@ -23,7 +23,8 @@ A lightweight live polling web app for in-person presentations. Attendees scan a
 2. Go to the **SQL Editor**
 3. Run the contents of `schema.sql`
 4. Enable Realtime: Go to **Database** → **Replication** → toggle on `events`, `questions`, and `responses` tables
-5. Run `seed-example.sql` to create the current ScamBomb live presentation event (update the EVENT_ID placeholder first)
+5. For the fastest setup, run `scambomb-live-event.sql` to create the current ScamBomb live presentation event in one paste
+6. If you want a template you can customize manually, use `seed-example.sql`
 
 ### 2. Local Development
 
@@ -92,7 +93,11 @@ insert into questions (event_id, prompt, options, sort_order, revealed) values
 );
 ```
 
-For the current live deck, use `seed-example.sql` and keep presenter answer/source notes in `poll-question-notes.md`.
+For the current live deck:
+
+- use `scambomb-live-event.sql` for a one-paste setup
+- use `seed-example.sql` if you want the editable two-step template
+- keep presenter answer/source notes in `poll-question-notes.md`
 
 ## Usage Flow
 
