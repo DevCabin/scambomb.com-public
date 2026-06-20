@@ -384,6 +384,86 @@
         .final-slide h1 .highlight {
             color: var(--gold);
         }
+
+        .cta-slide {
+            background: #0A2540 !important;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 60px !important;
+        }
+
+        .cta-slide .eyebrow {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.7em;
+            color: #FFC107;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .cta-slide .cta-headline {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8em;
+            font-weight: 800;
+            color: #FFFFFF;
+            text-transform: uppercase;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+
+        .cta-slide .cta-subhead {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9em;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.5;
+            max-width: 700px;
+            margin-bottom: 30px;
+        }
+
+        .qr-card {
+            background: #FFFFFF;
+            border-radius: 16px;
+            padding: 24px;
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 0 0 4px rgba(255, 193, 7, 0.3), 0 8px 32px rgba(0, 0, 0, 0.4);
+            animation: pulse-glow 2.5s ease-in-out infinite;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 0 4px rgba(255, 193, 7, 0.3), 0 8px 32px rgba(0, 0, 0, 0.4); }
+            50% { box-shadow: 0 0 0 8px rgba(255, 193, 7, 0.15), 0 8px 40px rgba(0, 0, 0, 0.5); }
+        }
+
+        .qr-card img {
+            width: 280px;
+            height: 280px;
+            display: block;
+        }
+
+        .qr-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75em;
+            color: #00D4AA;
+            font-weight: 600;
+            margin-top: 12px;
+            letter-spacing: 0.05em;
+        }
+
+        .cta-footer {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.7em;
+            color: #FF6B6B;
+            font-weight: 600;
+            margin-top: 24px;
+            max-width: 600px;
+            line-height: 1.4;
+        }
     </style>
 </head>
 <body>
@@ -645,28 +725,15 @@
                 </div>
             </section>
 
-            <section>
-                <h2><span class="highlight">Family</span> Verification System</h2>
-                <p>Families can create a private verification method to confirm identity during emergencies.</p>
-                <div class="two-column" style="margin-top: 30px;">
-                    <div>
-                        <h3>What It Is:</h3>
-                        <ul>
-                            <li>The "Secret Word" Protocol for the whole family</li>
-                            <li>Shared in person or securely, never online</li>
-                            <li>Used to verify identity in emergencies</li>
-                            <li>Changed periodically for security</li>
-                        </ul>
-                    </div>
-                    <div style="text-align: center;">
-                        <p style="font-size: 0.9em; color: #9BA3AF; margin-bottom: 10px;">Get the free AI Clone Survival Plan:</p>
-                        <img src="/qr-to-voice-resource.png" alt="AI Voice Cloning Survival Guide QR Code" style="width: 150px; height: 150px; border: 3px solid #FFD700; background: white; padding: 5px;">
-                        <p style="font-size: 0.8em; color: #FFD700;">Prevent the loss of your life savings.<br><strong style="color: #FFFFFF;">Free Guide</strong></p>
-                    </div>
+            <section class="cta-slide">
+                <div class="eyebrow">FREE GUIDE — NO EMAIL REQUIRED</div>
+                <div class="cta-headline">Go over it with your family ASAP</div>
+                <div class="cta-subhead">The family verification protocol is an easy way to protect your families life savings. Scan now before we move on to get the FREE worksheet.</div>
+                <div class="qr-card">
+                    <img src="/scambomb-ai-voice-guide-DL-qr.png" alt="ScamBomb AI Voice Guide QR Code">
+                    <div class="qr-label">ScamBomb.com/Free</div>
                 </div>
-                <div class="warning-box" style="margin-top: 20px;">
-                    <p style="margin: 0;"><strong>Important:</strong> Full step-by-step instructions and scripts available via QR code or at ScamBomb.com</p>
-                </div>
+                <div class="cta-footer">This link disappears when the presentation ends, and is only available to attendees today. Normally you would need to sign up to get it.</div>
             </section>
 
             <section class="center-text">
