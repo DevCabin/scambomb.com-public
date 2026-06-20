@@ -23,7 +23,7 @@ A lightweight live polling web app for in-person presentations. Attendees scan a
 2. Go to the **SQL Editor**
 3. Run the contents of `schema.sql`
 4. Enable Realtime: Go to **Database** → **Replication** → toggle on `events`, `questions`, and `responses` tables
-5. Run `seed-example.sql` to create a test event (update the EVENT_ID placeholder first)
+5. Run `seed-example.sql` to create the current ScamBomb live presentation event (update the EVENT_ID placeholder first)
 
 ### 2. Local Development
 
@@ -41,17 +41,17 @@ cp .env.example .env
 npm run dev
 ```
 
-The app will be available at `http://localhost:5173/poll/event/WORKSHOP-JUNE`
+The app will be available at `http://localhost:5173/poll/event/SCAMBOMB-LIVE`
 
 ### 3. URLs
 
-For an event code like `WORKSHOP-JUNE`:
+For an event code like `SCAMBOMB-LIVE`:
 
 | Page | URL |
 |------|-----|
-| Attendee Vote | `/poll/event/WORKSHOP-JUNE` |
-| Projector Results | `/poll/event/WORKSHOP-JUNE/results` |
-| Presenter Control | `/poll/event/WORKSHOP-JUNE/control` |
+| Attendee Vote | `/poll/event/SCAMBOMB-LIVE` |
+| Projector Results | `/poll/event/SCAMBOMB-LIVE/results` |
+| Presenter Control | `/poll/event/SCAMBOMB-LIVE/control` |
 
 ### 4. Deploy to Vercel
 
@@ -91,6 +91,8 @@ insert into questions (event_id, prompt, options, sort_order, revealed) values
   false
 );
 ```
+
+For the current live deck, use `seed-example.sql` and keep presenter answer/source notes in `poll-question-notes.md`.
 
 ## Usage Flow
 
