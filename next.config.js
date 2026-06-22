@@ -10,6 +10,10 @@ const nextConfig = {
   async rewrites() {
     return [
       {
+        source: '/resources/ai-voice-cloning-survival-guide/download',
+        destination: '/Ai-Voice-Clone-Survival-Guide-FINAL.pdf',
+      },
+      {
         source: '/jeff',
         destination: '/jeff.html',
       },
@@ -90,11 +94,6 @@ const nextConfig = {
       {
         source: '/vcg',
         destination: 'https://www.scambomb.com/?utm_source=vcg_pdf',
-        permanent: true,
-      },
-      {
-        source: '/resources/ai-voice-cloning-survival-guide/download',
-        destination: '/Ai-Voice-Clone-Survival-Guide-FINAL.pdf',
         permanent: true,
       },
     ]
