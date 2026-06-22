@@ -3,15 +3,17 @@
 ## 2026-06-22 — Add QR code redirects for printed materials
 
 ### Added
+- `public/Ai-Voice-Clone-Survival-Guide-FINAL.pdf` - PDF file (was not committed to git, now pushed)
 - `next.config.js` rewrites for PDF download:
-  - `/resources/ai-voice-cloning-survival-guide/download` → `/Ai-Voice-Clone-Survival-Guide-FINAL.pdf`
-  - `/download-ai-voice-guide` → `/Ai-Voice-Clone-Survival-Guide-FINAL.pdf` (simpler fallback URL)
+  - `/resources/ai-voice-cloning-survival-guide/download` → `/api/download-ai-voice-guide`
+  - `/download-ai-voice-guide` → `/api/download-ai-voice-guide` (simpler fallback URL)
   - Trailing slash support: `/download/:path*` pattern for QR codes with trailing slashes
-- `app/api/download-ai-voice-guide/route.ts` - API route fallback that serves PDF with proper headers
+- `app/api/download-ai-voice-guide/route.ts` - API route that serves PDF with proper headers
 - `/vcg` redirect → `https://www.scambomb.com/?utm_source=vcg_pdf` (tracks visits from printed materials)
 
 ### Reason
 - Existing printed QR codes were pointing to non-existent URLs and returning 404
+- **Root cause**: PDF file was in public folder but never committed/pushed to GitHub
 - Multiple fallback methods ensure at least one URL will work for users
 - UTM tracking on `/vcg` enables attribution analysis from physical materials
 
