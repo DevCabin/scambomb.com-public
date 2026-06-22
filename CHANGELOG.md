@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-06-22 — Add QR code redirects for printed materials
+
+### Added
+- `next.config.js` redirects for two QR codes that were returning 404:
+  - `/vcg` → `https://www.scambomb.com/?utm_source=vcg_pdf` (tracks visits from printed Voice Cloning Guide PDFs)
+  - `/resources/ai-voice-cloning-survival-guide/download` → `/Ai-Voice-Clone-Survival-Guide-FINAL.pdf` (direct PDF download from QR)
+
+### Reason
+- Existing printed QR codes in the field were pointing to non-existent URLs
+- `/vcg` short URL allows tracking attribution from physical materials
+- Direct PDF path enables immediate download without gated page friction
+
+---
+
 ## 2026-06-20 — Replace YouTube embed with local video in presentation-live
 
 ### Updated
