@@ -14,6 +14,10 @@ const nextConfig = {
         destination: '/Ai-Voice-Clone-Survival-Guide-FINAL.pdf',
       },
       {
+        source: '/resources/ai-voice-cloning-survival-guide/download/:path*',
+        destination: '/Ai-Voice-Clone-Survival-Guide-FINAL.pdf',
+      },
+      {
         source: '/jeff',
         destination: '/jeff.html',
       },
