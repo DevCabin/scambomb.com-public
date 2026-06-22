@@ -10,6 +10,10 @@ const nextConfig = {
   async rewrites() {
     return [
       {
+        source: '/download-ai-voice-guide',
+        destination: '/Ai-Voice-Clone-Survival-Guide-FINAL.pdf',
+      },
+      {
         source: '/resources/ai-voice-cloning-survival-guide/download',
         destination: '/Ai-Voice-Clone-Survival-Guide-FINAL.pdf',
       },
