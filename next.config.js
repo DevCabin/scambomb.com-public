@@ -22,6 +22,10 @@ const nextConfig = {
         destination: '/api/download-ai-voice-guide',
       },
       {
+        source: '/poll/:path*',
+        destination: '/poll/index.html',
+      },
+      {
         source: '/jeff',
         destination: '/jeff.html',
       },
