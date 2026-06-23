@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "cd public/poll && npm install && npm run build && cd ../.. && next build",
+    "build": "cd public/poll && npm install && npm run build && cp dist/index.html index.html && rm -rf assets && mkdir -p assets && cp dist/assets/* assets/ && cd ../.. && next build",
     "start": "next start",
     "lint": "next lint"
   },
