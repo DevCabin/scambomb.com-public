@@ -5,11 +5,11 @@
 begin;
 
 delete from events
-where code = 'TRIVIA-625';
+where code = 'TRIVIA';
 
 with new_event as (
   insert into events (code, active_question_id)
-  values ('TRIVIA-625', null)
+  values ('TRIVIA', null)
   returning id
 )
 insert into questions (event_id, prompt, options, sort_order, revealed, answer_revealed, correct_answer, explanation)
@@ -65,6 +65,6 @@ cross join (
 commit;
 
 -- URLs:
--- Vote:     https://scambomb.com/poll/event/TRIVIA-625
--- Results:  https://scambomb.com/poll/event/TRIVIA-625/results
--- Control:  https://scambomb.com/poll/event/TRIVIA-625/control
+-- Vote:     https://scambomb.com/poll/event/TRIVIA
+-- Results:  https://scambomb.com/poll/event/TRIVIA/results
+-- Control:  https://scambomb.com/poll/event/TRIVIA/control
