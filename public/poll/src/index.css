@@ -100,6 +100,35 @@ body {
   color: #9BA3AF;
 }
 
+.vote-checkmark {
+  font-size: 4rem;
+  color: #3DDC84;
+  margin-bottom: 20px;
+  animation: checkmark-pop 0.3s ease;
+}
+
+@keyframes checkmark-pop {
+  0% { transform: scale(0); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+.vote-waiting-next {
+  margin-top: 20px;
+}
+
+.vote-waiting-next p {
+  font-size: 1.1rem;
+  color: #F0F2F5;
+}
+
+.vote-progress {
+  color: #9BA3AF;
+  font-size: 1rem;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
 .vote-waiting {
   text-align: center;
   padding: 60px 20px;
