@@ -4,9 +4,11 @@ import { useState, useEffect } from "react"
 import { createClient } from "@supabase/supabase-js"
 
 // Initialize Supabase client
+// NOTE: Hardcoded for production build (env vars not available during static generation)
+// For local dev, these can also be set in .env.local
 const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+  "https://tajftdwlkoljbkzxcrun.supabase.co",
+  "sb_publishable_OzMWmXlwQNtGcG6bwxfPdA_o8RoX9py"
 )
 
 // Hardcoded 5 questions for the poll
