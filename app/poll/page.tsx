@@ -214,12 +214,20 @@ export default function PollPage() {
               </button>
             </div>
           ) : currentQuestion < QUESTIONS.length - 1 ? (
-            <button
-              onClick={nextQuestion}
-              className="px-8 py-3 rounded-xl font-semibold bg-yellow-400 text-slate-900 hover:bg-yellow-300 transition-all"
-            >
-              Next Question →
-            </button>
+            <div className="text-center">
+              <p className="text-green-400 mb-3 flex items-center justify-center gap-2 font-semibold">
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                </svg>
+                Answer recorded!
+              </p>
+              <button
+                onClick={nextQuestion}
+                className="px-8 py-3 rounded-xl font-bold bg-white text-slate-900 hover:bg-gray-100 transition-all shadow-lg ring-4 ring-yellow-400/50 animate-pulse"
+              >
+                Next Question →
+              </button>
+            </div>
           ) : (
             <div className="text-center">
               <p className="text-green-400 mb-4">🎉 All questions complete!</p>
