@@ -16,7 +16,10 @@ create table questions (
   prompt text not null,
   options jsonb not null, -- array of strings, e.g. ["Option A", "Option B"]
   sort_order int not null default 0,
-  revealed boolean not null default false
+  revealed boolean not null default false,
+  answer_revealed boolean not null default false,
+  correct_answer text,
+  explanation text
 );
 
 -- Responses table

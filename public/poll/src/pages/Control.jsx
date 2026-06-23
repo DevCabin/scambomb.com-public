@@ -120,6 +120,21 @@ export default function Control() {
     }
   }
 
+  const revealAnswer = async (questionId) => {
+    try {
+      const { error } = await supabase
+        .from('questions')
+        .update({ answer_revealed: true })
+        .eq('id', questionId)
+
+      if (error) {
+        console.error('Error revealing answer:', error)
+      }
+    } catch (err) {
+      console.error('Error:', err)
+    }
+  }
+
   if (loading) {
     return (
       <div className="control-page">
@@ -178,6 +193,18 @@ export default function Control() {
                   disabled={!isActive || question.revealed}
                 >
                   {question.revealed ? 'Results Revealed' : 'Reveal Results'}
+                </button>
+                <button
+                  className="control-btn control-btn-success"
+                  onClick={() => revealAnswer(question.id)}
+                  disabled={!isActive || !question.revealed || question.answer_revealed}
+                  style={{
+                    background: question.answer_revealed ? '#2D3138' : '#3DDC84',
+                    color: question.answer_revealed ? '#9BA3AF' : '#0B1426',
+                    border: 'none'
+                  }}
+                >
+                  {question.answer_revealed ? 'Answer Revealed' : 'Reveal Answer'}
                 </button>
               </div>
             </div>

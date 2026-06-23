@@ -203,30 +203,82 @@ export default function Results() {
         </div>
       ) : (
         <div className="results-chart">
-          {results.map((result, index) => (
-            <div key={index} className="result-bar">
-              <div className="result-label">{result.option}</div>
-              <div className="result-bar-container">
-                <div
-                  className="result-bar-fill"
-                  style={{ width: `${result.percentage}%` }}
-                >
-                  {result.percentage > 15 && (
-                    <span className="result-bar-value">{result.percentage}%</span>
-                  )}
+          {results.map((result, index) => {
+            const isCorrect = question.correct_answer && result.option === question.correct_answer
+            return (
+              <div key={index} className={`result-bar ${isCorrect ? 'correct' : ''}`}>
+                <div className="result-label">{result.option}</div>
+                <div className="result-bar-container">
+                  <div
+                    className="result-bar-fill"
+                    style={{ 
+                      width: `${result.percentage}%`,
+                      background: isCorrect ? 'linear-gradient(90deg, #3DDC84, #A0E8B0)' : undefined
+                    }}
+                  >
+                    {result.percentage > 15 && (
+                      <span className="result-bar-value">{result.percentage}%</span>
+                    )}
+                  </div>
+                </div>
+                <div className="result-stats">
+                  <strong>{result.count}</strong> votes
                 </div>
               </div>
-              <div className="result-stats">
-                <strong>{result.count}</strong> votes
-              </div>
-            </div>
-          ))}
+            )
+          })}
         </div>
       )}
 
       {isRevealed && totalVotes === 0 && (
         <div className="results-counter">
           <p>No votes yet</p>
+        </div>
+      )}
+
+      {question.answer_revealed && question.correct_answer && (
+        <div className="results-answer" style={{
+          marginTop: '50px',
+          paddingTop: '40px',
+          borderTop: '2px solid #FFD700'
+        }}>
+          <div style={{
+            fontSize: 'clamp(0.9rem, 1.5vw, 1.05rem)',
+            fontWeight: 700,
+            textTransform: 'uppercase',
+            color: '#FFD700',
+            letterSpacing: '0.1em',
+            marginBottom: '20px'
+          }}>
+            The Answer
+          </div>
+          <div style={{
+            fontSize: 'clamp(1.6rem, 4vw, 2.6rem)',
+            fontWeight: 800,
+            color: '#3DDC84',
+            lineHeight: 1.25,
+            marginBottom: '12px'
+          }}>
+            {question.correct_answer}
+          </div>
+          {question.explanation && (
+            <div style={{
+              background: '#0B1426',
+              border: '2px solid #FFD700',
+              borderRadius: '8px',
+              padding: '22px 36px',
+              maxWidth: '820px',
+              margin: '20px auto 0'
+            }}>
+              <p style={{
+                fontSize: 'clamp(1.05rem, 1.9vw, 1.2rem)',
+                lineHeight: 1.65,
+                margin: 0
+              }}>
+                {question.explanation}
+              </p>
+            </div>
+          )}
         </div>
       )}
     </div>
