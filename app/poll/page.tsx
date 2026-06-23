@@ -95,7 +95,6 @@ export default function PollPage() {
     }
 
     setHasVoted(true)
-    setShowResults(true)
     setCompletedQuestions([...completedQuestions, question.id])
     setIsSubmitting(false)
   }
@@ -127,18 +126,9 @@ export default function PollPage() {
         <p className="text-white/70">Help us understand the scam landscape</p>
       </div>
 
-      {/* Progress Bar */}
-      <div className="w-full max-w-md mb-6">
-        <div className="flex justify-between text-sm text-white/60 mb-2">
-          <span>Question {currentQuestion + 1} of {QUESTIONS.length}</span>
-          <span>{Math.round(((currentQuestion + 1) / QUESTIONS.length) * 100)}%</span>
-        </div>
-        <div className="w-full bg-white/10 rounded-full h-2">
-          <div
-            className="bg-yellow-400 h-2 rounded-full transition-all duration-500"
-            style={{ width: `${((currentQuestion + 1) / QUESTIONS.length) * 100}%` }}
-          />
-        </div>
+      {/* Question Counter */}
+      <div className="w-full max-w-md mb-6 text-center">
+        <span className="text-sm text-white/60">Question {currentQuestion + 1} of {QUESTIONS.length}</span>
       </div>
 
       {/* Question Card */}
@@ -185,7 +175,7 @@ export default function PollPage() {
         </div>
 
         {/* Action Buttons */}
-        <div className="mt-6 flex justify-center">
+        <div className="mt-6 flex flex-col items-center gap-3">
           {!hasVoted ? (
             <button
               onClick={submitVote}
@@ -199,45 +189,51 @@ export default function PollPage() {
               {isSubmitting ? "Submitting..." : "Submit Answer"}
             </button>
           ) : !showResults ? (
-            <div className="text-center">
-              <p className="text-green-400 mb-4 flex items-center justify-center gap-2">
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                </svg>
-                Submitted! {completedQuestions.length} of {QUESTIONS.length} complete
-              </p>
-              <button
-                onClick={() => setShowResults(true)}
-                className="px-6 py-2 bg-white/10 hover:bg-white/20 rounded-lg text-white transition-colors"
-              >
-                Show Results
-              </button>
-            </div>
-          ) : currentQuestion < QUESTIONS.length - 1 ? (
-            <div className="text-center">
-              <p className="text-green-400 mb-3 flex items-center justify-center gap-2 font-semibold">
+            <>
+              <p className="text-green-400 flex items-center gap-2 font-semibold">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
                 Answer recorded!
               </p>
-              <button
-                onClick={nextQuestion}
-                className="px-8 py-3 rounded-xl font-bold bg-white text-slate-900 hover:bg-gray-100 transition-all shadow-lg ring-4 ring-yellow-400/50 animate-pulse"
-              >
-                Next Question →
-              </button>
-            </div>
+              <div className="flex gap-3">
+                <button
+                  onClick={() => setShowResults(true)}
+                  className="px-6 py-3 rounded-xl font-semibold bg-white/10 hover:bg-white/20 text-white transition-colors"
+                >
+                  See Results
+                </button>
+                {currentQuestion < QUESTIONS.length - 1 && (
+                  <button
+                    onClick={nextQuestion}
+                    className="px-6 py-3 rounded-xl font-bold bg-white text-slate-900 hover:bg-gray-100 transition-all shadow-lg"
+                  >
+                    Next Question →
+                  </button>
+                )}
+              </div>
+            </>
           ) : (
-            <div className="text-center">
-              <p className="text-green-400 mb-4">🎉 All questions complete!</p>
-              <button
-                onClick={() => setShowResults(false)}
-                className="px-6 py-2 bg-white/10 hover:bg-white/20 rounded-lg text-white transition-colors"
-              >
-                Back to Results
-              </button>
-            </div>
+            <>
+              <div className="flex gap-3">
+                <button
+                  onClick={() => setShowResults(false)}
+                  className="px-6 py-3 rounded-xl font-semibold bg-white/10 hover:bg-white/20 text-white transition-colors"
+                >
+                  Back to Question
+                </button>
+                {currentQuestion < QUESTIONS.length - 1 ? (
+                  <button
+                    onClick={nextQuestion}
+                    className="px-6 py-3 rounded-xl font-bold bg-white text-slate-900 hover:bg-gray-100 transition-all shadow-lg"
+                  >
+                    Next Question →
+                  </button>
+                ) : (
+                  <span className="px-6 py-3 text-green-400 font-semibold">🎉 All complete!</span>
+                )}
+              </div>
+            </>
           )}
         </div>
       </div>
