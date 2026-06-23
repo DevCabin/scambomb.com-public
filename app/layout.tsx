@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   description: 'Paste any text, email, or SMS. ScamBomb checks red flags, explains the risk in plain English, and tells you exactly what to do next.',
   icons: {
     icon: '/scambomb-favicon-64.png',
-    apple: '/scambomb-logo-512.png',
+    apple: '/ScamBomb-just-the-bomb.png',
     shortcut: '/scambomb-favicon-64.png',
   },
   other: {
