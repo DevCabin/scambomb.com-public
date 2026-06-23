@@ -1,5 +1,38 @@
 # Changelog
 
+## 2026-06-23 — Replace Vite poll with native Next.js page
+
+### Changed
+- **`app/poll/page.tsx`** — New native Next.js poll page (replaces broken Vite SPA)
+  - Built with same stack as rest of site (React + Tailwind + Next.js App Router)
+  - 5 hardcoded questions about scams and scam awareness
+  - Progress indicator: "Question X of 5" with visual bar
+  - Submit answers to Supabase `responses` table with `event_code: "TRIVIA"`
+  - Show results with percentage bars after each vote
+  - "Next Question →" button to advance through all 5 questions
+  - Fully styled with ScamBomb brand colors (yellow accent on dark)
+
+### Removed
+- Vite poll app in `public/poll/` — no longer used for deployment
+  - Source code still exists in repo for reference/future use
+  - `public/poll/dist/` and `public/poll/assets/` removed from active serving
+  - SPA rewrite rules removed from `next.config.js`
+
+### Added
+- `@supabase/supabase-js` dependency to root `package.json`
+- `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` to `.env.local`
+
+### Developer Notes
+- The `public/poll/` directory contains a complete Vite React app with:
+  - Multi-page routing (Vote, Results, Control)
+  - Real-time Supabase subscriptions
+  - Event code system for multiple polls
+  - Could be revived if needed for more complex polling features
+  - To use: build with `cd public/poll && npm run build`, then serve `dist/`
+- For future polls: either edit hardcoded `QUESTIONS` array or extend to fetch from Supabase
+
+---
+
 ## 2026-06-22 — Add QR code redirects for printed materials
 
 ### Added
