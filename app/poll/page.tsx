@@ -90,15 +90,14 @@ export default function PollPage() {
       event_code: "TRIVIA",
     })
 
-    setIsSubmitting(false)
-
     if (error) {
       console.error("Error submitting vote:", error)
-      // Still show as voted even if error (don't block user)
     }
 
     setHasVoted(true)
+    setShowResults(true)
     setCompletedQuestions([...completedQuestions, question.id])
+    setIsSubmitting(false)
   }
 
   // Move to next question
