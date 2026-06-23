@@ -3,6 +3,7 @@
   const bookmarkKey = 'scambomb-bookmark-' + window.location.pathname;
   const params = new URLSearchParams(window.location.search);
   const hasValidParam = params.get('resource_key_active') === 'true';
+  const hasOptedIn = params.get('opted_in') === 'true';
   const hasAccessCookie = document.cookie.includes(accessKeyName + '=true');
   const contentEls = [
     document.querySelector('.cover'),
@@ -111,6 +112,10 @@
     setAccessCookie();
     showContent();
     history.replaceState(null, '', window.location.pathname + window.location.hash);
+    maybeShowBookmarkModal();
+  } else if (hasOptedIn) {
+    setAccessCookie();
+    showContent();
     maybeShowBookmarkModal();
   } else if (hasAccessCookie) {
     showContent();
