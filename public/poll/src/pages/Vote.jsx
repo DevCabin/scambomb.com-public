@@ -84,6 +84,11 @@ export default function Vote() {
     }
   }
 
+  const restartPoll = () => {
+    setCurrentIndex(0)
+    setVotedQuestionIds(new Set())
+  }
+
   // Current question and progress
   const question = allQuestions[currentIndex]
   const questionNumber = currentIndex + 1
@@ -131,9 +136,17 @@ export default function Vote() {
           <p style={{ color: '#3DDC84', fontSize: '1.2em', marginBottom: '20px' }}>
             You answered all {totalQuestions} questions
           </p>
-          <Link to={`/poll/event/${code}/results`} className="vote-option-btn" style={{ textDecoration: 'none', display: 'inline-block', textAlign: 'center' }}>
-            See Results →
-          </Link>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', alignItems: 'center', marginBottom: '16px' }}>
+            <Link to={`/poll/event/${code}/results`} className="vote-option-btn" style={{ textDecoration: 'none', display: 'inline-block', textAlign: 'center', minWidth: '220px' }}>
+              See Results →
+            </Link>
+            <button className="vote-option-btn" onClick={restartPoll} style={{ textAlign: 'center', minWidth: '220px' }}>
+              ↺ Back to Beginning
+            </button>
+            <a href="https://scambomb.com" className="vote-option-btn" style={{ textDecoration: 'none', display: 'inline-block', textAlign: 'center', minWidth: '220px' }}>
+              ← Back to ScamBomb
+            </a>
+          </div>
         </div>
       ) : !question ? (
         <div className="vote-waiting">
