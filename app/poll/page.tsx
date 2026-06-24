@@ -11,32 +11,42 @@ const supabase = createClient(
   "sb_publishable_OzMWmXlwQNtGcG6bwxfPdA_o8RoX9py"
 )
 
-// Hardcoded 5 questions for the poll
+// Hardcoded 5 trivia questions with correct answers
 const QUESTIONS = [
   {
     id: 1,
-    text: "Have you or someone you know been targeted by a scam in the last 12 months?",
-    options: ["Yes, me personally", "Yes, a family member", "Yes, a friend", "No, thankfully"],
+    text: "According to the FBI's 2025 IC3 report, Americans lost how much to cyber-enabled fraud?",
+    options: ["$8.4 billion", "$12.7 billion", "$20.9 billion", "$31.2 billion"],
+    correctAnswer: "$20.9 billion",
+    reveal: "That's up 26% from the previous year — over $57 million lost every single day.",
   },
   {
     id: 2,
-    text: "Which type of scam worries you the MOST right now?",
-    options: ["AI voice cloning / deepfake scams", "Phishing texts & emails", "Investment/crypto scams", "Romance scams", "Impersonation of family members"],
+    text: "How many seconds of your voice does an AI scammer need to create a convincing clone?",
+    options: ["10 minutes", "2 minutes", "30 seconds", "Just 3 seconds"],
+    correctAnswer: "Just 3 seconds",
+    reveal: "Scammers harvest 3-30 seconds from social media, voicemail, or TikTok — and AI does the rest.",
   },
   {
     id: 3,
-    text: "How confident are you that you could spot a scam text or email?",
-    options: ["Very confident", "Somewhat confident", "Not very confident", "I'd probably fall for it"],
+    text: "What percentage of money lost to scams is ever recovered by victims?",
+    options: ["22%", "12%", "6%", "4%"],
+    correctAnswer: "4%",
+    reveal: "Once the money is gone, it's almost always gone for good. Prevention is everything.",
   },
   {
     id: 4,
-    text: "What's the #1 thing you wish older adults knew about scams?",
-    options: ["Never give info to unexpected callers", "Verify before acting on urgent requests", "Government agencies don't demand payment by gift cards", "AI can fake any voice or video now"],
+    text: "Which age group reports the HIGHEST median financial losses to scams?",
+    options: ["18-29 (Gen Z)", "30-49 (Millennials/Gen X)", "50-64 (Baby Boomers)", "65+ (Seniors)"],
+    correctAnswer: "30-49 (Millennials/Gen X)",
+    reveal: "Counterintuitive but true — this group loses more because they have more money in motion and higher digital exposure.",
   },
   {
     id: 5,
-    text: "Would you use a free tool that checks suspicious texts/emails for scam signs?",
-    options: ["Absolutely, daily", "Yes, occasionally", "Maybe, if it was really easy", "No, I don't need it"],
+    text: "At $20.9 billion per year, that's roughly how much scam money is lost EVERY DAY in the U.S.?",
+    options: ["$15 million", "$32 million", "$57 million", "$89 million"],
+    correctAnswer: "$57 million",
+    reveal: "More than $57 million stolen from Americans every single day — largely thanks to AI-powered scams.",
   },
 ]
 
@@ -119,7 +129,10 @@ export default function PollPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-900 via-blue-900 to-slate-900 text-white flex flex-col items-center justify-center px-4 py-8">
+    <div
+      className="min-h-screen text-white flex flex-col items-center justify-center px-4 py-8"
+      style={{ background: "linear-gradient(135deg, #081a2f 0%, #0f2e4d 55%, #123b5d 100%)" }}
+    >
       {/* Header */}
       <div className="text-center mb-8">
         <h1 className="text-3xl font-bold mb-2">ScamBomb Live Poll</h1>
@@ -139,40 +152,61 @@ export default function PollPage() {
 
         {/* Options */}
         <div className="space-y-3">
-          {question.options.map((option) => (
-            <button
-              key={option}
-              onClick={() => !hasVoted && setSelectedOption(option)}
-              disabled={hasVoted}
-              className={`w-full p-4 rounded-xl text-left transition-all duration-200 ${
-                selectedOption === option
-                  ? "bg-yellow-400 text-slate-900 font-semibold"
-                  : hasVoted
-                  ? "bg-white/5 text-white/50 cursor-not-allowed"
-                  : "bg-white/10 hover:bg-white/20 text-white"
-              }`}
-            >
-              {hasVoted && showResults ? (
-                <div className="flex items-center justify-between">
-                  <span>{option}</span>
-                  <div className="flex items-center gap-3">
-                    <div className="w-24 bg-white/20 rounded-full h-2">
-                      <div
-                        className="bg-yellow-400 h-2 rounded-full"
-                        style={{ width: `${getPercentage(option)}%` }}
-                      />
-                    </div>
-                    <span className="text-sm font-bold min-w-[3rem] text-right">
-                      {getPercentage(option)}%
+          {question.options.map((option) => {
+            const isCorrect = option === question.correctAnswer
+            const isSelected = selectedOption === option
+
+            return (
+              <button
+                key={option}
+                onClick={() => !hasVoted && setSelectedOption(option)}
+                disabled={hasVoted}
+                className={`w-full p-4 rounded-xl text-left transition-all duration-200 ${
+                  isSelected && !hasVoted
+                    ? "bg-yellow-400 text-slate-900 font-semibold"
+                    : hasVoted && showResults && isCorrect
+                    ? "bg-green-500/20 border-2 border-green-400 text-white cursor-default"
+                    : hasVoted
+                    ? "bg-white/5 text-white/50 cursor-not-allowed"
+                    : "bg-white/10 hover:bg-white/20 text-white"
+                }`}
+              >
+                {hasVoted && showResults ? (
+                  <div className="flex items-center justify-between">
+                    <span className="flex items-center gap-2">
+                      {isCorrect && (
+                        <svg className="w-5 h-5 text-green-400 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                        </svg>
+                      )}
+                      {option}
                     </span>
+                    <div className="flex items-center gap-3">
+                      <div className="w-24 bg-white/20 rounded-full h-2">
+                        <div
+                          className={`h-2 rounded-full ${isCorrect ? "bg-green-400" : "bg-yellow-400"}`}
+                          style={{ width: `${getPercentage(option)}%` }}
+                        />
+                      </div>
+                      <span className="text-sm font-bold min-w-[3rem] text-right">
+                        {getPercentage(option)}%
+                      </span>
+                    </div>
                   </div>
-                </div>
-              ) : (
-                option
-              )}
-            </button>
-          ))}
+                ) : (
+                  option
+                )}
+              </button>
+            )
+          })}
         </div>
+
+        {/* Correct Answer Reveal */}
+        {hasVoted && showResults && question.reveal && (
+          <div className="mt-4 p-4 bg-green-500/10 border border-green-400/30 rounded-xl">
+            <p className="text-green-300 text-sm leading-relaxed">{question.reveal}</p>
+          </div>
+        )}
 
         {/* Action Buttons */}
         <div className="mt-6 flex flex-col items-center gap-3">
