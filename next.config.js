@@ -104,6 +104,11 @@ const nextConfig = {
         destination: 'https://www.scambomb.com/?utm_source=vcg_pdf',
         permanent: true,
       },
+      {
+        source: '/card',
+        destination: 'https://app.scambomb.com?utm_source=biz_card_qr',
+        permanent: true,
+      },
     ]
   },
 }
