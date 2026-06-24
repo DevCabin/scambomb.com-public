@@ -135,8 +135,32 @@ export default function PollPage() {
     >
       {/* Header */}
       <div className="text-center mb-8">
-        <h1 className="text-3xl font-bold mb-2">ScamBomb Live Poll</h1>
-        <p className="text-white/70">Help us understand the scam landscape</p>
+        <h1
+          className="text-3xl sm:text-4xl mb-2 tracking-wide"
+          style={{
+            fontFamily: "'Montserrat', sans-serif",
+            fontWeight: 800,
+            textTransform: "uppercase",
+            letterSpacing: "0.02em",
+            lineHeight: 1.2,
+          }}
+        >
+          <span style={{ color: "#F0F2F5" }}>SCAM</span>
+          <span style={{ color: "#FFD700" }}>B💣MB</span>
+          <span style={{ color: "#F0F2F5" }}> LIVE POLL</span>
+        </h1>
+        <p
+          className="text-sm sm:text-base mt-3"
+          style={{
+            fontFamily: "'Montserrat', sans-serif",
+            color: "#FFD700",
+            textTransform: "uppercase",
+            letterSpacing: "0.14em",
+            fontWeight: 600,
+          }}
+        >
+          Test Your Scam Knowledge
+        </p>
       </div>
 
       {/* Question Counter */}
