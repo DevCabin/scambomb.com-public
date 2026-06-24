@@ -202,27 +202,31 @@ export default function Results() {
           </p>
         </div>
       ) : (
-        <div className="results-chart">
+        <div className="results-chart" style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
           {results.map((result, index) => {
             const isCorrect = question.correct_answer && result.option === question.correct_answer
             return (
-              <div key={index} className={`result-bar ${isCorrect ? 'correct' : ''}`}>
-                <div className="result-label">{result.option}</div>
-                <div className="result-bar-container">
-                  <div
-                    className="result-bar-fill"
-                    style={{ 
-                      width: `${result.percentage}%`,
-                      background: isCorrect ? 'linear-gradient(90deg, #3DDC84, #A0E8B0)' : undefined
-                    }}
-                  >
-                    {result.percentage > 15 && (
-                      <span className="result-bar-value">{result.percentage}%</span>
-                    )}
-                  </div>
+              <div
+                key={index}
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  padding: '16px 20px',
+                  borderRadius: '8px',
+                  border: `2px solid ${isCorrect ? '#3DDC84' : '#2A3A5A'}`,
+                  background: isCorrect ? 'rgba(61, 220, 132, 0.1)' : 'rgba(11, 20, 38, 0.6)',
+                }}
+              >
+                <div style={{ fontSize: '1.1rem', fontWeight: 600, color: isCorrect ? '#3DDC84' : '#F0F2F5' }}>
+                  {result.option}
+                  {isCorrect && <span style={{ marginLeft: '10px' }}>✓</span>}
                 </div>
-                <div className="result-stats">
-                  <strong>{result.count}</strong> votes
+                <div style={{ fontSize: '1rem', color: '#9BA3AF', whiteSpace: 'nowrap' }}>
+                  <strong style={{ color: '#F0F2F5' }}>{result.count}</strong> votes
+                  {totalVotes > 0 && (
+                    <span style={{ marginLeft: '8px' }}>({Math.round((result.count / totalVotes) * 100)}%)</span>
+                  )}
                 </div>
               </div>
             )
