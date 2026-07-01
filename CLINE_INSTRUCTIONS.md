@@ -1,5 +1,25 @@
 # ScamBomb Development Status
 
+## 🌿 **Branching Directive (Persistent)**
+
+**IMPORTANT: This directive must persist across all future sessions.**
+
+All code changes for the `scambomb.com-public` repository must now be developed on the **`dev`** branch and merged into `main` via GitHub. Do **not** commit directly to `main` unless explicitly instructed.
+
+### **Workflow:**
+1. Ensure you are on the `dev` branch: `git checkout dev`
+2. Pull latest changes: `git pull origin dev`
+3. Make edits, commit with a minimal message, and push: `git push origin dev`
+4. Open or update a pull request on GitHub to merge `dev` → `main`
+
+### **Creating the `dev` branch (one-time setup):**
+```bash
+git checkout main
+git pull origin main
+git checkout -b dev
+git push -u origin dev
+```
+
 ## ✅ **COMPLETED FEATURES (v2.2.0)**
 
 ### 📝 **Blog System Rebuild**
