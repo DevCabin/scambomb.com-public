@@ -1,5 +1,21 @@
 # Changelog
 
+## 2026-07-19 — v1.3.1 — Family protection homepage repositioning
+
+### Changed
+- **Homepage positioning**: Reframed ScamBomb as a trusted family protection resource, with message analysis presented as one practical tool alongside scam education, resources, ongoing awareness, and community workshops.
+- **Hero and page hierarchy**: Updated consumer-facing copy to lead with peace of mind, real-world guidance, and helping families recognize scams before they become victims.
+- **Trust and community sections**: Added real-scam investigation authority messaging and a secondary community partnerships section.
+- **Pricing**: Reworked plan names and value lists around customer outcomes: Stay Safe, Stay Protected, and Senior Protection.
+- **Brand system**: Standardized all `h2` and `h3` headings as uppercase and added selective ScamBomb-gold emphasis for key phrases.
+- **App walkthrough**: Added an accessible “See it in action” YouTube link inside the expanded homepage app walkthrough.
+
+### Documentation and release
+- Bumped the public site package version from `1.3.0` to `1.3.1`.
+- Updated README, developer guidance, and persistent project instructions with the current positioning, design rules, and deployment flow.
+
+---
+
 ## 2026-06-23 — Replace Vite poll with native Next.js page
 
 ### Changed
