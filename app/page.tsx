@@ -164,7 +164,7 @@ export default function ScamBombLanding() {
         <div className="absolute inset-0 bg-[#0B1324] opacity-80 pointer-events-none z-0"></div>
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <HeaderEyebrow>Four ways to stay protected</HeaderEyebrow>
-          <h2 className="text-4xl sm:text-4xl font-bold">Scam awareness for the whole family</h2>
+          <h2 className="text-4xl sm:text-4xl font-bold">Scam Awareness for the <span style={{ color: brandYellow }}>Whole Family</span></h2>
           <div className="mt-8 grid md:grid-cols-2 gap-6">
             <div className="hover-lift"><Card title="Check Suspicious Messages" icon={<Check />}>Paste a text, email, website, or message and receive a calm, plain-English explanation.</Card></div>
             <div className="hover-lift"><Card title="Learn the Latest Scams" icon={<Check />}>Stay informed about AI voice cloning, phishing, fake tech support, investment scams, romance scams, and emerging threats.</Card></div>
