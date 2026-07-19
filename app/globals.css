@@ -7,6 +7,12 @@ html {
   scroll-behavior: smooth;
 }
 
+/* ScamBomb brand typography: all section and card headings use uppercase. */
+h2,
+h3 {
+  text-transform: uppercase;
+}
+
 /* Hero Headline Animations */
 .changing-word {
   opacity: 0;

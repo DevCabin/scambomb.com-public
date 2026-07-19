@@ -91,7 +91,7 @@ export default function ScamBombLanding() {
       {/* More than a scam checker */}
       <section id="platform" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
         <HeaderEyebrow>More than a scam checker</HeaderEyebrow>
-        <h2 className="text-4xl sm:text-4xl font-bold">A complete family protection platform</h2>
+        <h2 className="text-4xl sm:text-4xl font-bold">A Complete <span style={{ color: brandYellow }}>Family Protection</span> Platform</h2>
         <p className="mt-5 max-w-3xl text-lg leading-relaxed text-white/85">
           ScamBomb combines scam education, instant message analysis, printable family resources, and ongoing scam awareness to help families stay ahead of today&apos;s increasingly sophisticated scams.
         </p>
