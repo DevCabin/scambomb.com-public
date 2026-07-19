@@ -22,15 +22,15 @@ function UniversalHeader() {
 
       {/* Top Announcement Bar - Simplified */}
       <a 
-        href="#pricing" 
+        href="#platform"
         className="block w-full bg-[#0B1324] border-b border-white/10 hover:border-white/20 transition-colors" 
         role="region" 
         aria-label="announcement"
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-2 text-center text-sm text-white/80 hover:text-white">
-          <span className="text-[#F5C84C] font-semibold">Save 17% with annual billing</span>
+          <span className="text-[#F5C84C] font-semibold">Practical scam guidance for families</span>
           <span className="hidden sm:inline mx-2">•</span>
-          <span className="hidden sm:inline">Starting at $5/mo for seniors</span>
+          <span className="hidden sm:inline">Tools, education, and resources to stay ahead</span>
         </div>
       </a>
 
