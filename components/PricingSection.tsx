@@ -82,7 +82,7 @@ export function PricingSection() {
       <div className="absolute inset-0 bg-[#0B1324]/95 pointer-events-none"></div>
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <p className="text-base sm:text-sm font-semibold tracking-wider uppercase text-white/70 mb-2">Choose your level of protection</p>
-        <h2 className="text-4xl sm:text-4xl font-bold">Peace of mind for every household</h2>
+        <h2 className="text-4xl sm:text-4xl font-bold">Every Household Deserves <span style={{ color: brandYellow }}>Peace of Mind</span></h2>
         <p className="mt-4 max-w-3xl text-lg leading-relaxed text-white/80">Start with the help you need today, then choose ongoing protection when you&apos;re ready.</p>
 
         <div className="mt-8 grid lg:grid-cols-3 gap-6">
