@@ -14,8 +14,8 @@ const montserrat = Montserrat({
 })
 
 export const metadata: Metadata = {
-  title: 'ScamBomb - Recognize scams before they become victims',
-  description: 'ScamBomb helps families recognize scams before they become victims through simple tools, practical education, and real-world guidance.',
+  title: 'ScamBomb | Helping families recognize scams before they become victims',
+  description: 'ScamBomb helps families recognize scams before they become victims through practical tools, education, and real-world guidance.',
   icons: {
     icon: '/scambomb-favicon-64.png',
     apple: '/ScamBomb-just-the-bomb.png',

@@ -20,11 +20,11 @@ export default function ScamBombLanding() {
           <div className="grid lg:grid-cols-2 gap-10 items-center">
             <div>
               <h1 className="text-[2.35rem] leading-[1.1] sm:text-5xl sm:leading-tight font-extrabold">
-                Stop Guessing.<br />
-                <span style={{ color: brandYellow }}>Start Knowing.</span>
+                Modern scams fool<br />
+                <span style={{ color: brandYellow }}>smart people every day.</span>
               </h1>
               <p className="mt-5 max-w-xl text-lg leading-relaxed text-white/90 sm:text-xl">
-                Modern scams are changing faster than ever. ScamBomb helps families recognize scams before they become victims through simple tools, practical education, and real-world guidance.
+                ScamBomb gives you the confidence to know what&apos;s real, what&apos;s dangerous, and what to do next—before a simple mistake becomes an expensive one.
               </p>
               <div className="mt-7 text-center">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 max-w-lg mx-auto">
@@ -195,13 +195,13 @@ export default function ScamBombLanding() {
         </div>
       </section>
 
-      {/* Trust and credibility */}
+      {/* Authority */}
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
         <div className="rounded-2xl border border-yellow-300/30 bg-yellow-300/5 p-6 lg:p-10">
-          <HeaderEyebrow>Built around real scams</HeaderEyebrow>
-          <h2 className="text-3xl sm:text-4xl font-bold">Practical guidance grounded in reality</h2>
+          <HeaderEyebrow>Built on real scam investigations</HeaderEyebrow>
+          <h2 className="text-3xl sm:text-4xl font-bold">Knowledge you can use when it matters</h2>
           <p className="mt-4 max-w-3xl text-lg leading-relaxed text-white/85">
-            ScamBomb isn&apos;t based on hypothetical examples. It is built around investigating real scams, explaining how they work, and helping people respond with confidence instead of fear.
+            Every article, workshop, guide, and feature is built around scams that are actually targeting people today—not hypothetical examples. We explain what happened, why it worked, and how to protect yourself next time.
           </p>
         </div>
       </section>
