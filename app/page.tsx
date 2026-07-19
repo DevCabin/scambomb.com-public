@@ -20,8 +20,8 @@ export default function ScamBombLanding() {
           <div className="grid lg:grid-cols-2 gap-10 items-center">
             <div>
               <h1 className="text-[2.35rem] leading-[1.1] sm:text-5xl sm:leading-tight font-extrabold">
-                Modern scams fool<br />
-                <span style={{ color: brandYellow }}>smart people every day.</span>
+                Modern Scams Fool<br />
+                <span style={{ color: brandYellow }}>Smart People</span> Every Day.
               </h1>
               <p className="mt-5 max-w-xl text-lg leading-relaxed text-white/90 sm:text-xl">
                 ScamBomb gives you the confidence to know what&apos;s real, what&apos;s dangerous, and what to do next—before a simple mistake becomes an expensive one.
