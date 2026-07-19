@@ -178,7 +178,7 @@ export default function ScamBombLanding() {
       <section id="demo" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
         <div className={`rounded-2xl border ${brandBorder} bg-white/5 p-6 lg:p-10 grid lg:grid-cols-2 gap-8 items-center`}>
           <div>
-            <h3 className="text-3xl font-bold">Start with a <span style={{ color: brandYellow }}>Suspicious Message</span></h3>
+            <h3 className="text-3xl font-bold">If You Get a <span style={{ color: brandYellow }}>Suspicious Message</span></h3>
             <p className="mt-3 text-lg leading-relaxed text-white/85">Get a calm explanation in seconds, then explore the guidance and resources that help your family stay protected.</p>
             <div className="mt-6 flex flex-col sm:flex-row gap-3">
               <a href={appUrl} className="rounded-2xl px-6 py-4 text-lg font-semibold hover-lift btn-press" style={{ backgroundColor: brandYellow, color: "#0B1324" }}>Check a Suspicious Message</a>
