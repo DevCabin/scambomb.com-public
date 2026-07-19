@@ -153,6 +153,23 @@ export default function ScamBombLanding() {
                   text="See fast, plain-English guidance on whether the message is a scam."
                 />
               </div>
+
+              <div className="mt-5 flex justify-center">
+                <a
+                  href="https://youtube.com/shorts/9qaoWCxAu2s"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-xl border-2 px-5 py-3 text-base font-semibold hover:bg-white/10 hover-lift btn-press"
+                  style={{ borderColor: brandYellow, color: brandYellow }}
+                  aria-label="See ScamBomb in action on YouTube"
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+                    <rect x="3" y="5" width="18" height="14" rx="3" stroke="currentColor" strokeWidth="2" />
+                    <path d="M10 9l5 3-5 3V9z" fill="currentColor" />
+                  </svg>
+                  See it in action
+                </a>
+              </div>
             </div>
           </div>
         </div>
