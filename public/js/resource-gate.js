@@ -17,6 +17,17 @@
   const bookmarkModal = document.getElementById('bookmark-modal');
 
   var unlocked = false;
+  var scrollListenerAttached = false;
+
+  function isFacebookPaidTraffic() {
+    const utmSource = (params.get('utm_source') || '').toLowerCase();
+    const utmMedium = (params.get('utm_medium') || '').toLowerCase();
+    return params.has('fbclid') ||
+           utmSource === 'facebook' ||
+           utmSource === 'fb' ||
+           utmMedium === 'paid' ||
+           utmMedium === 'cpc';
+  }
 
   function setAccessCookie() {
     document.cookie = accessKeyName + '=true; max-age=' + (60 * 60 * 24 * 30) + '; path=/; SameSite=Lax';
@@ -27,6 +38,59 @@
     unlocked = true;
     setAccessCookie();
     showContent();
+    if (scrollListenerAttached) {
+      window.removeEventListener('scroll', onScroll, { passive: true });
+      scrollListenerAttached = false;
+    }
+  }
+
+  function showContent() {
+    document.body.classList.remove('gate-is-open');
+    contentEls.forEach((el) => { el.style.display = ''; });
+    if (gateEl) gateEl.style.display = 'none';
+  }
+
+  function showGate() {
+    document.body.classList.add('gate-is-open');
+    if (gateEl) {
+      gateEl.style.display = 'flex';
+      gateEl.querySelectorAll('iframe[data-src]').forEach(function (iframe) {
+        if (iframe.src) return;
+        iframe.src = iframe.getAttribute('data-src');
+        // Fallback: if GHL redirects the iframe on submit the iframe fires a second load event.
+        var initialLoad = false;
+        iframe.addEventListener('load', function () {
+          if (!initialLoad) { initialLoad = true; return; }
+          unlockPage();
+        });
+      });
+      // Inject form_embed.js now (after iframe src is set) so GHL's bridge
+      // script can initialize and fire postMessage on form submit.
+      if (!document.querySelector('script[src*="form_embed"]')) {
+        var s = document.createElement('script');
+        s.src = 'https://link.msgsndr.com/js/form_embed.js';
+        s.async = true;
+        document.body.appendChild(s);
+      }
+    }
+  }
+
+  function onScroll() {
+    if (unlocked) return;
+    var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    if (docHeight <= 0) return;
+    var scrolled = window.scrollY / docHeight;
+    if (scrolled >= 0.5) {
+      showGate();
+    }
+  }
+
+  function attachScrollListener() {
+    if (scrollListenerAttached) return;
+    scrollListenerAttached = true;
+    window.addEventListener('scroll', onScroll, { passive: true });
+    // Check immediately in case page is already scrolled past 50% on load.
+    onScroll();
   }
 
   // Comprehensive GHL postMessage listener.
@@ -63,37 +127,6 @@
 
   document.addEventListener('contextmenu', blockContextMenuWhileGated);
 
-  function showContent() {
-    document.body.classList.remove('gate-is-open');
-    contentEls.forEach((el) => { el.style.display = ''; });
-    if (gateEl) gateEl.style.display = 'none';
-  }
-
-  function showGate() {
-    document.body.classList.add('gate-is-open');
-    contentEls.forEach((el) => { el.style.display = ''; });
-    if (gateEl) {
-      gateEl.style.display = 'flex';
-      gateEl.querySelectorAll('iframe[data-src]').forEach(function (iframe) {
-        iframe.src = iframe.getAttribute('data-src');
-        // Fallback: if GHL redirects the iframe on submit the iframe fires a second load event.
-        var initialLoad = false;
-        iframe.addEventListener('load', function () {
-          if (!initialLoad) { initialLoad = true; return; }
-          unlockPage();
-        });
-      });
-      // Inject form_embed.js now (after iframe src is set) so GHL's bridge
-      // script can initialize and fire postMessage on form submit.
-      if (!document.querySelector('script[src*="form_embed"]')) {
-        var s = document.createElement('script');
-        s.src = 'https://link.msgsndr.com/js/form_embed.js';
-        s.async = true;
-        document.body.appendChild(s);
-      }
-    }
-  }
-
   function maybeShowBookmarkModal() {
     if (!bookmarkModal) return;
     if (window.localStorage.getItem(bookmarkKey) === 'dismissed') return;
@@ -108,19 +141,24 @@
     bookmarkModal.setAttribute('aria-hidden', 'true');
   }
 
-  if (hasValidParam) {
-    setAccessCookie();
+  // Entry flow:
+  // 1. Already unlocked (param, cookie, or opted_in) -> show content.
+  // 2. Facebook paid traffic -> unlock immediately so gate never appears.
+  // 3. Everyone else -> show content, gate appears after 50% scroll.
+  if (hasValidParam || hasOptedIn || hasAccessCookie) {
+    if (hasValidParam || hasOptedIn) setAccessCookie();
     showContent();
-    history.replaceState(null, '', window.location.pathname + window.location.hash);
-    maybeShowBookmarkModal();
-  } else if (hasOptedIn) {
-    setAccessCookie();
-    showContent();
-    maybeShowBookmarkModal();
-  } else if (hasAccessCookie) {
-    showContent();
+    if (hasValidParam) {
+      history.replaceState(null, '', window.location.pathname + window.location.hash);
+      maybeShowBookmarkModal();
+    } else if (hasOptedIn) {
+      maybeShowBookmarkModal();
+    }
+  } else if (isFacebookPaidTraffic()) {
+    unlockPage();
   } else {
-    showGate();
+    showContent();
+    attachScrollListener();
   }
 
   document.querySelectorAll('[data-bookmark-close]').forEach((btn) => {

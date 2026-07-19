@@ -20,7 +20,13 @@ git checkout -b dev
 git push -u origin dev
 ```
 
-## ✅ **COMPLETED FEATURES (v2.2.0)**
+## ✅ **COMPLETED FEATURES (v1.3.1)**
+
+### 🏠 **Public Homepage Positioning**
+- **Core promise**: Helping families recognize scams before they become victims
+- **Primary benefit**: Peace of mind and practical guidance, not AI software marketing
+- **ScamBomb scope**: Message analysis, scam education, printable family resources, ongoing awareness, and community workshops
+- **Heading rule**: Render all `h2` and `h3` headings in uppercase; use ScamBomb gold selectively to emphasize key phrases
 
 ### 📝 **Blog System Rebuild**
 - **Complete rewrite** of blog system to fix persistent 404 errors
@@ -225,7 +231,7 @@ Database (Vercel KV)
 - **Performance optimized** for global CDN delivery
 
 ## 📊 **Key Metrics**
-- **Version**: 1.1.0 (Production Ready)
+- **Version**: 1.3.1 (Production Ready)
 - **Response Time**: <2s for AI analysis
 - **Red-flag Detection**: <2ms client-side
 - **Uptime**: 99.9% on Vercel infrastructure

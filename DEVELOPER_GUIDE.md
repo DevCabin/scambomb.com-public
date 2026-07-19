@@ -2,6 +2,15 @@
 
 This guide provides a deep dive into the ScamBomb web application architecture, logic flow, and implementation details for developers.
 
+## Public-Site Positioning and Brand Rules
+
+The public site presents ScamBomb as a trusted resource that helps families recognize scams before they become victims. The app is one part of that mission, alongside scam education, family protection resources, ongoing awareness, and community workshops.
+
+- Lead consumer-facing copy with peace of mind, plain-English guidance, and family protection—not AI terminology.
+- Preserve the navy and ScamBomb-gold visual system.
+- Render all `h2` and `h3` elements in uppercase. Use gold only for intentional emphasis within a heading.
+- Keep the homepage fast: prefer a labeled external video link over a heavy YouTube embed unless an embedded player is explicitly required.
+
 ## 🏗️ Application Architecture
 
 ### High-Level Overview

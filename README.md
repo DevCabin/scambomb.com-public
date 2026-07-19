@@ -1,28 +1,29 @@
-# ScamBomb.com - Defuse Scams. Before they blow up in your face.
+# ScamBomb.com — Helping Families Recognize Scams Before They Become Victims
 
-**Version**: 1.3.0  
-**Last Updated**: June 13, 2026
+**Version**: 1.3.1
+**Last Updated**: July 19, 2026
 
 ## 🎯 Mission & Goals
 
-ScamBomb is a revolutionary anti-scam platform designed to protect vulnerable populations - particularly seniors, caregivers, and everyday people - from sophisticated online scams. Our mission is to democratize scam protection by making advanced scam detection accessible, understandable, and actionable for everyone.
+ScamBomb helps families recognize scams before they become victims. It combines practical scam education, message analysis, printable family resources, community workshops, and ongoing scam awareness so people can respond with confidence instead of fear.
 
 ### Core Objectives
-- **Empower Users**: Give people the knowledge and tools to identify and avoid scams confidently
-- **Simplify Complexity**: Transform technical scam analysis into plain-English guidance
-- **Build Trust**: Create a privacy-first platform that users can rely on
-- **Educate Proactively**: Provide ongoing education about emerging scam patterns
-- **Foster Community**: Build a supportive network of scam-aware individuals
+- **Protect Families**: Give people practical ways to recognize and respond to scams before harm is done
+- **Simplify Complexity**: Turn suspicious messages and scam tactics into calm, plain-English guidance
+- **Build Trust**: Create a privacy-first resource families can rely on
+- **Educate Proactively**: Share ongoing education about emerging scam patterns
+- **Strengthen Communities**: Deliver resources and workshops for organizations serving families and older adults
 
 ## 🚀 Product Vision
 
 ### What ScamBomb Does
-ScamBomb analyzes suspicious messages (emails, texts, social media) and provides:
-- **Instant Risk Assessment**: Identifies red flags and scam patterns
-- **Plain-English Explanations**: No technical jargon - just clear, actionable advice
-- **Step-by-Step Guidance**: Tells users exactly what to do next
-- **Educational Resources**: Blog posts and guides about scam prevention
-- **Privacy Protection**: Zero data selling, anonymous mode available
+ScamBomb is more than a message checker. It provides:
+- **Suspicious Message Analysis**: Plain-English help with texts, emails, screenshots, and other suspicious content
+- **Practical Guidance**: Clear next steps people can take before they click, reply, or send money
+- **Scam Education**: Scam Triage articles, guides, checklists, and resources based on real scams
+- **Family Protection Resources**: Shareable information designed for seniors, caregivers, and the people who care about them
+- **Community Awareness**: Workshops and educational programs for credit unions, libraries, senior centers, employers, and other organizations
+- **Privacy Protection**: No data selling and anonymous access where available
 
 ### Target Audience
 - **Seniors**: Elderly individuals who may be less tech-savvy but more vulnerable to scams
@@ -58,18 +59,19 @@ ScamBomb analyzes suspicious messages (emails, texts, social media) and provides
 └── content/               # Blog content (MDX)
 ```
 
-## 🔄 Recent Changes (v1.3.0)
+## 🔄 Recent Changes (v1.3.1)
 
-### Membership Purchase Flow
-- **Auth-gated checkout**: Users must sign in before purchasing
-- **App auth redirect**: Pricing buttons redirect through `app.scambomb.com/api/auth/redirect`
-- **Thank-you membership page**: Dedicated post-purchase confirmation at `/thank-you-membership`
-- **Session sync**: Subscription auto-syncs when user returns to app
+### Homepage Positioning and Brand System
+- **Family-first positioning**: Homepage now leads with protecting families and peace of mind, rather than AI or app features
+- **Clear value hierarchy**: Message analysis is positioned as one tool within education, resources, awareness, and community partnerships
+- **Outcome-led pricing**: Plans explain what people receive and how they stay protected
+- **Brand typography**: All `h2` and `h3` headings use uppercase styling; strategic gold emphasis reinforces key ideas
+- **App walkthrough video**: The expanded “How to Use the App” section includes a lightweight YouTube link
 
-### Technical Updates
-- Cross-domain cookie support for auth state
-- Suspense boundaries for client components
-- Updated pricing section with annual options
+### Current Plans
+- **Stay Safe**: Free plan with five scam checks each month and educational resources
+- **Stay Protected**: Standard plan with unlimited message analysis and ongoing protection resources
+- **Senior Protection**: The same ongoing protection with locked-in pricing for adults 60+
 
 ## 🚀 Getting Started
 
@@ -78,11 +80,11 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
-
 ## 📦 Deployment
 
-Push to `main` branch — Vercel auto-deploys.
+1. Build and test changes on the `dev` branch.
+2. Push `dev` — Vercel creates a protected preview deployment.
+3. Merge `dev` into `main` after approval — Vercel deploys `main` to production.
 
 ## 📝 License
 

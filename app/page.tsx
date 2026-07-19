@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { PricingSection } from '../components/PricingSection';
 
 export default function ScamBombLanding() {
@@ -9,36 +9,6 @@ export default function ScamBombLanding() {
   const brandBorder = "border-white/20";
   const appUrl = `https://app.scambomb.com/?safe_source=true&SBID=${crypto.randomUUID()}`;
   const [isHowToOpen, setIsHowToOpen] = useState(false);
-
-  useEffect(() => {
-    const inputWords = ['Emails', 'Texts', 'Spam'];
-
-    let inputIndex = 0;
-
-    const inputElement = document.getElementById('changing-inputs');
-
-    if (inputElement) {
-      // Set initial content
-      inputElement.textContent = inputWords[0];
-
-      // Cycle through inputs every 3 seconds (slower)
-      const inputInterval = setInterval(() => {
-        // First fade out current word
-        inputElement.style.transition = 'opacity 0.5s ease-out';
-        inputElement.style.opacity = '0';
-
-        setTimeout(() => {
-          inputIndex = (inputIndex + 1) % inputWords.length;
-          inputElement.textContent = inputWords[inputIndex];
-          inputElement.style.opacity = '1';
-        }, 500);
-      }, 2500);
-
-      return () => {
-        clearInterval(inputInterval);
-      };
-    }
-  }, []);
 
   return (
     <div className={`${base} antialiased`}>
@@ -50,35 +20,24 @@ export default function ScamBombLanding() {
           <div className="grid lg:grid-cols-2 gap-10 items-center">
             <div>
               <h1 className="text-[2.35rem] leading-[1.1] sm:text-5xl sm:leading-tight font-extrabold">
-                Give us your<br/>
-                <span style={{ color: 'white' }}>Suspicious:</span> <span id="changing-inputs" style={{ color: brandYellow }}></span><br/>
-                <span className="mt-5 block">and we'll tell<br/>
-                you if they're<br/>
-                <span style={{ color: brandYellow, fontWeight: 'bold' }}>safe</span> <span style={{ color: 'white' }}>or</span> <span style={{ color: brandYellow, fontWeight: 'bold' }}>dangerous</span></span>
+                Modern Scams Fool<br />
+                <span style={{ color: brandYellow }}>Smart People</span> Every Day.
               </h1>
               <p className="mt-5 max-w-xl text-lg leading-relaxed text-white/90 sm:text-xl">
-                Paste any suspicious text, email, or SMS. Get instant AI analysis, plain-English explanations, and step-by-step next actions.
+                ScamBomb gives you the confidence to know what&apos;s real, what&apos;s dangerous, and what to do next—before a simple mistake becomes an expensive one.
               </p>
               <div className="mt-7 text-center">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 max-w-lg mx-auto">
                   <div>
-                    <a id="cta" href="#pricing" className="rounded-2xl px-6 py-4 text-lg font-semibold inline-block text-center w-full hover-lift btn-press" style={{ backgroundColor: brandYellow, color: "#0B1324" }}>
-                      Unlimited Access
+                    <a id="cta" href={appUrl} className="rounded-2xl px-6 py-4 text-lg font-semibold inline-block text-center w-full hover-lift btn-press" style={{ backgroundColor: brandYellow, color: "#0B1324" }}>
+                      Check a Suspicious Message
                     </a>
-                    <div className="hidden md:block">
-                      <p className="text-lg text-white/90 mt-3">$9/mo or $99/yr</p>
-                    </div>
-                    <div className="md:hidden">
-                      <p className="text-lg text-white/90 mt-3">$9/mo or $99/yr standard</p>
-                      <p className="text-lg text-white/90">$5/mo or $49/yr for seniors 60+</p>
-                    </div>
                   </div>
 
                   <div>
-                    <a href={appUrl} className="rounded-2xl px-6 py-4 border-2 text-lg font-semibold inline-block text-center w-full hover:bg-white/10 hover-lift btn-press" style={{ borderColor: brandYellow, color: brandYellow }}>
-                      Try Free!
+                    <a href="#how" className="rounded-2xl px-6 py-4 border-2 text-lg font-semibold inline-block text-center w-full hover:bg-white/10 hover-lift btn-press" style={{ borderColor: brandYellow, color: brandYellow }}>
+                      Learn How ScamBomb Works
                     </a>
-                    <p className="text-lg text-white/90 mt-3">Instant access, no sign up</p>
                   </div>
                 </div>
               </div>
@@ -129,7 +88,16 @@ export default function ScamBombLanding() {
         </div>
       </section>
 
-      {/* How to use the app - Moved down to replace "How it works" */}
+      {/* More than a scam checker */}
+      <section id="platform" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+        <HeaderEyebrow>More than a scam checker</HeaderEyebrow>
+        <h2 className="text-4xl sm:text-4xl font-bold">A Complete <span style={{ color: brandYellow }}>Family Protection</span> Platform</h2>
+        <p className="mt-5 max-w-3xl text-lg leading-relaxed text-white/85">
+          ScamBomb combines scam education, instant message analysis, printable family resources, and ongoing scam awareness to help families stay ahead of today&apos;s increasingly sophisticated scams.
+        </p>
+      </section>
+
+      {/* How to use the app */}
       <section id="how" aria-label="How to use ScamBomb app" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
         <div className={`rounded-2xl border ${brandBorder} bg-white/5 p-4 sm:p-6`}>
           <button
@@ -185,6 +153,23 @@ export default function ScamBombLanding() {
                   text="See fast, plain-English guidance on whether the message is a scam."
                 />
               </div>
+
+              <div className="mt-5 flex justify-center">
+                <a
+                  href="https://youtube.com/shorts/9qaoWCxAu2s"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-xl border-2 px-5 py-3 text-base font-semibold hover:bg-white/10 hover-lift btn-press"
+                  style={{ borderColor: brandYellow, color: brandYellow }}
+                  aria-label="See ScamBomb in action on YouTube"
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+                    <rect x="3" y="5" width="18" height="14" rx="3" stroke="currentColor" strokeWidth="2" />
+                    <path d="M10 9l5 3-5 3V9z" fill="currentColor" />
+                  </svg>
+                  See it in action
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -195,15 +180,13 @@ export default function ScamBombLanding() {
         {/* Heavy Overlay */}
         <div className="absolute inset-0 bg-[#0B1324] opacity-80 pointer-events-none z-0"></div>
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <HeaderEyebrow>Features</HeaderEyebrow>
-          <h2 className="text-4xl sm:text-4xl font-bold">Built for everyone (55+ included!)</h2>
-          <div className="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="hover-lift"><Card title="Plain-English explanations" icon={<Check />}>No tech-speak. We explain what's risky and why, in friendly language.</Card></div>
-            <div className="hover-lift"><Card title="Link & sender checks" icon={<Check />}>Spot spoofed addresses, mismatched domains, and impersonation cues.</Card></div>
-            <div className="hover-lift"><Card title="Copy-paste simple" icon={<Check />}>Works on any device—no install required. Just paste and check.</Card></div>
-            <div className="hover-lift"><Card title="Privacy-first" icon={<Check />}>We don't sell data. Ever. Anonymous by design, messages are not saved.</Card></div>
-            <div className="hover-lift"><Card title="Guided next steps" icon={<Check />}>Unsure what to do? We give you a safe path with scripts you can use.</Card></div>
-            <div className="hover-lift"><Card title="Learning hub" icon={<Check />}>Weekly blog + short videos to stay ahead of new scams.</Card></div>
+          <HeaderEyebrow>Four ways to stay protected</HeaderEyebrow>
+          <h2 className="text-4xl sm:text-4xl font-bold">Scam Awareness for the <span style={{ color: brandYellow }}>Whole Family</span></h2>
+          <div className="mt-8 grid md:grid-cols-2 gap-6">
+            <div className="hover-lift"><Card title="Check Suspicious Messages" icon={<Check />}>Paste a text, email, website, or message and receive a calm, plain-English explanation.</Card></div>
+            <div className="hover-lift"><Card title="Learn the Latest Scams" icon={<Check />}>Stay informed about AI voice cloning, phishing, fake tech support, investment scams, romance scams, and emerging threats.</Card></div>
+            <div className="hover-lift"><Card title="Protect Your Family" icon={<Check />}>Download printable guides, checklists, and resources designed for seniors and the people who care about them.</Card></div>
+            <div className="hover-lift"><Card title="Stay Ahead" icon={<Check />}>Receive ongoing scam alerts, educational content, and practical advice as scams evolve.</Card></div>
           </div>
         </div>
       </section>
@@ -212,12 +195,12 @@ export default function ScamBombLanding() {
       <section id="demo" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
         <div className={`rounded-2xl border ${brandBorder} bg-white/5 p-6 lg:p-10 grid lg:grid-cols-2 gap-8 items-center`}>
           <div>
-            <h3 className="text-3xl font-bold">Try the demo — no signup required!</h3>
-            <p className="mt-3 text-lg leading-relaxed text-white/85">Paste a suspicious message and see how ScamBomb explains it in seconds.</p>
+            <h3 className="text-3xl font-bold">If You Get a <span style={{ color: brandYellow }}>Suspicious Message</span></h3>
+            <p className="mt-3 text-lg leading-relaxed text-white/85">Get a calm explanation in seconds, then explore the guidance and resources that help your family stay protected.</p>
             <div className="mt-6 flex flex-col sm:flex-row gap-3">
-              <a href="#pricing" className="rounded-2xl px-6 py-4 text-lg font-semibold hover-lift btn-press" style={{ backgroundColor: brandYellow, color: "#0B1324" }}>Unlock full protection</a>
-              <a href={appUrl} className="rounded-2xl px-6 py-4 border-2 text-lg font-semibold hover:bg-white/10 hover-lift btn-press" style={{ borderColor: brandYellow, color: brandYellow }}>
-                Try Free!
+              <a href={appUrl} className="rounded-2xl px-6 py-4 text-lg font-semibold hover-lift btn-press" style={{ backgroundColor: brandYellow, color: "#0B1324" }}>Check a Suspicious Message</a>
+              <a href="#pricing" className="rounded-2xl px-6 py-4 border-2 text-lg font-semibold hover:bg-white/10 hover-lift btn-press" style={{ borderColor: brandYellow, color: brandYellow }}>
+                Explore Family Protection
               </a>
             </div>
           </div>
@@ -226,6 +209,32 @@ export default function ScamBombLanding() {
             <li className="flex items-start gap-3"><Check /> Works with screenshots</li>
             <li className="flex items-start gap-3"><Check /> Share results with family in one click</li>
           </ul>
+        </div>
+      </section>
+
+      {/* Authority */}
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+        <div className="rounded-2xl border border-yellow-300/30 bg-yellow-300/5 p-6 lg:p-10">
+          <HeaderEyebrow>Built on real scam investigations</HeaderEyebrow>
+          <h2 className="text-3xl sm:text-4xl font-bold">Knowledge You Can Use <span style={{ color: brandYellow }}>When It Matters</span></h2>
+          <p className="mt-4 max-w-3xl text-lg leading-relaxed text-white/85">
+            Every article, workshop, guide, and feature is built around scams that are actually targeting people today—not hypothetical examples. We explain what happened, why it worked, and how to protect yourself next time.
+          </p>
+        </div>
+      </section>
+
+      {/* Community partnerships */}
+      <section id="partnerships" className="relative py-16" style={{ backgroundImage: "url('/SB-BG-2.png')", backgroundSize: "cover", backgroundAttachment: "fixed" }}>
+        <div className="absolute inset-0 bg-[#0B1324] opacity-80 pointer-events-none z-0"></div>
+        <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
+          <HeaderEyebrow>Community partnerships</HeaderEyebrow>
+          <h2 className="text-3xl sm:text-4xl font-bold">Bringing <span style={{ color: brandYellow }}>Scam Awareness</span> to Communities</h2>
+          <p className="mt-5 text-lg leading-relaxed text-white/85">
+            ScamBomb partners with credit unions, libraries, retirement communities, senior centers, employers, and other community organizations to deliver workshops and educational programs that help protect the people they serve.
+          </p>
+          <a href="/contact" className="mt-7 inline-block rounded-2xl px-6 py-4 text-lg font-semibold hover-lift btn-press" style={{ backgroundColor: brandYellow, color: "#0B1324" }}>
+            Learn About Community Partnerships
+          </a>
         </div>
       </section>
 

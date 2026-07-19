@@ -14,8 +14,8 @@ const montserrat = Montserrat({
 })
 
 export const metadata: Metadata = {
-  title: 'ScamBomb - Stop scams in one click',
-  description: 'Paste any text, email, or SMS. ScamBomb checks red flags, explains the risk in plain English, and tells you exactly what to do next.',
+  title: 'ScamBomb | Helping families recognize scams before they become victims',
+  description: 'ScamBomb helps families recognize scams before they become victims through practical tools, education, and real-world guidance.',
   icons: {
     icon: '/scambomb-favicon-64.png',
     apple: '/ScamBomb-just-the-bomb.png',
@@ -68,7 +68,7 @@ function UniversalFooter() {
         <div className="text-center md:text-left">
           <h4 className="font-semibold text-base mb-3">Newsletter</h4>
           <p className="text-white/90 text-sm md:text-xs font-semibold">
-            🚨 Scammers are getting smarter every week. So are we.
+            Scams keep changing. Stay informed and protect the people you love.
           </p>
           <p className="mt-2 text-white/70 text-sm md:text-xs">
             Join thousands of families getting weekly scam alerts, real stories, and simple protection tips — straight to your inbox.
