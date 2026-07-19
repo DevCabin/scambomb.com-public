@@ -211,7 +211,7 @@ export default function ScamBombLanding() {
         <div className="absolute inset-0 bg-[#0B1324] opacity-80 pointer-events-none z-0"></div>
         <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
           <HeaderEyebrow>Community partnerships</HeaderEyebrow>
-          <h2 className="text-3xl sm:text-4xl font-bold">Bringing Scam Awareness to Communities</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold">Bringing <span style={{ color: brandYellow }}>Scam Awareness</span> to Communities</h2>
           <p className="mt-5 text-lg leading-relaxed text-white/85">
             ScamBomb partners with credit unions, libraries, retirement communities, senior centers, employers, and other community organizations to deliver workshops and educational programs that help protect the people they serve.
           </p>
