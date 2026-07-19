@@ -199,7 +199,7 @@ export default function ScamBombLanding() {
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
         <div className="rounded-2xl border border-yellow-300/30 bg-yellow-300/5 p-6 lg:p-10">
           <HeaderEyebrow>Built on real scam investigations</HeaderEyebrow>
-          <h2 className="text-3xl sm:text-4xl font-bold">Knowledge you can use when it matters</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold">Knowledge You Can Use <span style={{ color: brandYellow }}>When It Matters</span></h2>
           <p className="mt-4 max-w-3xl text-lg leading-relaxed text-white/85">
             Every article, workshop, guide, and feature is built around scams that are actually targeting people today—not hypothetical examples. We explain what happened, why it worked, and how to protect yourself next time.
           </p>
