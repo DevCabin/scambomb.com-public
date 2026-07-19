@@ -143,7 +143,7 @@ export function PricingSection() {
           </div>
         </div>
 
-        <p className="mt-4 text-lg text-white/80">No strings attached, “cancel any time for any reason” guarantee.</p>
+        <p className="mt-4 text-center text-lg text-white/80">No strings attached, “cancel any time for any reason” guarantee.</p>
       </div>
     </section>
   )
