@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-07-24 — Add Google site verification
+
+### Added
+- **`app/layout.tsx`**: Added `google-site-verification` meta tag (`a9wxIt-2UNOlpKNSakyOpYF_UEw-VHgcyPi0orD6uRg`) to the `metadata.other` object for Google Search Console verification.
+
+---
+
 ## 2026-07-19 — v1.3.1 — Family protection homepage repositioning
 
 ### Changed
