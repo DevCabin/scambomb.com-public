@@ -23,6 +23,8 @@ export const metadata: Metadata = {
   },
   other: {
     'facebook-domain-verification': 'tmq14fiwi4rwno7tljlobhqospl9ni',
+    'msvalidate.01': '02A7E29601D8AB879E2CF59B2FCC4260',
+    'google-site-verification': 'a9wxIt-2UNOlpKNSakyOpYF_UEw-VHgcyPi0orD6uRg',
   },
 }
 
