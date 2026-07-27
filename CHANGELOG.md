@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-07-27 — Add Microsoft Clarity tracking
+
+### Added
+- **`app/layout.tsx`**: Added the Microsoft Clarity bootstrap script for project `xt3fqe89pd` through Next.js’s `Script` component with the `afterInteractive` strategy. Clarity now loads asynchronously once across every public-site page without blocking initial rendering.
+
+### Validation
+- Confirmed with `npm run build` (Next.js production build and TypeScript checks pass).
+
+---
+
 ## 2026-07-24 — Add Google site verification
 
 ### Added
