@@ -1,5 +1,17 @@
 # Changelog
 
+## 2026-08-03 — Publish Scam Triage File #003
+
+### Added
+- **`app/blog/scam-triage-file-003-your-computer-is-infected/page.tsx`** — New blog post: *Scam Triage File #003: Your Computer Is Infected*. A real-world scareware cleanup story covering fake Microsoft Defender/McAfee popups, a hijacked browser notification permission as the root cause, a Malwarebytes full scan that found 60 issues, and the critical warning about the phone number on the popup (remote-access scam setup). Includes stat cards, signal breakdown, a "60 issues found" highlight, an 8-step cheat sheet, and a ScamBomb Move CTA.
+- **`app/blog/page.tsx`** — Added the new post to the top of the posts array (newest first), making it the featured post on the blog index.
+- **`app/page.tsx`** — Updated the homepage blog preview: featured the new post #003 with "60 issues found / ~30 min to fix" stats, and refreshed the grid to show #002, #001, and the Older Adult Fraud report.
+
+### Validation
+- Blog post follows the Scam Triage visual quality gate (stat cards, callout boxes, checklist card, CTA block).
+
+---
+
 ## 2026-07-24 — Add Google site verification
 
 ### Added

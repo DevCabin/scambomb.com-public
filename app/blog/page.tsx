@@ -3,6 +3,14 @@ import Link from 'next/link'
 
 const posts = [
   {
+    slug: 'scam-triage-file-003-your-computer-is-infected',
+    title: 'Scam Triage File #003: Your Computer Is Infected',
+    description: 'A real-world scareware cleanup: fake Microsoft Defender and McAfee popups, a hijacked browser notification permission, and the 8-step fix that saved the day.',
+    date: '2026-08-03',
+    tag: 'SCAM TRIAGE',
+    readTime: '9 min read'
+  },
+  {
     slug: 'she-heard-her-daughter-crying-ai-voice-clone-scam',
     title: 'Scam Triage File #002: She Heard Her Daughter Crying for Help. It Wasn\'t Her Daughter.',
     description: 'A Florida woman lost $15,000 to an AI voice clone scam — and every single red flag was catchable. Full playbook breakdown + how to set up a family safe word today.',
