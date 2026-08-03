@@ -256,18 +256,18 @@ export default function ScamBombLanding() {
 
         {/* Featured latest post */}
         <div className="hover-lift mb-6">
-          <a href="/blog/she-heard-her-daughter-crying-ai-voice-clone-scam" className="block rounded-2xl border border-yellow-300/30 bg-yellow-300/5 p-8 hover:bg-yellow-300/10 transition-colors group">
+          <a href="/blog/scam-triage-file-003-your-computer-is-infected" className="block rounded-2xl border border-yellow-300/30 bg-yellow-300/5 p-8 hover:bg-yellow-300/10 transition-colors group">
             <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
               <div className="flex-1">
-                <div className="text-xs font-bold tracking-widest text-yellow-300/70 mb-3">SCAM TRIAGE FILE #002</div>
+                <div className="text-xs font-bold tracking-widest text-yellow-300/70 mb-3">SCAM TRIAGE FILE #003</div>
                 <h3 className="text-2xl font-bold mb-3 group-hover:text-yellow-300 transition-colors">
-                  She Heard Her Daughter Crying for Help. It Wasn’t Her Daughter.
+                  Your Computer Is Infected
                 </h3>
                 <p className="text-white/70 mb-4 max-w-2xl">
-                  A Florida woman lost $15,000 to an AI voice clone scam — and every single red flag was catchable. The full playbook, the 7 red flags, and how to set up a family safe word today.
+                  A real-world scareware cleanup: fake Microsoft Defender and McAfee popups, a hijacked browser notification permission, and the 8-step fix that saved the day.
                 </p>
                 <div className="flex flex-wrap gap-6 text-sm">
-                  <span className="text-white/50">May 23, 2026</span>
+                  <span className="text-white/50">August 3, 2026</span>
                   <span className="flex items-center gap-2 text-yellow-300 font-semibold">
                     Read the triage file <span aria-hidden="true">→</span>
                   </span>
@@ -275,12 +275,12 @@ export default function ScamBombLanding() {
               </div>
               <div className="flex gap-4 sm:flex-col sm:items-end shrink-0">
                 <div className="text-right">
-                  <div className="text-3xl font-extrabold text-red-400">$15,000</div>
-                  <div className="text-xs text-white/40 uppercase tracking-wider">Loss</div>
+                  <div className="text-3xl font-extrabold text-red-400">60</div>
+                  <div className="text-xs text-white/40 uppercase tracking-wider">Issues found</div>
                 </div>
                 <div className="text-right">
-                  <div className="text-3xl font-extrabold text-amber-400">~3 sec</div>
-                  <div className="text-xs text-white/40 uppercase tracking-wider">Audio needed to clone</div>
+                  <div className="text-3xl font-extrabold text-amber-400">~30 min</div>
+                  <div className="text-xs text-white/40 uppercase tracking-wider">Time to fix</div>
                 </div>
               </div>
             </div>
@@ -288,9 +288,9 @@ export default function ScamBombLanding() {
         </div>
 
         <div className="grid md:grid-cols-3 gap-6">
+          <div className="hover-lift"><PostCard tag="SCAM TRIAGE" title="Scam Triage File #002: She Heard Her Daughter Crying for Help" slug="she-heard-her-daughter-crying-ai-voice-clone-scam" excerpt="A Florida woman lost $15,000 to an AI voice clone scam — and every red flag was catchable." /></div>
           <div className="hover-lift"><PostCard tag="SCAM TRIAGE" title="Scam Triage File #001: The Android That “Had 3 Viruses” — But Didn’t" slug="scam-triage-file-001-android-had-3-viruses-but-didnt" excerpt="Real incident: fake Android virus popups, Safe Mode diagnosis, and a 15-minute recovery." /></div>
           <div className="hover-lift"><PostCard tag="SPECIAL REPORT" title="Older Adult Fraud Is Now a Multi-Billion-Dollar Crisis" slug="older-adult-fraud-report-2024-2025" excerpt="$4.9B in losses, +43% year-over-year, and the AI voice cloning numbers everyone should know." /></div>
-          <div className="hover-lift"><PostCard tag="ALERT" title="New USPS delivery scam: what to do" slug="new-usps-delivery-scam-what-to-do" excerpt="Stay informed on the latest USPS scams and how to respond safely." /></div>
         </div>
         <div className="mt-6">
           <a href="/blog" className="underline decoration-white/40 underline-offset-4 hover:decoration-white">Read all posts</a>
