@@ -81,6 +81,7 @@ export default function ScamGuideOptIn() {
           <div className="text-3xl mb-2" aria-hidden="true">✓</div>
           <h3 className="text-xl font-bold text-white">Check your inbox</h3>
           <p className="mt-2 text-white/70">Your free “Is This a Scam?” checklist is on its way.</p>
+          <a href="/resources/is-this-a-scam-checklist/" className="mt-5 inline-flex rounded-xl bg-yellow-300 px-5 py-3 font-bold text-[#0B1324] hover:bg-yellow-200">Open printable checklist →</a>
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="mx-auto max-w-xl">
