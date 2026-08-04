@@ -1,39 +1,9 @@
 import Link from 'next/link'
-import Script from 'next/script'
+import ScamGuideOptIn from '../../../components/ScamGuideOptIn'
 
 export const metadata = {
   title: 'Is This a Scam? How to Spot Fake Texts, Emails & Calls | ScamBomb',
   description: 'Got a weird text? Use this 10-second check to know if it’s a scam. Learn the five red flags, what to do next, and how to protect your family.',
-}
-
-function ScamGuideOptIn({ placement }: { placement: 'mid' | 'end' }) {
-  const iframeId = `inline-n7tvefZehc59m50ORmP8-${placement}`
-  return (
-    <section className="my-12 not-prose rounded-2xl border border-yellow-300/30 bg-yellow-300/5 p-5 sm:p-8">
-      <div className="mb-5 text-center">
-        <div className="text-xs font-bold tracking-widest text-yellow-300/80 uppercase mb-2">FREE GUIDE</div>
-        <h2 className="text-2xl font-bold text-white">Get the “Is This a Scam?” Checklist</h2>
-        <p className="mt-2 text-white/70">Keep the 10-second scam check handy. Print it, save it, and share it with your family.</p>
-      </div>
-      <iframe
-        src="https://api.leadconnectorhq.com/widget/form/n7tvefZehc59m50ORmP8"
-        style={{ width: '100%', height: '460px', border: 'none', borderRadius: '4px' }}
-        id={iframeId}
-        data-layout="{'id':'INLINE'}"
-        data-trigger-type="alwaysShow"
-        data-trigger-value=""
-        data-activation-type="alwaysActivated"
-        data-activation-value=""
-        data-deactivation-type="neverDeactivate"
-        data-deactivation-value=""
-        data-form-name="Is This a Scam? Free Guide Opt-In"
-        data-height="460"
-        data-layout-iframe-id={iframeId}
-        data-form-id="n7tvefZehc59m50ORmP8"
-        title="Is This a Scam? Free Guide Opt-In"
-      />
-    </section>
-  )
 }
 
 export default function BlogPost() {
@@ -74,7 +44,7 @@ export default function BlogPost() {
           <p>If a message asks for any of these, it&apos;s a scam. Period.</p>
         </div>
 
-        <ScamGuideOptIn placement="mid" />
+        <ScamGuideOptIn />
 
         <div className="prose prose-invert prose-lg max-w-none [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:mt-10 [&_h2]:mb-4 [&_h3]:text-xl [&_h3]:font-bold [&_h3]:mt-8 [&_h3]:mb-3 [&_p]:text-white/80 [&_p]:leading-relaxed [&_p]:mb-5 [&_li]:text-white/80 [&_li]:leading-relaxed">
           <h2>What Scammers Look Like in 2024–2025</h2>
@@ -132,7 +102,7 @@ export default function BlogPost() {
           <ul><li>The five-question scam check</li><li>What to do if you think it&apos;s a scam</li><li>What to do if you already clicked</li><li>The top five scams to watch for</li><li>Quick-reference contact numbers for USPS, IRS, SSA, and your bank</li></ul>
         </div>
 
-        <ScamGuideOptIn placement="end" />
+        <ScamGuideOptIn />
 
         <div className="prose prose-invert prose-lg max-w-none [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:mt-10 [&_h2]:mb-4 [&_p]:text-white/80 [&_p]:leading-relaxed [&_p]:mb-5">
           <h2>Sources &amp; Further Reading</h2>
@@ -142,7 +112,6 @@ export default function BlogPost() {
 
         <footer className="mt-12 pt-8 border-t border-white/10"><Link href="/blog" className="text-yellow-300 hover:text-yellow-400 underline underline-offset-4">← Back to all posts</Link></footer>
       </article>
-      <Script src="https://link.msgsndr.com/js/form_embed.js" strategy="lazyOnload" />
     </div>
   )
 }
