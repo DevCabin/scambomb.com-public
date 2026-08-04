@@ -3,6 +3,14 @@ import Link from 'next/link'
 
 const posts = [
   {
+    slug: 'is-this-a-scam',
+    title: 'Is This a Scam? How to Instantly Spot Fake Texts, Emails & Calls',
+    description: 'Use the 10-second check to spot the five red flags in suspicious messages, emails, and calls—and learn what to do next.',
+    date: '2026-08-04',
+    tag: 'GUIDE',
+    readTime: '12 min read'
+  },
+  {
     slug: 'scam-triage-file-003-your-computer-is-infected',
     title: 'Scam Triage File #003: Your Computer Is Infected',
     description: 'A real-world scareware cleanup: fake Microsoft Defender and McAfee popups, a hijacked browser notification permission, and the 8-step fix that saved the day.',
