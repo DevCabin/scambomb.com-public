@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-08-20 — Add credit union partnership inquiry form
+
+### Changed
+- **`app/credit-unions/page.tsx`** — Replaced credit union contact links with an embedded Formspree inquiry form at the bottom of the page.
+- Added fields for name, email, phone, financial institution, address, preferred contact time, and preferred contact method. Phone is required.
+
 ## 2026-08-20 — Add credit union partnership page
 
 ### Added

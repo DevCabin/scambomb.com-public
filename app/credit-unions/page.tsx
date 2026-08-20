@@ -77,7 +77,7 @@ export default function CreditUnionsPage() {
                 By combining plain-English education, practical family-protection resources, live workshops, and easy-to-use scam-checking software, ScamBomb helps credit unions reach members at the moment they are most vulnerable—before money leaves their accounts.
               </p>
               <a
-                href="/contact"
+                href="#partnership-form"
                 className="mt-8 inline-flex items-center justify-center rounded-xl bg-[#F5C84C] px-6 py-4 text-base font-bold text-[#0B1324] transition-colors hover:bg-[#F5C84C]/90 focus:outline-none focus:ring-2 focus:ring-[#F5C84C] focus:ring-offset-2 focus:ring-offset-[#0B1324]"
               >
                 Discuss a Member Protection Program →
@@ -238,15 +238,61 @@ export default function CreditUnionsPage() {
         </div>
       </section>
 
-      {/* Closing CTA */}
-      <section className="border-t border-white/10 px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-        <div className="mx-auto max-w-4xl rounded-3xl bg-[#F5C84C] px-6 py-12 text-center text-[#0B1324] sm:px-12">
-          <h2 className="text-3xl font-black uppercase tracking-tight sm:text-4xl">Help your members take the next safe step.</h2>
-          <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed">Let’s discuss how ScamBomb could support your credit union’s fraud-prevention, member-education, and community-outreach efforts.</p>
-          <a href="/contact" className="mt-8 inline-flex rounded-xl bg-[#0B1324] px-7 py-4 font-bold text-[#F5C84C] transition-colors hover:bg-[#0B1324]/90">
-            Schedule a Brief Conversation →
-          </a>
-          <p className="mx-auto mt-6 max-w-xl text-sm text-[#0B1324]/70">If you are not the person responsible for fraud education, community outreach, or member experience, we would appreciate being connected with the appropriate member of your team.</p>
+      {/* Partnership form */}
+      <section id="partnership-form" className="border-t border-white/10 px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+          <div>
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#F5C84C]">Start a conversation</p>
+            <h2 className="mt-4 text-3xl font-black uppercase tracking-tight sm:text-4xl">Help your members take the next safe step.</h2>
+            <p className="mt-5 text-lg leading-relaxed text-white/70">Let’s discuss how ScamBomb could support your credit union’s fraud-prevention, member-education, and community-outreach efforts.</p>
+            <p className="mt-5 text-sm leading-relaxed text-white/50">If you are not the person responsible for fraud education, community outreach, or member experience, we would appreciate being connected with the appropriate member of your team.</p>
+          </div>
+
+          <form
+            action="https://formspree.io/f/xppablrr"
+            method="POST"
+            className="rounded-3xl border border-white/10 bg-white/[0.04] p-6 sm:p-8"
+          >
+            <div className="grid gap-5 sm:grid-cols-2">
+              <div>
+                <label htmlFor="credit-union-name" className="mb-2 block text-sm font-semibold text-white/90">Name</label>
+                <input id="credit-union-name" name="name" type="text" autoComplete="name" className="w-full rounded-xl border border-white/15 bg-white/10 px-4 py-3 text-white placeholder:text-white/40 focus:border-[#F5C84C] focus:outline-none focus:ring-2 focus:ring-[#F5C84C]/40" />
+              </div>
+              <div>
+                <label htmlFor="credit-union-email" className="mb-2 block text-sm font-semibold text-white/90">Email</label>
+                <input id="credit-union-email" name="email" type="email" autoComplete="email" className="w-full rounded-xl border border-white/15 bg-white/10 px-4 py-3 text-white placeholder:text-white/40 focus:border-[#F5C84C] focus:outline-none focus:ring-2 focus:ring-[#F5C84C]/40" />
+              </div>
+              <div>
+                <label htmlFor="credit-union-phone" className="mb-2 block text-sm font-semibold text-white/90">Phone <span className="text-[#F5C84C]">*</span></label>
+                <input id="credit-union-phone" name="phone" type="tel" autoComplete="tel" required className="w-full rounded-xl border border-white/15 bg-white/10 px-4 py-3 text-white placeholder:text-white/40 focus:border-[#F5C84C] focus:outline-none focus:ring-2 focus:ring-[#F5C84C]/40" />
+              </div>
+              <div>
+                <label htmlFor="financial-institution" className="mb-2 block text-sm font-semibold text-white/90">Name of Financial Institution</label>
+                <input id="financial-institution" name="financial_institution" type="text" autoComplete="organization" className="w-full rounded-xl border border-white/15 bg-white/10 px-4 py-3 text-white placeholder:text-white/40 focus:border-[#F5C84C] focus:outline-none focus:ring-2 focus:ring-[#F5C84C]/40" />
+              </div>
+              <div className="sm:col-span-2">
+                <label htmlFor="credit-union-address" className="mb-2 block text-sm font-semibold text-white/90">Address</label>
+                <input id="credit-union-address" name="address" type="text" autoComplete="street-address" className="w-full rounded-xl border border-white/15 bg-white/10 px-4 py-3 text-white placeholder:text-white/40 focus:border-[#F5C84C] focus:outline-none focus:ring-2 focus:ring-[#F5C84C]/40" />
+              </div>
+              <div>
+                <label htmlFor="best-time-to-contact" className="mb-2 block text-sm font-semibold text-white/90">Best time to contact</label>
+                <input id="best-time-to-contact" name="best_time_to_contact" type="text" placeholder="e.g. Weekday mornings" className="w-full rounded-xl border border-white/15 bg-white/10 px-4 py-3 text-white placeholder:text-white/40 focus:border-[#F5C84C] focus:outline-none focus:ring-2 focus:ring-[#F5C84C]/40" />
+              </div>
+              <div>
+                <label htmlFor="best-method-of-contact" className="mb-2 block text-sm font-semibold text-white/90">Best method of contact</label>
+                <select id="best-method-of-contact" name="best_method_of_contact" defaultValue="" className="w-full rounded-xl border border-white/15 bg-[#17233a] px-4 py-3 text-white focus:border-[#F5C84C] focus:outline-none focus:ring-2 focus:ring-[#F5C84C]/40">
+                  <option value="" disabled>Select one</option>
+                  <option value="email">Email</option>
+                  <option value="call">Call</option>
+                  <option value="text">Text</option>
+                  <option value="in_person">In person</option>
+                </select>
+              </div>
+            </div>
+            <button type="submit" className="mt-6 w-full rounded-xl bg-[#F5C84C] px-6 py-4 font-bold text-[#0B1324] transition-colors hover:bg-[#F5C84C]/90 focus:outline-none focus:ring-2 focus:ring-[#F5C84C] focus:ring-offset-2 focus:ring-offset-[#0B1324]">
+              Schedule a Brief Conversation →
+            </button>
+          </form>
         </div>
       </section>
     </div>
