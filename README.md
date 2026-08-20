@@ -1,7 +1,7 @@
 # ScamBomb.com — Helping Families Recognize Scams Before They Become Victims
 
 **Version**: 1.3.1
-**Last Updated**: July 19, 2026
+**Last Updated**: August 20, 2026
 
 ## 🎯 Mission & Goals
 
@@ -72,6 +72,9 @@ ScamBomb is more than a message checker. It provides:
 - **Stay Safe**: Free plan with five scam checks each month and educational resources
 - **Stay Protected**: Standard plan with unlimited message analysis and ongoing protection resources
 - **Senior Protection**: The same ongoing protection with locked-in pricing for adults 60+
+
+### Credit Union Partnerships
+- **Member protection page**: `/credit-unions` explains how credit unions can use ScamBomb software, workshops, and family resources as an additional layer of early scam education and intervention.
 
 ## 🚀 Getting Started
 

@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-08-20 — Add credit union partnership page
+
+### Added
+- **`app/credit-unions/page.tsx`** — New `/credit-unions` landing page for credit union leaders and teams responsible for fraud education, member experience, and community outreach.
+- Added partnership positioning around early scam intervention, member and family education, workshops, privacy boundaries, pilot-program structure, and FAQs.
+- Added responsive visual sections, benefit cards, an accessible FAQ accordion, FBI 2025 IC3 Annual Report attribution, and contact CTAs.
+
 ## 2026-08-03 — Publish Scam Triage File #003
 
 ### Added
