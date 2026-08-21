@@ -10,7 +10,7 @@ const memberBenefits = [
   'A simple way to check suspicious texts, emails, links, and screenshots',
   'A danger assessment that explains the warning signs and recommends what to do next',
   'Calm, practical workshops delivered through Zoom or in person by request',
-  'Optional monthly web-based education about emerging scams and AI-enabled fraud',
+  'Optional monthly email updates about emerging scams and AI-enabled fraud',
 ]
 
 const programBenefits = [
@@ -138,15 +138,12 @@ export default function CreditUnionsPage() {
               <h3 className="mt-3 text-2xl font-black uppercase">A clear next step</h3>
               <p className="mt-4 leading-relaxed">Members can check suspicious texts, emails, links, and screenshots. ScamBomb provides a danger assessment, explains the warning signs, and recommends what to do next.</p>
             </div>
-            {memberBenefits.slice(0, 4).map((benefit, index) => (
+            {memberBenefits.map((benefit, index) => (
               <div key={benefit} className="rounded-2xl border border-white/10 bg-[#0B1324] p-7">
                 <div className="text-2xl font-black text-[#F5C84C]">0{index + 1}</div>
                 <p className="mt-4 leading-relaxed text-white/75">{benefit}</p>
               </div>
             ))}
-          </div>
-          <div className="mx-auto mt-5 max-w-3xl rounded-2xl border border-white/10 bg-[#0B1324] p-7 text-center text-lg leading-relaxed text-white/75">
-            {memberBenefits[4]}
           </div>
         </div>
       </section>

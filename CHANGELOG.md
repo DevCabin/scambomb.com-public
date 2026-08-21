@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-08-21 — Refine credit union education card
+
+### Changed
+- **`app/credit-unions/page.tsx`** — Promoted the optional monthly education item to the standard numbered fifth card and clarified that it is delivered through email updates.
+
 ## 2026-08-21 — Require contact details on credit union form
 
 ### Changed
