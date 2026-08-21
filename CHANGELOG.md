@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-08-21 — Reorder credit union member benefits
+
+### Changed
+- **`app/credit-unions/page.tsx`** — Removed the first numbered benefit so the app-access and danger-assessment cards now lead the numbered sequence as 01 and 02.
+
 ## 2026-08-21 — Add credit union fraud-loss callout
 
 ### Added
