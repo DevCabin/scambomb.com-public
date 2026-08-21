@@ -1,5 +1,43 @@
 # Changelog
 
+## 2026-08-21 — Refine credit union member benefits
+
+### Changed
+- **`app/credit-unions/page.tsx`** — Updated the ScamBomb app and danger-assessment benefit cards with clearer member-access and confidence-focused messaging.
+
+## 2026-08-21 — Link credit union report source
+
+### Changed
+- **`app/credit-unions/page.tsx`** — Linked the FBI 2025 IC3 Annual Report attribution to the official IC3 PDF in a new tab.
+
+## 2026-08-21 — Refine credit union risk checklist
+
+### Changed
+- **`app/credit-unions/page.tsx`** — Removed the gift-card purchase item from the member protection checklist.
+
+## 2026-08-21 — Refine credit union education card
+
+### Changed
+- **`app/credit-unions/page.tsx`** — Promoted the optional monthly education item to the standard numbered fifth card and clarified that it is delivered through email updates.
+
+## 2026-08-21 — Require contact details on credit union form
+
+### Changed
+- **`app/credit-unions/page.tsx`** — Made Name and Email required fields on the credit union partnership inquiry form, alongside Phone.
+
+## 2026-08-20 — Add credit union partnership inquiry form
+
+### Changed
+- **`app/credit-unions/page.tsx`** — Replaced credit union contact links with an embedded Formspree inquiry form at the bottom of the page.
+- Added fields for name, email, phone, financial institution, address, preferred contact time, and preferred contact method. Phone is required.
+
+## 2026-08-20 — Add credit union partnership page
+
+### Added
+- **`app/credit-unions/page.tsx`** — New `/credit-unions` landing page for credit union leaders and teams responsible for fraud education, member experience, and community outreach.
+- Added partnership positioning around early scam intervention, member and family education, workshops, privacy boundaries, pilot-program structure, and FAQs.
+- Added responsive visual sections, benefit cards, an accessible FAQ accordion, FBI 2025 IC3 Annual Report attribution, and contact CTAs.
+
 ## 2026-08-03 — Publish Scam Triage File #003
 
 ### Added
