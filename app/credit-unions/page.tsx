@@ -107,6 +107,18 @@ export default function CreditUnionsPage() {
         </div>
       </section>
 
+      {/* Key statistic callout */}
+      <section className="border-b border-white/10 bg-[#F5C84C] text-[#0B1324]">
+        <div className="mx-auto max-w-5xl px-4 py-10 text-center sm:px-6 sm:py-12 lg:px-8">
+          <p className="text-xl font-black leading-tight sm:text-2xl">
+            Did you know the average reported loss for a fraud victim over 60 was a staggering $38,500 in 2025?
+          </p>
+          <p className="mx-auto mt-4 max-w-4xl text-base leading-relaxed text-[#0B1324]/80 sm:text-lg">
+            According to the FBI’s 2025 IC3 Annual Report, older Americans reported more than $7.7 billion in total losses—making fraud prevention one of the most urgent member-education challenges facing credit unions today.
+          </p>
+        </div>
+      </section>
+
       {/* Why this matters */}
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">

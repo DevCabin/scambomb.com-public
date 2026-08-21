@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-08-21 — Add credit union fraud-loss callout
+
+### Added
+- **`app/credit-unions/page.tsx`** — Added a highlighted callout between the hero and FBI statistics sections emphasizing the $38,500 average reported loss for fraud victims over 60 and the $7.7 billion in reported losses.
+
 ## 2026-08-21 — Refine credit union member benefits
 
 ### Changed
