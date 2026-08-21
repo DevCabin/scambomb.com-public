@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-08-21 — Refine credit union member benefits
+
+### Changed
+- **`app/credit-unions/page.tsx`** — Updated the ScamBomb app and danger-assessment benefit cards with clearer member-access and confidence-focused messaging.
+
 ## 2026-08-21 — Link credit union report source
 
 ### Changed

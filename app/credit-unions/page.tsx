@@ -7,8 +7,8 @@ export const metadata: Metadata = {
 
 const memberBenefits = [
   'Plain-English scam guides, family checklists, action plans, and downloadable resources',
-  'A simple way to check suspicious texts, emails, links, and screenshots',
-  'A danger assessment that explains the warning signs and recommends what to do next',
+  'The ScamBomb app provides a simple way to check suspicious texts, emails, links, and screenshots. Members get full access.',
+  'A trustworthy danger assessment that explains the warning signs and gives them confidence in what to do next',
   'Calm, practical workshops delivered through Zoom or in person by request',
   'Optional monthly email updates about emerging scams and AI-enabled fraud',
 ]
