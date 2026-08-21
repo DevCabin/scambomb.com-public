@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-08-21 — Require contact details on credit union form
+
+### Changed
+- **`app/credit-unions/page.tsx`** — Made Name and Email required fields on the credit union partnership inquiry form, alongside Phone.
+
 ## 2026-08-20 — Add credit union partnership inquiry form
 
 ### Changed

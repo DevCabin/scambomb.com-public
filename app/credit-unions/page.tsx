@@ -255,12 +255,12 @@ export default function CreditUnionsPage() {
           >
             <div className="grid gap-5 sm:grid-cols-2">
               <div>
-                <label htmlFor="credit-union-name" className="mb-2 block text-sm font-semibold text-white/90">Name</label>
-                <input id="credit-union-name" name="name" type="text" autoComplete="name" className="w-full rounded-xl border border-white/15 bg-white/10 px-4 py-3 text-white placeholder:text-white/40 focus:border-[#F5C84C] focus:outline-none focus:ring-2 focus:ring-[#F5C84C]/40" />
+                <label htmlFor="credit-union-name" className="mb-2 block text-sm font-semibold text-white/90">Name <span className="text-[#F5C84C]">*</span></label>
+                <input id="credit-union-name" name="name" type="text" autoComplete="name" required className="w-full rounded-xl border border-white/15 bg-white/10 px-4 py-3 text-white placeholder:text-white/40 focus:border-[#F5C84C] focus:outline-none focus:ring-2 focus:ring-[#F5C84C]/40" />
               </div>
               <div>
-                <label htmlFor="credit-union-email" className="mb-2 block text-sm font-semibold text-white/90">Email</label>
-                <input id="credit-union-email" name="email" type="email" autoComplete="email" className="w-full rounded-xl border border-white/15 bg-white/10 px-4 py-3 text-white placeholder:text-white/40 focus:border-[#F5C84C] focus:outline-none focus:ring-2 focus:ring-[#F5C84C]/40" />
+                <label htmlFor="credit-union-email" className="mb-2 block text-sm font-semibold text-white/90">Email <span className="text-[#F5C84C]">*</span></label>
+                <input id="credit-union-email" name="email" type="email" autoComplete="email" required className="w-full rounded-xl border border-white/15 bg-white/10 px-4 py-3 text-white placeholder:text-white/40 focus:border-[#F5C84C] focus:outline-none focus:ring-2 focus:ring-[#F5C84C]/40" />
               </div>
               <div>
                 <label htmlFor="credit-union-phone" className="mb-2 block text-sm font-semibold text-white/90">Phone <span className="text-[#F5C84C]">*</span></label>
