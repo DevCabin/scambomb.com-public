@@ -118,7 +118,17 @@ export default function CreditUnionsPage() {
             <p>According to the FBI’s 2025 IC3 Annual Report, Americans over 60 reported more than $7.7 billion in total losses.</p>
             <p>Behind those numbers are members who believed they were helping a grandchild, protecting a compromised bank account, paying a legitimate business, accepting a job, or responding to someone they trusted.</p>
             <p>By the time a fraudulent payment reaches a credit union, the member may already be convinced that the request is legitimate. Scammers create urgency, impersonate trusted organizations, exploit family relationships, and increasingly use AI-generated voices, images, and messages to make their stories more believable.</p>
-            <p className="text-sm text-white/50">Source: FBI 2025 IC3 Annual Report</p>
+            <p className="text-sm text-white/50">
+              Source:{' '}
+              <a
+                href="https://www.ic3.gov/AnnualReport/Reports/2025_IC3Report.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#F5C84C] underline underline-offset-4 hover:text-[#F5C84C]/80"
+              >
+                FBI 2025 IC3 Annual Report
+              </a>
+            </p>
           </div>
         </div>
       </section>

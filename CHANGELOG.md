@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-08-21 — Link credit union report source
+
+### Changed
+- **`app/credit-unions/page.tsx`** — Linked the FBI 2025 IC3 Annual Report attribution to the official IC3 PDF in a new tab.
+
 ## 2026-08-21 — Refine credit union risk checklist
 
 ### Changed
