@@ -95,7 +95,7 @@ export default function CreditUnionsPage() {
                 Members need a calm, trusted second opinion at the critical moment.
               </p>
               <ul className="mt-7 space-y-4 text-white/75">
-                {['Before they click the link', 'Before they provide personal information', 'Before they purchase the gift cards', 'Before they transfer the money'].map((item) => (
+                {['Before they click the link', 'Before they provide personal information', 'Before they transfer the money'].map((item) => (
                   <li key={item} className="flex gap-3">
                     <span className="mt-1 text-[#F5C84C]" aria-hidden="true">✦</span>
                     <span>{item}</span>

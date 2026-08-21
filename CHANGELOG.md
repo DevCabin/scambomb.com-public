@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-08-21 — Refine credit union risk checklist
+
+### Changed
+- **`app/credit-unions/page.tsx`** — Removed the gift-card purchase item from the member protection checklist.
+
 ## 2026-08-21 — Refine credit union education card
 
 ### Changed
