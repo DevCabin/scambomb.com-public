@@ -2,17 +2,33 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Scam Protection for Credit Unions | ScamBomb',
-  description: 'Help credit union members recognize scams before money leaves their accounts with ScamBomb education, workshops, family resources, and scam-checking tools.',
+  description: 'A ready-made monthly member education and protection program for credit unions: scam updates, family worksheets, live Zoom workshops, senior technology guides, and scam-checking tools.',
 }
 
 const memberBenefits = [
-  'The ScamBomb app provides a simple way to check suspicious texts, emails, links, and screenshots. Members get full access.',
-  'A trustworthy danger assessment that explains the warning signs and gives them confidence in what to do next',
-  'Calm, practical workshops delivered through Zoom or in person by request',
-  'Optional monthly email updates about emerging scams and AI-enabled fraud',
+  {
+    title: 'Monthly scam-prevention email',
+    body: 'Timely scam warnings and simple, easy-to-remember protection tips.',
+  },
+  {
+    title: 'Printable family worksheet',
+    body: 'A practical resource members can download, discuss, and share with the people helping protect them.',
+  },
+  {
+    title: 'Monthly live Zoom workshop',
+    body: 'Plain-English instruction, current scam examples, and live member Q&A.',
+  },
+  {
+    title: 'Anytime tools and resources',
+    body: 'Scam-checking software, educational guides, warning-sign checklists, and practical next steps.',
+  },
 ]
 
 const programBenefits = [
+  {
+    title: 'Ready-made ongoing education',
+    body: 'Provide useful fraud-prevention content every month without asking your staff to research, write, design, and present it internally.',
+  },
   {
     title: 'A trusted second opinion',
     body: 'Give members a resource they can consult while they are still deciding what to do—before they click, reply, or send money.',
@@ -31,6 +47,13 @@ const programBenefits = [
   },
 ]
 
+const partnershipTiers = [
+  { members: 'Up to 2,000 covered members', price: '$1,250/month' },
+  { members: 'Up to 5,000 covered members', price: '$2,000/month' },
+  { members: 'Up to 10,000 covered members', price: '$3,000/month' },
+  { members: 'More than 10,000', price: 'Custom pricing' },
+]
+
 const faqs = [
   {
     question: 'How does ScamBomb fit with our existing fraud-prevention work?',
@@ -42,11 +65,15 @@ const faqs = [
   },
   {
     question: 'Can you provide a workshop for our members?',
-    answer: 'Yes. Zoom workshops are available, and in-person presentations can be arranged by request.',
+    answer: 'Every partnership includes a monthly live Zoom workshop with member Q&A. In-person presentations can also be arranged for an additional fee.',
   },
   {
-    question: 'Can we start with a pilot program?',
-    answer: 'Yes. A credit union can begin with a defined member group, workshop, or education campaign and evaluate participation and feedback before discussing a broader rollout.',
+    question: 'What do our members receive each month?',
+    answer: 'Members receive a timely scam-prevention email, a printable family worksheet, a live Zoom workshop, ongoing educational resources, senior technology guides, and access to ScamBomb’s scam-checking tools.',
+  },
+  {
+    question: 'How is partnership pricing structured?',
+    answer: 'Partnerships are based on the number of covered members and run for 12 months, billed monthly. Plans begin at $1,250 per month for up to 2,000 covered members.',
   },
   {
     question: 'Who is ScamBomb designed for?',
@@ -70,37 +97,33 @@ export default function CreditUnionsPage() {
                 <span className="text-[#F5C84C]">BEFORE MONEY MOVES</span>
               </h1>
               <p className="mt-7 max-w-2xl text-xl leading-relaxed text-white/80 sm:text-2xl">
-                ScamBomb gives older members and their families somewhere trustworthy to turn when a suspicious text, email, link, screenshot, phone call, or urgent payment request arrives.
+                ScamBomb gives your credit union a ready-made monthly member education and protection program. Members receive timely scam updates, printable family worksheets, live Zoom workshops, practical senior technology guides, and access to scam-checking tools when something feels wrong.
               </p>
               <p className="mt-5 max-w-2xl text-lg leading-relaxed text-white/65">
-                By combining plain-English education, practical family-protection resources, live workshops, and easy-to-use scam-checking software, ScamBomb helps credit unions reach members at the moment they are most vulnerable—before money leaves their accounts.
+                For your institution, that means ongoing fraud education without requiring your staff to create and maintain every resource internally—helping protect member savings, reduce pressure on frontline teams, and strengthen member trust.
               </p>
               <a
                 href="#partnership-form"
                 className="mt-8 inline-flex items-center justify-center rounded-xl bg-[#F5C84C] px-6 py-4 text-base font-bold text-[#0B1324] transition-colors hover:bg-[#F5C84C]/90 focus:outline-none focus:ring-2 focus:ring-[#F5C84C] focus:ring-offset-2 focus:ring-offset-[#0B1324]"
               >
-                Discuss a Member Protection Program →
+                Discuss a Partnership →
               </a>
             </div>
 
             <div className="rounded-3xl border border-[#F5C84C]/30 bg-gradient-to-br from-[#F5C84C]/15 to-white/[0.03] p-7 sm:p-9">
               <div className="mb-6 flex items-start justify-between gap-4">
                 <span className="rounded-full bg-[#F5C84C] px-3 py-1 text-xs font-black uppercase tracking-wider text-[#0B1324]">
-                  The moment that matters
+                  Which call?
                 </span>
-                <span className="text-3xl" aria-hidden="true">🛡️</span>
+                <span className="text-3xl" aria-hidden="true">📞</span>
               </div>
               <p className="text-2xl font-bold leading-tight text-white sm:text-3xl">
-                Members need a calm, trusted second opinion at the critical moment.
+                Which call would your team rather receive?
               </p>
-              <ul className="mt-7 space-y-4 text-white/75">
-                {['Before they click the link', 'Before they provide personal information', 'Before they transfer the money'].map((item) => (
-                  <li key={item} className="flex gap-3">
-                    <span className="mt-1 text-[#F5C84C]" aria-hidden="true">✦</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
+              <div className="mt-7 space-y-4 text-white/75">
+                <p>A member thanking you for helping them stop a scam—or a devastated member asking what can be done after the money is gone?</p>
+                <p className="font-semibold text-[#F5C84C]">ScamBomb helps make the next call a thank-you—not a fraud report.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -126,8 +149,7 @@ export default function CreditUnionsPage() {
             <h2 className="mt-4 text-3xl font-black uppercase tracking-tight sm:text-4xl">The scam often succeeds before the financial transaction ever begins.</h2>
           </div>
           <div className="space-y-5 text-lg leading-relaxed text-white/75">
-            <p>According to the FBI’s 2025 IC3 Annual Report, Americans over 60 reported more than $7.7 billion in total losses.</p>
-            <p>Behind those numbers are members who believed they were helping a grandchild, protecting a compromised bank account, paying a legitimate business, accepting a job, or responding to someone they trusted.</p>
+            <p>Behind the reported losses are members who believed they were helping a grandchild, protecting a compromised bank account, paying a legitimate business, accepting a job, or responding to someone they trusted.</p>
             <p>By the time a fraudulent payment reaches a credit union, the member may already be convinced that the request is legitimate. Scammers create urgency, impersonate trusted organizations, exploit family relationships, and increasingly use AI-generated voices, images, and messages to make their stories more believable.</p>
             <p className="text-sm text-white/50">
               Source:{' '}
@@ -148,24 +170,23 @@ export default function CreditUnionsPage() {
       <section className="border-y border-white/10 bg-white/[0.03]">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#F5C84C]">One layer of early intervention</p>
-            <h2 className="mt-4 text-3xl font-black uppercase tracking-tight sm:text-4xl">Software, education, and practical resources</h2>
-            <p className="mt-5 text-lg leading-relaxed text-white/70">ScamBomb is more than a scam-checking application. It combines tools and education to help members recognize danger and take the next safe step.</p>
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#F5C84C]">What members receive every month</p>
+            <h2 className="mt-4 text-3xl font-black uppercase tracking-tight sm:text-4xl">A complete member education and protection program</h2>
+            <p className="mt-5 text-lg leading-relaxed text-white/70">ScamBomb combines ongoing education, practical resources, and scam-checking tools into one monthly program your members can rely on.</p>
           </div>
 
-          <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-            <div className="rounded-2xl border border-[#F5C84C]/30 bg-[#F5C84C] p-7 text-[#0B1324] md:col-span-2 lg:col-span-1">
-              <p className="text-sm font-black uppercase tracking-wider">For members</p>
-              <h3 className="mt-3 text-2xl font-black uppercase">A clear next step</h3>
-              <p className="mt-4 leading-relaxed">Members can check suspicious texts, emails, links, and screenshots. ScamBomb provides a danger assessment, explains the warning signs, and recommends what to do next.</p>
-            </div>
-            {memberBenefits.map((benefit, index) => (
-              <div key={benefit} className="rounded-2xl border border-white/10 bg-[#0B1324] p-7">
-                <div className="text-2xl font-black text-[#F5C84C]">0{index + 1}</div>
-                <p className="mt-4 leading-relaxed text-white/75">{benefit}</p>
+          <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+            {memberBenefits.map((benefit) => (
+              <div key={benefit.title} className="rounded-2xl border border-white/10 bg-[#0B1324] p-7">
+                <h3 className="text-lg font-black uppercase text-[#F5C84C]">{benefit.title}</h3>
+                <p className="mt-4 leading-relaxed text-white/75">{benefit.body}</p>
               </div>
             ))}
           </div>
+
+          <p className="mt-10 text-center text-white/60">
+            In-person workshops are available by request for an additional fee.
+          </p>
         </div>
       </section>
 
@@ -182,6 +203,22 @@ export default function CreditUnionsPage() {
               <p className="mt-4 leading-relaxed text-white/75">{benefit.body}</p>
             </article>
           ))}
+        </div>
+      </section>
+
+      {/* Senior technology bonus */}
+      <section className="border-y border-[#F5C84C]/30 bg-gradient-to-r from-[#F5C84C]/15 via-[#F5C84C]/10 to-transparent text-[#0B1324]">
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+          <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
+            <div>
+              <p className="text-sm font-black uppercase tracking-[0.2em]">Bonus</p>
+              <h2 className="mt-4 text-3xl font-black uppercase tracking-tight sm:text-4xl">Help with everyday technology frustrations</h2>
+            </div>
+            <div className="space-y-4 text-lg leading-relaxed text-[#0B1324]/80">
+              <p>Members also receive step-by-step guides for common senior technology challenges. Every guide uses plain English, printable instructions, and follow-along steps that members can use independently or with help from family.</p>
+              <p className="font-semibold text-[#0B1324]">It’s additional value members will continue to use—and associate with your institution.</p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -205,8 +242,8 @@ export default function CreditUnionsPage() {
         </div>
       </section>
 
-      {/* Boundaries and pilot */}
-      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+      {/* Partnership pricing */}
+      <section id="partnership-pricing" className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
         <div className="grid gap-6 lg:grid-cols-2">
           <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-8 sm:p-10">
             <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#F5C84C]">Designed to complement your team</p>
@@ -215,14 +252,17 @@ export default function CreditUnionsPage() {
             <p className="mt-5 leading-relaxed text-white/75">Partnership access can be structured without requiring the credit union to share members’ private banking information with ScamBomb.</p>
           </div>
           <div className="rounded-2xl border border-[#F5C84C]/30 bg-[#F5C84C] p-8 text-[#0B1324] sm:p-10">
-            <p className="text-sm font-black uppercase tracking-[0.2em]">Start with a focused program</p>
-            <h2 className="mt-4 text-2xl font-black uppercase sm:text-3xl">Evaluate interest before expanding</h2>
-            <p className="mt-5 leading-relaxed">A ScamBomb program can begin with a defined group of members, an educational campaign, or a live workshop.</p>
-            <ol className="mt-5 space-y-3 font-medium">
-              {['ScamBomb access for participating members', 'A live Zoom or in-person educational workshop', 'Family-protection guides and downloadable resources', 'Member communications supporting the program', 'Measurement of participation, activation, engagement, confidence, and feedback'].map((item, index) => (
-                <li key={item} className="flex gap-3"><span className="font-black">{index + 1}.</span><span>{item}</span></li>
+            <p className="text-sm font-black uppercase tracking-[0.2em]">A straightforward monthly partnership</p>
+            <h2 className="mt-4 text-2xl font-black uppercase sm:text-3xl">Pricing based on covered members</h2>
+            <ul className="mt-5 space-y-3 font-medium">
+              {partnershipTiers.map((tier) => (
+                <li key={tier.members} className="flex items-baseline justify-between gap-4 border-b border-[#0B1324]/10 pb-3 last:border-0 last:pb-0">
+                  <span>{tier.members}</span>
+                  <span className="font-black whitespace-nowrap">{tier.price}</span>
+                </li>
               ))}
-            </ol>
+            </ul>
+            <p className="mt-5 leading-relaxed">Twelve-month partnership, billed monthly. All recurring member-education deliverables are included. In-person workshops are quoted separately.</p>
           </div>
         </div>
       </section>
@@ -261,8 +301,8 @@ export default function CreditUnionsPage() {
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
           <div>
             <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#F5C84C]">Start a conversation</p>
-            <h2 className="mt-4 text-3xl font-black uppercase tracking-tight sm:text-4xl">Help your members take the next safe step.</h2>
-            <p className="mt-5 text-lg leading-relaxed text-white/70">Let’s discuss how ScamBomb could support your credit union’s fraud-prevention, member-education, and community-outreach efforts.</p>
+            <h2 className="mt-4 text-3xl font-black uppercase tracking-tight sm:text-4xl">Help make the next call a thank-you—not a fraud report.</h2>
+            <p className="mt-5 text-lg leading-relaxed text-white/70">Give your members practical protection every month while giving your team ready-made education, resources, and live support.</p>
             <p className="mt-5 text-sm leading-relaxed text-white/50">If you are not the person responsible for fraud education, community outreach, or member experience, we would appreciate being connected with the appropriate member of your team.</p>
           </div>
 

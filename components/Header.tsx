@@ -1,8 +1,11 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { usePathname } from 'next/navigation';
 
 function UniversalHeader() {
+  const pathname = usePathname();
+  const isCreditUnions = pathname === '/credit-unions';
   const brandYellow = "#F5C84C";
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [sbid, setSbid] = useState('');
@@ -64,7 +67,7 @@ function UniversalHeader() {
               </a>
               <a 
                 className="text-white/80 hover:text-white text-base font-medium transition-colors relative hover:after:content-[''] hover:after:absolute hover:after:bottom-[-4px] hover:after:left-0 hover:after:w-full hover:after:h-0.5 hover:after:bg-[#F5C84C]" 
-                href="/#pricing"
+                href={isCreditUnions ? '/credit-unions#partnership-pricing' : '/#pricing'}
               >
                 Pricing
               </a>
@@ -91,10 +94,10 @@ function UniversalHeader() {
             {/* CTA - Right */}
             <div className="hidden md:flex items-center gap-4">
               <a
-                href={trialHref}
+                href={isCreditUnions ? '/credit-unions#partnership-form' : trialHref}
                 className="inline-flex items-center justify-center px-5 py-2.5 text-base font-semibold text-[#0B1324] bg-[#F5C84C] rounded-lg hover:bg-[#F5C84C]/90 transition-colors shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#F5C84C] focus:ring-offset-2 focus:ring-offset-[#0B1324]"
               >
-                Try Free
+                {isCreditUnions ? 'Discuss a Partnership' : 'Try Free'}
               </a>
             </div>
 
@@ -139,7 +142,7 @@ function UniversalHeader() {
                 </a>
                 <a 
                   className="block px-3 py-2 text-base font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-colors" 
-                  href="/#pricing" 
+                  href={isCreditUnions ? '/credit-unions#partnership-pricing' : '/#pricing'} 
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Pricing
@@ -166,11 +169,11 @@ function UniversalHeader() {
                   Resources
                 </a>
                 <a
-                  href={trialHref}
+                  href={isCreditUnions ? '/credit-unions#partnership-form' : trialHref}
                   className="block mt-4 px-3 py-3 text-center text-base font-semibold text-[#0B1324] bg-[#F5C84C] rounded-lg hover:bg-[#F5C84C]/90 transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  Try Free
+                  {isCreditUnions ? 'Discuss a Partnership' : 'Try Free'}
                 </a>
               </nav>
             </div>

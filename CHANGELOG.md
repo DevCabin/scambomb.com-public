@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-08-25 — Reposition credit-unions page as monthly partnership program
+
+### Changed
+- **`app/credit-unions/page.tsx`** — Replaced hero description with a concrete monthly member-education-and-protection program value proposition; kept the `HELP MEMBERS STOP SCAMS BEFORE MONEY MOVES` headline.
+- **`app/credit-unions/page.tsx`** — Replaced the hero right-hand "moment that matters" panel with the "Which call?" emotional hook.
+- **`app/credit-unions/page.tsx`** — Removed the repeated `$7.7 billion` statistic from the "Why this matters" section while keeping the human explanation of how scammers manipulate members.
+- **`app/credit-unions/page.tsx`** — Rewrote the "Software, education, and practical resources" section into "What members receive every month" with four monthly deliverables (email, worksheet, Zoom workshop, anytime tools) and a note that in-person workshops are available for an additional fee.
+- **`app/credit-unions/page.tsx`** — Added a visually distinct gold "BONUS" section for senior-technology guides.
+- **`app/credit-unions/page.tsx`** — Added "Ready-made ongoing education" to the institutional benefits grid.
+- **`app/credit-unions/page.tsx`** — Replaced the pilot-program panel with a straightforward monthly partnership pricing panel (`$1,250` / `$2,000` / `$3,000` / custom tiers based on covered members) and added the `partnership-pricing` section anchor.
+- **`app/credit-unions/page.tsx`** — Updated FAQs: revised the workshop answer, replaced the pilot FAQ with "What do our members receive each month?", and added "How is partnership pricing structured?".
+- **`app/credit-unions/page.tsx`** — Rewrote the final CTA headline to "Help make the next call a thank-you—not a fraud report." and updated the supporting paragraph.
+- **`components/Header.tsx`** — On `/credit-unions`, changed the primary header CTA from "Try Free" to "Discuss a Partnership" (links to `#partnership-form`) and pointed the Pricing link to the on-page partnership-pricing section.
+
 ## 2026-08-21 — Reorder credit union member benefits
 
 ### Changed
