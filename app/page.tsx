@@ -89,18 +89,18 @@ export default function ScamBombLanding() {
       </section>
 
       {/* Which conversation? hook */}
-      <section className="border-y border-[#F5C84C]/30 bg-gradient-to-r from-[#F5C84C]/15 via-[#F5C84C]/10 to-transparent text-[#0B1324]">
+      <section className="border-y border-[#F5C84C]/30 bg-[#FDF8E8] text-[#0B1324]">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
           <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
             <div>
               <p className="text-sm font-black uppercase tracking-[0.2em]">Which conversation?</p>
               <h2 className="mt-4 text-3xl font-black uppercase tracking-tight sm:text-4xl">Which conversation would you rather have with someone you love?</h2>
             </div>
-            <div className="space-y-6 text-lg leading-relaxed text-[#0B1324]/80">
-              <div className="rounded-2xl border border-[#0B1324]/10 bg-white/40 p-6">
+            <div className="space-y-6 text-lg leading-relaxed text-[#0B1324]">
+              <div className="rounded-2xl border border-[#0B1324]/10 bg-white p-6">
                 <p className="font-semibold text-[#0B1324]">“This seems strange—can we check it together?”</p>
               </div>
-              <div className="rounded-2xl border border-[#0B1324]/10 bg-white/40 p-6">
+              <div className="rounded-2xl border border-[#0B1324]/10 bg-white p-6">
                 <p className="font-semibold text-[#0B1324]">“I sent the money. What do I do now?”</p>
               </div>
               <p className="font-black text-[#0B1324]">ScamBomb helps families have the first conversation.</p>
