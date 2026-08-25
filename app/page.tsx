@@ -136,9 +136,14 @@ export default function ScamBombLanding() {
             <h3 className="text-lg font-black uppercase">Learn Live</h3>
             <p className="mt-3 leading-relaxed opacity-90">Attend monthly Zoom workshops featuring current scam examples, practical instruction, and live Q&A.</p>
           </div>
-          <div className="rounded-2xl border border-white/10 bg-[#F5C84C] p-6 text-[#0B1324] md:col-span-2 lg:col-span-1">
+          <div className="rounded-2xl border border-white/10 bg-[#F5C84C] p-6 text-[#0B1324]">
             <h3 className="text-lg font-black uppercase">Get Help With Everyday Technology</h3>
             <p className="mt-3 leading-relaxed opacity-90">Access step-by-step guides that help older adults work through common technology frustrations using printable, follow-along instructions.</p>
+          </div>
+          <div className="rounded-2xl border-2 border-[#F5C84C] bg-[#0B1324] p-6 text-center flex flex-col justify-center">
+            <h3 className="text-lg font-black uppercase text-[#F5C84C]">Protect the whole family</h3>
+            <p className="mt-4 text-4xl font-black text-white">$9.99</p>
+            <p className="mt-2 text-sm text-white/70">per month</p>
           </div>
         </div>
       </section>
@@ -168,9 +173,14 @@ export default function ScamBombLanding() {
               <h3 className="text-lg font-black uppercase text-[#F5C84C]">Anytime Scam Checking</h3>
               <p className="mt-3 leading-relaxed text-white/80">Members can analyze suspicious texts, emails, links, and screenshots whenever something feels wrong.</p>
             </div>
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-6 md:col-span-2 lg:col-span-1">
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
               <h3 className="text-lg font-black uppercase text-[#F5C84C]">Family Protection Library</h3>
               <p className="mt-3 leading-relaxed text-white/80">Ongoing access to guides, checklists, conversation tools, and practical next steps.</p>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-[#F5C84C] p-6 text-[#0B1324] text-center flex flex-col justify-center">
+              <h3 className="text-lg font-black uppercase">Seniors get a discount</h3>
+              <p className="mt-4 text-4xl font-black">$4.99</p>
+              <p className="mt-2 text-sm opacity-80">per month</p>
             </div>
           </div>
         </div>
