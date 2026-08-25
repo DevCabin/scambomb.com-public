@@ -484,40 +484,6 @@ function Card({ title, icon, children }: { title: string; icon?: React.ReactNode
   );
 }
 
-function PriceCard({ title, price, note, cta, color, highlight = false, href, annualHref }: { title: string; price: string; note: string; cta: string; color: string; highlight?: boolean; href?: string; annualHref?: string }) {
-  const isFree = price === "Free";
-  return (
-    <div className={`rounded-2xl p-6 border ${highlight ? "border-yellow-300 bg-white/10" : "border-white/10 bg-white/5"}`}>
-      <h3 className="text-xl font-semibold">{title}</h3>
-      <div className="mt-3 text-4xl font-extrabold">{price}</div>
-      <p className="mt-2 text-base leading-relaxed text-white/80">{note}</p>
-      <a href={href || "https://app.scambomb.com"} className="mt-5 w-full rounded-xl py-4 text-lg font-semibold inline-block text-center" style={{ backgroundColor: color, color: "#0B1324" }}>{cta}</a>
-
-      {!isFree && annualHref && (
-        <a href={annualHref} className="mt-3 block text-center text-base text-white underline decoration-white/60 underline-offset-4 hover:decoration-white">
-          <span className="text-[#F5C84C]">Or save 17%</span> <span className="text-white">by paying annually!</span>
-        </a>
-      )}
-
-      <ul className="mt-5 space-y-3 text-base text-white/85">
-        {isFree ? (
-          <>
-            <li className="flex items-start gap-3"><Check /> 5 scans per month</li>
-            <li className="flex items-start gap-3"><Check /> Plain-English results</li>
-            <li className="flex items-start gap-3"><Check /> Upgrade anytime</li>
-          </>
-        ) : (
-          <>
-            <li className="flex items-start gap-3"><Check /> Unlimited message checks</li>
-            <li className="flex items-start gap-3"><Check /> Plain-English results</li>
-            <li className="flex items-start gap-3"><Check /> Priority updates on new scams</li>
-          </>
-        )}
-      </ul>
-    </div>
-  );
-}
-
 function PostCard({ tag, title, slug, excerpt }: { tag: string; title: string; slug: string; excerpt?: string }) {
   return (
     <article className="rounded-2xl border border-white/10 bg-white/5 p-6">
