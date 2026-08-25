@@ -6,6 +6,8 @@
 
 All code changes for the `scambomb.com-public` repository must now be developed on the **`dev`** branch and merged into `main` via GitHub. Do **not** commit directly to `main` unless explicitly instructed.
 
+NOTE: Do not write too much in the terminal, it causes crashes. Utilize python scripts.
+
 ### **Workflow:**
 1. Ensure you are on the `dev` branch: `git checkout dev`
 2. Pull latest changes: `git pull origin dev`
