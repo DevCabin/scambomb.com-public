@@ -1,5 +1,26 @@
 # Changelog
 
+## 2026-08-25 — Reposition homepage as complete family-protection membership
+
+### Changed
+- **`app/layout.tsx`** — Updated homepage meta description to reflect the complete family-protection offering.
+- **`app/page.tsx`** — Revised hero description to position ScamBomb as a complete family-protection membership; kept the `Modern Scams Fool Smart People Every Day.` headline.
+- **`app/page.tsx`** — Changed secondary hero CTA from `Learn How ScamBomb Works` to `Explore Family Protection` and linked it to `#platform`.
+- **`app/page.tsx`** — Added a gold-highlighted `Which conversation?` emotional hook after the trust bar.
+- **`app/page.tsx`** — Rewrote the `A Complete Family Protection Platform` section with five clear pillars and updated supporting copy.
+- **`app/page.tsx`** — Added a new `What Members Receive` section (`#membership`) before the app tutorial, detailing monthly scam updates, printable worksheets, live workshops, anytime scam checking, and the family protection library.
+- **`app/page.tsx`** — Renamed the app tutorial section from `How to use the app` to `Get a Second Opinion in Seconds` and moved it after the platform and deliverables sections.
+- **`app/page.tsx`** — Updated the `Four ways to stay protected` cards to emphasize outcomes rather than app features.
+- **`app/page.tsx`** — Expanded the FAQ with four new questions covering membership scope, workshops, printable resources, and Senior Protection.
+- **`app/page.tsx`** — Added a final membership CTA section with `Help your family ask before they act.`
+- **`components/PricingSection.tsx`** — Rewrote pricing intro and plan descriptions; added `Complete family-protection membership` and `The complete membership at special pricing for adults 60+` subheadings.
+- **`components/PricingSection.tsx`** — Updated free-plan features to clearly differentiate it from the paid membership.
+- **`components/PricingSection.tsx`** — Updated paid-plan feature lists to include monthly emails, live workshops, worksheets, resource library, AI-scam guidance, senior technology guides, and ongoing new resources; removed mission-support language.
+
+### Removed
+- **`components/PricingSection.tsx`** — Removed `Support ScamBomb’s mission` from the paid feature list.
+- **`app/page.tsx`** / **`components/PricingSection.tsx`** — Removed all “bonus senior guides” verbiage; retained practical senior-technology help as a regular membership deliverable.
+
 ## 2026-08-25 — Reposition credit-unions page as monthly partnership program
 
 ### Changed
