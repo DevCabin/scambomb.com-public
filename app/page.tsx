@@ -24,7 +24,7 @@ export default function ScamBombLanding() {
                 <span style={{ color: brandYellow }}>Smart People</span> Every Day.
               </h1>
               <p className="mt-5 max-w-xl text-lg leading-relaxed text-white/90 sm:text-xl">
-                ScamBomb gives you the confidence to know what&apos;s real, what&apos;s dangerous, and what to do next—before a simple mistake becomes an expensive one.
+                ScamBomb helps you know what&apos;s real, what&apos;s dangerous, and what to do next—while giving your family ongoing education, practical resources, and live support to stay ahead of changing scams.
               </p>
               <div className="mt-7 text-center">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 max-w-lg mx-auto">
@@ -35,8 +35,8 @@ export default function ScamBombLanding() {
                   </div>
 
                   <div>
-                    <a href="#how" className="rounded-2xl px-6 py-4 border-2 text-lg font-semibold inline-block text-center w-full hover:bg-white/10 hover-lift btn-press" style={{ borderColor: brandYellow, color: brandYellow }}>
-                      Learn How ScamBomb Works
+                    <a href="#platform" className="rounded-2xl px-6 py-4 border-2 text-lg font-semibold inline-block text-center w-full hover:bg-white/10 hover-lift btn-press" style={{ borderColor: brandYellow, color: brandYellow }}>
+                      Explore Family Protection
                     </a>
                   </div>
                 </div>
@@ -88,13 +88,90 @@ export default function ScamBombLanding() {
         </div>
       </section>
 
+      {/* Which conversation? hook */}
+      <section className="border-y border-[#F5C84C]/30 bg-gradient-to-r from-[#F5C84C]/15 via-[#F5C84C]/10 to-transparent text-[#0B1324]">
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+          <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
+            <div>
+              <p className="text-sm font-black uppercase tracking-[0.2em]">Which conversation?</p>
+              <h2 className="mt-4 text-3xl font-black uppercase tracking-tight sm:text-4xl">Which conversation would you rather have with someone you love?</h2>
+            </div>
+            <div className="space-y-6 text-lg leading-relaxed text-[#0B1324]/80">
+              <div className="rounded-2xl border border-[#0B1324]/10 bg-white/40 p-6">
+                <p className="font-semibold text-[#0B1324]">“This seems strange—can we check it together?”</p>
+              </div>
+              <div className="rounded-2xl border border-[#0B1324]/10 bg-white/40 p-6">
+                <p className="font-semibold text-[#0B1324]">“I sent the money. What do I do now?”</p>
+              </div>
+              <p className="font-black text-[#0B1324]">ScamBomb helps families have the first conversation.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* More than a scam checker */}
       <section id="platform" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
         <HeaderEyebrow>More than a scam checker</HeaderEyebrow>
         <h2 className="text-4xl sm:text-4xl font-bold">A Complete <span style={{ color: brandYellow }}>Family Protection</span> Platform</h2>
         <p className="mt-5 max-w-3xl text-lg leading-relaxed text-white/85">
-          ScamBomb combines scam education, instant message analysis, printable family resources, and ongoing scam awareness to help families stay ahead of today&apos;s increasingly sophisticated scams.
+          ScamBomb combines instant scam checking with ongoing education, monthly scam updates, printable family resources, live workshops, and practical senior technology guides. It gives older adults and the people who care about them a trusted place to turn before a suspicious situation becomes an expensive mistake.
         </p>
+
+        <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          <div className="rounded-2xl border border-white/10 bg-[#F5C84C] p-6 text-[#0B1324]">
+            <h3 className="text-lg font-black uppercase">Check Suspicious Messages</h3>
+            <p className="mt-3 leading-relaxed opacity-90">Paste or upload suspicious texts, emails, links, and screenshots and receive a calm, plain-English explanation of the warning signs and what to do next.</p>
+          </div>
+          <div className="rounded-2xl border border-white/10 bg-[#F5C84C] p-6 text-[#0B1324]">
+            <h3 className="text-lg font-black uppercase">Stay Ahead of New Scams</h3>
+            <p className="mt-3 leading-relaxed opacity-90">Receive monthly updates covering emerging fraud tactics, AI-enabled scams, and simple protection tips that are easy to remember.</p>
+          </div>
+          <div className="rounded-2xl border border-white/10 bg-[#F5C84C] p-6 text-[#0B1324]">
+            <h3 className="text-lg font-black uppercase">Protect the Whole Family</h3>
+            <p className="mt-3 leading-relaxed opacity-90">Use printable worksheets, checklists, and conversation guides to create shared family safety habits before a crisis occurs.</p>
+          </div>
+          <div className="rounded-2xl border border-white/10 bg-[#F5C84C] p-6 text-[#0B1324]">
+            <h3 className="text-lg font-black uppercase">Learn Live</h3>
+            <p className="mt-3 leading-relaxed opacity-90">Attend monthly Zoom workshops featuring current scam examples, practical instruction, and live Q&A.</p>
+          </div>
+          <div className="rounded-2xl border border-white/10 bg-[#F5C84C] p-6 text-[#0B1324] md:col-span-2 lg:col-span-1">
+            <h3 className="text-lg font-black uppercase">Get Help With Everyday Technology</h3>
+            <p className="mt-3 leading-relaxed opacity-90">Access step-by-step guides that help older adults work through common technology frustrations using printable, follow-along instructions.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* What members receive */}
+      <section id="membership" className="border-y border-white/10 bg-white/[0.03]">
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+          <div className="mx-auto max-w-3xl text-center">
+            <HeaderEyebrow>Ongoing family protection</HeaderEyebrow>
+            <h2 className="text-3xl sm:text-4xl font-bold">Useful help every month<span style={{ color: brandYellow }}>—not just when a suspicious message arrives</span></h2>
+          </div>
+
+          <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+              <h3 className="text-lg font-black uppercase text-[#F5C84C]">Monthly Scam Update</h3>
+              <p className="mt-3 leading-relaxed text-white/80">A concise email covering current scams, new fraud tactics, and easy-to-remember protection tips.</p>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+              <h3 className="text-lg font-black uppercase text-[#F5C84C]">Printable Family Worksheet</h3>
+              <p className="mt-3 leading-relaxed text-white/80">A downloadable resource families can discuss, complete, print, and share.</p>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+              <h3 className="text-lg font-black uppercase text-[#F5C84C]">Live Monthly Workshop</h3>
+              <p className="mt-3 leading-relaxed text-white/80">A practical Zoom presentation with current examples, plain-English instruction, and live Q&A.</p>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+              <h3 className="text-lg font-black uppercase text-[#F5C84C]">Anytime Scam Checking</h3>
+              <p className="mt-3 leading-relaxed text-white/80">Members can analyze suspicious texts, emails, links, and screenshots whenever something feels wrong.</p>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6 md:col-span-2 lg:col-span-1">
+              <h3 className="text-lg font-black uppercase text-[#F5C84C]">Family Protection Library</h3>
+              <p className="mt-3 leading-relaxed text-white/80">Ongoing access to guides, checklists, conversation tools, and practical next steps.</p>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* How to use the app */}
@@ -110,7 +187,7 @@ export default function ScamBombLanding() {
             <div className="flex items-center gap-3">
               <span className="h-10 w-10 rounded-full bg-[#F5C84C] text-[#0B1324] text-lg font-extrabold flex items-center justify-center">?</span>
               <div>
-                <h2 className="text-lg sm:text-xl font-extrabold tracking-[0.08em] uppercase">How to use the app</h2>
+                <h2 className="text-lg sm:text-xl font-extrabold tracking-[0.08em] uppercase">Get a Second Opinion in Seconds</h2>
                 <span className="text-sm text-white/50 md:hidden">(tap to open)</span>
                 <span className="text-sm text-white/50 hidden md:inline">(click to expand)</span>
               </div>
@@ -183,10 +260,10 @@ export default function ScamBombLanding() {
           <HeaderEyebrow>Four ways to stay protected</HeaderEyebrow>
           <h2 className="text-4xl sm:text-4xl font-bold">Scam Awareness for the <span style={{ color: brandYellow }}>Whole Family</span></h2>
           <div className="mt-8 grid md:grid-cols-2 gap-6">
-            <div className="hover-lift"><Card title="Check Suspicious Messages" icon={<Check />}>Paste a text, email, website, or message and receive a calm, plain-English explanation.</Card></div>
-            <div className="hover-lift"><Card title="Learn the Latest Scams" icon={<Check />}>Stay informed about AI voice cloning, phishing, fake tech support, investment scams, romance scams, and emerging threats.</Card></div>
-            <div className="hover-lift"><Card title="Protect Your Family" icon={<Check />}>Download printable guides, checklists, and resources designed for seniors and the people who care about them.</Card></div>
-            <div className="hover-lift"><Card title="Stay Ahead" icon={<Check />}>Receive ongoing scam alerts, educational content, and practical advice as scams evolve.</Card></div>
+            <div className="hover-lift"><Card title="Check suspicious messages" icon={<Check />}>Paste a text, email, website, or message and receive a calm, plain-English explanation.</Card></div>
+            <div className="hover-lift"><Card title="Learn about emerging scams" icon={<Check />}>Stay informed about AI voice cloning, phishing, fake tech support, investment scams, romance scams, and other evolving threats.</Card></div>
+            <div className="hover-lift"><Card title="Build shared family-protection habits" icon={<Check />}>Download printable guides, checklists, and conversation resources designed for seniors and the people who care about them.</Card></div>
+            <div className="hover-lift"><Card title="Receive ongoing education and live support" icon={<Check />}>Join monthly workshops, get timely scam updates, and access practical guidance as scams evolve.</Card></div>
           </div>
         </div>
       </section>
@@ -298,6 +375,10 @@ export default function ScamBombLanding() {
               { q: "Do you sell my data?", a: "Short answer: Never.\n\nLong answer: We collect only the bare minimum amount of information to allow this service to function. Any potential scam message that is uploaded for testing, text or image, is NOT stored or logged. It is not used for training purposes. It is certainly not sold. You can rest assured anything you share with us ... is kept between us." },
               { q: "Does it work on my phone?", a: "Yes, you may use your mobile device to paste messages or even upload a screenshot of a message." },
               { q: "Can I cancel anytime?", a: "Absolutely. Subscriptions are month-to-month with a \"No strings attached, 'cancel any time for any reason'\" guarantee." },
+              { q: "Is ScamBomb membership more than app access?", a: "Yes. The scam-checking tool is only one part of ScamBomb membership. Paid members also receive monthly scam updates, printable family worksheets, live Zoom workshops, family-protection guides, emerging-scam education, and senior technology guides." },
+              { q: "What happens during the monthly workshop?", a: "Each live Zoom workshop covers current scams, warning signs, practical protection steps, and real-world examples. Members can also ask questions during the live Q&A." },
+              { q: "Are the printable resources included?", a: "Yes. Paid members receive downloadable and printable worksheets, checklists, conversation guides, and family-protection resources as part of their membership." },
+              { q: "What is included with Senior Protection?", a: "Senior Protection includes the complete paid ScamBomb membership at a special locked-in price for adults age 60 and older. It is not a reduced or limited version of the program." },
             ].map((item, i) => (
               <div key={i} className="p-6">
                 <dt className="text-xl font-semibold">{item.q}</dt>
@@ -305,6 +386,22 @@ export default function ScamBombLanding() {
               </div>
             ))}
           </dl>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="border-t border-white/10 bg-white/[0.03]">
+        <div className="mx-auto max-w-4xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold">Help your family ask before they act.</h2>
+          <p className="mt-5 text-lg leading-relaxed text-white/80">Give the people you love somewhere trustworthy to turn, practical protection they can use every month, and a calm second opinion when something does not feel right.</p>
+          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="https://app.scambomb.com/api/auth/redirect?plan=standard&billing=monthly" className="rounded-2xl px-8 py-4 text-lg font-semibold inline-block text-center hover-lift btn-press" style={{ backgroundColor: brandYellow, color: "#0B1324" }}>
+              Protect My Family
+            </a>
+            <a href={appUrl} className="rounded-2xl px-8 py-4 border-2 text-lg font-semibold inline-block text-center hover:bg-white/10 hover-lift btn-press" style={{ borderColor: brandYellow, color: brandYellow }}>
+              Try ScamBomb Free
+            </a>
+          </div>
         </div>
       </section>
 
@@ -383,40 +480,6 @@ function Card({ title, icon, children }: { title: string; icon?: React.ReactNode
         <h3 className="font-bold uppercase text-lg sm:text-xl">{title}</h3>
       </div>
       <p className="mt-2 text-base leading-relaxed opacity-90">{children}</p>
-    </div>
-  );
-}
-
-function PriceCard({ title, price, note, cta, color, highlight = false, href, annualHref }: { title: string; price: string; note: string; cta: string; color: string; highlight?: boolean; href?: string; annualHref?: string }) {
-  const isFree = price === "Free";
-  return (
-    <div className={`rounded-2xl p-6 border ${highlight ? "border-yellow-300 bg-white/10" : "border-white/10 bg-white/5"}`}>
-      <h3 className="text-xl font-semibold">{title}</h3>
-      <div className="mt-3 text-4xl font-extrabold">{price}</div>
-      <p className="mt-2 text-base leading-relaxed text-white/80">{note}</p>
-      <a href={href || "https://app.scambomb.com"} className="mt-5 w-full rounded-xl py-4 text-lg font-semibold inline-block text-center" style={{ backgroundColor: color, color: "#0B1324" }}>{cta}</a>
-
-      {!isFree && annualHref && (
-        <a href={annualHref} className="mt-3 block text-center text-base text-white underline decoration-white/60 underline-offset-4 hover:decoration-white">
-          <span className="text-[#F5C84C]">Or save 17%</span> <span className="text-white">by paying annually!</span>
-        </a>
-      )}
-
-      <ul className="mt-5 space-y-3 text-base text-white/85">
-        {isFree ? (
-          <>
-            <li className="flex items-start gap-3"><Check /> 5 scans per month</li>
-            <li className="flex items-start gap-3"><Check /> Plain-English results</li>
-            <li className="flex items-start gap-3"><Check /> Upgrade anytime</li>
-          </>
-        ) : (
-          <>
-            <li className="flex items-start gap-3"><Check /> Unlimited message checks</li>
-            <li className="flex items-start gap-3"><Check /> Plain-English results</li>
-            <li className="flex items-start gap-3"><Check /> Priority updates on new scams</li>
-          </>
-        )}
-      </ul>
     </div>
   );
 }

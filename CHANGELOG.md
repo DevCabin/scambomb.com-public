@@ -1,5 +1,40 @@
 # Changelog
 
+## 2026-08-25 — Reposition homepage as complete family-protection membership
+
+### Changed
+- **`app/layout.tsx`** — Updated homepage meta description to reflect the complete family-protection offering.
+- **`app/page.tsx`** — Revised hero description to position ScamBomb as a complete family-protection membership; kept the `Modern Scams Fool Smart People Every Day.` headline.
+- **`app/page.tsx`** — Changed secondary hero CTA from `Learn How ScamBomb Works` to `Explore Family Protection` and linked it to `#platform`.
+- **`app/page.tsx`** — Added a gold-highlighted `Which conversation?` emotional hook after the trust bar.
+- **`app/page.tsx`** — Rewrote the `A Complete Family Protection Platform` section with five clear pillars and updated supporting copy.
+- **`app/page.tsx`** — Added a new `What Members Receive` section (`#membership`) before the app tutorial, detailing monthly scam updates, printable worksheets, live workshops, anytime scam checking, and the family protection library.
+- **`app/page.tsx`** — Renamed the app tutorial section from `How to use the app` to `Get a Second Opinion in Seconds` and moved it after the platform and deliverables sections.
+- **`app/page.tsx`** — Updated the `Four ways to stay protected` cards to emphasize outcomes rather than app features.
+- **`app/page.tsx`** — Expanded the FAQ with four new questions covering membership scope, workshops, printable resources, and Senior Protection.
+- **`app/page.tsx`** — Added a final membership CTA section with `Help your family ask before they act.`
+- **`components/PricingSection.tsx`** — Rewrote pricing intro and plan descriptions; added `Complete family-protection membership` and `The complete membership at special pricing for adults 60+` subheadings.
+- **`components/PricingSection.tsx`** — Updated free-plan features to clearly differentiate it from the paid membership.
+- **`components/PricingSection.tsx`** — Updated paid-plan feature lists to include monthly emails, live workshops, worksheets, resource library, AI-scam guidance, senior technology guides, and ongoing new resources; removed mission-support language.
+
+### Removed
+- **`components/PricingSection.tsx`** — Removed `Support ScamBomb’s mission` from the paid feature list.
+- **`app/page.tsx`** / **`components/PricingSection.tsx`** — Removed all “bonus senior guides” verbiage; retained practical senior-technology help as a regular membership deliverable.
+
+## 2026-08-25 — Reposition credit-unions page as monthly partnership program
+
+### Changed
+- **`app/credit-unions/page.tsx`** — Replaced hero description with a concrete monthly member-education-and-protection program value proposition; kept the `HELP MEMBERS STOP SCAMS BEFORE MONEY MOVES` headline.
+- **`app/credit-unions/page.tsx`** — Replaced the hero right-hand "moment that matters" panel with the "Which call?" emotional hook.
+- **`app/credit-unions/page.tsx`** — Removed the repeated `$7.7 billion` statistic from the "Why this matters" section while keeping the human explanation of how scammers manipulate members.
+- **`app/credit-unions/page.tsx`** — Rewrote the "Software, education, and practical resources" section into "What members receive every month" with four monthly deliverables (email, worksheet, Zoom workshop, anytime tools) and a note that in-person workshops are available for an additional fee.
+- **`app/credit-unions/page.tsx`** — Added a visually distinct gold "BONUS" section for senior-technology guides.
+- **`app/credit-unions/page.tsx`** — Added "Ready-made ongoing education" to the institutional benefits grid.
+- **`app/credit-unions/page.tsx`** — Replaced the pilot-program panel with a straightforward monthly partnership pricing panel (`$1,250` / `$2,000` / `$3,000` / custom tiers based on covered members) and added the `partnership-pricing` section anchor.
+- **`app/credit-unions/page.tsx`** — Updated FAQs: revised the workshop answer, replaced the pilot FAQ with "What do our members receive each month?", and added "How is partnership pricing structured?".
+- **`app/credit-unions/page.tsx`** — Rewrote the final CTA headline to "Help make the next call a thank-you—not a fraud report." and updated the supporting paragraph.
+- **`components/Header.tsx`** — On `/credit-unions`, changed the primary header CTA from "Try Free" to "Discuss a Partnership" (links to `#partnership-form`) and pointed the Pricing link to the on-page partnership-pricing section.
+
 ## 2026-08-21 — Reorder credit union member benefits
 
 ### Changed

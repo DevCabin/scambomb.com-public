@@ -11,6 +11,7 @@ function Check() {
 type PriceCardProps = {
   title: string
   price: string
+  subheading?: string
   note: string
   cta: string
   color: string
@@ -21,7 +22,7 @@ type PriceCardProps = {
   billing?: 'monthly' | 'annual'
 }
 
-function PriceCard({ title, price, note, cta, color, features, highlight = false, href, plan, billing }: PriceCardProps) {
+function PriceCard({ title, price, subheading, note, cta, color, features, highlight = false, href, plan, billing }: PriceCardProps) {
   const getCheckoutUrl = () => {
     if (!plan || !billing) return href || 'https://app.scambomb.com'
     return `https://app.scambomb.com/api/auth/redirect?plan=${plan}&billing=${billing}`
@@ -30,6 +31,7 @@ function PriceCard({ title, price, note, cta, color, features, highlight = false
   return (
     <div className={`rounded-2xl p-6 border ${highlight ? 'border-yellow-300 bg-white/10' : 'border-white/10 bg-white/5'}`}>
       <h3 className="text-xl font-semibold">{title}</h3>
+      {subheading && <p className="mt-2 text-sm font-bold uppercase tracking-wider text-[#F5C84C]">{subheading}</p>}
       <div className="mt-3 text-4xl font-extrabold">{price}</div>
       <p className="mt-2 text-base leading-relaxed text-white/80">{note}</p>
 
@@ -54,17 +56,19 @@ export function PricingSection() {
   const brandYellow = '#F5C84C'
   const freeFeatures = [
     '5 scam checks each month',
-    'Analyze suspicious texts, emails, and screenshots',
-    'Easy-to-understand explanations and next steps',
-    'Scam Triage articles and practical resources',
+    'Analyze suspicious texts, emails, links, and screenshots',
+    'Plain-English explanations and recommended next steps',
+    'Selected Scam Triage articles and public resources',
   ]
   const protectedFeatures = [
     'Unlimited scam analysis',
-    'Everything in Stay Safe',
-    'Guidance for AI voice-clone and emerging scams',
-    'Family protection guides and printable checklists',
-    'Ongoing scam awareness and practical advice',
-    'Support ScamBomb’s mission to protect families',
+    'Monthly scam-prevention email with current warnings and memorable tips',
+    'Monthly live Zoom workshop with practical instruction and Q&A',
+    'Downloadable and printable family worksheets',
+    'Full family-protection guide and checklist library',
+    'Guidance covering AI voice cloning and emerging scams',
+    'Step-by-step senior technology guides',
+    'Ongoing new educational resources as scams evolve',
   ]
 
   return (
@@ -83,7 +87,7 @@ export function PricingSection() {
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <p className="text-base sm:text-sm font-semibold tracking-wider uppercase text-white/70 mb-2">Choose your level of protection</p>
         <h2 className="text-4xl sm:text-4xl font-bold">Every Household Deserves <span style={{ color: brandYellow }}>Peace of Mind</span></h2>
-        <p className="mt-4 max-w-3xl text-lg leading-relaxed text-white/80">Start with the help you need today, then choose ongoing protection when you&apos;re ready.</p>
+        <p className="mt-4 max-w-3xl text-lg leading-relaxed text-white/80">Start with free scam-checking help, or choose a complete protection membership with ongoing education, live workshops, printable family resources, senior technology guides, and unlimited scam analysis.</p>
 
         <div className="mt-8 grid lg:grid-cols-3 gap-6">
           <div className="hover-lift">
@@ -91,8 +95,8 @@ export function PricingSection() {
               highlight
               title="Stay Safe"
               price="Free"
-              note="For occasional scam checks and practical guidance."
-              cta="Start checking messages"
+              note="Occasional scam checking and selected educational resources."
+              cta="Try ScamBomb Free"
               color={brandYellow}
               href="https://app.scambomb.com"
               features={freeFeatures}
@@ -102,8 +106,9 @@ export function PricingSection() {
             <PriceCard
               title="Stay Protected"
               price="$9/mo · $99/yr"
-              note="Everyday protection for you and the people you care about."
-              cta="Choose Stay Protected"
+              subheading="Complete family-protection membership"
+              note="Ongoing protection for you and the people you care about—not simply unlimited app access."
+              cta="Protect My Family"
               color={brandYellow}
               plan="standard"
               billing="monthly"
@@ -114,8 +119,9 @@ export function PricingSection() {
             <PriceCard
               title="Senior Protection"
               price="$5/mo · $49/yr"
-              note="The same ongoing protection, with locked-in pricing for adults 60+."
-              cta="Claim senior pricing"
+              subheading="The complete membership at special pricing for adults 60+"
+              note="All the education, tools, workshops, family resources, and unlimited scam checking included with Stay Protected—with locked-in senior pricing."
+              cta="Claim Senior Membership"
               color={brandYellow}
               plan="senior"
               billing="monthly"
