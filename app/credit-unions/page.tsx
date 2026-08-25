@@ -207,16 +207,16 @@ export default function CreditUnionsPage() {
       </section>
 
       {/* Senior technology bonus */}
-      <section className="border-y border-[#F5C84C]/30 bg-gradient-to-r from-[#F5C84C]/15 via-[#F5C84C]/10 to-transparent text-[#0B1324]">
+      <section className="border-y border-[#F5C84C]/30 bg-gradient-to-r from-[#F5C84C]/15 via-[#F5C84C]/10 to-transparent text-white">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
           <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
             <div>
-              <p className="text-sm font-black uppercase tracking-[0.2em]">Bonus</p>
+              <p className="text-sm font-black uppercase tracking-[0.2em] text-[#F5C84C]">Bonus</p>
               <h2 className="mt-4 text-3xl font-black uppercase tracking-tight sm:text-4xl">Help with everyday technology frustrations</h2>
             </div>
-            <div className="space-y-4 text-lg leading-relaxed text-[#0B1324]/80">
+            <div className="space-y-4 text-lg leading-relaxed text-white/80">
               <p>Members also receive step-by-step guides for common senior technology challenges. Every guide uses plain English, printable instructions, and follow-along steps that members can use independently or with help from family.</p>
-              <p className="font-semibold text-[#0B1324]">It’s additional value members will continue to use—and associate with your institution.</p>
+              <p className="font-semibold text-[#F5C84C]">It’s additional value members will continue to use—and associate with your institution.</p>
             </div>
           </div>
         </div>
