@@ -103,9 +103,11 @@ export default function ScamBombLanding() {
               <div className="rounded-2xl border border-[#0B1324]/10 bg-white p-6">
                 <p className="font-semibold text-[#0B1324]">“I sent the money. What do I do now?”</p>
               </div>
-              <p className="font-black text-[#0B1324]">ScamBomb helps families have the first conversation.</p>
             </div>
           </div>
+          <p className="mt-10 sm:mt-12 text-center text-2xl sm:text-3xl font-black text-[#0B1324]">
+            ScamBomb helps families have the first conversation.
+          </p>
         </div>
       </section>
 
