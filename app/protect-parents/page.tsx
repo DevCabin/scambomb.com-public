@@ -4,7 +4,7 @@ import { useEffect } from 'react'
 import Script from 'next/script'
 
 const FB_PIXEL_ID = '486466700592099'
-const APP_URL = `https://app.scambomb.com/?safe_source=true&SBID=${crypto.randomUUID()}`
+const APP_URL = 'https://app.scambomb.com'
 
 export default function ProtectParentsPage() {
   useEffect(() => {
@@ -83,7 +83,7 @@ export default function ProtectParentsPage() {
             }}>
               🛡 Scan Your First Message Free →
             </a>
-            <a href="https://scambomb.com" className="btn-free">
+            <a href="https://www.scambomb.com/#pricing" className="btn-free">
               See how it works first ↓
             </a>
 
@@ -200,7 +200,7 @@ export default function ProtectParentsPage() {
             </div>
           </a>
 
-          <a href="https://scambomb.com" className="pricing-card featured">
+          <a href="https://app.scambomb.com/api/auth/redirect?plan=standard&billing=monthly" className="pricing-card featured">
             <div className="featured-tag">Most Popular</div>
             <div className="pricing-icon">🛡</div>
             <div className="pricing-details">
@@ -213,7 +213,7 @@ export default function ProtectParentsPage() {
             </div>
           </a>
 
-          <a href="https://scambomb.com" className="pricing-card">
+          <a href="https://app.scambomb.com/api/auth/redirect?plan=senior&billing=monthly" className="pricing-card">
             <div className="pricing-icon">💛</div>
             <div className="pricing-details">
               <div className="pricing-name">Senior 60+ Locked Plan</div>
@@ -233,16 +233,16 @@ export default function ProtectParentsPage() {
         <a href={APP_URL} className="btn-primary">
           🛡 Protect My Family Now — It&apos;s Free →
         </a>
-        <a href="https://scambomb.com" className="btn-free">
+        <a href="https://www.scambomb.com/#pricing" className="btn-free">
           See full pricing &amp; features
         </a>
       </section>
 
       <footer className="lp-footer">
         <p>
-          <a href="https://scambomb.com">ScamBomb.com</a> &nbsp;·&nbsp;
-          <a href="https://scambomb.com/privacy">Privacy Policy</a> &nbsp;·&nbsp;
-          <a href="https://scambomb.com/terms">Terms of Service</a>
+          <a href="https://www.scambomb.com">ScamBomb.com</a> &nbsp;·&nbsp;
+          <a href="https://www.scambomb.com/privacy">Privacy Policy</a> &nbsp;·&nbsp;
+          <a href="https://www.scambomb.com/terms">Terms of Service</a>
         </p>
         <p style={{ marginTop: 8 }}>© 2026 Featherstone Web Solutions LLC. All rights reserved.<br />
           ScamBomb uses AI for informational scam detection. Not legal or financial advice.</p>

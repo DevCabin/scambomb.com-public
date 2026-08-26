@@ -6,7 +6,7 @@ export const metadata: Metadata = {
 };
 
 export default function AboutPage() {
-  const appUrl = `https://app.scambomb.com/?safe_source=true&SBID=${crypto.randomUUID()}`;
+  const appUrl = 'https://app.scambomb.com';
 
   return (
     <div className="bg-[#0B1324] text-white antialiased">

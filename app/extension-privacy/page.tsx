@@ -204,7 +204,7 @@ export default function ExtensionPrivacyPage() {
                   <strong className="text-[#F5C84C]">Email:</strong> info@scambomb.com
                 </p>
                 <p className="text-white mb-2">
-                  <strong className="text-[#F5C84C]">Website:</strong> <a href="https://scambomb.com" className="text-[#F5C84C] hover:text-white transition-colors">scambomb.com</a>
+                  <strong className="text-[#F5C84C]">Website:</strong> <a href="https://www.scambomb.com" className="text-[#F5C84C] hover:text-white transition-colors">scambomb.com</a>
                 </p>
                 <p className="text-white">
                   <strong className="text-[#F5C84C]">Address:</strong> ScamBomb Privacy Team

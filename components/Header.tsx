@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { usePathname } from 'next/navigation';
 
 function UniversalHeader() {
@@ -8,13 +8,8 @@ function UniversalHeader() {
   const isCreditUnions = pathname === '/credit-unions';
   const brandYellow = "#F5C84C";
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [sbid, setSbid] = useState('');
 
-  useEffect(() => {
-    setSbid(crypto.randomUUID());
-  }, []);
-
-  const trialHref = `https://app.scambomb.com/?safe_source=true${sbid ? `&SBID=${sbid}` : ''}`;
+  const trialHref = 'https://app.scambomb.com';
 
   return (
     <>

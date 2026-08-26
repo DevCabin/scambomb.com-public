@@ -109,6 +109,11 @@ const nextConfig = {
         destination: 'https://app.scambomb.com?utm_source=biz_card_qr',
         permanent: true,
       },
+      {
+        source: '/premium-resources',
+        destination: 'https://app.scambomb.com/premium-resources',
+        permanent: false,
+      },
     ]
   },
 }

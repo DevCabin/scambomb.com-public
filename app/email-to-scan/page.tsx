@@ -240,7 +240,7 @@ export default function EmailToScanPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a
-                href={`https://app.scambomb.com/?safe_source=true&SBID=${crypto.randomUUID()}`}
+                href="https://app.scambomb.com"
                 className="inline-block rounded-2xl px-8 py-4 font-semibold text-lg bg-[#F5C84C] text-[#0B1324] hover:bg-[#F5C84C]/90 transition-colors"
               >
                 Try ScamBomb Now

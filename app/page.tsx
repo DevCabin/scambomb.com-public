@@ -7,7 +7,7 @@ export default function ScamBombLanding() {
   const base = "bg-[#0B1324] text-white"; // Navy default
   const brandYellow = "#F5C84C";
   const brandBorder = "border-white/20";
-  const appUrl = `https://app.scambomb.com/?safe_source=true&SBID=${crypto.randomUUID()}`;
+  const appUrl = 'https://app.scambomb.com';
   const [isHowToOpen, setIsHowToOpen] = useState(false);
 
   return (
