@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-08-26 — Move homepage background to platform section and solidify pricing section
+
+### Changed
+- **`components/PricingSection.tsx`** — Removed the repeating bomb-pattern background image and dark overlay; made the pricing section a solid dark blue (`bg-[#0B1324]`).
+- **`app/page.tsx`** — Moved the repeating bomb-pattern background image and dark overlay to the `A Complete Family Protection Platform` section (`#platform`).
+- **`app/page.tsx`** — Wrapped the platform section content in a `relative z-10` container so it renders above the new background overlay.
+
 ## 2026-08-25 — Reposition homepage as complete family-protection membership
 
 ### Changed

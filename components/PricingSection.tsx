@@ -74,16 +74,8 @@ export function PricingSection() {
   return (
     <section
       id="pricing"
-      className="relative py-16"
-      style={{
-        backgroundImage: "url('/ScamBomb-just-the-bomb.png')",
-        backgroundSize: '107px',
-        backgroundRepeat: 'repeat',
-        backgroundPosition: 'center',
-        backgroundAttachment: 'fixed',
-      }}
+      className="relative bg-[#0B1324] py-16"
     >
-      <div className="absolute inset-0 bg-[#0B1324]/95 pointer-events-none"></div>
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <p className="text-base sm:text-sm font-semibold tracking-wider uppercase text-white/70 mb-2">Choose your level of protection</p>
         <h2 className="text-4xl sm:text-4xl font-bold">Every Household Deserves <span style={{ color: brandYellow }}>Peace of Mind</span></h2>

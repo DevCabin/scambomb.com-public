@@ -112,38 +112,51 @@ export default function ScamBombLanding() {
       </section>
 
       {/* More than a scam checker */}
-      <section id="platform" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
-        <HeaderEyebrow>More than a scam checker</HeaderEyebrow>
-        <h2 className="text-4xl sm:text-4xl font-bold">A Complete <span style={{ color: brandYellow }}>Family Protection</span> Platform</h2>
-        <p className="mt-5 max-w-3xl text-lg leading-relaxed text-white/85">
-          ScamBomb combines instant scam checking with ongoing education, monthly scam updates, printable family resources, live workshops, and practical senior technology guides. It gives older adults and the people who care about them a trusted place to turn before a suspicious situation becomes an expensive mistake.
-        </p>
+      <section
+        id="platform"
+        className="relative py-16"
+        style={{
+          backgroundImage: "url('/ScamBomb-just-the-bomb.png')",
+          backgroundSize: '107px',
+          backgroundRepeat: 'repeat',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed',
+        }}
+      >
+        <div className="absolute inset-0 bg-[#0B1324]/95 pointer-events-none"></div>
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <HeaderEyebrow>More than a scam checker</HeaderEyebrow>
+          <h2 className="text-4xl sm:text-4xl font-bold">A Complete <span style={{ color: brandYellow }}>Family Protection</span> Platform</h2>
+          <p className="mt-5 max-w-3xl text-lg leading-relaxed text-white/85">
+            ScamBomb combines instant scam checking with ongoing education, monthly scam updates, printable family resources, live workshops, and practical senior technology guides. It gives older adults and the people who care about them a trusted place to turn before a suspicious situation becomes an expensive mistake.
+          </p>
 
-        <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          <div className="rounded-2xl border border-white/10 bg-[#F5C84C] p-6 text-[#0B1324]">
-            <h3 className="text-lg font-black uppercase">Check Suspicious Messages</h3>
-            <p className="mt-3 leading-relaxed opacity-90">Paste or upload suspicious texts, emails, links, and screenshots and receive a calm, plain-English explanation of the warning signs and what to do next.</p>
-          </div>
-          <div className="rounded-2xl border border-white/10 bg-[#F5C84C] p-6 text-[#0B1324]">
-            <h3 className="text-lg font-black uppercase">Stay Ahead of New Scams</h3>
-            <p className="mt-3 leading-relaxed opacity-90">Receive monthly updates covering emerging fraud tactics, AI-enabled scams, and simple protection tips that are easy to remember.</p>
-          </div>
-          <div className="rounded-2xl border border-white/10 bg-[#F5C84C] p-6 text-[#0B1324]">
-            <h3 className="text-lg font-black uppercase">Protect the Whole Family</h3>
-            <p className="mt-3 leading-relaxed opacity-90">Use printable worksheets, checklists, and conversation guides to create shared family safety habits before a crisis occurs.</p>
-          </div>
-          <div className="rounded-2xl border border-white/10 bg-[#F5C84C] p-6 text-[#0B1324]">
-            <h3 className="text-lg font-black uppercase">Learn Live</h3>
-            <p className="mt-3 leading-relaxed opacity-90">Attend monthly Zoom workshops featuring current scam examples, practical instruction, and live Q&A.</p>
-          </div>
-          <div className="rounded-2xl border border-white/10 bg-[#F5C84C] p-6 text-[#0B1324]">
-            <h3 className="text-lg font-black uppercase">Get Help With Everyday Technology</h3>
-            <p className="mt-3 leading-relaxed opacity-90">Access step-by-step guides that help older adults work through common technology frustrations using printable, follow-along instructions.</p>
-          </div>
-          <div className="rounded-2xl border-2 border-[#F5C84C] bg-[#0B1324] p-6 text-center flex flex-col justify-center">
-            <h3 className="text-lg font-black uppercase text-[#F5C84C]">Protect the whole family</h3>
-            <p className="mt-4 text-4xl font-black text-white">$9.99</p>
-            <p className="mt-2 text-sm text-white/70">per month</p>
+          <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            <div className="rounded-2xl border border-white/10 bg-[#F5C84C] p-6 text-[#0B1324]">
+              <h3 className="text-lg font-black uppercase">Check Suspicious Messages</h3>
+              <p className="mt-3 leading-relaxed opacity-90">Paste or upload suspicious texts, emails, links, and screenshots and receive a calm, plain-English explanation of the warning signs and what to do next.</p>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-[#F5C84C] p-6 text-[#0B1324]">
+              <h3 className="text-lg font-black uppercase">Stay Ahead of New Scams</h3>
+              <p className="mt-3 leading-relaxed opacity-90">Receive monthly updates covering emerging fraud tactics, AI-enabled scams, and simple protection tips that are easy to remember.</p>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-[#F5C84C] p-6 text-[#0B1324]">
+              <h3 className="text-lg font-black uppercase">Protect the Whole Family</h3>
+              <p className="mt-3 leading-relaxed opacity-90">Use printable worksheets, checklists, and conversation guides to create shared family safety habits before a crisis occurs.</p>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-[#F5C84C] p-6 text-[#0B1324]">
+              <h3 className="text-lg font-black uppercase">Learn Live</h3>
+              <p className="mt-3 leading-relaxed opacity-90">Attend monthly Zoom workshops featuring current scam examples, practical instruction, and live Q&A.</p>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-[#F5C84C] p-6 text-[#0B1324]">
+              <h3 className="text-lg font-black uppercase">Get Help With Everyday Technology</h3>
+              <p className="mt-3 leading-relaxed opacity-90">Access step-by-step guides that help older adults work through common technology frustrations using printable, follow-along instructions.</p>
+            </div>
+            <div className="rounded-2xl border-2 border-[#F5C84C] bg-[#0B1324] p-6 text-center flex flex-col justify-center">
+              <h3 className="text-lg font-black uppercase text-[#F5C84C]">Protect the whole family</h3>
+              <p className="mt-4 text-4xl font-black text-white">$9.99</p>
+              <p className="mt-2 text-sm text-white/70">per month</p>
+            </div>
           </div>
         </div>
       </section>
