@@ -288,7 +288,7 @@ export default function ScamBombLanding() {
             <div className="hover-lift"><Card title="Check suspicious messages" icon={<Check />}>Paste a text, email, website, or message and receive a calm, plain-English explanation.</Card></div>
             <div className="hover-lift"><Card title="Learn about emerging scams" icon={<Check />}>Stay informed about AI voice cloning, phishing, fake tech support, investment scams, romance scams, and other evolving threats.</Card></div>
             <div className="hover-lift"><Card title="Build shared family-protection habits" icon={<Check />}>Download printable guides, checklists, and conversation resources designed for seniors and the people who care about them.</Card></div>
-            <div className="hover-lift"><Card title="Receive ongoing education and live support" icon={<Check />}>Join monthly workshops, get timely scam updates, and access practical guidance as scams evolve.</Card></div>
+            <div className="hover-lift"><Card title="Receive ongoing education and live workshops" icon={<Check />}>Join monthly workshops, get timely scam updates, and access practical guidance as scams evolve.</Card></div>
           </div>
         </div>
       </section>
