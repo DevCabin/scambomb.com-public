@@ -1,7 +1,7 @@
 # ScamBomb.com — Helping Families Recognize Scams Before They Become Victims
 
-**Version**: 1.3.1
-**Last Updated**: August 20, 2026
+**Version**: 1.4.0
+**Last Updated**: August 26, 2026
 
 ## 🎯 Mission & Goals
 
@@ -58,6 +58,14 @@ ScamBomb is more than a message checker. It provides:
 ├── public/                # Static assets
 └── content/               # Blog content (MDX)
 ```
+
+## 🔄 Recent Changes (v1.4.0)
+
+### Homepage Background & Wording
+- **Pricing section solidified** — The pricing section ("Every Household Deserves Peace of Mind") is now solid dark blue instead of the repeating bomb-pattern background.
+- **Bomb background moved to platform section** — The repeating bomb-pattern background + overlay now sits behind the "A Complete Family Protection Platform" section.
+- **Bomb background added to blog section** — The same background now sits behind the "From the blog" section.
+- **Wording update** — Card title changed from "Receive ongoing education and live support" to "Receive ongoing education and live workshops".
 
 ## 🔄 Recent Changes (v1.3.1)
 
