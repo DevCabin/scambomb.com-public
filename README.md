@@ -1,7 +1,7 @@
 # ScamBomb.com — Helping Families Recognize Scams Before They Become Victims
 
 **Version**: 1.4.0
-**Last Updated**: August 26, 2026
+**Last Updated**: September 1, 2026
 
 ## 🎯 Mission & Goals
 
@@ -22,6 +22,7 @@ ScamBomb is more than a message checker. It provides:
 - **Practical Guidance**: Clear next steps people can take before they click, reply, or send money
 - **Scam Education**: Scam Triage articles, guides, checklists, and resources based on real scams
 - **Family Protection Resources**: Shareable information designed for seniors, caregivers, and the people who care about them
+- **Family Membership**: One paid membership covers the primary member plus up to four additional family members
 - **Community Awareness**: Workshops and educational programs for credit unions, libraries, senior centers, employers, and other organizations
 - **Privacy Protection**: No data selling and anonymous access where available
 

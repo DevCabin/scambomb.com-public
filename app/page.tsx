@@ -24,7 +24,7 @@ export default function ScamBombLanding() {
                 <span style={{ color: brandYellow }}>Smart People</span> Every Day.
               </h1>
               <p className="mt-5 max-w-xl text-lg leading-relaxed text-white/90 sm:text-xl">
-                ScamBomb helps you know what&apos;s real, what&apos;s dangerous, and what to do next—while giving your family ongoing education, practical resources, and live support to stay ahead of changing scams.
+                ScamBomb helps you know what&apos;s real, what&apos;s dangerous, and what to do next—while protecting your household with one membership for you and up to four additional family members, plus ongoing education, practical resources, and live support.
               </p>
               <div className="mt-7 text-center">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 max-w-lg mx-auto">

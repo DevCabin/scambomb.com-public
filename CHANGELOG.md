@@ -9,6 +9,11 @@
 - **`app/page.tsx`** — Added the same repeating bomb-pattern background image and dark overlay to the `From the blog` section (`#blog`).
 - **`app/page.tsx`** — Wrapped the blog section content in a `relative z-10` container so it renders above the new background overlay.
 - **`app/page.tsx`** — Updated the "Four ways to stay protected" card title from `Receive ongoing education and live support` to `Receive ongoing education and live workshops`.
+## 2026-09-01 — Clarify family membership coverage
+
+### Changed
+- **`app/page.tsx`** — Added clear homepage language explaining that one membership protects the primary member plus up to four additional family members.
+- **`components/PricingSection.tsx`** — Added the five-person household coverage detail to paid-plan features.
 
 ## 2026-08-25 — Reposition homepage as complete family-protection membership
 
