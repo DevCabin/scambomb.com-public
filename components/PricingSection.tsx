@@ -61,6 +61,7 @@ export function PricingSection() {
     'Selected Scam Triage articles and public resources',
   ]
   const protectedFeatures = [
+    'One membership for you plus up to 4 additional family members',
     'Unlimited scam analysis',
     'Monthly scam-prevention email with current warnings and memorable tips',
     'Monthly live Zoom workshop with practical instruction and Q&A',

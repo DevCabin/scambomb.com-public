@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-09-01 — Clarify family membership coverage
+
+### Changed
+- **`app/page.tsx`** — Added clear homepage language explaining that one membership protects the primary member plus up to four additional family members.
+- **`components/PricingSection.tsx`** — Added the five-person household coverage detail to paid-plan features.
+
 ## 2026-08-25 — Reposition homepage as complete family-protection membership
 
 ### Changed
