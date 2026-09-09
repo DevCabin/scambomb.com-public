@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="837 ready-to-use AI prompts for small business owners. Copy, customize, paste into ChatGPT, Claude, or Gemini—and get routine business work moving faster." />
+  <title>837 AI Prompts for Small Business | ScamBomb</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #0B1324;
+      --ink-2: #0B1426;
+      --paper: #0B1324;
+      --white: #151B2B;
+      --muted: #9BA3AF;
+      --line: #2D3138;
+      --accent: #F5C84C;
+      --accent-2: #F5C84C;
+      --green: #3DDC84;
+      --soft: #111827;
+      --soft-accent: #151B2B;
+      --text: #F0F2F5;
+      --text-secondary: #9BA3AF;
+      --max: 1160px;
+      --radius: 18px;
+      --shadow: 0 20px 50px rgba(0,0,0,.28);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--paper);
+      color: var(--text);
+      line-height: 1.62;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { max-width: 100%; }
+    a { color: inherit; }
+    .wrap { width: min(calc(100% - 40px), var(--max)); margin-inline: auto; }
+    .narrow { width: min(calc(100% - 40px), 820px); margin-inline: auto; }
+    .eyebrow {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      font-size: .76rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: #F5C84C;
+      margin-bottom: 16px;
+    }
+    .eyebrow::before { content: ""; width: 24px; height: 2px; background: var(--accent); }
+    h1, h2, h3 { font-family: "Montserrat", Inter, sans-serif; line-height: 1.08; letter-spacing: -.035em; margin: 0; }
+    h1 { font-size: clamp(2.8rem, 7vw, 5.9rem); max-width: 900px; }
+    h2 { font-size: clamp(2rem, 4vw, 3.8rem); max-width: 850px; }
+    h3 { font-size: 1.35rem; }
+    p { margin: 0 0 1rem; }
+    .lede { font-size: clamp(1.05rem, 2vw, 1.28rem); color: #9BA3AF; max-width: 760px; }
+    .muted { color: var(--muted); }
+
+    .topbar {
+      background: var(--ink);
+      color: var(--text);
+      border-bottom: 1px solid rgba(255,255,255,.1);
+    }
+    .topbar .wrap {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .brand {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      font-size: .95rem;
+    }
+    .topnav { display: flex; align-items: center; gap: 24px; font-size: .9rem; }
+    .topnav a { text-decoration: none; color: rgba(240,242,245,0.72); }
+    .topnav a:hover { color: var(--text); }
+    .mini-cta {
+      border: 1px solid rgba(255,255,255,.24);
+      padding: 9px 14px;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+
+    .hero {
+      background: var(--ink);
+      color: var(--text);
+      padding: 84px 0 76px;
+      overflow: hidden;
+      position: relative;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      right: -180px;
+      top: -240px;
+      border: 1px solid rgba(245,200,76,.23);
+      border-radius: 50%;
+      box-shadow: 0 0 0 80px rgba(245,200,76,.03), 0 0 0 160px rgba(245,200,76,.02);
+      pointer-events: none;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(320px, .75fr);
+      gap: 64px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    .hero .eyebrow { color: var(--accent-2); }
+    .hero .lede { color: rgba(240,242,245,0.72); margin-top: 26px; }
+    .hero-proof {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+      margin: 24px 0 30px;
+      color: rgba(240,242,245,0.72);
+      font-size: .92rem;
+    }
+    .hero-proof span::before { content: "✓"; color: var(--accent); font-weight: 800; margin-right: 7px; }
+
+    .kicker {
+      font-size: .92rem;
+      color: rgba(240,242,245,0.72);
+      margin-top: 18px;
+      font-weight: 600;
+    }
+    .social-proof {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: 22px 0 0;
+      padding: 10px 16px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 999px;
+      font-size: .88rem;
+      color: rgba(240,242,245,0.9);
+    }
+    .social-proof::before { content: "★"; color: var(--accent); }
+    .price-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+      padding: 6px 12px;
+      background: rgba(245,200,76,.14);
+      border: 1px solid rgba(245,200,76,.35);
+      border-radius: 999px;
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      color: var(--accent-2);
+    }
+    .strike { text-decoration: line-through; opacity: .65; margin-right: 6px; font-weight: 600; }
+    .trust-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+      margin-top: 14px;
+      font-size: .82rem;
+      color: rgba(240,242,245,0.55);
+    }
+    .trust-bar span { display: inline-flex; align-items: center; gap: 6px; }
+    .trust-bar span::before { content: "•"; color: var(--accent); }
+    .trust-bar span:first-child::before { content: "✓"; }
+
+    .hero-peek {
+      position: absolute;
+      right: -30px;
+      bottom: -20px;
+      width: 260px;
+      background: var(--white);
+      color: var(--text);
+      border-radius: 14px;
+      padding: 18px;
+      box-shadow: 0 20px 50px rgba(0,0,0,.25);
+      z-index: 2;
+      border: 1px solid var(--line);
+    }
+    .hero-peek-tag {
+      font-size: .65rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: #F5C84C;
+      margin-bottom: 8px;
+    }
+    .hero-peek-title { font-family: "Montserrat"; font-weight: 700; font-size: 1.05rem; line-height: 1.2; margin-bottom: 10px; }
+    .hero-peek-body {
+      font-size: .82rem;
+      line-height: 1.55;
+      color: #9BA3AF;
+      background: var(--soft);
+      border-radius: 8px;
+      padding: 10px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+    .hero-peek-body .token { color: var(--accent); font-weight: 700; }
+    @media (max-width: 900px) {
+      .hero-peek { position: relative; right: auto; bottom: auto; width: 100%; margin-top: 28px; }
+    }
+
+
+    .button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      min-height: 54px;
+      padding: 0 24px;
+      border-radius: 11px;
+      text-decoration: none;
+      font-weight: 800;
+      transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+    }
+    .button:hover { transform: translateY(-2px); }
+    .button-primary { background: var(--accent); color: #0B1324; box-shadow: 0 10px 28px rgba(245,200,76,.18); }
+    .button-primary:hover { background: #F5C84C; }
+    .button-dark { background: var(--ink); color: var(--text); }
+    .button-block { width: 100%; }
+    .cta-note { font-size: .82rem; color: rgba(240,242,245,0.50); margin-top: 10px; }
+
+    .product-stack { position: relative; min-height: 450px; }
+    .book {
+      position: absolute;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.16);
+      box-shadow: 0 30px 70px rgba(0,0,0,.35);
+      overflow: hidden;
+    }
+    .book.back {
+      width: 78%;
+      height: 350px;
+      right: 0;
+      top: 20px;
+      transform: rotate(5deg);
+      background: #0B1426;
+    }
+    .book.front {
+      width: 84%;
+      min-height: 390px;
+      left: 0;
+      top: 44px;
+      transform: rotate(-4deg);
+      background: #0B1324;
+      color: var(--text);
+      padding: 32px;
+    }
+    .cover-tag { font-size: .68rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: #F5C84C; }
+    .cover-title { font-family: "Montserrat"; font-size: 2.25rem; font-weight: 700; line-height: 1; margin: 22px 0 16px; letter-spacing: -.04em; }
+    .cover-count { font-size: 5.2rem; font-family: "Montserrat"; font-weight: 700; line-height: .9; color: #F5C84C; letter-spacing: -.06em; }
+    .cover-rule { width: 70px; height: 4px; background: var(--accent); margin: 22px 0; }
+    .cover-copy { font-size: .94rem; color: #9BA3AF; max-width: 260px; }
+    .cover-footer { position: absolute; bottom: 24px; left: 32px; right: 32px; display: flex; justify-content: space-between; border-top: 1px solid #2D3138; padding-top: 13px; font-size: .72rem; color: #9BA3AF; }
+
+    section { padding: 92px 0; }
+    .section-head { margin-bottom: 46px; }
+    .section-head .lede { margin-top: 18px; }
+
+    .stats-strip { background: var(--white); border-bottom: 1px solid var(--line); }
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+    .stat { padding: 30px 24px; border-right: 1px solid var(--line); }
+    .stat:last-child { border-right: 0; }
+    .stat strong { display: block; font-family: "Montserrat"; font-size: 2rem; line-height: 1; margin-bottom: 8px; }
+    .stat span { font-size: .87rem; color: var(--muted); }
+
+    .category-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .category {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 20px;
+      min-height: 116px;
+    }
+    .category .number { color: #F5C84C; font-weight: 800; font-size: .82rem; margin-bottom: 10px; }
+    .category h3 { font-size: 1.03rem; letter-spacing: -.02em; }
+    .category p { font-size: .84rem; color: var(--muted); margin: 8px 0 0; }
+
+    .problem { background: var(--white); }
+    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: start; }
+    .big-quote { font-family: "Montserrat"; font-size: clamp(1.65rem, 3vw, 2.6rem); font-weight: 700; line-height: 1.18; letter-spacing: -.035em; }
+    .pain-list { display: grid; gap: 12px; margin-top: 28px; }
+    .pain-item { padding: 16px 0 16px 28px; border-top: 1px solid var(--line); position: relative; }
+    .pain-item::before { content: "—"; position: absolute; left: 0; color: #F5C84C; font-weight: 800; }
+    .highlight-box { background: var(--soft-accent); border-left: 4px solid var(--accent); border-radius: 0 14px 14px 0; padding: 24px 26px; margin-top: 28px; }
+    .highlight-box strong { display: block; margin-bottom: 5px; }
+
+    .how { background: #111827; }
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; counter-reset: step; }
+    .step { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; counter-increment: step; }
+    .step::before {
+      content: "0" counter(step);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--ink);
+      color: var(--text);
+      font-size: .78rem;
+      font-weight: 800;
+      margin-bottom: 42px;
+    }
+    .step h3 { margin-bottom: 10px; }
+    .step p { color: var(--muted); font-size: .92rem; margin: 0; }
+
+    .prompt-demo { background: var(--ink); color: var(--text); }
+    .prompt-demo .lede { color: rgba(240,242,245,0.65); }
+    .demo-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 28px; margin-top: 44px; }
+    .prompt-card { background: var(--white); color: var(--text); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+    .prompt-card-head { padding: 16px 20px; background: #111827; display: flex; justify-content: space-between; align-items: center; gap: 12px; font-size: .78rem; font-weight: 700; }
+    .prompt-body { padding: 26px; }
+    .prompt-body .label { font-size: .7rem; font-weight: 800; letter-spacing: .11em; text-transform: uppercase; color: #F5C84C; }
+    .prompt-body h3 { font-size: 1.4rem; margin: 9px 0 18px; }
+    .code-ish { background: var(--white); border: 1px solid #2D3138; border-radius: 12px; padding: 18px; font: 500 .89rem/1.65 ui-monospace, SFMono-Regular, Menlo, monospace; color: #9BA3AF; }
+    .token { background: rgba(245,200,76,0.15); padding: 1px 4px; border-radius: 3px; color: #F5C84C; }
+    .demo-side { display: grid; gap: 18px; }
+    .micro-card { padding: 24px; border: 1px solid rgba(255,255,255,.14); border-radius: var(--radius); background: rgba(255,255,255,.04); cursor: pointer; transition: border-color .2s, background .2s; }
+    .micro-card:hover, .micro-card:focus { border-color: var(--accent); background: rgba(255,255,255,.08); }
+    .micro-card.active { border-color: var(--accent); background: rgba(245,200,76,.14); }
+    .micro-card .kicker { color: var(--accent); font-weight: 800; font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; }
+    .micro-card h3 { margin: 8px 0 10px; }
+    .micro-card p { color: rgba(240,242,245,0.60); font-size: .9rem; margin: 0; }
+    .prompt-ai { margin-top: 14px; font-size: .75rem; font-weight: 800; color: var(--accent); text-transform: uppercase; letter-spacing: .08em; }
+
+    .week { background: var(--white); }
+    .week-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 70px; align-items: center; }
+    .day-list { border-top: 1px solid var(--line); }
+    .day { display: grid; grid-template-columns: 90px 1fr; gap: 18px; padding: 17px 0; border-bottom: 1px solid var(--line); }
+    .day strong { font-size: .82rem; text-transform: uppercase; letter-spacing: .08em; color: #F5C84C; }
+    .day span { font-weight: 600; }
+
+    .objection { background: var(--soft-accent); }
+    .objection .split { align-items: center; }
+    .answer-card { background: var(--white); border: 1px solid #2D3138; border-radius: var(--radius); padding: 34px; box-shadow: 0 20px 40px rgba(0,0,0,.08); }
+    .answer-card .yes { font-family: "Montserrat"; font-size: 3rem; font-weight: 700; line-height: 1; color: #F5C84C; margin-bottom: 18px; }
+
+    .tool-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .tool-pill { background: var(--white); border: 1px solid var(--line); border-radius: 999px; padding: 10px 16px; font-weight: 700; font-size: .88rem; }
+
+    .course-block { background: var(--ink); color: var(--text); }
+    .course-block .lede { color: rgba(240,242,245,0.65); }
+    .no-list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 34px 0; }
+    .no-item { border: 1px solid rgba(255,255,255,.14); border-radius: 14px; padding: 22px; color: rgba(240,242,245,0.75); }
+    .no-item strong { color: var(--accent); display: block; margin-bottom: 8px; }
+
+    .contents { background: var(--white); }
+    .contents .accordions { display: grid; gap: 10px; max-width: 900px; margin-inline: auto; }
+    .contents summary { justify-content: flex-start; }
+    .contents summary .cat-title { flex: 1; }
+    .contents summary .cat-count { flex-shrink: 0; min-width: 110px; text-align: right; color: var(--muted); font-size: .95rem; font-weight: 700; }
+    .contents summary::after { margin-left: auto; }
+    details { border: 1px solid var(--line); border-radius: 12px; background: #0B1324; overflow: hidden; }
+    summary { list-style: none; cursor: pointer; padding: 18px 20px; font-weight: 800; display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; font-size: 1.3rem; color: #F5C84C; }
+    details[open] summary::after { content: "–"; }
+    .detail-body { padding: 0 20px 20px; color: var(--muted); font-size: .92rem; }
+    .detail-body strong { color: var(--text); }
+
+    .fit { background: #111827; }
+    .fit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+    .fit-card { background: var(--white); border-radius: var(--radius); padding: 32px; border: 1px solid var(--line); }
+    .fit-card h3 { margin-bottom: 20px; }
+    .checklist { list-style: none; padding: 0; margin: 0; display: grid; gap: 13px; }
+    .checklist li { position: relative; padding-left: 28px; }
+    .checklist li::before { position: absolute; left: 0; font-weight: 900; }
+    .good li::before { content: "✓"; color: var(--green); }
+    .skip li::before { content: "×"; color: #EF4444; }
+
+    .trust { background: var(--white); }
+    .trust-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .trust-card { border-top: 3px solid var(--accent); background: #151B2B; padding: 26px; }
+    .trust-card h3 { margin-bottom: 12px; }
+    .trust-card p { color: var(--muted); font-size: .92rem; margin: 0; }
+
+    .offer { background: var(--ink); color: var(--text); }
+    .offer-grid { display: grid; grid-template-columns: 1fr 440px; gap: 70px; align-items: center; }
+    .offer .lede { color: rgba(240,242,245,0.65); }
+    .offer-list { list-style: none; padding: 0; margin: 28px 0 0; display: grid; gap: 11px; }
+    .offer-list li { position: relative; padding-left: 30px; color: rgba(240,242,245,0.78); }
+    .offer-list li::before { content: "✓"; position: absolute; left: 0; color: var(--accent); font-weight: 900; }
+    .price-card { background: var(--white); color: var(--text); border-radius: 22px; padding: 32px; box-shadow: 0 28px 70px rgba(0,0,0,.28); }
+    .price-card .tag { display: inline-block; background: var(--soft-accent); color: #F5C84C; font-size: .72rem; font-weight: 800; text-transform: uppercase; letter-spacing: .1em; border-radius: 999px; padding: 7px 10px; }
+    .price-line { display: flex; align-items: flex-end; gap: 13px; margin: 23px 0 4px; }
+    .old-price { color: rgba(240,242,245,0.40); text-decoration: line-through; font-size: 1.2rem; padding-bottom: 8px; }
+    .new-price { font-family: "Montserrat"; font-size: 4.7rem; font-weight: 700; line-height: 1; letter-spacing: -.06em; }
+    .price-note { color: var(--muted); font-size: .86rem; margin-bottom: 24px; }
+    .mini-list { border-top: 1px solid var(--line); padding: 20px 0; display: grid; gap: 10px; font-size: .9rem; }
+    .mini-list span::before { content: "✓"; color: var(--green); font-weight: 900; margin-right: 9px; }
+    .checkout-disclaimer { font-size: .76rem; color: rgba(240,242,245,0.40); text-align: center; margin: 12px 0 0; }
+
+    .guarantee { background: var(--soft-accent); }
+    .guarantee-box { border: 1px solid #F5C84C; border-radius: 24px; padding: 42px; background: var(--white); display: grid; grid-template-columns: 120px 1fr; gap: 30px; align-items: center; }
+    .shield { width: 108px; aspect-ratio: 1; border-radius: 50%; border: 2px solid var(--accent); display: grid; place-items: center; font-family: "Montserrat"; font-weight: 700; font-size: 2rem; color: #F5C84C; }
+
+    .faq { background: var(--white); }
+    .faq .accordions { max-width: 880px; }
+
+    .final { background: #0B1324; color: var(--text); text-align: center; }
+    .final h2 { margin-inline: auto; }
+    .final .lede { color: rgba(240,242,245,0.65); margin: 20px auto 30px; }
+
+    footer { background: #0B1324; color: rgba(240,242,245,0.45); padding: 34px 0; font-size: .82rem; }
+    footer .wrap { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+    footer a { color: rgba(240,242,245,0.55); text-decoration: none; }
+
+    .sticky-buy { display: none; }
+
+    @media (max-width: 900px) {
+      .hero-grid, .split, .demo-grid, .week-grid, .offer-grid { grid-template-columns: 1fr; gap: 44px; }
+      .product-stack { max-width: 560px; width: 100%; margin: 0 auto; }
+      .category-grid { grid-template-columns: repeat(2, 1fr); }
+      .steps { grid-template-columns: repeat(2, 1fr); }
+      .trust-grid { grid-template-columns: 1fr; }
+      .no-list { grid-template-columns: repeat(2, 1fr); }
+      .price-card { max-width: 520px; }
+    }
+
+    @media (max-width: 640px) {
+      .wrap, .narrow { width: min(calc(100% - 28px), var(--max)); }
+      .topnav a:not(.mini-cta) { display: none; }
+      .hero { padding: 56px 0 60px; }
+      h1 { font-size: clamp(2.65rem, 14vw, 4.2rem); }
+      section { padding: 70px 0; }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+      .stat:nth-child(2) { border-right: 0; }
+      .stat:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+      .category-grid, .steps, .fit-grid, .no-list { grid-template-columns: 1fr; }
+      .book.front { width: 88%; padding: 24px; }
+      .cover-title { font-size: 1.9rem; }
+      .cover-count { font-size: 4.5rem; }
+      .product-stack { min-height: 410px; }
+      .step::before { margin-bottom: 24px; }
+      .day { grid-template-columns: 70px 1fr; }
+      .guarantee-box { grid-template-columns: 1fr; padding: 28px; }
+      .offer-grid { gap: 34px; }
+      .new-price { font-size: 4.2rem; }
+      .sticky-buy {
+        display: block;
+        position: fixed;
+        z-index: 50;
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        background: var(--ink);
+        border: 1px solid rgba(255,255,255,.16);
+        border-radius: 15px;
+        padding: 8px;
+        box-shadow: 0 18px 45px rgba(0,0,0,.28);
+      }
+      .sticky-buy .button { min-height: 48px; width: 100%; }
+      footer { padding-bottom: 94px; }
+    }
+    .brand { text-transform: none; letter-spacing: 0.02em; text-decoration: none; font-size: 1.25rem; font-weight: 800; }
+    .brand-scam { color: var(--text); }
+    .brand-bomb { color: var(--accent); }
+  </style>
+  <link rel="icon" type="image/png" href="/scambomb-favicon-64.png">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T61B4NX3J8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-T61B4NX3J8');
+  </script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap">
+      <a href="/" class="brand" aria-label="ScamBomb home">
+        <span class="brand-scam">SCAM</span><span class="brand-bomb">B💣MB</span>
+      </a>
+      <nav class="topnav" aria-label="Primary">
+        <a href="#inside">What's Inside</a>
+        <a href="#faq">FAQ</a>
+        <a href="#buy" class="mini-cta">Get the Library</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">The Small Business AI Prompt Library</div>
+          <h1>You already have the AI.<br><span style="color:var(--accent)">Here's what to ask it.</span></h1>
+          <p class="lede">837 ready-to-use prompts for the real work of running a small business—from sales follow-ups and invoice reminders to website copy, customer service, hiring, planning, and operations.</p>
+          <div class="kicker">For small business owners, freelancers, and solo operators.</div>
+          <div class="social-proof">Real prompts used by hundreds of businesses just like yours.</div>
+          <div class="hero-proof" aria-label="Product highlights">
+            <span>Copy, customize, paste</span>
+            <span>15 business categories</span>
+            <span>Works with popular free AI tools</span>
+            <span>No course or subscription</span>
+          </div>
+          <div class="price-badge">Limited intro price — Save $22</div>
+          <a href="#buy" class="button button-primary">Get all 837 prompts — <span class="strike">$49</span> $27</a>
+          <div class="trust-bar">
+            <span>30-day Actually Useful guarantee</span>
+            <span>Instant download</span>
+            <span>No subscription</span>
+          </div>
+        </div>
+
+        <div class="product-stack" aria-label="Product preview mockup">
+          <div class="book back"></div>
+          <div class="book front">
+            <div class="cover-tag">ScamBomb Business Resource</div>
+            <div class="cover-title">Small Business<br>AI Prompt Library</div>
+            <div class="cover-count">837</div>
+            <div class="cover-rule"></div>
+            <p class="cover-copy">Copy-and-paste prompts organized around the work small business owners actually do.</p>
+            <div class="cover-footer"><span>15 categories</span><span>70+ topics</span></div>
+          </div>
+          <div class="hero-peek" aria-label="Real prompt preview">
+            <div class="hero-peek-tag">Real prompt from the library</div>
+            <div class="hero-peek-title">Follow up on an unpaid invoice</div>
+            <div class="hero-peek-body">
+              Write a polite but firm invoice follow-up email.<br>
+              Client: <span class="token">[CLIENT NAME]</span><br>
+              Invoice #: <span class="token">[INVOICE #]</span><br>
+              Amount: <span class="token">[AMOUNT]</span><br>
+              Due date: <span class="token">[DATE]</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="stats-strip" aria-label="Product statistics">
+      <div class="wrap stats-grid">
+        <div class="stat"><strong>837</strong><span>ready-to-use prompts</span></div>
+        <div class="stat"><strong>15</strong><span>business categories</span></div>
+        <div class="stat"><strong>70+</strong><span>specific business topics</span></div>
+        <div class="stat"><strong>&lt;5 min</strong><span>to find, customize and run your first prompt</span></div>
+      </div>
+    </div>
+
+    <section id="inside">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">One library. Your whole business.</div>
+          <h2>Find the task. Copy the prompt. Get moving.</h2>
+          <p class="lede">The library is organized by business function—not by technical AI terminology—so you can go directly to the job in front of you.</p>
+        </div>
+        <div class="category-grid">
+          <article class="category"><div class="number">72 prompts</div><h3>Finance & Administration</h3><p>Invoices, reminders, quotes, bookkeeping checklists, vendors.</p></article>
+          <article class="category"><div class="number">75 prompts</div><h3>Sales & Lead Generation</h3><p>Lead replies, follow-ups, objections, scripts, buyer personas.</p></article>
+          <article class="category"><div class="number">69 prompts</div><h3>Website & Conversion Copy</h3><p>Homepages, headlines, service pages, pricing, SEO, CTAs.</p></article>
+          <article class="category"><div class="number">74 prompts</div><h3>Email & Communication</h3><p>Professional emails, tone fixes, recaps, reusable templates.</p></article>
+          <article class="category"><div class="number">64 prompts</div><h3>Social Media & Content</h3><p>Calendars, platform posts, scripts, carousels, repurposing.</p></article>
+          <article class="category"><div class="number">36 prompts</div><h3>Advertising & Promotions</h3><p>Google Ads, Meta ads, retargeting, campaign briefs, launches.</p></article>
+          <article class="category"><div class="number">64 prompts</div><h3>Customer Service</h3><p>Support, onboarding, complaints, FAQs, retention, surveys.</p></article>
+          <article class="category"><div class="number">14 prompts</div><h3>Reviews & Reputation</h3><p>Review replies, request sequences, policies, monitoring.</p></article>
+          <article class="category"><div class="number">67 prompts</div><h3>Operations & SOPs</h3><p>Processes, checklists, projects, file systems, decisions.</p></article>
+          <article class="category"><div class="number">42 prompts</div><h3>Hiring & Training</h3><p>Job descriptions, interviews, onboarding, training, reviews.</p></article>
+          <article class="category"><div class="number">85 prompts</div><h3>Research & Planning</h3><p>Competitors, SWOT, business planning, analysis, decisions.</p></article>
+          <article class="category"><div class="number">12 prompts</div><h3>Meetings & Presentations</h3><p>Agendas, recaps, speaker notes, summaries, client updates.</p></article>
+          <article class="category"><div class="number">50 prompts</div><h3>E-commerce & Local Service</h3><p>Products, carts, inventory, appointments, local workflows.</p></article>
+          <article class="category"><div class="number">65 prompts</div><h3>Spreadsheets & Automation</h3><p>Sheets, Zapier, Make, CRM workflows, data processing.</p></article>
+          <article class="category"><div class="number">48 prompts</div><h3>Legal, Privacy & Security</h3><p>Review checklists, privacy prep, security and compliance.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="problem">
+      <div class="wrap split">
+        <div>
+          <div class="eyebrow">The real AI problem</div>
+          <h2>The hardest part isn't using AI. It's knowing what to ask.</h2>
+        </div>
+        <div>
+          <p class="big-quote">You open ChatGPT, type a vague request, get a vague answer—and spend the next 20 minutes explaining what you meant.</p>
+          <div class="pain-list">
+            <div class="pain-item">You keep rewriting the same kinds of emails from scratch.</div>
+            <div class="pain-item">You know AI could help with marketing, sales and admin—but the blank chat box gives you no starting point.</div>
+            <div class="pain-item">You don't have time for a course on how to become better at prompting.</div>
+            <div class="pain-item">When you finally get a useful result, you forget to turn it into a reusable template.</div>
+          </div>
+          <div class="highlight-box">
+            <strong>You don't need more AI theory.</strong>
+            You need useful instructions for the business task sitting in front of you right now.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="how">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">No learning curve required</div>
+          <h2>Four steps from “I need to do this” to a usable first draft.</h2>
+        </div>
+        <div class="steps">
+          <article class="step"><h3>Find it</h3><p>Go to the business category that matches what you're trying to accomplish.</p></article>
+          <article class="step"><h3>Copy it</h3><p>Choose the ready-made prompt designed for that specific task.</p></article>
+          <article class="step"><h3>Fill the blanks</h3><p>Add your business name, customer details, offer, dates or other context.</p></article>
+          <article class="step"><h3>Paste & review</h3><p>Run it in your AI chat, verify the result, refine if needed, then use it.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="prompt-demo">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">See what “ready to use” means</div>
+          <h2>This isn't a list of clever prompt ideas. It's a working reference library.</h2>
+          <p class="lede">Each entry gives you a clear task, a structured prompt with placeholders, and guidance on which AI tool is a good fit.</p>
+        </div>
+        <div class="demo-grid">
+          <div class="prompt-card" id="prompt-example">
+            <div class="prompt-card-head"><span id="prompt-label">Finance → Invoice Follow-Up</span><span id="prompt-tag">Real prompt from the library</span></div>
+            <div class="prompt-body">
+              <div class="label">Prompt</div>
+              <h3 id="prompt-title">Draft a first overdue-invoice reminder</h3>
+              <div class="code-ish" id="prompt-body">Draft a first overdue-invoice reminder email.<br><br>
+Business: <span class="token">[BUSINESS NAME]</span><br>
+Client: <span class="token">[CLIENT NAME]</span><br>
+Invoice number: <span class="token">[NUMBER]</span><br>
+Amount: $<span class="token">[AMOUNT]</span><br>
+Original due date: <span class="token">[DATE]</span><br>
+Days overdue: <span class="token">[NUMBER]</span><br><br>
+Tone: Polite, assuming the oversight was accidental<br>
+Include:<br>
+- Gentle reminder<br>
+- Invoice details<br>
+- Payment link<br>
+- Offer to discuss if there's an issue<br>
+Keep under 150 words.</div>
+              <div class="prompt-ai" id="prompt-ai">Claude (Free)</div>
+            </div>
+          </div>
+          <div class="demo-side" id="prompt-selector">
+            <article class="micro-card active" data-index="0" tabindex="0" role="button" aria-label="Show Sales example: invoice follow-up">
+              <div class="kicker">Sales</div>
+              <h3>A lead went quiet.</h3>
+              <p>Find a follow-up sequence that gives you a useful starting point without sounding pushy or generic.</p>
+            </article>
+            <article class="micro-card" data-index="1" tabindex="0" role="button" aria-label="Show Marketing example: 90-day content calendar">
+              <div class="kicker">Marketing</div>
+              <h3>You need 3 months of content.</h3>
+              <p>Use the 90-day content-calendar prompt to turn your offers, audience and goals into a structured publishing plan.</p>
+            </article>
+            <article class="micro-card" data-index="2" tabindex="0" role="button" aria-label="Show Operations example: SOP">
+              <div class="kicker">Operations</div>
+              <h3>You keep explaining the same process.</h3>
+              <p>Use an SOP prompt to turn the way you already work into a repeatable checklist your team can follow.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="week">
+      <div class="wrap week-grid">
+        <div>
+          <div class="eyebrow">A resource you use—not consume</div>
+          <h2>What could you get off your plate this week?</h2>
+          <p class="lede" style="margin-top:20px">This is not a product you need to “finish.” Open it when there is work to do, grab the right prompt, then come back the next time something lands on your desk.</p>
+        </div>
+        <div class="day-list">
+          <div class="day"><strong>Monday</strong><span>Draft a polite overdue-invoice reminder.</span></div>
+          <div class="day"><strong>Tuesday</strong><span>Turn a customer question into a useful FAQ.</span></div>
+          <div class="day"><strong>Wednesday</strong><span>Build your next social-content calendar.</span></div>
+          <div class="day"><strong>Thursday</strong><span>Create interview questions for a new hire.</span></div>
+          <div class="day"><strong>Friday</strong><span>Document the process you keep explaining.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="objection">
+      <div class="wrap split">
+        <div>
+          <div class="eyebrow">The obvious question</div>
+          <h2>“Couldn't I just ask ChatGPT to write this stuff?”</h2>
+        </div>
+        <div class="answer-card">
+          <div class="yes">Yes.</div>
+          <p>You could also search the web every time you need an invoice reminder, sales script, hiring checklist, SOP outline, marketing plan or customer-service response.</p>
+          <p><strong>The value isn't that these things are impossible to create yourself. The value is not having to start from zero every time.</strong></p>
+          <p class="muted" style="margin-bottom:0">The library gives you 837 organized starting points built around the work small businesses actually do. Find the job. Add your details. Get moving.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap split">
+        <div>
+          <div class="eyebrow">Use the AI you already like</div>
+          <h2>Stop wondering which tool to open.</h2>
+          <p class="lede" style="margin-top:18px">Prompts include a recommended AI option so you have a sensible starting point. You do not need accounts with all three tools—and you do not need expensive enterprise software.</p>
+          <div class="tool-row" aria-label="Supported AI tools">
+            <span class="tool-pill">ChatGPT</span><span class="tool-pill">Claude</span><span class="tool-pill">Gemini</span>
+          </div>
+        </div>
+        <div class="highlight-box" style="margin-top:0">
+          <strong>A note on AI recommendations</strong>
+          AI products change quickly. The library's tool suggestions are recommendations—not hard requirements. Most prompts are portable, and a capable general-purpose chat AI can handle a large portion of the collection.
+        </div>
+      </div>
+    </section>
+
+    <section class="course-block">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Deliberately not a course</div>
+          <h2>You do not need six hours of AI training to send a better follow-up email.</h2>
+          <p class="lede">There are no modules to complete before you get value. The library is designed to be useful the first time you open it.</p>
+        </div>
+        <div class="no-list">
+          <div class="no-item"><strong>No modules.</strong>Go directly to the task you need.</div>
+          <div class="no-item"><strong>No homework.</strong>Your real business work is the practice.</div>
+          <div class="no-item"><strong>No jargon.</strong>Plain-English instructions and placeholders.</div>
+          <div class="no-item"><strong>No subscription.</strong>Buy the resource once and keep it.</div>
+        </div>
+        <a href="#buy" class="button button-primary">Get the prompt library — $27</a>
+      </div>
+    </section>
+
+    <section class="contents">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Explore the library</div>
+          <h2>837 prompts, organized so you don't have to scroll through 837 prompts.</h2>
+          <p class="lede">Open only the sections that matter to you. This is the detailed view for buyers who want to see the scope before purchasing.</p>
+        </div>
+        <div class="accordions">
+          <details><summary><span class="cat-title">Finance, Invoices & Administration</span><span class="cat-count">72 prompts</span></summary><div class="detail-body"><strong>Includes:</strong> invoice emails, first and follow-up payment reminders, quote templates, bookkeeping checklists, expense tracking, vendor-management communication and administrative workflows.</div></details>
+          <details><summary><span class="cat-title">Sales & Lead Generation</span><span class="cat-count">75 prompts</span></summary><div class="detail-body"><strong>Includes:</strong> lead-response templates, discovery questions, follow-up sequences, objection handling, sales scripts, buyer-persona work and qualification support.</div></details>
+          <details><summary><span class="cat-title">Website, Landing Pages & Conversion Copy</span><span class="cat-count">69 prompts</span></summary><div class="detail-body"><strong>Includes:</strong> homepage copy, headline variations, service pages, pricing pages, local landing pages, SEO content, meta descriptions and conversion-focused CTAs.</div></details>
+          <details><summary><span class="cat-title">Email, Gmail & Communication</span><span class="cat-count">74 prompts</span></summary><div class="detail-body"><strong>Includes:</strong> professional emails, reusable templates, tone refinement, inbox-organization ideas, meeting recaps and multilingual communication support.</div></details>
+          <details><summary><span class="cat-title">Social Media & Content Repurposing</span><span class="cat-count">64 prompts</span></summary><div class="detail-body"><strong>Includes:</strong> content calendars, platform-specific posts, video scripts, community-management responses, carousel copy and ways to repurpose existing content.</div></details>
+          <details><summary><span class="cat-title">Advertising & Promotional Campaigns</span><span class="cat-count">36 prompts</span></summary><div class="detail-body"><strong>Includes:</strong> Google Ads, Meta ads, retargeting, campaign briefs, launch plans, promotion structures and campaign post-mortems.</div></details>
+          <details><summary><span class="cat-title">Customer Service & Retention</span><span class="cat-count">64 prompts</span></summary><div class="detail-body"><strong>Includes:</strong> support templates, onboarding sequences, complaint resolution, help-center FAQs, churn surveys and loyalty-program planning.</div></details>
+          <details><summary><span class="cat-title">Reviews & Reputation Management</span><span class="cat-count">14 prompts</span></summary><div class="detail-body"><strong>Includes:</strong> review responses, review-request sequences, monitoring checklists and reputation-management policies.</div></details>
+          <details><summary><span class="cat-title">Operations, Systems & SOPs</span><span class="cat-count">67 prompts</span></summary><div class="detail-body"><strong>Includes:</strong> standard operating procedures, checklists, project-management support, file organization and decision frameworks.</div></details>
+          <details><summary><span class="cat-title">Hiring, Contractors & Training</span><span class="cat-count">42 prompts</span></summary><div class="detail-body"><strong>Includes:</strong> job descriptions, interview questions, contractor briefs, onboarding plans, training materials and performance-review support.</div></details>
+          <details><summary><span class="cat-title">Research, Planning & Decision-Making</span><span class="cat-count">85 prompts</span></summary><div class="detail-body"><strong>Includes:</strong> market research, competitor analysis, SWOT exercises, business planning, data-analysis support and spreadsheet design.</div></details>
+          <details><summary><span class="cat-title">Meetings, Calls & Presentation Support</span><span class="cat-count">12 prompts</span></summary><div class="detail-body"><strong>Includes:</strong> meeting recaps, agendas, speaker notes, executive summaries and client updates.</div></details>
+          <details><summary><span class="cat-title">E-commerce, Retail & Local Services</span><span class="cat-count">50 prompts</span></summary><div class="detail-body"><strong>Includes:</strong> product descriptions, abandoned-cart recovery, inventory tracking, appointment workflows and local-service communication.</div></details>
+          <details><summary><span class="cat-title">No-Code, Spreadsheets & Simple Automation</span><span class="cat-count">65 prompts</span></summary><div class="detail-body"><strong>Includes:</strong> Google Sheets templates, Zapier and Make workflow planning, CRM automation ideas and AI-assisted data-processing tasks.</div></details>
+          <details><summary><span class="cat-title">Legal, Privacy, Security & Compliance</span><span class="cat-count">48 prompts</span></summary><div class="detail-body"><strong>Includes:</strong> contract-review checklists, privacy-policy preparation, security-awareness materials, marketing-compliance checks and incident-response planning. AI output is not a substitute for professional legal or compliance advice.</div></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="fit">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">A practical fit check</div>
+          <h2>Built for busy owners—not AI hobbyists.</h2>
+        </div>
+        <div class="fit-grid">
+          <div class="fit-card">
+            <h3>This library is for you if...</h3>
+            <ul class="checklist good">
+              <li>You own a small business, freelance, consult or run a lean team.</li>
+              <li>You already know AI can help but aren't always sure what to ask.</li>
+              <li>You repeat the same kinds of writing, planning and communication tasks.</li>
+              <li>You want practical shortcuts rather than AI theory.</li>
+              <li>You want useful starting points you can save and reuse.</li>
+            </ul>
+          </div>
+          <div class="fit-card">
+            <h3>You can probably skip it if...</h3>
+            <ul class="checklist skip">
+              <li>You want to build custom AI agents, APIs or complex technical systems.</li>
+              <li>You expect AI to make business decisions without human review.</li>
+              <li>You are looking for a “get rich quick with AI” playbook.</li>
+              <li>You already maintain an extensive prompt and workflow library of your own.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Useful AI requires judgment</div>
+          <h2>Fast first drafts. Human approval.</h2>
+          <p class="lede">AI can produce confident mistakes. This resource is designed around a simple rule: use AI to accelerate the work, then verify anything that matters before it reaches a customer, employee, website or business system.</p>
+        </div>
+        <div class="trust-grid">
+          <article class="trust-card"><h3>Safety reminders</h3><p>Review names, numbers, dates, pricing, claims and other important details before publishing or sending.</p></article>
+          <article class="trust-card"><h3>Clear boundaries</h3><p>Legal, financial and compliance prompts are for drafting and preparation—not professional decisions or autonomous actions.</p></article>
+          <article class="trust-card"><h3>Portable by design</h3><p>The prompts are written to remain useful across popular chat tools rather than locking you into one AI provider.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="offer" id="buy">
+      <div class="wrap offer-grid">
+        <div>
+          <div class="eyebrow">The complete library</div>
+          <h2>One reference library for the jobs you do every week.</h2>
+          <p class="lede" style="margin-top:20px">Instead of rebuilding the same emails, plans, checklists and drafts from scratch, start with a structured prompt and make it yours.</p>
+          <ul class="offer-list">
+            <li>837 ready-to-use, fill-in-the-blank prompts</li>
+            <li>15 business categories and 70+ specific topics</li>
+            <li>AI tool recommendations for a sensible starting point</li>
+            <li>Safe-use and verification guidance</li>
+            <li>Searchable, reusable reference format</li>
+            <li>Works with popular free and low-cost chat AI tools</li>
+            <li>One-time purchase—no recurring subscription</li>
+          </ul>
+        </div>
+        <div class="price-card">
+          <span class="tag">Introductory price</span>
+          <div class="price-line"><span class="old-price">$49</span><span class="new-price">$27</span></div>
+          <div class="price-note">One-time payment. Keep the library and use it whenever you need it.</div>
+          <div class="mini-list">
+            <span>Instant digital delivery</span>
+            <span>No paid AI account required</span>
+            <span>No course or membership</span>
+            <span>30-day usefulness guarantee</span>
+          </div>
+          <a href="https://buy.stripe.com/4gM6oG2KS9rh93U82UejK04" class="button button-primary button-block" aria-label="Purchase the Small Business AI Prompt Library for $27 via Stripe">Get the complete library — $27</a>
+          <p class="checkout-disclaimer">Secure checkout via Stripe. One-time payment. Instant digital delivery.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="guarantee">
+      <div class="narrow">
+        <div class="guarantee-box">
+          <div class="shield">30</div>
+          <div>
+            <div class="eyebrow">Try it on your actual business</div>
+            <h2 style="font-size:clamp(1.9rem,4vw,3rem);margin-bottom:16px">The 30-day “Actually Useful” guarantee.</h2>
+            <p>Open the library. Try the prompts on real work. If you don't find it genuinely useful for your business, contact ScamBomb within 30 days of purchase for a refund.</p>
+            <p class="muted" style="margin-bottom:0">Simple as that. The point is to save you time—not give you another digital file you never use.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq" id="faq">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Before you buy</div>
+          <h2>Questions a sensible business owner should ask.</h2>
+        </div>
+        <div class="accordions">
+          <details><summary>Do I need a paid ChatGPT account?</summary><div class="detail-body">No. The library is designed around common web-based AI tools and basic/free usage. Availability and limits can change by provider, but you do not need an enterprise AI subscription to use the resource.</div></details>
+          <details><summary>Do I need all three AI tools?</summary><div class="detail-body">No. Each prompt may suggest a good tool for the job, but those recommendations are not requirements. Most prompts are portable and can be used in a capable general-purpose AI chat.</div></details>
+          <details><summary>Is this a course?</summary><div class="detail-body">No. There are no videos, lessons or modules. It is a reference library you open when you need to accomplish a task.</div></details>
+          <details><summary>Do I need to know how to write AI prompts?</summary><div class="detail-body">No. That's the point. The prompts are already structured. You fill in the bracketed placeholders with your business details, paste the prompt into your AI tool, then review and refine the output.</div></details>
+          <details><summary>What kinds of business tasks are covered?</summary><div class="detail-body">Sales, invoices, email, website copy, social media, advertising, customer service, reviews, SOPs, hiring, planning, meetings, e-commerce, spreadsheets, no-code automation, security and compliance preparation are all included.</div></details>
+          <details><summary>Can I use the prompts more than once?</summary><div class="detail-body">Yes. The resource is designed as a reusable business library. Save the outputs that work for you as your own templates and return to the original prompts whenever you need a fresh version.</div></details>
+          <details><summary>Can my team use it?</summary><div class="detail-body">The intended license is for use inside the purchasing business, including its internal team. It is not intended for resale, redistribution, republishing or inclusion in another prompt product.</div></details>
+          <details><summary>Will AI always give me the right answer?</summary><div class="detail-body">No. AI can make mistakes. The library includes safety and review reminders, and you remain responsible for verifying facts, names, dates, prices, claims, legal implications and other important details before using AI-generated output.</div></details>
+          <details><summary>Is this legal, tax or financial advice?</summary><div class="detail-body">No. Prompts in those areas are intended to help organize information, prepare questions and create drafts or checklists. They do not replace qualified professional advice or judgment.</div></details>
+          <details><summary>What happens after I buy?</summary><div class="detail-body">After completing your purchase through Stripe, you'll be redirected to a download page with a ZIP file. Unzip it, open the HTML file in any browser (Chrome, Edge, Safari, or Firefox), and start searching and copying prompts. The file works offline.</div></details>
+          <details><summary>What if I buy it and it isn't useful?</summary><div class="detail-body">Use the library on your real business tasks. If you don't find it genuinely useful, contact ScamBomb within 30 days of purchase under the “Actually Useful” guarantee.</div></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="final">
+      <div class="narrow">
+        <div class="eyebrow">Start with the work already on your list</div>
+        <h2>You already have the AI.<br><span style="color:var(--accent)">Now you'll know what to ask it.</span></h2>
+        <p class="lede">837 prompts. 15 parts of your business. One searchable library you can keep coming back to.</p>
+        <a href="#buy" class="button button-primary">Get the Small Business AI Prompt Library — $27</a>
+        <div class="cta-note">Introductory price • Regularly $49 • One-time purchase</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div>© 2026 ScamBomb.com — All rights reserved.</div>
+      <div><a href="/">Home</a> &nbsp;•&nbsp; <a href="/terms">Terms</a> &nbsp;•&nbsp; <a href="/extension-privacy">Privacy</a></div>
+    </div>
+  </footer>
+
+  <div class="sticky-buy" aria-hidden="false">
+    <a href="#buy" class="button button-primary">Get all 837 prompts — $27</a>
+  </div>
+<script>
+(function() {
+  const promptData = [
+    {
+      label: 'Finance → Invoice Follow-Up',
+      tag: 'Real prompt from the library',
+      title: 'Draft a first overdue-invoice reminder',
+      ai: 'Claude (Free)',
+      body: 'Draft a first overdue-invoice reminder email.<br><br>\nBusiness: <span class="token">[BUSINESS NAME]</span><br>\nClient: <span class="token">[CLIENT NAME]</span><br>\nInvoice number: <span class="token">[NUMBER]</span><br>\nAmount: $<span class="token">[AMOUNT]</span><br>\nOriginal due date: <span class="token">[DATE]</span><br>\nDays overdue: <span class="token">[NUMBER]</span><br><br>\nTone: Polite, assuming the oversight was accidental<br>\nInclude:<br>\n- Gentle reminder<br>\n- Invoice details<br>\n- Payment link<br>\n- Offer to discuss if there\'s an issue<br>\nKeep under 150 words.'
+    },
+    {
+      label: 'Marketing → 90-Day Content Calendar',
+      tag: 'Real prompt from the library',
+      title: 'Create a 90-day content calendar',
+      ai: 'ChatGPT (Free)',
+      body: 'Create a 90-day social media content calendar.<br><br>\nBusiness: <span class="token">[BUSINESS NAME]</span><br>\nIndustry: <span class="token">[INDUSTRY]</span><br>\nTarget audience: <span class="token">[CUSTOMER]</span><br>\nPlatforms: <span class="token">[LIST]</span><br>\nPosting frequency: <span class="token">[X PER WEEK]</span><br>\nBusiness goals for the quarter: <span class="token">[GOALS]</span><br><br>\nOrganize by month:<br>\n- Month 1 theme: <span class="token">[THEME]</span><br>\n- Month 2 theme: <span class="token">[THEME]</span><br>\n- Month 3 theme: <span class="token">[THEME]</span><br><br>\nFor each week include:<br>\n- Weekly theme<br>\n- 3-5 post ideas<br>\n- Content format mix<br>\n- Campaign tie-ins (if any)<br>\n- Key dates/holidays to reference<br><br>\nFormat as a month-by-month table.'
+    },
+    {
+      label: 'Operations → Standard Operating Procedure',
+      tag: 'Real prompt from the library',
+      title: 'Turn rough notes into a standard operating procedure',
+      ai: 'Claude (Free)',
+      body: 'Turn these rough notes into a formal standard operating procedure (SOP).<br><br>\nBusiness: <span class="token">[BUSINESS NAME]</span><br>\nProcess name: <span class="token">[PROCESS NAME]</span><br><br>\nRough notes:<br>\n<span class="token">[PASTE NOTES]</span><br><br>\nFormat as:<br>\n- SOP Title<br>\n- Purpose<br>\n- Scope (when to use this SOP)<br>\n- Required tools/materials<br>\n- Step-by-step instructions (numbered)<br>\n- Quality control checks<br>\n- Common errors to avoid<br>\n- Escalation rules<br>\n- Revision history placeholder'
+    }
+  ];
+
+  const labelEl = document.getElementById('prompt-label');
+  const tagEl = document.getElementById('prompt-tag');
+  const titleEl = document.getElementById('prompt-title');
+  const bodyEl = document.getElementById('prompt-body');
+  const aiEl = document.getElementById('prompt-ai');
+  const cards = Array.from(document.querySelectorAll('#prompt-selector .micro-card'));
+  let currentIndex = 0;
+  let intervalId = null;
+  let userInteracted = false;
+
+  function showPrompt(index) {
+    const p = promptData[index];
+    if (!p) return;
+    currentIndex = index;
+    labelEl.textContent = p.label;
+    tagEl.textContent = p.tag;
+    titleEl.textContent = p.title;
+    bodyEl.innerHTML = p.body;
+    aiEl.textContent = p.ai;
+    cards.forEach((card, i) => card.classList.toggle('active', i === index));
+  }
+
+  function activateCard(index) {
+    userInteracted = true;
+    showPrompt(index);
+    stopRotation();
+  }
+
+  function nextPrompt() {
+    showPrompt((currentIndex + 1) % promptData.length);
+  }
+
+  function startRotation() {
+    if (intervalId) return;
+    intervalId = setInterval(nextPrompt, 5000);
+  }
+
+  function stopRotation() {
+    if (intervalId) {
+      clearInterval(intervalId);
+      intervalId = null;
+    }
+  }
+
+  cards.forEach((card, index) => {
+    card.addEventListener('click', () => activateCard(index));
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        activateCard(index);
+      }
+    });
+    card.addEventListener('mouseenter', () => { if (!userInteracted) stopRotation(); });
+    card.addEventListener('mouseleave', () => { if (!userInteracted) startRotation(); });
+  });
+
+  startRotation();
+})();
+</script>
+</body>
+</html>

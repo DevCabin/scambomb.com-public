@@ -65,6 +65,14 @@ const nextConfig = {
         source: '/career-scam-case-study/poster-flyer',
         destination: '/career-scam-case-study/poster-flyer.html',
       },
+      {
+        source: '/ai-prompts',
+        destination: '/ai-prompts/index.html',
+      },
+      {
+        source: '/ai-prompts/',
+        destination: '/ai-prompts/index.html',
+      },
     ]
   },
   async redirects() {
