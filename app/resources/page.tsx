@@ -4,6 +4,14 @@ import Link from 'next/link'
 
 const resources = [
   {
+    slug: 'is-this-a-scam-checklist',
+    title: 'Is This a Scam? Four Steps Before You Act',
+    description: 'A shareable quick-reference graphic for pausing, naming the claim, checking independently, and taking the right next step when a suspicious message arrives.',
+    tag: 'QUICK REFERENCE',
+    readTime: '1 min read',
+    category: 'guides'
+  },
+  {
     slug: 'ai-voice-cloning-survival-guide',
     title: 'AI Voice Cloning Survival Guide',
     description: 'The complete family protection playbook: how AI voice scams work, the 3-second audio threat, and how to set up a family safe word that stops scammers cold.',

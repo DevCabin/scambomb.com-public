@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-09-25 — Add four-step scam checklist resource
+
+### Added
+- **`public/resources/is-this-a-scam-checklist/four-steps-before-you-act.png`** — Added the supplied ScamBomb quick-reference graphic for saving and sharing.
+- **`app/resources/page.tsx`** — Added the existing printable checklist to the Resources index as a quick-reference guide.
+- **`public/resources/is-this-a-scam-checklist/index.html`** — Added an accessible on-page preview and direct image link above the print-ready checklist.
+- **`next.config.js`** — Added rewrites so the checklist is available at `/resources/is-this-a-scam-checklist` and its trailing-slash variant.
+- **`app/blog/is-this-a-scam/page.tsx`** — Linked readers to the printable checklist and shareable image.
+
 ## 2026-09-25 — Refresh search-focused scam guides
 
 ### Changed

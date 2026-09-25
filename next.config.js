@@ -18,6 +18,14 @@ const nextConfig = {
         destination: '/api/download-ai-voice-guide',
       },
       {
+        source: '/resources/is-this-a-scam-checklist',
+        destination: '/resources/is-this-a-scam-checklist/index.html',
+      },
+      {
+        source: '/resources/is-this-a-scam-checklist/',
+        destination: '/resources/is-this-a-scam-checklist/index.html',
+      },
+      {
         source: '/download-ai-voice-guide',
         destination: '/api/download-ai-voice-guide',
       },

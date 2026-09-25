@@ -98,7 +98,7 @@ export default function BlogPost() {
           <p>Talk to teens about unexpected job offers, sending money to online-only acquaintances, and anyone pressuring them to invest in crypto or download an app.</p>
 
           <h2>Download the Free “Is This a Scam?” Checklist</h2>
-          <p>Keep the 10-second scam check handy. Print it out, put it on your refrigerator, and share it with your parents. The printable one-pager includes:</p>
+          <p>Keep the 10-second scam check handy. Print it out, put it on your refrigerator, and share it with your parents. You can also <a href="/resources/is-this-a-scam-checklist">open the printable checklist and share the four-step quick-reference image</a>. The printable one-pager includes:</p>
           <ul><li>The five-question scam check</li><li>What to do if you think it&apos;s a scam</li><li>What to do if you already clicked</li><li>The top five scams to watch for</li><li>Quick-reference contact numbers for USPS, IRS, SSA, and your bank</li></ul>
         </div>
 

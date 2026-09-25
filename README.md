@@ -66,6 +66,9 @@ ScamBomb is more than a message checker. It provides:
 - Updated the Android “3 viruses,” USPS redelivery, and bank-text articles with clearer opening answers, practical recovery steps, current official-source guidance, and descriptive internal links.
 - Preserved the existing article slugs, publication dates, incident details, and Android photos.
 
+### Four-step scam checklist resource
+- Added the shareable “Four Steps Before You Act” quick-reference graphic to the existing printable scam checklist resource and linked it from the Resources page and general scam guide.
+
 ### Homepage Positioning and Brand System
 - **Family-first positioning**: Homepage now leads with protecting families and peace of mind, rather than AI or app features
 - **Clear value hierarchy**: Message analysis is positioned as one tool within education, resources, awareness, and community partnerships
