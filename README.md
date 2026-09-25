@@ -1,7 +1,7 @@
 # ScamBomb.com — Helping Families Recognize Scams Before They Become Victims
 
 **Version**: 1.4.0
-**Last Updated**: September 1, 2026
+**Last Updated**: September 25, 2026
 
 ## 🎯 Mission & Goals
 
@@ -61,6 +61,10 @@ ScamBomb is more than a message checker. It provides:
 ```
 
 ## 🔄 Recent Changes (v1.3.1)
+
+### Search-focused blog guide refresh
+- Updated the Android “3 viruses,” USPS redelivery, and bank-text articles with clearer opening answers, practical recovery steps, current official-source guidance, and descriptive internal links.
+- Preserved the existing article slugs, publication dates, incident details, and Android photos.
 
 ### Homepage Positioning and Brand System
 - **Family-first positioning**: Homepage now leads with protecting families and peace of mind, rather than AI or app features

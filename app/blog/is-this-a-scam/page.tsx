@@ -27,7 +27,7 @@ export default function BlogPost() {
           <p>Before you click, call, or reply, ask yourself these five questions. If you answer “no” to even one, stop. It&apos;s almost certainly a scam.</p>
           <h3>1. Did I expect this message?</h3>
           <p>Real companies don&apos;t send surprise texts about problems you didn&apos;t know existed. If you weren&apos;t expecting a delivery, a fraud alert, or a job offer, be suspicious.</p>
-          <p>USPS, for example, does not send unsolicited text messages about package problems. The Postal Service only texts you if <em>you</em> signed up for Text Tracking or Informed Delivery.</p>
+          <p>USPS, for example, does not send unsolicited text messages about package problems. The Postal Service says tracking texts are sent after you request tracking for a specific package. Read the detailed <Link href="/blog/new-usps-delivery-scam-what-to-do">USPS redelivery scam guide</Link> before responding to a fee or address message.</p>
           <h3>2. Does it create urgency or fear?</h3>
           <p>Scammers want you to act before you think. Look for phrases like:</p>
           <ul><li>“Your account will be suspended in 24 hours.”</li><li>“Immediate action required.”</li><li>“You owe unpaid tolls. Pay now to avoid penalties.”</li><li>“Confirm now or lose your benefits.”</li></ul>
@@ -56,7 +56,7 @@ export default function BlogPost() {
           <p>“Earn $500/day from home. No experience needed. Reply now.” The “job” may involve rating products, reshipping packages, or completing tasks. Eventually, they ask for an equipment fee or training deposit. The check they send will bounce—and sometimes they turn you into an unwitting money mule.</p>
           <h3>Fake fraud alerts</h3>
           <p>“Did you make this $1,499 purchase? Reply YES or NO.” Replying tells the scammer your number is active. They may then call pretending to be your bank and pressure you into moving money to a “safe” account—which is actually theirs.</p>
-          <p><strong>The truth:</strong> Real fraud alerts will never ask you to move money. Call the number on the back of your card, not a number in the message.</p>
+          <p><strong>The safer move:</strong> do not use the number or link in the message. Open your bank’s app independently or call the number on the back of your card. See the detailed <Link href="/blog/how-to-spot-fake-bank-texts-in-30-seconds">bank-text verification guide</Link>.</p>
           <h3>Bogus unpaid tolls</h3>
           <p>These messages use a small, believable amount and a fake payment page to steal your card number. Real toll agencies send bills by mail first. Log into your toll account directly through its official website.</p>
           <h3>“Wrong number” texts</h3>
@@ -74,7 +74,7 @@ export default function BlogPost() {
 
           <h2>Phone &amp; Voicemail Scams</h2>
           <p>Scammers can make a call appear to come from your area code, your bank, or a government agency. This is called spoofing.</p>
-          <ul><li><strong>IRS imposters:</strong> The real IRS never calls demanding immediate payment or gift cards.</li><li><strong>Social Security scams:</strong> The SSA never suspends Social Security numbers or demands payment by phone.</li><li><strong>Tech support scams:</strong> Microsoft, Apple, and your ISP will not call unsolicited about a virus.</li><li><strong>Voicemail-to-text phishing:</strong> Real voicemail notifications come through your phone&apos;s built-in app, not a random link.</li></ul>
+          <ul><li><strong>IRS imposters:</strong> The real IRS never calls demanding immediate payment or gift cards.</li><li><strong>Social Security scams:</strong> The SSA never suspends Social Security numbers or demands payment by phone.</li><li><strong>Tech support scams:</strong> Microsoft, Apple, and your ISP will not call unsolicited about a virus. For an Android pop-up claiming <Link href="/blog/scam-triage-file-001-android-had-3-viruses-but-didnt">“your system is infected with 3 viruses,” see the full Android triage file</Link> before tapping anything.</li><li><strong>Voicemail-to-text phishing:</strong> Real voicemail notifications come through your phone&apos;s built-in app, not a random link.</li></ul>
           <h3>What to do if you get a scam call</h3>
           <ol><li>Hang up. Don&apos;t press buttons or call back.</li><li>Block the number.</li><li>Report it at <a href="https://ReportFraud.ftc.gov">ReportFraud.ftc.gov</a>.</li></ol>
 

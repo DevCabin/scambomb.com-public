@@ -1,5 +1,20 @@
 # Changelog
 
+## 2026-09-25 — Refresh search-focused scam guides
+
+### Changed
+- **`app/blog/scam-triage-file-001-android-had-3-viruses-but-didnt/page.tsx`** — Reframed the article around the “your system is infected with 3 viruses” Android searches, putting immediate safety steps first while preserving the firsthand incident and photos.
+- **`app/blog/scam-triage-file-001-android-had-3-viruses-but-didnt/page.tsx`** — Replaced the overconfident Safe Mode conclusion with a diagnostic explanation based on Google Chrome Help, and added separate guidance for browser tabs, website notifications, unwanted apps, Safe Mode, and Play Protect.
+- **`app/blog/new-usps-delivery-scam-what-to-do/page.tsx`** — Reworked the article around USPS’s answer that redelivery is free, added illustrative fake-message examples, independent package-checking steps, post-click response guidance, reporting instructions, and an accurate updated date while preserving the November 2023 publication date.
+- **`app/blog/how-to-spot-fake-bank-texts-in-30-seconds/page.tsx`** — Reworked the article around independent verification through the bank’s app or the number on the card, removed sender/branding/link authentication shortcuts, and added realistic fraud-alert follow-up tactics and recovery steps.
+- **`app/blog/is-this-a-scam/page.tsx`** — Added descriptive internal links to the USPS, bank-text, and Android detail articles.
+- **`app/blog/page.tsx`** — Updated the three article cards with their new titles and descriptions.
+
+### Validation
+- Removed duplicate in-body H1 elements from the USPS and bank posts; each updated article now has exactly one H1.
+- Kept all three existing blog slugs and Android image paths unchanged.
+- Linked the updated guidance to official Google, USPS/USPIS, and FTC sources.
+
 ## 2026-09-01 — Clarify family membership coverage
 
 ### Changed
