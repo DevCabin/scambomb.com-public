@@ -547,10 +547,8 @@
       font-family: var(--font);
       white-space: nowrap;
     }
-    .newsletter-note,
-    .newsletter-error { font-size:12px; margin-top:12px; }
+    .newsletter-note { font-size:12px; margin-top:12px; }
     .newsletter-note { color: rgba(255,255,255,0.46); }
-    .newsletter-error { color:#FCA5A5; display:none; }
 
     /* ── FINAL MESSAGE ────────────────────────────────── */
     .final-message {
@@ -569,52 +567,6 @@
     }
 
     /* ── FOOTER ───────────────────────────────────────── */
-    .resource-gate {
-      display: none;
-      position: fixed;
-      inset: 0;
-      z-index: 9998;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      background: rgba(11,19,36,0.15);
-    }
-    body.gate-is-open .cover,
-    body.gate-is-open .content,
-    body.gate-is-open .page-footer,
-    body.gate-is-open .print-cta-wrap,
-    body.gate-is-open main.wrap,
-    body.gate-is-open footer.page-footer {
-      filter: blur(8px);
-      opacity: 0.35;
-      pointer-events: none;
-      user-select: none;
-    }
-    .gate-card {
-      background: var(--navy);
-      color: var(--white);
-      border: 2px solid var(--yellow);
-      border-radius: 16px;
-      padding: 32px 28px;
-      text-align: center;
-      width: 100%;
-      max-width: 820px;
-      margin: 0 auto;
-    }
-    .gate-card h2 {
-      color: var(--yellow);
-      border: none;
-      margin: 0 0 10px;
-      padding: 0;
-      font-size: 28px;
-      letter-spacing: 0.04em;
-    }
-    .gate-card p {
-      color: rgba(255,255,255,0.82);
-      font-size: 18px;
-      margin-bottom: 18px;
-    }
-
     .bookmark-modal {
       display: none;
       position: fixed;
@@ -909,37 +861,6 @@
   </div>
 
   <!-- COVER PAGE -->
-    <div class="resource-gate" id="resource-gate">
-    <div class="gate-card">
-      <h2>
-        <span style="color:#fff;">GET INSTANT ACCESS TO THE</span>
-        <span style="color:#F5C84C;">PHISHING LINK SURVIVAL PLAN</span>
-      </h2>
-      <p>Enter your email to unlock the recovery plan instantly —<br>what to do in the first 5 minutes, how to lock down accounts, and how to protect your bank + credit.</p>
-      <div class="ghl-embed-wrap" style="line-height:0;font-size:0;overflow:hidden;display:block;margin:0;padding:0;background:#0B1324;height:340px;">
-        <iframe
-          data-src="https://api.leadconnectorhq.com/widget/form/f62GQmkrmf5tSfGMzYGY"
-          style="display:block;width:100%;height:430px;border:0;outline:0;border-radius:0;background:#0B1324;margin:0;padding:0;vertical-align:top;box-shadow:none;"
-          id="inline-f62GQmkrmf5tSfGMzYGY"
-          data-layout="{'id':'INLINE'}"
-          data-trigger-type="alwaysShow"
-          data-trigger-value=""
-          data-activation-type="alwaysActivated"
-          data-activation-value=""
-          data-deactivation-type="neverDeactivate"
-          data-deactivation-value=""
-          data-form-name="ScamBomb - Phishing Link Survival Guide Opt-in"
-          data-height="430"
-          data-layout-iframe-id="inline-f62GQmkrmf5tSfGMzYGY"
-          data-form-id="f62GQmkrmf5tSfGMzYGY"
-          title="ScamBomb - Phishing Link Survival Guide Opt-in"
-          scrolling="no"
-        ></iframe>
-      </div>
-      <div class="newsletter-note" style="margin-top:14px;">After submitting, your access will unlock instantly on this page.</div>
-    </div>
-  </div>
-
   <div class="cover">
     <span class="logo"><span class="scam">SCAM</span><span class="bomb-word">B<span class="bomb">💣</span>MB</span></span>
     <div class="tagline-sub">scambomb.com &nbsp;·&nbsp; Free Resource</div>
@@ -1189,11 +1110,7 @@
     <div class="newsletter-cta">
       <h3>GET MONTHLY SCAM ALERTS</h3>
       <p>Join the ScamBomb email list for new scam warnings, AI fraud updates, and simple safety tips you can share with family.</p>
-      <form class="newsletter-form" data-newsletter-form>
-        <input type="email" name="email" placeholder="Enter your best email" aria-label="Email address" required>
-        <button type="submit">JOIN THE LIST →</button>
-      </form>
-      <div class="newsletter-error" data-newsletter-error>Something went wrong. Please try again.</div>
+      <a href="https://featherstone.kit.com/3daabf1cc1" target="_blank" rel="noopener" style="display:inline-block;background:var(--yellow);color:var(--navy);font-weight:900;padding:13px 18px;border-radius:12px;text-decoration:none;">JOIN THE LIST →</a>
       <div class="newsletter-note">Free updates · Monthly tips · No spam</div>
     </div>
 
@@ -1228,8 +1145,6 @@
       </div>
     </div>
   </div>
-
-  <script src="/js/resource-gate.js"></script>
 
 </body>
 </html>
