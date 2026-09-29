@@ -39,7 +39,11 @@ ScamBomb is more than a message checker. It provides:
 - **Deployment**: Vercel
 - **Payments**: Stripe
 - **Analytics**: Vercel Analytics + Google Analytics
-- **Forms**: GoHighLevel (GHL)
+- **Forms**: Native site forms and API-backed email workflows
+
+### Sponsored Member Signup
+
+Credit-union campaigns use the dynamic route `https://scambomb.com/member-signup/{location-slug}`. Create the matching active 100%-off Stripe promotion code, then distribute that URL or its QR code. A new location does not require a new page file or deployment; the slug is passed to the app for attribution and analytics.
 
 ## 📁 Project Structure
 
