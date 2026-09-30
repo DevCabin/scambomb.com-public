@@ -2,7 +2,7 @@
 
 This guide provides a deep dive into the ScamBomb web application architecture, logic flow, and implementation details for developers.
 
-**Current campaign flow:** Credit-union members use the dynamic `/member-signup/{location-slug}` route. New partner locations are configured in Stripe and distributed as URLs/QR codes; they do not require new page files.
+**Current campaign flow:** Credit-union members use `/member-signup` with an optional `/{location-slug}` suffix. The required Stripe member code provides campaign attribution when the suffix is omitted. New partner locations are configured in Stripe and distributed as URLs/QR codes; they do not require new page files.
 
 ## Public-Site Positioning and Brand Rules
 
@@ -43,12 +43,12 @@ The public site presents ScamBomb as a trusted resource that helps families reco
 
 ### Sponsored Member Signup
 
-The public site implements one dynamic App Router page at `app/member-signup/[location]/page.tsx`. It collects the essential account fields and a prominent member code while keeping the visible page generic. The URL segment is sent to Vercel Analytics and to the app API as the partner location.
+The public site implements the base page at `app/member-signup/page.tsx` and the optional dynamic page at `app/member-signup/[location]/page.tsx`. It collects the essential account fields and a prominent member code while keeping the visible page generic. If present, the URL segment is sent to Vercel Analytics and the app API as the partner location; otherwise the member code is the campaign key.
 
 The submission sequence is:
 
 ```text
-/member-signup/{location}
+/member-signup or /member-signup/{location}
   → POST app.scambomb.com/api/auth/register
   → validate the location slug and active 100%-off Stripe promotion code
   → create the account with partner attribution
@@ -56,7 +56,7 @@ The submission sequence is:
   → redirect to monthly Stripe Checkout
 ```
 
-The public page does not contain a location list or partner-specific branches. To launch a location, configure its Stripe promotion code, select a lowercase hyphenated slug, and distribute the resulting URL or QR code. See `LEAD_CAPTURE_PROCESS.md` for the operational checklist.
+The public page does not contain a location list or partner-specific branches. To launch a location, configure its Stripe promotion code and optionally select a lowercase hyphenated slug for a location-specific URL. The base URL works as well because the member code is required. See `LEAD_CAPTURE_PROCESS.md` for the operational checklist.
 
 ## 📝 Blog System Architecture (v2.2.0)
 

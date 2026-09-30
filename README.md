@@ -39,7 +39,11 @@ ScamBomb is more than a message checker. It provides:
 - **Deployment**: Vercel
 - **Payments**: Stripe
 - **Analytics**: Vercel Analytics + Google Analytics
-- **Forms**: GoHighLevel (GHL)
+- **Forms**: Native site forms and API-backed email workflows
+
+### Sponsored Member Signup
+
+Credit-union campaigns use `https://www.scambomb.com/member-signup` with an optional location suffix, such as `/member-signup/kilgore-credit-union`. The member code is always required and provides Stripe-based campaign attribution when no URL suffix is present. A new location does not require a new page file or deployment.
 
 ## 📁 Project Structure
 

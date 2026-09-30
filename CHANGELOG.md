@@ -6,6 +6,8 @@
 - Documented the dynamic `/member-signup/{location-slug}` campaign route in `README.md` and `DEVELOPER_GUIDE.md`.
 - Replaced the draft lead-capture process document with the current Stripe promotion-code, analytics, QR distribution, and troubleshooting workflow.
 - Documented that new partner locations require Stripe configuration and a new URL/QR code, not a new page component.
+- Added a base `/member-signup` route for campaigns that rely on the member code instead of a URL location suffix.
+- Added a public-site footer link to the member signup page.
 
 ## 2026-08-26 — Move homepage background to platform and blog sections; update support wording
 

@@ -54,6 +54,7 @@ function UniversalFooter() {
             <li><a href="/blog" className="text-lg md:text-sm font-bold md:font-normal hover:text-white transition-colors">Blog</a></li>
             <li><a href="/extension" className="text-lg md:text-sm font-bold md:font-normal hover:text-white transition-colors">Chrome Extension</a></li>
             <li><a href="/resources" className="text-lg md:text-sm font-bold md:font-normal hover:text-white transition-colors">Resources</a></li>
+            <li><a href="/member-signup" className="text-lg md:text-sm font-bold md:font-normal hover:text-white transition-colors">Member Signup</a></li>
           </ul>
         </div>
         <div className="text-center md:text-left">

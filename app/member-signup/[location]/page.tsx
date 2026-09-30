@@ -5,8 +5,8 @@ import { track } from '@vercel/analytics'
 
 const APP_API_URL = 'https://app.scambomb.com'
 
-export default function MemberSignupPage({ params }: { params: Promise<{ location: string }> }) {
-  const [location, setLocation] = useState('')
+export default function MemberSignupPage({ params, initialLocation = '' }: { params?: Promise<{ location: string }>; initialLocation?: string }) {
+  const [location, setLocation] = useState(initialLocation.trim().toLowerCase())
   const [form, setForm] = useState({
     firstName: '',
     email: '',
@@ -19,6 +19,7 @@ export default function MemberSignupPage({ params }: { params: Promise<{ locatio
   const [error, setError] = useState('')
 
   useEffect(() => {
+    if (!params) return
     params
       .then(({ location: routeLocation }) => setLocation(routeLocation.trim().toLowerCase()))
       .catch(() => setError('This member signup link is not available.'))
@@ -31,7 +32,7 @@ export default function MemberSignupPage({ params }: { params: Promise<{ locatio
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
     setError('')
-    track('member_signup_started', { location })
+    track('member_signup_started', { location: location || 'coupon-code', member_code: form.memberCode })
 
     if (form.password !== form.confirmPassword) {
       setError('Passwords do not match.')
@@ -61,7 +62,7 @@ export default function MemberSignupPage({ params }: { params: Promise<{ locatio
         throw new Error(details || registerData.error || 'We could not create your account.')
       }
 
-      track('member_signup_completed', { location })
+      track('member_signup_completed', { location: location || 'coupon-code', member_code: form.memberCode })
 
       const checkoutResponse = await fetch(`${APP_API_URL}/api/stripe/checkout`, {
         method: 'POST',
@@ -72,7 +73,7 @@ export default function MemberSignupPage({ params }: { params: Promise<{ locatio
         body: JSON.stringify({
           plan: 'monthly',
           memberCode: form.memberCode,
-          memberLocation: location,
+          ...(location ? { memberLocation: location } : {}),
         }),
       })
       const checkoutData = await checkoutResponse.json()
@@ -81,7 +82,7 @@ export default function MemberSignupPage({ params }: { params: Promise<{ locatio
         throw new Error(checkoutData.error || 'We could not start sponsored checkout.')
       }
 
-      track('member_checkout_started', { location })
+      track('member_checkout_started', { location: location || 'coupon-code', member_code: form.memberCode })
       window.location.href = checkoutData.url
     } catch (submissionError) {
       setError(submissionError instanceof Error ? submissionError.message : 'Something went wrong. Please try again.')

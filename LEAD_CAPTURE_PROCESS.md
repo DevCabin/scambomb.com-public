@@ -4,7 +4,7 @@ This document describes the current partner-member signup workflow. The retired 
 
 ## Dynamic member page
 
-Each credit-union campaign uses the same route with a location slug:
+Each credit-union campaign can use the base route or the same route with an optional location slug:
 
 ```text
 https://scambomb.com/member-signup/{location-slug}
@@ -12,7 +12,7 @@ https://scambomb.com/member-signup/{location-slug}
 
 Example: `https://scambomb.com/member-signup/kilgore-credit-union`
 
-The route is dynamic. Do not create a new page component for each institution. The location slug is passed through to analytics and to the app API for attribution.
+The route is dynamic. Do not create a new page component for each institution. If present, the location slug is passed through to analytics and the app API. If omitted, the required member code provides campaign attribution in Stripe and the account record.
 
 ## What the member sees
 
@@ -42,7 +42,7 @@ The page does not visibly display the institution name. The QR code or link iden
 1. Create or activate the location’s Stripe promotion code.
 2. Attach that promotion code to a 100% off Stripe coupon.
 3. Choose a stable lowercase slug using only letters, numbers, and hyphens.
-4. Create the campaign URL using that slug.
+4. Create the campaign URL using that slug, or use the base `/member-signup` URL.
 5. Generate and distribute the QR code.
 6. Test the complete flow in Stripe test mode before distributing the link.
 
