@@ -1,12 +1,12 @@
 'use client'
 
-import { FormEvent, useMemo, useState } from 'react'
+import { FormEvent, useEffect, useState } from 'react'
 import { track } from '@vercel/analytics'
 
 const APP_API_URL = 'https://app.scambomb.com'
 
-export default function MemberSignupPage({ params }: { params: { location: string } }) {
-  const location = useMemo(() => params.location.trim().toLowerCase(), [params.location])
+export default function MemberSignupPage({ params }: { params: Promise<{ location: string }> }) {
+  const [location, setLocation] = useState('')
   const [form, setForm] = useState({
     firstName: '',
     email: '',
@@ -17,6 +17,12 @@ export default function MemberSignupPage({ params }: { params: { location: strin
   })
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
+
+  useEffect(() => {
+    params
+      .then(({ location: routeLocation }) => setLocation(routeLocation.trim().toLowerCase()))
+      .catch(() => setError('This member signup link is not available.'))
+  }, [params])
 
   function updateField(field: keyof typeof form, value: string) {
     setForm((current) => ({ ...current, [field]: value }))
@@ -132,7 +138,7 @@ export default function MemberSignupPage({ params }: { params: { location: strin
 
           {error && <div className="mt-5 rounded-xl border border-red-400/50 bg-red-500/15 p-4 text-sm text-red-100">{error}</div>}
 
-          <button type="submit" disabled={loading} className="mt-6 w-full rounded-xl bg-[#F5C84C] px-5 py-4 font-black uppercase tracking-wide text-[#0B1324] transition hover:bg-[#F5C84C]/90 disabled:cursor-wait disabled:opacity-60">
+          <button type="submit" disabled={loading || !location} className="mt-6 w-full rounded-xl bg-[#F5C84C] px-5 py-4 font-black uppercase tracking-wide text-[#0B1324] transition hover:bg-[#F5C84C]/90 disabled:cursor-wait disabled:opacity-60">
             {loading ? 'SETTING UP YOUR ACCOUNT…' : 'CONTINUE TO ACTIVATION'}
           </button>
           <p className="mt-4 text-center text-xs leading-relaxed text-white/50">Your account is created securely before you continue to Stripe.</p>
