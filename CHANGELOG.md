@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-09-30 — Document dynamic sponsored member signup
+
+### Added
+- Documented the dynamic `/member-signup/{location-slug}` campaign route in `README.md` and `DEVELOPER_GUIDE.md`.
+- Replaced the draft lead-capture process document with the current Stripe promotion-code, analytics, QR distribution, and troubleshooting workflow.
+- Documented that new partner locations require Stripe configuration and a new URL/QR code, not a new page component.
+
 ## 2026-08-26 — Move homepage background to platform and blog sections; update support wording
 
 ### Changed

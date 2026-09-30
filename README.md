@@ -1,7 +1,7 @@
 # ScamBomb.com — Helping Families Recognize Scams Before They Become Victims
 
 **Version**: 1.4.0
-**Last Updated**: September 1, 2026
+**Last Updated**: September 30, 2026
 
 ## 🎯 Mission & Goals
 

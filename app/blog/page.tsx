@@ -28,8 +28,8 @@ const posts = [
   },
   {
     slug: 'scam-triage-file-001-android-had-3-viruses-but-didnt',
-    title: 'Scam Triage File #001: The Android That "Had 3 Viruses" — But Didn\'t',
-    description: 'Real incident breakdown: fake "3 viruses detected" Android scareware, Safe Mode diagnosis, rogue app cleanup, and full recovery in about 15 minutes.',
+    title: '“Your System Is Infected With 3 Viruses” on Android? What to Do',
+    description: 'What an Android “3 viruses” warning does and does not prove, plus safe steps for browser tabs, site notifications, and unwanted apps.',
     date: '2026-02-27',
     tag: 'SCAM TRIAGE',
     readTime: '8 min read'
@@ -44,16 +44,16 @@ const posts = [
   },
   {
     slug: 'how-to-spot-fake-bank-texts-in-30-seconds',
-    title: 'How to spot fake bank texts in 30 seconds',
-    description: 'Learn the quick red flags that separate real bank alerts from scam texts trying to steal your money.',
+    title: 'Is This Text Really From My Bank? How to Check Safely',
+    description: 'Verify a possible bank alert safely, recognize common follow-up tactics, and respond if you already clicked or shared information.',
     date: '2023-11-12',
     tag: 'GUIDE',
     readTime: '4 min read'
   },
   {
     slug: 'new-usps-delivery-scam-what-to-do',
-    title: 'New USPS delivery scam: what to do',
-    description: 'A new scam impersonates USPS delivery notifications. Here\'s how to spot it and protect yourself.',
+    title: 'Does USPS Charge for Redelivery? How to Spot the Fake Fee Text',
+    description: 'USPS redelivery is free. Learn how fake fee texts work, how to check a package safely, and what to do if you clicked or paid.',
     date: '2023-11-10',
     tag: 'ALERT',
     readTime: '5 min read'
