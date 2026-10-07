@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-10-07 — SEO crawlability fixes (HeyCatch P1)
+
+### Changed
+- **Canonicals on all App Router pages** (`t_canonical`): added `alternates.canonical` to root layout (homepage `/`) + every server page's `metadata`; created server `layout.tsx` wrappers (with canonical) for the 10 client-component pages (homepage, poll, presentation-*, protect-parents, staging, thank-you-membership, member-signup/[location]).
+- **Canonicals on 18 static HTML pages** (career-scam-case-study/*, resources/*, reports/*, scam-stories, ai-prompts, jeff, poll) via literal `<link rel="canonical">`.
+- **Generated sitemap** (`t_sitemap_fresh`): created `app/sitemap.ts` (route-generated, honest `lastmod` per post, covers blog + static + resources); deleted static `public/sitemap.xml`.
+- **Security headers** (`t_security_headers`): added `headers()` to `next.config.js` — `X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy`, and a CSP scoped to the site's real third parties (GA, Facebook, Clarity, GHL/leadconnector, Formspree, Supabase, Vercel insights).
+- **`/testing` removed** (`t_canonical`/hygiene): deleted `public/testing/` and its redirect from `next.config.js`.
+- **robots.txt** (`t_robots`): removed the `/extension-privacy` disallow so it no longer contradicts the sitemap (page is crawlable now).
+
 ## 2026-10-07 — Track HEYCATCH_PLAN audit brief
 
 ### Added
