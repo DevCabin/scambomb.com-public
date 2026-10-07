@@ -38,19 +38,20 @@
 
 ## 3. Progress Tracker (check off as you go)
 
-- [ ] P1-1 canonical (App Router)
-- [ ] P1-2 canonical (static HTML)
-- [ ] P1-3 `app/sitemap.ts` + lastmod + IndexNow doc
-- [ ] P1-4 security headers
-- [ ] P1-5 `/testing` + robots/sitemap contradiction
-- [ ] P2-6 `/author/george-featherstone` page + byline links
-- [ ] P2-7 Article+Person JSON-LD; move Organization to layout + sameAs
-- [ ] P2-8 external sources (triage-003 + audit rest)
-- [ ] P2-9 disclosure line
-- [ ] P3-10 pricing dedupe
-- [ ] P3-11 trust fix (testimonials or de-claim + third-party badge)
-- [ ] P3-12 OG image + Product/Offer schema + 1 comparison page
+- [x] P1-1 canonical (App Router) — done, commit 0342f36
+- [x] P1-2 canonical (static HTML) — done, commit 0342f36
+- [x] P1-3 `app/sitemap.ts` + lastmod — done (IndexNow doc STILL TODO)
+- [x] P1-4 security headers — done, commit 0342f36
+- [x] P1-5 `/testing` + robots/sitemap contradiction — done, commit 0342f36
+- [x] P2-6 `/author/george-featherstone` page + byline links — done, commit 0a3a260
+- [x] P2-7 Article+Person JSON-LD; Organization to layout — done (sameAs=Facebook only, LinkedIn pending)
+- [x] P2-8 external sources (triage-003) — done (FTC + Microsoft); other posts NOT audited yet
+- [x] P2-9 disclosure line — done, commit 0a3a260
+- [x] P3-10 pricing dedupe — done, commit 65a7ab4
+- [x] P3-11 trust (testimonials live + de-claim) — done; third-party badge still flagged
+- [x] P3-12 OG image + Product/Offer schema + comparison page — done
 - [ ] P4 deploy + verify + re-run both audits + changelog output
+
 
 ## 4. P1 — Crawlability (all repo-side, no owner input needed)
 
