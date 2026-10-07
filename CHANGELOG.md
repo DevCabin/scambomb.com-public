@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-10-07 — Round-2 fixes (`g_definition` + `c_meta_description`)
+
+### Changed
+- **`g_definition`** — added a clear "X is…" definition sentence to the opening of the 5 flagged pages: `/blog` ("The ScamBomb blog is…"), `/contact` ("The ScamBomb contact page is…"), `/resources` ("The ScamBomb resource library is…"), `/poll` ("The ScamBomb live poll is…"), and `/career-scam-case-study` ("This case-study hub is ScamBomb's…").
+- **`c_meta_description`** — brought meta descriptions into the 110–160 char range: homepage (was 181→now in range), `contact`, `resources`, `blog`, `poll`, `about`, `extension`, `email-to-scan`, `member-signup` (+ `[location]`), `terms`, `extension-privacy`.
+
+### Flagged for owner
+- `a_sameas` — confirmed unfixable (no company profiles). `g_multimodal` — still needs real imagery.
+
 ## 2026-10-07 — Round-2 fixes (`t_orphan_pages` + `a_external_sources` + `g_self_contained` + `g_sentence_length`)
 
 ### Changed
