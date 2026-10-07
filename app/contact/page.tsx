@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Contact ScamBomb | Questions, Support & Media',
-  description: 'Have a question, need help, or want to report a scam? Contact ScamBomb for plain-English guidance.',
+  description: 'Have a question, need help with the tool, or want to report a scam? Contact ScamBomb for fast, plain-English support.',
   alternates: { canonical: '/contact' },
 }
 
@@ -16,7 +16,7 @@ export default function ContactPage() {
             Contact Us
           </h1>
           <p className="text-xl text-white/80 max-w-2xl mx-auto">
-            Have questions? Need help? Get in touch—we're here to help keep you safe online.
+            The ScamBomb contact page is how you reach us with a question, a scam to report, or a support request.
           </p>
         </div>
 

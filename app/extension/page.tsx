@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'ScamBomb Chrome Extension — Check Scams While You Browse',
-  description: 'The ScamBomb browser extension flags suspicious pages and scams in real time as you browse.',
+  description: 'The ScamBomb Chrome extension flags suspicious pages and scams in real time while you browse — for extra protection.',
   alternates: { canonical: '/extension' },
 }
 

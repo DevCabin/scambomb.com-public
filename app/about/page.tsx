@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   alternates: { canonical: '/about' },
   title: 'About ScamBomb | Why We Built It',
-  description: 'ScamBomb was built after my father-in-law was scammed twice. I couldn\'t always be there to check every suspicious message — so I built the tool I wished he already had.',
+  description: 'ScamBomb was built after my father-in-law was scammed twice. Learn why we built a tool families can use before they become victims.',
 };
 
 export default function AboutPage() {

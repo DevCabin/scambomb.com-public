@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   alternates: { canonical: '/blog' },
   title: 'Scam Guides, Alerts & Triage Files | ScamBomb Blog',
-  description: 'Plain-English scam guides, real scam triage files, and family protection tips from ScamBomb.',
+  description: 'The ScamBomb blog: plain-English scam guides, real scam triage files, and step-by-step family protection tips.',
 }
 
 // Modern blog system - redesigned 2026
@@ -95,7 +95,7 @@ export default function BlogPage() {
               <span className="text-white"> BLOG</span>
             </h1>
             <p className="text-xl text-white/70 leading-relaxed">
-              Stay ahead of scammers with expert guides, real incident breakdowns, and actionable security tips.
+              The ScamBomb blog is a library of plain-English scam guides, real incident breakdowns, and step-by-step protection tips.
             </p>
           </div>
         </div>

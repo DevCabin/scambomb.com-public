@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   alternates: { canonical: '/resources' },
   title: 'Free Scam Protection Resources & Checklists | ScamBomb',
-  description: 'Downloadable scam checklists, printable worksheets, and free family protection resources.',
+  description: 'Free scam protection resources: printable checklists, survival guides, a research report, and a share-your-story community.',
 }
 
 // Resources index page - mirrors blog layout
@@ -147,7 +147,7 @@ export default function ResourcesPage() {
               <span className="text-white"> RESOURCES</span>
             </h1>
             <p className="text-xl text-white/70 leading-relaxed">
-              Free guides, research reports, and workshop materials to protect you and your family from scams.
+              The ScamBomb resource library is a collection of free guides, research reports, and workshop materials to protect you and your family from scams.
             </p>
           </div>
         </div>

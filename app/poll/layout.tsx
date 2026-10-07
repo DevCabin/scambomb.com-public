@@ -3,7 +3,7 @@ import type { ReactNode } from 'react'
 
 export const metadata: Metadata = {
   title: 'ScamBomb Poll — Take Our Quick Survey',
-  description: 'Share your answer with the ScamBomb community.',
+  description: 'Take the ScamBomb live poll to test how well you can spot common scams, then see how your answer compares.',
   alternates: { canonical: '/poll' },
 }
 

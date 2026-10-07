@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   title: 'Scam Checker & Family Protection Platform | ScamBomb',
-  description: 'ScamBomb helps families recognize scams with instant message checks, monthly scam updates, live workshops, printable family worksheets, practical guides, and senior technology help.',
+  description: 'ScamBomb helps families recognize scams with instant message checks, monthly updates, workshops, and printable worksheets.',
   openGraph: {
     title: 'Scam Checker & Family Protection Platform | ScamBomb',
     description: 'ScamBomb helps families recognize scams with instant message checks, practical guidance, and ongoing family protection resources.',

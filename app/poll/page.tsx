@@ -161,6 +161,9 @@ export default function PollPage() {
         >
           Test Your Scam Knowledge
         </p>
+        <p className="text-sm sm:text-base mt-2 text-white/70">
+          The ScamBomb live poll is a quick, interactive quiz that tests how well you can spot common scams.
+        </p>
       </div>
 
       {/* Question Counter */}

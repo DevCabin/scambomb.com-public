@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Email a Suspicious Message to Scan | ScamBomb',
-  description: 'Forward a suspicious email to ScamBomb and get a plain-English scam check with clear next steps.',
+  description: 'Forward a suspicious email to ScamBomb and get a plain-English scam check with clear next steps on what to do next.',
   alternates: { canonical: '/email-to-scan' },
 }
 
