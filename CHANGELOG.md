@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-10-07 — Track HEYCATCH_PLAN audit brief
+
+### Added
+- **`HEYCATCH_PLAN.md`** now tracked in git — the audit brief + appended SEO-audit section (`/seo` surface) that `HEYCATCH_TODO.md` was built from.
+
 ## 2026-10-07 — Add HEYCATCH_TODO resume-from-scratch fix plan
 
 ### Added
