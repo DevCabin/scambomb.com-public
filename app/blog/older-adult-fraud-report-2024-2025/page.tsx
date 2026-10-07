@@ -1,3 +1,4 @@
+import BlogSchema from '../../../components/BlogSchema'
 import Link from 'next/link'
 import LeadCaptureCTA from '../../../components/LeadCaptureCTA'
 export const metadata = {
@@ -10,6 +11,13 @@ export default function BlogPost() {
   return (
     <div className="py-16">
       <article className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+      <BlogSchema
+        title={'Older Adult Fraud Is Now a Multi-Billion-Dollar Crisis'}
+        description={'We commissioned a deep-dive into the numbers. The findings are sobering: $4.9B in losses, a 43% year-over-year surge, and AI voice cloning responsible for $897M in cumulative deepfake fraud.'}
+        url={'https://scambomb.com/blog/older-adult-fraud-report-2024-2025'}
+        datePublished={'2026-02-25'}
+      />
+
 
         <header className="mb-10">
           <div className="text-xs font-semibold tracking-widest text-yellow-300/80 mb-3">
@@ -24,6 +32,12 @@ export default function BlogPost() {
           <time className="text-sm text-white/60" dateTime="2026-02-25">
             February 25, 2026
           </time>
+          <p className="mt-3 text-sm text-white/70">
+            By <Link href="/author/george-featherstone" className="text-white/90 hover:text-white underline">George Featherstone</Link>
+            <span className="mx-1 text-white/40">·</span>
+            <span>AI-assisted draft, reviewed and edited by George Featherstone.</span>
+          </p>
+
         </header>
 
         <div className="prose prose-invert prose-lg max-w-none [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:mt-10 [&_h2]:mb-4 [&_p]:text-white/80 [&_p]:leading-relaxed [&_p]:mb-5">

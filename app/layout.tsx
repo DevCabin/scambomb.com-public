@@ -139,6 +139,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${montserrat.variable} font-montserrat bg-[#0B1324] text-white min-h-screen antialiased selection:bg-yellow-300/30 text-base sm:text-lg`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Organization',
+              name: 'ScamBomb',
+              url: 'https://scambomb.com',
+              logo: 'https://scambomb.com/logo.png',
+              sameAs: ['https://www.facebook.com/profile.php?id=61585447685560'],
+            }),
+          }}
+        />
         <AuthProvider>
           <Script id="microsoft-clarity" strategy="afterInteractive">
             {`(function(c,l,a,r,i,t,y){

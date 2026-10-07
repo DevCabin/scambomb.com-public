@@ -32,14 +32,6 @@ export default function ScamBombLanding() {
       },
     })),
   };
-  const organizationSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Organization',
-    name: 'ScamBomb',
-    url: 'https://scambomb.com',
-    logo: 'https://scambomb.com/logo.png',
-    sameAs: ['https://www.facebook.com/profile.php?id=61585447685560'],
-  };
 
   return (
     <div className={`${base} antialiased`}>
@@ -457,7 +449,7 @@ export default function ScamBombLanding() {
       </section>
 
       <Script id="scambomb-homepage-schema" type="application/ld+json">
-        {JSON.stringify([organizationSchema, faqSchema])}
+        {JSON.stringify([faqSchema])}
       </Script>
 
       {/* Final CTA */}

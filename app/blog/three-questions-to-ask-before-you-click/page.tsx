@@ -1,3 +1,4 @@
+import BlogSchema from '../../../components/BlogSchema'
 import Link from 'next/link'
 export const metadata = {
   alternates: { canonical: '/blog/three-questions-to-ask-before-you-click' },
@@ -9,6 +10,13 @@ export default function BlogPost() {
   return (
     <div className="py-16">
       <article className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+      <BlogSchema
+        title={'Three questions to ask before you click'}
+        description={'A simple checklist to run through before clicking any link in an email or text message.'}
+        url={'https://scambomb.com/blog/three-questions-to-ask-before-you-click'}
+        datePublished={'2023-11-08'}
+      />
+
         <header className="mb-8">
           <div className="text-xs font-semibold tracking-widest text-white/60 mb-2">
             HOW-TO
@@ -18,6 +26,12 @@ export default function BlogPost() {
           <time className="text-sm text-white/60" dateTime="2023-11-08">
             November 8, 2023
           </time>
+          <p className="mt-3 text-sm text-white/70">
+            By <Link href="/author/george-featherstone" className="text-white/90 hover:text-white underline">George Featherstone</Link>
+            <span className="mx-1 text-white/40">·</span>
+            <span>AI-assisted draft, reviewed and edited by George Featherstone.</span>
+          </p>
+
         </header>
 
         <div className="prose prose-invert prose-lg max-w-none">

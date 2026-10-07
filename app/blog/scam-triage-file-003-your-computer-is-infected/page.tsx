@@ -1,3 +1,4 @@
+import BlogSchema from '../../../components/BlogSchema'
 import Link from 'next/link'
 
 export const metadata = {
@@ -11,6 +12,13 @@ export default function BlogPost() {
   return (
     <div className="py-16">
       <article className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <BlogSchema
+        title={'Scam Triage File #003: Your Computer Is Infected'}
+        description={'A real-world scareware cleanup: fake Microsoft Defender and McAfee popups, a hijacked browser notification permission, and the 8-step fix that saved the day.'}
+        url={'https://scambomb.com/blog/scam-triage-file-003-your-computer-is-infected'}
+        datePublished={'2026-08-03'}
+      />
+
         <header className="mb-8">
           <div className="text-xs font-semibold tracking-widest text-yellow-300/80 mb-3">SCAM TRIAGE FILE #003</div>
           <h1 className="text-3xl sm:text-4xl font-bold mb-5 leading-tight">
@@ -22,6 +30,12 @@ export default function BlogPost() {
           <time className="text-sm text-white/60" dateTime="2026-08-03">
             August 3, 2026
           </time>
+          <p className="mt-3 text-sm text-white/70">
+            By <Link href="/author/george-featherstone" className="text-white/90 hover:text-white underline">George Featherstone</Link>
+            <span className="mx-1 text-white/40">·</span>
+            <span>AI-assisted draft, reviewed and edited by George Featherstone.</span>
+          </p>
+
         </header>
 
         <section className="mb-8 not-prose">
@@ -152,6 +166,11 @@ export default function BlogPost() {
           <p>
             That’s kind of the whole point of what we’re building over here at ScamBomb: <strong>less panic, more plan.</strong>
           </p>
+          <h3>Sources</h3>
+          <ul>
+            <li>Federal Trade Commission — <Link href="https://reportfraud.ftc.gov/">ReportFraud.ftc.gov</Link> (report tech-support scams and find guidance).</li>
+            <li>Microsoft Support — <Link href="https://support.microsoft.com/en-us/windows/manage-website-notifications-in-microsoft-edge-0c555609-5bf2-479d-a59d-fb30a0b80b2b">Manage website notifications in Microsoft Edge</Link> (remove the fake notification permission).</li>
+          </ul>
         </div>
 
         <div className="my-10 rounded-2xl border border-yellow-300/30 bg-yellow-300/5 p-6 sm:p-8 not-prose">

@@ -1,3 +1,4 @@
+import BlogSchema from '../../../components/BlogSchema'
 import Link from 'next/link'
 
 export const metadata = {
@@ -11,6 +12,13 @@ export default function BlogPost() {
   return (
     <div className="py-16">
       <article className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <BlogSchema
+        title={'Scam Triage File #002: She Heard Her Daughter Crying for Help. It Wasn’t Her Daughter.'}
+        description={'A Florida woman lost $15,000 to an AI voice clone scam — and every single red flag was catchable. Full breakdown of the playbook, the 7 red flags, and how to set up a family safe word today.'}
+        url={'https://scambomb.com/blog/she-heard-her-daughter-crying-ai-voice-clone-scam'}
+        datePublished={'2026-05-23'}
+      />
+
         <header className="mb-8">
           <div className="text-sm font-semibold tracking-widest text-yellow-300/80 mb-3">SCAM TRIAGE FILE #002</div>
           <h1 className="text-4xl sm:text-5xl font-bold mb-5 leading-tight">
@@ -34,6 +42,12 @@ export default function BlogPost() {
           <time className="text-base text-white/70" dateTime="2026-05-23">
             May 23, 2026
           </time>
+          <p className="mt-3 text-sm text-white/70">
+            By <Link href="/author/george-featherstone" className="text-white/90 hover:text-white underline">George Featherstone</Link>
+            <span className="mx-1 text-white/40">·</span>
+            <span>AI-assisted draft, reviewed and edited by George Featherstone.</span>
+          </p>
+
         </header>
 
         <section className="mb-8 not-prose">

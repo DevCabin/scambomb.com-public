@@ -1,3 +1,4 @@
+import BlogSchema from '../../../components/BlogSchema'
 import Link from 'next/link'
 import ScamGuideOptIn from '../../../components/ScamGuideOptIn'
 
@@ -11,11 +12,24 @@ export default function BlogPost() {
   return (
     <div className="py-16">
       <article className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+      <BlogSchema
+        title={'Is This a Scam? How to Spot Fake Texts, Emails & Calls'}
+        description={'Got a weird text? Use this 10-second check to know if it’s a scam. Learn the five red flags, what to do next, and how to protect your family.'}
+        url={'https://scambomb.com/blog/is-this-a-scam'}
+        datePublished={'2026-08-04'}
+      />
+
         <header className="mb-10">
           <div className="text-xs font-semibold tracking-widest text-yellow-300/80 mb-3">GUIDE</div>
           <h1 className="text-3xl sm:text-4xl font-bold mb-5 leading-tight">Is This a Scam? How to Instantly Spot Fake Texts, Emails &amp; Calls</h1>
           <p className="text-white/80 text-lg mb-5 leading-relaxed">Got a weird text? Use this 10-second check to know if it&apos;s a scam. Learn the five red flags, what to do next, and how to protect your family.</p>
           <time className="text-sm text-white/60" dateTime="2026-08-04">August 4, 2026</time>
+          <p className="mt-3 text-sm text-white/70">
+            By <Link href="/author/george-featherstone" className="text-white/90 hover:text-white underline">George Featherstone</Link>
+            <span className="mx-1 text-white/40">·</span>
+            <span>AI-assisted draft, reviewed and edited by George Featherstone.</span>
+          </p>
+
         </header>
 
         <div className="prose prose-invert prose-lg max-w-none [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:mt-10 [&_h2]:mb-4 [&_h3]:text-xl [&_h3]:font-bold [&_h3]:mt-8 [&_h3]:mb-3 [&_p]:text-white/80 [&_p]:leading-relaxed [&_p]:mb-5 [&_li]:text-white/80 [&_li]:leading-relaxed">

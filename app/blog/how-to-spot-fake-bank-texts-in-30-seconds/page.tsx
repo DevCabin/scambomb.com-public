@@ -1,3 +1,4 @@
+import BlogSchema from '../../../components/BlogSchema'
 import Link from 'next/link'
 
 export const metadata = {
@@ -9,7 +10,20 @@ export const metadata = {
 export default function BlogPost() {
   return (
     <div className="py-16"><article className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-      <header className="mb-8"><div className="text-xs font-semibold tracking-widest text-white/60 mb-2">GUIDE</div><h1 className="text-3xl sm:text-4xl font-bold mb-4 uppercase">Is This Text Really From My Bank? How to Check Safely</h1><p className="text-white/80 text-lg mb-4">A calm, reliable way to check a possible bank alert—whether you are protecting yourself or helping a parent.</p><time className="text-sm text-white/60" dateTime="2023-11-12">November 12, 2023</time></header>
+      <BlogSchema
+        title={'Is This Text Really From My Bank? How to Check Safely'}
+        description={'Learn how to check a bank fraud alert safely, what fake bank texts try next, and what to do after replying, clicking, or sharing account details.'}
+        url={'https://scambomb.com/blog/how-to-spot-fake-bank-texts-in-30-seconds'}
+        datePublished={'2023-11-12'}
+      />
+
+      <header className="mb-8"><div className="text-xs font-semibold tracking-widest text-white/60 mb-2">GUIDE</div><h1 className="text-3xl sm:text-4xl font-bold mb-4 uppercase">Is This Text Really From My Bank? How to Check Safely</h1><p className="text-white/80 text-lg mb-4">A calm, reliable way to check a possible bank alert—whether you are protecting yourself or helping a parent.</p><time className="text-sm text-white/60" dateTime="2023-11-12">November 12, 2023</time>
+          <p className="mt-3 text-sm text-white/70">
+            By <Link href="/author/george-featherstone" className="text-white/90 hover:text-white underline">George Featherstone</Link>
+            <span className="mx-1 text-white/40">·</span>
+            <span>AI-assisted draft, reviewed and edited by George Featherstone.</span>
+          </p>
+</header>
       <div className="prose prose-invert prose-lg max-w-none [&_h2]:uppercase [&_h3]:uppercase">
         <p><strong>The reliable check is independent verification:</strong> open your bank’s official app yourself, or call the number on the back of your card. Do not use a link, phone number, or reply option supplied by a suspicious text.</p>
         <p>A displayed sender name, short code, logo, polished grammar, urgency, or the presence or absence of a link cannot prove a message is genuine. Those details can be clues, but scammers can imitate or manipulate them. Verification through a channel you chose is the safer action.</p>

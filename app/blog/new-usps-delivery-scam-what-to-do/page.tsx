@@ -1,3 +1,4 @@
+import BlogSchema from '../../../components/BlogSchema'
 import Link from 'next/link'
 
 export const metadata = {
@@ -9,7 +10,20 @@ export const metadata = {
 export default function BlogPost() {
   return (
     <div className="py-16"><article className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-      <header className="mb-8"><div className="text-xs font-semibold tracking-widest text-white/60 mb-2">ALERT</div><h1 className="text-3xl sm:text-4xl font-bold mb-4 uppercase">Does USPS Charge for Redelivery? How to Spot the Fake Fee Text</h1><p className="text-white/80 text-lg mb-4">USPS says it does not charge a fee for redelivery. Here is how to check a package without trusting a suspicious text.</p><time className="text-sm text-white/60" dateTime="2023-11-10">Published November 10, 2023 · Updated September 25, 2026</time></header>
+      <BlogSchema
+        title={'Does USPS Charge for Redelivery? How to Spot the Fake Fee Text'}
+        description={'USPS redelivery is free. Learn how fake USPS redelivery texts work, how to check a package safely, and what to do if you clicked or paid.'}
+        url={'https://scambomb.com/blog/new-usps-delivery-scam-what-to-do'}
+        datePublished={'2023-11-10'}
+      />
+
+      <header className="mb-8"><div className="text-xs font-semibold tracking-widest text-white/60 mb-2">ALERT</div><h1 className="text-3xl sm:text-4xl font-bold mb-4 uppercase">Does USPS Charge for Redelivery? How to Spot the Fake Fee Text</h1><p className="text-white/80 text-lg mb-4">USPS says it does not charge a fee for redelivery. Here is how to check a package without trusting a suspicious text.</p><time className="text-sm text-white/60" dateTime="2023-11-10">Published November 10, 2023 · Updated September 25, 2026</time>
+          <p className="mt-3 text-sm text-white/70">
+            By <Link href="/author/george-featherstone" className="text-white/90 hover:text-white underline">George Featherstone</Link>
+            <span className="mx-1 text-white/40">·</span>
+            <span>AI-assisted draft, reviewed and edited by George Featherstone.</span>
+          </p>
+</header>
       <div className="prose prose-invert prose-lg max-w-none [&_h2]:uppercase [&_h3]:uppercase">
         <p><strong>Does USPS charge for redelivery?</strong> No. USPS says redelivery is free. A text directing you to pay a fee to fix an address, release a package, or arrange redelivery should be treated as suspicious—especially if you did not first request USPS tracking for that specific package.</p>
         <p>Do not use the message’s link or phone number. Type <a href="https://www.usps.com/">USPS.com</a> into your browser yourself, use the official USPS app, or contact USPS through a phone number you already know is genuine.</p>
