@@ -15,8 +15,29 @@ const montserrat = Montserrat({
 })
 
 export const metadata: Metadata = {
-  title: 'ScamBomb | Helping families recognize scams before they become victims',
+  metadataBase: new URL('https://scambomb.com'),
+  title: 'Scam Checker & Family Protection Platform | ScamBomb',
   description: 'ScamBomb helps families recognize scams with instant message checks, monthly scam updates, live workshops, printable family worksheets, practical guides, and senior technology help.',
+  openGraph: {
+    title: 'Scam Checker & Family Protection Platform | ScamBomb',
+    description: 'ScamBomb helps families recognize scams with instant message checks, practical guidance, and ongoing family protection resources.',
+    url: 'https://scambomb.com',
+    siteName: 'ScamBomb',
+    locale: 'en_US',
+    type: 'website',
+    images: [
+      {
+        url: '/logo.png',
+        alt: 'ScamBomb — scam checker and family protection platform',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Scam Checker & Family Protection Platform | ScamBomb',
+    description: 'Know what is real, what is dangerous, and what to do next with ScamBomb.',
+    images: ['/logo.png'],
+  },
   icons: {
     icon: '/scambomb-favicon-64.png',
     apple: '/ScamBomb-just-the-bomb.png',
@@ -62,7 +83,6 @@ function UniversalFooter() {
           <ul className="mt-2 space-y-3 md:space-y-2 text-white/80">
             <li><a href="/about" className="text-lg md:text-sm font-bold md:font-normal hover:text-white transition-colors">About</a></li>
             <li><a href="/contact" className="text-lg md:text-sm font-bold md:font-normal hover:text-white transition-colors">Contact</a></li>
-            <li><a href="/testing" className="text-lg md:text-sm font-bold md:font-normal hover:text-white transition-colors">Testing</a></li>
             <li><a href="/scam-stories" className="text-lg md:text-sm font-bold md:font-normal hover:text-white transition-colors">Story</a></li>
             <li><a href="/terms" className="text-lg md:text-sm font-bold md:font-normal hover:text-white transition-colors">Terms of Use</a></li>
             <li><a href="/extension-privacy" className="text-lg md:text-sm font-bold md:font-normal hover:text-white transition-colors">Extension Policy</a></li>

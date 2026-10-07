@@ -1,7 +1,18 @@
 'use client';
 
 import { useState } from 'react';
+import Script from 'next/script';
 import { PricingSection } from '../components/PricingSection';
+
+const faqItems = [
+  { q: "Do you sell my data?", a: "Short answer: Never.\n\nLong answer: We collect only the bare minimum amount of information to allow this service to function. Any potential scam message that is uploaded for testing, text or image, is NOT stored or logged. It is not used for training purposes. It is certainly not sold. You can rest assured anything you share with us ... is kept between us." },
+  { q: "Does it work on my phone?", a: "Yes, you may use your mobile device to paste messages or even upload a screenshot of a message." },
+  { q: "Can I cancel anytime?", a: "Absolutely. Subscriptions are month-to-month with a \"No strings attached, 'cancel any time for any reason'\" guarantee." },
+  { q: "Is ScamBomb membership more than app access?", a: "Yes. The scam-checking tool is only one part of ScamBomb membership. Paid members also receive monthly scam updates, printable family worksheets, live Zoom workshops, family-protection guides, emerging-scam education, and senior technology guides." },
+  { q: "What happens during the monthly workshop?", a: "Each live Zoom workshop covers current scams, warning signs, practical protection steps, and real-world examples. Members can also ask questions during the live Q&A." },
+  { q: "Are the printable resources included?", a: "Yes. Paid members receive downloadable and printable worksheets, checklists, conversation guides, and family-protection resources as part of their membership." },
+  { q: "What is included with Senior Protection?", a: "Senior Protection includes the complete paid ScamBomb membership at a special locked-in price for adults age 60 and older. It is not a reduced or limited version of the program." },
+];
 
 export default function ScamBombLanding() {
   const base = "bg-[#0B1324] text-white"; // Navy default
@@ -9,6 +20,26 @@ export default function ScamBombLanding() {
   const brandBorder = "border-white/20";
   const appUrl = 'https://app.scambomb.com';
   const [isHowToOpen, setIsHowToOpen] = useState(false);
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqItems.map(({ q, a }) => ({
+      '@type': 'Question',
+      name: q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: a.replace(/\n\n/g, ' '),
+      },
+    })),
+  };
+  const organizationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'ScamBomb',
+    url: 'https://scambomb.com',
+    logo: 'https://scambomb.com/logo.png',
+    sameAs: ['https://www.facebook.com/profile.php?id=61585447685560'],
+  };
 
   return (
     <div className={`${base} antialiased`}>
@@ -20,8 +51,8 @@ export default function ScamBombLanding() {
           <div className="grid lg:grid-cols-2 gap-10 items-center">
             <div>
               <h1 className="text-[2.35rem] leading-[1.1] sm:text-5xl sm:leading-tight font-extrabold">
-                Modern Scams Fool<br />
-                <span style={{ color: brandYellow }}>Smart People</span> Every Day.
+                Scam Checker for <span style={{ color: brandYellow }}>Families</span><br />
+                Know What's Real Before You Act.
               </h1>
               <p className="mt-5 max-w-xl text-lg leading-relaxed text-white/90 sm:text-xl">
                 ScamBomb helps you know what&apos;s real, what&apos;s dangerous, and what to do next—while protecting your household with one membership for you and up to four additional family members, plus ongoing education, practical resources, and live support.
@@ -154,7 +185,7 @@ export default function ScamBombLanding() {
             </div>
             <div className="rounded-2xl border-2 border-[#F5C84C] bg-[#0B1324] p-6 text-center flex flex-col justify-center">
               <h3 className="text-lg font-black uppercase text-[#F5C84C]">Protect the whole family</h3>
-              <p className="mt-4 text-4xl font-black text-white">$9.99</p>
+              <p className="mt-4 text-4xl font-black text-white">$9</p>
               <p className="mt-2 text-sm text-white/70">per month</p>
             </div>
           </div>
@@ -192,7 +223,7 @@ export default function ScamBombLanding() {
             </div>
             <div className="rounded-2xl border border-white/10 bg-[#F5C84C] p-6 text-[#0B1324] text-center flex flex-col justify-center">
               <h3 className="text-lg font-black uppercase">Seniors get a discount</h3>
-              <p className="mt-4 text-4xl font-black">$4.99</p>
+              <p className="mt-4 text-4xl font-black">$5</p>
               <p className="mt-2 text-sm opacity-80">per month</p>
             </div>
           </div>
@@ -322,6 +353,12 @@ export default function ScamBombLanding() {
           <p className="mt-4 max-w-3xl text-lg leading-relaxed text-white/85">
             Every article, workshop, guide, and feature is built around scams that are actually targeting people today—not hypothetical examples. We explain what happened, why it worked, and how to protect yourself next time.
           </p>
+          <div className="mt-8 border-t border-yellow-300/20 pt-8">
+            <h3 className="text-2xl font-bold">Why Trust the Verdict?</h3>
+            <p className="mt-3 max-w-3xl text-lg leading-relaxed text-white/85">
+              It doesn&apos;t just say &apos;safe&apos; or &apos;scam&apos; and leave you to trust a verdict from a website you&apos;ve never heard of. It shows you why — the same way I&apos;d explain it if I were standing next to you.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -409,15 +446,7 @@ export default function ScamBombLanding() {
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl sm:text-4xl font-bold">Frequently Asked Questions</h2>
           <dl className="divide-y divide-white/10 rounded-2xl border border-white/10 bg-[#0B1324] mt-8">
-            {[
-              { q: "Do you sell my data?", a: "Short answer: Never.\n\nLong answer: We collect only the bare minimum amount of information to allow this service to function. Any potential scam message that is uploaded for testing, text or image, is NOT stored or logged. It is not used for training purposes. It is certainly not sold. You can rest assured anything you share with us ... is kept between us." },
-              { q: "Does it work on my phone?", a: "Yes, you may use your mobile device to paste messages or even upload a screenshot of a message." },
-              { q: "Can I cancel anytime?", a: "Absolutely. Subscriptions are month-to-month with a \"No strings attached, 'cancel any time for any reason'\" guarantee." },
-              { q: "Is ScamBomb membership more than app access?", a: "Yes. The scam-checking tool is only one part of ScamBomb membership. Paid members also receive monthly scam updates, printable family worksheets, live Zoom workshops, family-protection guides, emerging-scam education, and senior technology guides." },
-              { q: "What happens during the monthly workshop?", a: "Each live Zoom workshop covers current scams, warning signs, practical protection steps, and real-world examples. Members can also ask questions during the live Q&A." },
-              { q: "Are the printable resources included?", a: "Yes. Paid members receive downloadable and printable worksheets, checklists, conversation guides, and family-protection resources as part of their membership." },
-              { q: "What is included with Senior Protection?", a: "Senior Protection includes the complete paid ScamBomb membership at a special locked-in price for adults age 60 and older. It is not a reduced or limited version of the program." },
-            ].map((item, i) => (
+            {faqItems.map((item, i) => (
               <div key={i} className="p-6">
                 <dt className="text-xl font-semibold">{item.q}</dt>
                 <dd className="mt-3 text-lg leading-relaxed text-white/85" dangerouslySetInnerHTML={{ __html: item.a.split('\n\n').join('<br/><br/>') }}></dd>
@@ -426,6 +455,10 @@ export default function ScamBombLanding() {
           </dl>
         </div>
       </section>
+
+      <Script id="scambomb-homepage-schema" type="application/ld+json">
+        {JSON.stringify([organizationSchema, faqSchema])}
+      </Script>
 
       {/* Final CTA */}
       <section className="border-t border-white/10 bg-white/[0.03]">

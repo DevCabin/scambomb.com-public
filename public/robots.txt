@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /staging
+Disallow: /thank-you
+Disallow: /app-terms
+Disallow: /extension-privacy
+
+Sitemap: https://scambomb.com/sitemap.xml

@@ -85,7 +85,6 @@ export function PricingSection() {
         <div className="mt-8 grid lg:grid-cols-3 gap-6">
           <div className="hover-lift">
             <PriceCard
-              highlight
               title="Stay Safe"
               price="Free"
               note="Occasional scam checking and selected educational resources."
@@ -95,8 +94,14 @@ export function PricingSection() {
               features={freeFeatures}
             />
           </div>
-          <div className="hover-lift">
+          <div className="hover-lift relative">
+            <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-10">
+              <span className="inline-block rounded-full bg-[#F5C84C] px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#0B1324]">
+                Most Popular
+              </span>
+            </div>
             <PriceCard
+              highlight
               title="Stay Protected"
               price="$9/mo · $99/yr"
               subheading="Complete family-protection membership"
@@ -143,6 +148,9 @@ export function PricingSection() {
         </div>
 
         <p className="mt-4 text-center text-lg text-white/80">No strings attached, “cancel any time for any reason” guarantee.</p>
+        <p className="mt-2 text-center text-sm text-white/60 max-w-2xl mx-auto">
+          I didn't build this to compete with $40/month identity-theft monitoring services packed with features most people never touch. I built it to be something my father-in-law would actually use, and actually be able to afford, for as long as he needs it.
+        </p>
       </div>
     </section>
   )
