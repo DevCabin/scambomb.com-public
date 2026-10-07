@@ -1,5 +1,18 @@
 # Changelog
 
+## 2026-10-07 — Quotability fixes (HeyCatch `g_answer_first` + `g_self_contained`)
+
+### Changed
+- **Answer-first openings** (`g_answer_first`):
+  - `blog/scam-triage-file-003-your-computer-is-infected` — replaced the header subtitle with a direct 40-60 word answer (computer isn't infected; popups are scareware; fix was the notification permission; never call the number).
+  - `blog/she-heard-her-daughter-crying-ai-voice-clone-scam` — replaced the header subtitle with a direct answer ($15,000 AI voice clone; ~3 seconds of audio; every red flag catchable; a safe word would have stopped it).
+- **Self-contained paragraphs** (`g_self_contained`) — rewritten pronoun-led openings to name their subject first:
+  - `scam-triage-file-003`: "It started…" → "This scareware case started…"; "They kept reappearing…" → "The popups kept reappearing…"; "This is scareware…" → "Scareware is…"; "She didn't call…" → "The woman never called…".
+  - `she-heard`: "Crying. Hysterical…" → "Her daughter was crying…"; "Her daughter said…" → "Sharon's daughter said…"; "She handed over…" → "Sharon handed over…"; "It was all fake…" → "The emergency was entirely fake…".
+
+### Flagged for owner
+- None — all rewrites reuse on-page facts; no invented claims.
+
 ## 2026-10-07 — Page clarity fixes (HeyCatch `c_duplicate_titles` + `c_thin`)
 
 ### Changed
