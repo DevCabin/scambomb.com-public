@@ -1,5 +1,20 @@
 # Changelog
 
+## 2026-10-07 — Page clarity fixes (HeyCatch `c_duplicate_titles` + `c_thin`)
+
+### Changed
+- **Unique page titles** (`c_duplicate_titles`): added distinct `title` + `description` to every page that was inheriting the homepage title — `contact`, `email-to-scan`, `extension`, `blog` index, `resources`, `terms`, `member-signup` (+ `[location]` layout), `poll`, `presentation` + `presentation-ai-future/jobs/live/trivia`, `presentation-downloads/prompts`, `protect-parents`, `staging`, `thank-you-membership`.
+- **Expanded thin pages past 800 words** (`c_thin`), with substance (examples, tables, numbers, edge cases), not filler:
+  - `blog/three-questions-to-ask-before-you-click` (293→851): added "what to do if you clicked", "what the questions don't catch", and a one-glance summary.
+  - `blog/how-to-spot-fake-bank-texts-in-30-seconds` (682→917): added real-bank-vs-fake table + one-time-code section.
+  - `blog/new-usps-delivery-scam-what-to-do` (711→907): added real-vs-fake table + "why the fee story works / when it spikes".
+  - `blog/older-adult-fraud-report-2024-2025` (713→940): added "what families can do right now" action list.
+  - `blog/scam-triage-file-001-android…` (835→1002): added Safe Mode steps + "turn off site notifications".
+  - `resources/is-this-a-scam-checklist/index.html` (737→819): added intro paragraph + expanded guidance.
+
+### Flagged for owner
+- No new owner content required — all expansions reused existing site material + public FTC/USPS/Microsoft guidance.
+
 ## 2026-10-07 — Authorship + trust + conversion fixes (HeyCatch P2/P3)
 
 ### Changed
