@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
+  title: 'ScamBomb Membership Signup',
+  description: 'Sign up for a ScamBomb family protection membership with scam checking and ongoing education.',
   alternates: { canonical: '/member-signup' },
 }
 

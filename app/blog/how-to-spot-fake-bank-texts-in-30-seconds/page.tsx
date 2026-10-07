@@ -28,6 +28,20 @@ export default function BlogPost() {
         <p><strong>The reliable check is independent verification:</strong> open your bank’s official app yourself, or call the number on the back of your card. Do not use a link, phone number, or reply option supplied by a suspicious text.</p>
         <p>A displayed sender name, short code, logo, polished grammar, urgency, or the presence or absence of a link cannot prove a message is genuine. Those details can be clues, but scammers can imitate or manipulate them. Verification through a channel you chose is the safer action.</p>
         <h2>A realistic fake fraud alert</h2><p>An illustrative scam might say: <em>“Did you authorize a $1,499 purchase? Reply YES to confirm or call the fraud department at 800-555-0199.”</em> The number and wording vary. The goal is to make you respond so the scammer can continue the conversation as a helpful “bank employee.”</p>
+        <h2>Real bank text vs. fake bank text</h2>
+        <p>Here is the same warning, side by side, so you can see what to look for:</p>
+        <table>
+          <thead><tr><th>What a real bank does</th><th>What a scam text does</th></tr></thead>
+          <tbody>
+            <tr><td>Says “log in to the app to review a flagged charge”</td><td>Says “reply YES or call this number to confirm”</td></tr>
+            <tr><td>Never asks for your password, PIN, or one-time code</td><td>Asks for your code, PIN, or full card number</td></tr>
+            <tr><td>Never tells you to move money or buy gift cards</td><td>Tells you to move money to a “safe” account</td></tr>
+            <tr><td>Points you to the number on the back of your card</td><td>Points you to the number in the message</td></tr>
+          </tbody>
+        </table>
+        <p>The pattern is always the same: the scam runs through <em>their</em> channel, not yours.</p>
+        <h2>The one-time code is the whole ballgame</h2>
+        <p>The single most dangerous thing you can hand over is a one-time verification code. That code lets someone log in to your account <strong>as you</strong>, or reset your password, in seconds. Scammers often trigger a real code from your bank, then call pretending to be the bank and ask you to “read it back” to verify your identity. A real bank employee will <strong>never</strong> ask you to read back a code. If anyone asks for one — hang up or stop replying, and call the bank yourself.</p>
         <h2>What scammers may do next</h2><ul><li>Ask you to confirm your name, one-time code, PIN, password, or full card number.</li><li>Call from a number that appears to belong to your bank.</li><li>Tell you to move money to a “safe” account or buy gift cards.</li><li>Ask you to install remote-access software or stay on the phone while you log in.</li><li>Pressure you not to hang up or contact the bank independently.</li></ul><p>A real bank may contact customers about account activity, but a text’s appearance does not establish that it is real. Let the bank’s independently found app or phone number settle the question.</p>
         <h2>What information should you not provide in a text conversation?</h2><p>Do not send a password, PIN, full card number, online-banking login, Social Security number, or one-time verification code in response to an unexpected message. If someone asks you to move money “for protection,” stop and contact the bank through the app or the number on your card.</p>
         <h2>What to do if you already replied or clicked</h2>

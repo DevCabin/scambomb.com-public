@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   alternates: { canonical: '/resources' },
+  title: 'Free Scam Protection Resources & Checklists | ScamBomb',
+  description: 'Downloadable scam checklists, printable worksheets, and free family protection resources.',
 }
 
 // Resources index page - mirrors blog layout

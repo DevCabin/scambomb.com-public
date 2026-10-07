@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   alternates: { canonical: '/blog' },
+  title: 'Scam Guides, Alerts & Triage Files | ScamBomb Blog',
+  description: 'Plain-English scam guides, real scam triage files, and family protection tips from ScamBomb.',
 }
 
 // Modern blog system - redesigned 2026

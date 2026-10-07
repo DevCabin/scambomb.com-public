@@ -36,6 +36,19 @@ export default function BlogPost() {
         <h2>How legitimate USPS tracking texts work</h2>
         <p>According to the U.S. Postal Inspection Service, USPS does not send tracking texts or emails unless the customer first requested the service for a specific package. Those USPS tracking messages do not contain a link. An unsolicited message with a strange web link is a smishing warning sign, even if it uses a familiar logo or sender name.</p>
         <p>To check a package, navigate independently to <a href="https://www.usps.com/">USPS.com</a> and enter the tracking number. Do not open the tracking page from the text.</p>
+        <h2>Real USPS message vs. fake fee text</h2>
+        <table>
+          <thead><tr><th>Real USPS</th><th>Fake fee text</th></tr></thead>
+          <tbody>
+            <tr><td>Only texts you if you requested tracking for a package</td><td>Texts you out of the blue about a package you didn't request tracking for</td></tr>
+            <tr><td>Sends no links in tracking texts</td><td>Includes a link to "pay" or "confirm"</td></tr>
+            <tr><td>Redelivery is free</td><td>Asks for a redelivery, customs, or processing fee</td></tr>
+            <tr><td>Points to USPS.com or your Post Office</td><td>Points to a lookalike domain</td></tr>
+          </tbody>
+        </table>
+        <h2>Why the fee story works — and when it spikes</h2>
+        <p>The fake-fee text preys on two things: a small dollar amount that feels easy to pay, and the fear of a package being returned. A "99¢ redelivery fee" doesn't feel worth double-checking — but the moment you enter a card number on the fake page, the scam has what it wants.</p>
+        <p>These texts surge around the holidays and after big sale weekends, when more people are genuinely expecting a package. That timing is deliberate: a delivery text feels believable precisely because you <em>are</em> waiting on something. The rule doesn't change — check the tracking number on USPS.com, never through the text's link.</p>
         <h2>What to do based on what happened</h2>
         <h3>If you only received the text</h3><ol><li>Do not reply or click.</li><li>Forward it to <strong>7726 (SPAM)</strong> if your carrier supports that reporting method.</li><li>Forward the message to <a href="mailto:spam@uspis.gov">spam@uspis.gov</a>, then delete it.</li></ol>
         <h3>If you clicked but did not enter information</h3><p>Close the page. Do not download anything or allow notifications. If you downloaded an app or file, stop and ask a trusted technician to check the device.</p>

@@ -47,7 +47,11 @@ export default function BlogPost() {
 
           <h2>Use Safe Mode as a diagnostic step</h2>
           <p>Google recommends Safe Mode when unwanted ads, pop-ups, or malware-like behavior may be connected to an app. In Safe Mode, remove recently downloaded apps one at a time, restart normally after each removal, and check whether the behavior changes.</p>
+          <p>On most modern Android phones, you enter Safe Mode by pressing and holding the power button, then pressing and holding <strong>Power off</strong> until a <strong>Safe Mode</strong> prompt appears and tapping it. (The exact steps vary slightly by device — if the prompt doesn't appear, search your phone model + "Safe Mode" for the right sequence.) In Safe Mode the words "Safe mode" appear in a corner of the screen and third-party apps stay disabled.</p>
           <p>In this incident, the pop-ups stopped in Safe Mode. That narrowed the likely cause to a third-party app; it did <strong>not</strong> prove that the operating system was uncompromised or provide a complete security assessment.</p>
+
+          <h2>How to turn off unwanted site notifications</h2>
+          <p>This is the single most common real cause behind repeated "you have 3 viruses" warnings — a website you once allowed to send notifications, now abusing that permission to push scare messages. To fix it in Chrome on Android: open the three-dot menu, tap <strong>Settings → Site settings → Notifications</strong>, and block any site you don't recognize. In the "Allowed" list, tap the offending site and choose <strong>Remove</strong> or <strong>Block</strong>.</p>
 
           <h2>Check Play Protect</h2>
           <p>Open the Google Play Store, tap your profile picture, then <strong>Play Protect → Settings</strong>. Make sure <strong>Scan apps with Play Protect</strong> is on. If you are still seeing unexpected behavior, pause before installing anything else and ask a trusted technician or your device manufacturer for help.</p>

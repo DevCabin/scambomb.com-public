@@ -122,6 +122,23 @@ export default function BlogPost() {
             Three red flags appear in nearly every case: unexpected contact from an unfamiliar number, intense emotional pressure, and manufactured urgency designed to prevent the target from pausing to verify.
           </p>
 
+          <h2>What families can do right now</h2>
+
+          <p>
+            The data points to a small number of high-impact habits that directly counter the way these scams work:
+          </p>
+
+          <ol>
+            <li><strong>Set a family safe word.</strong> Agree on a word or phrase only your family knows, and use it to verify any unexpected "emergency" call — even if the voice sounds exactly like your grandchild.</li>
+            <li><strong>Slow down the money.</strong> The median phone-scam loss is high because scammers push for speed. A rule like "no wiring money or buying gift cards for a family member until we've spoken on our own terms" defeats the urgency.</li>
+            <li><strong>Pause before acting on any urgent call or text.</strong> Hang up, then call the person back on a number you already have — not the one the caller gave you.</li>
+            <li><strong>Report what you can.</strong> Even one report to the FTC helps build the picture these numbers come from, and reporting helps others avoid the same trap.</li>
+          </ol>
+
+          <p>
+            None of this requires technical skill. It requires exactly what scammers are counting on you <em>not</em> to do: slowing down and verifying through a channel you trust.
+          </p>
+
           <h2>What&apos;s in the full report</h2>
 
           <p>

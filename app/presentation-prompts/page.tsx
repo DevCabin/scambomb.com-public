@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  title: 'ScamBomb Presentation Prompts',
+  description: 'ScamBomb presentation prompts and talking points.',
   alternates: { canonical: '/presentation-prompts' },
   robots: {
     index: false,

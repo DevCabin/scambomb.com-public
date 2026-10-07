@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
+  title: 'Terms of Use | ScamBomb',
+  description: 'ScamBomb\'s terms of use, privacy, and data handling.',
   alternates: { canonical: '/terms' },
 }
 
