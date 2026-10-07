@@ -65,21 +65,21 @@ The audit page consistently truncates the middle on fetch. These codes/pages NOT
 
 ## 3. Progress Tracker (Round 2)
 
-- [ ] B `t_orphan_pages` — related block + hub/breadcrumbs
-- [ ] C `c_title` — clamp 8 titles to 30–60 chars
-- [ ] D `a_external_sources` — 2 primary sources on older-adult report
-- [ ] E `g_self_contained` — remaining pronoun paragraph on she-heard
-- [ ] F `g_sentence_length` — split long sentences on 3 pages
-- [ ] G `g_multimodal` — substantive image + alt on 6 pages
-- [ ] H `c_thin` — top up 2 borderline pages
-- [ ] A `a_sameas` — ⛔ owner (company profiles)
+- [x] B `t_orphan_pages` — related block + footer links — done, commit b89d73c
+- [x] C `c_title` — 8 titles clamped — done, commit 86387af
+- [x] D `a_external_sources` — FTC + IC3 on older-adult — done, commit b89d73c
+- [x] E `g_self_contained` — she-heard pronouns — done, commit b89d73c
+- [x] F `g_sentence_length` — reports HTML sentences split — done, commit b89d73c
+- [~] G `g_multimodal` — ⚠️ FLAGGED: needs owner imagery (screenshots/diagrams)
+- [x] H `c_thin` — 2 pages topped up — done, commit 86387af
+- [x] A `a_sameas` — ⛔ PERMANENTLY BLOCKED: owner has no company profiles (only personal LinkedIn, already on author)
 - [ ] c_meta_description + 4 c_* + g_definition + 3 g_* — ⚠️ owner paste text first
 - [ ] P4 deploy + verify + re-run + changelog output
 
 ## 4. Owner Blockers (Round 2)
 
-1. **`a_sameas`**: paste/create 3+ company-owned profile URLs (business LinkedIn, YouTube, X, GitHub org, G2/Crunchbase). Personal LinkedIn already used on the *author* Person, correctly NOT on the Organization.
-2. **Paste the truncated `c_*` + `g_*` findings** (see §2).
+1. **`a_sameas`** — ⛔ RESOLVED AS "CANNOT FIX": owner confirmed they have no company-owned profiles (business LinkedIn/YouTube/X/GitHub org). Personal LinkedIn is already on the *author* Person, correctly NOT on the Organization. This item stays open by design; do not invent profiles.
+2. **Paste the truncated `c_*` + `g_*` findings** (see §2) — owner re-pasted `c_title`, `c_thin`, `g_answer_first`, `g_freshness` (all now done), but the `c_meta_description` + remaining `c_*` and `g_definition` + remaining `g_*` findings are STILL not pasted. Ask again if needed.
 
 ## 5. Quick Resume Commands (fresh session)
 
