@@ -21,7 +21,7 @@ export default function BlogPost() {
         <header className="mb-8">
           <div className="text-xs font-semibold tracking-widest text-yellow-300/80 mb-3">SCAM TRIAGE FILE #001</div>
           <h1 className="text-3xl sm:text-4xl font-bold mb-5 leading-tight uppercase">“Your System Is Infected With 3 Viruses” on Android? What to Do</h1>
-          <p className="text-white/80 text-lg mb-5 leading-relaxed">A real Android scareware incident, what the warning did—and did not—prove, and the safest way to investigate it.</p>
+          <p className="text-white/80 text-lg mb-5 leading-relaxed">A “your system is infected with 3 viruses” warning on Android is almost always a browser scare page or an unwanted website notification — not a real virus detection. Don&apos;t tap its button or call its number. Close the page and check your notification settings yourself.</p>
           <time className="text-sm text-white/60" dateTime="2026-02-27">February 27, 2026</time>
           <p className="mt-3 text-sm text-white/70">
             By <Link href="/author/george-featherstone" className="text-white/90 hover:text-white underline">George Featherstone</Link>

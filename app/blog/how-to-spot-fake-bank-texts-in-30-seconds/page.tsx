@@ -15,9 +15,10 @@ export default function BlogPost() {
         description={'Learn how to check a bank fraud alert safely, what fake bank texts try next, and what to do after replying, clicking, or sharing account details.'}
         url={'https://scambomb.com/blog/how-to-spot-fake-bank-texts-in-30-seconds'}
         datePublished={'2023-11-12'}
+        dateModified={'2026-10-07'}
       />
 
-      <header className="mb-8"><div className="text-xs font-semibold tracking-widest text-white/60 mb-2">GUIDE</div><h1 className="text-3xl sm:text-4xl font-bold mb-4 uppercase">Is This Text Really From My Bank? How to Check Safely</h1><p className="text-white/80 text-lg mb-4">A calm, reliable way to check a possible bank alert—whether you are protecting yourself or helping a parent.</p><time className="text-sm text-white/60" dateTime="2023-11-12">November 12, 2023</time>
+      <header className="mb-8"><div className="text-xs font-semibold tracking-widest text-white/60 mb-2">GUIDE</div><h1 className="text-3xl sm:text-4xl font-bold mb-4 uppercase">Is This Text Really From My Bank? How to Check Safely</h1><p className="text-white/80 text-lg mb-4">A real bank never asks for your password, PIN, or one-time code by text — and never tells you to move money. To check a suspicious bank text, open the bank&apos;s own app or call the number on the back of your card. Don&apos;t use any link or number in the message.</p><time className="text-sm text-white/60" dateTime="2023-11-12">Published November 12, 2023 · Updated October 7, 2026</time>
           <p className="mt-3 text-sm text-white/70">
             By <Link href="/author/george-featherstone" className="text-white/90 hover:text-white underline">George Featherstone</Link>
             <span className="mx-1 text-white/40">·</span>

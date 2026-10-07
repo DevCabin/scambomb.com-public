@@ -15,6 +15,7 @@ export default function BlogPost() {
         description={'A simple checklist to run through before clicking any link in an email or text message.'}
         url={'https://scambomb.com/blog/three-questions-to-ask-before-you-click'}
         datePublished={'2023-11-08'}
+        dateModified={'2026-10-07'}
       />
 
         <header className="mb-8">
@@ -24,7 +25,7 @@ export default function BlogPost() {
           <h1 className="text-3xl sm:text-4xl font-bold mb-4">Three questions to ask before you click</h1>
           <p className="text-white/80 text-lg mb-4">A simple checklist to run through before clicking any link in an email or text message.</p>
           <time className="text-sm text-white/60" dateTime="2023-11-08">
-            November 8, 2023
+            Published November 8, 2023 · Updated October 7, 2026
           </time>
           <p className="mt-3 text-sm text-white/70">
             By <Link href="/author/george-featherstone" className="text-white/90 hover:text-white underline">George Featherstone</Link>

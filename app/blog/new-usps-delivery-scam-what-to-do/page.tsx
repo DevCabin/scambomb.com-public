@@ -15,9 +15,10 @@ export default function BlogPost() {
         description={'USPS redelivery is free. Learn how fake USPS redelivery texts work, how to check a package safely, and what to do if you clicked or paid.'}
         url={'https://scambomb.com/blog/new-usps-delivery-scam-what-to-do'}
         datePublished={'2023-11-10'}
+        dateModified={'2026-09-25'}
       />
 
-      <header className="mb-8"><div className="text-xs font-semibold tracking-widest text-white/60 mb-2">ALERT</div><h1 className="text-3xl sm:text-4xl font-bold mb-4 uppercase">Does USPS Charge for Redelivery? How to Spot the Fake Fee Text</h1><p className="text-white/80 text-lg mb-4">USPS says it does not charge a fee for redelivery. Here is how to check a package without trusting a suspicious text.</p><time className="text-sm text-white/60" dateTime="2023-11-10">Published November 10, 2023 · Updated September 25, 2026</time>
+      <header className="mb-8"><div className="text-xs font-semibold tracking-widest text-white/60 mb-2">ALERT</div><h1 className="text-3xl sm:text-4xl font-bold mb-4 uppercase">Does USPS Charge for Redelivery? How to Spot the Fake Fee Text</h1><p className="text-white/80 text-lg mb-4">No — USPS redelivery is free, and USPS doesn&apos;t send unsolicited tracking texts with links. A text asking you to pay a redelivery or customs fee is a scam. Check any package by opening USPS.com yourself, never through the message&apos;s link.</p><time className="text-sm text-white/60" dateTime="2023-11-10">Published November 10, 2023 · Updated September 25, 2026</time>
           <p className="mt-3 text-sm text-white/70">
             By <Link href="/author/george-featherstone" className="text-white/90 hover:text-white underline">George Featherstone</Link>
             <span className="mx-1 text-white/40">·</span>
