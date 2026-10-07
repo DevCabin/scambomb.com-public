@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026-10-07 — Authorship + trust + conversion fixes (HeyCatch P2/P3)
+
+### Changed
+- **Author page** (`a_author_page`): new `app/author/george-featherstone/page.tsx` — bio (20-yr experience), article list, `Person` JSON-LD.
+- **Byline + disclosure on all 8 blog posts** (`a_author_diversity`): each post now carries `By George Featherstone` (links to author page) + `AI-assisted draft, reviewed and edited by George Featherstone.`
+- **Article + Person schema** (`a_author_schema`): new `components/BlogSchema.tsx` renders `BlogPosting` with `author` Person node on every post.
+- **Organization schema moved to shared layout** (`a_org_schema`): `app/layout.tsx` now emits `Organization` JSON-LD site-wide (removed the homepage-only duplicate in `app/page.tsx`).
+- **External primary sources** (`a_external_sources`): `triage-003` now cites FTC (`reportfraud.ftc.gov`) + Microsoft Support (Edge notification management).
+- **Pricing dedupe** (Conversion clarity): homepage mini `$9`/`$5` cards in `app/page.tsx` replaced with `#pricing` anchor CTAs — prices now appear once.
+- **Testimonials live** (Trust): un-hidden the testimonials section with two real quotes — `"ScamBomb just worked again!" — G., Virginia` and `"This is so cool, it's easy and fun" — T., Dallas`.
+- **De-claimed unverifiable scale claim**: footer newsletter copy changed from `thousands of families` to `families`.
+- **OG/Twitter image** (SEO): social cards now use absolute `https://scambomb.com/ScamBomb.com_NEW_brand.png` (1274×618) instead of `/logo.png`.
+- **Product + Offer schema** (SEO): `components/PricingSection.tsx` emits `Product` with `Offer`s for Stay Protected ($9) + Senior Protection ($5).
+- **Comparison page** (SEO `no comparison pages`): new `app/scam-checker-vs-identity-monitoring/page.tsx` + sitemap entry.
+
+### Flagged for owner (not done — need you)
+- **`sameAs` still 1 profile** (Facebook). You said you only have a personal LinkedIn — paste the URL and I'll add it (also to the author `Person`). Audit wants 3+; a 3rd (YouTube/X/GitHub/Crunchbase) would need to be created.
+- **Page clarity + Quotability pillars** not yet actionable — audit page truncates those two sections on fetch; paste the expanded text to unlock ~13 remaining fixes.
+
 ## 2026-10-07 — SEO crawlability fixes (HeyCatch P1)
 
 ### Changed
