@@ -4,7 +4,7 @@ import ScamGuideOptIn from '../../../components/ScamGuideOptIn'
 
 export const metadata = {
   alternates: { canonical: '/blog/is-this-a-scam' },
-  title: 'Is This a Scam? How to Spot Fake Texts, Emails & Calls | ScamBomb',
+  title: 'Is This a Scam? Spot Fake Texts, Emails & Calls',
   description: 'Got a weird text? Use this 10-second check to know if it’s a scam. Learn the five red flags, what to do next, and how to protect your family.',
 }
 

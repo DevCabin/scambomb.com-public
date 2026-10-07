@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export const metadata = {
   alternates: { canonical: '/blog/new-usps-delivery-scam-what-to-do' },
-  title: 'Does USPS Charge for Redelivery? How to Spot the Fake Fee Text',
+  title: 'Does USPS Charge for Redelivery? Spot the Fake Fee Text',
   description: 'USPS redelivery is free. Learn how fake USPS redelivery texts work, how to check a package safely, and what to do if you clicked or paid.',
 }
 

@@ -3,7 +3,7 @@ import type { ReactNode } from 'react'
 
 export const metadata: Metadata = {
   alternates: { canonical: '/member-signup' },
-  title: 'ScamBomb Membership Signup',
+  title: 'ScamBomb Membership Signup — Family Protection',
   description: 'Sign up for a ScamBomb family protection membership with scam checking and ongoing education.',
 }
 

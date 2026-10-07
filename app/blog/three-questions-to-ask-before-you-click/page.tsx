@@ -55,6 +55,16 @@ export default function BlogPost() {
 
           <p>Scammers use similar-looking domains to trick you. They swap letters (a zero for an "o"), add extra words ("-support", "-security", "-verify"), or use a different ending (.net instead of .com). On a phone, where you can't hover, the rule is even simpler: <strong>don't tap the link at all</strong> — open the company's app or type the address yourself.</p>
 
+          <h2>A worked example</h2>
+
+          <p>Here is the whole method on one message. Say you get a text that reads: <em>"USPS: Your package is on hold due to an unpaid redelivery fee. Confirm your address here: usps-redelivery-fee.com"</em></p>
+
+          <p><strong>Question 1 — did you expect it?</strong> You didn't request tracking for any package, so no. That alone is enough to stop.</p>
+
+          <p><strong>Question 2 — does the link match the company?</strong> No. The real USPS site is usps.com, and USPS does not send links in unsolicited tracking texts. "usps-redelivery-fee.com" is a lookalike domain built to fool you.</p>
+
+          <p><strong>Question 3 — is it creating urgency?</strong> Yes — "on hold" and "unpaid fee" push you to act fast before your package is "returned." Three no's, or a no and a yes, and the answer is the same: do not click. Delete the text and check any package through the USPS app or usps.com directly.</p>
+
           <h2>3. Does it create urgency or fear?</h2>
 
           <p>Messages that say "Act now or lose access!" or "Your account will be suspended!" are red flags. Real companies give you time and don't threaten immediate consequences.</p>
