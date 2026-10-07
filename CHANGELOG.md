@@ -1,5 +1,20 @@
 # Changelog
 
+## 2026-10-07 — Round-2 fixes (`g_answer_first` + `g_freshness`)
+
+### Changed
+- **Answer-first openings** (`g_answer_first`, was 2.3/4):
+  - `blog/how-to-spot-fake-bank-texts-in-30-seconds` — subtitle now a direct answer ("A real bank never asks for your password, PIN, or one-time code by text…").
+  - `blog/new-usps-delivery-scam-what-to-do` — subtitle now a direct answer ("No — USPS redelivery is free, and USPS doesn't send unsolicited tracking texts with links…").
+  - `blog/scam-triage-file-001-android-had-3-viruses-but-didnt` — subtitle now a direct answer ("…is almost always a browser scare page or an unwanted website notification — not a real virus detection…").
+- **Updated dates + dateModified** (`g_freshness`, was 1.4/2):
+  - `blog/how-to-spot-fake-bank-texts-in-30-seconds` — `<time>` now "Published November 12, 2023 · Updated October 7, 2026" + `dateModified` in BlogSchema.
+  - `blog/new-usps-delivery-scam-what-to-do` — `dateModified` in BlogSchema (visible "Updated September 25, 2026" already present).
+  - `blog/three-questions-to-ask-before-you-click` — "Published November 8, 2023 · Updated October 7, 2026" + `dateModified` (same-kind: also a 2023 post).
+
+### Flagged for owner
+- None — all copy reused on-page facts + public guidance.
+
 ## 2026-10-07 — Round-2 fixes (`c_title` + `c_thin`)
 
 ### Changed
