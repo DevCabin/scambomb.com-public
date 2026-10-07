@@ -1,9 +1,10 @@
 // Shared Article + Person JSON-LD for blog posts (HeyCatch `a_author_schema`).
-// Founder's LinkedIn URL still pending from owner — add to AUTHOR_SAMEAS when provided.
+// Author (Person) sameAs = founder's personal profiles. Company (Organization)
+// sameAs lives in app/layout.tsx and intentionally excludes personal profiles.
 const AUTHOR_URL = 'https://scambomb.com/author/george-featherstone'
 
 export const AUTHOR_SAMEAS = [
-  'https://www.facebook.com/profile.php?id=61585447685560',
+  'https://www.linkedin.com/in/george-featherstone-63686135/',
 ]
 
 type BlogSchemaProps = {
