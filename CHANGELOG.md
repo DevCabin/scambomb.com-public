@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-10-07 — Round-2 fixes (`t_orphan_pages` + `a_external_sources` + `g_self_contained` + `g_sentence_length`)
+
+### Changed
+- **`t_orphan_pages`** (was 2.0/2 points at risk): added a shared `components/RelatedPosts.tsx` and a "Related reading" block (3–5 links, clustered by tag) to all 8 blog posts; added footer nav links for the orphan non-blog pages `/credit-unions`, `/protect-parents`, `/scam-checker-vs-identity-monitoring` so they're linked site-wide.
+- **`a_external_sources`** (was 0.6/1): `blog/older-adult-fraud-report-2024-2025` now cites FTC `reportfraud.ftc.gov` + FBI `ic3.gov`.
+- **`g_self_contained`** (was 0.4): `she-heard` — "Her daughter was crying…" → "Sharon's daughter was crying…"; fixed the "Said he was a public defender…" fragment.
+- **`g_sentence_length`** (was 0.3): split the three long single-sentence paragraphs in `public/reports/older-adult-fraud-2024-2025/index.html` (vishing surge, grandkid scam, data-limitation note).
+
+### Flagged for owner (not done)
+- **`g_multimodal`** (0.3) — 6 pages (homepage + 5 text-heavy blog posts) need a *substantive* image (app screenshot, process diagram, or chart of our own data) with meaningful alt text. I can't invent imagery. If you can supply screenshots/diagrams, I'll wire them in.
+
 ## 2026-10-07 — Round-2 fixes (`g_answer_first` + `g_freshness`)
 
 ### Changed
