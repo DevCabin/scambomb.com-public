@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026-10-07 — Round-2 fixes (`c_title` + `c_thin`)
+
+### Changed
+- **Page titles clamped to 30–60 chars** (`c_title`, was 1.3/2):
+  - `member-signup` (+ `[location]` layout): 26 → `ScamBomb Membership Signup — Family Protection` (46).
+  - `scam-stories`: 28 → `Scam Stories: Share Yours & Warn Others | ScamBomb` (50).
+  - `poll`: 13 → `ScamBomb Poll — Take Our Quick Survey` (37).
+  - `blog/is-this-a-scam`: 65 → `Is This a Scam? Spot Fake Texts, Emails & Calls` (48).
+  - `blog/older-adult-fraud-report`: 77 → `Older Adult Fraud: 2024–2025 Report & Key Numbers` (49).
+  - `blog/she-heard…`: 86 → `AI Voice Clone Scam: She Heard Her Daughter Crying` (50).
+  - `blog/new-usps…`: 62 → `Does USPS Charge for Redelivery? Spot the Fake Fee Text` (55).
+  - `blog/scam-triage-file-001…`: 63 → `“Your System Is Infected With 3 Viruses” — Android Fix` (54).
+- **Thin pages extended past 800 words** (`c_thin`, was 1.7/2):
+  - `blog/three-questions-to-ask-before-you-click`: added a worked example (USPS text walked through all three questions); 851→1004 words.
+  - `resources/is-this-a-scam-checklist`: added "Why a checklist works" intro + "The bottom line" closer; 819→970 words.
+
+### Flagged for owner
+- None — all copy reused on-page facts + public guidance.
+
 ## 2026-10-07 — Quotability fixes (HeyCatch `g_answer_first` + `g_self_contained`)
 
 ### Changed
