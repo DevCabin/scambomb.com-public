@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-10-07 — Add HEYCATCH_TODO resume-from-scratch fix plan
+
+### Added
+- **`HEYCATCH_TODO.md`** (new) — step-by-step plan covering both HeyCatch audits (site `?surface=website` was-scores 18/19/7/12.5/9/8; SEO `/seo` 55/100 with Crawl 16/23, Clarity 12.8/22, Quot 17.2/24, Auth 3.7/21):
+  - §0 context reload (repos, commits, was-scores, HEYCATCH_PLAN.md rules, dev-branch workflow).
+  - §1 verification summary (positioning/paywall fixed; conversion half; trust untouched; `t_robots` fixed; sitemap partial; canonical + security headers + authorship not done).
+  - §2 six owner blockers (sameAs URLs, disclosure wording, triage-003 sources, `/testing` fate, testimonials vs de-claim, Page clarity/Quotability expanded text).
+  - §3 progress tracker checkboxes; §4 P1 crawlability (canonical App Router + static HTML, `app/sitemap.ts`, security headers, route hygiene); §5 P2 authorship (author page, Article/Person/Organization schema, sources, disclosure); §6 P3 (pricing dedupe, trust, OG/Offer/comparison); §7 deploy + re-run + exact changelog format; §8 resume commands.
+- No code changed in this commit — planning doc only.
+
 ## 2026-09-30 — Document dynamic sponsored member signup
 
 ### Added
