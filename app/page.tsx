@@ -177,8 +177,8 @@ export default function ScamBombLanding() {
             </div>
             <div className="rounded-2xl border-2 border-[#F5C84C] bg-[#0B1324] p-6 text-center flex flex-col justify-center">
               <h3 className="text-lg font-black uppercase text-[#F5C84C]">Protect the whole family</h3>
-              <p className="mt-4 text-4xl font-black text-white">$9</p>
-              <p className="mt-2 text-sm text-white/70">per month</p>
+              <p className="mt-3 text-sm text-white/70">One membership covers you plus up to four additional family members.</p>
+              <a href="#pricing" className="mt-4 inline-block text-[#F5C84C] underline underline-offset-4 hover:text-white">See membership options ↓</a>
             </div>
           </div>
         </div>
@@ -215,8 +215,8 @@ export default function ScamBombLanding() {
             </div>
             <div className="rounded-2xl border border-white/10 bg-[#F5C84C] p-6 text-[#0B1324] text-center flex flex-col justify-center">
               <h3 className="text-lg font-black uppercase">Seniors get a discount</h3>
-              <p className="mt-4 text-4xl font-black">$5</p>
-              <p className="mt-2 text-sm opacity-80">per month</p>
+              <p className="mt-3 text-sm opacity-80">Adults 60+ get the complete membership at a locked-in price.</p>
+              <a href="#pricing" className="mt-4 inline-block font-bold underline underline-offset-4">See senior pricing ↓</a>
             </div>
           </div>
         </div>
@@ -372,14 +372,14 @@ export default function ScamBombLanding() {
       {/* Pricing */}
       <PricingSection />
 
-      {/* Testimonials (hidden) */}
-      {/* <section aria-label="Testimonials" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
-        <HeaderEyebrow>What people say</HeaderEyebrow>
+      {/* Testimonials */}
+      <section aria-label="What members say" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+        <HeaderEyebrow>What members say</HeaderEyebrow>
         <div className="grid md:grid-cols-2 gap-6">
-          <Quote text="ScamBomb helped my mom avoid a fake Medicare call. The instructions were crystal clear." author="— Dana, caregiver" />
-          <Quote text="I finally feel confident checking messages by myself. It's like having a tech-savvy friend on call." author="— Michael, 72" />
+          <Quote text="ScamBomb just worked again!" author="— G., Virginia" />
+          <Quote text="This is so cool, it's easy and fun" author="— T., Dallas" />
         </div>
-      </section> */}
+      </section>
 
       {/* Blog preview */}
       <section

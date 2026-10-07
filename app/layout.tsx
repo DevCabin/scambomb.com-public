@@ -30,7 +30,9 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/logo.png',
+        url: 'https://scambomb.com/ScamBomb.com_NEW_brand.png',
+        width: 1274,
+        height: 618,
         alt: 'ScamBomb — scam checker and family protection platform',
       },
     ],
@@ -39,7 +41,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Scam Checker & Family Protection Platform | ScamBomb',
     description: 'Know what is real, what is dangerous, and what to do next with ScamBomb.',
-    images: ['/logo.png'],
+    images: ['https://scambomb.com/ScamBomb.com_NEW_brand.png'],
   },
   icons: {
     icon: '/scambomb-favicon-64.png',
@@ -97,7 +99,7 @@ function UniversalFooter() {
             Scams keep changing. Stay informed and protect the people you love.
           </p>
           <p className="mt-2 text-white/70 text-sm md:text-xs">
-            Join thousands of families getting weekly scam alerts, real stories, and simple protection tips — straight to your inbox.
+            Join families getting weekly scam alerts, real stories, and simple protection tips — straight to your inbox.
           </p>
           <div className="mt-4">
             <a

@@ -54,6 +54,30 @@ function PriceCard({ title, price, subheading, note, cta, color, features, highl
 
 export function PricingSection() {
   const brandYellow = '#F5C84C'
+  const offerSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: 'ScamBomb Family Protection Membership',
+    description:
+      'Complete family-protection membership: instant scam checking, monthly scam updates, printable family worksheets, live workshops, and senior technology guides.',
+    brand: { '@type': 'Brand', name: 'ScamBomb' },
+    offers: [
+      {
+        '@type': 'Offer',
+        name: 'Stay Protected',
+        price: '9',
+        priceCurrency: 'USD',
+        description: '$9/month or $99/year complete family-protection membership.',
+      },
+      {
+        '@type': 'Offer',
+        name: 'Senior Protection',
+        price: '5',
+        priceCurrency: 'USD',
+        description: '$5/month or $49/year locked-in complete membership for adults 60+.',
+      },
+    ],
+  }
   const freeFeatures = [
     '5 scam checks each month',
     'Analyze suspicious texts, emails, links, and screenshots',
@@ -77,6 +101,10 @@ export function PricingSection() {
       id="pricing"
       className="relative bg-[#0B1324] py-16"
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(offerSchema) }}
+      />
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <p className="text-base sm:text-sm font-semibold tracking-wider uppercase text-white/70 mb-2">Choose your level of protection</p>
         <h2 className="text-4xl sm:text-4xl font-bold">Every Household Deserves <span style={{ color: brandYellow }}>Peace of Mind</span></h2>

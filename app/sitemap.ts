@@ -29,6 +29,7 @@ const STATIC_PAGES: { path: string; lastmod: string }[] = [
   { path: '/protect-parents', lastmod: '2026-10-07' },
   { path: '/poll', lastmod: '2026-10-07' },
   { path: '/career-scam-case-study', lastmod: '2026-10-07' },
+  { path: '/scam-checker-vs-identity-monitoring', lastmod: '2026-10-07' },
   { path: '/reports/older-adult-fraud-2024-2025', lastmod: '2026-10-07' },
   { path: '/resources/is-this-a-scam-checklist', lastmod: '2026-10-07' },
   { path: '/resources/ai-voice-cloning-survival-guide', lastmod: '2026-10-07' },
