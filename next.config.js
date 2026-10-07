@@ -28,12 +28,12 @@ const nextConfig = {
             key: 'Content-Security-Policy',
             value: [
               "default-src 'self'",
-              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://connect.facebook.net https://www.clarity.ms https://link.msgsndr.com",
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://connect.facebook.net https://www.clarity.ms https://link.msgsndr.com https://in.heycatch.ai",
               "worker-src 'self' blob:",
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
               "img-src 'self' data: https: blob: https://www.facebook.com",
               "font-src 'self' https://fonts.gstatic.com data:",
-              "connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://www.googletagmanager.com https://connect.facebook.net https://www.facebook.com https://www.clarity.ms https://link.msgsndr.com https://api.leadconnectorhq.com https://backend.leadconnectorhq.com https://formspree.io https://tajftdwlkoljbkzxcrun.supabase.co https://vitals.vercel-insights.com",
+              "connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://www.googletagmanager.com https://connect.facebook.net https://www.facebook.com https://www.clarity.ms https://link.msgsndr.com https://api.leadconnectorhq.com https://backend.leadconnectorhq.com https://formspree.io https://tajftdwlkoljbkzxcrun.supabase.co https://vitals.vercel-insights.com https://in.heycatch.ai",
               "frame-src 'self' https://api.leadconnectorhq.com",
               "frame-ancestors 'none'",
               "base-uri 'self'",
@@ -122,6 +122,11 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      {
+        source: '/:l([a-z0-9])',
+        destination: '/?utm_source=heycatch&utm_campaign=:l',
+        permanent: false,
+      },
       {
         source: '/scam-stories',
         destination: '/scam-stories/index.html',
