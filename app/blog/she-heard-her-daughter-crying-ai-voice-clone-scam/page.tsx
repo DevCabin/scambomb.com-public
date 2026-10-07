@@ -25,7 +25,7 @@ export default function BlogPost() {
             She Heard Her Daughter Crying for Help. <span className="text-yellow-300">It Wasn’t Her Daughter.</span>
           </h1>
           <p className="text-white/85 text-xl sm:text-2xl mb-5 leading-relaxed">
-            A Florida woman lost $15,000 to an AI voice clone scam — and every single red flag was catchable.
+            A Florida woman lost $15,000 to an AI voice clone scam — scammers cloned her daughter&apos;s voice from about three seconds of audio and fabricated a car-accident emergency. Every red flag was catchable, and a family safe word would have stopped it in seconds.
           </p>
           <p className="text-white/70 text-base mb-4 italic">
             Original story reported by{' '}
@@ -110,10 +110,10 @@ export default function BlogPost() {
             Sharon Brightwell picked up the phone and heard her daughter sobbing.
           </p>
           <p>
-            Crying. Hysterical. Begging for help.
+            Her daughter was crying — hysterical, begging for help.
           </p>
           <p>
-            Her daughter said she’d been in a car accident — she’d hit a pregnant woman while texting and driving. Her phone had been confiscated by authorities. She was calling from a different number.
+            Sharon&apos;s daughter said she&apos;d been in a car accident — she&apos;d hit a pregnant woman while texting and driving. Her phone had been confiscated by authorities. She was calling from a different number.
           </p>
           <p>
             Then a man got on the line. Said he was a public defender. Said Sharon’s daughter had been taken into custody and needed <strong>$15,000 in bail. Immediately.</strong>
@@ -122,10 +122,10 @@ export default function BlogPost() {
             Sharon did what any terrified mother would do. She went to the bank. She withdrew the cash. She waited at home for a “legal courier” to pick it up.
           </p>
           <p>
-            She handed over $15,000 in cash to a stranger.
+            Sharon handed over $15,000 in cash to a stranger.
           </p>
           <p>
-            It was all fake. Every word. Every sob. Every detail. The scammers had used <strong>artificial intelligence to clone her daughter’s voice</strong> — likely pulling audio clips from social media — and built an entire performance around it.
+            The emergency was entirely fake — every word, every sob, every detail. The scammers had used <strong>artificial intelligence to clone her daughter’s voice</strong> — likely pulling audio clips from social media — and built an entire performance around it.
           </p>
           <p>
             Sharon later told reporters: <em>“There was nothing that could have convinced me that was not my daughter’s voice that day.”</em>

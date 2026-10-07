@@ -25,7 +25,7 @@ export default function BlogPost() {
             Your Computer Is Infected
           </h1>
           <p className="text-white/80 text-lg mb-5 leading-relaxed">
-            Incident type: browser hijack + scareware popups. Threat category: fake virus warnings + remote-access scam setup. Resolved in about 30 minutes.
+            Your computer is almost certainly not infected. The scary popups are scareware — fake virus warnings built to trigger fear and push you to call a number. The real fix took 30 minutes: remove a hijacked browser notification permission. Never call the number on the popup; that&apos;s the actual scam.
           </p>
           <time className="text-sm text-white/60" dateTime="2026-08-03">
             August 3, 2026
@@ -59,7 +59,7 @@ export default function BlogPost() {
         <div className="prose prose-invert prose-lg max-w-none mb-8">
           <h2>🚨 The symptom</h2>
           <p>
-            It started, like most of these stories do, with a text message that made my stomach drop a little: <em>“Hey, can you help? Someone I work with is freaking out, her screen is covered in virus warnings and she doesn’t know what to do.”</em>
+            This scareware case started, like most of these stories do, with a text message that made my stomach drop a little: <em>“Hey, can you help? Someone I work with is freaking out, her screen is covered in virus warnings and she doesn’t know what to do.”</em>
           </p>
           <p>
             The message was from my wife. The “someone” was a coworker of hers — a genuinely non-technical, very sweet, very scared woman staring at a computer screen that was actively trying to convince her the world was ending.
@@ -76,7 +76,7 @@ export default function BlogPost() {
               One popup claimed to be from Microsoft Defender. The rest were all flavors of “McAfee has detected a critical infection.”
             </TriageCard>
             <TriageCard step="Signal 2" title="Relentless reappearing">
-              They kept reappearing almost as fast as she could close them — like popping bubble wrap that somehow refills itself.
+              The popups kept reappearing almost as fast as she could close them — like popping bubble wrap that somehow refills itself.
             </TriageCard>
             <TriageCard step="Signal 3" title="No taskbar notification">
               No flashing shield icon from the real Windows Security. That small detail told me almost everything I needed to know.
@@ -93,7 +93,7 @@ export default function BlogPost() {
             But I noticed something important almost immediately: there was no flashing icon in her taskbar. Real system alerts come from a real place on your screen, consistently, in the same visual style every time. This was something else. This had the fingerprint of a scam.
           </p>
           <p>
-            This is <strong>scareware</strong>: fake security warnings designed to trigger fear, force rushed decisions, and push users into paid subscriptions, redirects, or secondary malicious installs. It does not scan your computer. It does not detect real infections. It monetizes panic.
+            Scareware is fake security warnings designed to trigger fear, force rushed decisions, and push users into paid subscriptions, redirects, or secondary malicious installs. Scareware does not scan your computer. It does not detect real infections. It monetizes panic.
           </p>
         </div>
 
@@ -138,7 +138,7 @@ export default function BlogPost() {
             The popup itself was never the real danger. The real danger is the <strong>phone number written across it</strong>, urging you to call for “immediate support.” That number doesn’t connect you to Microsoft or McAfee. It connects you to a scammer, trained to sound calm and official, who will walk you through installing remote access software like AnyDesk or TeamViewer — software that, once installed, hands a stranger the keys to your entire computer.
           </p>
           <p>
-            She didn’t call the number. That’s the whole ballgame right there. Everything else — the popups, the fake alerts, the scary red screens — is just noise designed to rattle you into making that one call. <strong>No call, no scam.</strong> That’s it.
+            The woman never called the number — and refusing to call was the whole ballgame. Everything else — the popups, the fake alerts, the scary red screens — is just noise designed to rattle you into making that one call. <strong>No call, no scam.</strong> That’s it.
           </p>
         </div>
 
