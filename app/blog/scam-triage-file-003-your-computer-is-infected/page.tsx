@@ -1,5 +1,6 @@
 import BlogSchema from '../../../components/BlogSchema'
 import Link from 'next/link'
+import RelatedPosts from '../../../components/RelatedPosts'
 
 export const metadata = {
   alternates: { canonical: '/blog/scam-triage-file-003-your-computer-is-infected' },
@@ -189,7 +190,16 @@ export default function BlogPost() {
           </div>
         </div>
 
-        <footer className="mt-12 pt-8 border-t border-white/10">
+        
+      <RelatedPosts
+        posts={[
+    { slug: 'scam-triage-file-001-android-had-3-viruses-but-didnt', title: '“Your System Is Infected With 3 Viruses” — Android Fix' },
+    { slug: 'she-heard-her-daughter-crying-ai-voice-clone-scam', title: 'AI Voice Clone Scam: She Heard Her Daughter Crying' },
+    { slug: 'is-this-a-scam', title: 'Is This a Scam? How to Spot Fake Texts, Emails & Calls' }
+        ]}
+      />
+
+      <footer className="mt-12 pt-8 border-t border-white/10">
           <Link href="/blog" className="text-yellow-300 hover:text-yellow-400 underline underline-offset-4">
             ← Back to all posts
           </Link>

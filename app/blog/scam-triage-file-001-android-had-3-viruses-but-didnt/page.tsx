@@ -1,5 +1,6 @@
 import BlogSchema from '../../../components/BlogSchema'
 import Link from 'next/link'
+import RelatedPosts from '../../../components/RelatedPosts'
 
 export const metadata = {
   alternates: { canonical: '/blog/scam-triage-file-001-android-had-3-viruses-but-didnt' },
@@ -81,7 +82,16 @@ export default function BlogPost() {
         <div className="my-10 rounded-2xl border border-yellow-300/30 bg-yellow-300/5 p-6 sm:p-8 not-prose"><div className="text-xs font-bold tracking-widest text-yellow-300/70 uppercase mb-2">ScamBomb Move</div><h3 className="text-2xl font-bold mb-2 uppercase">Check the warning before you click</h3><p className="text-white/70 mb-5">ScamBomb can help assess a suspicious message or screenshot in plain English. It is a second opinion—not a malware scanner.</p><a href="https://app.scambomb.com" className="inline-block rounded-xl bg-yellow-300 text-[#0B1324] font-bold px-5 py-3 hover:bg-yellow-200 transition-colors">Try ScamBomb Free →</a></div>
 
         <div className="prose prose-invert prose-lg max-w-none [&_h2]:uppercase"><h2>Official guidance</h2><p><a href="https://support.google.com/chrome/answer/2765944?co=GENIE.Platform%3DAndroid&amp;hl=en">Google Chrome Help: Remove unwanted ads, pop-ups &amp; malware</a></p></div>
-        <footer className="mt-12 pt-8 border-t border-white/10"><Link href="/blog" className="text-yellow-300 hover:text-yellow-400 underline underline-offset-4">← Back to all posts</Link></footer>
+        
+      <RelatedPosts
+        posts={[
+    { slug: 'scam-triage-file-003-your-computer-is-infected', title: 'Scam Triage File #003: Your Computer Is Infected' },
+    { slug: 'she-heard-her-daughter-crying-ai-voice-clone-scam', title: 'AI Voice Clone Scam: She Heard Her Daughter Crying' },
+    { slug: 'is-this-a-scam', title: 'Is This a Scam? How to Spot Fake Texts, Emails & Calls' }
+        ]}
+      />
+
+      <footer className="mt-12 pt-8 border-t border-white/10"><Link href="/blog" className="text-yellow-300 hover:text-yellow-400 underline underline-offset-4">← Back to all posts</Link></footer>
       </article>
     </div>
   )

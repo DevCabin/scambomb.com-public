@@ -1,5 +1,6 @@
 import BlogSchema from '../../../components/BlogSchema'
 import Link from 'next/link'
+import RelatedPosts from '../../../components/RelatedPosts'
 import ScamGuideOptIn from '../../../components/ScamGuideOptIn'
 
 export const metadata = {
@@ -125,7 +126,16 @@ export default function BlogPost() {
           <p><em>Last updated: August 1, 2026. Scam tactics change constantly. If you spot something we should add, email info@scambomb.com.</em></p>
         </div>
 
-        <footer className="mt-12 pt-8 border-t border-white/10"><Link href="/blog" className="text-yellow-300 hover:text-yellow-400 underline underline-offset-4">← Back to all posts</Link></footer>
+        
+      <RelatedPosts
+        posts={[
+    { slug: 'three-questions-to-ask-before-you-click', title: 'Three Questions to Ask Before You Click' },
+    { slug: 'how-to-spot-fake-bank-texts-in-30-seconds', title: 'Is This Text Really From My Bank? How to Check Safely' },
+    { slug: 'new-usps-delivery-scam-what-to-do', title: 'Does USPS Charge for Redelivery? How to Spot the Fake Fee Text' }
+        ]}
+      />
+
+      <footer className="mt-12 pt-8 border-t border-white/10"><Link href="/blog" className="text-yellow-300 hover:text-yellow-400 underline underline-offset-4">← Back to all posts</Link></footer>
       </article>
     </div>
   )

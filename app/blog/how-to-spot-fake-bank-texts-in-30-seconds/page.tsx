@@ -1,5 +1,6 @@
 import BlogSchema from '../../../components/BlogSchema'
 import Link from 'next/link'
+import RelatedPosts from '../../../components/RelatedPosts'
 
 export const metadata = {
   alternates: { canonical: '/blog/how-to-spot-fake-bank-texts-in-30-seconds' },
@@ -54,6 +55,15 @@ export default function BlogPost() {
         <h2>Next step</h2><p><Link href="/blog/is-this-a-scam">Use the general scam-check guide</Link> for the same stop-and-verify routine across texts, emails, and calls. ScamBomb can help assess a suspicious bank message or screenshot; it cannot verify a bank account or replace the bank’s fraud department.</p>
         <h2>Official guidance</h2><p><a href="https://consumer.ftc.gov/consumer-alerts/2025/04/unexpected-text-scam">FTC: Is that unexpected text a scam?</a></p>
       </div>
+      
+      <RelatedPosts
+        posts={[
+    { slug: 'is-this-a-scam', title: 'Is This a Scam? How to Spot Fake Texts, Emails & Calls' },
+    { slug: 'three-questions-to-ask-before-you-click', title: 'Three Questions to Ask Before You Click' },
+    { slug: 'new-usps-delivery-scam-what-to-do', title: 'Does USPS Charge for Redelivery? How to Spot the Fake Fee Text' }
+        ]}
+      />
+
       <footer className="mt-12 pt-8 border-t border-white/10"><Link href="/blog" className="text-yellow-300 hover:text-yellow-400 underline underline-offset-4">← Back to all posts</Link></footer>
     </article></div>
   )

@@ -1,5 +1,6 @@
 import BlogSchema from '../../../components/BlogSchema'
 import Link from 'next/link'
+import RelatedPosts from '../../../components/RelatedPosts'
 
 export const metadata = {
   alternates: { canonical: '/blog/new-usps-delivery-scam-what-to-do' },
@@ -60,6 +61,15 @@ export default function BlogPost() {
         <h2>Need a second opinion?</h2><p><Link href="/blog/is-this-a-scam">Our general scam-check guide</Link> covers the same stop, verify, and report routine. ScamBomb can help assess the wording or screenshot of a suspicious message; it cannot verify a USPS shipment.</p>
         <h2>Official sources</h2><ul><li><a href="https://faq.usps.com/articles/Knowledge/Scams-Scheme-Alerts">USPS: Scams &amp; Scheme Alerts</a></li><li><a href="https://www.uspis.gov/news/scam-article/smishing-package-tracking-text-scams">U.S. Postal Inspection Service: Smishing—Package Tracking Text Scams</a></li><li><a href="https://www.uspis.gov/report">U.S. Postal Inspection Service: Report</a></li><li><a href="https://consumer.ftc.gov/consumer-alerts/2025/04/unexpected-text-scam">FTC: Is that unexpected text a scam?</a></li></ul>
       </div>
+      
+      <RelatedPosts
+        posts={[
+    { slug: 'is-this-a-scam', title: 'Is This a Scam? How to Spot Fake Texts, Emails & Calls' },
+    { slug: 'three-questions-to-ask-before-you-click', title: 'Three Questions to Ask Before You Click' },
+    { slug: 'how-to-spot-fake-bank-texts-in-30-seconds', title: 'Is This Text Really From My Bank? How to Check Safely' }
+        ]}
+      />
+
       <footer className="mt-12 pt-8 border-t border-white/10"><Link href="/blog" className="text-yellow-300 hover:text-yellow-400 underline underline-offset-4">← Back to all posts</Link></footer>
     </article></div>
   )

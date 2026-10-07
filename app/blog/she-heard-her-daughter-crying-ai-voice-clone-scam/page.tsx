@@ -1,5 +1,6 @@
 import BlogSchema from '../../../components/BlogSchema'
 import Link from 'next/link'
+import RelatedPosts from '../../../components/RelatedPosts'
 
 export const metadata = {
   alternates: { canonical: '/blog/she-heard-her-daughter-crying-ai-voice-clone-scam' },
@@ -110,13 +111,13 @@ export default function BlogPost() {
             Sharon Brightwell picked up the phone and heard her daughter sobbing.
           </p>
           <p>
-            Her daughter was crying — hysterical, begging for help.
+            Sharon&apos;s daughter was crying — hysterical, begging for help.
           </p>
           <p>
             Sharon&apos;s daughter said she&apos;d been in a car accident — she&apos;d hit a pregnant woman while texting and driving. Her phone had been confiscated by authorities. She was calling from a different number.
           </p>
           <p>
-            Then a man got on the line. Said he was a public defender. Said Sharon’s daughter had been taken into custody and needed <strong>$15,000 in bail. Immediately.</strong>
+            Then a man got on the line. The man claimed to be a public defender and said Sharon&apos;s daughter had been taken into custody and needed <strong>$15,000 in bail. Immediately.</strong>
           </p>
           <p>
             Sharon did what any terrified mother would do. She went to the bank. She withdrew the cash. She waited at home for a “legal courier” to pick it up.
@@ -259,7 +260,16 @@ export default function BlogPost() {
           , from an interview with Sharon Brightwell of Dover, Florida. Hillsborough County detectives are investigating the case.
         </p>
 
-        <footer className="mt-12 pt-8 border-t border-white/10">
+        
+      <RelatedPosts
+        posts={[
+    { slug: 'older-adult-fraud-report-2024-2025', title: 'Older Adult Fraud: 2024–2025 Report & Key Numbers' },
+    { slug: 'scam-triage-file-001-android-had-3-viruses-but-didnt', title: '“Your System Is Infected With 3 Viruses” — Android Fix' },
+    { slug: 'three-questions-to-ask-before-you-click', title: 'Three Questions to Ask Before You Click' }
+        ]}
+      />
+
+      <footer className="mt-12 pt-8 border-t border-white/10">
           <Link href="/blog" className="text-yellow-300 hover:text-yellow-400 underline underline-offset-4 text-lg">
             ← Back to all posts
           </Link>

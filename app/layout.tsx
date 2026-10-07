@@ -81,6 +81,9 @@ function UniversalFooter() {
             <li><a href="/extension" className="text-lg md:text-sm font-bold md:font-normal hover:text-white transition-colors">Chrome Extension</a></li>
             <li><a href="/resources" className="text-lg md:text-sm font-bold md:font-normal hover:text-white transition-colors">Resources</a></li>
             <li><a href="/member-signup" className="text-lg md:text-sm font-bold md:font-normal hover:text-white transition-colors">Member Signup</a></li>
+            <li><a href="/credit-unions" className="text-lg md:text-sm font-bold md:font-normal hover:text-white transition-colors">For Credit Unions</a></li>
+            <li><a href="/protect-parents" className="text-lg md:text-sm font-bold md:font-normal hover:text-white transition-colors">Protect Your Parents</a></li>
+            <li><a href="/scam-checker-vs-identity-monitoring" className="text-lg md:text-sm font-bold md:font-normal hover:text-white transition-colors">Scam Checker vs. Identity Monitoring</a></li>
           </ul>
         </div>
         <div className="text-center md:text-left">

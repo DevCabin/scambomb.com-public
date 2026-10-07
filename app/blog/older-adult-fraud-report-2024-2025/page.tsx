@@ -1,5 +1,6 @@
 import BlogSchema from '../../../components/BlogSchema'
 import Link from 'next/link'
+import RelatedPosts from '../../../components/RelatedPosts'
 import LeadCaptureCTA from '../../../components/LeadCaptureCTA'
 export const metadata = {
   alternates: { canonical: '/blog/older-adult-fraud-report-2024-2025' },
@@ -149,11 +150,27 @@ export default function BlogPost() {
             It&apos;s designed to be shared — with family members, community groups, financial advisers, anyone who works with or cares about older adults.
           </p>
 
+          <h2>Sources</h2>
+
+          <ul>
+            <li>Federal Trade Commission — <a href="https://reportfraud.ftc.gov/" target="_blank" rel="noopener noreferrer">ReportFraud.ftc.gov</a> (report fraud and find official consumer guidance).</li>
+            <li>FBI Internet Crime Complaint Center — <a href="https://www.ic3.gov/" target="_blank" rel="noopener noreferrer">IC3.gov</a> (annual elder-fraud and cybercrime complaint data).</li>
+          </ul>
+
         </div>
 
         <LeadCaptureCTA />
 
-        <footer className="mt-12 pt-8 border-t border-white/10">
+        
+      <RelatedPosts
+        posts={[
+    { slug: 'she-heard-her-daughter-crying-ai-voice-clone-scam', title: 'AI Voice Clone Scam: She Heard Her Daughter Crying' },
+    { slug: 'scam-triage-file-001-android-had-3-viruses-but-didnt', title: '“Your System Is Infected With 3 Viruses” — Android Fix' },
+    { slug: 'is-this-a-scam', title: 'Is This a Scam? How to Spot Fake Texts, Emails & Calls' }
+        ]}
+      />
+
+      <footer className="mt-12 pt-8 border-t border-white/10">
           <Link href="/blog" className="text-yellow-300 hover:text-yellow-400 underline underline-offset-4">
             ← Back to all posts
           </Link>

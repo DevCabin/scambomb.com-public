@@ -1,5 +1,6 @@
 import BlogSchema from '../../../components/BlogSchema'
 import Link from 'next/link'
+import RelatedPosts from '../../../components/RelatedPosts'
 export const metadata = {
   alternates: { canonical: '/blog/three-questions-to-ask-before-you-click' },
   title: 'Three questions to ask before you click',
@@ -121,7 +122,16 @@ export default function BlogPost() {
           <p>If something feels off, it probably is. Trust your instincts and take the safe route. It's always better to take an extra minute than to rush into a mistake you can't undo.</p>
         </div>
 
-        <footer className="mt-12 pt-8 border-t border-white/10">
+        
+      <RelatedPosts
+        posts={[
+    { slug: 'is-this-a-scam', title: 'Is This a Scam? How to Spot Fake Texts, Emails & Calls' },
+    { slug: 'how-to-spot-fake-bank-texts-in-30-seconds', title: 'Is This Text Really From My Bank? How to Check Safely' },
+    { slug: 'new-usps-delivery-scam-what-to-do', title: 'Does USPS Charge for Redelivery? How to Spot the Fake Fee Text' }
+        ]}
+      />
+
+      <footer className="mt-12 pt-8 border-t border-white/10">
           <Link href="/blog" className="text-yellow-300 hover:text-yellow-400 underline underline-offset-4">
             ← Back to all posts
           </Link>
