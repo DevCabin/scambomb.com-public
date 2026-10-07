@@ -1,6 +1,7 @@
 import Link from 'next/link'
 
 export const metadata = {
+  alternates: { canonical: '/blog/scam-triage-file-001-android-had-3-viruses-but-didnt' },
   title: '“Your System Is Infected With 3 Viruses” on Android? What to Do',
   description: 'Seeing “your system is infected with 3 viruses” on Android? Learn how to safely check whether it is a browser scare page, unwanted notification, or problematic app.',
 }

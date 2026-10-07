@@ -1,6 +1,7 @@
 import React from 'react';
 
 export const metadata = {
+  alternates: { canonical: '/extension-privacy' },
   title: 'ScamBomb Extension Privacy Policy',
   description: 'Privacy policy for the ScamBomb Chrome extension - AI-powered email scam detection',
 };

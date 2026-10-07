@@ -1,6 +1,7 @@
 import Link from 'next/link'
 
 export const metadata = {
+  alternates: { canonical: '/blog/she-heard-her-daughter-crying-ai-voice-clone-scam' },
   title: 'Scam Triage File #002: She Heard Her Daughter Crying for Help. It Wasn’t Her Daughter.',
   description:
     'A Florida woman lost $15,000 to an AI voice clone scam — and every single red flag was catchable. Full breakdown of the playbook, the 7 red flags, and how to set up a family safe word today.',

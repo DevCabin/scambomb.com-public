@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/app-terms' },
   title: 'ScamBomb iPhone App Terms of Use',
   description:
     'Terms of Use for the ScamBomb iPhone app, including AI limitations, subscription terms, acceptable use, and Apple-specific terms.',

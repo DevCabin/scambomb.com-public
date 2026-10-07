@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import LeadCaptureCTA from '../../../components/LeadCaptureCTA'
 export const metadata = {
+  alternates: { canonical: '/blog/older-adult-fraud-report-2024-2025' },
   title: 'Older Adult Fraud Is Now a Multi-Billion-Dollar Crisis — Our 2024–2025 Report',
   description: 'We commissioned a deep-dive into the numbers. The findings are sobering: $4.9B in losses, a 43% year-over-year surge, and AI voice cloning responsible for $897M in cumulative deepfake fraud.',
 }

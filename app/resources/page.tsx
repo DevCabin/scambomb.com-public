@@ -1,3 +1,9 @@
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  alternates: { canonical: '/resources' },
+}
+
 // Resources index page - mirrors blog layout
 // Last updated: 2026-06-16
 import Link from 'next/link'

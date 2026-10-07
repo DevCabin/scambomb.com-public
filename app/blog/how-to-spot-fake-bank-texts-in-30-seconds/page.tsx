@@ -1,6 +1,7 @@
 import Link from 'next/link'
 
 export const metadata = {
+  alternates: { canonical: '/blog/how-to-spot-fake-bank-texts-in-30-seconds' },
   title: 'Is This Text Really From My Bank? How to Check Safely',
   description: 'Learn how to check a bank fraud alert safely, what fake bank texts try next, and what to do after replying, clicking, or sharing account details.',
 }

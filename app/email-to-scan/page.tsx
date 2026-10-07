@@ -1,3 +1,9 @@
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  alternates: { canonical: '/email-to-scan' },
+}
+
 export default function EmailToScanPage() {
   const brandYellow = "#F5C84C";
 

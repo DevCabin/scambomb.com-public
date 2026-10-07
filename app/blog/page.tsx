@@ -1,3 +1,9 @@
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  alternates: { canonical: '/blog' },
+}
+
 // Modern blog system - redesigned 2026
 import Link from 'next/link'
 

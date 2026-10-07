@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/credit-unions' },
   title: 'Scam Protection for Credit Unions | ScamBomb',
   description: 'A ready-made monthly member education and protection program for credit unions: scam updates, family worksheets, live Zoom workshops, senior technology guides, and scam-checking tools.',
 }

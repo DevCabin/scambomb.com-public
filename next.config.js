@@ -7,6 +7,43 @@ const nextConfig = {
     // This helps with static generation
     serverComponentsExternalPackages: ['contentlayer'],
   },
+  async headers() {
+    return [
+      {
+        source: '/(.*)',
+        headers: [
+          {
+            key: 'X-Frame-Options',
+            value: 'DENY',
+          },
+          {
+            key: 'X-Content-Type-Options',
+            value: 'nosniff',
+          },
+          {
+            key: 'Referrer-Policy',
+            value: 'strict-origin-when-cross-origin',
+          },
+          {
+            key: 'Content-Security-Policy',
+            value: [
+              "default-src 'self'",
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://connect.facebook.net https://www.clarity.ms https://link.msgsndr.com",
+              "worker-src 'self' blob:",
+              "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+              "img-src 'self' data: https: blob: https://www.facebook.com",
+              "font-src 'self' https://fonts.gstatic.com data:",
+              "connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://www.googletagmanager.com https://connect.facebook.net https://www.facebook.com https://www.clarity.ms https://link.msgsndr.com https://api.leadconnectorhq.com https://backend.leadconnectorhq.com https://formspree.io https://tajftdwlkoljbkzxcrun.supabase.co https://vitals.vercel-insights.com",
+              "frame-src 'self' https://api.leadconnectorhq.com",
+              "frame-ancestors 'none'",
+              "base-uri 'self'",
+              "form-action 'self' https://formspree.io",
+            ].join('; '),
+          },
+        ],
+      },
+    ];
+  },
   async rewrites() {
     return [
       {
@@ -85,11 +122,6 @@ const nextConfig = {
   },
   async redirects() {
     return [
-      {
-        source: '/testing',
-        destination: '/testing/index.html',
-        permanent: false,
-      },
       {
         source: '/scam-stories',
         destination: '/scam-stories/index.html',

@@ -1,5 +1,6 @@
 import Link from 'next/link'
 export const metadata = {
+  alternates: { canonical: '/blog/three-questions-to-ask-before-you-click' },
   title: 'Three questions to ask before you click',
   description: 'A simple checklist to run through before clicking any link in an email or text message.',
 }

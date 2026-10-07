@@ -1,6 +1,7 @@
 import Link from 'next/link'
 
 export const metadata = {
+  alternates: { canonical: '/thank-you' },
   title: 'You\'re In! — ScamBomb',
   description: 'Thanks for joining the ScamBomb community. Monthly scam and AI fraud updates are on the way.',
 }

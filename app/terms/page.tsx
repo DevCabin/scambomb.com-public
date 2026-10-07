@@ -1,3 +1,9 @@
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  alternates: { canonical: '/terms' },
+}
+
 export default function TermsPage() {
   return (
     <div className="bg-[#0B1324] text-white antialiased font-montserrat">

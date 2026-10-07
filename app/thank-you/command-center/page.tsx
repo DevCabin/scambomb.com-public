@@ -1,4 +1,5 @@
 export const metadata = {
+  alternates: { canonical: '/thank-you/command-center' },
   title: 'Senior Tech Command Center — ScamBomb',
   description: 'Access the paid ScamBomb Senior Tech Command Center and AI Power Prompts Hub.',
 }

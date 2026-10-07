@@ -1,3 +1,9 @@
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  alternates: { canonical: '/extension' },
+}
+
 export default function ExtensionPage() {
   const brandYellow = "#F5C84C";
 
