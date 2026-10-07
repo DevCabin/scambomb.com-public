@@ -13,6 +13,38 @@ The public site presents ScamBomb as a trusted resource that helps families reco
 - Render all `h2` and `h3` elements in uppercase. Use gold only for intentional emphasis within a heading.
 - Keep the homepage fast: prefer a labeled external video link over a heavy YouTube embed unless an embedded player is explicitly required.
 
+## 🔍 SEO & Structured Data Architecture (v1.5.0)
+
+This section documents the crawlability and structured-data conventions introduced during the HeyCatch audit pass. Keep these in sync when adding pages or posts.
+
+### Canonical tags
+
+- **App Router pages**: every page declares `alternates.canonical` in its `metadata` export. Server pages set it directly; client-component pages (which cannot export `metadata`) carry a `layout.tsx` wrapper in the same folder that exports the canonical.
+- **Root layout** sets `alternates.canonical: '/'` as the homepage default; every other page overrides it.
+- **Static HTML pages** (under `public/`) use a literal `<link rel="canonical">` in `<head>`.
+- **Rule**: when adding a page, always add a unique `title`, `description`, and `alternates.canonical` — never let a page inherit the root title.
+
+### Sitemap & robots
+
+- `app/sitemap.ts` is the single source of truth. It enumerates static pages + blog posts with per-post `lastmod` dates. **Add new blog slugs there** when a post ships.
+- `public/robots.txt` points to `https://scambomb.com/sitemap.xml` and disallows `/staging`, `/thank-you`, and `/app-terms`.
+
+### Structured data (JSON-LD)
+
+| Where | What |
+|---|---|
+| `app/layout.tsx` | `Organization` (name, url, logo, `sameAs` → Facebook) — site-wide |
+| `components/BlogSchema.tsx` | `BlogPosting` + `author` `Person` (name, url, `sameAs` → founder LinkedIn) — used by every blog post and the author page |
+| `app/page.tsx` | `FAQPage` (homepage FAQ) |
+| `components/PricingSection.tsx` | `Product` + two `Offer`s (Stay Protected $9 / Senior Protection $5) |
+| `app/author/george-featherstone/page.tsx` | `Person` (author entity) |
+
+**Convention**: `AUTHOR_SAMEAS` lives in `components/BlogSchema.tsx` and is reused by the author page. The company `sameAs` lives in `app/layout.tsx` and intentionally excludes personal profiles.
+
+### Security headers
+
+`next.config.js` `headers()` applies site-wide: `X-Frame-Options: DENY`, `X-Content-Type-Options: nosniff`, `Referrer-Policy: strict-origin-when-cross-origin`, and a CSP scoped to the site's real third parties (GA, Facebook, Clarity, GHL/leadconnector, Formspree, Supabase, Vercel insights). Add any new third-party domain to the CSP `script-src`/`connect-src`/`frame-src` lists.
+
 ## 🏗️ Application Architecture
 
 ### High-Level Overview

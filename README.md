@@ -1,7 +1,7 @@
 # ScamBomb.com — Helping Families Recognize Scams Before They Become Victims
 
-**Version**: 1.4.0
-**Last Updated**: September 30, 2026
+**Version**: 1.5.0
+**Last Updated**: October 7, 2026
 
 ## 🎯 Mission & Goals
 
@@ -50,7 +50,11 @@ Credit-union campaigns use `https://www.scambomb.com/member-signup` with an opti
 ```
 ├── app/                    # Next.js App Router
 │   ├── page.tsx           # Homepage
-│   ├── layout.tsx         # Root layout
+│   ├── layout.tsx         # Root layout (+ Organization JSON-LD)
+│   ├── sitemap.ts         # Route-generated sitemap (honest lastmod)
+│   ├── author/            # Author pages (george-featherstone)
+│   ├── blog/              # Static blog posts (file-based routing)
+│   ├── scam-checker-vs-identity-monitoring/  # Comparison page
 │   ├── api/               # API routes
 │   │   └── stripe/
 │   │       └── checkout/  # Stripe checkout handler
@@ -58,11 +62,23 @@ Credit-union campaigns use `https://www.scambomb.com/member-signup` with an opti
 │       └── membership/    # Post-purchase thank you
 ├── components/            # React components
 │   ├── AuthProvider.tsx   # Auth state management
-│   ├── PricingSection.tsx # Pricing cards
+│   ├── PricingSection.tsx # Pricing cards (+ Product/Offer schema)
+│   ├── BlogSchema.tsx     # Article + Person JSON-LD for blog posts
 │   └── ...
-├── public/                # Static assets
+├── public/                # Static assets (robots.txt, brand images)
 └── content/               # Blog content (MDX)
 ```
+
+## 🔄 Recent Changes (v1.5.0)
+
+### HeyCatch SEO Audit Fixes
+Working through a professional site audit (HeyCatch, two surfaces), the following shipped this cycle:
+- **Crawlability**: self-referencing canonicals on every App Router page + static HTML page; route-generated `app/sitemap.ts` (replaced static `public/sitemap.xml`); security headers (CSP, X-Frame-Options, X-Content-Type-Options, Referrer-Policy) added to `next.config.js`; removed the legacy `/testing` route.
+- **Authorship**: new `/author/george-featherstone` page; `components/BlogSchema.tsx` emits `BlogPosting` + `Person` author schema on every post; bylines + AI-assisted disclosure on all posts; `Organization` schema moved to the shared layout; founder LinkedIn on the author `Person`; primary sources cited on `triage-003`.
+- **Trust & conversion**: live testimonials; deduped pricing (prices appear once, `#pricing` anchors elsewhere); de-claimed the "thousands of families" scale claim.
+- **Page clarity**: unique `title` + `description` on every page (was inheriting the homepage title); six thin pages expanded past 800 words.
+- **Quotability**: answer-first openings and self-contained (non-pronoun-led) paragraphs on the Scam Triage posts.
+- **SEO extras**: `Product`/`Offer` schema on pricing; new `/scam-checker-vs-identity-monitoring` comparison page; OG/Twitter card image set to an absolute 1274×618 brand asset.
 
 ## 🔄 Recent Changes (v1.4.0)
 
