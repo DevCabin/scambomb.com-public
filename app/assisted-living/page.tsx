@@ -249,9 +249,6 @@ export default function AssistedLivingPage() {
                 <label htmlFor="al-community" className="mb-2 block text-sm font-semibold text-white/90">Community or Facility Name <span className="text-[#F5C84C]">*</span></label>
                 <input id="al-community" name="community_name" type="text" autoComplete="organization" required className="w-full rounded-xl border border-white/15 bg-white/10 px-4 py-3 text-white placeholder:text-white/40 focus:border-[#F5C84C] focus:outline-none focus:ring-2 focus:ring-[#F5C84C]/40" />
               </div>
-
-        </div>
-      </section>
               <div>
                 <label htmlFor="al-role" className="mb-2 block text-sm font-semibold text-white/90">Your Role</label>
                 <select id="al-role" name="role" defaultValue="" className="w-full rounded-xl border border-white/15 bg-[#17233a] px-4 py-3 text-white focus:border-[#F5C84C] focus:outline-none focus:ring-2 focus:ring-[#F5C84C]/40">
@@ -303,7 +300,4 @@ export default function AssistedLivingPage() {
     </div>
   )
 }
-
-
-      </section>
 
