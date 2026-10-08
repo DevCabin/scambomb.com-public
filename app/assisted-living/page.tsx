@@ -294,7 +294,7 @@ export default function AssistedLivingPage() {
               </div>
             </div>
             <button type="submit" className="mt-6 w-full rounded-xl bg-[#F5C84C] px-6 py-4 font-bold text-[#0B1324] hover:bg-[#F5C84C]/90">
-              Check Availability →
+              Send Request →
             </button>
           </form>
         </div>
