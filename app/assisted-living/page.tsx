@@ -120,6 +120,8 @@ export default function AssistedLivingPage() {
             <p>Scammers create urgency, impersonate family, and increasingly use AI-generated voices that sound exactly like a loved one. These calls reach senior living residents every day.</p>
             <p>Calm, regular education is the intervention point.</p>
           </div>
+        </div>
+      </section>
       <section className="border-y border-white/10 bg-white/[0.03]">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
@@ -222,6 +224,8 @@ export default function AssistedLivingPage() {
               <p className="mt-4 leading-relaxed text-white/70">{faq.answer}</p>
             </details>
           ))}
+        </div>
+      </section>
       <section id="availability-form" className="border-t border-white/10 px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
           <div>
