@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-10-08 — Align CLINE_INSTRUCTIONS with production
+
+### Changed
+- **Version refs** — bumped stale `v1.3.1` labels to `v1.5.0` with pointer to README/CHANGELOG as source of truth.
+- **Blog list** — directory listing now shows all 8 live posts (`is-this-a-scam`, `scam-triage-file-001`, `scam-triage-file-003`, `she-heard-her-daughter-crying`, `older-adult-fraud-report-2024-2025` plus the 3 originals); `app/blog/page.tsx` noted as source of truth.
+- **SBID gate retired** — deprecated `?safe_source=true&SBID=` + `scambomb_authorized` cookie guidance in both sections. Free CTAs link directly to `https://app.scambomb.com`; paid CTAs use `/api/auth/redirect?plan=...&billing=...`; member signup via `/member-signup` (+ optional slug). Verified no public-site code generates `SBID`.
+
 ## 2026-10-07 — Round-2 fixes (`g_definition` + `c_meta_description`)
 
 ### Changed

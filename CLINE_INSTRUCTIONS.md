@@ -22,7 +22,7 @@ git checkout -b dev
 git push -u origin dev
 ```
 
-## ✅ **COMPLETED FEATURES (v1.3.1)**
+## ✅ **COMPLETED FEATURES (v1.5.0 — see README/CHANGELOG for current)**
 
 ### 🏠 **Public Homepage Positioning**
 - **Core promise**: Helping families recognize scams before they become victims
@@ -36,17 +36,20 @@ git push -u origin dev
 - **Static blog pages** using Next.js App Router file-based routing
 - **Guaranteed availability** - no more build-time failures or caching issues
 
-#### **Blog Architecture (Post-Rebuild):**
+#### **Blog Architecture (Post-Rebuild — current: 8 posts as of 2026-10-07):**
 ```
 app/blog/
-├── page.tsx                           # Blog index with hardcoded posts
+├── page.tsx                           # Blog index with hardcoded posts (8 posts)
 ├── how-to-spot-fake-bank-texts-in-30-seconds/
-│   └── page.tsx                       # Individual blog post page
 ├── new-usps-delivery-scam-what-to-do/
-│   └── page.tsx                       # Individual blog post page
-└── three-questions-to-ask-before-you-click/
-    └── page.tsx                       # Individual blog post page
+├── three-questions-to-ask-before-you-click/
+├── is-this-a-scam/
+├── scam-triage-file-001-android-had-3-viruses-but-didnt/
+├── scam-triage-file-003-your-computer-is-infected/
+├── she-heard-her-daughter-crying-ai-voice-clone-scam/
+└── older-adult-fraud-report-2024-2025/
 ```
+See `app/blog/page.tsx` `posts` array for the source of truth.
 
 #### **Adding New Blog Posts:**
 1. **Create new directory:** `app/blog/your-post-slug/`
@@ -91,12 +94,12 @@ export default function BlogPost() {
 }
 ```
 
-## ✅ **COMPLETED FEATURES (v2.1.0)**
+## ✅ **COMPLETED FEATURES (v2.1.0 — HISTORICAL; SBID gate retired)**
 
-### 🔐 **Access Control System**
-- Client-side parameter validation with URL cleanup
-- Cookie-based authorization (30-day expiry)
-- Access denied screen for unauthorized users
+### 🔐 **Access Control System (RETIRED — do not implement)**
+- **Deprecated:** The old `?safe_source=true&SBID=` gate no longer reflects production.
+- **Current behavior:** Public site links directly to `https://app.scambomb.com` (no params), or to `https://app.scambomb.com/api/auth/redirect?plan=...&billing=...` for paid CTAs. No public-site code generates `SBID` (verified 2026-10-08).
+- Do not reintroduce SBID params or `scambomb_authorized` cookie logic.
 
 ### 👤 **User Tracking Foundation**
 - Permanent SBUID fingerprinting implemented
@@ -104,67 +107,28 @@ export default function BlogPost() {
 - Anonymous → Authenticated user progression
 - Comprehensive documentation in DEVELOPER_GUIDE.md
 
-### 🌐 **Public Website Integration Guide**
+### 🌐 **Public Website Integration Guide (CURRENT)**
 
-**CRITICAL: Read DEVELOPER_GUIDE.md Section "👤 User Tracking & Authentication System" for complete technical details**
+Free CTAs link directly to the app with no params:
+`https://app.scambomb.com`
 
-#### **App Access Link Generation:**
-```javascript
-// Generate access parameters for app links
-const generateAccessParams = () => {
-  const sbid = crypto.randomUUID(); // Generate unique session ID
-  return `?safe_source=true&SBID=${sbid}`;
-};
+Paid CTAs route through the app auth/checkout redirect:
+`https://app.scambomb.com/api/auth/redirect?plan=standard|senior&billing=monthly|annual`
 
-// Example usage in button/link components:
-const handleAppAccess = () => {
-  const params = generateAccessParams();
-  const appUrl = `https://app.scambomb.com${params}`;
-  window.open(appUrl, '_blank');
-};
-```
+Member signup lives on the public site:
+`https://www.scambomb.com/member-signup` (+ optional `/{location-slug}`), backed by the app API + Stripe promotion codes.
 
-#### **Database Schema (Vercel KV):**
-```
-Key Pattern: user:{sbuid}
-Value: {
-  sbuid: string,           // Permanent device fingerprint
-  email: string | null,    // Added after authentication
-  total_scans: number,     // Lifetime AI analysis count
-  total_bombs: number,     // Lifetime bomb actions count
-  free_uses_remaining: number, // 5 initially, +5 after signup
-  created_at: timestamp,
-  last_active: timestamp,
-  is_premium: boolean
-}
-```
+#### **User Journey Integration (current):**
+1. **Anonymous Access**: Public site → "Try ScamBomb" → `https://app.scambomb.com` (no gate)
+2. **First Usage**: Guest scan on app (fingerprint `safemessage_uid`), 5 free scans/month
+3. **Limit Reached**: Soft paywall → public pricing or `/api/auth/redirect` checkout
+4. **Authentication**: Email/Google auth happens in the app; sponsored members register via public `/member-signup`
 
-#### **User Journey Integration:**
-1. **Anonymous Access**: User visits public site → clicks "Try ScamBomb" → gets SBUID → redirected to app
-2. **First Usage**: User performs AI scan or bomb action → user record created in database
-3. **Limit Reached**: User hits 5 free scans in the current month → show soft paywall + pricing/subscription route
-4. **Authentication**: Google OAuth on public site → user data merged → extended free usage
-
-#### **API Endpoints (Future - when implemented):**
-- `POST /api/auth/google` - Initiate Google OAuth
-- `GET /api/auth/callback` - Handle OAuth callback
-- `GET /api/user/profile` - Get user profile and stats
-- `POST /api/user/signup` - Link anonymous SBUID with authenticated email
-
-#### **Key Integration Points:**
-- **SBUID Persistence**: Same SBUID used across public site and app
-- **Data Synchronization**: User records created in app, accessed from public site
-- **Authentication Flow**: OAuth happens on public site, affects app permissions
-- **Usage Tracking**: Free limits and premium status shared between systems
-
-#### **Implementation Checklist:**
-- [ ] Add parameter generation utility to public website
-- [ ] Update all "Try ScamBomb" buttons to include SBID parameters
-- [ ] Implement Google OAuth flow on public site
-- [ ] Create user profile/stats display on public site
-- [ ] Handle anonymous → authenticated user migration
-- [ ] Test SBUID consistency across site and app
-- [ ] Verify usage limits sync between systems
+#### **Implementation Checklist (current):**
+- [x] Free buttons link to `https://app.scambomb.com` with no params
+- [x] Paid buttons link to `/api/auth/redirect?plan=...&billing=...`
+- [x] Member signup uses Stripe-backed codes + optional location slug
+- [ ] Do NOT reintroduce SBID params — retired
 
 ## ✅ **COMPLETED FEATURES (v1.1.0)**
 
@@ -233,73 +197,15 @@ Database (Vercel KV)
 - **Performance optimized** for global CDN delivery
 
 ## 📊 **Key Metrics**
-- **Version**: 1.3.1 (Production Ready)
+- **Version**: 1.5.0 (see README/CHANGELOG for current)
 - **Response Time**: <2s for AI analysis
 - **Red-flag Detection**: <2ms client-side
 - **Uptime**: 99.9% on Vercel infrastructure
 - **Security**: SOC 2 compliant hosting
 
-## 🔐 **Access Control System (v2.0.3)**
+## 🔐 **Access Control System (RETIRED v2.0.3 — do not implement)**
 
-### **Purpose:**
-- **Prevent direct bookmarking** of the app URL
-- **Block automated bots** from wasting API resources
-- **Ensure users access** through proper channels for guided experience
-- **Maintain usage tracking** integrity
-
-### **Implementation:**
-- **Client-side validation** on app load
-- **URL parameter cleanup** after authorization
-- **Cookie-based persistence** (30-day expiry)
-- **Access denied screen** for unauthorized access
-
-### **Technical Details:**
-```javascript
-// Access control logic in app/page.tsx
-const checkAccess = () => {
-  const urlParams = new URLSearchParams(window.location.search);
-  const safeSource = urlParams.get('safe_source');
-  const sbid = urlParams.get('SBID');
-  const hasAuthCookie = document.cookie.includes('scambomb_authorized=true');
-
-  if (safeSource === 'true' && sbid && sbid.length > 0) {
-    // Valid parameters - authorize and clean URL
-    document.cookie = 'scambomb_authorized=true; max-age=2592000; path=/; SameSite=Lax';
-    history.replaceState(null, '', window.location.pathname + window.location.hash);
-    setAccessGranted(true);
-  } else if (hasAuthCookie) {
-    // Return visitor
-    setAccessGranted(true);
-  } else {
-    // Access denied
-    setShowAccessDenied(true);
-  }
-};
-```
-
-### **Public Website Implementation (scambomb.com):**
-When switching to the public website project, implement parameter generation on buttons/links that direct users to the app:
-
-```javascript
-// Generate access parameters for app links
-const generateAccessParams = () => {
-  const sbid = crypto.randomUUID(); // Generate unique session ID
-  return `?safe_source=true&SBID=${sbid}`;
-};
-
-// Example usage in button/link components:
-const handleAppAccess = () => {
-  const params = generateAccessParams();
-  const appUrl = `https://app.scambomb.com${params}`;
-  window.open(appUrl, '_blank');
-};
-```
-
-**Implementation Steps:**
-1. **Add parameter generation utility** to public website
-2. **Update all "Try ScamBomb" buttons** to include parameters
-3. **Ensure consistent SBID generation** across all access points
-4. **Test parameter validation** works correctly
+Retired. The old `?safe_source=true&SBID=` gate + `scambomb_authorized` cookie + access-denied screen no longer reflect production. Current links use direct app URLs or `/api/auth/redirect` (see Integration Guide above).
 
 ## 🔮 **Future Roadmap**
 - File upload support for screenshot analysis
