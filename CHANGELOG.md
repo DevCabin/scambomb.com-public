@@ -1,6 +1,11 @@
 # Changelog
 
-## 2026-10-08 — Align CLINE_INSTRUCTIONS with production
+## 2026-10-08 — New /assisted-living event-booking page
+
+### Added
+- **`/assisted-living`** — live in-person AI workshop booking page for senior living communities (cloned structure/styling from `/credit-unions`). Two presentations (AI for Everyday Life 90-min hands-on, Avoiding AI Scams 60-min with voice-clone segment), 6 benefit cards, 4 checkmarks, disclaimer + flat `$500*` pricing block with `<!-- PRICING-PLACEHOLDER -->`, credibility strip, 6-item FAQ accordion, availability form posting to the same Formspree endpoint with `page=assisted-living` hidden field. Form fields: name/email/phone/community/role/presentations/audience-size/best-time/best-method.
+- **Footer** — added `For Assisted Living` → `/assisted-living` next to `For Credit Unions` in Products column.
+- **Sitemap** — added `/assisted-living` static entry.
 
 ### Changed
 - **Version refs** — bumped stale `v1.3.1` labels to `v1.5.0` with pointer to README/CHANGELOG as source of truth.

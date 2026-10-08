@@ -26,6 +26,7 @@ const STATIC_PAGES: { path: string; lastmod: string }[] = [
   { path: '/terms', lastmod: '2026-10-07' },
   { path: '/extension-privacy', lastmod: '2026-10-07' },
   { path: '/credit-unions', lastmod: '2026-10-07' },
+  { path: '/assisted-living', lastmod: '2026-10-08' },
   { path: '/protect-parents', lastmod: '2026-10-07' },
   { path: '/poll', lastmod: '2026-10-07' },
   { path: '/career-scam-case-study', lastmod: '2026-10-07' },
