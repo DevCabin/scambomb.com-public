@@ -150,8 +150,6 @@ export default function AssistedLivingPage() {
           </p>
         </div>
       </section>
-
-        </div>
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
         <div className="mb-10 max-w-3xl">
           <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#F5C84C]">Why communities host these events</p>
