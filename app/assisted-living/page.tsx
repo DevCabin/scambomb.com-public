@@ -4,6 +4,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/assisted-living' },
   title: 'Live AI Workshops for Assisted Living Communities | ScamBomb',
   description: 'Book a live, in-person AI workshop for your senior living community — hands-on AI basics for residents plus scam protection including AI voice-clone awareness. Events start at $500.',
+  robots: { index: false, follow: false },
 }
 
 const presentations = [

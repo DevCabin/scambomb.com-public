@@ -3,5 +3,6 @@ Allow: /
 Disallow: /staging
 Disallow: /thank-you
 Disallow: /app-terms
+Disallow: /assisted-living
 
 Sitemap: https://scambomb.com/sitemap.xml
