@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 const presentations = [
   {
     title: 'AI for Everyday Life',
-    length: 'About 90 minutes, hands-on',
+    length: 'About 60 minutes, hands-on',
     badge: 'Hands-on · Every attendee participates',
     points: [
       'A beginner-friendly, hands-on introduction to conversational AI (like ChatGPT).',
@@ -21,7 +21,7 @@ const presentations = [
   },
   {
     title: 'Avoiding AI Scams',
-    length: 'About 60 minutes',
+    length: 'About 30 minutes',
     badge: 'Includes AI voice-clone awareness',
     points: [
       "How today's scams actually work — grandparent calls, fake banks, AI voice clones, phishing texts.",
@@ -52,8 +52,8 @@ const faqs = [
   { question: 'What do we need to provide?', answer: 'A room with seating, a screen or projector, and Wi-Fi. We bring everything else — presentation, printed materials, and hands-on help.' },
   { question: 'Do residents need any experience or accounts?', answer: 'No. Setup is walked through step by step during the session, and one-on-one help is available.' },
   { question: 'Can families and the public attend?', answer: 'Yes — the events are designed as public community events. Families are encouraged to attend, and inviting the local community is a great way to showcase your programming.' },
-  { question: 'How long are the presentations?', answer: '"AI for Everyday Life" runs about 90 minutes with a short break; "Avoiding AI Scams" runs about 60 minutes. Both can be scheduled the same day.' },
-  { question: 'How does pricing work?', answer: 'Events start at $500 depending on audience size and format. Both sessions the same day are quoted together. No ongoing contract is required.' },
+  { question: 'How long are the presentations?', answer: 'The full event runs about 90 minutes: roughly 60 minutes of hands-on "AI for Everyday Life" plus about 30 minutes of "Avoiding AI Scams." Book one segment or both together.' },
+  { question: 'How does pricing work?', answer: 'Events start at $500 depending on audience size and format. No ongoing contract is required.' },
   { question: 'Does ScamBomb need access to resident information?', answer: 'No. Events are educational only and require no resident records, health information, or private data of any kind.' },
 ]
 export default function AssistedLivingPage() {
@@ -146,7 +146,7 @@ export default function AssistedLivingPage() {
             ))}
           </div>
           <p className="mt-10 text-center text-white/60">
-            Book one presentation or both the same day. Zoom sessions for families and staff are also available by request.
+            One 90-minute event: about 60 minutes of hands-on AI plus 30 minutes of scam protection. Zoom sessions for families and staff are also available by request.
           </p>
         </div>
       </section>
@@ -197,7 +197,7 @@ export default function AssistedLivingPage() {
             {/* PRICING-PLACEHOLDER */}
             <p className="text-sm font-black uppercase tracking-[0.2em]">Live in-person events</p>
             <p className="mt-4 text-4xl font-black uppercase sm:text-5xl">Start at $500*</p>
-            <p className="mx-auto mt-5 max-w-md leading-relaxed">*Final quote depends on audience size and event format. Both presentations the same day quoted together. Simple, flat pricing — no ongoing contract required.</p>
+            <p className="mx-auto mt-5 max-w-md leading-relaxed">*Final quote depends on audience size and event format. Simple, flat pricing — no ongoing contract required.</p>
           </div>
         </div>
       </section>
