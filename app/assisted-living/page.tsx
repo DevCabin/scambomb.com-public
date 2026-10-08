@@ -15,7 +15,7 @@ const presentations = [
     points: [
       'A beginner-friendly, hands-on introduction to conversational AI (like ChatGPT).',
       'Every attendee practices: asking for help with a real task, improving the answer, and deciding what to share.',
-      'Leave-behind: printed take-home guide, checklists, and one personal task to try at home.',
+      'Leave-behind: take-home guide, checklists, and one personal task to try at home.',
       'No experience or preparation needed — setup walked through step by step.',
     ],
   },
@@ -36,7 +36,7 @@ const communityBenefits = [
   { title: 'Ready-made programming', body: "A memorable resident activity your activities team doesn't have to research, write, or present." },
   { title: 'Families are invited', body: 'Adult children see your community actively protecting their parent. Few events make that impression.' },
   { title: 'A public-event draw', body: 'Open it to the local community and give prospective families a reason to walk through your doors.' },
-  { title: 'No preparation required', body: 'You provide a room, a screen, and Wi-Fi. We bring the presentation, materials, and hands-on help.' },
+  { title: 'No preparation required', body: 'You provide a room, a screen, and Wi-Fi. We bring the presentation, take-home guides, and hands-on help.' },
   { title: 'Marketing content built in', body: 'We provide a ready-made announcement you can drop into your newsletter and social media.' },
   { title: 'Visible community care', body: 'Demonstrate that your community addresses one of the most damaging threats facing older adults.' },
 ]
@@ -49,7 +49,7 @@ const togetherPoints = [
 ]
 
 const faqs = [
-  { question: 'What do we need to provide?', answer: 'A room with seating, a screen or projector, and Wi-Fi. We bring everything else — presentation, printed materials, and hands-on help.' },
+  { question: 'What do we need to provide?', answer: 'A room with seating, a screen or projector, and Wi-Fi. We bring everything else — presentation, take-home guides, and hands-on help.' },
   { question: 'Do residents need any experience or accounts?', answer: 'No. Setup is walked through step by step during the session, and one-on-one help is available.' },
   { question: 'Can families and the public attend?', answer: 'Yes — the events are designed as public community events. Families are encouraged to attend, and inviting the local community is a great way to showcase your programming.' },
   { question: 'How long are the presentations?', answer: 'The full event runs about 90 minutes: roughly 60 minutes of hands-on "AI for Everyday Life" plus about 30 minutes of "Avoiding AI Scams." Book one segment or both together.' },
