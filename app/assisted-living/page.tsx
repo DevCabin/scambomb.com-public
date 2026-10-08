@@ -232,7 +232,7 @@ export default function AssistedLivingPage() {
             <p className="mt-5 text-lg leading-relaxed text-white/70">Give your residents an event they&apos;ll talk about—and their families a reason to thank you. Tell us a little about your community and we&apos;ll follow up with dates and a simple quote.</p>
             <p className="mt-5 text-sm leading-relaxed text-white/50">If you are not the person responsible for activities, resident experience, or marketing, we would appreciate being connected with the right member of your team.</p>
           </div>
-          <form action="https://formspree.io/f/xppablrr" method="POST" className="rounded-3xl border border-white/10 bg-white/[0.04] p-6 sm:p-8">
+          <form action="https://formspree.io/f/xljgbpbe" method="POST" className="rounded-3xl border border-white/10 bg-white/[0.04] p-6 sm:p-8">
             <input type="hidden" name="page" value="assisted-living" />
             <div className="grid gap-5 sm:grid-cols-2">
               <div>
