@@ -11,6 +11,14 @@ import Link from 'next/link'
 
 const posts = [
   {
+    slug: 'how-to-talk-to-loved-one-being-scammed',
+    title: 'How to Talk to a Loved One Who Is Being Scammed but Won’t Believe It',
+    description: 'A loved one won’t believe they’re being scammed? Use these practical conversation scripts to keep them talking, check the claims, and prevent another payment.',
+    date: '2026-10-12',
+    tag: 'GUIDE',
+    readTime: '10 min read'
+  },
+  {
     slug: 'is-this-a-scam',
     title: 'Is This a Scam? How to Instantly Spot Fake Texts, Emails & Calls',
     description: 'Use the 10-second check to spot the five red flags in suspicious messages, emails, and calls—and learn what to do next.',

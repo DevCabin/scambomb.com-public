@@ -399,18 +399,18 @@ export default function ScamBombLanding() {
 
           {/* Featured latest post */}
           <div className="hover-lift mb-6">
-            <a href="/blog/is-this-a-scam" className="block rounded-2xl border border-yellow-300/30 bg-yellow-300/5 p-8 hover:bg-yellow-300/10 transition-colors group">
+            <a href="/blog/how-to-talk-to-loved-one-being-scammed" className="block rounded-2xl border border-yellow-300/30 bg-yellow-300/5 p-8 hover:bg-yellow-300/10 transition-colors group">
               <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
                 <div className="flex-1">
                   <div className="text-xs font-bold tracking-widest text-yellow-300/70 mb-3">GUIDE</div>
                   <h3 className="text-2xl font-bold mb-3 group-hover:text-yellow-300 transition-colors">
-                    Is This a Scam? How to Instantly Spot Fake Texts, Emails &amp; Calls
+                    How to Talk to a Loved One Who Is Being Scammed but Won’t Believe It
                   </h3>
                   <p className="text-white/70 mb-4 max-w-2xl">
-                    Use the 10-second check to spot the five red flags in suspicious messages, emails, and calls—and learn what to do next.
+                    A loved one won’t believe they’re being scammed? Use these practical conversation scripts to keep them talking, check the claims, and prevent another payment.
                   </p>
                   <div className="flex flex-wrap gap-6 text-sm">
-                    <span className="text-white/50">August 4, 2026</span>
+                    <span className="text-white/50">October 12, 2026</span>
                     <span className="flex items-center gap-2 text-yellow-300 font-semibold">
                       Read the guide <span aria-hidden="true">→</span>
                     </span>
