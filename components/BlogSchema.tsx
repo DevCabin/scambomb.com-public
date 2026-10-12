@@ -13,6 +13,7 @@ type BlogSchemaProps = {
   url: string
   datePublished: string
   dateModified?: string
+  image?: string
 }
 
 export default function BlogSchema({
@@ -21,12 +22,14 @@ export default function BlogSchema({
   url,
   datePublished,
   dateModified,
+  image,
 }: BlogSchemaProps) {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
     headline: title,
     ...(description ? { description } : {}),
+    ...(image ? { image } : {}),
     url,
     datePublished,
     ...(dateModified ? { dateModified } : {}),

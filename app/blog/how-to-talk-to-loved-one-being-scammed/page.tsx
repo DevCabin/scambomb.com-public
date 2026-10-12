@@ -7,6 +7,9 @@ export const metadata = {
   alternates: { canonical: '/blog/how-to-talk-to-loved-one-being-scammed' },
   title: 'How to Talk to a Loved One Who Is Being Scammed',
   description: 'A loved one won’t believe they’re being scammed? Use these practical conversation scripts to keep them talking, check the claims, and prevent another payment.',
+  openGraph: {
+    images: ['/blog/how-to-talk-to-loved-one-being-scammed/gentle-conversation-kitchen.jpg'],
+  },
 }
 
 export default function BlogPost() {
@@ -18,6 +21,7 @@ export default function BlogPost() {
         description={'A loved one won’t believe they’re being scammed? Use these practical conversation scripts to keep them talking, check the claims, and prevent another payment.'}
         url={'https://scambomb.com/blog/how-to-talk-to-loved-one-being-scammed'}
         datePublished={'2026-10-12'}
+        image={'https://scambomb.com/blog/how-to-talk-to-loved-one-being-scammed/gentle-conversation-kitchen.jpg'}
       />
         <header className="mb-10">
           <div className="text-xs font-semibold tracking-widest text-yellow-300/80 mb-3">GUIDE</div>
@@ -38,6 +42,16 @@ export default function BlogPost() {
           <p><em>&ldquo;It&apos;s none of your business.&rdquo;</em></p>
           <p>Now you have two problems: the suspected scam, and a conversation that closes down whenever you mention it.</p>
           <p>Your first goal is to make it easier for your loved one to tell you what is happening. Ask to see one message, agree on an independent check, and try to pause the next payment. You don&apos;t need to win an argument before taking a useful step.</p>
+          <figure className="not-prose my-8 overflow-hidden rounded-2xl border border-white/10">
+            <img
+              src="/blog/how-to-talk-to-loved-one-being-scammed/gentle-conversation-kitchen.jpg"
+              alt="An adult daughter gently holding her older mother's hands across a kitchen table, listening with care"
+              className="w-full h-auto"
+              loading="eager"
+            />
+            <figcaption className="bg-white/5 px-5 py-3 text-sm text-white/60">Lead with listening, not warnings. A calm, private conversation keeps the door open.</figcaption>
+          </figure>
+
           <div className="not-prose my-8 rounded-2xl border border-red-400/40 bg-red-500/10 p-6 sm:p-7">
             <p className="text-lg font-bold text-white uppercase tracking-wide mb-2">If Money Has Already Been Sent</p>
             <p className="text-white/85 leading-relaxed mb-0"><strong>Contact the bank or payment provider immediately.</strong> Work on the conversation and the financial response at the same time.</p>
@@ -80,6 +94,16 @@ export default function BlogPost() {
               <p className="text-white/85 italic leading-relaxed mb-0">&ldquo;You don&apos;t have to defend the earlier payment. Let&apos;s focus on protecting what you still have.&rdquo;</p>
             </div>
           </div>
+          <figure className="not-prose my-8 overflow-hidden rounded-2xl border border-white/10">
+            <img
+              src="/blog/how-to-talk-to-loved-one-being-scammed/patient-love-sofa.jpg"
+              alt="A daughter patiently listening as her older father talks in a warm living room"
+              className="w-full h-auto"
+              loading="lazy"
+            />
+            <figcaption className="bg-white/5 px-5 py-3 text-sm text-white/60">Respond to what matters to them first — then ask for a pause and one independent check.</figcaption>
+          </figure>
+
           <h2>Ask for a Pause and One Independent Check</h2>
           <blockquote className="not-prose my-6 rounded-xl border-l-4 border-[#F5C84C] bg-white/5 px-6 py-5 text-white/90 text-lg leading-relaxed italic">&ldquo;Before any more money goes out, will you pause while we check this with someone independent?&rdquo;</blockquote>
           <p>Call the bank using the number on the card. Contact the organization through its official website. Do not use a number or link supplied by the person requesting payment.</p>
@@ -103,6 +127,16 @@ export default function BlogPost() {
               <p className="text-white/85 italic leading-relaxed mb-0">I am here when you are ready. No I-told-you-so. Let me help check the next request.</p>
             </div>
           </div>
+          <figure className="not-prose my-8 overflow-hidden rounded-2xl border border-white/10">
+            <img
+              src="/blog/how-to-talk-to-loved-one-being-scammed/father-daughter-listening.jpg"
+              alt="A father and daughter reconnecting with a warm, patient conversation at home"
+              className="w-full h-auto"
+              loading="lazy"
+            />
+            <figcaption className="bg-white/5 px-5 py-3 text-sm text-white/60">Stay in the picture. Keeping ordinary contact going is what makes the next conversation possible.</figcaption>
+          </figure>
+
           <h2>If They Still Refuse Help</h2>
           <p>Keep ordinary contact going. The CFPB recommends reporting suspected elder abuse even without every detail.<sup><a href="https://www.consumerfinance.gov/consumer-tools/educator-tools/resources-for-older-adults/reporting-elder-financial-abuse-guide/" target="_blank" rel="noopener noreferrer">[3]</a></sup></p>
           <h2>If Money Has Already Been Sent</h2>
