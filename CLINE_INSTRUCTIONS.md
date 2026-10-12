@@ -36,10 +36,11 @@ git push -u origin dev
 - **Static blog pages** using Next.js App Router file-based routing
 - **Guaranteed availability** - no more build-time failures or caching issues
 
-#### **Blog Architecture (Post-Rebuild — current: 8 posts as of 2026-10-07):**
+#### **Blog Architecture (Post-Rebuild — current: 9 posts as of 2026-10-12):**
 ```
 app/blog/
-├── page.tsx                           # Blog index with hardcoded posts (8 posts)
+├── page.tsx                           # Blog index with hardcoded posts (9 posts)
+├── how-to-talk-to-loved-one-being-scammed/
 ├── how-to-spot-fake-bank-texts-in-30-seconds/
 ├── new-usps-delivery-scam-what-to-do/
 ├── three-questions-to-ask-before-you-click/
