@@ -1,7 +1,7 @@
 # ScamBomb.com — Helping Families Recognize Scams Before They Become Victims
 
-**Version**: 1.5.0
-**Last Updated**: October 7, 2026
+**Version**: 1.5.1
+**Last Updated**: October 12, 2026
 
 ## 🎯 Mission & Goals
 
@@ -68,6 +68,11 @@ Credit-union campaigns use `https://www.scambomb.com/member-signup` with an opti
 ├── public/                # Static assets (robots.txt, brand images)
 └── content/               # Blog content (MDX)
 ```
+
+## 🔄 Recent Changes (v1.5.1)
+
+### New Blog Post: Loved-One Conversation Guide
+- **New GUIDE post** — `/blog/how-to-talk-to-loved-one-being-scammed` (Oct 12, 2026): practical scripts for talking to a loved one who won't believe they're being scammed; featured on homepage + blog index (now 9 posts); sitemap updated.
 
 ## 🔄 Recent Changes (v1.5.0)
 

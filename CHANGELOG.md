@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-10-12 — Docs + sitemap sync (re-trigger prod deploy)
+
+### Changed
+- **`app/sitemap.ts`** — added `how-to-talk-to-loved-one-being-scammed` (lastmod 2026-10-12); bumped `/blog` lastmod to 2026-10-12.
+- **`README.md`** — v1.5.1, new post noted under Recent Changes.
+- **`CLINE_INSTRUCTIONS.md`** — blog count 8→9 with new slug listed.
+
 ## 2026-10-12 — New blog post: How to Talk to a Loved One Being Scammed
 
 ### Added
