@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-10-12 — New blog post: How to Talk to a Loved One Being Scammed
+
+### Added
+- **`app/blog/how-to-talk-to-loved-one-being-scammed/page.tsx`** — new GUIDE post (10 min read, Oct 12 2026) built from `content/ScamBomb_How_to_Talk_to_a_Loved_One_Being_Scammed.md`. Includes BlogSchema SEO, byline, red emergency callout (contact bank immediately), script blockquote cards, 4-card pushback responses, 4-step numbered recovery card, family habit closer, ScamGuideOptIn, Sources (FTC/CFPB/FBI/IC3), RelatedPosts, back-to-blog footer. Headings uppercase with two-tone H1 per brand rules. Editorial notes omitted; no Reddit PII republished.
+- **Blog index** — prepended new post to `app/blog/page.tsx` posts array (now 9 posts, new featured).
+- **Homepage** — featured `From the blog` card now links new guide (was `is-this-a-scam`).
+
 ## 2026-10-08 — New /assisted-living event-booking page
 
 ### Added
