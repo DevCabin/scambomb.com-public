@@ -1,7 +1,7 @@
 # ScamBomb.com — Helping Families Recognize Scams Before They Become Victims
 
-**Version**: 1.5.1
-**Last Updated**: October 12, 2026
+**Version**: 1.5.2
+**Last Updated**: October 13, 2026
 
 ## 🎯 Mission & Goals
 
@@ -68,6 +68,11 @@ Credit-union campaigns use `https://www.scambomb.com/member-signup` with an opti
 ├── public/                # Static assets (robots.txt, brand images)
 └── content/               # Blog content (MDX)
 ```
+
+## 🔄 Recent Changes (v1.5.2)
+
+### New Blog Post: Sugar Daddy Gift Card Scam Guide
+- **New GUIDE post** — `/blog/sugar-daddy-scam-amazon-gift-card` (Oct 13, 2026): the message-by-message sugar daddy scam script, red flags at each step, a 4-step recovery card for anyone who already sent an Amazon gift card code, an exit-script blockquote, and a 5-question FAQ; featured on homepage + blog index (now 10 posts); new hero image; sitemap updated.
 
 ## 🔄 Recent Changes (v1.5.1)
 

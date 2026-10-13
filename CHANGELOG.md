@@ -1,5 +1,18 @@
 # Changelog
 
+## 2026-10-13 — New blog post: Sugar Daddy Scam Amazon Gift Card
+
+### Added
+- **`app/blog/sugar-daddy-scam-amazon-gift-card/page.tsx`** — new GUIDE post (11 min read, Oct 13 2026), built from the draft at `content/sugar-daddy-scam-amazon-gift-card.md` (moved out of `public/`). Includes BlogSchema SEO + canonical, byline, hero `<figure>` with real photo, Key Takeaways card, the full 6-step message script with 4 red-flag callouts, a message-by-message summary table, red "Act Within Minutes" callout, 4-step numbered recovery card (stop contact → check/redeem balance → report to Amazon → watch for the follow-up scam), exit-script blockquote, ScamBomb Move CTA, 5-question FAQ (no FAQPage JSON-LD, matching other posts), ScamGuideOptIn, Sources (FTC / Amazon / IC3 / ReportFraud), RelatedPosts, back-to-blog footer. Right-things notes: no victim PII, no headline claims beyond FTC/Amazon guidance.
+- **`public/blog/sugar-daddy-scam-amazon-gift-card/phone-gift-cards-doubt.jpg`** — new hero image, 1600×900 JPEG (matches the 1600px convention used by the other post images).
+- **Blog index** — prepended the new post to the `app/blog/page.tsx` posts array (now 10 posts, new featured).
+- **Homepage** — featured `From the blog` card now links the new guide (was `how-to-talk-to-loved-one-being-scammed`).
+
+### Changed
+- **`app/sitemap.ts`** — added `sugar-daddy-scam-amazon-gift-card` (lastmod 2026-10-13); bumped `/blog` lastmod to 2026-10-13.
+- **`README.md`** — v1.5.2 (Oct 13, 2026); new post noted under Recent Changes.
+- **`CLINE_INSTRUCTIONS.md`** — blog count 9→10 with the new slug added to the directory map.
+
 ## 2026-10-12 — Docs + sitemap sync (re-trigger prod deploy)
 
 ### Changed
