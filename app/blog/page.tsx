@@ -11,6 +11,14 @@ import Link from 'next/link'
 
 const posts = [
   {
+    slug: 'sugar-daddy-scam-amazon-gift-card',
+    title: 'Sugar Daddy Scam Amazon Gift Card: How to Spot It',
+    description: 'A stranger offering an allowance then asking for Amazon gift cards is always a scam. See the exact message-by-message script, the red flags, and what to do if you already sent a code.',
+    date: '2026-10-13',
+    tag: 'GUIDE',
+    readTime: '11 min read'
+  },
+  {
     slug: 'how-to-talk-to-loved-one-being-scammed',
     title: 'How to Talk to a Loved One Who Is Being Scammed but Won’t Believe It',
     description: 'A loved one won’t believe they’re being scammed? Use these practical conversation scripts to keep them talking, check the claims, and prevent another payment.',
