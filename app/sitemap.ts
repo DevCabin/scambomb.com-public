@@ -5,6 +5,7 @@ import type { MetadataRoute } from 'next'
 // Blog posts: add each slug here when a new post ships; keep lastmod in sync
 // with the post's <time dateTime> value.
 const BLOG_POSTS: { slug: string; lastmod: string }[] = [
+  { slug: 'bank-of-america-phishing-email', lastmod: '2026-10-14' },
   { slug: 'sugar-daddy-scam-amazon-gift-card', lastmod: '2026-10-13' },
   { slug: 'how-to-talk-to-loved-one-being-scammed', lastmod: '2026-10-12' },
   { slug: 'how-to-spot-fake-bank-texts-in-30-seconds', lastmod: '2026-08-04' },
@@ -55,7 +56,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   entries.push({
     url: `${BASE}/blog`,
-    lastModified: new Date('2026-10-13'),
+    lastModified: new Date('2026-10-14'),
     changeFrequency: 'weekly',
     priority: 0.7,
   })

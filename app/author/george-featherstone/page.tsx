@@ -10,6 +10,9 @@ export const metadata: Metadata = {
 }
 
 const POSTS = [
+  { slug: 'bank-of-america-phishing-email', title: 'How to Spot a Bank of America Phishing Email' },
+  { slug: 'sugar-daddy-scam-amazon-gift-card', title: 'Sugar Daddy Scam Amazon Gift Card: How to Spot It' },
+  { slug: 'how-to-talk-to-loved-one-being-scammed', title: 'How to Talk to a Loved One Who Is Being Scammed but Won’t Believe It' },
   { slug: 'scam-triage-file-003-your-computer-is-infected', title: 'Scam Triage File #003: Your Computer Is Infected' },
   { slug: 'she-heard-her-daughter-crying-ai-voice-clone-scam', title: 'Scam Triage File #002: She Heard Her Daughter Crying for Help' },
   { slug: 'scam-triage-file-001-android-had-3-viruses-but-didnt', title: 'Scam Triage File #001: The Android That “Had 3 Viruses” — But Didn’t' },

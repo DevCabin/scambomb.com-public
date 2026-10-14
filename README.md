@@ -1,7 +1,7 @@
 # ScamBomb.com — Helping Families Recognize Scams Before They Become Victims
 
-**Version**: 1.5.2
-**Last Updated**: October 13, 2026
+**Version**: 1.5.3
+**Last Updated**: October 14, 2026
 
 ## 🎯 Mission & Goals
 
@@ -68,6 +68,11 @@ Credit-union campaigns use `https://www.scambomb.com/member-signup` with an opti
 ├── public/                # Static assets (robots.txt, brand images)
 └── content/               # Blog content (MDX)
 ```
+
+## 🔄 Recent Changes (v1.5.3)
+
+### New Blog Post: Bank of America Phishing Email Guide
+- **New GUIDE post** — `/blog/bank-of-america-phishing-email` (Oct 14, 2026): the 60-second check for a fake Bank of America email, the lookalike sender domains and link URLs to watch, a 5-item ranked red-flag list, hover/long-press link previews, what to do after clicking (entered credentials vs clicked only), where to report (abuse@bofa.com, IC3, FTC, APWG), and a tools-compared table; featured on homepage + blog index (now 11 posts); sitemap updated.
 
 ## 🔄 Recent Changes (v1.5.2)
 

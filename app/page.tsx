@@ -399,18 +399,18 @@ export default function ScamBombLanding() {
 
           {/* Featured latest post */}
           <div className="hover-lift mb-6">
-            <a href="/blog/sugar-daddy-scam-amazon-gift-card" className="block rounded-2xl border border-yellow-300/30 bg-yellow-300/5 p-8 hover:bg-yellow-300/10 transition-colors group">
+            <a href="/blog/bank-of-america-phishing-email" className="block rounded-2xl border border-yellow-300/30 bg-yellow-300/5 p-8 hover:bg-yellow-300/10 transition-colors group">
               <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
                 <div className="flex-1">
                   <div className="text-xs font-bold tracking-widest text-yellow-300/70 mb-3">GUIDE</div>
                   <h3 className="text-2xl font-bold mb-3 group-hover:text-yellow-300 transition-colors">
-                    Sugar Daddy Scam Amazon Gift Card: How to Spot It
+                    How to Spot a Bank of America Phishing Email
                   </h3>
                   <p className="text-white/70 mb-4 max-w-2xl">
-                    A stranger offering an allowance then asking for Amazon gift cards is always a scam. See the exact message-by-message script, the red flags, and what to do if you already sent a code.
+                    A real Bank of America email comes from an @bankofamerica.com address and links only to bankofamerica.com. Here is the 60-second check, the lookalike domains to watch, and what to do if you clicked.
                   </p>
                   <div className="flex flex-wrap gap-6 text-sm">
-                    <span className="text-white/50">October 13, 2026</span>
+                    <span className="text-white/50">October 14, 2026</span>
                     <span className="flex items-center gap-2 text-yellow-300 font-semibold">
                       Read the guide <span aria-hidden="true">→</span>
                     </span>
