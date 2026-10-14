@@ -6,7 +6,7 @@ export const metadata = {
   alternates: { canonical: '/blog/she-heard-her-daughter-crying-ai-voice-clone-scam' },
   title: 'AI Voice Clone Scam: She Heard Her Daughter Crying',
   description:
-    'A Florida woman lost $15,000 to an AI voice clone scam — and every single red flag was catchable. Full breakdown of the playbook, the 7 red flags, and how to set up a family safe word today.',
+    'A Florida woman lost $15,000 to an AI voice-clone scam — and every red flag was catchable. The full playbook and how to set a family safe word.',
 }
 
 export default function BlogPost() {
@@ -75,7 +75,7 @@ export default function BlogPost() {
           <div className="rounded-2xl overflow-hidden border border-white/10 bg-white/5">
             <div className="relative">
               <img
-                src="/scam-stories/woman-loses-15k-in-ai-scam.png"
+                src="/scam-stories/woman-loses-15k-in-ai-scam.png" width="1344" height="838"
                 alt="Local news segment: woman loses $15K in elaborate AI scam — Fox 13 Tampa Bay"
                 className="w-full h-auto"
               />

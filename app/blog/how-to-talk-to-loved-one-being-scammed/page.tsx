@@ -44,7 +44,7 @@ export default function BlogPost() {
           <p>Your first goal is to make it easier for your loved one to tell you what is happening. Ask to see one message, agree on an independent check, and try to pause the next payment. You don&apos;t need to win an argument before taking a useful step.</p>
           <figure className="not-prose my-8 overflow-hidden rounded-2xl border border-white/10">
             <img
-              src="/blog/how-to-talk-to-loved-one-being-scammed/gentle-conversation-kitchen.jpg"
+              src="/blog/how-to-talk-to-loved-one-being-scammed/gentle-conversation-kitchen.jpg" width="1600" height="1066"
               alt="An adult daughter gently holding her older mother's hands across a kitchen table, listening with care"
               className="w-full h-auto"
               loading="eager"
@@ -96,7 +96,7 @@ export default function BlogPost() {
           </div>
           <figure className="not-prose my-8 overflow-hidden rounded-2xl border border-white/10">
             <img
-              src="/blog/how-to-talk-to-loved-one-being-scammed/patient-love-sofa.jpg"
+              src="/blog/how-to-talk-to-loved-one-being-scammed/patient-love-sofa.jpg" width="1600" height="1066"
               alt="A daughter patiently listening as her older father talks in a warm living room"
               className="w-full h-auto"
               loading="lazy"
@@ -129,7 +129,7 @@ export default function BlogPost() {
           </div>
           <figure className="not-prose my-8 overflow-hidden rounded-2xl border border-white/10">
             <img
-              src="/blog/how-to-talk-to-loved-one-being-scammed/father-daughter-listening.jpg"
+              src="/blog/how-to-talk-to-loved-one-being-scammed/father-daughter-listening.jpg" width="1600" height="1066"
               alt="A father and daughter reconnecting with a warm, patient conversation at home"
               className="w-full h-auto"
               loading="lazy"

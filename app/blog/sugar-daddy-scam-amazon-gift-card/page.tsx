@@ -41,7 +41,7 @@ export default function BlogPost() {
 
         <figure className="not-prose my-8 overflow-hidden rounded-2xl border border-white/10">
           <img
-            src="/blog/sugar-daddy-scam-amazon-gift-card/phone-gift-cards-doubt.jpg"
+            src="/blog/sugar-daddy-scam-amazon-gift-card/phone-gift-cards-doubt.jpg" width="1600" height="900"
             alt="A worried woman at a table looking at her phone, with a stack of gift cards and a receipt in front of her"
             className="w-full h-auto"
             loading="eager"
