@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-10-14 — New blog post: How to Spot a Bank of America Phishing Email
+
+### Added
+- **`app/blog/bank-of-america-phishing-email/page.tsx`** — new GUIDE post (9 min read, Oct 14 2026) built from the draft at `content/How to Spot a Bank of America Phishing E.md` (renamed to `content/bank-of-america-phishing-email.md`). Includes BlogSchema SEO + canonical, byline, answer-first intro, gold Key Takeaways card, the three checks that catch almost every fake, display-name vs actual-address section, a "What you see / What it tells you" link-URL table, the "why did I get this if I don't bank with BofA" answer, a 5-item ranked tell card, attachments warning, hover/long-press link preview guide, the manual-URL rule, two post-click recovery callouts (entered credentials vs clicked only), the reporting section, a tools-compared table, a "where ScamBomb falls short" honesty block, ScamBomb Move CTA, 5-question FAQ (no FAQPage JSON-LD, matching other posts), ScamGuideOptIn, Sources (BofA ×2 / FTC ×2 / IC3 / APWG), RelatedPosts, back-to-blog footer. Right-things notes: no victim PII, no claims beyond official BofA/FTC/IC3 guidance.
+- **Editorial fix** — the draft said to forward phishing to `abuse@bankofamerica.com`; BofA's current Report Suspicious Activity page uses `abuse@bofa.com`, so the post uses that and notes the older address is a legacy one some guides still list.
+- **Blog index** — prepended the new post to the `app/blog/page.tsx` posts array (now 11 posts, new featured).
+- **Homepage** — featured `From the blog` card now links the new guide (was `sugar-daddy-scam-amazon-gift-card`).
+- **Author page** — added the new post, plus backfilled `sugar-daddy-scam-amazon-gift-card` and `how-to-talk-to-loved-one-being-scammed`, which were missing from `app/author/george-featherstone/page.tsx`.
+
+### Changed
+- **`app/sitemap.ts`** — added `bank-of-america-phishing-email` (lastmod 2026-10-14); bumped `/blog` lastmod to 2026-10-14.
+- **`README.md`** — v1.5.3 (Oct 14, 2026); new post noted under Recent Changes.
+- **`CLINE_INSTRUCTIONS.md`** — blog count 10→11 with the new slug added to the directory map.
+
 ## 2026-10-13 — New blog post: Sugar Daddy Scam Amazon Gift Card
 
 ### Added

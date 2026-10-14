@@ -11,6 +11,14 @@ import Link from 'next/link'
 
 const posts = [
   {
+    slug: 'bank-of-america-phishing-email',
+    title: 'How to Spot a Bank of America Phishing Email',
+    description: 'A real Bank of America email comes from an @bankofamerica.com address and links only to bankofamerica.com. Here is the 60-second check, the lookalike domains to watch, and what to do if you clicked.',
+    date: '2026-10-14',
+    tag: 'GUIDE',
+    readTime: '9 min read'
+  },
+  {
     slug: 'sugar-daddy-scam-amazon-gift-card',
     title: 'Sugar Daddy Scam Amazon Gift Card: How to Spot It',
     description: 'A stranger offering an allowance then asking for Amazon gift cards is always a scam. See the exact message-by-message script, the red flags, and what to do if you already sent a code.',
