@@ -4,7 +4,7 @@ import RelatedPosts from '../../../components/RelatedPosts'
 export const metadata = {
   alternates: { canonical: '/blog/three-questions-to-ask-before-you-click' },
   title: 'Three questions to ask before you click',
-  description: 'A simple checklist to run through before clicking any link in an email or text message.',
+  description: 'Before you click any link in an email or text, ask these three questions to spot a scam and protect your money and accounts.',
 }
 
 export default function BlogPost() {
@@ -120,6 +120,12 @@ export default function BlogPost() {
           <h2>Bonus tip</h2>
 
           <p>If something feels off, it probably is. Trust your instincts and take the safe route. It's always better to take an extra minute than to rush into a mistake you can't undo.</p>
+
+          <h2>Sources</h2>
+          <ul>
+            <li><a href="https://reportfraud.ftc.gov/" rel="noopener">Report fraud to the FTC — reportfraud.ftc.gov</a></li>
+            <li><a href="https://www.ic3.gov/" rel="noopener">File an internet-crime complaint with the FBI — ic3.gov</a></li>
+          </ul>
         </div>
 
         

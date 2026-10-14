@@ -6,7 +6,7 @@ import ScamGuideOptIn from '../../../components/ScamGuideOptIn'
 export const metadata = {
   alternates: { canonical: '/blog/bank-of-america-phishing-email' },
   title: 'How to Spot a Bank of America Phishing Email',
-  description: 'A real Bank of America email comes from an @bankofamerica.com address and links only to bankofamerica.com. Here is the 60-second check, the lookalike domains to watch, and what to do if you clicked.',
+  description: 'A real Bank of America email uses an @bankofamerica.com address and links only to bankofamerica.com. The 60-second check and what to do if you clicked.',
 }
 
 export default function BlogPost() {
