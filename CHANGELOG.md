@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-10-14 — Fix: presentation decks refused to connect
+
+### Fixed
+- **`next.config.js`** — changed `X-Frame-Options` from `DENY` to `SAMEORIGIN` and CSP `frame-ancestors` from `'none'` to `'self'`, so the five presentation decks (`/presentation-live`, `/presentation-prompts`, `/presentation-ai-future`, `/presentation-jobs`, `/presentation-trivia`) can load their own `public/*.html` decks in an iframe again. Cross-origin framing stays blocked.
+
 ## 2026-10-14 — New blog post: How to Spot a Bank of America Phishing Email
 
 ### Added
