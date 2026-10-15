@@ -5,6 +5,11 @@
 ### Fixed
 - **`next.config.js`** — changed `X-Frame-Options` from `DENY` to `SAMEORIGIN` and CSP `frame-ancestors` from `'none'` to `'self'`, so the five presentation decks (`/presentation-live`, `/presentation-prompts`, `/presentation-ai-future`, `/presentation-jobs`, `/presentation-trivia`) can load their own `public/*.html` decks in an iframe again. Cross-origin framing stays blocked.
 
+## 2026-10-14 — Fix: presentation decks now render as slides
+
+### Fixed
+- **`next.config.js`** — added `https://cdnjs.cloudflare.com` to CSP `script-src` and `style-src` so the reveal.js decks (loaded from cdnjs) can fetch their CSS/JS. Previously the CSP blocked them, leaving the decks as unstyled content instead of a slideshow.
+
 ## 2026-10-14 — New blog post: How to Spot a Bank of America Phishing Email
 
 ### Added
