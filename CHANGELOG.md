@@ -6,6 +6,7 @@
 - **`public/presentation-live.html`** — updated slide 17 to direct attendees to the ScamBomb newsletter signup and explain that the Family Secret Word Protocol Worksheet is emailed after signup.
 - **`public/scambomb-kit-newsletter-qr.png`** — replaced slide 17's QR code with the supplied Kit newsletter QR code.
 - **Slide 19** — replaced the Last Chance slide's QR code with the same Kit newsletter signup QR.
+- **Slide 19 cleanup** — removed the duplicate large “Thank You” heading and outdated attendee-only/signup disclaimer; the following slide is the presentation thank-you slide.
 
 ## 2026-10-14 — Fix: presentation decks refused to connect
 
