@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-10-20 — Update live presentation worksheet signup
+
+### Changed
+- **`public/presentation-live.html`** — updated slide 17 to direct attendees to the ScamBomb newsletter signup and explain that the Family Secret Word Protocol Worksheet is emailed after signup.
+- **`public/scambomb-kit-newsletter-qr.png`** — replaced slide 17's QR code with the supplied Kit newsletter QR code.
+
 ## 2026-10-14 — Fix: presentation decks refused to connect
 
 ### Fixed
