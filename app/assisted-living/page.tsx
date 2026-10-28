@@ -109,6 +109,37 @@ export default function AssistedLivingPage() {
           </p>
         </div>
       </section>
+      <section className="border-b border-white/10 bg-white/[0.03]">
+        <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-16 lg:px-8">
+          <div className="mb-10 max-w-3xl">
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#F5C84C]">About the speaker</p>
+            <h2 className="mt-4 text-3xl font-black uppercase tracking-tight sm:text-4xl">Meet George Featherstone</h2>
+          </div>
+          <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
+            <div className="space-y-5 text-lg leading-relaxed text-white/75">
+              <p>George Featherstone is the founder of ScamBomb, a web developer, and an AI systems builder with more than 15 years in internet technology.</p>
+              <p>He created ScamBomb after seeing family members targeted by scams. His workshops turn complicated technology and fast-moving fraud tactics into calm, plain-English habits that residents, families, and staff can use right away.</p>
+              <ul className="space-y-3 text-white/85">
+                <li className="flex gap-3"><span className="text-[#F5C84C]" aria-hidden="true">✓</span><span>Local East Texas presenter</span></li>
+                <li className="flex gap-3"><span className="text-[#F5C84C]" aria-hidden="true">✓</span><span>Web developer and AI builder</span></li>
+                <li className="flex gap-3"><span className="text-[#F5C84C]" aria-hidden="true">✓</span><span>Focused on helping families live safer online</span></li>
+              </ul>
+            </div>
+            <div className="overflow-hidden rounded-2xl border border-white/10 bg-black/30 shadow-2xl shadow-black/20">
+              <div className="aspect-video w-full">
+                <iframe
+                  className="h-full w-full"
+                  src="https://www.youtube.com/embed/bR7onKbWuE8?si=1RWjgozgJ3IdFLCj&amp;start=253"
+                  title="George Featherstone speaking about ScamBomb"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
           <div>
