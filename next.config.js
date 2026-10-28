@@ -34,7 +34,7 @@ const nextConfig = {
               "img-src 'self' data: https: blob: https://www.facebook.com",
               "font-src 'self' https://fonts.gstatic.com data:",
               "connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://www.googletagmanager.com https://connect.facebook.net https://www.facebook.com https://www.clarity.ms https://link.msgsndr.com https://api.leadconnectorhq.com https://backend.leadconnectorhq.com https://formspree.io https://tajftdwlkoljbkzxcrun.supabase.co https://vitals.vercel-insights.com https://in.heycatch.ai",
-              "frame-src 'self' https://api.leadconnectorhq.com",
+              "frame-src 'self' https://api.leadconnectorhq.com https://www.youtube.com https://www.youtube-nocookie.com",
               "frame-ancestors 'self'",
               "base-uri 'self'",
               "form-action 'self' https://formspree.io",
