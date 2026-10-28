@@ -26,7 +26,9 @@ export default function BlogPost() {
 
         <header className="mb-8">
           <div className="text-xs font-semibold tracking-widest text-white/60 mb-2">GUIDE</div>
-          <h1 className="text-3xl sm:text-4xl font-bold mb-4">{title}</h1>
+          <h1 className="text-3xl sm:text-4xl font-bold mb-4">
+            Suspicious PayPal Email: <span className="text-[#F5C84C]">How to Tell If It&apos;s Real</span>
+          </h1>
           <p className="text-white/80 text-lg mb-4">{description}</p>
           <time className="text-sm text-white/60" dateTime={published}>Published October 28, 2026</time>
           <p className="mt-3 text-sm text-white/70">
