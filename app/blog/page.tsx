@@ -11,6 +11,14 @@ import Link from 'next/link'
 
 const posts = [
   {
+    slug: 'suspicious-email-paypal',
+    title: "Suspicious PayPal Email: How to Tell If It's Real",
+    description: 'Got a suspicious PayPal email? Use four quick checks, verify invoices safely, and learn what to do if you clicked or entered your password.',
+    date: '2026-10-28',
+    tag: 'GUIDE',
+    readTime: '10 min read'
+  },
+  {
     slug: 'bank-of-america-phishing-email',
     title: 'How to Spot a Bank of America Phishing Email',
     description: 'A real Bank of America email comes from an @bankofamerica.com address and links only to bankofamerica.com. Here is the 60-second check, the lookalike domains to watch, and what to do if you clicked.',
