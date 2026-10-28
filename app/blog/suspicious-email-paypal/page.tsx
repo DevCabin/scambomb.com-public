@@ -22,6 +22,7 @@ export default function BlogPost() {
           url="https://scambomb.com/blog/suspicious-email-paypal"
           datePublished={published}
           dateModified={published}
+          image="https://scambomb.com/blog/suspicious-email-paypal/paypal-suspicious-email.png"
         />
 
         <header className="mb-8">
@@ -37,6 +38,17 @@ export default function BlogPost() {
             <span>AI-assisted draft, reviewed and edited by George Featherstone.</span>
           </p>
         </header>
+
+        <figure className="not-prose mb-10 overflow-hidden rounded-2xl border border-white/10 bg-white/5">
+          <img
+            src="/blog/suspicious-email-paypal/paypal-suspicious-email.png"
+            alt="Suspicious PayPal email graphic with a phishing hook over a laptop"
+            width="1672"
+            height="941"
+            className="w-full h-auto"
+          />
+          <figcaption className="px-4 py-3 text-sm text-white/60">A suspicious PayPal email may look official while leading you toward a phishing scam.</figcaption>
+        </figure>
 
         <div className="prose prose-invert prose-lg max-w-none">
           <p><strong>Key takeaway:</strong> Never use a PayPal email&apos;s link or phone number to investigate a problem. Open the PayPal app or type <strong>paypal.com</strong> yourself, then check your account activity there.</p>
