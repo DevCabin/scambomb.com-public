@@ -98,8 +98,46 @@
     }
     
     .hero {
+      position: relative;
       text-align: center;
       padding: 40px 0 48px;
+    }
+
+    .hero-qr {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 148px;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      background: #fff;
+      border: 1px solid rgba(255,215,0,0.45);
+      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-qr img {
+      display: block;
+      width: 128px;
+      height: 128px;
+    }
+
+    .hero-qr span {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.6rem;
+      font-weight: 700;
+      line-height: 1.25;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--navy);
+      text-align: center;
+    }
+
+    @media (max-width: 1023px) {
+      .hero-qr { display: none; }
     }
     
     .eyebrow {
@@ -470,7 +508,8 @@
         color: #111 !important;
       }
 
-      .actions {
+      .actions,
+      .hero-qr {
         display: none !important;
       }
 
@@ -494,6 +533,11 @@
 
   <div class="wrap">
     <header class="hero">
+      <div class="hero-qr">
+        <img src="/presentation-prompts-qr.png" alt="QR code linking to scambomb.com/presentation-prompts" width="128" height="128" />
+        <span>Scan to open<br>on your phone</span>
+      </div>
+
       <div class="eyebrow">Field Edition 1.0 | 2026</div>
       <h1><span style="color: var(--text-primary);">SCAM</span><span style="color: var(--gold);">B💣MB</span><span style="color: var(--text-primary);">.com</span></h1>
       <p class="sub">30 field-tested prompts for photos, recipes, travel, safety, and everyday digital tasks. Designed for beginners, seniors, and caregivers navigating AI safely.</p>

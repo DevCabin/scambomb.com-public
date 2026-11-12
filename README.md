@@ -1,7 +1,7 @@
 # ScamBomb.com — Helping Families Recognize Scams Before They Become Victims
 
-**Version**: 1.5.3
-**Last Updated**: October 14, 2026
+**Version**: 1.5.4
+**Last Updated**: November 12, 2026
 
 ## 🎯 Mission & Goals
 
@@ -68,6 +68,11 @@ Credit-union campaigns use `https://www.scambomb.com/member-signup` with an opti
 ├── public/                # Static assets (robots.txt, brand images)
 └── content/               # Blog content (MDX)
 ```
+
+## 🔄 Recent Changes (v1.5.4)
+
+### Prompts Page QR Code
+- **`/presentation-prompts`** — the hero's open top-right area now carries the presentation QR code (high-res asset, caption "Scan to open on your phone"); hidden on tablets/phones and in print so the field manual printout stays clean, and the same sharper asset is reused on slide 17 of the live deck.
 
 ## 🔄 Recent Changes (v1.5.3)
 

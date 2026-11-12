@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-12 — QR code added to prompts page hero
+
+### Changed
+- **`public/presentation-prompts.html`** — added the supplied presentation-prompts QR code to the open top-right area of the hero (white card, gold-tinted border, soft shadow, caption "Scan to open on your phone") so workshop attendees can open the prompt library on a phone. New `.hero-qr` styles position it absolutely inside the (now `position: relative`) hero; it hides below 1024px so it never crowds the hero copy on tablets, and print CSS now hides `.hero-qr` alongside `.actions` so the printable Field Manual stays clean.
+- **`public/presentation-prompts-qr.png`** — replaced the 300×300 version with the supplied 984×984 1-bit grayscale QR. It still encodes `https://www.scambomb.com/presentation-prompts`, so the existing slide 17 usage in `public/presentation-live.html` keeps working and now renders sharper at both 120px and hero size.
+
 ## 2026-10-20 — Update live presentation worksheet signup
 
 ### Changed
