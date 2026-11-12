@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-12 — Removed Poll QR from the live presentation sub-nav
+
+### Removed
+- **`app/presentation-live/page.tsx`** — deleted the `Poll QR` button from the sub-nav that sits under the deck, along with the full-screen poll QR modal it opened (the `showQr` state, the Escape-key listener, and the `/scambomb_poll_TRIVIA_vote_qr.png` overlay). The sub-nav is now AI Future Deck · AI Jobs Report · Power Prompts · AI Trivia. Unused `useState`/`useEffect` imports went with it; `tsc --noEmit` is clean.
+- **`public/scambomb_poll_TRIVIA_vote_qr.png`** — left in place (no longer referenced by the app) so the poll/trivia QR is still available for printed slides; delete it when you're sure you no longer need it.
+
 ## 2026-11-12 — Large collapsible QR panel on the prompts page
 
 ### Changed

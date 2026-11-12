@@ -74,6 +74,9 @@ Credit-union campaigns use `https://www.scambomb.com/member-signup` with an opti
 ### Prompts Page QR Code
 - **`/presentation-prompts`** — the QR code is now a large scan-from-your-seat panel at the top of the page (up to 560px, ~67% of the viewport) with an accordion `Close QR code` / `Show QR code` toggle; the collapsed state sticks for the session, and the panel is hidden on phones and in print. Reuses the sharper 984×984 asset that slide 17 of the live deck also uses.
 
+### Live Presentation Sub-nav
+- **`/presentation-live`** — removed the `Poll QR` button (and the full-screen poll QR modal behind it) from the sub-nav under the deck; the row is now AI Future Deck · AI Jobs Report · Power Prompts · AI Trivia.
+
 ## 🔄 Recent Changes (v1.5.3)
 
 ### New Blog Post: Bank of America Phishing Email Guide
