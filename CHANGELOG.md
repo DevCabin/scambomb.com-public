@@ -1,10 +1,13 @@
 # Changelog
 
-## 2026-11-12 — QR code added to prompts page hero
+## 2026-11-12 — Large collapsible QR panel on the prompts page
 
 ### Changed
-- **`public/presentation-prompts.html`** — added the supplied presentation-prompts QR code to the open top-right area of the hero (white card, gold-tinted border, soft shadow, caption "Scan to open on your phone") so workshop attendees can open the prompt library on a phone. New `.hero-qr` styles position it absolutely inside the (now `position: relative`) hero; it hides below 1024px so it never crowds the hero copy on tablets, and print CSS now hides `.hero-qr` alongside `.actions` so the printable Field Manual stays clean.
-- **`public/presentation-prompts-qr.png`** — replaced the 300×300 version with the supplied 984×984 1-bit grayscale QR. It still encodes `https://www.scambomb.com/presentation-prompts`, so the existing slide 17 usage in `public/presentation-live.html` keeps working and now renders sharper at both 120px and hero size.
+- **`public/presentation-prompts.html`** — the supplied presentation-prompts QR code now renders as a large "field QR" panel at the top of the page instead of a small corner thumbnail, so a room can scan it from their seats. The QR is `clamp(280px, 50vh, 560px)` (540px on a 1080p projector, ~67% of the viewport when open) inside a white card, sitting next to a "Scan this code" explainer.
+  - **Accordion toggle** — a gold `Close QR code` / `Show QR code` button in the panel header collapses the panel with a `grid-template-rows: 1fr → 0fr` transition (66px collapsed header bar), so presenters can reveal the prompt cards. State is mirrored to `aria-expanded`, the closed body gets `inert`, and the collapsed state is remembered for the session via `sessionStorage` (`sb-prompts-qr-collapsed`).
+  - **Responsive** — stacks to a centered column between 768–1023px (QR `clamp(220px, 38vh, 340px)`) and is hidden below 768px, where scanning a phone with a phone makes no sense.
+  - **Print** — the whole `.qr-panel` is hidden in `@media print` so the printable Field Manual is unchanged; all transitions respect `prefers-reduced-motion`.
+- **`public/presentation-prompts-qr.png`** — replaced the 300×300 version with the supplied 984×984 1-bit grayscale QR. It still encodes `https://www.scambomb.com/presentation-prompts`, so the existing slide 17 usage in `public/presentation-live.html` keeps working and now renders sharper at both 120px and panel size.
 
 ## 2026-10-20 — Update live presentation worksheet signup
 

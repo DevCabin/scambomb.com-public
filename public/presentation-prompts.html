@@ -98,46 +98,194 @@
     }
     
     .hero {
-      position: relative;
       text-align: center;
       padding: 40px 0 48px;
     }
 
-    .hero-qr {
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 148px;
-      padding: 10px;
+    /* ---- Field QR: large, collapsible scan panel ---- */
+    .qr-panel {
+      background: var(--navy);
+      border: 2px solid var(--gold);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .qr-panel-head {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 12px 16px 12px 20px;
+      border-bottom: 1px solid rgba(255,215,0,0.25);
+    }
+
+    .qr-panel.is-collapsed .qr-panel-head {
+      border-bottom-color: transparent;
+    }
+
+    .qr-panel-eyebrow {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .qr-toggle {
+      margin-left: auto;
+      appearance: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: rgba(255,215,0,0.10);
+      border: 1px solid rgba(255,215,0,0.5);
+      border-radius: 999px;
+      padding: 10px 18px;
+      flex-shrink: 0;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+
+    .qr-toggle:hover {
+      background: var(--gold);
+      color: var(--navy);
+    }
+
+    .qr-toggle:focus-visible {
+      outline: 2px solid var(--text-primary);
+      outline-offset: 2px;
+    }
+
+    .qr-toggle-icon {
+      display: inline-block;
+      font-size: 0.9em;
+      line-height: 1;
+      transition: transform 0.25s ease;
+    }
+
+    .qr-panel.is-collapsed .qr-toggle-icon {
+      transform: rotate(-90deg);
+    }
+
+    .qr-panel-body {
+      display: grid;
+      grid-template-rows: 1fr;
+      transition: grid-template-rows 0.3s ease;
+    }
+
+    .qr-panel.is-collapsed .qr-panel-body {
+      grid-template-rows: 0fr;
+    }
+
+    .qr-panel-inner {
+      min-height: 0;
+      overflow: hidden;
+    }
+
+    .qr-panel-content {
+      display: flex;
+      align-items: center;
+      gap: clamp(24px, 4vw, 56px);
+      padding: clamp(20px, 3vh, 32px) clamp(20px, 3vw, 40px);
+      transition: opacity 0.2s ease;
+    }
+
+    .qr-panel.is-collapsed .qr-panel-content {
+      opacity: 0;
+    }
+
+    .qr-copy {
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+
+    .qr-copy h2 {
+      margin: 0 0 12px;
+      font-size: clamp(1.25rem, 2.6vw, 2.15rem);
+      line-height: 1.15;
+    }
+
+    .qr-copy p {
+      margin: 0 0 14px;
+      max-width: 46ch;
+      color: var(--text-secondary);
+      font-size: clamp(0.9rem, 1.1vw, 1.05rem);
+      line-height: 1.55;
+    }
+
+    .qr-copy p:last-child {
+      margin-bottom: 0;
+    }
+
+    .qr-copy strong {
+      color: var(--text-primary);
+    }
+
+    .qr-copy .qr-hint {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .qr-frame {
+      flex: 0 0 auto;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
+      padding: 14px;
       background: #fff;
-      border: 1px solid rgba(255,215,0,0.45);
       border-radius: var(--radius-sm);
-      box-shadow: var(--shadow);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.45);
     }
 
-    .hero-qr img {
+    .qr-frame img {
       display: block;
-      width: 128px;
-      height: 128px;
+      height: clamp(280px, 50vh, 560px);
+      width: auto;
     }
 
-    .hero-qr span {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.6rem;
-      font-weight: 700;
-      line-height: 1.25;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
+    .qr-frame span {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
       color: var(--navy);
-      text-align: center;
+      letter-spacing: 0.02em;
     }
 
     @media (max-width: 1023px) {
-      .hero-qr { display: none; }
+      .qr-panel-content {
+        flex-direction: column;
+        text-align: center;
+      }
+      .qr-copy p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .qr-frame img {
+        height: clamp(200px, 34vh, 320px);
+      }
+    }
+
+    @media (max-width: 767px) {
+      .qr-panel { display: none; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .qr-panel-body,
+      .qr-panel-content,
+      .qr-toggle,
+      .qr-toggle-icon {
+        transition: none;
+      }
     }
     
     .eyebrow {
@@ -509,7 +657,7 @@
       }
 
       .actions,
-      .hero-qr {
+      .qr-panel {
         display: none !important;
       }
 
@@ -532,12 +680,34 @@
   </header>
 
   <div class="wrap">
-    <header class="hero">
-      <div class="hero-qr">
-        <img src="/presentation-prompts-qr.png" alt="QR code linking to scambomb.com/presentation-prompts" width="128" height="128" />
-        <span>Scan to open<br>on your phone</span>
+    <section class="qr-panel" id="qrPanel" aria-labelledby="qrPanelLabel">
+      <div class="qr-panel-head">
+        <span class="qr-panel-eyebrow" id="qrPanelLabel">Get these prompts on your phone</span>
+        <button class="qr-toggle" type="button" id="qrToggle" aria-expanded="true" aria-controls="qrPanelBody">
+          <span class="qr-toggle-text">Close QR code</span>
+          <span class="qr-toggle-icon" aria-hidden="true">▾</span>
+        </button>
       </div>
 
+      <div class="qr-panel-body" id="qrPanelBody">
+        <div class="qr-panel-inner">
+          <div class="qr-panel-content">
+            <div class="qr-copy">
+              <h2>Scan this code</h2>
+              <p>Point your phone camera at the code to open <strong>scambomb.com/presentation-prompts</strong>. Then tap <strong>Open</strong> on any prompt below and follow along on your own screen — nothing to retype.</p>
+              <p class="qr-hint">Close this panel to read the field manual</p>
+            </div>
+
+            <div class="qr-frame">
+              <img src="/presentation-prompts-qr.png" alt="QR code linking to scambomb.com/presentation-prompts" />
+              <span>scambomb.com/presentation-prompts</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <header class="hero">
       <div class="eyebrow">Field Edition 1.0 | 2026</div>
       <h1><span style="color: var(--text-primary);">SCAM</span><span style="color: var(--gold);">B💣MB</span><span style="color: var(--text-primary);">.com</span></h1>
       <p class="sub">30 field-tested prompts for photos, recipes, travel, safety, and everyday digital tasks. Designed for beginners, seniors, and caregivers navigating AI safely.</p>
@@ -984,6 +1154,35 @@
       toast.classList.add('show');
       clearTimeout(window.__toastTimer);
       window.__toastTimer = setTimeout(() => toast.classList.remove('show'), 2000);
+    }
+
+    // Large field QR panel: open by default so a room can scan it, collapsible to read the prompts.
+    const qrPanel = document.getElementById('qrPanel');
+    const qrToggle = document.getElementById('qrToggle');
+    const qrPanelBody = document.getElementById('qrPanelBody');
+
+    if (qrPanel && qrToggle && qrPanelBody) {
+      const qrToggleText = qrToggle.querySelector('.qr-toggle-text');
+
+      qrToggle.addEventListener('click', () => {
+        const collapsed = qrPanel.classList.toggle('is-collapsed');
+        qrToggle.setAttribute('aria-expanded', String(!collapsed));
+        qrToggleText.textContent = collapsed ? 'Show QR code' : 'Close QR code';
+        qrPanelBody.inert = collapsed;
+        try {
+          sessionStorage.setItem('sb-prompts-qr-collapsed', collapsed ? '1' : '0');
+        } catch (err) {
+          /* storage blocked — ignore */
+        }
+      });
+
+      try {
+        if (sessionStorage.getItem('sb-prompts-qr-collapsed') === '1') {
+          qrToggle.click();
+        }
+      } catch (err) {
+        /* storage blocked — ignore */
+      }
     }
 
     document.querySelectorAll('.copy-btn').forEach(btn => {

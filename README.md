@@ -72,7 +72,7 @@ Credit-union campaigns use `https://www.scambomb.com/member-signup` with an opti
 ## 🔄 Recent Changes (v1.5.4)
 
 ### Prompts Page QR Code
-- **`/presentation-prompts`** — the hero's open top-right area now carries the presentation QR code (high-res asset, caption "Scan to open on your phone"); hidden on tablets/phones and in print so the field manual printout stays clean, and the same sharper asset is reused on slide 17 of the live deck.
+- **`/presentation-prompts`** — the QR code is now a large scan-from-your-seat panel at the top of the page (up to 560px, ~67% of the viewport) with an accordion `Close QR code` / `Show QR code` toggle; the collapsed state sticks for the session, and the panel is hidden on phones and in print. Reuses the sharper 984×984 asset that slide 17 of the live deck also uses.
 
 ## 🔄 Recent Changes (v1.5.3)
 
