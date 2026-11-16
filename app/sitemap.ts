@@ -5,6 +5,7 @@ import type { MetadataRoute } from 'next'
 // Blog posts: add each slug here when a new post ships; keep lastmod in sync
 // with the post's <time dateTime> value.
 const BLOG_POSTS: { slug: string; lastmod: string }[] = [
+  { slug: 'area-code-suspicious-647-text-message', lastmod: '2026-11-16' },
   { slug: 'suspicious-email-paypal', lastmod: '2026-10-28' },
   { slug: 'bank-of-america-phishing-email', lastmod: '2026-10-14' },
   { slug: 'sugar-daddy-scam-amazon-gift-card', lastmod: '2026-10-13' },

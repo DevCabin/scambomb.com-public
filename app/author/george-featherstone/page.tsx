@@ -10,6 +10,7 @@ export const metadata: Metadata = {
 }
 
 const POSTS = [
+  { slug: 'area-code-suspicious-647-text-message', title: 'Area Code 647 Suspicious Text Message: What It Means' },
   { slug: 'bank-of-america-phishing-email', title: 'How to Spot a Bank of America Phishing Email' },
   { slug: 'sugar-daddy-scam-amazon-gift-card', title: 'Sugar Daddy Scam Amazon Gift Card: How to Spot It' },
   { slug: 'how-to-talk-to-loved-one-being-scammed', title: 'How to Talk to a Loved One Who Is Being Scammed but Won’t Believe It' },

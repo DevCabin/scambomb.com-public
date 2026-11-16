@@ -11,6 +11,14 @@ import Link from 'next/link'
 
 const posts = [
   {
+    slug: 'area-code-suspicious-647-text-message',
+    title: 'Area Code 647 Suspicious Text Message: What It Means',
+    description: 'Got a suspicious text from area code 647? Learn what the Toronto code means, how spoofing works, which red flags matter, and what to do next.',
+    date: '2026-11-16',
+    tag: 'GUIDE',
+    readTime: '10 min read'
+  },
+  {
     slug: 'suspicious-email-paypal',
     title: "Suspicious PayPal Email: How to Tell If It's Real",
     description: 'Got a suspicious PayPal email? Use four quick checks, verify invoices safely, and learn what to do if you clicked or entered your password.',
