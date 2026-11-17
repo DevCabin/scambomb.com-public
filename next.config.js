@@ -167,6 +167,11 @@ const nextConfig = {
         destination: 'https://app.scambomb.com/premium-resources',
         permanent: false,
       },
+      {
+        source: '/help',
+        destination: '/tech-help',
+        permanent: true,
+      },
     ]
   },
 }
