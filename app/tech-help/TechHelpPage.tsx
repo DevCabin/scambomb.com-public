@@ -5,7 +5,7 @@ import { FormEvent, useState } from 'react'
 const brand = '#F5C84C'
 const bookingLinks = {
   quick: 'https://calendly.com/featherstone-george/quick-tech-help',
-  personal: 'https://calendly.com/featherstone-george/30min',
+  personal: 'https://calendly.com/featherstone-george/personal-tech-session',
 }
 
 const helpTopics = [
